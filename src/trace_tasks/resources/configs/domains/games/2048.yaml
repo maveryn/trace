@@ -1,0 +1,71 @@
+generation:
+  shared:
+    scene_variant_weights:
+      standard_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      dark: 1.0
+      paper: 1.0
+      neon: 1.0
+      pastel: 1.0
+    move_direction_weights:
+      up: 1.0
+      down: 1.0
+      left: 1.0
+      right: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_move_direction_sampling: true
+  task_overrides:
+    task_games__2048__merge_count:
+      balanced_target_answer_sampling: true
+      merge_count_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+    task_games__2048__max_tile_value:
+      balanced_target_answer_sampling: true
+      max_tile_value_support:
+        - 16
+        - 32
+        - 64
+        - 128
+        - 256
+    task_games__2048__move_result_board_label:
+      balanced_target_label_sampling: true
+      balanced_result_board_option_count_sampling: true
+      result_board_label_support:
+        - A
+        - B
+        - C
+        - D
+        - E
+        - F
+      result_board_option_count_support:
+        - 4
+        - 6
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 900
+    panel_margin_px: 64
+    board_size_px: 560
+    dynamic_canvas_size_enabled: true
+    canvas_min_size_px: 520
+    canvas_side_padding_px: 128
+    canvas_side_padding_fraction: 0.2
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_radius_px: 18
+    cell_gap_px: 14
+    cell_radius_px: 10
+    tile_font_size_px: 46
+    arrow_width_px: 9
+    label_font_size_px: 24
+prompt:
+  shared:
+    bundle_id: games_2048_v1
+    scene_key: visible_2048_board
+    task_key: twenty_forty_eight_query

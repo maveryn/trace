@@ -1,0 +1,62 @@
+generation:
+  shared:
+    scene_variant_weights:
+      balanced_midgame: 1.0
+      center_crossroads_midgame: 1.0
+      triangle_wing_midgame: 1.0
+    style_variant_weights:
+      ground_court: 1.0
+      ink_court: 1.0
+      cloth_board: 1.0
+      slate_court: 1.0
+      sand_court: 1.0
+    marked_piece_color_weights:
+      red: 1.0
+      blue: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_marked_piece_color_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_piece_count_per_side_sampling: true
+    marked_piece_destination_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    marked_piece_capture_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    piece_count_per_side_support:
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 900
+    panel_margin_px: 52
+    max_board_width_px: 500
+    max_board_height_px: 680
+    edge_width_px: 5
+    point_radius_px: 8
+    piece_radius_px: 21
+    marker_width_px: 5
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 760
+    canvas_side_padding_px: 168
+    canvas_vertical_padding_px: 136
+prompt:
+  shared:
+    bundle_id: games_sixteen_soldiers_v1
+    scene_key: sixteen_soldiers_board
+    task_key: sixteen_soldiers_query

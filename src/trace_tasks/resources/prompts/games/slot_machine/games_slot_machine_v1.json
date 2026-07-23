@@ -1,0 +1,114 @@
+{
+  "bundle_id": "games_slot_machine_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_slot_machine": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "slot_machine_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "winning_payline_count": [
+        "Here, a payline is any full row or either long diagonal. How many paylines contain three matching symbols?",
+        "A payline means one complete row or one of the two long diagonals. Count the paylines where all three symbols match.",
+        "Count the winning paylines. A winning payline is a full row or long diagonal with the same symbol in all three cells.",
+        "Use only the three rows and the two long diagonals as paylines. How many of those paylines show three matching symbols?",
+        "How many paylines win, where paylines are the full rows plus the two long diagonals and a win has three identical symbols?"
+      ],
+      "paytable_score_value": [
+        "Find the row or long diagonal where all three symbols match, then use the side paytable to read that symbol's score. What score is shown?",
+        "A payline is a full row or either long diagonal. Find the matching-symbol payline, then give its score from the side paytable.",
+        "Use only the three rows and two long diagonals as paylines. Which one has three matching symbols, and what score does that symbol have in the paytable?",
+        "Find the single winning payline: a full row or long diagonal with the same symbol in all three cells. Report that symbol's side-paytable score.",
+        "Look for the row or long diagonal with three identical symbols. Use the side paytable to give the score for that symbol."
+      ],
+      "reel_completion_label": [
+        "A payline is any full row or either long diagonal. The first two reels are fixed. Which labeled option for the third reel completes a payline?",
+        "Use the three rows and the two long diagonals as paylines. Choose the third-reel option that makes three matching symbols on a payline.",
+        "Only rows and the two long diagonals count as paylines. Which option for the third reel creates one matching-symbol payline?",
+        "The left two reels stay as shown. Which labeled third-reel option gives a full row or long diagonal with three identical symbols?",
+        "Pick the third-reel option that completes a payline, where a payline is one row or either long diagonal with all three symbols matching."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_slot_machine": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description": "a toy slot machine with three reels, three visible rows, and simple symbol icons",
+    "json_output_contract": "Return JSON with exactly two keys: \"annotation\" and \"answer\".",
+    "json_output_contract_answer_only": "Return JSON with exactly one key: \"answer\".",
+    "annotation_hint_winning_payline_count": "set \"annotation\" to a JSON array of image-pixel segments, each using two endpoint points [x, y] in [[x0, y0], [x1, y1]] form; include one segment along each winning row or diagonal payline; use [] if no payline wins",
+    "answer_hint_winning_payline_count": "set \"answer\" to the integer count of winning paylines",
+    "annotation_hint_paytable_score_value": "set \"annotation\" to one image-pixel segment in [[x0, y0], [x1, y1]] form along the winning row or diagonal payline that determines the score",
+    "answer_hint_paytable_score_value": "set \"answer\" to the integer score read from the side paytable for the matching symbol on the winning payline",
+    "annotation_hint_reel_completion_label": "set \"annotation\" to the image-pixel bounding box [x0, y0, x1, y1] around the selected third-reel option",
+    "answer_hint_reel_completion_label": "set \"answer\" to the selected option letter"
+  }
+}

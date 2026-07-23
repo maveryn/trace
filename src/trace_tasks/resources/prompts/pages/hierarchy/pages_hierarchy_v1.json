@@ -1,0 +1,115 @@
+{
+  "bundle_id": "pages_hierarchy_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "hierarchy_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "org_chart_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "subtree_descendant_count": [
+        "How many people work under \"{query_label}\"? Do not include \"{query_label}\".",
+        "Count everyone below \"{query_label}\" in the organization chart. Do not count \"{query_label}\".",
+        "Using the visible reporting lines, how many people report up through \"{query_label}\"?",
+        "What is the total number of people under \"{query_label}\" in the chart?",
+        "Find everyone in \"{query_label}\"'s reporting group and count those people only."
+      ],
+      "manager_most_total_reports_label": [
+        "Excluding the CEO at the top of the chart, which manager has the most people working under them?",
+        "Do not choose the CEO at the top. Which manager has the largest total reporting group?",
+        "Ignoring the CEO box, which manager has the most people below them in the organization chart?",
+        "Among managers below the CEO, who has the most people in their reporting chain?",
+        "Which non-CEO manager has the largest total team under them?"
+      ],
+      "manager_most_direct_reports_label": [
+        "Excluding the CEO at the top of the chart, which manager has the most direct reports?",
+        "Do not choose the CEO at the top. Which manager has the largest number of immediate reports?",
+        "Ignoring the CEO box, which manager has the most people reporting directly to them?",
+        "Among managers below the CEO, who has the most direct reports?",
+        "Which non-CEO manager directly manages the largest number of people?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:hierarchy_diagram": {
+      "object_description": "an organization chart with the CEO at the top, labeled employees, and visible reporting lines"
+    },
+    "query:subtree_descendant_count": {
+      "answer_hint": "set \"answer\" to the integer count of people under the requested manager",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around every counted person",
+      "json_example": "{\"annotation\":[[256,316,368,374],[196,462,308,520],[374,462,486,520],[374,608,486,666]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:manager_most_total_reports_label": {
+      "answer_hint": "set \"answer\" to the selected manager name",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates around the selected manager",
+      "json_example": "{\"annotation\":[424,316,508,364],\"answer\":\"Morgan\"}",
+      "json_example_answer_only": "{\"answer\":\"Morgan\"}"
+    },
+    "query:manager_most_direct_reports_label": {
+      "answer_hint": "set \"answer\" to the selected manager name",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates around the selected manager",
+      "json_example": "{\"annotation\":[424,316,508,364],\"answer\":\"Morgan\"}",
+      "json_example_answer_only": "{\"answer\":\"Morgan\"}"
+    }
+  },
+  "dynamic_slots": {
+    "query_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:hierarchy_diagram": [
+      "object_description"
+    ],
+    "query:subtree_descendant_count": [
+      "query_label"
+    ],
+    "query:manager_most_total_reports_label": [],
+    "query:manager_most_direct_reports_label": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

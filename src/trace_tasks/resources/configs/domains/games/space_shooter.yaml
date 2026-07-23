@@ -1,0 +1,80 @@
+generation:
+  shared:
+    scene_variant_weights:
+      defense_wave: 1.0
+    style_variant_weights:
+      neon: 1.0
+      deep_space: 1.0
+      vector: 1.0
+      amber: 1.0
+      terminal: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_lane_count_sampling: true
+    balanced_enemy_count_sampling: true
+    balanced_target_answer_sampling: true
+    lane_count_support:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    enemy_count_support:
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    safe_lane_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    enemy_ship_hit_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    hit_enemy_ship_label_option_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    first_hit_enemy_ship_label_option_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    balanced_correct_option_sampling: true
+    enemy_projectile_per_lane_support:
+    - 1
+    - 2
+    - 3
+rendering:
+  shared:
+    canvas_width: 1060
+    canvas_height: 820
+    panel_margin_px: 42
+    playfield_width_px: 940
+    playfield_height_px: 720
+    playfield_border_width_px: 5
+    lane_pad_height_px: 38
+    lane_pad_gap_px: 10
+    enemy_width_px: 62
+    enemy_height_px: 48
+    projectile_width_px: 24
+    projectile_height_px: 36
+    player_ship_width_px: 72
+    player_ship_height_px: 58
+    label_font_size_px: 24
+prompt:
+  shared:
+    bundle_id: games_space_shooter_v1
+    scene_key: visible_space_shooter_playfield
+    task_key: space_shooter_query

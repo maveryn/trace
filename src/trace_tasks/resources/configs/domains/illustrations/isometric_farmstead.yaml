@@ -1,0 +1,86 @@
+generation:
+  shared:
+    balanced_sampling: true
+  task_overrides:
+    task_illustrations__isometric_farmstead__terrain_elevation_extremum_label:
+      query_id_support:
+        - highest_terrain_tile
+        - lowest_terrain_tile
+      candidate_count_support:
+        - 4
+    task_illustrations__isometric_farmstead__terrain_level_object_count:
+      query_id_support:
+        - highest_terrain_object_count
+        - lowest_terrain_object_count
+      target_object_type_support:
+        - domestic_animal
+        - tree
+      answer_count_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+    task_illustrations__isometric_farmstead__farmer_same_level_tile_label:
+      query_id_support:
+        - single
+      candidate_count_support:
+        - 4
+    task_illustrations__isometric_farmstead__highest_terrain_tile_count:
+      query_id_support:
+        - single
+      answer_count_support:
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+rendering:
+  shared:
+    canvas_profile_support:
+      - landscape
+      - square
+
+prompt:
+  task_overrides:
+    task_illustrations__isometric_farmstead__terrain_elevation_extremum_label:
+      bundle_id: illustrations_isometric_farmstead_v0
+      scene_key: isometric_farmstead_elevation_canvas
+      task_key: terrain_elevation_extremum_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_terrain_elevation_extremum_label: set "answer" to the selected ground-tile letter
+      annotation_hint_terrain_elevation_extremum_label: set "annotation" to one [x0, y0, x1, y1] pixel bounding box around the selected terrain tile
+      json_example_terrain_elevation_extremum_label: '{"annotation":[420,260,486,294],"answer":"D"}'
+      json_example_answer_only_terrain_elevation_extremum_label: '{"answer":"D"}'
+    task_illustrations__isometric_farmstead__terrain_level_object_count:
+      bundle_id: illustrations_isometric_farmstead_v0
+      scene_key: isometric_farmstead_object_count_canvas
+      task_key: terrain_level_object_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_terrain_level_object_count: set "answer" to the number of matching {object_label}
+      annotation_hint_terrain_level_object_count: set "annotation" to a list of [x0, y0, x1, y1] pixel bounding boxes around each counted object; use [] when the count is 0
+      json_example_terrain_level_object_count: '{"annotation":[[236,420,282,470],[520,300,560,352]],"answer":2}'
+      json_example_answer_only_terrain_level_object_count: '{"answer":2}'
+    task_illustrations__isometric_farmstead__farmer_same_level_tile_label:
+      bundle_id: illustrations_isometric_farmstead_v0
+      scene_key: isometric_farmstead_farmer_reference_canvas
+      task_key: farmer_same_level_tile_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_farmer_same_level_tile_label: set "answer" to the selected ground-tile letter
+      annotation_hint_farmer_same_level_tile_label: set "annotation" to one [x0, y0, x1, y1] pixel bounding box around the selected terrain tile
+      json_example_farmer_same_level_tile_label: '{"annotation":[420,260,486,294],"answer":"B"}'
+      json_example_answer_only_farmer_same_level_tile_label: '{"answer":"B"}'
+    task_illustrations__isometric_farmstead__highest_terrain_tile_count:
+      bundle_id: illustrations_isometric_farmstead_v0
+      scene_key: isometric_farmstead_tile_count_canvas
+      task_key: highest_terrain_tile_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_highest_terrain_tile_count: set "answer" to the number of visible top-surface terrain tiles on the highest elevation layer
+      annotation_hint_highest_terrain_tile_count: set "annotation" to one [x0, y0, x1, y1] pixel bounding box around the whole highest-elevation top layer
+      json_example_highest_terrain_tile_count: '{"annotation":[380,180,640,330],"answer":12}'
+      json_example_answer_only_highest_terrain_tile_count: '{"answer":12}'

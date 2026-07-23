@@ -1,0 +1,99 @@
+{
+  "bundle_id": "games_counterfactual_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "counterfactual_board": [
+        "The image shows a game-board-style grid.",
+        "The image shows a rectangular board grid.",
+        "The image shows a board pattern with visible rows, columns, or lines.",
+        "The figure shows a board-style grid.",
+        "The visual shows a board made from visible grid units."
+      ]
+    },
+    "task": {
+      "board_grid_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "row_count": [
+        "How many rows are there on this board?",
+        "Count the rows on this board.",
+        "How many rows are shown on the board?",
+        "What is the row count on this board?",
+        "How many board rows are visible?"
+      ],
+      "column_count": [
+        "How many columns are there on this board?",
+        "Count the columns on this board.",
+        "How many columns are shown on the board?",
+        "What is the column count on this board?",
+        "How many board columns are visible?"
+      ],
+      "horizontal_line_count": [
+        "How many horizontal lines are there on this board?",
+        "Count the horizontal lines on this board.",
+        "How many horizontal lines are shown on the board?",
+        "What is the horizontal-line count on this board?",
+        "How many board lines run horizontally?"
+      ],
+      "vertical_line_count": [
+        "How many vertical lines are there on this board?",
+        "Count the vertical lines on this board.",
+        "How many vertical lines are shown on the board?",
+        "What is the vertical-line count on this board?",
+        "How many board lines run vertically?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation field: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:row_count": {
+      "answer_hint": "Set answer to the number of visible board rows.",
+      "annotation_hint": "Set annotation to a bbox_set: image-pixel row boxes [x0,y0,x1,y1] for all counted rows; bbox-set cardinality equals answer.",
+      "json_example": "{\"annotation\":[[100,100,460,148],[100,148,460,196],[100,196,460,244]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:column_count": {
+      "answer_hint": "Set answer to the number of visible board columns.",
+      "annotation_hint": "Set annotation to a bbox_set: image-pixel column boxes [x0,y0,x1,y1] for all counted columns; bbox-set cardinality equals answer.",
+      "json_example": "{\"annotation\":[[100,100,148,460],[148,100,196,460],[196,100,244,460]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:horizontal_line_count": {
+      "answer_hint": "Set answer to the number of visible horizontal board lines.",
+      "annotation_hint": "Set annotation to a segment_set: image-pixel segments [[x1,y1],[x2,y2]] for all counted horizontal lines; segment-set cardinality equals answer.",
+      "json_example": "{\"annotation\":[[[100,100],[460,100]],[[100,148],[460,148]],[[100,196],[460,196]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:vertical_line_count": {
+      "answer_hint": "Set answer to the number of visible vertical board lines.",
+      "annotation_hint": "Set annotation to a segment_set: image-pixel segments [[x1,y1],[x2,y2]] for all counted vertical lines; segment-set cardinality equals answer.",
+      "json_example": "{\"annotation\":[[[100,100],[100,460]],[[148,100],[148,460]],[[196,100],[196,460]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

@@ -1,0 +1,73 @@
+generation:
+  shared:
+    scene_variant_weights:
+      lane_rack: 1.0
+    style_variant_weights:
+      classic: 1.0
+      cosmic: 1.0
+      paper: 1.0
+      tournament: 1.0
+      retro: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+  task_overrides:
+    task_games__bowling__first_pin_hit_label:
+      balanced_visible_pin_count_sampling: true
+      balanced_target_pin_sampling: true
+      visible_pin_count_support:
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+      target_pin_index_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+    task_games__bowling__spare_path_label:
+      balanced_path_option_count_sampling: true
+      balanced_target_path_sampling: true
+      path_option_count_support:
+        - 4
+        - 5
+        - 6
+      target_path_index_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+    task_games__bowling__path_hit_count:
+      balanced_path_hit_count_sampling: true
+      path_hit_count_support:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 740
+    panel_margin_px: 36
+    lane_width_px: 760
+    lane_height_px: 660
+    lane_border_width_px: 6
+    pin_radius_px: 22
+    ball_radius_px: 24
+    path_width_px: 5
+    label_font_size_px: 24
+prompt:
+  shared:
+    bundle_id: games_bowling_v1
+    scene_key: visible_bowling_lane
+    task_key: bowling_lane_query

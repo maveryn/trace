@@ -1,0 +1,64 @@
+generation:
+  shared:
+    scene_variant_weights:
+      clean_wheel: 1.0
+      notebook_wheel: 1.0
+      exam_scan: 1.0
+    balanced_scene_variant_sampling: true
+    option_count: 6
+  task_overrides:
+    task_symbolic__radial_code_wheel__missing_code_symbol_label:
+      missing_position_support:
+      - inner
+      - middle
+      - outer
+      answer_symbol_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+      balanced_answer_symbol_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1080
+    canvas_height: 860
+    wheel_center_x_px: 380
+    wheel_center_y_px: 430
+    wheel_inner_radius_px: 44
+    ring_width_px: 80
+    terminal_label_radius_px: 326
+    source_card_left_px: 760
+    source_card_top_px: 58
+    source_card_width_px: 260
+    source_card_height_px: 108
+    missing_code_card_top_px: 184
+    option_card_width_px: 126
+    option_card_height_px: 82
+    option_grid_left_px: 742
+    option_grid_top_px: 248
+    option_grid_col_gap_px: 28
+    option_grid_row_gap_px: 42
+    option_label_font_size_px: 24
+    option_value_font_size_px: 28
+    source_title_font_size_px: 20
+    source_value_font_size_px: 34
+    ring_symbol_font_size_px: 16
+    inner_ring_symbol_font_size_px: 23
+    outer_ring_symbol_font_size_px: 10
+    terminal_label_font_size_px: 13
+    ring_line_width_px: 2
+    wheel_outline_width_px: 3
+    card_corner_radius_px: 16
+    card_border_width_px: 2
+
+prompt:
+  shared:
+    bundle_id: symbolic_radial_code_wheel_v1
+    scene_key: radial_code_wheel
+
+visual:
+  background:
+    enabled: true
+  noise:
+    apply_prob: 0.20

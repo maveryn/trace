@@ -1,0 +1,93 @@
+{
+  "bundle_id": "puzzles_toggle_grid_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description_toggle_clean": "a toggle grid with switch cells, binary cell states, and visual answer options",
+    "object_description_toggle_notebook": "a toggle grid with switch cells, binary cell states, and visual answer options",
+    "object_description_toggle_console": "a toggle grid with switch cells, binary cell states, and visual answer options"
+  },
+  "templates": {
+    "scene": {
+      "toggle_grid": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "toggle_result_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "toggle_repair_switch_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "toggle_result_label": [
+        "Press the red marked switch on the start grid. A press flips that cell and its up, down, left, and right neighbors when present. Which labeled option shows the final grid?",
+        "Starting with the shown grid, apply the single red marked switch press. It flips the selected cell and its orthogonal neighbors. Which option is the result?",
+        "Use the start grid and the red marked switch. After that one press toggles its cell and edge-neighbor cells, which labeled option matches the final state?",
+        "Follow the red marked switch press. The switch flips itself plus adjacent up, down, left, and right cells. Which result option is correct?",
+        "Apply the visible red switch press to the start grid using the orthogonal-neighbor toggle rule. Which labeled result grid is produced?"
+      ],
+      "toggle_repair_switch_label": [
+        "Which lettered switch in the start grid should be pressed once to produce the target grid? A press flips that cell and its up, down, left, and right neighbors when present.",
+        "Choose the one lettered start-grid switch that changes the start grid into the target grid after a single press.",
+        "One labeled switch press transforms the start grid into the target grid using the orthogonal-neighbor toggle rule. Which label is it?",
+        "Compare the start and target grids. Which lettered switch, pressed once, produces the target?",
+        "A single switch press flips its cell and any edge-neighbor cells. Which labeled switch turns the start grid into the target grid?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:toggle_result_label": {
+      "answer_instruction": "the label of the result-grid option produced by pressing the red marked switch",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected result option panel.",
+      "json_example": "{\"annotation\":[722,552,882,806],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "query:toggle_repair_switch_label": {
+      "answer_instruction": "the label of the switch cell that transforms the start grid into the target grid",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected switch cell.",
+      "json_example": "{\"annotation\":[210,286,282,358],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:toggle_grid": [
+      "object_description"
+    ]
+  }
+}

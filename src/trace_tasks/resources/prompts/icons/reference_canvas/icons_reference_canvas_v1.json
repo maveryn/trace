@@ -1,0 +1,152 @@
+{
+  "bundle_id": "icons_reference_canvas_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "reference_canvas_counting": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ],
+      "reference_canvas_anchor": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "reference_canvas_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "match_type": [
+        "How many Scene icons have the same type as the Reference?",
+        "How many icons in the Scene panel have the same type as the Reference?",
+        "Count the Scene icons whose type matches the Reference.",
+        "What is the number of Scene icons with the same type as the Reference?",
+        "How many Scene icons match the Reference type?"
+      ],
+      "match_color": [
+        "How many Scene icons have the same color as the Reference?",
+        "How many icons in the Scene panel have the same color as the Reference?",
+        "Count the Scene icons whose color matches the Reference.",
+        "What is the number of Scene icons with the same color as the Reference?",
+        "How many Scene icons match the Reference color?"
+      ],
+      "match_rotation": [
+        "How many Scene icons have the same rotation as the Reference?",
+        "How many icons in the Scene panel have the same rotation as the Reference?",
+        "Count the Scene icons whose rotation matches the Reference.",
+        "What is the number of Scene icons with the same rotation as the Reference?",
+        "How many Scene icons match the Reference rotation?"
+      ],
+      "match_type_color_rotation": [
+        "How many Scene icons match the Reference in type, color, and rotation?",
+        "How many icons in the Scene panel have the same type, color, and rotation as the Reference?",
+        "Count the Scene icons that match the Reference type, color, and rotation.",
+        "What is the number of Scene icons matching the Reference in all three attributes: type, color, and rotation?",
+        "How many Scene icons exactly match the Reference type, color, and rotation?"
+      ],
+      "size_smaller": [
+        "How many Scene icons are smaller than the Reference?",
+        "How many icons in the Scene panel are smaller than the Reference?",
+        "Count the Scene icons whose size is smaller than the Reference.",
+        "What is the number of Scene icons smaller than the Reference?",
+        "How many Scene icons have a smaller size than the Reference?"
+      ],
+      "size_larger": [
+        "How many Scene icons are larger than the Reference?",
+        "How many icons in the Scene panel are larger than the Reference?",
+        "Count the Scene icons whose size is larger than the Reference.",
+        "What is the number of Scene icons larger than the Reference?",
+        "How many Scene icons have a larger size than the Reference?"
+      ],
+      "left_of_anchor": [
+        "How many Scene icons match the Reference type and are to the left of the Anchor?",
+        "How many icons in the Scene panel match the Reference type and lie left of the Anchor?",
+        "Count the Scene icons with the Reference type that are left of the Anchor.",
+        "What is the number of Reference-type Scene icons to the left of the Anchor?",
+        "How many Scene icons of the Reference type are positioned left of the Anchor?"
+      ],
+      "right_of_anchor": [
+        "How many Scene icons match the Reference type and are to the right of the Anchor?",
+        "How many icons in the Scene panel match the Reference type and lie right of the Anchor?",
+        "Count the Scene icons with the Reference type that are right of the Anchor.",
+        "What is the number of Reference-type Scene icons to the right of the Anchor?",
+        "How many Scene icons of the Reference type are positioned right of the Anchor?"
+      ],
+      "above_anchor": [
+        "How many Scene icons match the Reference type and are above the Anchor?",
+        "How many icons in the Scene panel match the Reference type and lie above the Anchor?",
+        "Count the Scene icons with the Reference type that are above the Anchor.",
+        "What is the number of Reference-type Scene icons above the Anchor?",
+        "How many Scene icons of the Reference type are positioned above the Anchor?"
+      ],
+      "below_anchor": [
+        "How many Scene icons match the Reference type and are below the Anchor?",
+        "How many icons in the Scene panel match the Reference type and lie below the Anchor?",
+        "Count the Scene icons with the Reference type that are below the Anchor.",
+        "What is the number of Reference-type Scene icons below the Anchor?",
+        "How many Scene icons of the Reference type are positioned below the Anchor?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted Scene icon",
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "json_example": "{\"annotation\":[[322,152,377,207],[756,318,820,382]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "scene:reference_canvas_counting": {
+      "object_description": "a Reference icon beside a Scene panel"
+    },
+    "scene:reference_canvas_anchor": {
+      "object_description": "a Reference icon beside a Scene panel with one icon marked Anchor"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:reference_canvas_counting": [
+      "object_description"
+    ],
+    "scene:reference_canvas_anchor": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

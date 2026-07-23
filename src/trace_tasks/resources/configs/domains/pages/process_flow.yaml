@@ -1,0 +1,115 @@
+generation:
+  shared:
+    node_count_min: 10
+    node_count_max: 10
+    lane_count_min: 3
+    lane_count_max: 3
+    balanced_scene_variant_sampling: true
+    balanced_layout_variant_sampling: true
+    balanced_style_variant_sampling: true
+    scene_variant_weights:
+      incident_response: 1.0
+      editorial_review: 1.0
+      order_fulfillment: 1.0
+      model_release: 1.0
+      lab_sample: 1.0
+      support_ticket: 1.0
+    layout_variant_weights:
+      horizontal_swimlane: 1.0
+    style_variant_weights:
+      blueprint: 1.0
+      pastel_cards: 1.0
+      graphite: 1.0
+      warm_memo: 1.0
+rendering:
+  shared:
+    canvas_width: 1200
+    canvas_height: 900
+    outer_margin_px: 46
+    panel_padding_px: 24
+    panel_corner_radius_px: 24
+    title_band_height_px: 68
+    lane_header_height_px: 42
+    node_width_px: 146
+    node_height_px: 64
+    node_corner_radius_px: 16
+    node_border_width_px: 3
+    edge_width_px: 3
+    arrow_head_length_px: 15
+    arrow_head_width_px: 13
+    title_font_size_px: 30
+    lane_font_size_px: 18
+    node_label_font_size_px: 17
+    badge_font_size_px: 12
+    edge_label_font_size_px: 15
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -10
+    layout_jitter_x_px_max: 10
+    layout_jitter_y_px_min: -8
+    layout_jitter_y_px_max: 8
+    layout_jitter_min_margin_px: 18
+prompt:
+  shared:
+    bundle_id: pages_process_flow_v1
+visual:
+  background:
+    enabled: true
+    styles:
+      paper_light:
+        kind: solid
+        color:
+        - 242
+        - 243
+        - 239
+      paper_cool:
+        kind: solid
+        color:
+        - 235
+        - 241
+        - 244
+      paper_warm:
+        kind: solid
+        color:
+        - 246
+        - 240
+        - 230
+      paper_green:
+        kind: solid
+        color:
+        - 237
+        - 244
+        - 238
+      paper_lavender:
+        kind: solid
+        color:
+        - 241
+        - 239
+        - 248
+    weights:
+      paper_light: 1.0
+      paper_cool: 1.0
+      paper_warm: 1.0
+      paper_green: 1.0
+      paper_lavender: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.25
+      downsample:
+        scale:
+        - 0.94
+        - 0.99
+      jpeg:
+        quality:
+        - 86.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.006
+        - 0.018

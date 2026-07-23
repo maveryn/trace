@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="290 80 380 104" role="img" aria-labelledby="title desc">
+  <title id="title">Trace</title>
+  <desc id="desc">The Trace wordmark.</desc>
+  <style>
+    .word { fill: #17242d; }
+    @media (prefers-color-scheme: dark) {
+      .word { fill: #edf3f5; }
+    }
+  </style>
+  <text class="word" x="300" y="174" font-family="Hanken Grotesk, Inter, Segoe UI, sans-serif" font-size="116" font-weight="700" letter-spacing="0">Trace</text>
+</svg>

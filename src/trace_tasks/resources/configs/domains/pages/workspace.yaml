@@ -1,0 +1,89 @@
+generation:
+  shared:
+    scene_variant_weights:
+      office_document: 1.0
+      creative_workspace: 1.0
+      developer_ide: 1.0
+      cad_workspace: 1.0
+      scientific_plotter: 1.0
+      os_file_manager: 1.0
+    balanced_scene_variant_sampling: true
+    workspace_variant_weights:
+      toolbar_palette: 1.0
+      property_panel: 1.0
+      canvas_tool: 1.0
+      code_workspace: 1.0
+      file_dialog: 1.0
+    balanced_workspace_variant_sampling: true
+    context_count_min: 3
+    context_count_max: 4
+    candidate_label_pool:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    - H
+    - I
+    - J
+    - K
+    - L
+    - M
+    - N
+    - O
+    - P
+    - Q
+    - R
+    - S
+    - T
+    - U
+    - V
+    - W
+    - X
+    - Y
+    - Z
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 800
+    window_margin_px: 42
+    title_bar_height_px: 46
+    menu_bar_height_px: 34
+    corner_radius_px: 16
+    control_corner_radius_px: 8
+    control_outline_width_px: 2
+    control_outline_width_px_min: 1
+    control_outline_width_px_max: 3
+    badge_size_px: 34
+    badge_size_px_min: 32
+    badge_size_px_max: 36
+    title_font_size_px: 24
+    title_font_size_px_min: 23
+    title_font_size_px_max: 25
+    body_font_size_px: 16
+    body_font_size_px_min: 15
+    body_font_size_px_max: 17
+    small_font_size_px: 15
+    small_font_size_px_min: 14
+    small_font_size_px_max: 16
+    label_font_size_px: 18
+    label_font_size_px_min: 17
+    label_font_size_px_max: 19
+prompt:
+  shared:
+    bundle_id: pages_workspace_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range: [1, 1]
+    value_ranges:
+      blur:
+        radius: [0.12, 0.35]
+      downsample:
+        scale: [0.9, 0.97]
+      jpeg:
+        quality: [80.0, 94.0]
+      noise:
+        alpha: [0.01, 0.04]

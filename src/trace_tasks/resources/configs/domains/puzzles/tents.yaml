@@ -1,0 +1,78 @@
+generation:
+  shared:
+    scene_variant_weights:
+      tents_classic: 1.0
+      tents_card: 1.0
+      tents_blueprint: 1.0
+    palette_variant_weights:
+      garden: 1.0
+      autumn: 1.0
+      lake: 1.0
+      violet: 1.0
+      slate: 1.0
+  task_overrides:
+    task_puzzles__tents__missing_tent_cell_label:
+      grid_rows_min: 6
+      grid_rows_max: 8
+      grid_cols_min: 6
+      grid_cols_max: 8
+      option_count: 4
+      background_tent_count_min: 2
+      background_tent_count_max: 5
+    task_puzzles__tents__violating_tent_label:
+      grid_rows_min: 6
+      grid_rows_max: 8
+      grid_cols_min: 6
+      grid_cols_max: 8
+      option_count: 4
+
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 620
+    cell_size_px: 50
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    left_clue_width_px: 60
+    top_clue_height_px: 60
+    grid_line_width_px: 2
+    heavy_line_width_px: 4
+    panel_padding_px: 22
+    panel_corner_radius_px: 18
+    clue_font_size_px: 24
+    candidate_font_size_px: 26
+    text_color_rgb:
+      - 28
+      - 32
+      - 38
+    text_stroke_rgb:
+      - 255
+      - 255
+      - 255
+  task_overrides:
+    task_puzzles__tents__violating_tent_label:
+      canvas_width: 640
+      canvas_height: 560
+      cell_size_px: 72
+      unit_size_scale_min: 0.5
+      unit_size_scale_max: 1.0
+      left_clue_width_px: 50
+      top_clue_height_px: 50
+      panel_padding_px: 18
+      clue_font_size_px: 24
+      candidate_font_size_px: 26
+
+prompt:
+  shared:
+    bundle_id: puzzles_tents_v1
+    scene_key: tents_grid
+
+  task_overrides:
+    task_puzzles__tents__missing_tent_cell_label:
+      task_key: missing_tent_cell_label_query
+    task_puzzles__tents__violating_tent_label:
+      task_key: violating_tent_label_query
+
+visual:
+  noise:
+    apply_prob: 0.5

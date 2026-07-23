@@ -1,0 +1,87 @@
+{
+  "bundle_id": "physics_graduated_cylinder_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "graduated_cylinder_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This measurement diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "volume_readout_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "displacement_volume_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "volume_readout": [
+        "What volume does the graduated cylinder show?",
+        "Read the meniscus against the tick marks. What integer volume is shown?",
+        "Using the mL scale, what is the liquid volume in the cylinder?",
+        "What is the cylinder's liquid volume in mL?",
+        "Read the shown graduated-cylinder level. What integer mL value is indicated?"
+      ],
+      "displacement_volume": [
+        "What volume is displaced, using the before and after cylinder readings?",
+        "Subtract the before reading from the after reading. What displaced volume is shown?",
+        "Using the two mL scales, what is the volume increase after the object is added?",
+        "What integer mL displacement is shown by the before/after cylinder pair?",
+        "Read both meniscus levels and compute the displaced volume in mL."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:graduated_cylinder_diagram": {
+      "object_description": "a graduated-cylinder setup with visible liquid meniscus lines, tick marks, numeric scale labels, and mL units"
+    },
+    "query:volume_readout": {
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the graduated-cylinder readout, including the liquid level, tick marks, numeric scale labels, and mL unit",
+      "answer_hint": "set \"answer\" to the integer liquid volume in mL",
+      "json_example": "{\"annotation\":[145,130,390,612],\"answer\":35}",
+      "json_example_answer_only": "{\"answer\":35}"
+    },
+    "query:displacement_volume": {
+      "annotation_hint": "set \"annotation\" to an object mapping before_cylinder and after_cylinder to [x0,y0,x1,y1] pixel boxes around the corresponding graduated-cylinder readouts, including liquid levels, tick marks, numeric scale labels, and mL units",
+      "answer_hint": "set \"answer\" to the integer displaced volume in mL",
+      "json_example": "{\"annotation\":{\"before_cylinder\":[146,140,365,612],\"after_cylinder\":[650,140,882,612]},\"answer\":20}",
+      "json_example_answer_only": "{\"answer\":20}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:graduated_cylinder_diagram": [
+      "object_description"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+generation:
+  shared:
+    option_count: 4
+    count_min: 1
+    count_max: 8
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      raven_strip: 1.0
+      raven_card: 1.0
+      raven_outline: 1.0
+
+visual:
+  noise:
+    apply_prob: 0.0
+
+rendering:
+  shared:
+    canvas_width: 1200
+    canvas_height: 920
+    scene_margin_left_px: 64
+    scene_margin_right_px: 64
+    scene_margin_top_px: 56
+    scene_margin_bottom_px: 56
+    cell_size_px: 126
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    cell_gap_px: 14
+    board_panel_padding_px: 22
+    board_to_options_gap_px: 76
+    option_panel_width_px: 144
+    option_panel_height_px: 180
+    option_gap_px: 20
+    option_symbol_box_size_px: 118
+    option_label_gap_px: 16
+    slot_corner_radius_px: 18
+    border_width_px: 3
+    border_width_px_min: 2
+    border_width_px_max: 4
+    panel_corner_radius_px: 28
+    value_font_size_px: 52
+    option_label_font_size_px: 30
+
+prompt:
+  shared:
+    bundle_id: puzzles_raven_matrix_v1
+    scene_key: raven_matrix
+  task_overrides:
+    task_puzzles__raven_matrix__raven_count_progression_label:
+      task_key: raven_count_progression_label_query
+    task_puzzles__raven_matrix__raven_spatial_transform_label:
+      task_key: raven_spatial_transform_label_query
+    task_puzzles__raven_matrix__raven_set_operation_label:
+      task_key: raven_set_operation_label_query
+    task_puzzles__raven_matrix__raven_analogical_transform_label:
+      task_key: raven_analogical_transform_label_query
+    task_puzzles__raven_matrix__raven_position_progression_label:
+      task_key: raven_position_progression_label_query
+    task_puzzles__raven_matrix__raven_feature_binding_label:
+      task_key: raven_feature_binding_label_query

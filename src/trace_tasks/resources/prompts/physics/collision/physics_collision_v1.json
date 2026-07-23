@@ -1,0 +1,96 @@
+{
+  "bundle_id": "physics_collision_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "collision_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "sticky_collision_direction_choice_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sticky_collision_speed_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "direction_choice": [
+        "After the two pucks collide and stick together, which candidate arrow A-D shows their combined direction of motion?",
+        "Using the shown masses, speeds, and approach directions, which option arrow matches the stuck pucks' final direction?",
+        "The pucks stick at the center. Which labeled candidate arrow shows the direction they move afterward?",
+        "Conserve horizontal and vertical momentum for the sticky collision. Which option arrow gives the final direction?",
+        "Which candidate arrow A-D points in the direction of the combined puck after the collision?"
+      ],
+      "speed_value": [
+        "After the pucks stick together, compute the horizontal and vertical final velocity components from momentum divided by total mass, then combine those perpendicular components to get speed. What is the speed of the combined puck, rounded to one decimal place?",
+        "Using the shown masses, speeds, and approach directions, find each final velocity component as that puck's momentum divided by the combined mass, then use the component magnitude for speed. What is the stuck pucks' final speed rounded to one decimal place?",
+        "The pucks stick at the center. Use conservation of horizontal and vertical momentum to get the final components, then combine the perpendicular components. What speed do they have afterward, rounded to one decimal place?",
+        "Conserve horizontal and vertical momentum for the sticky collision: each final component equals the corresponding incoming momentum divided by the combined mass. What is the final speed rounded to one decimal place?",
+        "Find the combined puck's horizontal and vertical final velocity components from the two incoming momenta, then take their perpendicular-vector speed. What is the combined puck's speed after the collision, rounded to one decimal place?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {},
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:collision_diagram": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

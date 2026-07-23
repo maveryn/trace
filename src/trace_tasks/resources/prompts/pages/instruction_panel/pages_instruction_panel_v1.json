@@ -1,0 +1,106 @@
+{
+  "bundle_id": "pages_instruction_panel_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "instruction_panel": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "instruction_panel_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "shared_control_for_step_set_label": [
+        "Which visible control label appears in each of steps {step_reference_list}?",
+        "For steps {step_reference_list}, what control label is shared by all of them?",
+        "What control chip label is common to steps {step_reference_list}?",
+        "Across steps {step_reference_list}, which control label appears every time?",
+        "Find steps {step_reference_list}. Which visible control label do those steps all share?"
+      ],
+      "step_for_control_pair_label": [
+        "Which step number contains both {first_control_label} and {second_control_label}?",
+        "Find the step with control labels {first_control_label} and {second_control_label}. What number is on that step?",
+        "What numbered step includes both control chips {first_control_label} and {second_control_label}?",
+        "Use the control labels {first_control_label} and {second_control_label}. Which step number contains the pair?",
+        "Which visible step number has both {first_control_label} and {second_control_label} on the same step?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:instruction_panel": {
+      "object_description": "an instruction panel with numbered steps and visible control chips on each step"
+    },
+    "query:shared_control_for_step_set_label": {
+      "answer_hint": "set \"answer\" to the exact visible control label common to the referenced steps",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] boxes for the matching shared control chips in the referenced steps",
+      "json_example": "{\"annotation\":[[236,220,340,250],[236,410,340,440]],\"answer\":\"Sync\"}",
+      "json_example_answer_only": "{\"answer\":\"Sync\"}"
+    },
+    "query:step_for_control_pair_label": {
+      "answer_hint": "set \"answer\" to the integer step number containing both referenced control labels",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] boxes for the two matching control chips and their step-number badge",
+      "json_example": "{\"annotation\":[[640,280,750,310],[760,280,870,310],[120,270,152,302]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    }
+  },
+  "dynamic_slots": {
+    "step_reference_list": {"type": "string"},
+    "first_control_label": {"type": "string"},
+    "second_control_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:instruction_panel": [
+      "object_description"
+    ],
+    "query:shared_control_for_step_set_label": [
+      "step_reference_list"
+    ],
+    "query:step_for_control_pair_label": [
+      "first_control_label",
+      "second_control_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

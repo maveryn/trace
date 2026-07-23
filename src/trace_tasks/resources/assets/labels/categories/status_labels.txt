@@ -1,0 +1,21 @@
+Active
+Approved
+Archived
+Assigned
+Blocked
+Cancelled
+Closed
+Complete
+Delayed
+Draft
+Escalated
+Hold
+In Progress
+Open
+Paused
+Pending
+Ready
+Rejected
+Review
+Scheduled
+Waiting

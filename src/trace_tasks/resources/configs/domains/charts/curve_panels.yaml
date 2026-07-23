@@ -1,0 +1,81 @@
+generation:
+  shared:
+    panel_count_min: 4
+    panel_count_max: 6
+    method_count_min: 3
+    method_count_max: 6
+    x_tick_count_min: 4
+    x_tick_count_max: 10
+    x_step_min: 5
+    x_step_max: 20
+    x_span_min: 50
+    x_span_max: 100
+    y_value_min: 0
+    y_value_max: 100
+    threshold_values:
+    - 45
+    - 55
+    - 65
+    panel_label_variant_weights:
+      subplot_letters: 1.0
+      technical_topics: 0.75
+      condition_labels: 0.5
+      named_compact: 0.5
+      temporal_sequence: 0.25
+rendering:
+  shared:
+    chart_context_profile: dense_clean_minimal
+    canvas_width: 1200
+    canvas_height: 1000
+    outer_margin_px: 42
+    title_band_height_px: 92
+    panel_gap_px: 24
+    panel_padding_px: 14
+    panel_corner_radius_px: 6
+    panel_border_width_px: 2
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 2
+    grid_line_width_px: 1
+    line_width_px_min: 2
+    line_width_px_max: 4
+    point_radius_px_min: 4
+    point_radius_px_max: 6
+    tick_length_px: 6
+    title_font_size_px: 30
+    subtitle_font_size_px: 18
+    panel_title_font_size_px: 18
+    axis_label_font_size_px: 13
+    tick_font_size_px: 12
+    legend_font_size_px: 17
+    threshold_rgb:
+    - 178
+    - 74
+    - 74
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -14
+    layout_jitter_x_px_max: 14
+    layout_jitter_y_px_min: -10
+    layout_jitter_y_px_max: 10
+    layout_jitter_min_margin_px: 26
+    method_palette_rgb:
+    - - 39
+      - 105
+      - 176
+    - - 203
+      - 79
+      - 72
+    - - 52
+      - 145
+      - 98
+    - - 138
+      - 91
+      - 184
+    - - 211
+      - 139
+      - 44
+    - - 48
+      - 147
+      - 168
+prompt:
+  shared:
+    bundle_id: charts_curve_panels_v1

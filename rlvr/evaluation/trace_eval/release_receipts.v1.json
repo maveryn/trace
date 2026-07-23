@@ -1,0 +1,114 @@
+{
+  "schema_version": "trace_eval_release_receipts_v1",
+  "release_id": "trace-paper-answer-only-rlvr",
+  "status": "reviewed_release_input_freeze",
+  "code_revisions": {
+    "producer": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+    "results_consolidation": "c28b706d7be5da62ee453375c9f559e99752e843",
+    "release_freeze": "191ce9802cf04d9fa1d5435a348871c946620753"
+  },
+  "canonical_files": [
+    {
+      "path": "rlvr/evaluation/requirements.txt",
+      "sha256": "6d8ae0a5a6c6ff60e6f56376a5f9b2b175f906753c2796d1a2292a02d9f89c1e",
+      "source_path": "evaluation/requirements-eval.txt",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "6d8ae0a5a6c6ff60e6f56376a5f9b2b175f906753c2796d1a2292a02d9f89c1e",
+      "copy_policy": "exact"
+    },
+    {
+      "path": "rlvr/evaluation/trace_eval/RESULTS.md",
+      "sha256": "601730dd3cdc55d14f43e58c7d82a48d31e7614ef521758c8799fbcabd07ca5a",
+      "source_path": "results/canonical/trace_eval_v1/release/README.md",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "933d291e330aa0077b07fb377044d52f26685c69055966c703fb50446b188424",
+      "copy_policy": "public_path_and_immutable_link_adaptation"
+    },
+    {
+      "path": "rlvr/evaluation/trace_eval/benchmark_provenance.v1.json",
+      "sha256": "6a1a8f8e39580cfc83f5c68f5fb38d9969cd73df29058a97bf5d33982d49da11",
+      "source_path": "evaluation/trace_eval/benchmark_provenance.v1.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "6a1a8f8e39580cfc83f5c68f5fb38d9969cd73df29058a97bf5d33982d49da11",
+      "copy_policy": "exact"
+    },
+    {
+      "path": "rlvr/evaluation/trace_eval/results.json",
+      "sha256": "569ea2463ace4c6b505d1fb168957e558667641810e90a8d9ede80f555823c98",
+      "source_path": "results/canonical/trace_eval_v1/release/results.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "569ea2463ace4c6b505d1fb168957e558667641810e90a8d9ede80f555823c98",
+      "copy_policy": "exact"
+    },
+    {
+      "path": "rlvr/evaluation/trace_eval/suite.v1.json",
+      "sha256": "b84262bcd2243d1d2879b2e02d9b49b17052659ea767df3d7303758f4d63de71",
+      "source_path": "evaluation/trace_eval/suite.v1.json",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "b84262bcd2243d1d2879b2e02d9b49b17052659ea767df3d7303758f4d63de71",
+      "copy_policy": "exact"
+    }
+  ],
+  "public_interfaces": [
+    {
+      "path": "rlvr/evaluation/scripts/build_release_results.py",
+      "source_path": "scripts/build_trace_eval_release_results.py",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "451de9b8c43d04cd5970c349c108b94007055556baf0ecd4508cf0df5904ed11",
+      "adaptation": "Public defaults target the curated tree while emitted provenance retains the producer-tree names required to reproduce canonical results bytes."
+    },
+    {
+      "path": "rlvr/evaluation/scripts/validate_release_inputs.py",
+      "adaptation": "Public offline validator for the suite, provenance matrix, canonical result aggregates, immutable archive receipts, and post-run patch boundary."
+    }
+  ],
+  "hugging_face_source_archives": [
+    {
+      "repository_id": "maveryn/trace-eval-runs",
+      "revision": "4178a839b689babe16f8ac36f0de7b1b2c5ef36c",
+      "run_id": "qwen2.5-vl-3b-comparison-temp06-seeds42-44-v1",
+      "immutable_tree_url": "https://huggingface.co/datasets/maveryn/trace-eval-runs/tree/4178a839b689babe16f8ac36f0de7b1b2c5ef36c/runs/qwen2.5-vl-3b-comparison-temp06-seeds42-44-v1",
+      "manifest_sha256": "73b2799b927526b5ff15b5b0a379d8c35305f704b90ac7722bc532aa0acb7fe8",
+      "result_sha256": "3a7acbf1d9baf3f32fe7ba7b4e522cc713a648fecf438eeae0319b013d8efda7"
+    },
+    {
+      "repository_id": "maveryn/trace-eval-runs",
+      "revision": "4178a839b689babe16f8ac36f0de7b1b2c5ef36c",
+      "run_id": "qwen2.5-vl-7b-comparison-temp06-seeds42-44-v1",
+      "immutable_tree_url": "https://huggingface.co/datasets/maveryn/trace-eval-runs/tree/4178a839b689babe16f8ac36f0de7b1b2c5ef36c/runs/qwen2.5-vl-7b-comparison-temp06-seeds42-44-v1",
+      "manifest_sha256": "0334afa738e441631591197e5e16a379bc6c0380d293122b4036dd5621d47b28",
+      "result_sha256": "578e574d68702af0b83a9c1962bd73c36f8887787cc9ac10a8f7da3d207c10ac"
+    },
+    {
+      "repository_id": "maveryn/trace-eval-runs",
+      "revision": "4ca25af7a4d7daa644e6f35e070dbed1af078321",
+      "run_id": "qwen2.5-vl-7b-rl-baselines-temp06-seeds42-44-v1",
+      "immutable_tree_url": "https://huggingface.co/datasets/maveryn/trace-eval-runs/tree/4ca25af7a4d7daa644e6f35e070dbed1af078321/runs/qwen2.5-vl-7b-rl-baselines-temp06-seeds42-44-v1",
+      "manifest_sha256": "ebef0bb8b07e9ec080843545874f5c2a8ca442faf8966102d2b99b65ad36672b",
+      "result_sha256": "7af92decffc261ad70bd2925632a4aeb3aa61a14cbc5974d285a264a32082c85"
+    }
+  ],
+  "evaluation_environment": {
+    "requirements_path": "rlvr/evaluation/requirements-runtime.txt",
+    "requirements_sha256": "51e44d2f7ad1cb6a0d49b1d9b6f30c8e42cb690a3fd47125b0b28449690edfb2",
+    "composes": [
+      "rlvr/requirements-cu128.txt",
+      "rlvr/evaluation/requirements.txt"
+    ],
+    "vlmevalkit": {
+      "repository": "https://github.com/open-compass/VLMEvalKit",
+      "revision": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+    },
+    "judge": {
+      "model_id": "Qwen/Qwen3-32B",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137"
+    }
+  },
+  "historical_exclusions": [
+    {
+      "path": "rlvr/experiments/final_answer_only_manifest.json",
+      "is_release_input": false,
+      "reason": "Historical Final25 workflow and older training runs; it is not an input to the canonical reruns."
+    }
+  ]
+}

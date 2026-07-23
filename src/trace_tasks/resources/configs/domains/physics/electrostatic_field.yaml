@@ -1,0 +1,125 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      clean_grid: 1.0
+      paper_grid: 1.0
+      dense_grid: 1.0
+    balanced_scene_variant_sampling: true
+    target_direction_weights:
+      east: 1.0
+      northeast: 1.0
+      north: 1.0
+      northwest: 1.0
+      west: 1.0
+      southwest: 1.0
+      south: 1.0
+      southeast: 1.0
+    balanced_target_direction_sampling: true
+    direction_option_letter_weights:
+      A: 1.0
+      B: 1.0
+      C: 1.0
+      D: 1.0
+      E: 1.0
+      F: 1.0
+      G: 1.0
+      H: 1.0
+    balanced_direction_option_letter_sampling: true
+    point_option_letter_weights:
+      A: 1.0
+      B: 1.0
+      C: 1.0
+      D: 1.0
+      E: 1.0
+      F: 1.0
+    balanced_point_option_letter_sampling: true
+    balanced_target_answer_sampling: true
+    potential_answer_support:
+    - -9
+    - -8
+    - -7
+    - -6
+    - -5
+    - -4
+    - -3
+    - -2
+    - -1
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    potential_contribution_support:
+    - -3
+    - -2
+    - -1
+    - 1
+    - 2
+    - 3
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    board_left_px: 58
+    board_top_px: 58
+    board_width_px: 760
+    board_height_px: 560
+    coord_extent: 5
+    grid_line_width_px: 1
+    dense_grid_line_width_px: 2
+    axis_width_px: 4
+    axis_width_px_min: 3
+    axis_width_px_max: 5
+    charge_radius_px: 30
+    point_radius_px: 14
+    candidate_point_radius_px: 10
+    label_font_size_px: 22
+    option_font_size_px: 25
+    note_font_size_px: 21
+    charge_font_size_px: 25
+    option_panel_left_px: 850
+    option_panel_top_px: 82
+    option_cell_width_px: 140
+    option_cell_height_px: 118
+    option_cell_gap_x_px: 22
+    option_cell_gap_y_px: 22
+    option_arrow_length_px: 64
+    option_arrow_width_px: 7
+    option_arrow_width_px_min: 6
+    option_arrow_width_px_max: 8
+    option_arrow_head_length_px: 20
+    option_arrow_head_width_px: 18
+    technical_diagram_min_protected_lab_distance: 8.0
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -14
+    layout_jitter_x_px_max: 14
+    layout_jitter_y_px_min: -14
+    layout_jitter_y_px_max: 24
+prompt:
+  shared:
+    bundle_id: physics_electrostatic_field_v1
+  task_overrides:
+    task_physics__electrostatic_field__field_direction_choice:
+      task_key: field_direction_choice_query
+    task_physics__electrostatic_field__zero_field_point_label:
+      task_key: zero_field_point_label_query
+    task_physics__electrostatic_field__potential_value:
+      task_key: potential_value_query

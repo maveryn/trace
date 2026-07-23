@@ -1,0 +1,165 @@
+{
+  "bundle_id": "charts_part_whole_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "part_whole_share_chart": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "part_whole_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "clockwise_span": [
+        "Moving clockwise around the chart, what is the combined share from category \"{start_category}\" through category \"{end_category}\", inclusive?",
+        "Use the clockwise chart order. Add every category from \"{start_category}\" through \"{end_category}\", including both endpoints.",
+        "Starting at category \"{start_category}\" and moving clockwise through category \"{end_category}\", what total share is covered?",
+        "Read the contiguous chart segment from \"{start_category}\" to \"{end_category}\" while moving clockwise. What is the sum of those shares?",
+        "What is the combined percentage for the clockwise run beginning with \"{start_category}\" and ending with \"{end_category}\"?"
+      ],
+      "counterclockwise_span": [
+        "Moving counterclockwise around the chart, what is the combined share from category \"{start_category}\" through category \"{end_category}\", inclusive?",
+        "Use the counterclockwise chart order. Add every category from \"{start_category}\" through \"{end_category}\", including both endpoints.",
+        "Starting at category \"{start_category}\" and moving counterclockwise through category \"{end_category}\", what total share is covered?",
+        "Read the contiguous chart segment from \"{start_category}\" to \"{end_category}\" while moving counterclockwise. What is the sum of those shares?",
+        "What is the combined percentage for the counterclockwise run beginning with \"{start_category}\" and ending with \"{end_category}\"?"
+      ],
+      "single": [
+        "Within the subset of categories {subset_category_list_text}, what percentage of that subset total is category \"{target_category}\"?",
+        "Use only categories {subset_category_list_text} as the denominator. What percent of that subset is category \"{target_category}\"?",
+        "Restrict the total to categories {subset_category_list_text}. What share of that restricted total belongs to \"{target_category}\"?",
+        "For the named subset {subset_category_list_text}, compute the percentage contributed by category \"{target_category}\".",
+        "Treat categories {subset_category_list_text} as 100% of the subset. What percentage is category \"{target_category}\"?"
+      ],
+      "clockwise_sector_angle": [
+        "Moving clockwise around the chart, what central angle in degrees is covered from category \"{start_category}\" through category \"{end_category}\", inclusive?",
+        "Use the clockwise chart order. Convert the combined share from \"{start_category}\" through \"{end_category}\", including both endpoints, into a central angle in degrees.",
+        "Starting at category \"{start_category}\" and moving clockwise through category \"{end_category}\", what central angle does that sector span cover?",
+        "Read the contiguous chart segment from \"{start_category}\" to \"{end_category}\" while moving clockwise. What is its central angle in degrees?",
+        "What central angle corresponds to the clockwise run beginning with \"{start_category}\" and ending with \"{end_category}\"?"
+      ],
+      "counterclockwise_sector_angle": [
+        "Moving counterclockwise around the chart, what central angle in degrees is covered from category \"{start_category}\" through category \"{end_category}\", inclusive?",
+        "Use the counterclockwise chart order. Convert the combined share from \"{start_category}\" through \"{end_category}\", including both endpoints, into a central angle in degrees.",
+        "Starting at category \"{start_category}\" and moving counterclockwise through category \"{end_category}\", what central angle does that sector span cover?",
+        "Read the contiguous chart segment from \"{start_category}\" to \"{end_category}\" while moving counterclockwise. What is its central angle in degrees?",
+        "What central angle corresponds to the counterclockwise run beginning with \"{start_category}\" and ending with \"{end_category}\"?"
+      ],
+      "clockwise_adjacent_transfer": [
+        "Use category \"{source_category}\" as the source and the category immediately clockwise from it as the target. If {transfer_delta} points move from source to target, what is their absolute difference afterward?",
+        "Find category \"{source_category}\", then find the adjacent category immediately clockwise from it. Move {transfer_delta} percentage points from \"{source_category}\" to that adjacent category. What absolute gap remains?",
+        "In clockwise chart order, transfer {transfer_delta} points from category \"{source_category}\" to its immediate neighbor. What is their final absolute difference?",
+        "Around the chart, choose source category \"{source_category}\" and target its immediate clockwise neighbor. After moving {transfer_delta} points from source to target, what share gap remains?",
+        "Locate category \"{source_category}\" and the category directly clockwise from it. If {transfer_delta} points move from \"{source_category}\" to that neighbor, what is their absolute difference afterward?"
+      ],
+      "counterclockwise_adjacent_transfer": [
+        "Use category \"{source_category}\" as the source and the category immediately counterclockwise from it as the target. If {transfer_delta} points move from source to target, what is their absolute difference afterward?",
+        "Find category \"{source_category}\", then find the adjacent category immediately counterclockwise from it. Move {transfer_delta} percentage points from \"{source_category}\" to that adjacent category. What absolute gap remains?",
+        "In counterclockwise chart order, transfer {transfer_delta} points from category \"{source_category}\" to its immediate neighbor. What is their final absolute difference?",
+        "Around the chart, choose source category \"{source_category}\" and target its immediate counterclockwise neighbor. After moving {transfer_delta} points from source to target, what share gap remains?",
+        "Locate category \"{source_category}\" and the category directly counterclockwise from it. If {transfer_delta} points move from \"{source_category}\" to that neighbor, what is their absolute difference afterward?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:clockwise_span": {
+      "answer_hint": "set \"answer\" to the requested integer share value; omit the percent sign",
+      "annotation_hint": "set \"annotation\" to an object mapping each included category label to the [x,y] pixel point at the center of its chart segment",
+      "json_example": "{\"annotation\":{\"Aster\":[565,236],\"Birch\":[716,314],\"Cedar\":[680,472],\"Dune\":[518,436]},\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    },
+    "query:counterclockwise_span": {
+      "answer_hint": "set \"answer\" to the requested integer share value; omit the percent sign",
+      "annotation_hint": "set \"annotation\" to an object mapping each included category label to the [x,y] pixel point at the center of its chart segment",
+      "json_example": "{\"annotation\":{\"Aster\":[565,236],\"Birch\":[716,314],\"Cedar\":[680,472],\"Dune\":[518,436]},\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    },
+    "query:single": {
+      "answer_hint": "set \"answer\" to the requested integer percentage; omit the percent sign",
+      "annotation_hint": "set \"annotation\" to an object mapping each denominator-subset category label to the [x,y] pixel point at the center of its chart segment",
+      "json_example": "{\"annotation\":{\"Aster\":[565,236],\"Birch\":[716,314],\"Cedar\":[680,472]},\"answer\":40}",
+      "json_example_answer_only": "{\"answer\":40}"
+    },
+    "query:clockwise_sector_angle": {
+      "answer_hint": "set \"answer\" to the requested central angle in degrees as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping each included category label to the [x,y] pixel point at the center of its chart segment",
+      "json_example": "{\"annotation\":{\"Aster\":[565,236],\"Birch\":[716,314],\"Cedar\":[680,472]},\"answer\":108}",
+      "json_example_answer_only": "{\"answer\":108}"
+    },
+    "query:counterclockwise_sector_angle": {
+      "answer_hint": "set \"answer\" to the requested central angle in degrees as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping each included category label to the [x,y] pixel point at the center of its chart segment",
+      "json_example": "{\"annotation\":{\"Aster\":[565,236],\"Birch\":[716,314],\"Cedar\":[680,472]},\"answer\":108}",
+      "json_example_answer_only": "{\"answer\":108}"
+    },
+    "query:clockwise_adjacent_transfer": {
+      "answer_hint": "set \"answer\" to the requested absolute difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping the source category label and adjacent target category label to [x,y] pixel points at the centers of their chart segments",
+      "json_example": "{\"annotation\":{\"Ruby\":[590,250],\"Crimson\":[740,380]},\"answer\":13}",
+      "json_example_answer_only": "{\"answer\":13}"
+    },
+    "query:counterclockwise_adjacent_transfer": {
+      "answer_hint": "set \"answer\" to the requested absolute difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping the source category label and adjacent target category label to [x,y] pixel points at the centers of their chart segments",
+      "json_example": "{\"annotation\":{\"Ruby\":[590,250],\"Crimson\":[740,380]},\"answer\":13}",
+      "json_example_answer_only": "{\"answer\":13}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "chart_order_phrase": {
+      "type": "string"
+    },
+    "start_category": {
+      "type": "string"
+    },
+    "end_category": {
+      "type": "string"
+    },
+    "subset_category_list_text": {
+      "type": "string"
+    },
+    "target_category": {
+      "type": "string"
+    },
+    "source_category": {
+      "type": "string"
+    },
+    "source_order_direction": {
+      "type": "string"
+    },
+    "transfer_delta": {
+      "type": "integer"
+    }
+  }
+}

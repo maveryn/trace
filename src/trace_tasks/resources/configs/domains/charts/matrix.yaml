@@ -1,0 +1,73 @@
+generation:
+  shared:
+    row_count_min: 4
+    row_count_max: 8
+    column_count_min: 4
+    column_count_max: 8
+    scene_variant_weights:
+      confusion_matrix_counts: 1.0
+      annotated_heatmap_table: 1.0
+      correlation_matrix_signed: 1.0
+      triangular_pairwise_matrix: 1.0
+      clustered_block_matrix: 1.0
+    palette_variant_weights:
+      blue_sequential: 1.0
+      viridis: 1.0
+      yellow_purple: 1.0
+      red_blue_diverging: 1.0
+      gray_print: 1.0
+      high_contrast: 1.0
+    header_layout_weights:
+      top_rotated_columns: 1.0
+      top_horizontal_columns: 1.0
+      dual_headers: 1.0
+    grid_style_weights:
+      thin_grid: 1.0
+      gapped_tiles: 1.0
+      heavy_block_lines: 1.0
+      minimal_grid: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_palette_variant_sampling: true
+    balanced_header_layout_sampling: true
+    balanced_grid_style_sampling: true
+rendering:
+  shared:
+    chart_context_profile: report_paragraph
+    canvas_width: 1368
+    canvas_height: 928
+    outer_margin_px: 38
+    panel_padding_px: 26
+    title_band_height_px: 60
+    legend_height_px: 56
+    row_label_width_px: 166
+    col_label_height_px: 90
+    cell_gap_px: 2
+    cell_border_width_px: 1
+    title_font_size_px: 29
+    header_font_size_px: 18
+    cell_font_size_px: 20
+    legend_font_size_px: 16
+    inactive_cell_rgb:
+    - 245
+    - 246
+    - 248
+    highlight_rgb:
+    - 236
+    - 180
+    - 34
+    grid_rgb_options:
+    - - 86
+      - 94
+      - 106
+    - - 76
+      - 92
+      - 108
+    - - 98
+      - 90
+      - 78
+    - - 76
+      - 100
+      - 92
+prompt:
+  shared:
+    bundle_id: charts_matrix_v1

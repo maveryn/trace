@@ -1,0 +1,13 @@
+# Complete TRACE evaluation environment boundary. Install this file from the
+# repository root; it composes the canonical CUDA/training base with the
+# supplemental CPU-side benchmark dependencies.
+-r ../requirements-cu128.txt
+-r requirements.txt
+
+# Direct evaluation dependencies not supplied by the two included files.
+openpyxl==3.1.5
+requests==2.34.2
+
+# VLMEvalKit is deliberately not installed here. setup_trace_eval_env.sh
+# clones and patches its checkout, then puts that checkout on PYTHONPATH. The
+# required source revision is a8b12bf1c3737a33fc1de967c202f9c592b22e86.

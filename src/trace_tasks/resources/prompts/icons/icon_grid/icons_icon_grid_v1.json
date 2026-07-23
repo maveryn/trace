@@ -1,0 +1,94 @@
+{
+  "bundle_id": "icons_icon_grid_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_icon_grid": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "category_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "distinct_type_count": [
+        "How many different icon types are shown in the grid?",
+        "How many different types of icons are shown in the grid?",
+        "Count the different icon types shown in the grid.",
+        "What is the number of distinct icon types in the grid?",
+        "How many unique icon types appear in the grid?"
+      ],
+      "distinct_color_count": [
+        "How many different icon colors are shown in the grid?",
+        "How many different colors of icons are shown in the grid?",
+        "Count the different icon colors shown in the grid.",
+        "What is the number of distinct icon colors in the grid?",
+        "How many unique icon colors appear in the grid?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "json_example": "{\"annotation\":[[116,128,208,220],[324,128,416,220]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "scene:visible_icon_grid": {
+      "object_description": "a visible grid of icon cells"
+    },
+    "query:distinct_type_count": {
+      "annotation_hint": "set \"annotation\" to one whole grid-cell bounding box [x0, y0, x1, y1] in image pixel coordinates for each different icon type; for each type, choose the representative cell in the topmost row, breaking ties left to right"
+    },
+    "query:distinct_color_count": {
+      "annotation_hint": "set \"annotation\" to one whole grid-cell bounding box [x0, y0, x1, y1] in image pixel coordinates for each different icon color; for each color, choose the representative cell in the topmost row, breaking ties left to right"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:visible_icon_grid": [
+      "object_description"
+    ],
+    "query:distinct_type_count": [
+      "annotation_hint"
+    ],
+    "query:distinct_color_count": [
+      "annotation_hint"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

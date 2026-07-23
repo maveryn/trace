@@ -1,0 +1,326 @@
+{
+  "bundle_id": "graph_node_link_relation_v1",
+  "schema_version": "v0",
+  "task_templates": {
+    "same_component_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "largest_component_size_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "reachable_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "reachable_count_after_edge_edit_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "common_neighbor_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "component_size_after_edge_edit_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "unique_cycle_size_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "largest_chordless_cycle_size_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "hamiltonian_cycle_neighbor_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "edge_attribute_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "unique_node_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:single_graph_relation": [
+      "object_description"
+    ],
+    "query:same_component_count": [
+      "query_label"
+    ],
+    "query:largest_component_size": [],
+    "query:reachable_count": [
+      "query_label"
+    ],
+    "query:reachable_count_after_edge_removal": [
+      "edit_label_a",
+      "edit_label_b",
+      "query_label"
+    ],
+    "query:reachable_count_after_edge_addition": [
+      "edit_label_a",
+      "edit_label_b",
+      "query_label"
+    ],
+    "query:common_neighbor_count": [
+      "query_label_a",
+      "query_label_b"
+    ],
+    "query:common_successor_count": [
+      "query_label_a",
+      "query_label_b"
+    ],
+    "query:common_predecessor_count": [
+      "query_label_a",
+      "query_label_b"
+    ],
+    "query:component_size_after_edge_removal": [
+      "edit_label_a",
+      "edit_label_b",
+      "query_label"
+    ],
+    "query:component_size_after_edge_addition": [
+      "edit_label_a",
+      "edit_label_b",
+      "query_label"
+    ],
+    "query:unique_cycle_size": [],
+    "query:largest_chordless_cycle_size": [],
+    "query:next_in_hamiltonian_cycle_label": [
+      "orientation_start_label",
+      "orientation_final_label"
+    ],
+    "query:previous_in_hamiltonian_cycle_label": [
+      "orientation_start_label",
+      "orientation_final_label"
+    ],
+    "query:edge_between_nodes_label": [
+      "source_label",
+      "target_label"
+    ],
+    "query:directed_edge_between_nodes_label": [
+      "source_label",
+      "target_label"
+    ],
+    "query:unique_neighbor_label": [
+      "query_label"
+    ],
+    "query:unique_successor_label": [
+      "query_label"
+    ],
+    "query:unique_predecessor_label": [
+      "query_label"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "single_graph_relation": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "same_component_count": [
+      "How many nodes, including node {query_label} itself, are in the same connected component as {query_label}?",
+      "Count the nodes in the connected component containing {query_label}, including {query_label}.",
+      "What is the size of the connected component that contains node {query_label}?",
+      "For node {query_label}, how many nodes are connected to it in the same component, including itself?",
+      "How many labeled nodes belong to node {query_label}'s connected component?"
+    ],
+    "largest_component_size": [
+      "How many nodes are in the largest connected component?",
+      "Count the nodes in the largest connected component.",
+      "What is the size of the largest connected component?",
+      "Find the largest connected component. How many nodes does it contain?",
+      "How many labeled nodes belong to the largest connected component?"
+    ],
+    "reachable_count": [
+      "How many nodes, excluding node {query_label} itself, are reachable from {query_label} in the directed graph?",
+      "From node {query_label}, how many other nodes are reachable in the directed graph?",
+      "What is the number of nodes reachable from {query_label} along directed edges, excluding {query_label} itself?",
+      "Starting at node {query_label}, how many other nodes are reachable?",
+      "How many labeled nodes besides {query_label} can be reached from {query_label}?"
+    ],
+    "reachable_count_after_edge_removal": [
+      "If the arrow from node {edit_label_a} to node {edit_label_b} were removed, how many nodes, including node {query_label} itself, would be reachable from {query_label} by following arrows?",
+      "After removing the arrow from node {edit_label_a} to node {edit_label_b}, how many nodes could be reached from {query_label}, including {query_label}?",
+      "Imagine deleting the directed edge from node {edit_label_a} to node {edit_label_b}. How many labeled nodes would remain reachable from {query_label} when arrow directions are followed?",
+      "If node {edit_label_a} no longer pointed to node {edit_label_b}, how many nodes would be reachable from node {query_label}, including itself?",
+      "Remove the arrow from node {edit_label_a} to node {edit_label_b}. Following arrow directions from {query_label}, how many nodes would be reachable?"
+    ],
+    "reachable_count_after_edge_addition": [
+      "If an arrow were added from node {edit_label_a} to node {edit_label_b}, how many nodes, including node {query_label} itself, would be reachable from {query_label} by following arrows?",
+      "After adding an arrow from node {edit_label_a} to node {edit_label_b}, how many nodes could be reached from {query_label}, including {query_label}?",
+      "Imagine drawing a new directed edge from node {edit_label_a} to node {edit_label_b}. How many labeled nodes would be reachable from {query_label} when arrow directions are followed?",
+      "If node {edit_label_a} pointed to node {edit_label_b}, how many nodes would be reachable from node {query_label}, including itself?",
+      "Add an arrow from node {edit_label_a} to node {edit_label_b}. Following arrow directions from {query_label}, how many nodes would be reachable?"
+    ],
+    "common_neighbor_count": [
+      "How many nodes are connected to both node {query_label_a} and node {query_label_b}?",
+      "Count the nodes that are neighbors of both node {query_label_a} and node {query_label_b}.",
+      "What is the number of labeled nodes adjacent to both node {query_label_a} and node {query_label_b}?",
+      "How many shared neighboring nodes do node {query_label_a} and node {query_label_b} have?",
+      "Find the nodes directly connected to both node {query_label_a} and node {query_label_b}. How many are there?"
+    ],
+    "common_successor_count": [
+      "Following outgoing arrows, how many nodes are direct successors of both node {query_label_a} and node {query_label_b}?",
+      "How many labeled nodes have incoming arrows from both node {query_label_a} and node {query_label_b}?",
+      "Count the common outgoing-arrow targets of node {query_label_a} and node {query_label_b}.",
+      "What is the number of nodes that both node {query_label_a} and node {query_label_b} point to directly?",
+      "How many shared direct successors do node {query_label_a} and node {query_label_b} have?"
+    ],
+    "common_predecessor_count": [
+      "How many nodes point directly to both node {query_label_a} and node {query_label_b}?",
+      "Count the common direct predecessors of node {query_label_a} and node {query_label_b}.",
+      "What is the number of labeled nodes with outgoing arrows to both node {query_label_a} and node {query_label_b}?",
+      "How many nodes are direct predecessors of both node {query_label_a} and node {query_label_b}?",
+      "Find the nodes that send arrows to both node {query_label_a} and node {query_label_b}. How many are there?"
+    ],
+    "component_size_after_edge_removal": [
+      "If the edge between node {edit_label_a} and node {edit_label_b} were removed, how many nodes, including node {query_label} itself, would be in the same connected component as {query_label}?",
+      "After removing the edge between node {edit_label_a} and node {edit_label_b}, what would be the size of node {query_label}'s connected component?",
+      "Imagine deleting the edge between node {edit_label_a} and node {edit_label_b}. How many labeled nodes would remain connected to node {query_label}, including {query_label}?",
+      "If node {edit_label_a} and node {edit_label_b} were no longer directly connected by an edge, how many nodes would be in the component containing node {query_label}?",
+      "Remove the edge between node {edit_label_a} and node {edit_label_b}. How many nodes would belong to node {query_label}'s connected component?"
+    ],
+    "component_size_after_edge_addition": [
+      "If an edge were added between node {edit_label_a} and node {edit_label_b}, how many nodes, including node {query_label} itself, would be in the same connected component as {query_label}?",
+      "After adding an edge between node {edit_label_a} and node {edit_label_b}, what would be the size of node {query_label}'s connected component?",
+      "Imagine drawing a new edge between node {edit_label_a} and node {edit_label_b}. How many labeled nodes would be connected to node {query_label}, including {query_label}?",
+      "If node {edit_label_a} and node {edit_label_b} became directly connected by an edge, how many nodes would be in the component containing node {query_label}?",
+      "Add an edge between node {edit_label_a} and node {edit_label_b}. How many nodes would belong to node {query_label}'s connected component?"
+    ],
+    "unique_cycle_size": [
+      "The graph contains exactly one cycle. How many nodes are in that cycle?",
+      "How many nodes lie on the graph's unique cycle?",
+      "Count the nodes that are part of the only cycle in the graph.",
+      "What is the size, in nodes, of the unique cycle?",
+      "Find the single cycle in the graph. How many nodes does it include?"
+    ],
+    "largest_chordless_cycle_size": [
+      "A chordless cycle has no extra edge connecting two non-adjacent nodes in the cycle. What is the size, in nodes, of the largest chordless cycle?",
+      "Find the largest chordless cycle, meaning a cycle with no chords between non-adjacent cycle nodes. How many nodes does it contain?",
+      "Among cycles with no extra edge joining non-adjacent nodes on the cycle, what is the largest cycle size?",
+      "Count the nodes in one largest chordless cycle. A chordless cycle has no edge between non-neighboring nodes on that cycle.",
+      "What is the maximum number of nodes in a chordless cycle in this graph?"
+    ],
+    "next_in_hamiltonian_cycle_label": [
+      "Use the Hamiltonian-cycle direction that starts at node {orientation_start_label} and returns to it from node {orientation_final_label}. Which node comes immediately after the starting node {orientation_start_label} along this cycle?",
+      "Start at {orientation_start_label} and move around the Hamiltonian cycle so that {orientation_final_label} is last before returning to the start. What node is immediately after {orientation_start_label} along that cycle?",
+      "With {orientation_start_label} as the first cycle node and {orientation_final_label} as the final node before returning, which node follows {orientation_start_label} along the Hamiltonian cycle?",
+      "Traverse the Hamiltonian cycle from {orientation_start_label} through to {orientation_final_label}. What is the next node after {orientation_start_label} on that cycle?",
+      "In the stated start-to-final Hamiltonian-cycle direction, which node comes after the start node {orientation_start_label}?"
+    ],
+    "previous_in_hamiltonian_cycle_label": [
+      "Use the Hamiltonian-cycle direction that starts at node {orientation_start_label} and returns to it from node {orientation_final_label}. Which node comes immediately before the final node {orientation_final_label} along this cycle?",
+      "Start at {orientation_start_label} and move around the Hamiltonian cycle so that {orientation_final_label} is last before returning to the start. What node is immediately before {orientation_final_label} along that cycle?",
+      "With {orientation_start_label} as the first cycle node and {orientation_final_label} as the final node before returning, which node precedes {orientation_final_label} along the Hamiltonian cycle?",
+      "Traverse the Hamiltonian cycle from {orientation_start_label} through to {orientation_final_label}. What is the previous node before {orientation_final_label} on that cycle?",
+      "In the stated start-to-final Hamiltonian-cycle direction, which node comes before the final node {orientation_final_label}?"
+    ],
+    "edge_between_nodes_label": [
+      "What label is shown on the edge between node {source_label} and node {target_label}?",
+      "Read the edge connecting node {source_label} and node {target_label}. What label is on it?",
+      "Which text label appears on the edge between {source_label} and {target_label}?",
+      "Find the edge joining node {source_label} to node {target_label}. What label does it show?",
+      "What is the visible label attached to the edge between node {source_label} and node {target_label}?"
+    ],
+    "directed_edge_between_nodes_label": [
+      "What label is shown on the arrow from node {source_label} to node {target_label}?",
+      "Read the directed edge from node {source_label} to node {target_label}. What label is on it?",
+      "Which text label appears on the arrow from {source_label} to {target_label}?",
+      "Find the arrow from node {source_label} to node {target_label}. What label does it show?",
+      "What is the visible label attached to the arrow from node {source_label} to node {target_label}?"
+    ],
+    "unique_neighbor_label": [
+      "Which node is the only neighbor of node {query_label}?",
+      "Node {query_label} has exactly one neighbor. What is that neighbor's label?",
+      "Find the single node connected directly to node {query_label}. Which label does it have?",
+      "What label is on the only node adjacent to node {query_label}?",
+      "Identify the unique node joined by an edge to node {query_label}. What is its label?"
+    ],
+    "unique_successor_label": [
+      "Which node is the only outgoing-arrow target of node {query_label}?",
+      "Node {query_label} has exactly one direct successor. What is that successor's label?",
+      "Following the one arrow leaving node {query_label}, which node does it reach?",
+      "What label is on the only node that node {query_label} points to directly?",
+      "Identify the unique direct successor of node {query_label}. What is its label?"
+    ],
+    "unique_predecessor_label": [
+      "Which node is the only direct predecessor of node {query_label}?",
+      "Node {query_label} has exactly one incoming arrow. What is the source node's label?",
+      "Find the one node with an arrow directly into node {query_label}. Which label does it have?",
+      "What label is on the only node that points directly to node {query_label}?",
+      "Identify the unique direct predecessor of node {query_label}. What is its label?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

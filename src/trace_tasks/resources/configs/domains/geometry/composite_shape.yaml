@@ -1,0 +1,83 @@
+rendering:
+  shared:
+    graph_cells_min: 6
+    graph_cells_max: 20
+    line_width: 4
+    line_width_min: 2
+    line_width_max: 5
+    label_offset_px: 14
+    label_font_size_min: 14
+    label_font_size_max: 32
+    label_font_size: 24
+    small_label_font_size: 22
+    label_stroke_width: 0
+    label_stroke_width_min: 0
+    label_stroke_width_max: 0
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+  task_overrides:
+    task_geometry__composite_shape__l_profile_area:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+      point_label_font_size: 22
+    task_geometry__composite_shape__rectangle_triangle_cutout_area:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+      point_label_font_size: 22
+    task_geometry__composite_shape__house_outline_perimeter:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+      point_label_font_size: 22
+    task_geometry__composite_shape__tabbed_rectilinear_perimeter:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+      point_label_font_size: 22
+    task_geometry__composite_shape__rectangle_quarter_sector_cutout_area:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+    task_geometry__composite_shape__rectangle_semicircle_area:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+    task_geometry__composite_shape__rectangle_quarter_sector_cutout_perimeter:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+    task_geometry__composite_shape__rectangle_semicircle_perimeter:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+    task_geometry__composite_shape__missing_width_from_semicircle_area:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+    task_geometry__composite_shape__sector_angle_value:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 24
+      small_label_font_size: 22
+prompt:
+  shared:
+    bundle_id: geometry_composite_shape_v1
+    scene_key: composite_shape_scene
+    task_key: composite_shape_query

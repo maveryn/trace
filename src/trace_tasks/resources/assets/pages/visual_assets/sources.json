@@ -1,0 +1,48 @@
+{
+  "asset_version": "pages_visual_assets_v1",
+  "generated_by": "scripts/build_pages_visual_assets.py",
+  "source_policy": "Pages visual assets are vendored from allowlisted permissive sources, used as non-answer decorative/context visuals, and sampled only from local manifests at runtime.",
+  "allowed_licenses": [
+    "CC0-1.0",
+    "Apache-2.0",
+    "MIT"
+  ],
+  "asset_count": 493,
+  "sources": {
+    "noto_emoji": {
+      "description": "Google Noto Emoji SVG image resources selected for page decorative assets.",
+      "repository_url": "https://github.com/googlefonts/noto-emoji",
+      "license": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "local_license": "licenses/APACHE-2.0.txt",
+      "source_revision": "main"
+    },
+    "material_design_icons": {
+      "description": "Google Material Design Icons SVGs selected for page badges and section illustrations.",
+      "repository_url": "https://github.com/google/material-design-icons",
+      "license": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "local_license": "licenses/APACHE-2.0.txt",
+      "source_revision": "master"
+    }
+  },
+  "source_counts": {
+    "material_design_icons": 240,
+    "noto_emoji": 253
+  },
+  "role_counts": {
+    "hero_anchor": 234,
+    "section_illustration": 493,
+    "badge_spot": 493
+  },
+  "role_minimums": {
+    "hero_anchor": 100,
+    "section_illustration": 100,
+    "badge_spot": 100
+  },
+  "role_maximums": {
+    "hero_anchor": 500,
+    "section_illustration": 500,
+    "badge_spot": 500
+  }
+}

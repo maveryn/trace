@@ -1,0 +1,95 @@
+{
+  "bundle_id": "symbolic_organic_structure_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "organic_structure": [
+        "An organic-structure notation panel contains {object_description}.",
+        "The panel contains {object_description}.",
+        "This notation item contains {object_description}.",
+        "The visual panel contains {object_description}.",
+        "The displayed panel contains {object_description}."
+      ]
+    },
+    "task": {
+      "organic_structure_bond_order_count": [
+        "How many {target_bond_order} bonds are shown?",
+        "Count the {target_bond_order} bonds in the structure.",
+        "What is the number of shown {target_bond_order} bonds?",
+        "How many bonds have {target_bond_order}-bond notation?",
+        "Count only the visible {target_bond_order} bonds."
+      ],
+      "organic_structure_ring_size_count": [
+        "How many {target_ring_name} rings are shown?",
+        "Count the {target_ring_name} rings in the structure.",
+        "What is the number of shown {target_ring_name} rings?",
+        "How many rings have a {target_ring_name} shape?",
+        "Count only the visible {target_ring_name} rings."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "target_bond_order": {"type": "string"},
+    "target_ring_name": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:organic_structure": [
+      "object_description"
+    ],
+    "task:organic_structure_bond_order_count": [
+      "target_bond_order"
+    ],
+    "task:organic_structure_ring_size_count": [
+      "target_ring_name"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_clean_worksheet": "a clean worksheet-style organic skeletal structure with line-angle bonds, rings, and occasional atom or substituent labels",
+    "object_description_exam_scan": "an exam-scan-style organic skeletal structure with line-angle bonds, rings, and occasional atom or substituent labels",
+    "object_description_notebook_problem": "a notebook-style organic skeletal structure with line-angle bonds, rings, and occasional atom or substituent labels",
+    "annotation_hint_bond_order_count": "set \"annotation\" to a list of bond segments; each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel-space point at a semantic bond endpoint",
+    "answer_hint_bond_order_count": "set \"answer\" to the integer count of matching bonds",
+    "json_example_bond_order_count": "{\"annotation\":[[[420,260],[512,310]],[[610,340],[704,388]]],\"answer\":2}",
+    "json_example_answer_only_bond_order_count": "{\"answer\":2}",
+    "annotation_hint_ring_size_count": "set \"annotation\" to an array containing the pixel-space bounding box [x0, y0, x1, y1] around every matching ring",
+    "answer_hint_ring_size_count": "set \"answer\" to the integer count of matching rings",
+    "json_example_ring_size_count": "{\"annotation\":[[220,250,340,370],[520,250,640,370]],\"answer\":2}",
+    "json_example_answer_only_ring_size_count": "{\"answer\":2}",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+  }
+}

@@ -1,0 +1,87 @@
+generation:
+  shared:
+    category_count_min: 3
+    category_count_max: 6
+    series_count_min: 3
+    series_count_max: 6
+    max_bar_count: 24
+    value_min: 6
+    value_max: 36
+    interval_category_count_min: 2
+    interval_category_count_max: 4
+    condition_category_count_min: 4
+    condition_category_count_max: 6
+    condition_series_count_min: 4
+    condition_series_count_max: 6
+    condition_count_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+rendering:
+  shared:
+    chart_context_profile: dense_clean_minimal
+    canvas_width: 1120
+    canvas_height: 760
+    plot_margin_left_px: 104
+    plot_margin_right_px: 190
+    plot_margin_top_px: 68
+    plot_margin_bottom_px: 124
+    axis_line_width_px_min: 2
+    axis_line_width_px_max: 3
+    grid_line_width_px_min: 1
+    grid_line_width_px_max: 2
+    bar_edge_width_px_min: 1
+    bar_edge_width_px_max: 2
+    tick_length_px: 8
+    tick_font_size_px: 15
+    label_font_size_px: 17
+    value_font_size_px: 14
+    legend_font_size_px: 17
+    label_stroke_width_px_min: 1
+    label_stroke_width_px_max: 2
+    z_axis_tick_step: 10
+    depth_axis_dx_px_min: 28
+    depth_axis_dx_px_max: 40
+    depth_axis_dy_px_min: 20
+    depth_axis_dy_px_max: 28
+    bar_face_dx_px_min: 12
+    bar_face_dx_px_max: 20
+    bar_face_dy_px_min: 9
+    bar_face_dy_px_max: 15
+    bar_width_px_min: 34
+    bar_width_px_max: 40
+    bar_style_variants:
+    - solid
+    - front_highlight
+    - side_stripes
+    - top_ridge
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -14
+    layout_jitter_x_px_max: 14
+    layout_jitter_y_px_min: -10
+    layout_jitter_y_px_max: 10
+    layout_jitter_min_margin_px: 32
+    series_palette_rgb:
+    - - 62
+      - 121
+      - 190
+    - - 219
+      - 117
+      - 68
+    - - 73
+      - 157
+      - 99
+    - - 151
+      - 100
+      - 186
+    - - 206
+      - 166
+      - 63
+    - - 73
+      - 158
+      - 176
+prompt:
+  shared:
+    bundle_id: charts_bar_3d_v1

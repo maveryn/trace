@@ -1,0 +1,75 @@
+generation:
+  shared:
+    option_count_min: 4
+    option_count_max: 4
+    grid_size: 6
+    grid_size_min: 4
+    grid_size_max: 5
+    mark_count_min: 3
+    mark_count_max: 5
+    cut_count_min: 1
+    cut_count_max: 2
+    sheet_mark_count_min: 2
+    sheet_mark_count_max: 5
+    overlap_count_min: 1
+    overlap_count_max: 2
+    fold_count_options:
+    - 1
+    - 2
+    fold_count_weights:
+      '1': 1.0
+      '2': 1.0
+    fold_axis_options:
+    - vertical
+    - horizontal
+    fold_axis_weights:
+      vertical: 1.0
+      horizontal: 1.0
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 780
+    scene_margin_left_px: 52
+    scene_margin_right_px: 52
+    scene_margin_top_px: 42
+    scene_margin_bottom_px: 42
+    reference_panel_height_px: 260
+    reference_panel_padding_px: 22
+    reference_to_options_gap_px: 20
+    option_gap_px: 30
+    option_row_gap_px: 12
+    option_label_gap_px: 10
+    source_paper_size_px: 160
+    source_gap_px: 76
+    option_paper_size_px: 160
+    paper_corner_radius_px: 18
+    panel_corner_radius_px: 28
+    border_width_px: 3
+    border_width_px_min: 2
+    border_width_px_max: 4
+    option_label_font_size_px: 28
+    combine_symbol_font_size_px: 40
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    cut_hole_shape_options:
+    - circle
+    - square
+    - diamond
+    - rounded_square
+    cut_hole_shape_weights:
+      circle: 1.0
+      square: 1.0
+      diamond: 1.0
+      rounded_square: 1.0
+    mark_shape_options:
+    - circle
+    - square
+    - diamond
+    - rounded_square
+prompt:
+  shared:
+    bundle_id: puzzles_sheet_transform_v1
+    scene_key: sheet_transform
+visual:
+  noise:
+    apply_prob: 0.0

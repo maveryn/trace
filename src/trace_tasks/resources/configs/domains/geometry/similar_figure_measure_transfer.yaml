@@ -1,0 +1,33 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 580
+    line_width: 3
+    label_font_size: 22
+    small_label_font_size: 18
+    readout_font_family: roboto
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+prompt:
+  shared: {}
+  task_overrides:
+    corresponding_side_value:
+      bundle_id: geometry_similar_figure_measure_transfer_v0
+      scene_key: similar_figure_measure_transfer_scene
+      task_key: corresponding_side_value_query
+    area_scale_side_length_value:
+      bundle_id: geometry_similar_figure_measure_transfer_v0
+      scene_key: similar_figure_measure_transfer_scene
+      task_key: area_scale_side_length_value_query
+    variable_value:
+      bundle_id: geometry_geo3k_marked_equations_v0
+      scene_key: geo3k_similar_figure_scene
+      task_key: variable_value_query

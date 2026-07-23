@@ -1,0 +1,1 @@
+"""Ray-optics scene package."""

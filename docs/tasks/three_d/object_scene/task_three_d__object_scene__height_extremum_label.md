@@ -1,0 +1,45 @@
+# `task_three_d__object_scene__height_extremum_label`
+
+## Summary
+- Domain: `three_d`
+- Scene id: `object_scene`
+- Package: `src/trace_tasks/tasks/three_d/object_scene/`
+- Supported `query_id`: `highest_above_floor`, `lowest_above_floor`
+- Answer type: `option_letter`
+- Annotation type: `bbox`
+- Annotation schema: `bbox`
+
+## Program Contract
+
+Program: `select(label(candidate_objects, extremum(world_height_above_floor, requested_extremum))); scene=object_scene; scope=height_extremum_label`
+
+Candidate set: the visible 3D objects, surfaces, room/street/warehouse structures, spatial anchors, markers, and labeled options inside the `height_extremum_label` objective scope.
+Operands: visible scene state and prompt-bound operands named by `label`, `candidate_objects`, `extremum`, `world_height_above_floor`, `requested_extremum`, `object_scene`, `height_extremum_label` plus the active `query_id` branch.
+Operation: evaluate `select` over the candidate set using the finalized 3D scene state, camera projection, object identities, spatial relations, counts, distances, or option-selection constraints encoded in the program expression; generation enforces a unique final answer.
+Output binding: `answer` uses the `option_letter` schema; generation binds a unique final answer.
+Annotation witnesses: `annotation` uses the `bbox` schema; the prompt/annotation contract defines the minimal visual witnesses.
+Query ids: `highest_above_floor`, `lowest_above_floor`.
+
+## Reasoning Operations
+
+Families: `ranking`, `spatial_relations`
+
+## Contract
+The image uses the `object_scene` renderer: a perspective 3D floor or platform scene with projected objects, markers, references, or paired views depending on the task. The public task id defines the stable objective contract; query ids are used only for genuine semantic operations within that contract. Render style, camera, canvas preset, object placement, labels, colors, and prompt wording variants are generation metadata, not public task axes.
+
+The verifier computes the answer from finalized scene metadata and projection records, not from pixels. The prompt bundle is `three_d_object_scene_v1` under `src/trace_tasks/resources/prompts/three_d/object_scene/`.
+
+## Annotation Contract
+Annotation is a scalar `bbox` around the selected visible object.
+The selected object is the only visual witness; option text is not annotation.
+The rendered task presents four option-panel candidates selected from six possible height slots.
+Each scene contains one floor slot plus five platform slots. Exactly four slots are occupied by option objects; the other two slots are empty. The answer is the highest or lowest occupied option object.
+Candidate supports use five plain platforms at distinct heights. Container or furniture supports such as open boxes, tables, chairs, and shelves are excluded because their projected geometry can obscure whether an object is sitting on top.
+Candidate object types are sampled without replacement from a narrow height-safe pool. The pool excludes objects with ambiguous support contact, weak semantic color rendering, or confusing height silhouettes. `cup` and `trophy` are allowed; `bottle`, `candle`, `drum`, `flask`, `goblet`, `hat`, and `lantern` are excluded. Composite candidates such as `cup` must preserve the elevated parent base height for all rendered subparts.
+Option descriptors use distinct object names only, not prompt-color names.
+
+## Prompt And Trace
+The trace records selected prompt keys, camera/projection data, object or marker records, rendered pixel witnesses, answer-support metadata, and the solver fields needed to recompute the answer and annotation from the same finalized scene.
+
+## Determinism
+Generation is deterministic from `instance_seed`, explicit params, config defaults, prompt bundle, and code versions. Answers and annotation come from the same finalized 3D scene trace.

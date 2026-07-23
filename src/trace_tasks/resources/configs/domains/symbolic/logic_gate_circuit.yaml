@@ -1,0 +1,92 @@
+generation:
+  shared:
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      clean_worksheet: 1.0
+      notebook_problem: 1.0
+      exam_scan: 1.0
+  task_overrides:
+    task_symbolic__logic_gate_circuit__output_value_label:
+      option_count: 4
+      input_count_min: 2
+      input_count_max: 2
+      gate_count_min: 1
+      gate_count_max: 3
+    task_symbolic__logic_gate_circuit__satisfying_assignment_label:
+      option_count: 4
+      input_count: 3
+    task_symbolic__logic_gate_circuit__gate_type_count:
+      gate_count: 4
+      target_answer_min: 0
+      target_answer_max: 4
+      target_gate_type_support:
+      - AND
+      - OR
+      - NOT
+      - XOR
+      - NAND
+      - NOR
+    task_symbolic__logic_gate_circuit__internal_output_count:
+      gate_count: 4
+      target_answer_min: 0
+      target_answer_max: 4
+
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 820
+    logic_canvas_width: 1180
+    logic_canvas_height: 820
+    logic_card_corner_radius_px: 18
+    logic_card_border_width_px: 2
+    logic_gate_width_px: 72
+    logic_gate_height_px: 46
+    logic_wire_width_px: 3
+    logic_node_radius_px: 5
+    logic_label_font_size_px: 22
+    logic_small_font_size_px: 16
+    logic_gate_font_size_px: 15
+    logic_table_font_size_px: 20
+
+prompt:
+  shared:
+    bundle_id: symbolic_logic_gate_circuit_v1
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer" in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for the final answer.
+  task_overrides:
+    task_symbolic__logic_gate_circuit__output_value_label:
+      scene_key: logic_gate_circuit
+      task_key: logic_gate_output_value_label
+    task_symbolic__logic_gate_circuit__satisfying_assignment_label:
+      scene_key: logic_gate_circuit
+      task_key: logic_gate_satisfying_assignment_label
+    task_symbolic__logic_gate_circuit__gate_type_count:
+      scene_key: logic_gate_circuit
+      task_key: logic_gate_gate_type_count
+    task_symbolic__logic_gate_circuit__internal_output_count:
+      scene_key: logic_gate_circuit
+      task_key: logic_gate_internal_output_count
+
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.22
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.004
+        - 0.018

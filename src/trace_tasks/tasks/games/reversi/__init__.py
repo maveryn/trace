@@ -1,0 +1,2 @@
+"""Reversi games tasks."""
+

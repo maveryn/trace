@@ -1,0 +1,189 @@
+{
+  "bundle_id": "geometry_graph_paper_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "graph_paper_scene": [
+        "The image shows a graph-paper geometry diagram.",
+        "The diagram shows geometry objects on graph paper.",
+        "This figure shows a graph-paper geometry scene.",
+        "The visual shows geometry objects drawn on a coordinate grid.",
+        "The image shows a bounded graph-paper panel with geometry objects."
+      ]
+    },
+    "task": {
+      "graph_paper_task": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "line_slope_value": [
+        "What is the slope of {target_text}?",
+        "Find the slope of {target_text}.",
+        "Use the grid to compute the slope of {target_text}.",
+        "What slope does {target_text} have?",
+        "Compute the slope for {target_text}."
+      ],
+      "circle_circumference_value": [
+        "What is the exact circumference of {target_text}?",
+        "Using the grid radius, find the circumference of {target_text}.",
+        "What is the circumference of {target_text} in exact π form?",
+        "Find the exact circumference for {target_text}.",
+        "Use the graph-paper circle. What is its circumference?"
+      ],
+      "ellipse_area_value": [
+        "What is the exact area of {target_text}?",
+        "Using the grid radii, find the area of {target_text}.",
+        "What is the area of {target_text} in exact π form?",
+        "Find the exact area for {target_text}.",
+        "Use the graph-paper ellipse. What is its area?"
+      ],
+      "polygon_area_value": [
+        "What is the area of {target_text}?",
+        "Find the area of the shown {shape_text}.",
+        "Use the graph paper to compute the area of {target_text}.",
+        "What integer area does {target_text} have?",
+        "Compute the area of {target_text} in square grid units."
+      ],
+      "polygon_perimeter_value": [
+        "What is the perimeter of {target_text}?",
+        "Find the perimeter of the shown {shape_text}.",
+        "Use the graph paper to compute the perimeter of {target_text}.",
+        "What integer perimeter does {target_text} have?",
+        "Compute the perimeter of {target_text} in grid units."
+      ],
+      "angle_extremum_largest": [
+        "Which labeled angle has the largest measure?",
+        "Find the label of the largest angle.",
+        "Which angle is largest?",
+        "Choose the label of the angle with the greatest measure.",
+        "Which labeled angle has the greatest degree measure?"
+      ],
+      "angle_extremum_smallest": [
+        "Which labeled angle has the smallest measure?",
+        "Find the label of the smallest angle.",
+        "Which angle is smallest?",
+        "Choose the label of the angle with the least measure.",
+        "Which labeled angle has the least degree measure?"
+      ],
+      "length_extremum_largest": [
+        "Which labeled segment is longest?",
+        "Find the label of the longest segment.",
+        "Which segment has the greatest length?",
+        "Choose the label of the longest line segment.",
+        "Which labeled segment is the largest by length?"
+      ],
+      "length_extremum_smallest": [
+        "Which labeled segment is shortest?",
+        "Find the label of the shortest segment.",
+        "Which segment has the least length?",
+        "Choose the label of the shortest line segment.",
+        "Which labeled segment is the smallest by length?"
+      ],
+      "area_extremum_largest": [
+        "Which labeled {shape_text} has the largest area?",
+        "Find the label of the {shape_text} with the greatest area.",
+        "Which labeled shape has the largest area?",
+        "Choose the label of the largest-area {shape_text}.",
+        "Which {shape_text} has the greatest area?"
+      ],
+      "area_extremum_smallest": [
+        "Which labeled {shape_text} has the smallest area?",
+        "Find the label of the {shape_text} with the least area.",
+        "Which labeled shape has the smallest area?",
+        "Choose the label of the smallest-area {shape_text}.",
+        "Which {shape_text} has the least area?"
+      ],
+      "perimeter_extremum_largest": [
+        "Which labeled {shape_text} has the largest perimeter?",
+        "Find the label of the {shape_text} with the greatest perimeter.",
+        "Which labeled shape has the largest perimeter?",
+        "Choose the label of the largest-perimeter {shape_text}.",
+        "Which {shape_text} has the greatest perimeter?"
+      ],
+      "perimeter_extremum_smallest": [
+        "Which labeled {shape_text} has the smallest perimeter?",
+        "Find the label of the {shape_text} with the least perimeter.",
+        "Which labeled shape has the smallest perimeter?",
+        "Choose the label of the smallest-perimeter {shape_text}.",
+        "Which {shape_text} has the least perimeter?"
+      ],
+      "angle_type_count": [
+        "How many {target_text} are shown?",
+        "Count the {target_text}.",
+        "How many shown angles are {target_text}?",
+        "Find the number of {target_text} in the diagram.",
+        "What is the count of {target_text}?"
+      ],
+      "triangle_type_count": [
+        "How many {target_text} are shown?",
+        "Count the {target_text}.",
+        "How many shown triangles are {target_text}?",
+        "Find the number of {target_text} in the diagram.",
+        "What is the count of {target_text}?"
+      ],
+      "quadrilateral_type_count": [
+        "How many {target_text} are shown?",
+        "Count the {target_text}.",
+        "How many shown quadrilaterals are {target_text}?",
+        "Find the number of {target_text} in the diagram.",
+        "What is the count of {target_text}?"
+      ],
+      "shape_type_count": [
+        "How many {target_text} are shown?",
+        "Count the {target_text}.",
+        "How many shown objects are {target_text}?",
+        "Find the number of {target_text} in the diagram.",
+        "What is the count of {target_text}?"
+      ],
+      "polygon_convexity_count": [
+        "How many {target_text} are shown?",
+        "Count the {target_text}.",
+        "How many shown polygons are {target_text}?",
+        "Find the number of {target_text} in the diagram.",
+        "What is the count of {target_text}?"
+      ],
+      "right_angle_vertex_count": [
+        "How many right-angle vertices does the polygon have?",
+        "Count the vertices where adjacent polygon sides form a right angle.",
+        "How many corners of the polygon are right angles?",
+        "Find the number of right-angle vertices in the polygon.",
+        "Use the grid to count the polygon vertices with 90-degree angles."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Return a JSON object with an \"answer\" field only.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Return only a JSON object containing \"answer\".\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Respond with JSON only.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Return a JSON object.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use JSON only.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Return a JSON object with \"annotation\" and \"answer\" fields.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Return only JSON with \"annotation\" and \"answer\".\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Respond with JSON only.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Return a JSON object.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use JSON only.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {}
+  },
+  "dynamic_slots": {
+    "answer_hint": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"},
+    "shape_text": {"type": "string"},
+    "metric_text": {"type": "string"},
+    "target_text": {"type": "string"}
+  },
+  "required_slots_by_key": {}
+}

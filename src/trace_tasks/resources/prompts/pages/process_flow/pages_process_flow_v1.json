@@ -1,0 +1,173 @@
+{
+  "bundle_id": "pages_process_flow_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "process_flow_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This process diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "process_flow_diagram_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "shape_node_count": [
+        "How many steps are {shape_filter_description}?",
+        "Across the diagram, how many steps are {shape_filter_description}?",
+        "Count all steps that are {shape_filter_description}.",
+        "What is the total number of steps that are {shape_filter_description}?",
+        "Using the node shapes, count every step that is {shape_filter_description}."
+      ],
+      "status_node_count": [
+        "How many status-badge steps are {status_filter_description}?",
+        "Across the diagram, count the status-badge steps that are {status_filter_description}.",
+        "What is the number of steps that are {status_filter_description}?",
+        "Count all nodes that are {status_filter_description}.",
+        "Using the status badges, how many steps are {status_filter_description}?"
+      ],
+      "role_node_count": [
+        "How many steps are {role_filter_description}?",
+        "Across the diagram, count the steps that are {role_filter_description}.",
+        "What is the total number of steps that are {role_filter_description}?",
+        "Use the step labels and shapes to count the steps that are {role_filter_description}.",
+        "How many steps match the role filter {role_filter_description}?"
+      ],
+      "condition_path_endpoint_label": [
+        "Starting at \"{start_label}\", take the decision arrows labeled {condition_sequence_text}, following unlabeled arrows between decisions. Which step do you reach after the final listed decision arrow?",
+        "Begin at \"{start_label}\". Follow the decision labels {condition_sequence_text}; use unlabeled arrows only to move between decisions. What step label do you land on?",
+        "From \"{start_label}\", follow the labeled choices {condition_sequence_text}. Which visible step is reached after the last choice?",
+        "Trace the process from \"{start_label}\" using the decision-arrow labels {condition_sequence_text}. What is the destination step label?",
+        "Use the arrow labels {condition_sequence_text} starting from \"{start_label}\". Which step is reached at the end?"
+      ],
+      "lane_outgoing_handoff_count": [
+        "How many arrows leave the \"{lane_name}\" lane and enter a different lane?",
+        "Count the handoff arrows that start in \"{lane_name}\" and end in another lane.",
+        "From the \"{lane_name}\" lane, how many outgoing arrows transfer work to a different lane?",
+        "What is the number of cross-lane handoffs that begin in \"{lane_name}\"?",
+        "Using the lane labels, count arrows from \"{lane_name}\" to any other lane."
+      ],
+      "lane_involved_handoff_count": [
+        "How many handoff arrows either start or end in the \"{lane_name}\" lane?",
+        "Count the cross-lane arrows connected to the \"{lane_name}\" lane.",
+        "For the \"{lane_name}\" lane, how many handoff arrows are incoming or outgoing?",
+        "What is the number of cross-lane handoffs involving \"{lane_name}\"?",
+        "Using the lane labels, count arrows between \"{lane_name}\" and any other lane."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:process_flow_diagram": {
+      "object_description": "a labeled process-flow diagram with lane bands, step boxes, status badges, decision labels, and arrows"
+    },
+    "query:shape_node_count": {
+      "answer_hint": "set \"answer\" to the integer count of qualifying step boxes",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted step boxes",
+      "json_example": "{\"annotation\":[[168,246,302,308],[340,386,474,448]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:status_node_count": {
+      "answer_hint": "set \"answer\" to the integer count of qualifying step boxes",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted step boxes",
+      "json_example": "{\"annotation\":[[168,246,302,308],[340,386,474,448]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:role_node_count": {
+      "answer_hint": "set \"answer\" to the integer count of qualifying step boxes",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted step boxes",
+      "json_example": "{\"annotation\":[[168,246,302,308],[340,386,474,448]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:condition_path_endpoint_label": {
+      "answer_hint": "set \"answer\" to the exact visible destination step label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"start_step\", \"first_decision_label\", \"second_decision_label\", and \"endpoint_step\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+      "json_example": "{\"annotation\":{\"start_step\":[126,208,260,270],\"first_decision_label\":[286,254,340,278],\"second_decision_label\":[512,412,570,436],\"endpoint_step\":[630,458,764,520]},\"answer\":\"Publish\"}",
+      "json_example_answer_only": "{\"answer\":\"Publish\"}"
+    },
+    "query:lane_outgoing_handoff_count": {
+      "answer_hint": "set \"answer\" to the integer count of qualifying handoff arrows",
+      "annotation_hint": "set \"annotation\" to a JSON array of arrow segments in image pixel coordinates, where each segment is [[x0, y0], [x1, y1]]",
+      "json_example": "{\"annotation\":[[[272,294],[462,348]],[[526,408],[706,462]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:lane_involved_handoff_count": {
+      "answer_hint": "set \"answer\" to the integer count of qualifying handoff arrows",
+      "annotation_hint": "set \"annotation\" to a JSON array of arrow segments in image pixel coordinates, where each segment is [[x0, y0], [x1, y1]]",
+      "json_example": "{\"annotation\":[[[272,294],[462,348]],[[526,408],[706,462]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "shape_filter_description": {"type": "string"},
+    "status_filter_description": {"type": "string"},
+    "role_filter_description": {"type": "string"},
+    "start_label": {"type": "string"},
+    "condition_sequence_text": {"type": "string"},
+    "lane_name": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:process_flow_diagram": [
+      "object_description"
+    ],
+    "query:shape_node_count": [
+      "shape_filter_description"
+    ],
+    "query:status_node_count": [
+      "status_filter_description"
+    ],
+    "query:role_node_count": [
+      "role_filter_description"
+    ],
+    "query:condition_path_endpoint_label": [
+      "start_label",
+      "condition_sequence_text"
+    ],
+    "query:lane_outgoing_handoff_count": [
+      "lane_name"
+    ],
+    "query:lane_involved_handoff_count": [
+      "lane_name"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

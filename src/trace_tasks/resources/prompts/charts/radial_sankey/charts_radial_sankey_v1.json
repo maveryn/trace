@@ -1,0 +1,104 @@
+{
+  "bundle_id": "charts_radial_sankey_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "radial_sankey": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "radial_sankey_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "source_to_targets_total": [
+        "What total flow leaves \"{source_label}\" for target nodes {target_labels}?",
+        "What is the combined flow from source node \"{source_label}\" to target nodes {target_labels}?",
+        "For source node \"{source_label}\", what total flow goes to target nodes {target_labels}?",
+        "What total value is sent from \"{source_label}\" to target nodes {target_labels}?",
+        "From \"{source_label}\" to target nodes {target_labels}, what is the total flow?"
+      ],
+      "sources_to_target_total": [
+        "What total flow enters \"{target_label}\" from source nodes {source_labels}?",
+        "What is the combined flow from source nodes {source_labels} into target node \"{target_label}\"?",
+        "For target node \"{target_label}\", what total flow comes from source nodes {source_labels}?",
+        "What total value is sent from source nodes {source_labels} to \"{target_label}\"?",
+        "From source nodes {source_labels} to \"{target_label}\", what is the total flow?"
+      ],
+      "largest_target_for_source": [
+        "For source node \"{source_label}\", which target receives the largest flow?",
+        "Among all curved bands leaving \"{source_label}\", which target label has the highest value?",
+        "For every flow from \"{source_label}\". Which target gets the largest printed value?",
+        "Which target node receives the maximum flow from source \"{source_label}\"?",
+        "From \"{source_label}\", identify the target connected by the largest-value band."
+      ],
+      "largest_source_for_target": [
+        "For target node \"{target_label}\", which source sends the largest flow?",
+        "Among all curved bands entering \"{target_label}\", which source label has the highest value?",
+        "For every flow into \"{target_label}\". Which source sends the largest printed value?",
+        "Which source node sends the maximum flow to target \"{target_label}\"?",
+        "Into \"{target_label}\", identify the source connected by the largest-value band."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:source_to_targets_total": {
+      "answer_hint": "set \"answer\" to the requested integer total",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around the printed flow-value labels used in the calculation",
+      "json_example": "{\"annotation\":[[420,330,458,358],[560,394,598,422]],\"answer\":47}",
+      "json_example_answer_only": "{\"answer\":47}"
+    },
+    "query:sources_to_target_total": {
+      "answer_hint": "set \"answer\" to the requested integer total",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around the printed flow-value labels used in the calculation",
+      "json_example": "{\"annotation\":[[690,318,728,346],[612,430,650,458]],\"answer\":39}",
+      "json_example_answer_only": "{\"answer\":39}"
+    },
+    "query:largest_target_for_source": {
+      "answer_hint": "set \"answer\" to the exact visible target label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected target node",
+      "json_example": "{\"annotation\":[930,470,954,498],\"answer\":\"Y4M8\"}",
+      "json_example_answer_only": "{\"answer\":\"Y4M8\"}"
+    },
+    "query:largest_source_for_target": {
+      "answer_hint": "set \"answer\" to the exact visible source label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected source node",
+      "json_example": "{\"annotation\":[240,466,264,494],\"answer\":\"B7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"B7P2\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "source_label": {"type": "string"},
+    "target_label": {"type": "string"},
+    "source_labels": {"type": "string"},
+    "target_labels": {"type": "string"}
+  }
+}

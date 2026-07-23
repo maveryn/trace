@@ -1,0 +1,33 @@
+{
+  "schema_version": "trace-rlvr-public-environment-receipt-v1",
+  "reference_platform": {
+    "python": "CPython 3.10.12",
+    "os": "Linux 6.8, glibc 2.35, x86_64",
+    "cuda": "12.8",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "gpu_count": 8
+  },
+  "source_receipts": {
+    "trace-qwen2.5-vl-3b": {
+      "requirements_sha256": "798ce596e11a5266591ffe01f0ca0cf29d6968308784cab476960fc1de0ecca8",
+      "metadata_sha256": "08c5d4b4f3c13f5121b5e22b93729b794845f5aba6b8e4a66a4fab96917a8fc3"
+    },
+    "trace-qwen2.5-vl-7b": {
+      "requirements_sha256": "132c380fac1fc11bea08ff130b978e997703b303f989e5b72aca4bcdfd5dd276",
+      "metadata_sha256": "d7820e1cde5dd27891f467c9eb24ca4ee9a415f8fad03999e7876641f48b6aa1"
+    }
+  },
+  "curation": {
+    "vendored_easyr1_installed_as_distribution": false,
+    "requirements_file": "rlvr/requirements-cu128.txt",
+    "omitted_as_unused": [
+      "pypdf==6.14.2",
+      "tabulate==0.10.0"
+    ],
+    "omitted_categories": [
+      "notebook and interactive-development packages",
+      "machine monitoring and host integration packages",
+      "transitive dependencies resolved by the pinned direct environment"
+    ]
+  }
+}

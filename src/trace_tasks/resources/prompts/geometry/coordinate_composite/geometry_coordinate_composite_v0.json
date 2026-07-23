@@ -1,0 +1,161 @@
+{
+  "bundle_id": "geometry_coordinate_composite_v0",
+  "schema_version": "v0",
+  "allow_empty_task_templates": true,
+  "task_templates": {
+    "coordinate_composite_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:coordinate_composite_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "coordinate_composite_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This coordinate diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "line_circle_intersection_count": [
+      "How many visible points are shared by drawn line segments and circles?",
+      "Count the visible intersection points between the drawn line segments and circles.",
+      "How many points do the shown line-segment and circle objects have in common?",
+      "Find the number of visible crossings or touches between line segments and circles.",
+      "How many visible intersection points are formed by line segments meeting circles?"
+    ],
+    "circle_circle_intersection_count": [
+      "How many visible points are shared by pairs of drawn circles?",
+      "Count the visible intersection points between the drawn circles.",
+      "How many points do the shown circle objects have in common?",
+      "Find the number of visible crossings or touches between pairs of circles.",
+      "How many visible intersection points are formed by the drawn circles?"
+    ],
+    "line_polygon_intersection_count": [
+      "How many visible points are shared by line segments and polygon boundaries?",
+      "Count the visible intersection points between the drawn line segments and polygon boundaries.",
+      "How many points do the shown line-segment and polygon-boundary objects have in common?",
+      "Find the number of visible crossings or touches between line segments and polygon boundaries.",
+      "How many visible intersection points are formed by line segments meeting polygon boundaries?"
+    ],
+    "circle_polygon_intersection_count": [
+      "How many visible points are shared by circles and polygon boundaries?",
+      "Count the visible intersection points between the drawn circles and polygon boundaries.",
+      "How many points do the shown circle and polygon-boundary objects have in common?",
+      "Find the number of visible crossings or touches between circles and polygon boundaries.",
+      "How many visible intersection points are formed by circles meeting polygon boundaries?"
+    ],
+    "mixed_object_intersection_count": [
+      "How many visible intersection points are formed by all the drawn objects?",
+      "Count all visible points where any two drawn objects meet.",
+      "How many visible crossings or touches appear among the drawn objects?",
+      "Find the total number of visible intersection points in the diagram.",
+      "How many visible points are shared by pairs of drawn objects?"
+    ],
+    "inside_circle_outside_polygon": [
+      "Which marked point is inside the circle and outside the polygon?",
+      "Select the marked point that is inside the circle but outside the polygon.",
+      "Which candidate point lies inside the circle and not inside the polygon?",
+      "Find the marked point that is in the circle and outside the polygon.",
+      "Which labeled point satisfies: inside the circle and outside the polygon?"
+    ],
+    "inside_polygon_outside_circle": [
+      "Which marked point is inside the polygon and outside the circle?",
+      "Select the marked point that is inside the polygon but outside the circle.",
+      "Which candidate point lies inside the polygon and not inside the circle?",
+      "Find the marked point that is in the polygon and outside the circle.",
+      "Which labeled point satisfies: inside the polygon and outside the circle?"
+    ],
+    "inside_circle_above_line": [
+      "Which marked point is inside the circle and above the line segment?",
+      "Select the marked point that is inside the circle and above the line segment.",
+      "Which candidate point lies in the circle and above the line segment?",
+      "Find the marked point that is inside the circle and above the line segment.",
+      "Which labeled point satisfies: inside the circle and above the line segment?"
+    ],
+    "inside_polygon_below_line": [
+      "Which marked point is inside the polygon and below the line segment?",
+      "Select the marked point that is inside the polygon and below the line segment.",
+      "Which candidate point lies in the polygon and below the line segment?",
+      "Find the marked point that is inside the polygon and below the line segment.",
+      "Which labeled point satisfies: inside the polygon and below the line segment?"
+    ],
+    "line_circle_boundary_point": [
+      "Which marked point lies on both the circle boundary and the line segment?",
+      "Select the marked point that is on both the circle boundary and the line segment.",
+      "Which candidate point is shared by the circle boundary and the line segment?",
+      "Find the marked point where the circle boundary and line segment meet.",
+      "Which labeled point satisfies: on the circle boundary and on the line segment?"
+    ],
+    "circle_polygon_boundary_point": [
+      "Which marked point lies on both the circle boundary and the polygon boundary?",
+      "Select the marked point that is on both the circle boundary and the polygon boundary.",
+      "Which candidate point is shared by the circle boundary and polygon boundary?",
+      "Find the marked point where the circle boundary and polygon boundary meet.",
+      "Which labeled point satisfies: on the circle boundary and on the polygon boundary?"
+    ],
+    "line_polygon_boundary_point": [
+      "Which marked point lies on both the line segment and the polygon boundary?",
+      "Select the marked point that is on both the line segment and the polygon boundary.",
+      "Which candidate point is shared by the line segment and polygon boundary?",
+      "Find the marked point where the line segment and polygon boundary meet.",
+      "Which labeled point satisfies: on the line segment and on the polygon boundary?"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:coordinate_composite_scene": {
+      "object_description": "a coordinate grid with multiple geometric objects",
+      "object_description_candidates": "a coordinate grid with geometric objects and marked candidate points"
+    },
+    "answer_or_annotation:answer_only": {
+      "answer_hint_integer": "set \"answer\" to the integer count requested by the question",
+      "answer_hint_option_label": "set \"answer\" to the selected candidate label as a single capital letter",
+      "json_example_answer_only": "{\"answer\":2}",
+      "json_example_answer_only_label": "{\"answer\":\"C\"}"
+    },
+    "answer_or_annotation:answer_and_annotation": {
+      "annotation_hint": "set \"annotation\" to an array containing the pixel point [x,y] for each visible intersection point; use an empty array if there are none",
+      "annotation_hint_candidate_point": "set \"annotation\" to the pixel point [x,y] for the selected marked point",
+      "answer_hint_integer": "set \"answer\" to the integer count requested by the question",
+      "answer_hint_option_label": "set \"answer\" to the selected candidate label as a single capital letter",
+      "json_example": "{\"annotation\":[[320,240],[380,240]],\"answer\":2}",
+      "json_example_candidate_point": "{\"annotation\":[320,240],\"answer\":\"C\"}"
+    }
+  }
+}

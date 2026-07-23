@@ -1,0 +1,1839 @@
+{
+  "counts": {
+    "exact_copy": 68,
+    "files": 128,
+    "public_adaptation": 60
+  },
+  "denylist": [
+    {
+      "path_or_pattern": "rlvr/experiments/final_answer_only_manifest.json",
+      "reason": "Historical Final25 experiment ledger; it predates the canonical trace_eval_v1 reruns and is not a release input."
+    },
+    {
+      "path_or_pattern": "evaluation/final{24,25,26,31}/**",
+      "reason": "Historical and provisional suite definitions are outside trace_eval_v1."
+    },
+    {
+      "path_or_pattern": "scripts/run_trace_final*.{py,sh}",
+      "reason": "Historical campaign launchers are excluded, except the one scoring engine explicitly mapped above for scope reduction and neutral renaming."
+    },
+    {
+      "path_or_pattern": "scripts/*repair*|scripts/*recover*|scripts/*reuse*",
+      "reason": "Incident recovery, parser repair, and reuse machinery remains internal."
+    },
+    {
+      "path_or_pattern": "scripts/run_trace_eval_rl_baselines.sh",
+      "reason": "Baseline-specific processor aliases and compatibility views remain internal; the public evaluator accepts model descriptors generically."
+    },
+    {
+      "path_or_pattern": "scripts/run_external_benchmark_generation_queue.py",
+      "reason": "The local multi-suite generator carried excluded candidate, grounding, GUI, and video routes; trace_eval_v1 uses the reviewed OpenAI-compatible full-split generator."
+    },
+    {
+      "path_or_pattern": "scripts/{migrate_trace_eval_archive.py,trace_eval_archive_migration_lib.py}",
+      "reason": "Private archive migration and recovery operations are not a public API."
+    },
+    {
+      "path_or_pattern": "rlvr/vlmevalkit_extensions/{mirage.py,visiongraph.py,scripts/batched_chartmuseum_vllm.py,scripts/batched_chartqapro_vllm.py}",
+      "reason": "Extensions and specialized runners not used by the 24-benchmark release suite are excluded; the one generic queue runner is separately reviewed as runtime closure."
+    },
+    {
+      "path_or_pattern": "scripts/screenspot_json_contract.py",
+      "reason": "ScreenSpot is not in trace_eval_v1; stale imports are removed during adaptation."
+    },
+    {
+      "path_or_pattern": "rlvr/**/annotation*|rlvr/**/task_conditioned*",
+      "reason": "Annotation and task-conditioned training are experimental, not paper release scope."
+    },
+    {
+      "path_or_pattern": "rlvr/easyr1_backend/{examples/config.yaml,pyproject.toml,requirements.txt,setup.py,tests/**}",
+      "reason": "The generic math example, backend packaging, unpinned environment, and internal tests are not curated public training inputs."
+    },
+    {
+      "path_or_pattern": "scripts/run_trace_qwen25vl{3b,7b}_easyr1*.sh",
+      "reason": "Operational launchers contain machine paths and historical wrapper behavior; the public interface is the reviewed two-config Python CLI."
+    },
+    {
+      "path_or_pattern": "results/**",
+      "reason": "Historical workbooks, provisional summaries, raw dumps, and local paths stay internal. Canonical trace_eval_v1 and TRACE validation results are mapped from their reviewed release sources instead of copying this tree."
+    },
+    {
+      "path_or_pattern": "benchmark/**|runs/**|logs/**|*token*|*.env",
+      "reason": "No benchmark payloads, run caches, machine logs, credentials, or secrets are released."
+    }
+  ],
+  "dependency_review": {
+    "imports_removed_during_public_adaptation": [
+      {
+        "from": [
+          "scripts/run_external_benchmark_generation_api_queue.py",
+          "scripts/run_external_benchmark_score_queue.py",
+          "scripts/run_official_vlmevalkit_saved_score.py"
+        ],
+        "import": "scripts/screenspot_json_contract.py",
+        "reason": "ScreenSpot is not a trace_eval_v1 benchmark."
+      },
+      {
+        "from": [
+          "scripts/run_trace_eval_publish_worker.py"
+        ],
+        "import": "scripts/trace_eval_archive_migration_lib.py",
+        "reason": "The public worker publishes only a sanitized new run; private repository migration and recovery operations are removed."
+      },
+      {
+        "from": [
+          "tests/test_rlvr_release_inputs.py"
+        ],
+        "import": "scripts/build_rlvr_public_file_manifest.py",
+        "reason": "The generator is an internal review tool; the public test validates the checked-in source map and release inputs directly."
+      }
+    ],
+    "status": "reviewed"
+  },
+  "files": [
+    {
+      "adaptations": [
+        "select only the matching config_id from the sanitized canonical receipt",
+        "encode the immutable answer-only EasyR1 semantics without machine-local paths",
+        "permit only runtime input, output, cache, telemetry, and CUDA-device locations"
+      ],
+      "component": "answer_only_training_entrypoint",
+      "destination_path": "rlvr/configs/trace-qwen2.5-vl-3b.yaml",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "docs/workflows/PUBLIC_RELEASE/rlvr_training_configs.v1.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "304a9094fb3eb20e9ea4e4e5249792557fc5660a15e7e2c394174d31a3684d41"
+    },
+    {
+      "adaptations": [
+        "select only the matching config_id from the sanitized canonical receipt",
+        "encode the immutable answer-only EasyR1 semantics without machine-local paths",
+        "permit only runtime input, output, cache, telemetry, and CUDA-device locations"
+      ],
+      "component": "answer_only_training_entrypoint",
+      "destination_path": "rlvr/configs/trace-qwen2.5-vl-7b.yaml",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "docs/workflows/PUBLIC_RELEASE/rlvr_training_configs.v1.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "304a9094fb3eb20e9ea4e4e5249792557fc5660a15e7e2c394174d31a3684d41"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/LICENSE",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/LICENSE",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/examples/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/examples/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "9b3839d7eb1dd039de386084df2b47923335349357bcc0c203f3ddf9737ddb6c"
+    },
+    {
+      "adaptations": [
+        "replace internal trace imports with the public trace_tasks scoring API",
+        "hardcode the answer-only exact-JSON reward boundary and fail on invalid ground truth",
+        "remove annotation, task-conditioned, and legacy fallback modes"
+      ],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/examples/reward_function/trace_rlvr.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/easyr1_backend/examples/reward_function/trace_rlvr.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "a49b4240687bef4a421cbb6c192a19946eba9a684e33fa273397f462eb44142b"
+    },
+    {
+      "adaptations": [
+        "remove Hugging Face upload functions and command-line arguments",
+        "retain local checkpoint validation and model merging only"
+      ],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/scripts/model_merger.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/easyr1_backend/scripts/model_merger.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "6f583cf20800bbc613c7f4eaa7112e94aef30a9a66b94463bd0f708059bb57d1"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "71e3d6e8033cdaa74d9a0e7725c838f979a89f70446e4037ad8441d06710dada"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/models/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/models/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/models/monkey_patch.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/models/monkey_patch.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "235f15787033941179df2380aa586c1de1af90444fedcf4e2ff4da3eb5d4c08b"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/models/transformers/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/models/transformers/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/models/transformers/flash_attention_utils.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/models/transformers/flash_attention_utils.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "115ef6731be9d9220040aef4362d9c304843df907e56f5c9d118d2633cc0995e"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/models/transformers/qwen2_vl.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/models/transformers/qwen2_vl.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "38ca4470f7250106a1ec24999128f6bc3b59493ffb4a794e821481aea794e06d"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/models/transformers/qwen3_vl.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/models/transformers/qwen3_vl.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "84702e3f5a795e061e87ad269e48d7ec5c5061d7b852cabcced2799815b65244"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/protocol.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/protocol.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "a634340a086a986c03c96ad27c58da3df792ad4ebd09741c9109d689e2cfebd1"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/base/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/base/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "54c1bcd50ca1c03e4e08d38208bec3db525eaaf46a987b83d032a316d488c1e4"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/base/decorator.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/base/decorator.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "2fe8e039eade8d92390d09a4fb1526183f4c110566825452b15e39843e9d3add"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/base/register_center/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/base/register_center/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/base/register_center/ray.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/base/register_center/ray.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "7c0a3ea7a3f49b4bbd0a5b0f51136b160dca09cdfded5f52ed4d72aa011bce1e"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/base/worker.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/base/worker.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "ecbbe21a48dd6133700d2028e720eb26870683a0439d8499b43a44bd6486fb99"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/base/worker_group.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/base/worker_group.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "3c3ab71b7d4e18ace6e150585fe3b2134a4419059089885874067fa35962fc90"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/ray/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/ray/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "5fc70fda13efb9a61e43b268b93cc3ce7fd48988e34d59d9a8fd520d7aa8ec72"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/single_controller/ray/base.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/single_controller/ray/base.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "039982ab0d10549df648427f10b945860c1b8260195faa9552f6336c809a49ab"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [
+        "remove annotation, task-conditioned, and per-mode prompt configuration fields",
+        "retain the generic answer-only system-prompt and solve-threshold fields"
+      ],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/config.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/config.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "74031bfaaaab52d39fbfa3512350d1d3437019328dc1c57d648dce7d49d10f84"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/core_algos.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/core_algos.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "871cadc71a8b04295ebdc8ff516ba242697e49cb27680920d4870a8431023d71"
+    },
+    {
+      "adaptations": [
+        "stop forwarding task identifiers and annotation-routing arguments",
+        "retain generic train and validation dataset construction"
+      ],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/data_loader.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/data_loader.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "7fe151db5f1501ae8ed16766734ac00b7b45d967714734e6c471f63fad6928a6"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/main.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/main.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "cb8830763992c79c1bfeedad960f2eebc7746a90616e5e2023aca4f962299868"
+    },
+    {
+      "adaptations": [
+        "remove annotation-type, mixed-mode, and per-mode metric families",
+        "retain generic numeric reward and solve-rate metrics"
+      ],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/metrics.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/metrics.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "236385a3132c662015f04956355f5b6f48be19f7f9bba46df5a10d3766966019"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/trainer/ray_trainer.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/trainer/ray_trainer.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "3996d1967635d4f45e62f54bc86032b3cdd2a76f126cafca9cfe940cdb24762d"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/checkpoint/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/checkpoint/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "af3f01995bb99df376811b5674c2fa3ccc91855ce46ee71d926a1721380c3c92"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/checkpoint/checkpoint_manager.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/checkpoint/checkpoint_manager.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "af20ef83b0289591dbd1ccbd91c46dc4a4aadf0094bd6f89edfd743c39f4904f"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/checkpoint/fsdp_checkpoint_manager.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/checkpoint/fsdp_checkpoint_manager.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "525fdef04dcc8aba2973407428dc6f600f064187625a892b7d39f205db199179"
+    },
+    {
+      "adaptations": [
+        "remove internal trace imports and task-conditioned supervision routing",
+        "retain prompt_answer loading, answer_gt ground truth, uid, and multimodal handling"
+      ],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/dataset.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/easyr1_backend/verl/utils/dataset.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "fd29579d412f01a5e34a946446e25d6385ebfad4cc925bedbeca1e0f7042c15b"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/flops_counter.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/flops_counter.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "0b0121aeacd46cc29d721ea738f5fa5b1dde4866418b4c6de056f7cfce7574a6"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/fsdp_utils.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/fsdp_utils.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e3bb42cb978b313d12b264acdf4b258abe7d8bc02682e5bf4aae92f013a83ed2"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/logger/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/logger/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "1139d6b27e3b16de699fbfb62af96996929975179ca2ee8f6f7440b5592aa9aa"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/logger/gen_logger.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/logger/gen_logger.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "a34fc8761b5ddc3a02c3b368f1bae8b3f0b53cfb11fda8e294fc6e844c0ea95a"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/logger/logger.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/logger/logger.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "bef8fddc63d378770766fdba1f39937a98359e1f1c887084d970170933d91d24"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/model_utils.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/model_utils.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "fb83e18b441b1de34c04b9798d58ba8dbc49df84466aab998db0826fd2cbf316"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/py_functional.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/py_functional.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "89be48d8c3a167febbf375a88a6fd5cec0f910741b1a4adeb55a40929d123c93"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/seqlen_balancing.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/seqlen_balancing.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "f1319a58338d64cbdbfffb9f881e2fe484cffc2b405fe078d0835985b412169d"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/tokenizer.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/tokenizer.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "0e20ac39d453e7dc7a4498da91806a7e2629eb59e34c47a26edfdf6ffa6401dc"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/torch_dtypes.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/torch_dtypes.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "c3bb3c5d061b364ba412f927a82775cdca6205380d8ecbc25548f938be0fd30f"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/torch_functional.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/torch_functional.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "fd686c86f5e479acb39d873fef8eadc048e616f8c7a868ea50c71e925667e651"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/ulysses.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/ulysses.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "9ab1d44fec1a1cb985263a87933a731bf93b818f3ce2f785079c8b0aa50837b0"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/utils/vllm_utils.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/utils/vllm_utils.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "fa2bc6eb613477302c0222d75133e3121e5e2514fd007320d001b2bd426143e9"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/actor/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/actor/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "dd070e1e7e9a5b742a10091b0fe2cd5760107843a006055132377535210961a2"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/actor/base.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/actor/base.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "d2fe132edff46e673e7c338615edd880efc7c347c16dde1cafbe063dd4318d01"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/actor/config.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/actor/config.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "f95864cb05d3219296071ff13423a623c0261270e71b94c755ddd5814dafa926"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/actor/dp_actor.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/actor/dp_actor.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "2e7ba59831f4a8c0d01e918103f191554cb1bb70df7ee95efddc31c36bd6ded0"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/config.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/config.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "00475242e75ea83b0692df09bf2ce42874d4eda35a7eedc56bc48938c0a0356c"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/critic/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/critic/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "bb434041e7522163ce3ca2bbda2ce330fd2fffad0f95524f061cd0df64a70208"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/critic/base.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/critic/base.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "d3d3cddc85e8da64dbc3cd256fd50a02f518da3a9cb15d2eebd9a14894113f48"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/critic/config.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/critic/config.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "79c8641a766c3f611a55110d4cf4f140b95e9f606efa214d26df45c37c4402c8"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/critic/dp_critic.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/critic/dp_critic.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "7e597acdeff0082f04b64e33f797e3adbe31a1229e225d3491bff57f8b80dd8f"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/fsdp_workers.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/fsdp_workers.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "4ce08f3214b9eeaf429c789f76ea2560156cbad003ce465e2eaf48233a99bad6"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/reward/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/reward/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "4c9c55efeb8c5fc040b685b2c0a7d69f529556de344f1681453392d7e7768893"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/reward/config.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/reward/config.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "45379894b777e130a1e881e5b5d626f8a18657aed4f066fcf8df496584c86376"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/reward/function.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/reward/function.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "6650e283afcad96addd2bcd35f961e37ad1143cd18ed8d2b38fe3898223cf0fc"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/rollout/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/rollout/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "c6cb40fd12bcbf04fe8c9bef9f1669adec38f6a09956682a35cac4e6dc594560"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/rollout/base.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/rollout/base.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "7cf5fe139d23f17ef028d71fc528425de061a6842ed6f74cfe0c7db49b7fd00d"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/rollout/config.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/rollout/config.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "2d76cf77f02024f3326e9e24f970944ab26896e0fb00ea0af5f58a37c0e8171b"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/rollout/vllm_rollout_spmd.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/rollout/vllm_rollout_spmd.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "9ab0c46f239091f8bf78bcad8c61ee87ba2600dafee814430dd7de9457f6bc30"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/__init__.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "d736c2258db98c57fa97613b0128268e438cfd48ed309ebc8decdf1947d40bce"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/base.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/base.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "e7f8645a6e4b34dac2e19229bb0c18e5f1de4993fbcb7f84640ef1e6244d15c2"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/fsdp_ulysses.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/fsdp_ulysses.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "dd3a8b3252787f3a711396e5015b24b3ea44a452db21f85c8680efa78646d64b"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/fsdp_vllm.py",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/easyr1_backend/verl/workers/sharding_manager/fsdp_vllm.py",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "0066978584494778b7396fb4ccd20dffef557ae6ad165db39967e472b5c02308"
+    },
+    {
+      "adaptations": [],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/requirements.txt",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "evaluation/requirements-eval.txt",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "6d8ae0a5a6c6ff60e6f56376a5f9b2b175f906753c2796d1a2292a02d9f89c1e"
+    },
+    {
+      "adaptations": [
+        "install only the reviewed extension modules required by trace_eval_v1",
+        "use a neutral upstream insertion anchor for the canonical dataset registrations",
+        "remove the unused Physics prompt patch and all excluded extension imports"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/apply_vlmevalkit_trace_extensions.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/apply_vlmevalkit_trace_extensions.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "c393d81cd29f9abe2ef00679667507615669c12793ecd4bf1cc3d00a9eba9de7"
+    },
+    {
+      "adaptations": [
+        "define exactly the 24 suite keys and official aliases in suite order and reject every other key",
+        "remove external-eval, candidate, grounding, GUI, and video registries and their materializers",
+        "retain only canonical dataset construction, queue, path, and score-receipt helpers"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/benchmark_queue_lib.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/benchmark_queue_lib.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "dfe62f229c5d15057c3286eb7d0baab1ba099acbc877a70489c7fac959c4e451"
+    },
+    {
+      "adaptations": [
+        "update default paths and imports for the public rlvr/evaluation layout",
+        "retain fail-closed model, benchmark, source-hash, and aggregation checks"
+      ],
+      "component": "release_metadata",
+      "destination_path": "rlvr/evaluation/scripts/build_release_results.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/build_trace_eval_release_results.py",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "451de9b8c43d04cd5970c349c108b94007055556baf0ecd4508cf0df5904ed11"
+    },
+    {
+      "adaptations": [
+        "share only image materialization and receipt validation with the trace_eval_v1 manifest command",
+        "validate every key, alias, and row count against suite.v1.json before dataset construction",
+        "remove historical suite views, excluded dataset staging, and cache-repair operations"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/prepare_trace_eval_datasets.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/prepare_trace_final25_datasets.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "d56d0137015d5005aa89a0a4b065cb3f3698308994ea21fd9b341cf88fa7d9ce"
+    },
+    {
+      "adaptations": [
+        "retain the trace_eval_v1 commands and add a suite-driven TRACE validation registry",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths and recovery operations",
+        "add exact content markers and the reviewed deterministic Game-RL processor compatibility view",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/prepare_trace_eval_manifest.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/prepare_trace_eval_manifest.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "d2699146302e8460e4df8798d2f48fde5614539782605b64f915be176138588f"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/prepare_trace_eval_models.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/prepare_trace_final25_models.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "df2ea54dde6b22bfa2ed3c2a868e7ee308fef3d6b4394ffb917d742eb313bda5"
+    },
+    {
+      "adaptations": [
+        "run only full-split trace_eval_v1 image generation with the canonical file-url transport",
+        "remove subset, data-url, ChartMuseum, grounding, candidate, and video generation paths",
+        "retain the final25_code_hash producer field name solely to verify immutable canonical archive hashes"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_external_benchmark_generation_api_queue.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_external_benchmark_generation_api_queue.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "11ea1623bdb5e27b8f3c306dd4f25ac46eaba658e3b3f0666cd0487088011d7c"
+    },
+    {
+      "adaptations": [
+        "retain only the direct and judge-backed scoring paths used by the 24 trace_eval_v1 benchmarks",
+        "remove candidate, grounding, GUI, video, baseline, and historical recovery routes",
+        "use neutral cache contracts while preserving the three reviewed canonical score normalizations",
+        "replace private paths and internal imports with repository-relative public dependencies"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_external_benchmark_score_queue.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "cc7352eec48e137159af0600e237e0c88d1f7a2e5dcdb459cf93295880b89772"
+    },
+    {
+      "adaptations": [
+        "retain only the dedicated extraction, judge scoring, and archive path for canonical MME-Reasoning predictions",
+        "remove the redundant generation and preparation wrapper because trace_eval_v1 generation owns all 24 benchmarks",
+        "remove the two-model baseline summary and expose only the canonical score command",
+        "use neutral trace_eval_v1 receipt contracts and repository-relative paths"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_mme_reasoning_eval.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_mme_reasoning_eval.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "aa4dcff3b28329b7c736d15e57dbf3a68435b9843bb6884ec7ef694d5270dfc5"
+    },
+    {
+      "adaptations": [
+        "resolve every benchmark through the trace_eval_v1 registry before constructing an official dataset",
+        "retain only the scoped ChartQAPro, PhyX, TreeBench, and RealWorldQA prediction adapters used by the canonical suite",
+        "remove excluded benchmark, baseline, and historical score-recovery branches",
+        "use neutral public contracts and repository-relative extension paths"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_official_vlmevalkit_saved_score.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "f602be4cb96b41bb9db235d6487cb479e3fa1ebf033e6f788cf70ef504aad350"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_trace_eval.sh",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_trace_eval.sh",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "f28b192a0f9b4f13599f7a7b4e8ff9fcc3209fa87c305784f5e0400fe1cf77d4"
+    },
+    {
+      "adaptations": [
+        "fix suite, run-set, and dataset-view selection to trace_eval_v1",
+        "partition exactly the seven direct, sixteen official, and one dedicated canonical score routes",
+        "remove historical campaign discovery, baseline repair, and excluded benchmark branches",
+        "use neutral campaign contracts and repository-relative runtime defaults"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_trace_eval_official_score_campaign.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_trace_final26_official_score_campaign.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "8457a12518a52e4f720a43530175100a995f96a458d899ab4586aa7d8aa56b48"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_trace_eval_publish_worker.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_trace_eval_publish_worker.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "c3951a9fe94c9c14a6d86aa66ab261624ecda003db7f43f6e0b4a190d54fefcd"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/run_trace_eval_score_campaign.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/run_trace_eval_score_campaign.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "0c5ad113df7b4007c60ca17ceffc8471978a5002d227882dd79a7be5cf423a17"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/setup_trace_eval_env.sh",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/setup_trace_eval_env.sh",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "39584cd8abd40196ebad8428f2c92125eef91525b244554bd0d988216af74e81"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/start_vllm_endpoint_pool.sh",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/start_vllm_endpoint_pool.sh",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "26c5c3cb14209f4929293b47d91461f8d4d73f2a3179702746fc4307fdf69b1a"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/status_trace_eval.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/status_trace_eval.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "f837f10eed4139703dc0b12f2cb80771208bcc1d53b117733ecbc9da398ae0f2"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/stop_vllm_endpoint_pool.sh",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/stop_vllm_endpoint_pool.sh",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "e2f923e19c5fdf6ae6deb2d1b738a78f6029d9a597f287fb57fb031d4d47696f"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/summarize_trace_eval.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/summarize_trace_final25_multiseed.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "ac271d15c23856ddbe61ba37da7fd7a01b0646ba16f3286e2b65a8f04e085391"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_benchmark_answer_parsing.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_benchmark_answer_parsing.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "4c9abedec6cd8ef6c3f3d53a0cb7f68826409c29e3e5b6ba0df6fa2a08868235"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_archive_hooks.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/final25_archive_hooks.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "6be65964bc280011e7b378c19162b2b7385ae68fc8db01d86a368ff1740cea29"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_campaign_verification.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/verify_trace_final25_campaign.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "4d2441d0fb4fc6d6f34580d4c600afc304d88c5b3711b4e8fd38bd782cf92645"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_code_provenance.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_eval_code_provenance.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "3a292f91fef9607f48602a207a4f5146f0da94054379ab25ae1b6ee4115fc086"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_evaluator_provenance.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_eval_evaluator_provenance.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "06538a958d7bb34b0a2b1924fde012a346215276df735135a26bbfbc3e7a6974"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_hf_archive.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/final25_hf_archive.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "076e0d6e07b365d08da8460065d73a33438bc8b1b207753b6d9bbb2df4f287fe"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_hf_archive_lib.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/final25_hf_archive_lib.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "da2c8052ad1b8077e1dc9f9690f4dcc39f9eedd7945201442682fa5b96ea7401"
+    },
+    {
+      "adaptations": [
+        "retain producer-era manifest, media, and generation wire identifiers for canonical archive verification",
+        "centralize the exact producer source-row hashing contract",
+        "keep current runtime selection and transport trace_eval_v1-only"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_media_contract.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/final25_media_contract.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "ded34c25649ab4347a606851bb6109c9529e07ee205854c077104c56dd9ca5a8"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_public_export.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_eval_public_export.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "6d4917078b7d29d7ebb44600964134949c18d31ef041e68c7c8e9474d9563a82"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_score_receipts.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_eval_score_receipts.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "16c2410151941e759a4ab9d6f490c0f9126d84437b8bce552d7f9d96c4888055"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_scoring_contract.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_final25_contract.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "1f78b6903b503275885a96775014a751ebe357491289c9b1b0623ea1dccb8cfb"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/trace_eval_suite.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/trace_eval_suite.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "42e4c82f1692e64bde810c8675a90d88b5624f4fe6cecea253539a079cdafad8"
+    },
+    {
+      "adaptations": [
+        "update default paths and imports for the public rlvr/evaluation layout",
+        "retain fail-closed model, benchmark, source-hash, and aggregation checks",
+        "remove bootstrap-only working-tree revision support and require immutable commit pins",
+        "validate the standalone TRACE validation release and its reviewed source mappings"
+      ],
+      "component": "release_metadata",
+      "destination_path": "rlvr/evaluation/scripts/validate_release_inputs.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/validate_rlvr_release_inputs.py",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "8c91519cee0274aee435f82ce7da8a440cc7f15bb122c483dd58f9860d9b484b"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/scripts/verify_trace_eval.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "scripts/verify_trace_eval.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "907b9fc31259895b7778cd7f45c1503e6763297a6c53b11ad3e18f41debc531a"
+    },
+    {
+      "adaptations": [
+        "update default paths and imports for the public rlvr/evaluation layout",
+        "retain fail-closed model, benchmark, source-hash, and aggregation checks",
+        "remove bootstrap-only working-tree revision support and require immutable commit pins",
+        "test the standalone TRACE validation receipt and review closure"
+      ],
+      "component": "release_metadata",
+      "destination_path": "rlvr/evaluation/tests/test_release_inputs.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "tests/test_rlvr_release_inputs.py",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "bbd71ba454cf1821abb542401cfe93bd700c8e6944243e4ae5f373214077fee7"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/trace_eval/README.md",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_eval/README.md",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "56d418626d97f24311426df73362c12fbf152939da23de51efc74518acf6dc64"
+    },
+    {
+      "adaptations": [
+        "update builder and validator links for the public rlvr/evaluation layout",
+        "link immutable Hugging Face dataset revisions",
+        "describe the canonical input boundary in standalone public terms"
+      ],
+      "component": "release_metadata",
+      "destination_path": "rlvr/evaluation/trace_eval/RESULTS.md",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "results/canonical/trace_eval_v1/release/README.md",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "933d291e330aa0077b07fb377044d52f26685c69055966c703fb50446b188424"
+    },
+    {
+      "adaptations": [],
+      "component": "release_metadata",
+      "destination_path": "rlvr/evaluation/trace_eval/benchmark_provenance.v1.json",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "evaluation/trace_eval/benchmark_provenance.v1.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "6a1a8f8e39580cfc83f5c68f5fb38d9969cd73df29058a97bf5d33982d49da11"
+    },
+    {
+      "adaptations": [],
+      "component": "release_metadata",
+      "destination_path": "rlvr/evaluation/trace_eval/results.json",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "results/canonical/trace_eval_v1/release/results.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "569ea2463ace4c6b505d1fb168957e558667641810e90a8d9ede80f555823c98"
+    },
+    {
+      "adaptations": [],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/trace_eval/suite.v1.json",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "evaluation/trace_eval/suite.v1.json",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "b84262bcd2243d1d2879b2e02d9b49b17052659ea767df3d7303758f4d63de71"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/vlmevalkit_extensions/evochart.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/vlmevalkit_extensions/evochart.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "526cb53ae9988dc7f64a055cf9511a5bbe724a21c2dcded36f92345001a9bc00"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/vlmevalkit_extensions/trace_eval_answer_parsing.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/vlmevalkit_extensions/trace_final25_answer_parsing.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953"
+    },
+    {
+      "adaptations": [
+        "restrict registries and command choices to trace_eval_v1",
+        "rename Final25/Final26 compatibility symbols to neutral trace_eval names",
+        "remove private paths, recovery operations, and baseline-specific compatibility fixtures",
+        "replace internal package imports with trace_tasks and repository-relative resource lookup"
+      ],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/evaluation/vlmevalkit_extensions/trace_eval_local_vqa.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/vlmevalkit_extensions/trace_local_vqa.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "45bb25bcc80ed0555dfd4c83b78be5e814cf0a7550350f9ac3178e5c34617dca"
+    },
+    {
+      "adaptations": [],
+      "component": "trace_eval_v1_runtime",
+      "destination_path": "rlvr/examples/prompts/chat_template_no_think.jinja",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/examples/prompts/chat_template_no_think.jinja",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "d8f11af7328146f6cb4b21435e26e7abf4302aad00085c0bf0f2009a2e4736fd"
+    },
+    {
+      "adaptations": [],
+      "component": "answer_only_training",
+      "destination_path": "rlvr/examples/prompts/trace_vero_json_system_prompt_answer.txt",
+      "owner": "rlvr",
+      "review_status": "approved_exact_copy",
+      "source_path": "rlvr/examples/prompts/trace_vero_json_system_prompt_answer.txt",
+      "source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "source_sha256": "f394927d9abcfb7a1e43ef48a30c29b8c70e6facdbda314d7b27c59d8c3ae900"
+    },
+    {
+      "adaptations": [
+        "implement the receipt's check, prepare, run, smoke, and merge interface",
+        "make full runs fail closed on semantic overrides, resume, nonempty output, and GPU count",
+        "use standard Hugging Face authentication and never upload models or checkpoints",
+        "include the canonical TRACE validation identity in the release-file gate"
+      ],
+      "component": "answer_only_training_entrypoint",
+      "destination_path": "rlvr/train.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "docs/workflows/PUBLIC_RELEASE/rlvr_training_configs.v1.json",
+      "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+      "source_sha256": "304a9094fb3eb20e9ea4e4e5249792557fc5660a15e7e2c394174d31a3684d41"
+    },
+    {
+      "adaptations": [
+        "include only image prompt, judge-cache, and canonical direct-score helpers required by trace_eval_v1",
+        "install it under the neutral public evaluation extension directory",
+        "remove local generation, video, Physics, SeePhys, and historical runner implementations"
+      ],
+      "component": "trace_eval_v1_runtime_closure",
+      "destination_path": "rlvr/evaluation/vlmevalkit_extensions/batched_vlmevalkit_qwen3vl.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "rlvr/vlmevalkit_extensions/scripts/batched_vlmevalkit_qwen3vl.py",
+      "source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+      "source_sha256": "85479464019ec93d87af97bc2254f005d57c6a524f6f13a330b43408bd939651"
+    },
+    {
+      "adaptations": [
+        "rewrite the operational guide around repository-relative work paths and public checkpoint identities",
+        "remove private archive, historical campaign, and machine-specific instructions",
+        "describe the released workflow as TRACE validation",
+        "document suite-bound model preparation and content-bearing media requests"
+      ],
+      "component": "trace_validation_documentation",
+      "destination_path": "rlvr/evaluation/trace_validation/README.md",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/README.md",
+      "source_revision": "43123b33e7646393ee4b2c4a4bae18fa6923d642",
+      "source_sha256": "8957918a02c5c8e1260eb354d28c12eddb0fc64b129a41394ee62f1802c25f16"
+    },
+    {
+      "adaptations": [
+        "install the workflow beneath the public rlvr package"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/__init__.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/__init__.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "a14e1d496d67ea3d75ef2fde9d072588a077d19dbeb17c5a9f781219fd26494d"
+    },
+    {
+      "adaptations": [
+        "install the extractor beneath the public rlvr package and retain its ground-truth-blind contract",
+        "reject duplicate keys in Python-literal compatibility inputs"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/answer_extraction.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/answer_extraction.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "92cada0257b60dd4bac840b3b995167e2a6fd67f19d6ce9e7b72563ad922d946"
+    },
+    {
+      "adaptations": [
+        "replace internal module paths with public rlvr imports",
+        "use repository-relative work defaults and neutral public model slugs",
+        "use content-bearing media requests and explicit endpoint authentication"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/generate.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/generate.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "eded5f3f14df95f9a8a89e120708b877506b3fb96c07c8810c220ec7bc2e1278"
+    },
+    {
+      "adaptations": [
+        "replace internal module paths with public rlvr imports",
+        "retain the strict ground-truth-blind judge contract",
+        "make tokenizer remote-code execution an explicit opt-in"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/judge_extract.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/judge_extract.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "d9ff04cd79c26ea8585ac2211062a7dd553c2c2ad0aeebb709e9562ac784af53"
+    },
+    {
+      "adaptations": [
+        "replace internal module paths and machine locations with public repository-relative defaults"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/prepare_dataset.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/prepare_dataset.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "5afe09d8e14c442fa188876c05a2b815957530b59323cc9b38b69c864ed2dd51"
+    },
+    {
+      "adaptations": [
+        "compose a public receipt from the immutable export manifest and run metadata",
+        "exclude private prompts, logs, caches, and machine paths"
+      ],
+      "component": "trace_validation_release_metadata",
+      "destination_path": "rlvr/evaluation/trace_validation/release_receipt.v1.json",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "runs/trace-iid-validation-2000-answer-seed42-8models-v1/metadata/manifest.json",
+      "source_repository": "maveryn/trace-eval-runs",
+      "source_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+      "source_sha256": "73fe4d1d5e8008452720206fbbf404960b0490a397823fd3f4c77ddc94634a48"
+    },
+    {
+      "adaptations": [
+        "normalize public model slugs and retain the exact eight immutable aggregate scores"
+      ],
+      "component": "trace_validation_release_metadata",
+      "destination_path": "rlvr/evaluation/trace_validation/results.v1.json",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "runs/trace-iid-validation-2000-answer-seed42-8models-v1/metadata/results/benchmark_scores.json",
+      "source_repository": "maveryn/trace-eval-runs",
+      "source_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+      "source_sha256": "c35240e88e681434ed26de321015ef62b3ee9a438e20613d606e16b393263da9"
+    },
+    {
+      "adaptations": [
+        "replace internal module paths with public rlvr imports and neutral model slugs"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/score.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/score.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "5c3de49103214f2f92473b10a8347d1844fca030cdeb046c6396f5097607ca2b"
+    },
+    {
+      "adaptations": [
+        "use the public suite identifier and neutral model slugs",
+        "preserve the frozen dataset, prompt, generation, scoring, and judge contracts"
+      ],
+      "component": "trace_validation_release_metadata",
+      "destination_path": "rlvr/evaluation/trace_validation/suite.v1.json",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/suite.v1.json",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "8ca9888542175e37cd1dfcfad0d48ec9d3340752b78394277ba6cd0244eaf776"
+    },
+    {
+      "adaptations": [
+        "replace internal module paths and machine locations with public repository-relative defaults",
+        "add an offline release-metadata verification phase",
+        "deeply verify model content markers and recompute row-level score fields",
+        "pin the complete release receipt and require content-bearing media requests"
+      ],
+      "component": "trace_validation_runtime",
+      "destination_path": "rlvr/evaluation/trace_validation/verify.py",
+      "owner": "rlvr",
+      "review_status": "approved_for_public_adaptation",
+      "source_path": "evaluation/trace_validation/verify.py",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_sha256": "90e9b4b6f17457d4d77ec556d2b830e4b1fdd2cbaab32d7593130fd618831727"
+    }
+  ],
+  "public_base": "d5d0215ff887e15c2ffafac632f27a3e0e76b5e8",
+  "public_authored_files": [
+    {
+      "path": "rlvr/README.md",
+      "purpose": "Public training and evaluation guide."
+    },
+    {
+      "path": "rlvr/dataset_equivalence.v1.json",
+      "purpose": "Machine-readable proof that the model-consumed columns in the reproduction release equal the historical training input."
+    },
+    {
+      "path": "rlvr/easyr1_backend/VENDOR_MANIFEST.v1.json",
+      "purpose": "Public hash and disposition receipt for the curated EasyR1 source unit."
+    },
+    {
+      "path": "rlvr/environment_receipt.v1.json",
+      "purpose": "Sanitized public training-environment receipt."
+    },
+    {
+      "path": "rlvr/evaluation/requirements-runtime.txt",
+      "purpose": "Composed public evaluation environment boundary."
+    },
+    {
+      "path": "rlvr/evaluation/trace_validation/reproducibility_patches.v1.json",
+      "purpose": "Reviewed post-run hardening ledger for the public TRACE validation workflow."
+    },
+    {
+      "path": "rlvr/evaluation/trace_eval/post_run_patches.v1.json",
+      "purpose": "Reviewed post-producer reproducibility patch ledger."
+    },
+    {
+      "path": "rlvr/evaluation/trace_eval/release_receipts.v1.json",
+      "purpose": "Producer, freeze, canonical-file, and immutable artifact receipts."
+    },
+    {
+      "path": "rlvr/release_files.v1.json",
+      "purpose": "Default-deny final public file and SHA-256 allowlist."
+    },
+    {
+      "path": "rlvr/requirements-cu128.txt",
+      "purpose": "Composed public training runtime pins."
+    },
+    {
+      "path": "rlvr/source_map.v1.json",
+      "purpose": "Reviewed internal-source to public-destination map."
+    }
+  ],
+  "release_inputs": {
+    "answer_prompt_sha256": "f394927d9abcfb7a1e43ef48a30c29b8c70e6facdbda314d7b27c59d8c3ae900",
+    "canonical_result_artifacts": [
+      "maveryn/trace-eval-runs@4178a839b689babe16f8ac36f0de7b1b2c5ef36c",
+      "maveryn/trace-eval-runs@4ca25af7a4d7daa644e6f35e070dbed1af078321",
+      "maveryn/trace-eval-runs@cf0d14aed86db2661d397ce8b68b36171873478d"
+    ],
+    "evaluation_source_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+    "judge": {
+      "repository_id": "Qwen/Qwen3-32B",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137"
+    },
+    "release_metadata_source_revision": "c28b706d7be5da62ee453375c9f559e99752e843",
+    "trace_dataset": {
+      "equivalence_receipt": {
+        "path": "rlvr/dataset_equivalence.v1.json",
+        "sha256": "40afcb59e0c67d7b7f47b78bb673a6c152320eb0656a990910ff52c634d43ae7"
+      },
+      "historical_training_revision": "e317b746b258630682367cc6a9d87dedd195113c",
+      "release_tag": "dataset-v1",
+      "repository_id": "maveryn/trace",
+      "reproduction_dataset_revision": "4e5b54361360296a855542b40cfd8b7f81b355fe"
+    },
+    "trace_validation": {
+      "evaluation_harness_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "models": 8,
+      "result_rows": 8,
+      "results_sha256": "1e2b78d46dbbd606210653b584ed77dc436d16bbdc0d329c5aaf55718dc37e11",
+      "rows_per_model": 2000,
+      "seed": 42,
+      "source_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+      "suite_sha256": "f9cccdcdddb6135c16d3a9d434f985b51e4105c07ff0c74a54a71a4dfe7c85c7"
+    },
+    "training_contract": {
+      "algorithm": {
+        "actor_learning_rate": 1e-06,
+        "actor_lr_scheduler": "constant",
+        "actor_lr_warmup_ratio": 0.0,
+        "actor_ppo_epochs": 1,
+        "disable_kl": true,
+        "kl_coefficient": 0.0,
+        "name": "grpo",
+        "use_kl_loss": false
+      },
+      "answer_key": "answer_gt",
+      "batching": {
+        "actor_global_batch_size": 128,
+        "max_prompt_tokens": 2048,
+        "max_response_tokens": 2048,
+        "rollout_batch_size": 128,
+        "rollouts_per_prompt": 8,
+        "validation_batch_size": 1024
+      },
+      "dataset_equivalence_receipt_sha256": "40afcb59e0c67d7b7f47b78bb673a6c152320eb0656a990910ff52c634d43ae7",
+      "dataset_revision": "e317b746b258630682367cc6a9d87dedd195113c",
+      "decoding": {
+        "training_temperature": 1.0,
+        "training_top_p": 1.0,
+        "validation_rollouts_per_prompt": 1,
+        "validation_temperature": 0.6,
+        "validation_top_p": 0.95
+      },
+      "output_mode": "answer",
+      "prompt_key": "prompt_answer",
+      "reward": {
+        "annotation_weight": 0.0,
+        "answer_scoring": "exact_json",
+        "answer_weight": 1.0,
+        "format_weight": 0.05
+      },
+      "reproduction_dataset_revision": "4e5b54361360296a855542b40cfd8b7f81b355fe",
+      "scale_specific": {
+        "3B": {
+          "base_model": "Qwen/Qwen2.5-VL-3B-Instruct@66285546d2b821cf421d4f5eb2576359d3770cd3",
+          "find_last_checkpoint": false,
+          "load_checkpoint_path": null,
+          "save_limit": 1
+        },
+        "7B": {
+          "base_model": "Qwen/Qwen2.5-VL-7B-Instruct@cc594898137f460bfe9f0759e9844b3ce807cfb5",
+          "find_last_checkpoint": false,
+          "load_checkpoint_path": null,
+          "save_limit": 1
+        }
+      },
+      "schedule": {
+        "checkpoint_selection": "global_step_500",
+        "max_steps": 500,
+        "save_every_steps": 100,
+        "validate_before_training": false,
+        "validate_every_steps": 100
+      },
+      "scope": "qwen2.5_vl_3b_and_7b_answer_only_grpo",
+      "train_rows": 64000,
+      "validation_rows": 2000
+    },
+    "training_receipts": {
+      "environments": {
+        "path": "docs/workflows/PUBLIC_RELEASE/rlvr_training_environments.v1.json",
+        "schema_version": "trace-rlvr-training-environment-receipt-v1",
+        "sha256": "4d3d900e3d787a0ca0efc78f1f732ea18b3618752387810112d3f5e4b8f4357b",
+        "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843"
+      },
+      "resolved_configs": {
+        "path": "docs/workflows/PUBLIC_RELEASE/rlvr_training_configs.v1.json",
+        "schema_version": "trace-rlvr-training-config-receipt-v1",
+        "sha256": "304a9094fb3eb20e9ea4e4e5249792557fc5660a15e7e2c394174d31a3684d41",
+        "source_revision": "c28b706d7be5da62ee453375c9f559e99752e843"
+      }
+    },
+    "training_source_equivalence_review": {
+      "compared_revision": "d29b23f6085764ea831adb5edc5a23f89b0d98f3",
+      "differing_release_files": [
+        "rlvr/easyr1_backend/examples/reward_function/trace_rlvr.py",
+        "rlvr/easyr1_backend/verl/trainer/config.py"
+      ],
+      "finding": "The differences only capitalize user-facing 'Trace' strings to 'TRACE'; configuration and runtime behavior are unchanged.",
+      "primary_public_source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "status": "reviewed_nonsemantic_difference"
+    },
+    "vendored_runtime": {
+      "internal_source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+      "license": "Apache-2.0",
+      "upstream_repository": "https://github.com/hiyouga/EasyR1",
+      "upstream_revision": "dd71bbd252694f5f850213eec15795b6b88d9fea",
+      "verl_file_count": 64
+    },
+    "vlmevalkit": {
+      "repository": "https://github.com/open-compass/VLMEvalKit",
+      "revision": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+    }
+  },
+  "release_scope": "Paper-reported Qwen2.5-VL 3B/7B training, TRACE validation, and canonical trace_eval_v1 generation, extraction, scoring, verification, summary, and publication.",
+  "review_policy": {
+    "approved_exact_copy": "May be copied byte-for-byte after its hash is verified.",
+    "approved_for_public_adaptation": "May be used only for the named destination after the listed scope/path adaptations and a second public-tree review.",
+    "default": "deny"
+  },
+  "reviewed_on": "2026-07-22",
+  "schema_version": "trace-rlvr-public-file-manifest-v1",
+  "source_review_receipt": {
+    "internal_manifest_path": "docs/workflows/PUBLIC_RELEASE/rlvr_public_file_manifest.v1.json",
+    "internal_manifest_revision": "191ce9802cf04d9fa1d5435a348871c946620753",
+    "internal_manifest_sha256": "8c7f14fbc49c2de97c0b3e05396e1fa3407e60a22f6c0e2b2c935ec31caa5b4d",
+    "public_review": "The public curation retains the reviewed training and trace_eval_v1 mappings, removes private run telemetry, closes the mapped runtime imports, and separately maps the reviewed TRACE validation workflow to its immutable release archive."
+  },
+  "trace_validation_review_receipt": {
+    "documentation_review_revision": "43123b33e7646393ee4b2c4a4bae18fa6923d642",
+    "evaluation_harness_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+    "immutable_archive_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+    "reviewed_destination_count": 15,
+    "reviewed_destination_set_sha256": "39888d75c529b300fbb81975dfc5010bdcd2833e4ae8a06586159957a6340a3b",
+    "reviewed_mapping_projection_sha256": "ab2fed9469fb5b6d1c09ac18eddb049e01ccb4d678af82b57e4756753538cc79",
+    "status": "reviewed_public_adaptation"
+  },
+  "status": "reviewed_public_curation"
+}

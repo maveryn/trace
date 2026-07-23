@@ -1,0 +1,67 @@
+{
+  "schema_version": "trace-eval-suite-v1",
+  "suite_id": "trace_eval_v1",
+  "status": "canonical",
+  "description": "Canonical TRACE external evaluation suite with 24 full-split benchmarks in six balanced reporting categories.",
+  "vlmevalkit": {
+    "repository": "https://github.com/open-compass/VLMEvalKit",
+    "commit": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+  },
+  "aggregation": {
+    "overall": "unweighted_macro_average_of_24_benchmarks",
+    "category": "unweighted_macro_average_of_4_benchmarks",
+    "average_category_means_for_overall": true
+  },
+  "generation": {
+    "run_set": "trace_eval_v1",
+    "dataset_manifest_view": "trace_eval_v1",
+    "temperature": 0.6,
+    "top_p": 1.0,
+    "top_k": -1,
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "max_tokens": 4096,
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "max_image_pixels": 12845056
+  },
+  "benchmarks": [
+    {"key": "chartqapro", "display": "ChartQAPro", "official_alias": "ChartQAPro_CoT", "category": "Charts & Tables", "route": "official_vlmevalkit", "rows": 1948, "answer_contract": "mandated final 'The answer is X' sentence", "score_contract": "pinned ChartQAPro dataset.evaluate"},
+    {"key": "charxivreason", "display": "CharXivReason", "official_alias": "CharXiv_reasoning_val", "category": "Charts & Tables", "route": "direct_score", "rows": 1000, "answer_contract": "benchmark grading prompt extracts answer", "score_contract": "Qwen3-32B rubric score from benchmark grading prompt"},
+    {"key": "tablevqabench", "display": "TableVQABench", "official_alias": "TableVQABench", "category": "Charts & Tables", "route": "direct_score", "rows": 1500, "answer_contract": "pinned parser with only the official leading 'Answer: ' cleanup", "score_contract": "pinned FinTabNetQA, VTabFact, VWTQ, and VWTQ-Syn scorers"},
+    {"key": "evochart", "display": "EvoChart", "official_alias": "EvoChart", "category": "Charts & Tables", "route": "direct_score", "rows": 1250, "answer_contract": "deterministic final-answer parsing in the TRACE dataset extension", "score_contract": "local deterministic EvoChart extension because the pinned upstream has no evaluator"},
+    {"key": "mathvision", "display": "MathVision", "official_alias": "MathVision", "category": "Visual Math", "route": "direct_score", "rows": 3040, "answer_contract": "official prefetch, else Qwen3-32B answer extraction", "score_contract": "official MathVision normalized answer scorer"},
+    {"key": "mathvista", "display": "MathVista", "official_alias": "MathVista_MINI", "category": "Visual Math", "route": "direct_score", "rows": 1000, "answer_contract": "official prefetch, else Qwen3-32B answer extraction", "score_contract": "official MathVista normalized answer scorer"},
+    {"key": "mathverse", "display": "MathVerse", "official_alias": "MathVerse_MINI_Vision_Only_cot", "category": "Visual Math", "route": "direct_score", "rows": 788, "answer_contract": "Qwen3-32B answer extraction", "score_contract": "official prefetch, else strict Qwen3-32B binary correctness judge"},
+    {"key": "wemath", "display": "WeMath", "official_alias": "WeMath_COT", "category": "Visual Math", "route": "official_vlmevalkit", "rows": 1740, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "pinned WeMath dataset.evaluate Score (Strict) percent metric"},
+    {"key": "phyx_mini_mc", "display": "PhyX mini MC", "official_alias": "PhyX_mini_MC", "category": "Science & General", "route": "official_vlmevalkit", "rows": 1000, "answer_contract": "deterministic final-option extraction before pinned VLMEvalKit evaluation", "score_contract": "pinned PhyX aggregation after deterministic option normalization"},
+    {"key": "mmmu_pro_vision", "display": "MMMU-ProVis", "official_alias": "MMMU_Pro_V_COT", "category": "Science & General", "route": "official_vlmevalkit", "rows": 1730, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "realworldqa", "display": "RealWorldQA", "official_alias": "RealWorldQA", "category": "Science & General", "route": "official_vlmevalkit", "rows": 765, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "mmstar", "display": "MMStar", "official_alias": "MMStar", "category": "Science & General", "route": "official_vlmevalkit", "rows": 1500, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "embspatial", "display": "EmbSpatial", "official_alias": "EmbSpatialBench", "category": "Spatial Reasoning", "route": "official_vlmevalkit", "rows": 3640, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "spatialvizbench_cot", "display": "SpatialVizBench COT", "official_alias": "SpatialVizBench_CoT", "category": "Spatial Reasoning", "route": "official_vlmevalkit", "rows": 1180, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "cvbench_3d", "display": "CV-Bench 3D", "official_alias": "CV-Bench-3D", "category": "Spatial Reasoning", "route": "official_vlmevalkit", "rows": 1200, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "erqa", "display": "ERQA", "official_alias": "ERQA", "category": "Spatial Reasoning", "route": "official_vlmevalkit", "rows": 400, "answer_contract": "benchmark-defined handling inside pinned ERQABench.evaluate", "score_contract": "pinned EASI ERQABench metric with the duplicate ERQADataset registry entry bypassed"},
+    {"key": "blink", "display": "BLINK", "official_alias": "BLINK", "category": "Perception & Counting", "route": "official_vlmevalkit", "rows": 1901, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "countbenchqa", "display": "CountBenchQA", "official_alias": "CountBenchQA", "category": "Perception & Counting", "route": "official_vlmevalkit", "rows": 487, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "countqa", "display": "CountQA", "official_alias": "CountQA", "category": "Perception & Counting", "route": "official_vlmevalkit", "rows": 1528, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "treebench", "display": "TreeBench", "official_alias": "TreeBench", "category": "Perception & Counting", "route": "official_vlmevalkit", "rows": 405, "answer_contract": "pinned parser after one explicit final boxed-option adapter", "score_contract": "pinned TreeBench dimension metric"},
+    {"key": "puzzlevqa", "display": "PuzzleVQA", "official_alias": "PuzzleVQA", "category": "Puzzles & Logic", "route": "official_vlmevalkit", "rows": 2000, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "visualpuzzles", "display": "VisualPuzzles", "official_alias": "VisualPuzzles", "category": "Puzzles & Logic", "route": "official_vlmevalkit", "rows": 1168, "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate", "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"},
+    {"key": "logicvista", "display": "LogicVista", "official_alias": "LogicVista", "category": "Puzzles & Logic", "route": "direct_score", "rows": 447, "answer_contract": "pinned option-set extraction with a numeric-label-only exception", "score_contract": "pinned exact normalized option-set comparison"},
+    {"key": "mme_reasoning", "display": "MME-Reasoning", "official_alias": "MME-Reasoning", "category": "Puzzles & Logic", "route": "dedicated_score", "rows": 1188, "answer_contract": "official task-specific Qwen3-32B extraction prompts", "score_contract": "official deterministic functions with Qwen3-32B only for open-answer correctness"}
+  ],
+  "categories": {
+    "Charts & Tables": ["chartqapro", "charxivreason", "tablevqabench", "evochart"],
+    "Visual Math": ["mathvision", "mathvista", "mathverse", "wemath"],
+    "Science & General": ["phyx_mini_mc", "mmmu_pro_vision", "realworldqa", "mmstar"],
+    "Spatial Reasoning": ["embspatial", "spatialvizbench_cot", "cvbench_3d", "erqa"],
+    "Perception & Counting": ["blink", "countbenchqa", "countqa", "treebench"],
+    "Puzzles & Logic": ["puzzlevqa", "visualpuzzles", "logicvista", "mme_reasoning"]
+  },
+  "routes": {
+    "direct_score": ["charxivreason", "tablevqabench", "evochart", "mathvision", "mathvista", "mathverse", "logicvista"],
+    "official_vlmevalkit": ["chartqapro", "wemath", "phyx_mini_mc", "mmmu_pro_vision", "realworldqa", "mmstar", "embspatial", "spatialvizbench_cot", "cvbench_3d", "erqa", "blink", "countbenchqa", "countqa", "treebench", "puzzlevqa", "visualpuzzles"],
+    "dedicated_score": ["mme_reasoning"]
+  }
+}

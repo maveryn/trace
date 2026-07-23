@@ -1,0 +1,100 @@
+{
+  "bundle_id": "puzzles_polyomino_assembly_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "polyomino_assembly": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This puzzle diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "decomposition_pair_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "composition_result_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "hole_fill_piece_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "decomposition_pair_label": [
+        "Which option's two pieces can be moved and rotated to make the target shape exactly? Do not flip pieces.",
+        "Choose the option whose two pieces can form the target polyomino exactly using moves and rotations only.",
+        "Which labeled pair can be assembled into the target with no gaps or overlaps, allowing rotation but not flipping?",
+        "Select the option where the two pieces tile the target shape exactly. Pieces may rotate but may not flip.",
+        "Which pair of pieces can be combined to match the target shape exactly under rotation only?"
+      ],
+      "composition_result_label": [
+        "Which option shape can be made by moving and rotating the two source pieces? Do not flip pieces.",
+        "Choose the option that the two source pieces can form exactly using moves and rotations only.",
+        "Which labeled shape can be assembled from the two source pieces with no gaps or overlaps, allowing rotation but not flipping?",
+        "Select the option that matches the composite shape possible from the two source pieces. Pieces may rotate but may not flip.",
+        "Which result shape can be formed by combining the two source pieces under rotation only?"
+      ],
+      "hole_fill_piece_label": [
+        "Which option piece can fill the blank hole exactly? Rotations and flips are allowed.",
+        "Choose the option that fits the empty hole with no gaps or overlaps. You may rotate or flip the piece.",
+        "Which labeled piece matches the cutout hole exactly, allowing rotations and flips?",
+        "Select the option piece that can cover the blank hole exactly after rotating or flipping it.",
+        "Which option can be moved, rotated, or flipped to fill the hole in the polyomino board?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:decomposition_pair_label_query": {
+      "object_description": "a target polyomino and four labeled options, each containing two candidate pieces",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] of the chosen option card.",
+      "json_example": "{\"annotation\":[438,332,762,522],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "task:composition_result_label_query": {
+      "object_description": "two source polyomino pieces and four labeled candidate result shapes",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] of the chosen option card.",
+      "json_example": "{\"annotation\":[438,332,762,522],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "task:hole_fill_piece_label_query": {
+      "object_description": "a polyomino board with one blank hole and four labeled candidate filler pieces",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] of the chosen option card.",
+      "json_example": "{\"annotation\":[438,332,762,522],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

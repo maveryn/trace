@@ -1,0 +1,100 @@
+{
+  "bundle_id": "puzzles_word_search_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description": "a row-and-column labeled word-search grid"
+  },
+  "templates": {
+    "scene": {
+      "word_search": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This puzzle shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The word-search puzzle shows {object_description}."
+      ]
+    },
+    "task": {
+      "search_location_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "present_word_option_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "search_location_label": [
+        "Find the word \"{target_word}\". Which option below the grid gives its start row, start column, and direction?",
+        "Which option below the board correctly describes where \"{target_word}\" starts and the direction it follows?",
+        "Use the grid labels to locate \"{target_word}\". Which option lists the correct start row, start column, and direction?",
+        "Find \"{target_word}\" in the grid, then choose the option below the board with its start row, start column, and direction.",
+        "Which labeled option below the grid matches the placement of \"{target_word}\" in the word-search grid?"
+      ],
+      "present_word_option_label": [
+        "Words may read horizontally, vertically, or diagonally, forward or backward. Which option below the grid is a word present in the puzzle?",
+        "Using horizontal, vertical, and diagonal paths in either direction, choose the listed word that can be found in the grid.",
+        "Among the four options below the board, which word is present in the word-search grid? Words can run horizontally, vertically, or diagonally, forward or backward.",
+        "Search the grid in any straight horizontal, vertical, or diagonal direction. Which option word appears?",
+        "Which labeled option below the grid names the word that is actually placed in the puzzle?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:search_location_label": {
+      "answer_instruction": "the selected option letter",
+      "annotation_hint": "Set annotation to a JSON array of ordered image-pixel bounding boxes [x0,y0,x1,y1], one for each grid cell in the found word from first letter to last letter.",
+      "json_example": "{\"annotation\":[[194,222,252,280],[252,222,310,280],[310,222,368,280]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:present_word_option_label": {
+      "answer_instruction": "the selected option letter",
+      "annotation_hint": "Set annotation to one image-pixel line segment [[x0, y0], [x1, y1]] from the present word's first-letter cell center to its last-letter cell center.",
+      "json_example": "{\"annotation\":[[223,251],[339,251]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "target_word": {
+      "type": "string"
+    },
+    "target_letter": {
+      "type": "string"
+    },
+    "word_bank_size": {
+      "type": "integer"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:word_search": [
+      "object_description"
+    ]
+  }
+}

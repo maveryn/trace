@@ -1,0 +1,76 @@
+{
+  "bundle_id": "physics_stack_stability_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "stack_stability_diagram": [
+        "The image shows six labeled stacks of equal-size brick blocks.",
+        "The diagram shows six labeled brick stacks with center-of-mass markers.",
+        "The figure shows six brick stacks, each with a COM marker, projection line, and support bracket.",
+        "The visual shows labeled brick stacks with red COM markers and support-footprint brackets.",
+        "The image shows several labeled brick stacks for a center-of-mass stability check."
+      ]
+    },
+    "task": {
+      "stack_stability_status_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "stable_stack_label": [
+        "Which labeled stack will stay upright because its center-of-mass projection falls within its support base?",
+        "Use the red COM marker and dashed projection. Which stack remains stable?",
+        "Choose the stack whose center-of-mass projection lands inside the support-footprint bracket.",
+        "Which option shows a stack that will not tip over?",
+        "From the COM projection and support base, which labeled stack stays upright?"
+      ],
+      "tipping_stack_label": [
+        "Which labeled stack will tip over because its center-of-mass projection falls outside its support base?",
+        "Use the red COM marker and dashed projection. Which stack tips over?",
+        "Choose the stack whose center-of-mass projection lands outside the support-footprint bracket.",
+        "Which option shows a stack that will not stay upright?",
+        "From the COM projection and support base, which labeled stack tips over?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:stack_stability_status_label_query": {
+      "annotation_hint": "set \"annotation\" to a [x0,y0,x1,y1] pixel box around the selected stack, including its COM marker, projection line, and support bracket",
+      "answer_hint": "set \"answer\" to the selected stack letter as a string",
+      "json_example": "{\"annotation\":[196,214,276,382],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "required_slots_by_key": {
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "bundle_id": "pages_control_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "control_board": [
+        "The image shows {object_description}.",
+        "The screen shows {object_description}.",
+        "This screen shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "control_board_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "disabled_controls_in_group_count": [
+        "In the \"{group_name}\" group, how many controls are disabled?",
+        "How many disabled controls are in the \"{group_name}\" group?",
+        "Within \"{group_name}\", what is the number of disabled controls?",
+        "Looking only at the \"{group_name}\" group, how many controls are disabled?",
+        "For the \"{group_name}\" group, determine how many controls are disabled."
+      ],
+      "selected_enabled_controls_in_group_count": [
+        "In the \"{group_name}\" group, how many controls are both selected and enabled?",
+        "How many selected controls in the \"{group_name}\" group are also enabled?",
+        "Within \"{group_name}\", what is the number of controls that are selected and enabled?",
+        "Looking only at the \"{group_name}\" group, how many controls are selected without being disabled?",
+        "For the \"{group_name}\" group, determine how many controls are both selected and enabled."
+      ],
+      "disabled_extremum_group_label": [
+        "Which group has the most disabled controls?",
+        "Across the visible groups, what group contains the highest number of disabled controls?",
+        "Compare the groups by disabled controls. Which group has the most?",
+        "Find the group with the largest count of disabled controls. What is its group name?",
+        "Using all groups, identify the group containing the most disabled controls."
+      ],
+      "selected_enabled_extremum_group_label": [
+        "Which group has the most controls that are both selected and enabled?",
+        "Across the visible groups, what group contains the highest number of selected enabled controls?",
+        "Compare the groups by selected controls that are not disabled. Which group has the most?",
+        "Find the group with the largest count of selected enabled controls. What is its group name?",
+        "Using all groups, identify the group containing the most controls that are selected and enabled."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:disabled_controls_in_group_count": {
+      "object_description": "grouped labeled controls in a desktop application",
+      "answer_hint": "set \"answer\" to the integer count of disabled controls in the requested group",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted disabled controls",
+      "json_example": "{\"annotation\":[[96,218,221,300],[233,218,358,300],[370,310,495,392]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:selected_enabled_controls_in_group_count": {
+      "object_description": "grouped labeled controls in a desktop application",
+      "answer_hint": "set \"answer\" to the integer count of controls in the requested group that are both selected and enabled",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted selected enabled controls",
+      "json_example": "{\"annotation\":[[96,218,221,300],[233,218,358,300],[370,310,495,392]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:disabled_extremum_group_label": {
+      "object_description": "grouped labeled controls in a desktop application",
+      "answer_hint": "set \"answer\" to the exact visible group name",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box around the group panel with the most disabled controls",
+      "json_example": "{\"annotation\":[[72,190,612,430]],\"answer\":\"Review\"}",
+      "json_example_answer_only": "{\"answer\":\"Review\"}"
+    },
+    "query:selected_enabled_extremum_group_label": {
+      "object_description": "grouped labeled controls in a desktop application",
+      "answer_hint": "set \"answer\" to the exact visible group name",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box around the group panel with the most selected enabled controls",
+      "json_example": "{\"annotation\":[[72,190,612,430]],\"answer\":\"Review\"}",
+      "json_example_answer_only": "{\"answer\":\"Review\"}"
+    }
+  },
+  "dynamic_slots": {
+    "group_name": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:control_board": [
+      "object_description"
+    ],
+    "query:disabled_controls_in_group_count": [
+      "group_name"
+    ],
+    "query:selected_enabled_controls_in_group_count": [
+      "group_name"
+    ],
+    "query:disabled_extremum_group_label": [
+    ],
+    "query:selected_enabled_extremum_group_label": [
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "bundle_id": "pages_schedule_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "day_schedule": [
+        "The image shows {object_description}.",
+        "The schedule shows {object_description}.",
+        "This schedule shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "schedule_day_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "overlap_count": [
+        "How many other scheduled events overlap the highlighted reference event?",
+        "Count the other event blocks whose time range overlaps the highlighted reference event.",
+        "Among the other scheduled events, how many overlap the highlighted reference event?",
+        "How many other event blocks cross the highlighted reference event's time range?",
+        "Count the other scheduled events that overlap the highlighted reference event; separated events do not count."
+      ],
+      "longer_than_reference_count": [
+        "How many other scheduled events are longer than the highlighted reference event?",
+        "Count the other events whose duration is longer than the highlighted reference event.",
+        "Among the other scheduled events, how many last longer than the highlighted reference event?",
+        "How many other event blocks are longer than the highlighted reference event?",
+        "Count the other scheduled events with a longer duration than the highlighted reference event."
+      ],
+      "maximum_non_overlapping_count": [
+        "What is the maximum number of scheduled events that can be selected without any overlap?",
+        "Choose the largest possible set of non-overlapping scheduled events. How many events can it contain?",
+        "How many scheduled events can be selected at most so that none overlap?",
+        "Find the maximum-size set of non-overlapping scheduled events. What is its size?",
+        "What is the greatest number of scheduled events that can be chosen with no overlaps?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:day_schedule": {
+      "object_description": "one single-day schedule with time labels and scheduled event blocks"
+    },
+    "query:overlap_count": {
+      "answer_hint": "set \"answer\" to the integer count of events that overlap the highlighted reference event",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for all counted event blocks",
+      "json_example": "{\"annotation\":[[250,276,396,366],[404,318,550,438]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:longer_than_reference_count": {
+      "answer_hint": "set \"answer\" to the integer count of events longer than the highlighted reference event",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for all counted event blocks",
+      "json_example": "{\"annotation\":[[250,240,396,408],[404,430,550,634],[558,352,704,568]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:maximum_non_overlapping_count": {
+      "answer_hint": "set \"answer\" to the maximum number of mutually non-overlapping events",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for the unique maximum-size non-overlapping event set",
+      "json_example": "{\"annotation\":[[250,220,396,316],[404,316,550,412],[558,412,704,508],[250,508,396,604]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:day_schedule": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

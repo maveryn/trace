@@ -1,0 +1,126 @@
+{
+  "bundle_id": "games_bingo_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_bingo_card": [
+        "The image shows {object_description}.",
+        "The bingo card shows {object_description}.",
+        "This bingo card shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "bingo_card_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "completed_column_label": [
+        "Which BINGO column is fully marked?",
+        "Which column label has all five cells marked?",
+        "Identify the completed BINGO column.",
+        "What is the completed column label?",
+        "Looking at the marked cells, which column is complete?"
+      ],
+      "completed_line_sum_value": [
+        "What is the sum of the five printed numbers in the completed {line_axis}?",
+        "Add the printed numbers in the completed {line_axis}. What is the sum?",
+        "Find the completed {line_axis} and report the sum of its five printed numbers.",
+        "Using the completed {line_axis}, what total do its five numbers make?",
+        "What number do you get after adding the five values in the completed {line_axis}?"
+      ],
+      "near_complete_row_count": [
+        "{near_complete_line_rule_text} How many near-complete rows are there?",
+        "Count the rows that are exactly one mark away from complete. {near_complete_line_rule_text}",
+        "How many rows have exactly one unmarked cell?",
+        "{near_complete_line_rule_text} What is the number of near-complete rows?",
+        "Looking at the marked cells, how many rows need one more mark to be complete?"
+      ],
+      "near_complete_column_count": [
+        "{near_complete_line_rule_text} How many near-complete columns are there?",
+        "Count the columns that are exactly one mark away from complete. {near_complete_line_rule_text}",
+        "How many columns have exactly one unmarked cell?",
+        "{near_complete_line_rule_text} What is the number of near-complete columns?",
+        "Looking at the marked cells, how many columns need one more mark to be complete?"
+      ],
+      "called_number_match_count": [
+        "{called_number_match_rule_text} How many numbers in the CALLED list appear on the bingo card?",
+        "Using the CALLED list, count how many listed numbers are printed on the bingo card.",
+        "How many CALLED numbers can you find on the card?",
+        "{called_number_match_rule_text} Count the CALLED-list values that appear on the card.",
+        "Compare the CALLED list with the card. How many called values are present?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_bingo_card": {
+      "object_description": "one face-up 5 x 5 bingo card"
+    },
+    "query:completed_column_label": {
+      "answer_hint": "set \"answer\" to the completed column label as B, I, N, G, or O",
+      "annotation_hint": "set \"annotation\" to one segment using two pixel-point endpoints [x, y] in [[x0, y0], [x1, y1]] form, at the centers of the top and bottom cells in the completed column",
+      "json_example": "{\"annotation\":[[180,90],[180,330]],\"answer\":\"I\"}",
+      "json_example_answer_only": "{\"answer\":\"I\"}"
+    },
+    "query:completed_line_sum_value": {
+      "answer_hint": "set \"answer\" to the sum of the five printed numbers in the completed row or column",
+      "annotation_hint": "set \"annotation\" to an array of points [x, y], one at the center of each of the five cells in the completed row or column",
+      "json_example": "{\"annotation\":[[65,105],[125,105],[185,105],[245,105],[305,105]],\"answer\":184}",
+      "json_example_answer_only": "{\"answer\":184}"
+    },
+    "query:near_complete_row_count": {
+      "near_complete_line_rule_text": "A near-complete row is a row with exactly one unmarked cell.",
+      "answer_hint": "set \"answer\" to the number of near-complete rows",
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for the single unmarked gap cell in each near-complete row",
+      "json_example": "{\"annotation\":[[220,80,270,130],[100,240,150,290]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:near_complete_column_count": {
+      "near_complete_line_rule_text": "A near-complete column is a column with exactly one unmarked cell.",
+      "answer_hint": "set \"answer\" to the number of near-complete columns",
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for the single unmarked gap cell in each near-complete column",
+      "json_example": "{\"annotation\":[[160,160,210,210],[280,240,330,290]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:called_number_match_count": {
+      "called_number_match_rule_text": "Some CALLED-list numbers may not appear on the card.",
+      "answer_hint": "set \"answer\" to the number of CALLED-list numbers that appear on the card",
+      "annotation_hint": "set \"annotation\" to an array of pixel-space cell boxes [x0, y0, x1, y1] for the card cells whose printed numbers are in the CALLED list",
+      "json_example": "{\"annotation\":[[100,80,150,130],[220,240,270,290]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "line_axis": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:completed_line_sum_value": [
+      "line_axis"
+    ]
+  }
+}

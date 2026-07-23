@@ -1,0 +1,66 @@
+generation:
+  shared:
+    point_count_min: 7
+    point_count_max: 10
+    interval_span_min: 3
+    interval_span_max: 5
+    single_value_min: 8
+    single_value_max: 44
+    stacked_value_min: 4
+    stacked_value_max: 16
+    category_count_min: 3
+    category_count_max: 4
+    category_label_max_chars: 6
+    dominance_margin_min: 4
+rendering:
+  shared:
+    chart_context_profile: report_paragraph
+    canvas_width: 1060
+    canvas_height: 680
+    plot_margin_left_px: 84
+    plot_margin_right_px: 172
+    plot_margin_top_px: 48
+    plot_margin_bottom_px: 84
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 3
+    grid_line_width_px_min: 1
+    grid_line_width_px_max: 2
+    tick_length_px: 8
+    label_font_size_px: 19
+    tick_font_size_px: 16
+    value_font_size_px: 16
+    legend_font_size_px: 17
+    label_stroke_width_px: 0
+    area_outline_width_px_min: 2
+    area_outline_width_px_max: 3
+    point_radius_px_min: 4
+    point_radius_px_max: 6
+    y_axis_tick_step: 10
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -18
+    layout_jitter_x_px_max: 18
+    layout_jitter_y_px_min: -12
+    layout_jitter_y_px_max: 12
+    layout_jitter_min_margin_px: 22
+    series_palette_rgb:
+    - - 72
+      - 132
+      - 204
+    - - 225
+      - 127
+      - 72
+    - - 92
+      - 166
+      - 106
+    - - 166
+      - 114
+      - 190
+    - - 214
+      - 177
+      - 69
+    - - 86
+      - 170
+      - 176
+prompt:
+  shared:
+    bundle_id: charts_area_v1

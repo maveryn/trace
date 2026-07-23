@@ -1,0 +1,89 @@
+{
+  "bundle_id": "three_d_warehouse_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "warehouse_robot_forward_path_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "warehouse_robot_nearest_object_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:warehouse": [
+      "object_description"
+    ],
+    "query:closest_object_to_reference": [
+      "reference_object_name"
+    ],
+    "query:closest_object_to_robot": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer field: {answer_hint}.\nAnnotation field: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "warehouse": [
+      "The image shows {object_description}.",
+      "The scene shows {object_description}.",
+      "The image presents {object_description}.",
+      "The picture shows {object_description}.",
+      "The view shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "first_object_ahead": [
+      "Which option describes the object the red-boxed robot will reach first if it moves straight ahead along the red arrow?",
+      "Choose the option for the first object in the red-boxed robot's forward path.",
+      "If the red-boxed robot continues straight along the red arrow, which option describes the object that comes first?",
+      "Which option describes the first warehouse object the red-boxed robot would encounter by moving straight forward?",
+      "Following the red-boxed robot's forward direction, which option describes the object reached first?"
+    ],
+    "closest_object_to_reference": [
+      "Which option describes the warehouse object closest to the {reference_object_name}?",
+      "Choose the option for the object nearest to the {reference_object_name}.",
+      "Which option describes the warehouse object closest to the {reference_object_name}?",
+      "Among the candidate warehouse objects, which option is nearest to the {reference_object_name}?",
+      "Which option describes the object with the smallest distance to the {reference_object_name}?"
+    ],
+    "closest_object_to_robot": [
+      "Which option describes the warehouse object closest to the robot?",
+      "Choose the option for the object nearest to the robot.",
+      "Which option describes the warehouse object closest to the robot?",
+      "Among the candidate warehouse objects, which option is nearest to the robot?",
+      "Which option describes the object with the smallest distance to the robot?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

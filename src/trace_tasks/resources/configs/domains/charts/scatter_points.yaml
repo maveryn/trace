@@ -1,0 +1,138 @@
+generation:
+  shared:
+    scatter_points_count_min: 28
+    scatter_points_count_max: 54
+    scatter_points_category_count_min: 4
+    scatter_points_category_count_max: 6
+    scatter_points_per_category_min: 6
+    scatter_points_per_category_max: 10
+    category_threshold_points_per_category_min: 7
+    category_threshold_points_per_category_max: 12
+    axis_threshold_answer_min: 1
+    axis_threshold_answer_max: 10
+    category_threshold_answer_min: 2
+    category_threshold_answer_max: 9
+    threshold_values:
+    - 20
+    - 30
+    - 40
+    - 50
+    - 60
+    - 70
+    - 80
+    mean_extremum_margin_min: 5.0
+    mean_extremum_margin_max: 9.0
+    category_label_min_chars: 3
+    category_label_max_chars: 12
+    category_label_allow_spaces: true
+    plain_marker_shape: circle
+rendering:
+  shared:
+    scatter_points_canvas_width: 1280
+    scatter_points_canvas_height: 820
+    scatter_points_plot_margin_left_px: 112
+    scatter_points_plot_margin_right_px: 292
+    scatter_points_plot_margin_top_px: 80
+    scatter_points_plot_margin_bottom_px: 118
+    scatter_points_point_radius_px_min: 5
+    scatter_points_point_radius_px_max: 8
+    scatter_points_tick_font_size_px: 16
+    scatter_points_label_font_size_px: 19
+    scatter_points_legend_font_size_px: 20
+    scatter_points_title_font_size_px: 26
+    scatter_points_title_probability: 0.35
+    scatter_points_legend_gap_px: 78
+    scatter_points_x_axis_label: X value
+    scatter_points_y_axis_label: Y value
+    scatter_points_title_options:
+    - Point Distribution
+    - Scatter Measurements
+    - Sample Point Map
+    - Observed Points
+    scatter_points_threshold_line_rgb_options:
+    - - 31
+      - 91
+      - 170
+    - - 166
+      - 61
+      - 49
+    - - 45
+      - 115
+      - 78
+    - - 116
+      - 73
+      - 158
+    scatter_points_threshold_label_rgb_options:
+    - - 20
+      - 60
+      - 126
+    - - 128
+      - 42
+      - 36
+    - - 31
+      - 84
+      - 58
+    - - 86
+      - 52
+      - 122
+    plain_point_rgb_options:
+    - - 48
+      - 99
+      - 176
+    - - 176
+      - 77
+      - 55
+    - - 48
+      - 132
+      - 85
+    - - 123
+      - 77
+      - 164
+    scatter_points_category_palette_rgb:
+    - - 42
+      - 96
+      - 176
+    - - 210
+      - 83
+      - 72
+    - - 52
+      - 144
+      - 92
+    - - 138
+      - 82
+      - 178
+    - - 215
+      - 137
+      - 42
+    - - 44
+      - 148
+      - 169
+    - - 184
+      - 73
+      - 124
+prompt:
+  shared:
+    bundle_id: charts_scatter_points_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.014

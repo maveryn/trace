@@ -1,0 +1,66 @@
+generation:
+  shared:
+    category_count_min: 12
+    category_count_max: 18
+    series_count_min: 3
+    series_count_max: 5
+    value_min: 1
+    value_max: 99
+    target_answer_min: 0
+    target_answer_max: 8
+    scene_variant_weights:
+      grouped_bar: 1.0
+      grouped_horizontal_bar: 1.0
+      multi_line: 1.0
+      grouped_lollipop: 1.0
+    change_measure_weights:
+      directional_change: 1.0
+      absolute_gap: 1.0
+    ratio_measure_weights:
+      series_share: 1.0
+      pair_ratio: 1.0
+    change_direction_weights:
+      increase: 1.0
+      decrease: 1.0
+    extremum_direction_weights:
+      largest: 1.0
+      smallest: 1.0
+    comparison_weights:
+      greater_than: 1.0
+      less_than: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_change_measure_sampling: true
+    balanced_ratio_measure_sampling: true
+    balanced_change_direction_sampling: true
+    balanced_extremum_direction_sampling: true
+    balanced_comparison_sampling: true
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 720
+    plot_margin_left_px: 92
+    plot_margin_right_px: 52
+    plot_margin_top_px: 44
+    plot_margin_bottom_px: 92
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 2
+    grid_line_width_px: 1
+    tick_length_px: 8
+    label_font_size_px: 22
+    tick_font_size_px: 18
+    label_stroke_width_px: 2
+    mark_outline_width_px: 2
+    line_width_px_min: 2
+    line_width_px_max: 4
+    point_radius_px_min: 5
+    point_radius_px_max: 8
+    bar_width_fraction: 0.72
+    mark_color_channel_min: 0
+    mark_color_channel_max: 220
+    mark_color_min_distance: 50.0
+    mark_color_distance_space: lab
+    guide_line_mode: variant
+    guide_line_prob: 0.75
+prompt:
+  shared:
+    bundle_id: charts_multiseries_v1

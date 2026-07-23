@@ -1,0 +1,40 @@
+generation:
+  task_overrides:
+    task_puzzles__voxel_cube__cube_count:
+      answer_min: 4
+      answer_max: 14
+    task_puzzles__voxel_cube__cube_structure_change_count:
+      answer_min: 1
+      answer_max: 5
+    task_puzzles__voxel_cube__cube_visible_projection_count:
+      answer_min: 2
+      answer_max: 9
+    task_puzzles__voxel_cube__cube_projection_match_label:
+      option_count: 4
+
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 520
+    cube_size_px: 52
+    projection_cell_size_px: 40
+    panel_gap_px: 18
+    label_font_size_px: 19
+
+prompt:
+  shared:
+    bundle_id: puzzles_voxel_cube_v1
+    scene_key: voxel_cube
+  task_overrides:
+    task_puzzles__voxel_cube__cube_count:
+      task_key: cube_count_query
+    task_puzzles__voxel_cube__cube_structure_change_count:
+      task_key: cube_structure_change_count_query
+    task_puzzles__voxel_cube__cube_visible_projection_count:
+      task_key: cube_visible_projection_count_query
+    task_puzzles__voxel_cube__cube_projection_match_label:
+      task_key: cube_projection_match_label_query
+
+visual:
+  noise:
+    apply_prob: 0.12

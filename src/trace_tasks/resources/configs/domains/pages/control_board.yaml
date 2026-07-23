@@ -1,0 +1,106 @@
+generation:
+  shared:
+    scene_variant_weights:
+      office_document: 1.0
+      creative_workspace: 1.0
+      developer_ide: 1.0
+      cad_workspace: 1.0
+      scientific_plotter: 1.0
+      os_file_manager: 1.0
+    balanced_scene_variant_sampling: true
+    group_name_pool:
+    - Layout
+    - Editing
+    - Review
+    - Output
+    state_count_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    extremum_state_count_support:
+    - 3
+    - 4
+    - 5
+    candidate_label_pool:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    - H
+    - I
+    - J
+    - K
+    - L
+    - M
+    - N
+    - O
+    - P
+    - Q
+    - R
+    - S
+    - T
+    - U
+    - V
+    - W
+    - X
+    - Y
+    - Z
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 800
+    window_margin_px: 42
+    title_bar_height_px: 46
+    menu_bar_height_px: 34
+    corner_radius_px: 16
+    control_corner_radius_px: 8
+    control_outline_width_px: 2
+    control_outline_width_px_min: 1
+    control_outline_width_px_max: 3
+    badge_size_px: 28
+    badge_size_px_min: 26
+    badge_size_px_max: 30
+    title_font_size_px: 24
+    title_font_size_px_min: 23
+    title_font_size_px_max: 25
+    body_font_size_px: 17
+    body_font_size_px_min: 16
+    body_font_size_px_max: 18
+    small_font_size_px: 13
+    small_font_size_px_min: 12
+    small_font_size_px_max: 14
+    label_font_size_px: 18
+    label_font_size_px_min: 17
+    label_font_size_px_max: 19
+prompt:
+  shared:
+    bundle_id: pages_control_board_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.12
+        - 0.35
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 80.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.01
+        - 0.04

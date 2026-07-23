@@ -1,0 +1,104 @@
+{
+  "bundle_id": "puzzles_cyclic_order_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "cyclic_order": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This puzzle diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "cyclic_order_equivalent_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "insertion_position_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "swap_repair_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "{token_render_style_instruction} Exactly one option loop is equivalent to the reference loop. Rotations count as equivalent; reversed or reflected order does not.",
+        "{token_render_style_instruction} Select the only option that preserves the same cyclic order as the reference. Rotations are allowed, but reversal is not.",
+        "{token_render_style_instruction} Which labeled option matches the reference up to rotation, without reversing the order?",
+        "{token_render_style_instruction} Identify the single valid option loop. A valid loop may be rotated but not reflected.",
+        "{token_render_style_instruction} What label marks the equivalent option loop, treating rotated loops as the same and reflected loops as different?"
+      ],
+      "swap_repair": [
+        "{token_render_style_instruction} The broken loop has numbered token positions. Which swap option repairs it so its cyclic order matches the reference up to rotation?",
+        "{token_render_style_instruction} Choose the swap of two numbered positions that fixes the broken loop. The repaired loop may be rotated relative to the reference, but not reversed.",
+        "{token_render_style_instruction} Which labeled position swap would make the broken loop preserve the same cyclic order as the reference?",
+        "{token_render_style_instruction} Select the only swap option that repairs the broken loop into a rotated copy of the reference order.",
+        "{token_render_style_instruction} Swap the two numbered positions named by one option. Which option makes the broken loop match the reference cyclic order?"
+      ],
+      "insertion_position": [
+        "{token_render_style_instruction} One reference token is missing from the partial loop. Which labeled gap should contain the missing token so the cyclic order matches up to rotation?",
+        "{token_render_style_instruction} Choose the labeled gap where the missing reference token belongs. The completed loop may be rotated relative to the reference, but not reversed.",
+        "{token_render_style_instruction} Which gap label places the missing token correctly in the partial loop?",
+        "{token_render_style_instruction} Select the gap that completes the partial loop as a rotated copy of the reference.",
+        "{token_render_style_instruction} One token from the reference is absent from the partial loop. Which labeled gap restores the reference cyclic order?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:cyclic_order_equivalent_label_query": {
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] around the selected option loop image.",
+      "json_example": "{\"annotation\":[574,463,746,617],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:insertion_position_label_query": {
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] around the selected labeled gap badge.",
+      "json_example": "{\"annotation\":[755,231,793,269],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:swap_repair_label_query": {
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] around the selected swap option card.",
+      "json_example": "{\"annotation\":[493,425,707,521],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "token_render_style_instruction": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {}
+}

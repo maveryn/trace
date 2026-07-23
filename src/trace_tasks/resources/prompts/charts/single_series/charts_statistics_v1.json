@@ -1,0 +1,244 @@
+{
+  "bundle_id": "charts_statistics_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "labeled_chart_statistics": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "summary_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "summary_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "max": [
+        "What is the highest displayed value?",
+        "Find the maximum value shown.",
+        "Determine the largest value among the labeled marks.",
+        "What is the maximum value shown?",
+        "Identify the highest value shown by any labeled mark."
+      ],
+      "min": [
+        "What is the lowest displayed value?",
+        "Find the minimum value shown.",
+        "Determine the smallest value among the labeled marks.",
+        "What is the minimum value shown?",
+        "Identify the lowest value shown by any labeled mark."
+      ],
+      "range": [
+        "What is the difference between the highest and lowest displayed values?",
+        "Find the range of the displayed values.",
+        "Determine the difference between the maximum and minimum values.",
+        "What is max minus min for the displayed values?",
+        "Compute the range of the labeled values."
+      ],
+      "mean": [
+        "What is the mean (average) of the displayed values?",
+        "Find the average value of the labeled marks.",
+        "Determine the mean of the displayed values.",
+        "What is the arithmetic mean of the displayed values?",
+        "Compute the average of the labeled values."
+      ],
+      "median": [
+        "What is the median of the displayed values?",
+        "Find the median value of the labeled marks.",
+        "Determine the middle value of the displayed values.",
+        "What is the median value shown?",
+        "Compute the median of the labeled values."
+      ],
+      "nth_highest": [
+        "What is the {rank_n_ordinal}-highest distinct displayed value?",
+        "Find the {rank_n_ordinal}-highest distinct value among the labeled marks.",
+        "Determine the {rank_n_ordinal}-highest distinct chart value.",
+        "What is the {rank_n_ordinal}-highest distinct value shown?",
+        "Compute the {rank_n_ordinal}-highest distinct displayed value."
+      ],
+      "nth_lowest": [
+        "What is the {rank_n_ordinal}-lowest distinct displayed value?",
+        "Find the {rank_n_ordinal}-lowest distinct value among the labeled marks.",
+        "Determine the {rank_n_ordinal}-lowest distinct chart value.",
+        "What is the {rank_n_ordinal}-lowest distinct value shown?",
+        "Compute the {rank_n_ordinal}-lowest distinct displayed value."
+      ],
+      "sum": [
+        "What is the sum of the displayed values?",
+        "Find the total of the labeled values.",
+        "Determine the sum of all displayed values.",
+        "What is the total value across all labeled marks?",
+        "Compute the sum of the displayed values."
+      ],
+      "mode": [
+        "What is the mode of the displayed values?",
+        "Find the modal value shown.",
+        "Determine the unique mode of the labeled marks.",
+        "What value appears most often shown?",
+        "Compute the mode of the displayed values."
+      ],
+      "order_statistic_value": [
+        "What is the {statistic_prompt}?",
+        "Find the {statistic_prompt} among the labeled marks.",
+        "Determine the {statistic_prompt} from the displayed values.",
+        "What is the displayed {statistic_prompt}?",
+        "Compute the {statistic_prompt} for the displayed values."
+      ],
+      "order_statistic_label": [
+        "Which label has the {statistic_prompt}?",
+        "Find the label of the mark with the {statistic_prompt}.",
+        "Determine which labeled mark has the {statistic_prompt}.",
+        "What label corresponds to the {statistic_prompt} shown?",
+        "Identify the label whose value is the {statistic_prompt}."
+      ],
+      "median_label": [
+        "Which label is the median mark?",
+        "Find the label of the mark with the median value.",
+        "Determine which labeled mark is the median.",
+        "What label corresponds to the median value shown?",
+        "Identify the label of the median-value mark."
+      ],
+      "nth_highest_label": [
+        "Which label has the {rank_n_ordinal}-highest distinct displayed value?",
+        "Find the label of the mark with the {rank_n_ordinal}-highest distinct value.",
+        "Determine which labeled mark has the {rank_n_ordinal}-highest distinct chart value.",
+        "What label corresponds to the {rank_n_ordinal}-highest distinct value shown?",
+        "Identify the label whose value is the {rank_n_ordinal}-highest distinct value."
+      ],
+      "nth_lowest_label": [
+        "Which label has the {rank_n_ordinal}-lowest distinct displayed value?",
+        "Find the label of the mark with the {rank_n_ordinal}-lowest distinct value.",
+        "Determine which labeled mark has the {rank_n_ordinal}-lowest distinct chart value.",
+        "What label corresponds to the {rank_n_ordinal}-lowest distinct value shown?",
+        "Identify the label whose value is the {rank_n_ordinal}-lowest distinct value."
+      ],
+      "median_order_statistic_value": [
+        "What is the {statistic_prompt}?",
+        "Find the {statistic_prompt} among the labeled marks.",
+        "Determine the {statistic_prompt} from the displayed values.",
+        "What is the displayed {statistic_prompt}?",
+        "Compute the {statistic_prompt} for the displayed values."
+      ],
+      "nth_highest_order_statistic_value": [
+        "What is the {statistic_prompt}?",
+        "Find the {statistic_prompt} among the labeled marks.",
+        "Determine the {statistic_prompt} from the displayed values.",
+        "What is the displayed {statistic_prompt}?",
+        "Compute the {statistic_prompt} for the displayed values."
+      ],
+      "nth_lowest_order_statistic_value": [
+        "What is the {statistic_prompt}?",
+        "Find the {statistic_prompt} among the labeled marks.",
+        "Determine the {statistic_prompt} from the displayed values.",
+        "What is the displayed {statistic_prompt}?",
+        "Compute the {statistic_prompt} for the displayed values."
+      ],
+      "median_order_statistic_label": [
+        "Which label has the {statistic_prompt}?",
+        "Find the label of the mark with the {statistic_prompt}.",
+        "Determine which labeled mark has the {statistic_prompt}.",
+        "What label corresponds to the {statistic_prompt} shown?",
+        "Identify the label whose value is the {statistic_prompt}."
+      ],
+      "nth_highest_order_statistic_label": [
+        "Which label has the {statistic_prompt}?",
+        "Find the label of the mark with the {statistic_prompt}.",
+        "Determine which labeled mark has the {statistic_prompt}.",
+        "What label corresponds to the {statistic_prompt} shown?",
+        "Identify the label whose value is the {statistic_prompt}."
+      ],
+      "nth_lowest_order_statistic_label": [
+        "Which label has the {statistic_prompt}?",
+        "Find the label of the mark with the {statistic_prompt}.",
+        "Determine which labeled mark has the {statistic_prompt}.",
+        "What label corresponds to the {statistic_prompt} shown?",
+        "Identify the label whose value is the {statistic_prompt}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "rank_n_ordinal": {
+      "type": "string"
+    },
+    "statistic_prompt": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {},
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+    },
+    "query:median_order_statistic_value": {
+      "answer_hint": "set \"answer\" to the requested statistic as an integer",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the selected statistic mark",
+      "json_example": "{\"annotation\":[300,240],\"answer\":6}",
+      "json_example_answer_only": "{\"answer\":6}"
+    },
+    "query:nth_highest_order_statistic_value": {
+      "answer_hint": "set \"answer\" to the requested statistic as an integer",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the selected statistic mark",
+      "json_example": "{\"annotation\":[300,240],\"answer\":6}",
+      "json_example_answer_only": "{\"answer\":6}"
+    },
+    "query:nth_lowest_order_statistic_value": {
+      "answer_hint": "set \"answer\" to the requested statistic as an integer",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the selected statistic mark",
+      "json_example": "{\"annotation\":[300,240],\"answer\":6}",
+      "json_example_answer_only": "{\"answer\":6}"
+    },
+    "query:median_order_statistic_label": {
+      "answer_hint": "set \"answer\" to the exact visible label of the selected mark as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the selected statistic mark",
+      "json_example": "{\"annotation\":[420,180],\"answer\":\"K7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"K7P2\"}"
+    },
+    "query:nth_highest_order_statistic_label": {
+      "answer_hint": "set \"answer\" to the exact visible label of the selected mark as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the selected statistic mark",
+      "json_example": "{\"annotation\":[420,180],\"answer\":\"K7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"K7P2\"}"
+    },
+    "query:nth_lowest_order_statistic_label": {
+      "answer_hint": "set \"answer\" to the exact visible label of the selected mark as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the selected statistic mark",
+      "json_example": "{\"annotation\":[420,180],\"answer\":\"K7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"K7P2\"}"
+    }
+  }
+}

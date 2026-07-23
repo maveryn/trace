@@ -1,0 +1,63 @@
+generation:
+  shared:
+    ring_icon_count_min: 12
+    ring_icon_count_max: 22
+    answer_count_min: 0
+    answer_count_max: 6
+    arc_span_min: 3
+    arc_span_max: 12
+    off_arc_target_count_min: 1
+    off_arc_target_count_max: 4
+    named_icon_fill_style_support:
+    - solid
+    - striped
+    - dotted
+    named_icon_fill_style_weights:
+      solid: 0.75
+      striped: 0.0834
+      dotted: 0.0833
+rendering:
+  shared:
+    canvas_width: 880
+    canvas_height: 680
+    scene_icon_size_min_px: 48
+    scene_icon_size_max_px: 72
+    scene_max_overlap_fraction: 0.0
+    ring_margin_px: 86
+    ring_stroke_width_px: 4
+    ring_outline_rgb:
+    - 142
+    - 154
+    - 178
+    ring_stop_radius_px: 4
+    ring_stop_fill_rgb:
+    - 255
+    - 255
+    - 255
+    ring_stop_outline_rgb:
+    - 122
+    - 136
+    - 164
+    marker_label_font_size_px: 24
+    marker_label_radius_px: 18
+    marker_label_gap_px: 8
+    marker_label_background_rgb:
+    - 255
+    - 255
+    - 255
+    marker_label_border_rgb:
+    - 56
+    - 70
+    - 98
+    marker_label_color_rgb:
+    - 39
+    - 50
+    - 72
+prompt:
+  shared:
+    bundle_id: icons_named_ring_v1
+    scene_key: single_scene_counting
+    task_key: counting_query
+  task_overrides:
+    task_icons__named_ring__nearest_marker_target_count:
+      task_key: nearest_marker_counting_query

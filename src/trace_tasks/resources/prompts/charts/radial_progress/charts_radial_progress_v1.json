@@ -1,0 +1,123 @@
+{
+  "bundle_id": "charts_radial_progress_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "radial_progress_scene": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "radial_progress_condition_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "radial_progress_remaining_extremum_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "at_least_threshold_count": [
+        "How many progress widgets are {threshold_phrase}?",
+        "Count the labeled progress widgets that are {threshold_phrase}.",
+        "Using the radial progress scale, how many widgets are {threshold_phrase}?",
+        "How many displayed progress indicators meet the condition {threshold_phrase}?",
+        "From the progress arcs, count widgets whose value is {threshold_phrase}."
+      ],
+      "below_threshold_count": [
+        "How many progress widgets are {threshold_phrase}?",
+        "Count the labeled progress widgets that are {threshold_phrase}.",
+        "Using the radial progress scale, how many widgets are {threshold_phrase}?",
+        "How many displayed progress indicators meet the condition {threshold_phrase}?",
+        "From the progress arcs, count widgets whose value is {threshold_phrase}."
+      ],
+      "within_range_count": [
+        "How many progress widgets have values {range_phrase}?",
+        "Count the labeled progress widgets whose values are {range_phrase}.",
+        "Using the radial progress scale, how many widgets fall {range_phrase}?",
+        "How many displayed progress indicators are {range_phrase}?",
+        "From the progress arcs, count widgets with values {range_phrase}."
+      ],
+      "highest_remaining_label": [
+        "Which visible label has {extremum_phrase}?",
+        "Find the progress widget with {extremum_phrase}. What is its visible label?",
+        "Using the progress arcs, which visible label corresponds to {extremum_phrase}?",
+        "Among the displayed progress widgets, which label has {extremum_phrase}?",
+        "Read the progress indicators and give the label for the widget with {extremum_phrase}."
+      ],
+      "lowest_remaining_label": [
+        "Which visible label has {extremum_phrase}?",
+        "Find the progress widget with {extremum_phrase}. What is its visible label?",
+        "Using the progress arcs, which visible label corresponds to {extremum_phrase}?",
+        "Among the displayed progress widgets, which label has {extremum_phrase}?",
+        "Read the progress indicators and give the label for the widget with {extremum_phrase}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:at_least_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes, one around each counted widget",
+      "json_example": "{\"annotation\":[[92,154,352,388],[382,154,642,388],[672,154,932,388]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:below_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes, one around each counted widget",
+      "json_example": "{\"annotation\":[[92,154,352,388],[382,154,642,388],[672,154,932,388]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:within_range_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes, one around each counted widget",
+      "json_example": "{\"annotation\":[[92,154,352,388],[382,154,642,388],[672,154,932,388]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:highest_remaining_label": {
+      "answer_hint": "set \"answer\" to the exact visible widget label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the answer widget",
+      "json_example": "{\"annotation\":[92,154,352,388],\"answer\":\"Orchid\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+    },
+    "query:lowest_remaining_label": {
+      "answer_hint": "set \"answer\" to the exact visible widget label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the answer widget",
+      "json_example": "{\"annotation\":[92,154,352,388],\"answer\":\"Orchid\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "threshold_phrase": {"type": "string"},
+    "range_phrase": {"type": "string"},
+    "extremum_phrase": {"type": "string"}
+  }
+}

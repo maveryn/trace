@@ -1,0 +1,240 @@
+schema_version: trace-rlvr-training-config-v1
+config_id: trace-qwen2.5-vl-7b
+release:
+  scope: answer_only
+  source_revision: d29b23f6085764ea831adb5edc5a23f89b0d98f3
+  source_config_sha256: 19dea84aa0fb748566f42974819f331ef58fde8738f0b18d8dc0876be9baab31
+  source_environment_sha256: 132c380fac1fc11bea08ff130b978e997703b303f989e5b72aca4bcdfd5dd276
+  selected_checkpoint_step: 500
+  released_model:
+    repo_id: maveryn/trace-qwen2.5-vl-7b
+    revision: 4d0f1ae8ee25022058090dbdbff61957ece7331d
+  base_model:
+    repo_id: Qwen/Qwen2.5-VL-7B-Instruct
+    revision: cc594898137f460bfe9f0759e9844b3ce807cfb5
+    required_files:
+      - chat_template.json
+      - config.json
+      - generation_config.json
+      - merges.txt
+      - model-00001-of-00005.safetensors
+      - model-00002-of-00005.safetensors
+      - model-00003-of-00005.safetensors
+      - model-00004-of-00005.safetensors
+      - model-00005-of-00005.safetensors
+      - model.safetensors.index.json
+      - preprocessor_config.json
+      - tokenizer.json
+      - tokenizer_config.json
+      - vocab.json
+  dataset:
+    repo_id: maveryn/trace
+    revision: 4e5b54361360296a855542b40cfd8b7f81b355fe
+    historical_training_revision: e317b746b258630682367cc6a9d87dedd195113c
+    equivalence_receipt_path: rlvr/dataset_equivalence.v1.json
+    equivalence_receipt_sha256: 40afcb59e0c67d7b7f47b78bb673a6c152320eb0656a990910ff52c634d43ae7
+    train_rows: 64000
+    validation_rows: 2000
+    task_count: 1000
+    train_rows_per_task: 64
+    validation_rows_per_task: 2
+    train_files:
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00000-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00001-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00002-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00003-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00004-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00005-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00006-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00007-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00008-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00009-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00010-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00011-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00012-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00013-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00014-of-00016.parquet
+      - data/train/trace_rlvr_train_64000_all1000_seed42-00015-of-00016.parquet
+    validation_file: data/validation/trace_rlvr_validation_iid_2000_all1000_seed1042.parquet
+    train_manifest: metadata/train/trace_rlvr_train_64000_all1000_seed42.parquet.manifest.json
+    validation_manifest: metadata/validation_iid/trace_rlvr_validation_iid_2000_all1000_seed1042.parquet.manifest.json
+    required_columns:
+      - images
+      - image_sizes
+      - prompt_answer
+      - prompt_answer_and_annotation
+      - answer_gt
+      - annotation_gt
+      - reward_contract
+      - instance_id
+      - domain
+      - task
+      - scene_id
+      - query_id
+      - scene_variant
+      - trace_ref
+  prompt:
+    path: rlvr/examples/prompts/trace_vero_json_system_prompt_answer.txt
+    sha256: f394927d9abcfb7a1e43ef48a30c29b8c70e6facdbda314d7b27c59d8c3ae900
+  reference_hardware:
+    gpu_count: 8
+    gpu_model: NVIDIA H100 80GB HBM3
+    cuda: "12.8"
+
+easyr1:
+  data:
+    train_files: null
+    val_files: null
+    prompt_key: prompt_answer
+    answer_key: answer_gt
+    image_key: images
+    video_key: videos
+    image_dir: null
+    video_fps: 2.0
+    max_prompt_length: 2048
+    max_response_length: 2048
+    rollout_batch_size: 128
+    mini_rollout_batch_size: null
+    val_batch_size: 1024
+    format_prompt: null
+    system_prompt_file: null
+    override_chat_template: null
+    shuffle: true
+    seed: 1
+    min_pixels: 262144
+    max_pixels: 4194304
+    filter_overlong_prompts: false
+    filter_overlong_prompts_workers: 16
+  algorithm:
+    gamma: 1.0
+    lam: 1.0
+    adv_estimator: grpo
+    disable_kl: true
+    use_kl_loss: false
+    kl_penalty: low_var_kl
+    kl_coef: 0.0
+    kl_type: fixed
+    kl_horizon: 10000.0
+    kl_target: 0.1
+    online_filtering: false
+    filter_key: overall
+    filter_low: 0.01
+    filter_high: 0.99
+    perfect_solve_threshold: 1.0
+    zero_solve_threshold: 0.0
+  worker:
+    hybrid_engine: true
+    actor:
+      strategy: fsdp
+      global_batch_size: 128
+      micro_batch_size_per_device_for_update: 1
+      micro_batch_size_per_device_for_experience: 2
+      max_grad_norm: 1.0
+      clip_ratio_low: 0.2
+      clip_ratio_high: 0.3
+      clip_ratio_dual: 3.0
+      loss_avg_mode: token
+      loss_type: default
+      ppo_epochs: 1
+      padding_free: true
+      dynamic_batching: true
+      ulysses_size: 1
+      use_torch_compile: true
+      tau_positive: 1.0
+      tau_negative: 1.05
+      model:
+        model_path: null
+        tokenizer_path: null
+        enable_gradient_checkpointing: true
+        trust_remote_code: false
+        freeze_vision_tower: false
+        lora:
+          rank: 0
+          alpha: 64
+          target_modules: all-linear
+          exclude_modules: .*visual.*
+      optim:
+        lr: 1.0e-6
+        betas: [0.9, 0.999]
+        weight_decay: 0.01
+        strategy: adamw
+        lr_warmup_ratio: 0.0
+        lr_warmup_steps: null
+        min_lr_ratio: null
+        lr_scheduler_type: constant
+      fsdp:
+        enable_full_shard: true
+        enable_cpu_offload: false
+        enable_rank0_init: true
+        use_orig_params: false
+        torch_dtype: null
+        fsdp_size: -1
+        mp_param_dtype: bf16
+        mp_reduce_dtype: fp32
+        mp_buffer_dtype: fp32
+      offload:
+        offload_params: true
+        offload_optimizer: true
+    rollout:
+      name: vllm
+      n: 8
+      temperature: 1.0
+      top_p: 1.0
+      top_k: -1
+      seed: 1
+      limit_images: 0
+      dtype: bf16
+      gpu_memory_utilization: 0.6
+      ignore_eos: false
+      enforce_eager: false
+      enable_chunked_prefill: false
+      tensor_parallel_size: 2
+      max_model_len: null
+      max_num_batched_tokens: 8192
+      disable_log_stats: true
+      disable_tqdm: false
+      val_override_config:
+        temperature: 0.6
+        top_p: 0.95
+        n: 1
+    ref:
+      strategy: fsdp
+      fsdp:
+        enable_full_shard: true
+        enable_cpu_offload: true
+        enable_rank0_init: true
+        use_orig_params: false
+        torch_dtype: null
+        fsdp_size: -1
+        mp_param_dtype: bf16
+        mp_reduce_dtype: fp32
+        mp_buffer_dtype: fp32
+      offload:
+        offload_params: false
+        offload_optimizer: false
+    reward:
+      reward_function: null
+      reward_function_kwargs: {}
+      skip_special_tokens: true
+      num_cpus: 1
+  trainer:
+    total_epochs: 15
+    max_steps: 500
+    project_name: trace_easyr1
+    experiment_name: trace-qwen2.5-vl-7b
+    logger: [console]
+    nnodes: 1
+    n_gpus_per_node: 8
+    max_try_make_batch: 20
+    critic_warmup: 0
+    val_freq: 100
+    val_before_train: false
+    val_only: false
+    val_generations_to_log: 3
+    save_freq: 100
+    save_limit: 1
+    save_model_only: false
+    save_checkpoint_path: null
+    load_checkpoint_path: null
+    ray_timeline: null
+    find_last_checkpoint: false

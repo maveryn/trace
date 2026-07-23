@@ -1,0 +1,56 @@
+generation:
+  shared:
+    section_count_support:
+    - 3
+    - 4
+    - 5
+    item_count_support:
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    scene_variant_weights:
+      topic_cards: 1.0
+      bullet_columns: 1.0
+      checklist_bands: 1.0
+    balanced_scene_variant_sampling: true
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 980
+    outer_margin_px: 34
+    header_height_px: 86
+    gap_px: 14
+    corner_radius_px: 14
+    outline_width_px: 2
+    title_font_size_px: 30
+    subtitle_font_size_px: 17
+    section_title_font_size_px: 20
+    item_font_size_px: 16
+prompt:
+  shared:
+    bundle_id: pages_sectioned_infographic_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.2
+      downsample:
+        scale:
+        - 0.95
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.015

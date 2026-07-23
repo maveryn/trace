@@ -1,0 +1,163 @@
+{
+  "bundle_id": "charts_style_legend_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "style_legend_single_axis": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The plotted figure shows {object_description}.",
+        "The figure presents {object_description}."
+      ]
+    },
+    "task": {
+      "style_legend_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "x_position_highest_series_label": [
+        "At x-axis label \"{x_label}\", which legend series has the highest plotted value?",
+        "Use the legend styles to identify the series. At \"{x_label}\", which series is highest?",
+        "At the visible x label \"{x_label}\", what legend series reaches the maximum y-value?",
+        "Compare the styled series markers at \"{x_label}\". Which legend label is highest?",
+        "For x-axis label \"{x_label}\", identify the styled series with the largest value."
+      ],
+      "x_position_lowest_series_label": [
+        "At x-axis label \"{x_label}\", which legend series has the lowest plotted value?",
+        "Use the legend styles to identify the series. At \"{x_label}\", which series is lowest?",
+        "At the visible x label \"{x_label}\", what legend series reaches the minimum y-value?",
+        "Compare the styled series markers at \"{x_label}\". Which legend label is lowest?",
+        "For x-axis label \"{x_label}\", identify the styled series with the smallest value."
+      ],
+      "series_highest_x_label": [
+        "For legend series \"{target_series_label}\", which x-axis label has its highest plotted value?",
+        "Use the legend style for \"{target_series_label}\". At which x-axis label is that series highest?",
+        "Trace series \"{target_series_label}\" across the plot. Which visible x label marks its maximum value?",
+        "Which x-axis label corresponds to the largest plotted value for series \"{target_series_label}\"?",
+        "Find the styled series \"{target_series_label}\". Where does it reach its highest y-value?"
+      ],
+      "series_lowest_x_label": [
+        "For legend series \"{target_series_label}\", which x-axis label has its lowest plotted value?",
+        "Use the legend style for \"{target_series_label}\". At which x-axis label is that series lowest?",
+        "Trace series \"{target_series_label}\" across the plot. Which visible x label marks its minimum value?",
+        "Which x-axis label corresponds to the smallest plotted value for series \"{target_series_label}\"?",
+        "Find the styled series \"{target_series_label}\". Where does it reach its lowest y-value?"
+      ],
+      "above_threshold_series_count": [
+        "At x-axis label \"{x_label}\", how many legend series are {threshold_relation_phrase} {threshold_value}?",
+        "Use the styled legend entries at \"{x_label}\". Count the series with values {threshold_relation_phrase} {threshold_value}.",
+        "For x label \"{x_label}\", count the styled series whose plotted value is {threshold_relation_phrase} {threshold_value}.",
+        "At \"{x_label}\", how many visible series markers are {threshold_relation_phrase} the threshold value {threshold_value}?",
+        "Using the legend styles, count the series {threshold_relation_phrase} {threshold_value} at \"{x_label}\"."
+      ],
+      "below_threshold_series_count": [
+        "At x-axis label \"{x_label}\", how many legend series are {threshold_relation_phrase} {threshold_value}?",
+        "Use the styled legend entries at \"{x_label}\". Count the series with values {threshold_relation_phrase} {threshold_value}.",
+        "For x label \"{x_label}\", count the styled series whose plotted value is {threshold_relation_phrase} {threshold_value}.",
+        "At \"{x_label}\", how many visible series markers are {threshold_relation_phrase} the threshold value {threshold_value}?",
+        "Using the legend styles, count the series {threshold_relation_phrase} {threshold_value} at \"{x_label}\"."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "extremum_direction": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "target_series_label": {
+      "type": "string"
+    },
+    "threshold_relation_phrase": {
+      "type": "string"
+    },
+    "threshold_value": {
+      "type": "string"
+    },
+    "x_label": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:style_legend_single_axis": [
+      "object_description"
+    ],
+    "query:x_position_highest_series_label": [
+      "x_label",
+      "extremum_direction"
+    ],
+    "query:x_position_lowest_series_label": [
+      "x_label",
+      "extremum_direction"
+    ],
+    "query:series_highest_x_label": [
+      "target_series_label"
+    ],
+    "query:series_lowest_x_label": [
+      "target_series_label"
+    ],
+    "query:above_threshold_series_count": [
+      "x_label",
+      "threshold_value",
+      "threshold_relation_phrase"
+    ],
+    "query:below_threshold_series_count": [
+      "x_label",
+      "threshold_value",
+      "threshold_relation_phrase"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+generation:
+  shared:
+    radial_source_count_min: 4
+    radial_source_count_max: 5
+    radial_target_count_min: 4
+    radial_target_count_max: 5
+    radial_link_count_min: 7
+    radial_link_count_max: 9
+    radial_max_links_per_node_side: 4
+    radial_link_value_min: 8
+    radial_link_value_max: 35
+    radial_transfer_answer_min: 16
+    radial_transfer_answer_max: 100
+    radial_group_size_min: 2
+    radial_group_size_max: 3
+    scene_variant_weights:
+      radial_chord_sankey: 1.0
+    balanced_scene_variant_sampling: true
+rendering:
+  shared:
+    canvas_width: 1328
+    canvas_height: 960
+    outer_margin_px: 36
+    panel_padding_px: 28
+    title_band_height_px: 62
+    radial_ring_radius_px: 360
+    radial_chord_radius_inset_px: 54
+    radial_node_width_px: 78
+    radial_node_height_px: 50
+    node_border_width_px: 2
+    radial_min_flow_width_px: 10
+    radial_max_flow_width_px: 30
+    value_label_font_size_px: 25
+    value_label_gap_px: 16
+    node_label_font_size_px: 30
+    title_font_size_px: 31
+    radial_color_scheme_options:
+    - lagoon_coral
+    - forest_plum
+    - ink_gold
+    - berry_teal
+    - copper_blue
+    - slate_citrus
+    node_border_rgb:
+    - 30
+    - 38
+    - 46
+    node_text_rgb:
+    - 255
+    - 255
+    - 255
+    value_label_text_rgb:
+    - 28
+    - 34
+    - 42
+    radial_flow_alpha: 172
+prompt:
+  shared:
+    bundle_id: charts_radial_sankey_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.014

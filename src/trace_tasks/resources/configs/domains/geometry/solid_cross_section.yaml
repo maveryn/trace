@@ -1,0 +1,14 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 580
+    line_width: 4
+    label_font_size: 22
+    small_label_font_size: 18
+prompt:
+  shared:
+    bundle_id: geometry_solid_cross_section_v1
+    scene_key: solid_cross_section_scene
+    task_key: solid_cross_section_value_query

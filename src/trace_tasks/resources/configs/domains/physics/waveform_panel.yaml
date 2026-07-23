@@ -1,0 +1,51 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      clean_stack: 1.0
+      grid_stack: 1.0
+      lab_sheet: 1.0
+    panel_count_weights:
+      4: 1.0
+      5: 1.0
+      6: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_panel_count_sampling: true
+    balanced_target_answer_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    sheet_left_px: 58
+    sheet_top_px: 52
+    sheet_right_margin_px: 58
+    sheet_bottom_margin_px: 44
+    stack_left_px: 96
+    stack_top_px: 112
+    stack_width_px: 988
+    stack_height_px: 570
+    panel_gap_px: 10
+    label_font_size_px: 24
+    title_font_size_px: 27
+    wave_line_width_px: 4
+    grid_line_width_px: 1
+    midline_width_px: 2
+
+prompt:
+  shared:
+    bundle_id: physics_waveform_panel_v1
+  task_overrides:
+    task_physics__waveform_panel__wave_property_extremum_label:
+      task_key: wave_property_extremum_label_query

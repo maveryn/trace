@@ -1,0 +1,144 @@
+{
+  "bundle_id": "geometry_polygon_equation_diagram_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "polygon_equation_diagram_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "This figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "equal_side_variable_value": ["", "", "", "", ""],
+      "equal_side_length_value": ["", "", "", "", ""],
+      "equal_angle_variable_value": ["", "", "", "", ""],
+      "equal_angle_measure_value": ["", "", "", "", ""],
+      "interior_angle_sum_variable_value": ["", "", "", "", ""],
+      "interior_angle_sum_angle_value": ["", "", "", "", ""],
+      "side_expression_perimeter_value": ["", "", "", "", ""]
+    },
+    "query": {
+      "equal_side_variable_value": [
+        "Find {variable_name}.",
+        "Find the value of {variable_name}.",
+        "What is {variable_name}?",
+        "Determine {variable_name}.",
+        "Solve for {variable_name}."
+      ],
+      "equal_side_length_value": [
+        "Find {target_name}.",
+        "Find the length of {target_name}.",
+        "What is the length of {target_name}?",
+        "Determine {target_name}.",
+        "Solve for the length of {target_name}."
+      ],
+      "equal_angle_variable_value": [
+        "Find {variable_name}.",
+        "Find the value of {variable_name}.",
+        "What is {variable_name}?",
+        "Determine {variable_name}.",
+        "Solve for {variable_name}."
+      ],
+      "equal_angle_measure_value": [
+        "Find {target_name}.",
+        "Find the measure of {target_name}.",
+        "What is the measure of {target_name}?",
+        "Determine {target_name}.",
+        "Solve for the measure of {target_name}."
+      ],
+      "interior_angle_sum_variable_value": [
+        "Find {variable_name}.",
+        "Find the value of {variable_name}.",
+        "What is {variable_name}?",
+        "Determine {variable_name}.",
+        "Solve for {variable_name}."
+      ],
+      "interior_angle_sum_angle_value": [
+        "Find {target_name}.",
+        "Find the measure of {target_name}.",
+        "What is the measure of {target_name}?",
+        "Determine {target_name}.",
+        "Solve for the measure of {target_name}."
+      ],
+      "side_expression_perimeter_value": [
+        "Find the perimeter of the {shape_name}.",
+        "What is the perimeter of the {shape_name}?",
+        "Determine the perimeter of the {shape_name}.",
+        "Solve for the perimeter of the {shape_name}.",
+        "Give the perimeter of the {shape_name}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:polygon_equation_diagram_scene": ["object_description"],
+    "query:equal_side_variable_value": ["variable_name"],
+    "query:equal_side_length_value": ["target_name"],
+    "query:equal_angle_variable_value": ["variable_name"],
+    "query:equal_angle_measure_value": ["target_name"],
+    "query:interior_angle_sum_variable_value": ["variable_name"],
+    "query:interior_angle_sum_angle_value": ["target_name"],
+    "query:side_expression_perimeter_value": ["shape_name"],
+    "output:answer_only": ["json_output_contract_answer_only", "answer_hint", "json_example_answer_only"],
+    "output:answer_and_annotation": ["json_output_contract", "annotation_hint", "answer_hint", "json_example"]
+  },
+  "static_slots_by_key": {
+    "scene:polygon_equation_diagram_scene": {
+      "object_description": "a labeled polygon diagram"
+    },
+    "task:equal_side_variable_value": {
+      "answer_hint": "set \"answer\" to the value of the variable as an integer"
+    },
+    "task:equal_side_length_value": {
+      "answer_hint": "set \"answer\" to the requested side length as an integer"
+    },
+    "task:equal_angle_variable_value": {
+      "answer_hint": "set \"answer\" to the value of the variable as an integer"
+    },
+    "task:equal_angle_measure_value": {
+      "answer_hint": "set \"answer\" to the requested angle measure in degrees as an integer"
+    },
+    "task:interior_angle_sum_variable_value": {
+      "answer_hint": "set \"answer\" to the value of the variable as an integer"
+    },
+    "task:interior_angle_sum_angle_value": {
+      "answer_hint": "set \"answer\" to the requested angle measure in degrees as an integer"
+    },
+    "task:side_expression_perimeter_value": {
+      "answer_hint": "set \"answer\" to the polygon perimeter as an integer"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"answer\" and \"annotation\"."
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"},
+    "shape_name": {"type": "string"},
+    "target_name": {"type": "string"},
+    "variable_name": {"type": "string"}
+  }
+}

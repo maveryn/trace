@@ -1,0 +1,83 @@
+generation:
+  shared:
+    scene_variant_weights:
+      winding_path: 1.0
+      switchback_path: 1.0
+    style_variant_weights:
+      grass_field: 1.0
+      desert_path: 1.0
+      blueprint_grid: 1.0
+      night_ops: 1.0
+      paper_map: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_tower_count_sampling: true
+    balanced_path_segment_count_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_answer_option_sampling: true
+    covered_path_tower_count_support:
+    - 3
+    - 4
+    - 5
+    - 6
+    best_position_candidate_count_support:
+    - 4
+    nearest_exit_tower_count_support:
+    - 1
+    - 2
+    nearest_exit_option_count_support:
+    - 6
+    path_segment_count_support:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    covered_path_target_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    best_position_target_answer_support:
+    - 2
+    best_position_answer_option_index_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    nearest_exit_answer_option_index_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    covered_path_range_radius_min_px: 88
+    covered_path_range_radius_max_px: 168
+    best_position_range_radius_min_px: 86
+    best_position_range_radius_max_px: 104
+    tower_path_clearance_px: 42
+    tower_min_gap_px: 46
+    uncovered_margin_px: 28
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 760
+    map_width_px: 820
+    map_height_px: 570
+    panel_margin_px: 38
+    path_width_px: 28
+    path_node_radius_px: 17
+    tower_radius_px: 19
+    enemy_radius_px: 13
+    range_outline_width_px: 3
+    label_font_size_px: 25
+prompt:
+  shared:
+    bundle_id: games_tower_defense_v1
+    scene_key: tower_defense_map
+    task_key: tower_defense_query

@@ -1,0 +1,107 @@
+{
+  "bundle_id": "pages_category_grid_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "category_grid": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "category_grid_lookup_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "category_slot_item_label": [
+        "In category \"{category_label}\", under subcategory \"{subcategory_label}\", what item is listed {slot_ordinal}?",
+        "Find \"{category_label}\" and then \"{subcategory_label}\". What is the {slot_ordinal} item in that block?",
+        "Read the {slot_ordinal} item under \"{subcategory_label}\" within category \"{category_label}\".",
+        "Within \"{category_label}\", what item appears {slot_ordinal} in the \"{subcategory_label}\" section?",
+        "Using the \"{subcategory_label}\" block in category \"{category_label}\", what is the {slot_ordinal} visible item?"
+      ],
+      "category_item_count": [
+        "How many items are listed under subcategory \"{subcategory_label}\" within category \"{category_label}\"?",
+        "Find \"{category_label}\" and then \"{subcategory_label}\". How many item rows are in that block?",
+        "Count the visible items in the \"{subcategory_label}\" section of category \"{category_label}\".",
+        "Within category \"{category_label}\", how many items appear under \"{subcategory_label}\"?",
+        "Using the category grid, what is the item count for \"{subcategory_label}\" under \"{category_label}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:category_slot_item_label": {
+      "object_description": "a category grid page with category headers, subcategory headers, and short item rows",
+      "answer_hint": "set \"answer\" to the exact visible item label requested by the question",
+      "annotation_hint": "set \"annotation\" to an object with keys \"category_header\", \"subcategory_header\", and \"target_item\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+      "json_example": "{\"annotation\":{\"category_header\":[20,40,210,78],\"subcategory_header\":[28,90,190,116],\"target_item\":[32,146,202,168]},\"answer\":\"Amber Leaf\"}",
+      "json_example_answer_only": "{\"answer\":\"Amber Leaf\"}"
+    },
+    "query:category_item_count": {
+      "object_description": "a category grid page with category headers, subcategory headers, and short item rows",
+      "answer_hint": "set \"answer\" to the integer count of visible item rows in the requested block",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted item rows",
+      "json_example": "{\"annotation\":[[20,80,180,104],[20,110,180,134]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "category_label": {"type": "string"},
+    "subcategory_label": {"type": "string"},
+    "slot_ordinal": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:category_grid": [
+      "object_description"
+    ],
+    "query:category_slot_item_label": [
+      "category_label",
+      "subcategory_label",
+      "slot_ordinal"
+    ],
+    "query:category_item_count": [
+      "category_label",
+      "subcategory_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

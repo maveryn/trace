@@ -1,0 +1,49 @@
+generation:
+  shared:
+    scene_variant_weights:
+      schematic_table: 1.0
+    style_variant_weights:
+      classic: 1.0
+      blueprint: 1.0
+      neon: 1.0
+      carnival: 1.0
+      paper: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_object_count_sampling: true
+    object_count_support:
+    - 5
+    - 6
+    - 7
+    - 8
+  task_overrides:
+    task_games__pinball_table__first_hit_object_label:
+      balanced_target_object_label_sampling: true
+    task_games__pinball_table__scoreable_object_count:
+      balanced_scoreable_object_count_sampling: true
+      scoreable_object_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 760
+    panel_margin_px: 28
+    table_width_px: 700
+    table_height_px: 680
+    table_border_width_px: 7
+    ball_radius_px: 17
+    bumper_radius_px: 32
+    target_width_px: 72
+    target_height_px: 34
+    cue_width_px: 6
+    label_font_size_px: 26
+prompt:
+  shared:
+    bundle_id: games_pinball_table_v1
+    scene_key: visible_pinball_table
+    task_key: pinball_table_query

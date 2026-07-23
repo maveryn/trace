@@ -1,0 +1,25 @@
+generation:
+  shared:
+    layer_orientation_weights:
+      horizontal: 1.0
+      vertical: 1.0
+
+rendering:
+  shared:
+    canvas_width: 1080
+    canvas_height: 700
+    diagram_left_px: 54
+    diagram_top_px: 54
+    diagram_right_px: 744
+    diagram_bottom_px: 646
+    option_left_px: 774
+    option_top_px: 64
+    option_right_px: 1030
+    option_bottom_px: 636
+
+prompt:
+  shared:
+    bundle_id: physics_refraction_layers_v1
+  task_overrides:
+    task_physics__refraction_layers__medium_speed_order_label:
+      task_key: refraction_speed_order_query

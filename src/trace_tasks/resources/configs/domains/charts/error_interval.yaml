@@ -1,0 +1,98 @@
+generation:
+  shared:
+    category_count_min: 6
+    category_count_max: 10
+    reference_value_min: 38
+    reference_value_max: 62
+    reference_answer_count_min: 1
+    reference_answer_count_max: 5
+    scene_variant_weights:
+      horizontal_forest: 1.0
+      vertical_dot_whisker: 1.0
+      bar_with_error: 1.0
+rendering:
+  shared:
+    chart_context_profile: dense_clean_minimal
+    canvas_width: 1320
+    canvas_height: 900
+    outer_margin_px: 54
+    title_band_height_px: 72
+    label_band_px: 154
+    plot_padding_px: 32
+    panel_corner_radius_px: 10
+    panel_outline_width_px_min: 1
+    panel_outline_width_px_max: 2
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 2
+    grid_line_width_px: 1
+    interval_line_width_px_min: 4
+    interval_line_width_px_max: 5
+    cap_length_px: 20
+    point_radius_px_min: 5
+    point_radius_px_max: 7
+    bar_width_fraction: 0.58
+    title_font_size_px: 30
+    label_font_size_px: 20
+    tick_font_size_px: 17
+    value_font_size_px: 15
+    axis_min: 0
+    axis_max: 100
+    tick_step: 20
+    title_options:
+      - Estimate Intervals
+      - Survey Score Intervals
+      - Model Result Intervals
+      - Regional Estimate Intervals
+    interval_palette_rgb:
+      - [37, 99, 235]
+      - [220, 84, 45]
+      - [16, 132, 96]
+      - [139, 92, 246]
+      - [202, 138, 4]
+      - [14, 116, 144]
+      - [190, 58, 90]
+      - [86, 105, 38]
+      - [91, 76, 181]
+      - [181, 94, 36]
+    panel_fill_rgb_options:
+      - [255, 255, 255]
+      - [252, 254, 255]
+      - [255, 253, 248]
+      - [250, 252, 250]
+    panel_outline_rgb_options:
+      - [194, 202, 214]
+      - [187, 201, 214]
+      - [206, 198, 187]
+      - [190, 207, 198]
+    axis_rgb_options:
+      - [64, 68, 76]
+      - [78, 78, 70]
+      - [62, 73, 82]
+    grid_rgb_options:
+      - [224, 227, 232]
+      - [218, 224, 226]
+      - [229, 224, 216]
+    reference_rgb_options:
+      - [76, 84, 94]
+      - [118, 72, 52]
+      - [68, 92, 110]
+    interval_outline_rgb_options:
+      - [34, 40, 48]
+      - [48, 48, 42]
+      - [44, 52, 60]
+    text_rgb_options:
+      - [38, 41, 48]
+      - [42, 47, 58]
+      - [48, 44, 38]
+    muted_text_rgb_options:
+      - [88, 96, 112]
+      - [82, 98, 110]
+      - [100, 91, 82]
+    text_stroke_rgb_options:
+      - [255, 255, 255]
+      - [252, 254, 255]
+prompt:
+  shared:
+    bundle_id: charts_error_interval_v1
+    scene_key: error_interval_scene
+    task_key: error_interval_query

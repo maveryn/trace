@@ -1,0 +1,153 @@
+{
+  "bundle_id": "automaton_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "automaton": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "state_after_input_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "accepted_string_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "nondeterministic_state_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "final_state_label": [
+        "Starting at the start state, follow input \"{input_string}\". Which state do you end in?",
+        "Begin at the start state and read \"{input_string}\" from left to right. What is the final state label?",
+        "Trace the transitions for input \"{input_string}\" from the start state. Which state is reached at the end?",
+        "After processing the whole input \"{input_string}\", what state label is reached?",
+        "Follow the state-transition labels for input \"{input_string}\". What is the ending state?"
+      ],
+      "transition_step_state_label": [
+        "Starting at the start state, after reading the first {transition_step_count} symbols of input \"{input_string}\", which state are you in?",
+        "Read input \"{input_string}\" from the start state. What state label is reached after {transition_step_count} symbols?",
+        "Trace the first {transition_step_count} input symbols in \"{input_string}\". Which state do they reach?",
+        "After processing {transition_step_count} symbols of \"{input_string}\", what is the current state label?",
+        "Follow the transition labels for the first {transition_step_count} symbols of \"{input_string}\". What state is reached?"
+      ],
+      "dfa_accepted_string_label": [
+        "Which labeled candidate string is accepted by this deterministic automaton?",
+        "Choose the candidate string that ends in an accepting state when read by the deterministic automaton.",
+        "Starting at the start state, which candidate input is accepted by the deterministic state machine?",
+        "Which option label corresponds to the string accepted by the deterministic automaton?",
+        "Find the one candidate string that the deterministic automaton accepts."
+      ],
+      "nfa_accepted_string_label": [
+        "Which labeled candidate string is accepted by this nondeterministic automaton? A string is accepted if at least one path ends in an accepting state.",
+        "Choose the candidate string that has at least one accepting path through the nondeterministic automaton.",
+        "Starting at the start state, which candidate input can reach an accepting state in this nondeterministic automaton after all symbols are read?",
+        "Which option label corresponds to a string accepted by the nondeterministic automaton?",
+        "Find the one candidate string with some path ending in an accepting state."
+      ],
+      "nondeterministic_state_count": [
+        "How many states have nondeterministic outgoing transitions? Count a state if it has an outgoing eps transition or two or more outgoing transitions with the same input label.",
+        "Count the states that are nondeterministic: an outgoing eps transition counts, and repeated outgoing labels from the same state count.",
+        "How many states either have an eps outgoing transition or have multiple outgoing transitions with the same label?",
+        "Find every state where the outgoing transitions are nondeterministic. How many such states are there?",
+        "Using the transition labels, count states with an outgoing eps edge or more than one outgoing edge sharing one input label."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:final_state_label": {
+      "annotation_hint": "set \"annotation\" to an ordered array of [x,y] pixel points at the centers of the states visited while reading the full input string, starting with the start state and ending at the final answer state",
+      "answer_hint": "set \"answer\" to the reached state label as a string",
+      "json_example": "{\"annotation\":[[150,250],[310,190],[480,230]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:transition_step_state_label": {
+      "annotation_hint": "set \"annotation\" to an ordered array of [x,y] pixel points at the centers of the states visited through the requested transition step, starting with the start state and ending at the answer state for that step",
+      "answer_hint": "set \"answer\" to the reached state label as a string",
+      "json_example": "{\"annotation\":[[150,250],[310,190],[480,230]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:dfa_accepted_string_label": {
+      "annotation_hint": "set \"annotation\" to an ordered array of [x,y] pixel points at the centers of the states on the accepting DFA path for the returned option label's candidate string, starting with the start state and ending at an accepting state",
+      "answer_hint": "set \"answer\" to the option label of the accepted candidate string as a string",
+      "json_example": "{\"annotation\":[[150,250],[310,190],[480,230]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:nfa_accepted_string_label": {
+      "annotation_hint": "set \"annotation\" to an ordered array of [x,y] pixel points at the centers of one accepting NFA path for the returned option label's candidate string, starting with the start state and ending at an accepting state",
+      "answer_hint": "set \"answer\" to the option label of the accepted candidate string as a string",
+      "json_example": "{\"annotation\":[[150,250],[310,190],[480,230]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:nondeterministic_state_count": {
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of every state that has an outgoing eps transition or two or more outgoing transitions with the same input label; use an empty array when the answer is zero",
+      "answer_hint": "set \"answer\" to the count of those states as an integer",
+      "json_example": "{\"annotation\":[[150,250],[310,190]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string",
+      "scope": "scene:automaton",
+      "description": "Generated description of the rendered automaton diagram."
+    },
+    "input_string": {
+      "type": "string",
+      "scope": "query:final_state_label query:transition_step_state_label",
+      "description": "Input string read from the start state."
+    },
+    "transition_step_count": {
+      "type": "integer",
+      "scope": "query:transition_step_state_label",
+      "description": "Number of input symbols read before answering."
+    }
+  },
+  "required_slots_by_key": {
+    "scene:automaton": [
+      "object_description"
+    ],
+    "query:final_state_label": [
+      "input_string"
+    ],
+    "query:transition_step_state_label": [
+      "input_string",
+      "transition_step_count"
+    ]
+  }
+}

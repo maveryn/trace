@@ -1,0 +1,298 @@
+{
+  "bundle_id": "symbolic_clock_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "clock": [
+        "The image shows {object_description}.",
+        "The clock display shows {object_description}.",
+        "This clock display shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "clock_offset_readout_query": [
+        "Use the displayed time, apply the requested minute offset, then choose the matching answer option.",
+        "Read the analog clock as the starting time, apply the minute offset, and select the correct option card.",
+        "Start from the shown clock time and use the answer cards below the clock.",
+        "Base the calculation on the clock face and choose the option card with the resulting time.",
+        "Use the analog clock as the starting time; the answer is one of the option labels below."
+      ],
+      "clock_time_extremum_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "clock_equivalent_time_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "clock_elapsed_time_value_query": [
+        "Use clocks A and B, then choose the answer card showing the forward elapsed minutes.",
+        "Read both labeled clocks and select the option card with the elapsed time in minutes.",
+        "Compare clock A to clock B moving forward, using the answer cards below.",
+        "Find the forward elapsed time from A to B and choose its option label.",
+        "Use the two clock faces and the six answer cards below them."
+      ],
+      "clock_sequence_completion_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "clock_time_order_label_query": [
+        "Order the labeled clocks by the times shown. Within the 12-hour cycle, 12 o'clock comes before 1 o'clock.",
+        "Compare the four labeled clock times. Treat the 12-hour cycle as starting at 12, then 1, then later hours.",
+        "Use the labeled analog clocks and the answer cards. The ordering is earliest to latest in a single 12-hour cycle starting at 12.",
+        "Read each labeled clock, then choose the card whose label order runs from earliest to latest, with 12 before 1.",
+        "Sort the four clock labels by shown time in the same 12-hour cycle, where 12 is the start of the cycle."
+      ],
+      "clock_hand_angle_value_query": [
+        "Use the two hands on the analog clock and choose the matching degree option.",
+        "Compare the hour and minute hands, then select the option card with the smaller angle.",
+        "Use the hour hand and minute hand shown on the clock; answer with an option label.",
+        "Base the answer on the smaller angle formed by the two hands and choose the matching card.",
+        "Read the hand positions on the clock face and use the answer options below."
+      ],
+      "clock_full_time_readout_query": [
+        "Use all three hands on the analog clock and choose the matching HH:MM:SS option.",
+        "Read the hour, minute, and thin second hand, then select the correct option card.",
+        "Use the three visible hand positions and the six time options below the clock.",
+        "Base the time on the hour hand, minute hand, and thin second hand; answer with an option label.",
+        "Read the complete analog clock display and choose the matching option below."
+      ],
+      "clock_alarm_wait_time_value_query": [
+        "The dark hour and minute hands show the current time. The red alarm hand marks an alarm hour with alarm minutes fixed at :00. Choose the option with the forward wait time in minutes.",
+        "Read the current time from the dark hands. The red alarm hand uses the clock's 1-12 hour scale with alarm minutes fixed at :00; select the matching minute option.",
+        "Use the dark hands for the current time and the red hour-scale alarm pointer for the alarm time, then choose the wait-time option.",
+        "The black/blue hands show the current time. The red alarm hand points at the alarm hour with alarm minutes fixed at :00, and the answer is one of the minute options below.",
+        "Treat the red alarm hand as a distinct hour-scale alarm pointer with alarm minutes fixed at :00, and choose the option card with the forward wait time."
+      ]
+    },
+    "query": {
+      "minutes_after": [
+        "Which option shows the time {delta_minutes} minutes after the shown time?",
+        "Starting from the displayed time, choose the option for {delta_minutes} minutes later.",
+        "Shift the shown time forward by {delta_minutes} minutes. Which option matches?",
+        "Use a {delta_minutes}-minute offset after the displayed time. Which option is correct?",
+        "Add {delta_minutes} minutes to the shown time and choose the matching option."
+      ],
+      "minutes_before": [
+        "Which option shows the time {delta_minutes} minutes before the shown time?",
+        "Starting from the displayed time, choose the option for {delta_minutes} minutes earlier.",
+        "Shift the shown time backward by {delta_minutes} minutes. Which option matches?",
+        "Use a {delta_minutes}-minute offset before the displayed time. Which option is correct?",
+        "Subtract {delta_minutes} minutes from the shown time and choose the matching option."
+      ],
+      "earliest_time_label": [
+        "Which labeled clock shows the earliest time?",
+        "Identify the labeled clock with the earliest shown time.",
+        "Among the labeled clocks, which one shows the earliest time?",
+        "Find the clock showing the earliest time.",
+        "Which labeled clock shows the earliest time among the clocks shown?"
+      ],
+      "latest_time_label": [
+        "Which labeled clock shows the latest time?",
+        "Identify the labeled clock with the latest shown time.",
+        "Among the labeled clocks, which one shows the latest time?",
+        "Find the clock showing the latest time.",
+        "Which labeled clock shows the latest time among the clocks shown?"
+      ],
+      "analog_reference_digital_options": [
+        "Which labeled digital display shows the same time as the reference clock?",
+        "Choose the digital-display option that matches the reference clock time.",
+        "Which labeled digital option is equivalent to the reference analog clock?",
+        "Find the labeled digital display with the same time as the reference clock.",
+        "Which digital option matches the time shown by the reference clock?"
+      ],
+      "digital_reference_analog_options": [
+        "Which labeled analog clock shows the same time as the reference display?",
+        "Choose the analog-clock option that matches the reference digital time.",
+        "Which labeled analog option is equivalent to the reference digital display?",
+        "Find the labeled analog clock with the same time as the reference display.",
+        "Which analog option matches the time shown by the reference display?"
+      ],
+      "elapsed_time_value": [
+        "Moving forward around the clock, which option gives how many minutes later clock B is than clock A?",
+        "Which option gives the minutes elapsed from clock A to clock B when time moves forward?",
+        "Starting at clock A and moving forward, choose the option for the minutes before the time shown by clock B.",
+        "What option shows the forward elapsed time in minutes from clock A to clock B?",
+        "Count the minutes forward from clock A to clock B. Which option is correct?"
+      ],
+      "sequence_completion_label": [
+        "Which option completes the time pattern in the empty box?",
+        "Choose the option clock that belongs in the missing sequence slot.",
+        "Which labeled option should fill the empty box in the clock sequence?",
+        "Find the option that completes the four-box time sequence.",
+        "Which option continues the time pattern for the blank box?"
+      ],
+      "time_order_label": [
+        "Which option lists the clock labels from earliest to latest?",
+        "Choose the option card that orders the clocks from earliest to latest.",
+        "Which numbered option shows the correct earliest-to-latest order?",
+        "Select the option whose label sequence is sorted by the shown clock times.",
+        "Which answer card gives the four clock labels in time order from earliest to latest?"
+      ],
+      "hand_angle_value": [
+        "Which option gives the smaller angle in degrees between the hour hand and the minute hand?",
+        "Find the smaller angle formed by the two clock hands, then choose the matching option.",
+        "Which option shows how many degrees separate the hour hand and minute hand along the shorter arc?",
+        "Measure the smaller angle between the clock hands. Which option is correct?",
+        "What is the smaller hand-to-hand angle on the clock? Choose the matching option."
+      ],
+      "full_time_readout": [
+        "Which option gives the exact time shown in HH:MM:SS format?",
+        "Read the clock including seconds. Which option matches it?",
+        "Which option gives the complete time shown by the three hands?",
+        "Choose the option with the exact displayed time in HH:MM:SS format.",
+        "What time do the hour, minute, and thin second hands show? Choose the matching option."
+      ],
+      "alarm_wait_time_value": [
+        "Moving forward from the current time, which option gives the minutes remaining until the next alarm time?",
+        "Which option gives how many minutes are left before the next occurrence of the alarm time?",
+        "Count forward from the shown current time to the red-hand alarm time. Which option is correct?",
+        "What option shows the forward wait time, in minutes, until the alarm time?",
+        "Starting at the current time shown by the dark hands, choose the option for minutes until the next alarm."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "delta_minutes": {
+      "type": "integer"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:clock": [
+      "object_description"
+    ],
+    "task:clock_offset_readout_query": [],
+    "task:clock_time_extremum_label_query": [],
+    "task:clock_equivalent_time_label_query": [],
+    "task:clock_elapsed_time_value_query": [],
+    "task:clock_sequence_completion_label_query": [],
+    "task:clock_time_order_label_query": [],
+    "task:clock_hand_angle_value_query": [],
+    "task:clock_full_time_readout_query": [],
+    "task:clock_alarm_wait_time_value_query": [],
+    "query:minutes_after": [
+      "delta_minutes"
+    ],
+    "query:minutes_before": [
+      "delta_minutes"
+    ],
+    "query:earliest_time_label": [],
+    "query:latest_time_label": [],
+    "query:analog_reference_digital_options": [],
+    "query:digital_reference_analog_options": [],
+    "query:elapsed_time_value": [],
+    "query:sequence_completion_label": [],
+    "query:time_order_label": [],
+    "query:hand_angle_value": [],
+    "query:full_time_readout": [],
+    "query:alarm_wait_time_value": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description_offset_readout_classic": "one analog clock with all hour numerals, minute ticks, and two visible hands with six labeled time answer cards below",
+    "object_description_offset_readout_minimal": "one clean analog clock with hour numerals and two visible hands with six labeled time answer cards below",
+    "object_description_offset_readout_outline": "one outline-style analog clock with hour numerals and two visible hands with six labeled time answer cards below",
+    "object_description_time_extremum_label_classic": "six labeled analog clocks arranged in a centered grid, each with hour numerals, minute ticks, and two visible hands",
+    "object_description_time_extremum_label_minimal": "six clean labeled analog clocks arranged in a centered grid, each with hour numerals and two visible hands",
+    "object_description_time_extremum_label_outline": "six labeled outline-style analog clocks arranged in a centered grid, each with hour numerals and two visible hands",
+    "object_description_equivalent_time_label_analog_reference_digital_options": "one analog reference clock above six labeled digital-display options",
+    "object_description_equivalent_time_label_digital_reference_analog_options": "one digital reference display above six labeled analog-clock options",
+    "object_description_elapsed_time_value_classic": "two labeled analog clocks, A and B, shown side by side with hour numerals, minute ticks, and two visible hands and six labeled minute answer cards below",
+    "object_description_elapsed_time_value_minimal": "two clean labeled analog clocks, A and B, shown side by side with hour numerals and two visible hands and six labeled minute answer cards below",
+    "object_description_elapsed_time_value_outline": "two labeled outline-style analog clocks, A and B, shown side by side with hour numerals and two visible hands and six labeled minute answer cards below",
+    "object_description_sequence_completion_label_classic": "a top row of four clock boxes with one empty box, and a bottom row of four labeled option clocks",
+    "object_description_sequence_completion_label_minimal": "a clean top row of four clock boxes with one empty box, and a bottom row of four labeled option clocks",
+    "object_description_sequence_completion_label_outline": "an outline-style top row of four clock boxes with one empty box, and a bottom row of four labeled option clocks",
+    "object_description_time_order_label_classic": "four labeled analog clocks in a top row and six numbered answer cards below, each card listing a candidate order of the clock labels",
+    "object_description_time_order_label_minimal": "four clean labeled analog clocks in a top row and six numbered answer cards below, each card listing a candidate order of the clock labels",
+    "object_description_time_order_label_outline": "four labeled outline-style analog clocks in a top row and six numbered answer cards below, each card listing a candidate order of the clock labels",
+    "object_description_hand_angle_value_classic": "one analog clock with all hour numerals, minute ticks, and two visible hands with six labeled degree answer cards below",
+    "object_description_hand_angle_value_minimal": "one clean analog clock with hour numerals and two visible hands with six labeled degree answer cards below",
+    "object_description_hand_angle_value_outline": "one outline-style analog clock with hour numerals and two visible hands with six labeled degree answer cards below",
+    "object_description_full_time_readout_classic": "one analog clock with all hour numerals, minute ticks, and three visible hands with six labeled HH:MM:SS answer cards below",
+    "object_description_full_time_readout_minimal": "one clean analog clock with hour numerals and three visible hands with six labeled HH:MM:SS answer cards below",
+    "object_description_full_time_readout_outline": "one outline-style analog clock with hour numerals and three visible hands with six labeled HH:MM:SS answer cards below",
+    "object_description_alarm_wait_time_value_classic": "one analog clock with all hour numerals, minute ticks, two dark current-time hands, and one red alarm hand with six labeled minute answer cards below",
+    "object_description_alarm_wait_time_value_minimal": "one clean analog clock with hour numerals, two dark current-time hands, and one red alarm hand with six labeled minute answer cards below",
+    "object_description_alarm_wait_time_value_outline": "one outline-style analog clock with hour numerals, two dark current-time hands, and one red alarm hand with six labeled minute answer cards below",
+    "annotation_hint_offset_readout": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected answer option card",
+    "answer_hint_offset_readout": "set \"answer\" to the single selected option label as a string",
+    "annotation_hint_time_extremum_label": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected clock face",
+    "answer_hint_time_extremum_label": "set \"answer\" to the single selected clock label as a string",
+    "annotation_hint_equivalent_time_label": "set \"annotation\" to an object/dictionary with keys \"reference\" and \"correct_option\", each containing a visual bounding box [x0,y0,x1,y1]",
+    "answer_hint_equivalent_time_label": "set \"answer\" to the single matching option label as a string",
+    "annotation_hint_elapsed_time_value": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected answer option card",
+    "answer_hint_elapsed_time_value": "set \"answer\" to the single selected option label as a string",
+    "annotation_hint_sequence_completion_label": "set \"annotation\" to an object/dictionary with keys \"sequence_panel\" and \"correct_option\", each containing a bounding box [x0,y0,x1,y1]",
+    "answer_hint_sequence_completion_label": "set \"answer\" to the single selected option label as a string",
+    "annotation_hint_time_order_label": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the correct answer card",
+    "answer_hint_time_order_label": "set \"answer\" to the selected numbered option label as a string",
+    "annotation_hint_hand_angle_value": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected answer option card",
+    "answer_hint_hand_angle_value": "set \"answer\" to the single selected option label as a string",
+    "annotation_hint_full_time_readout": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected answer option card",
+    "answer_hint_full_time_readout": "set \"answer\" to the single selected option label as a string",
+    "annotation_hint_alarm_wait_time_value": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected answer option card",
+    "answer_hint_alarm_wait_time_value": "set \"answer\" to the single selected option label as a string",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+  }
+}

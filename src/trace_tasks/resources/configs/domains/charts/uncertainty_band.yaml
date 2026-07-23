@@ -1,0 +1,67 @@
+generation:
+  shared:
+    x_count_min: 6
+    x_count_max: 9
+    overlap_answer_count_min: 1
+    overlap_answer_count_max: 5
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    plot_margin_left_px: 84
+    plot_margin_right_px: 172
+    plot_margin_top_px: 82
+    plot_margin_bottom_px: 92
+    title_band_height_px: 58
+    legend_width_px: 156
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 3
+    grid_line_width_px_min: 1
+    grid_line_width_px_max: 2
+    band_outline_width_px_min: 2
+    band_outline_width_px_max: 3
+    center_line_width_px_min: 3
+    center_line_width_px_max: 5
+    point_radius_px_min: 4
+    point_radius_px_max: 6
+    title_font_size_px: 28
+    label_font_size_px: 17
+    tick_font_size_px: 15
+    legend_font_size_px: 17
+    axis_min: 0
+    axis_max: 100
+    tick_step: 20
+    band_alpha: 58
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -18
+    layout_jitter_x_px_max: 18
+    layout_jitter_y_px_min: -12
+    layout_jitter_y_px_max: 12
+    layout_jitter_min_margin_px: 22
+    title_options:
+    - Uncertainty Band Comparison
+    - Forecast Range Bands
+    - Estimate Band Profile
+    - Confidence Band View
+    series_palette_rgb:
+    - - 47
+      - 111
+      - 196
+    - - 216
+      - 104
+      - 62
+    - - 42
+      - 147
+      - 112
+    - - 126
+      - 93
+      - 190
+    - - 196
+      - 145
+      - 34
+    - - 32
+      - 132
+      - 158
+prompt:
+  shared:
+    bundle_id: charts_uncertainty_band_v1

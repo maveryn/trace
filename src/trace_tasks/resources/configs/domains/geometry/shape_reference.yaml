@@ -1,0 +1,124 @@
+generation:
+  shared:
+    scene_variant_weights:
+      triangle: 1.0
+      quadrilateral: 1.0
+    balanced_scene_variant_sampling: true
+  task_overrides:
+    shape_reference_similarity_match:
+      candidate_label_pool:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      candidate_slots:
+      - - 4
+        - 9
+      - - 16
+        - 9
+      - - 4
+        - 0
+      - - 16
+        - 0
+      - - 4
+        - -9
+      - - 16
+        - -9
+      reference_center:
+      - -11
+      - 1
+      candidate_count_weights:
+        '4': 1.0
+        '6': 1.0
+      candidate_min_gap_graph: 0.5
+      similar_scale_support:
+      - 1
+      - 2
+      distractor_non_uniform_pairs:
+      - - 2
+        - 1
+      - - 1
+        - 2
+      balanced_sampling: true
+    shape_reference_transformation_match:
+      candidate_label_pool:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      candidate_slots:
+      - - 6
+        - 6
+      - - 13
+        - 6
+      - - 6
+        - 0
+      - - 13
+        - 0
+      - - 6
+        - -6
+      - - 13
+        - -6
+      candidate_count_weights:
+        '4': 1.0
+        '6': 1.0
+      translation_vectors:
+      - - 10
+        - 0
+      - - 10
+        - 4
+      - - 10
+        - -4
+      - - 15
+        - 0
+      - - 15
+        - 4
+      - - 15
+        - -4
+      translation_cue_gap_graph: 4
+      candidate_min_gap_graph: 0.75
+      reflection_axis_x: 0
+      reflection_line_y_min: -9
+      reflection_line_y_max: 9
+rendering:
+  shared:
+    canvas_size_min: 720
+    canvas_size_max: 800
+    graph_cells_min: 34
+    graph_cells_max: 44
+    line_width: 4
+    line_width_min: 3
+    line_width_max: 5
+    label_font_size_min: 16
+    label_font_size_max: 28
+    label_stroke_width: 1
+    label_stroke_width_min: 1
+    label_stroke_width_max: 1
+    object_label_offset_px: 14
+    reference_label_gap_px: 20
+    cue_line_padding_px: 18
+    cue_label_gap_px: 18
+    cue_dash_px: 10
+    cue_gap_px: 8
+    cue_arrow_head_length_px: 18
+    cue_arrow_head_width_px: 14
+    cue_point_radius_px: 4
+  task_overrides:
+    shape_reference_similarity_match:
+      graph_cells_min: 44
+      graph_cells_max: 44
+prompt:
+  shared: {}
+  task_overrides:
+    shape_reference_similarity_match:
+      bundle_id: geometry_similarity_v0
+      scene_key: similarity_graph_scene
+      task_key: similarity_match_query
+    shape_reference_transformation_match:
+      bundle_id: geometry_transformation_v0
+      scene_key: transformation_graph_scene
+      task_key: transformation_query

@@ -1,0 +1,71 @@
+rendering:
+  shared:
+    canvas_size_min: 720
+    canvas_size_max: 820
+    scene_supersample_scale: 1
+    outer_margin_px: 78
+    line_width: 4
+    line_width_min: 3
+    line_width_max: 5
+    circle_line_width: 4
+    point_radius_px: 5
+    label_font_size_min: 19
+    label_font_size_max: 25
+    measurement_font_size_min: 17
+    measurement_font_size_max: 23
+    measurement_label_offset_px: 54
+    point_label_offset_px: 36
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+visual:
+  background:
+    enabled: true
+    styles:
+      solid_offwhite:
+        kind: solid
+        color:
+        - 252
+        - 252
+        - 252
+      solid_cool:
+        kind: solid
+        color:
+        - 245
+        - 248
+        - 252
+      solid_warm:
+        kind: solid
+        color:
+        - 252
+        - 248
+        - 243
+      solid_mist:
+        kind: solid
+        color:
+        - 248
+        - 252
+        - 249
+      solid_lavender:
+        kind: solid
+        color:
+        - 250
+        - 248
+        - 253
+    weights:
+      graph_paper: 0.0
+      solid_offwhite: 0.35
+      solid_cool: 0.2
+      solid_warm: 0.2
+      solid_mist: 0.15
+      solid_lavender: 0.1
+prompt:
+  shared:
+    bundle_id: geometry_circle_theorem_v1
+    scene_key: circle_theorem_scene
+    task_key: circle_theorem_query

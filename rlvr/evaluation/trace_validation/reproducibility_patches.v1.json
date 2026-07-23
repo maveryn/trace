@@ -1,0 +1,43 @@
+{
+  "schema_version": "trace-validation-reproducibility-patches-v1",
+  "suite_id": "trace-validation-2000-seed42-v1",
+  "historical_evaluation_harness_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+  "canonical_result_source_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+  "patches": [
+    {
+      "id": "content-bearing-media-transport",
+      "classification": "post-run reproducibility hardening",
+      "historical_behavior": "The completed campaign served verified prepared images to local vLLM endpoints through file URLs.",
+      "public_behavior": "The public client embeds the same verified image bytes as data URLs so the request itself is content-bound.",
+      "canonical_results_changed": false
+    },
+    {
+      "id": "deep-model-snapshot-verification",
+      "classification": "post-run provenance hardening",
+      "historical_behavior": "Campaign metadata recorded immutable model and runtime-view revisions.",
+      "public_behavior": "Model preparation records and verifies the exact file inventory, every file hash, source revision, and content-set revision before generation verification passes.",
+      "canonical_results_changed": false
+    },
+    {
+      "id": "offline-score-and-release-recomputation",
+      "classification": "post-run verification hardening",
+      "historical_behavior": "The archived campaign was checked before publication and exported with file-level hashes.",
+      "public_behavior": "The standalone verifier recomputes row-level deterministic and historical score fields and pins the complete public release receipt.",
+      "canonical_results_changed": false
+    },
+    {
+      "id": "client-input-and-authentication-safety",
+      "classification": "post-run interface hardening",
+      "historical_behavior": "The internal launch environment supplied local endpoints and trusted inputs.",
+      "public_behavior": "Endpoint authentication is explicit, tokenizer remote code is opt-in, and duplicate Python-literal answer keys are rejected.",
+      "canonical_results_changed": false
+    },
+    {
+      "id": "post-squash-dataset-equivalence-bridge",
+      "classification": "post-run reproducibility compatibility",
+      "historical_behavior": "The frozen suite and archived paper run identify the validation Parquet at the historical e317b746b258630682367cc6a9d87dedd195113c dataset revision.",
+      "public_behavior": "New runs prepare the immutable 4e5b54361360296a855542b40cfd8b7f81b355fe revision and validate the checked-in equivalence receipt that proves all existing columns, row order, and image bytes match the historical dataset; trace_supervision_mode is the sole added advisory column.",
+      "canonical_results_changed": false
+    }
+  ]
+}

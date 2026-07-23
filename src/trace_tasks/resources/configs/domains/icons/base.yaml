@@ -1,0 +1,94 @@
+prompt:
+  shared:
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+      in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for
+      the final answer.
+visual:
+  background:
+    enabled: true
+    styles:
+      solid_offwhite:
+        kind: solid
+        color:
+        - 247
+        - 248
+        - 251
+      solid_cool:
+        kind: solid
+        color:
+        - 243
+        - 246
+        - 252
+      solid_warm:
+        kind: solid
+        color:
+        - 250
+        - 247
+        - 242
+    weights:
+      solid_offwhite: 0.5
+      solid_cool: 0.25
+      solid_warm: 0.25
+rendering:
+  shared:
+    icon_canvas_style_enabled: true
+    icon_canvas_treatments:
+    - bare_canvas
+    - plain_sheet
+    - matte_sheet
+    - thin_frame
+    - soft_panel
+    - margin_sheet
+    - dot_sheet
+    - worksheet_panel
+    - notebook_grid
+    - index_card
+    - clipboard_sheet
+    - printout_panel
+    - puzzle_card
+    - inset_board
+    - tabletop_mat
+    - corkboard_sheet
+    - game_table
+    - lab_panel
+    - whiteboard_panel
+    - tile_tray
+    - arcade_screen
+    - terminal_screen
+    - dark_game_table
+    - neon_grid_screen
+    - scoreboard_panel
+    icon_canvas_treatment_weights:
+      bare_canvas: 1.0
+      plain_sheet: 1.0
+      matte_sheet: 1.0
+      thin_frame: 1.0
+      soft_panel: 1.0
+      margin_sheet: 1.0
+      dot_sheet: 1.0
+      worksheet_panel: 1.0
+      notebook_grid: 1.0
+      index_card: 1.0
+      clipboard_sheet: 1.0
+      printout_panel: 1.0
+      puzzle_card: 1.0
+      inset_board: 1.0
+      tabletop_mat: 1.0
+      corkboard_sheet: 1.0
+      game_table: 1.0
+      lab_panel: 1.0
+      whiteboard_panel: 1.0
+      tile_tray: 1.0
+      arcade_screen: 1.0
+      terminal_screen: 1.0
+      dark_game_table: 1.0
+      neon_grid_screen: 1.0
+      scoreboard_panel: 1.0
+    icon_canvas_palette_weights:
+      plain_neutral: 0.28
+      cool_blue: 0.18
+      mint_green: 0.16
+      cyan_lab: 0.14
+      warm_paper: 0.14
+      teal_card: 0.1

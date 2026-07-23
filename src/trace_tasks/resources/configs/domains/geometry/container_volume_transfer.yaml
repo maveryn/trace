@@ -1,0 +1,38 @@
+rendering:
+  shared:
+    graph_cells_min: 6
+    graph_cells_max: 20
+    line_width: 4
+    line_width_min: 2
+    line_width_max: 5
+    label_offset_px: 14
+    label_font_size_min: 14
+    label_font_size_max: 32
+    label_stroke_width: 0
+    label_stroke_width_min: 0
+    label_stroke_width_max: 0
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+  task_overrides:
+    task_geometry__container_volume_transfer__fill_count_value:
+      canvas_width: 900
+      canvas_height: 620
+      line_width: 3
+      label_font_size: 24
+      small_label_font_size: 20
+    task_geometry__container_volume_transfer__resulting_height_value:
+      canvas_width: 900
+      canvas_height: 620
+      line_width: 3
+      label_font_size: 24
+      small_label_font_size: 20
+prompt:
+  shared:
+    bundle_id: geometry_container_volume_transfer_v1
+    scene_key: container_volume_transfer_scene

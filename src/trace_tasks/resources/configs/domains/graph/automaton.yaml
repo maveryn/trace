@@ -1,0 +1,76 @@
+generation:
+  shared:
+    state_count_min: 4
+    state_count_max: 6
+    layout_variant_weights:
+      circular: 1.0
+      shell: 1.0
+      layered: 1.0
+      path_spine: 1.0
+      spring: 1.0
+    layout_transform_variant_weights:
+      identity: 1.0
+      mirror_left_right: 1.0
+      mirror_up_down: 1.0
+    edge_routing_variant_weights:
+      straight: 1.0
+      mixed_arc: 1.0
+    balanced_layout_variant_sampling: true
+    balanced_layout_transform_variant_sampling: true
+    balanced_edge_routing_variant_sampling: true
+    balanced_node_color_name_sampling: true
+  task_overrides:
+    task_graph__automaton__dfa_accepted_string_label:
+      input_length_min: 3
+      input_length_max: 6
+      candidate_count_support: [4, 6]
+    task_graph__automaton__nfa_accepted_string_label:
+      input_length_min: 3
+      input_length_max: 6
+      candidate_count_support: [4, 6]
+    task_graph__automaton__nondeterministic_state_count:
+      target_count_min: 0
+      target_count_max: 5
+      deterministic_edge_probability: 0.68
+    task_graph__automaton__state_after_input_label:
+      input_length_min: 3
+      input_length_max: 6
+      transition_step_min: 2
+      transition_step_max: 5
+      distractor_edge_min: 2
+      distractor_edge_max: 5
+
+rendering:
+  shared:
+    canvas_width: 864
+    canvas_height: 640
+    outer_margin_px: 28
+    panel_padding_px: 24
+    panel_corner_radius_px: 20
+    panel_title_font_size_px: 24
+    node_radius_min_px: 20
+    node_radius_max_px: 25
+    edge_width_px: 4
+    arrow_length_px: 12
+    arrow_width_px: 7
+    node_border_width_px: 2
+    label_font_size_px: 20
+    context_text_probability: 0.35
+  task_overrides:
+    task_graph__automaton__dfa_accepted_string_label:
+      option_panel_height_px: 150
+    task_graph__automaton__nfa_accepted_string_label:
+      option_panel_height_px: 150
+
+prompt:
+  shared:
+    bundle_id: automaton_v1
+  task_overrides:
+    task_graph__automaton__dfa_accepted_string_label:
+      task_key: accepted_string_label_query
+    task_graph__automaton__nfa_accepted_string_label:
+      task_key: accepted_string_label_query
+    task_graph__automaton__nondeterministic_state_count:
+      task_key: nondeterministic_state_count_query
+    task_graph__automaton__state_after_input_label:
+      task_key: state_after_input_label_query

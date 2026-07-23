@@ -1,0 +1,59 @@
+generation:
+  shared:
+    sinusoid_turning_support:
+    - 3
+    - 4
+    sinusoid_local_extremum_support:
+    - 2
+    piecewise_turning_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    piecewise_local_extremum_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    piecewise_turning_x_positions:
+    - -9
+    - -7
+    - -5
+    - -3
+    - -2
+    - -1
+    - 0
+    - 1
+    - 2
+    - 3
+    - 5
+    - 7
+    - 9
+    average_rate_support:
+    - -2.0
+    - -1.5
+    - -1.0
+    - -0.5
+    - 0.5
+    - 1.0
+    - 1.5
+    - 2.0
+rendering:
+  shared:
+    canvas_size_min: 640
+    canvas_size_max: 720
+    graph_cells_min: 20
+    graph_cells_max: 20
+    line_width: 4
+    line_width_min: 3
+    line_width_max: 5
+    marker_radius: 7
+    label_font_size_min: 16
+    label_font_size_max: 24
+prompt:
+  shared:
+    bundle_id: geometry_graphing_v1
+    scene_key: graphing_scene
+    task_key: graphing_query

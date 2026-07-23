@@ -1,0 +1,145 @@
+{
+  "bundle_id": "geometry_curvilinear_composite_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "curvilinear_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:curvilinear_composite_scene": [
+      "object_description"
+    ],
+    "query:cap_area": [],
+    "query:cutout_area": [],
+    "query:rectangle_quarter_sector_cutout_area": [],
+    "query:cap_perimeter": [],
+    "query:cutout_perimeter": [],
+    "query:rectangle_quarter_sector_cutout_perimeter": [],
+    "query:cap_from_total_area": [
+      "total_area"
+    ],
+    "query:cutout_from_total_area": [
+      "total_area"
+    ],
+    "query:from_arc_length": [
+      "arc_length"
+    ],
+    "query:from_sector_area": [
+      "sector_area"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "curvilinear_composite_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The curvilinear composite diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "cap_area": [
+      "What is the area of the entire shaded region?",
+      "Compute the area covered by the shaded curvilinear figure.",
+      "Find the shaded area shown in the diagram.",
+      "Using the shown dimensions, what is the area of the shaded figure?",
+      "Determine the total shaded area of the figure."
+    ],
+    "cutout_area": [
+      "What is the area of the shaded region?",
+      "Compute the area covered by the shaded curvilinear figure.",
+      "Find the shaded area shown in the diagram.",
+      "Using the shown dimensions, what is the area of the shaded figure?",
+      "Determine the total shaded area of the figure."
+    ],
+    "rectangle_quarter_sector_cutout_area": [
+      "What is the area of the shaded region?",
+      "Compute the area covered by the shaded curvilinear figure.",
+      "Find the shaded area shown in the diagram.",
+      "Using the shown dimensions, what is the area of the shaded figure?",
+      "Determine the total shaded area of the figure."
+    ],
+    "cap_perimeter": [
+      "What is the perimeter of the highlighted boundary? Treat the curved cap as a semicircle and use the visible dimensions.",
+      "Compute the perimeter of the highlighted outside boundary, including the semicircular cap.",
+      "Find the perimeter of the shaded figure, including the semicircle arc.",
+      "Using the shown dimensions and the semicircular cap, what is the perimeter of the highlighted boundary?",
+      "Determine the perimeter of the highlighted boundary from the visible dimensions and semicircle arc."
+    ],
+    "cutout_perimeter": [
+      "What is the perimeter of the highlighted boundary? Treat the curved cutout as a semicircle and use the visible dimensions.",
+      "Compute the perimeter of the highlighted outside and semicircular cutout boundary from the shown dimensions.",
+      "Find the perimeter of the shaded figure, including the semicircle cutout boundary.",
+      "Using the shown dimensions and the semicircular cutout, what is the perimeter of the highlighted boundary?",
+      "Determine the perimeter of the highlighted boundary from the visible dimensions and semicircle arc."
+    ],
+    "rectangle_quarter_sector_cutout_perimeter": [
+      "What is the perimeter of the highlighted boundary? Treat the curved cutout as a quarter circle and use the visible dimensions.",
+      "Compute the perimeter of the highlighted outside and quarter-circle cutout boundary from the shown dimensions.",
+      "Find the perimeter of the shaded figure, including the quarter-circle cutout boundary.",
+      "Using the shown dimensions and the quarter-circle cutout, what is the perimeter of the highlighted boundary?",
+      "Determine the perimeter of the highlighted boundary from the visible dimensions and quarter-circle arc."
+    ],
+    "cap_from_total_area": [
+      "The total shaded area is {total_area}. What is the missing rectangle width marked with a question mark?",
+      "Given total area {total_area}, find the unknown rectangle width in the rectangle-plus-semicircle shape.",
+      "The composite region has area {total_area}. What is the width labeled with the question mark?",
+      "Using the shown height and radius, compute the missing rectangle width when the total area is {total_area}.",
+      "Find the unknown width of the rectangle with the semicircular cap if the total area is {total_area}."
+    ],
+    "cutout_from_total_area": [
+      "The total shaded area is {total_area}. What is the missing rectangle width marked with a question mark?",
+      "Given total area {total_area}, find the unknown rectangle width in the rectangle-minus-semicircle shape.",
+      "The remaining shaded region has area {total_area}. What is the width labeled with the question mark?",
+      "Using the shown height and radius, compute the missing rectangle width when the shaded area is {total_area}.",
+      "Find the unknown width of the rectangle with the semicircular notch if the shaded area is {total_area}."
+    ],
+    "from_arc_length": [
+      "The curved arc length is {arc_length}. What is the central angle marked with the question mark?",
+      "Using the shown radius and arc length {arc_length}, find the missing sector angle.",
+      "The sector has arc length {arc_length}. What is the degree measure of the marked central angle?",
+      "Find the central angle of the sector from the shown radius and arc length {arc_length}.",
+      "Determine the angle marked with the question mark when the sector arc length is {arc_length}."
+    ],
+    "from_sector_area": [
+      "The sector area is {sector_area}. What is the central angle marked with the question mark?",
+      "Using the shown radius and sector area {sector_area}, find the missing sector angle.",
+      "The sector has area {sector_area}. What is the degree measure of the marked central angle?",
+      "Find the central angle of the sector from the shown radius and area {sector_area}.",
+      "Determine the angle marked with the question mark when the sector area is {sector_area}."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

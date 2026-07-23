@@ -1,0 +1,1 @@
+"""Polyomino assembly puzzle scene."""

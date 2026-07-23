@@ -1,0 +1,1 @@
+"""Games dominoes task package."""

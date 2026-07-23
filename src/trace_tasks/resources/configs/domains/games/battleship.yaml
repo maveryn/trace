@@ -1,0 +1,96 @@
+generation:
+  shared:
+    scene_variant_weights:
+      standard_fleet: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      navy: 1.0
+      radar: 1.0
+      paper: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_size_sampling: true
+    balanced_target_answer_sampling: true
+    board_size_support:
+    - 8
+    - 9
+    - 10
+    min_miss_count: 7
+    max_miss_count: 16
+  task_overrides:
+    task_games__battleship__ship_status_count:
+      sunk_ship_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      partial_ship_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      min_partial_ship_count: 2
+      max_partial_ship_count: 4
+    task_games__battleship__ship_cell_status_count:
+      balanced_target_ship_id_sampling: true
+      balanced_target_ship_answer_pair_sampling: true
+      target_ship_id_weights:
+        line5: 1.0
+        line4: 1.0
+        line3: 1.0
+        square4: 1.0
+        elbow3: 1.0
+    task_games__battleship__last_ship_cell_label:
+      balanced_target_ship_id_sampling: true
+      balanced_last_ship_cell_option_count_sampling: true
+      target_ship_id_weights:
+        line5: 1.0
+        line4: 1.0
+        line3: 1.0
+        square4: 1.0
+        elbow3: 1.0
+      last_ship_cell_option_count_support:
+      - 4
+      - 5
+      - 6
+    task_games__battleship__remaining_ship_shape_label:
+      balanced_target_ship_id_sampling: true
+      balanced_target_answer_sampling: true
+      target_ship_id_weights:
+        line5: 1.0
+        line4: 1.0
+        line3: 1.0
+        square4: 1.0
+        elbow3: 1.0
+      remaining_ship_shape_label_index_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+rendering:
+  shared:
+    canvas_width: 1100
+    canvas_height: 820
+    panel_margin_px: 48
+    max_board_size_px: 650
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_border_width_px: 5
+    grid_line_width_px: 2
+    cell_padding_px: 7
+    fleet_panel_width_px: 310
+    board_panel_gap_px: 34
+    fleet_icon_cell_px: 18
+    label_font_size_px: 22
+prompt:
+  shared:
+    bundle_id: games_battleship_v1
+    scene_key: visible_battleship_grid
+    task_key: battleship_grid_query

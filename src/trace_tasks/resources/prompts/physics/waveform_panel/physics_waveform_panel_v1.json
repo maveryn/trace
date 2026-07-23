@@ -1,0 +1,93 @@
+{
+  "bundle_id": "physics_waveform_panel_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": false,
+  "templates": {
+    "scene": {
+      "waveform_panel_diagram": [
+        "The image shows stacked labeled sinusoidal waveform panels on a shared horizontal scale.",
+        "The diagram shows labeled waveform panels with visible midlines and shared horizontal span.",
+        "This figure shows several labeled sinusoidal waveforms arranged in panels.",
+        "The visual shows labeled waveform panels for comparing wave properties.",
+        "The waveform diagram shows labeled panels drawn on the same horizontal scale."
+      ]
+    },
+    "task": {
+      "wave_property_extremum_label_query": [
+        "Choose the labeled waveform panel requested below.",
+        "Select the panel that matches the requested wave comparison.",
+        "Use the labeled waveform panels to answer the comparison question.",
+        "Compare the displayed waveforms and choose the correct panel label.",
+        "Identify the waveform panel that satisfies the requested property."
+      ]
+    },
+    "query": {
+      "highest_amplitude_label": [
+        "Which labeled waveform panel has the highest amplitude?",
+        "Compare the vertical size of the waves. Which panel has the greatest amplitude?",
+        "Which panel shows the largest wave amplitude?",
+        "Choose the panel with the tallest wave from midline to crest.",
+        "Which labeled waveform has the greatest vertical displacement from its midline?"
+      ],
+      "lowest_amplitude_label": [
+        "Which labeled waveform panel has the lowest amplitude?",
+        "Compare the vertical size of the waves. Which panel has the smallest amplitude?",
+        "Which panel shows the smallest wave amplitude?",
+        "Choose the panel with the shortest wave from midline to crest.",
+        "Which labeled waveform has the least vertical displacement from its midline?"
+      ],
+      "highest_frequency_label": [
+        "Which labeled waveform panel has the highest frequency?",
+        "Compare the number of cycles across the shared horizontal scale. Which panel has the greatest frequency?",
+        "Which panel shows the most wave cycles?",
+        "Choose the waveform with the highest frequency.",
+        "Which labeled panel packs the most cycles into the same horizontal span?"
+      ],
+      "lowest_frequency_label": [
+        "Which labeled waveform panel has the lowest frequency?",
+        "Compare the number of cycles across the shared horizontal scale. Which panel has the lowest frequency?",
+        "Which panel shows the fewest wave cycles?",
+        "Choose the waveform with the lowest frequency.",
+        "Which labeled panel has the fewest cycles over the same horizontal span?"
+      ],
+      "longest_wavelength_label": [
+        "Which labeled waveform panel has the longest wavelength?",
+        "Using the shared horizontal scale, which panel has the longest wavelength?",
+        "Which panel shows the largest distance between matching wave crests?",
+        "Choose the waveform with the longest wavelength.",
+        "Which labeled panel has the widest spacing between cycles?"
+      ],
+      "shortest_wavelength_label": [
+        "Which labeled waveform panel has the shortest wavelength?",
+        "Using the shared horizontal scale, which panel has the shortest wavelength?",
+        "Which panel shows the smallest distance between matching wave crests?",
+        "Choose the waveform with the shortest wavelength.",
+        "Which labeled panel has the tightest spacing between cycles?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nUse this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:wave_property_extremum_label_query": {
+      "annotation_hint": "set \"annotation\" to one pixel bounding box [x0,y0,x1,y1] around the selected waveform panel",
+      "answer_hint": "set \"answer\" to the selected panel letter as a string",
+      "json_example": "{\"annotation\":[112,120,1010,230],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  }
+}

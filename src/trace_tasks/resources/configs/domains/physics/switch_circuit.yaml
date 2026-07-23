@@ -1,0 +1,50 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+  task_overrides:
+    task_physics__switch_circuit__lit_bulb_count:
+      scene_variant_weights:
+        mixed_branch: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_target_answer_sampling: true
+      target_answer_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 720
+    panel_left_px: 56
+    panel_top_px: 58
+    panel_right_px: 1224
+    panel_bottom_px: 662
+    wire_width_px: 5
+    wire_width_px_min: 4
+    wire_width_px_max: 6
+    bulb_radius_px: 27
+    switch_width_px: 74
+    switch_height_px: 46
+    component_label_font_size_px: 20
+    title_font_size_px: 28
+    label_stroke_width_px: 2
+prompt:
+  shared:
+    bundle_id: physics_switch_circuit_v1
+  task_overrides:
+    task_physics__switch_circuit__lit_bulb_count:
+      task_key: lit_bulb_count_query

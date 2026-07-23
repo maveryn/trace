@@ -1,0 +1,20 @@
+generation:
+  shared:
+    length_min: 2
+    length_max: 8
+    ruler_max_cm: 10
+    angle_min: 30
+    angle_max: 150
+    angle_step: 5
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 560
+    label_font_size: 22
+    small_label_font_size: 17
+    tiny_label_font_size: 13
+    ruler_unit_px: 42
+prompt:
+  shared:
+    bundle_id: geometry_measuring_tools_v0
+    scene_key: measuring_tools_scene

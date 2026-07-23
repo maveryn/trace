@@ -1,0 +1,16 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 580
+    line_width: 4
+    label_font_size: 24
+    small_label_font_size: 22
+    label_stroke_width: 0
+    dark_measurement_label_stroke_width: 0
+prompt:
+  shared:
+    bundle_id: geometry_solid_formula_v1
+    scene_key: solid_formula_scene
+    task_key: solid_formula_value_query

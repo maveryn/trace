@@ -1,0 +1,243 @@
+{
+  "bundle_id": "games_cards_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_card_hand": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The scene shows {object_description}."
+      ]
+    },
+    "task": {
+      "cards_hand_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "same_suit_as_reference_count": [
+        "One card is marked `REF`. How many other cards share the same suit as the reference card?",
+        "How many non-reference cards have the same suit as the card marked `REF`?",
+        "Count the other cards whose suit matches the `REF` card.",
+        "Using the card marked `REF`, how many other cards match its suit?",
+        "What is the number of other visible cards that share the reference card's suit?"
+      ],
+      "higher_than_reference_count": [
+        "{rank_order_text} One card is marked `REF`. How many other cards are ranked higher than the reference card?",
+        "{rank_order_text} Count the non-reference cards that outrank the card marked `REF`.",
+        "{rank_order_text} How many other visible cards have a higher rank than the `REF` card?",
+        "{rank_order_text} Using the card marked `REF`, how many other cards are ranked above it?",
+        "{rank_order_text} What is the number of non-reference cards with rank greater than the `REF` card?"
+      ],
+      "exact_triple_count": [
+        "How many ranks appear exactly three times in this hand?",
+        "Count the exact triples in the hand, where a triple means three cards of the same rank.",
+        "What is the number of ranks that occur exactly three times among the visible cards?",
+        "Looking only at rank matches, how many exact triples are present in this hand?",
+        "How many distinct ranks form exact three-card triples in the displayed hand?"
+      ],
+      "longest_run_length": [
+        "{rank_order_text} Ignore suits. {continuation_rule_text} What is the length of the longest run of consecutive ranks in display order?",
+        "{rank_order_text} Ignore suits. {continuation_rule_text} Count the cards in the longest consecutive run of ranks as the hand is read in display order.",
+        "{rank_order_text} Ignore suits. {continuation_rule_text} What is the length of the unique longest consecutive rank run visible in the hand?",
+        "{rank_order_text} Ignore suits. {continuation_rule_text} Determine the size of the longest consecutive run when the cards are read in display order.",
+        "{rank_order_text} Ignore suits. {continuation_rule_text} How many cards are in the longest consecutive rank run shown by the hand's display order?"
+      ],
+      "blackjack_best_hand_label": [
+        "{blackjack_rule_text} Which option letter labels the best hand?",
+        "{blackjack_rule_text} Choose the option letter for the blackjack hand that wins.",
+        "{blackjack_rule_text} Which option letter has the highest non-bust total?",
+        "{blackjack_rule_text} Select the option letter for the best labeled blackjack hand.",
+        "{blackjack_rule_text} Which option letter would win this blackjack comparison?"
+      ],
+      "poker_best_hand_label": [
+        "{poker_rule_text} Which option letter labels the winning poker hand?",
+        "{poker_rule_text} Select the option letter for the strongest labeled hand.",
+        "{poker_rule_text} Which option letter is best under poker rules?",
+        "{poker_rule_text} Identify the option letter for the winning poker hand.",
+        "{poker_rule_text} Which option letter labels the five-card hand that outranks all the others?"
+      ],
+      "poker_draw_card_label": [
+        "{poker_rule_text} Which candidate card makes the strongest five-card poker hand when added to the top hand?",
+        "{poker_rule_text} Select the candidate card that gives the top hand the best five-card poker result.",
+        "{poker_rule_text} Which option letter completes the top hand as the strongest poker hand?",
+        "{poker_rule_text} Choose the candidate draw card that produces the best five-card poker hand.",
+        "{poker_rule_text} Which labeled candidate card gives the strongest poker completion?"
+      ],
+      "trick_taking_winner_label": [
+        "{rank_order_text} {trick_winner_rule_text} {trump_text} Which option letter labels the player who wins the trick?",
+        "{rank_order_text} {trick_winner_rule_text} {trump_text} Select the option letter for the winning player.",
+        "{rank_order_text} {trick_winner_rule_text} {trump_text} Which option letter labels the played card that wins?",
+        "{rank_order_text} {trick_winner_rule_text} {trump_text} Identify the option letter for the player who takes this trick.",
+        "{rank_order_text} {trick_winner_rule_text} {trump_text} Which option letter labels the player with the winning card?"
+      ],
+      "trick_winning_play_label": [
+        "{rank_order_text} {trick_play_rule_text} {trump_text} Which candidate card would win the trick if played next?",
+        "{rank_order_text} {trick_play_rule_text} {trump_text} Select the candidate card that would take the trick.",
+        "{rank_order_text} {trick_play_rule_text} {trump_text} Which option letter is the winning next play?",
+        "{rank_order_text} {trick_play_rule_text} {trump_text} Choose the candidate next card that would win.",
+        "{rank_order_text} {trick_play_rule_text} {trump_text} Which labeled candidate card overtakes the current winning trick card?"
+      ],
+      "missing_flush_card_label": [
+        "Which candidate card completes a flush for the top hand?",
+        "Select the candidate card that makes the top hand a flush.",
+        "Which option letter completes the top hand as a flush?",
+        "Choose the candidate that gives the top hand five cards of one suit.",
+        "Which labeled candidate card finishes the flush?"
+      ],
+      "missing_straight_card_label": [
+        "{rank_order_text} Which candidate card completes a straight for the top hand?",
+        "{rank_order_text} Select the candidate card that makes the top hand a straight.",
+        "{rank_order_text} Which option letter completes the top hand as a straight?",
+        "{rank_order_text} Choose the candidate that gives the top hand five consecutive ranks.",
+        "{rank_order_text} Which labeled candidate card finishes the straight?"
+      ],
+      "missing_full_house_card_label": [
+        "Which candidate card completes a full house for the top hand?",
+        "Select the candidate card that makes the top hand a full house.",
+        "Which option letter completes the top hand as a full house?",
+        "Choose the candidate that gives the top hand three cards of one rank and two cards of another rank.",
+        "Which labeled candidate card finishes the full house?"
+      ],
+      "missing_three_of_kind_card_label": [
+        "Which candidate card completes three of a kind for the top hand?",
+        "Select the candidate card that makes the top hand three of a kind.",
+        "Which option letter completes the top hand as three of a kind?",
+        "Choose the candidate that gives the top hand exactly three cards of one rank.",
+        "Which labeled candidate card finishes three of a kind?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_card_hand": {
+      "object_description": "face-up playing cards arranged as a hand, labeled hands, or labeled candidate cards"
+    },
+    "query:same_suit_as_reference_count": {
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for every non-reference card with the same suit as the reference card",
+      "answer_hint": "set \"answer\" to the number of non-reference cards that share the reference card's suit",
+      "json_example": "{\"annotation\":[[120,80,200,190],[220,80,300,190]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:higher_than_reference_count": {
+      "rank_order_text": "Use rank order 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K < A, with Ace high only.",
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for every non-reference card ranked higher than the reference card",
+      "answer_hint": "set \"answer\" to the number of non-reference cards ranked higher than the reference card",
+      "json_example": "{\"annotation\":[[120,80,200,190],[220,80,300,190]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:exact_triple_count": {
+      "annotation_hint": "set \"annotation\" to an object mapping each rank label that appears exactly three times to an array of three card bounding boxes [x0, y0, x1, y1] for that rank",
+      "answer_hint": "set \"answer\" to the number of ranks that appear exactly three times in the hand",
+      "json_example": "{\"annotation\":{\"7\":[[120,80,200,190],[220,80,300,190],[320,80,400,190]]},\"answer\":1}",
+      "json_example_answer_only": "{\"answer\":1}"
+    },
+    "query:longest_run_length": {
+      "rank_order_text": "Use rank order 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K < A, with Ace high only.",
+      "continuation_rule_text": "Read each row from left to right; continue from the top row to each lower row in order.",
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for the cards in the unique longest run",
+      "answer_hint": "set \"answer\" to the length of the unique longest consecutive run",
+      "json_example": "{\"annotation\":[[120,80,200,190],[220,80,300,190],[320,80,400,190]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:blackjack_best_hand_label": {
+      "blackjack_rule_text": "Use blackjack values: number cards count as printed and J/Q/K count as 10. Count each Ace as 11, but reduce Aces to 1 as needed to keep the hand at 21 or below. If a hand is still over 21 after Ace reductions, it is bust and worse than any non-bust hand.",
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for every card in the winning blackjack hand",
+      "answer_hint": "set \"answer\" to only the winning blackjack hand option letter",
+      "json_example": "{\"annotation\":[[120,80,200,190],[220,80,300,190],[320,80,400,190]],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:poker_best_hand_label": {
+      "poker_rule_text": "Use standard five-card poker ranking. Compare categories first; if categories match, use the usual rank tie-breakers with Ace high.",
+      "annotation_hint": "set \"annotation\" to an array of bounding boxes [x0, y0, x1, y1] for every card in the winning poker hand",
+      "answer_hint": "set \"answer\" to only the winning poker hand option letter",
+      "json_example": "{\"annotation\":[[120,80,200,190],[220,80,300,190],[320,80,400,190],[420,80,500,190],[520,80,600,190]],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:poker_draw_card_label": {
+      "poker_rule_text": "Use standard five-card poker ranking. Compare categories first; if categories match, use the usual rank tie-breakers with Ace high.",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected candidate card",
+      "answer_hint": "set \"answer\" to only the selected candidate option letter",
+      "json_example": "{\"annotation\":[320,300,400,420],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:trick_taking_winner_label": {
+      "rank_order_text": "Use rank order 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K < A, with Ace high only.",
+      "trick_winner_rule_text": "The leftmost card is the led card. If any trump card is played, the highest trump wins; otherwise the highest card in the led suit wins.",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the single winning played card",
+      "answer_hint": "set \"answer\" to only the winning player option letter",
+      "json_example": "{\"annotation\":[320,120,400,250],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:trick_winning_play_label": {
+      "rank_order_text": "Use rank order 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K < A, with Ace high only.",
+      "trick_play_rule_text": "The top row shows cards already played. The card marked LED led the trick. If any trump card is played or chosen, the highest trump wins; otherwise the highest card in the led suit wins.",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected candidate card",
+      "answer_hint": "set \"answer\" to only the selected candidate option letter",
+      "json_example": "{\"annotation\":[320,300,400,420],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:missing_flush_card_label": {
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected candidate card",
+      "answer_hint": "set \"answer\" to only the selected candidate option letter",
+      "json_example": "{\"annotation\":[320,300,400,420],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:missing_straight_card_label": {
+      "rank_order_text": "Use rank order 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K < A, with Ace high only.",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected candidate card",
+      "answer_hint": "set \"answer\" to only the selected candidate option letter",
+      "json_example": "{\"annotation\":[320,300,400,420],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:missing_full_house_card_label": {
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected candidate card",
+      "answer_hint": "set \"answer\" to only the selected candidate option letter",
+      "json_example": "{\"annotation\":[320,300,400,420],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:missing_three_of_kind_card_label": {
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] for the selected candidate card",
+      "answer_hint": "set \"answer\" to only the selected candidate option letter",
+      "json_example": "{\"annotation\":[320,300,400,420],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "trump_text": {
+      "type": "string",
+      "scope": "query:trick_taking_winner_label query:trick_winning_play_label",
+      "description": "Generated trump-suit sentence for the current trick scene."
+    }
+  },
+  "required_slots_by_key": {
+    "query:trick_taking_winner_label": [
+      "trump_text"
+    ],
+    "query:trick_winning_play_label": [
+      "trump_text"
+    ]
+  }
+}

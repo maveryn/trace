@@ -1,0 +1,126 @@
+{
+  "bundle_id": "pages_workspace_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "workspace": [
+        "The image shows {object_description}.",
+        "The screen shows {object_description}.",
+        "This screen shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "workspace_control_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "target_control_lookup": [
+        "Instruction: {instruction_text}. Which candidate label marks the target control?",
+        "Instruction: {instruction_text}. Which candidate label is correct?",
+        "Use the guide, context row, and coded header for this instruction: {instruction_text}. What candidate label marks the control?",
+        "Find the row and coded column implied by this instruction: {instruction_text}. Which label is shown?",
+        "Choose the candidate label for this control instruction: {instruction_text}."
+      ],
+      "context_guide_control_lookup": [
+        "Use the Context Cue Guide to find the row. The instruction gives the Key column directly: {instruction_text} Which candidate badge letter is in that row and column?",
+        "Map the context cue to a row, then use the stated Key column. Instruction: {instruction_text} Which candidate badge letter marks the target control?",
+        "First resolve the context cue, then go to the named Key header. Instruction: {instruction_text} Which candidate badge letter is on that control?",
+        "Find the row from the Context Cue Guide and the directly stated Key column. Instruction: {instruction_text} Which candidate badge letter is at their intersection?",
+        "Use only the final control-cell badge as the answer, not the context cue or Key code. Instruction: {instruction_text} Which candidate badge letter is in the target cell?"
+      ],
+      "row_state_filter_count": [
+        "In the \"{context_label}\" row, how many controls are {state_phrase}?",
+        "Count the {state_phrase} controls in the \"{context_label}\" context row.",
+        "Using only the \"{context_label}\" row, how many controls have the {state_phrase} state?",
+        "How many controls in \"{context_label}\" are shown as {state_phrase}?",
+        "Find the \"{context_label}\" row and count its {state_phrase} controls."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:workspace": {
+      "object_description": "a professional application workspace with a shuffled guide, context rows, coded headers, and labeled controls"
+    },
+    "query:target_control_lookup": {
+      "answer_hint": "set \"answer\" to the selected candidate label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the target labeled control in image pixel coordinates",
+      "json_example": "{\"annotation\":[520,360,690,444],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:context_guide_control_lookup": {
+      "answer_hint": "set \"answer\" to the selected candidate badge letter from the target control cell as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the target labeled control in image pixel coordinates",
+      "json_example": "{\"annotation\":[520,360,690,444],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:row_state_filter_count": {
+      "answer_hint": "set \"answer\" to the integer count of controls in the named row with the requested visible state",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] boxes around the counted controls; use an empty list if none match",
+      "json_example": "{\"annotation\":[[410,378,560,418],[580,378,730,418]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "instruction_text": {"type": "string"},
+    "context_label": {"type": "string"},
+    "context_cue_label": {"type": "string"},
+    "cue_label": {"type": "string"},
+    "action_label": {"type": "string"},
+    "code_label": {"type": "string"},
+    "state_phrase": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:workspace": [
+      "object_description"
+    ],
+    "query:target_control_lookup": [
+      "instruction_text"
+    ],
+    "query:context_guide_control_lookup": [
+      "instruction_text"
+    ],
+    "query:row_state_filter_count": [
+      "context_label",
+      "state_phrase"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

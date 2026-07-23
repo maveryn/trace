@@ -1,0 +1,69 @@
+{
+  "schema_version": "trace-validation-results-v1",
+  "evaluation": {
+    "name": "TRACE validation",
+    "description": "2,000 unseen instances sampled from the same 1,000 task programs as training, with two non-overlapping validation instances per task program.",
+    "rows_per_model": 2000,
+    "task_programs": 1000,
+    "seed": 42,
+    "score_unit": "percent"
+  },
+  "source": {
+    "dataset_repo_id": "maveryn/trace-eval-runs",
+    "dataset_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+    "run_id": "trace-iid-validation-2000-answer-seed42-8models-v1",
+    "benchmark_id": "trace_validation_iid2000",
+    "results_path": "runs/trace-iid-validation-2000-answer-seed42-8models-v1/metadata/results/benchmark_scores.json",
+    "results_sha256": "c35240e88e681434ed26de321015ef62b3ee9a438e20613d606e16b393263da9"
+  },
+  "results": [
+    {
+      "model_id": "qwen2.5-vl-3b-base",
+      "label": "Qwen2.5-VL-3B Base",
+      "evaluated_rows": 2000,
+      "score": 24.45
+    },
+    {
+      "model_id": "trace-qwen2.5-vl-3b",
+      "label": "TRACE Qwen2.5-VL-3B",
+      "evaluated_rows": 2000,
+      "score": 41.05
+    },
+    {
+      "model_id": "qwen2.5-vl-7b-base",
+      "label": "Qwen2.5-VL-7B Base",
+      "evaluated_rows": 2000,
+      "score": 34.25
+    },
+    {
+      "model_id": "trace-qwen2.5-vl-7b",
+      "label": "TRACE Qwen2.5-VL-7B",
+      "evaluated_rows": 2000,
+      "score": 51.55
+    },
+    {
+      "model_id": "game-rl-qwen2.5-vl-7b",
+      "label": "Game-RL Qwen2.5-VL-7B",
+      "evaluated_rows": 2000,
+      "score": 35.55
+    },
+    {
+      "model_id": "sphinx-qwen2.5-vl-7b",
+      "label": "Sphinx Qwen2.5-VL-7B",
+      "evaluated_rows": 2000,
+      "score": 33.5
+    },
+    {
+      "model_id": "pcgrpo-qwen2.5-vl-7b",
+      "label": "PCGRPO Qwen2.5-VL-7B",
+      "evaluated_rows": 2000,
+      "score": 34.1
+    },
+    {
+      "model_id": "vero-qwen2.5-vl-7b",
+      "label": "VERO Qwen2.5-VL-7B",
+      "evaluated_rows": 2000,
+      "score": 38.4
+    }
+  ]
+}

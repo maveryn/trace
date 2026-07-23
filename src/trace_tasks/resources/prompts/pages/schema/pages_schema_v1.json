@@ -1,0 +1,171 @@
+{
+  "bundle_id": "pages_schema_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "database_schema_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This schema diagram shows {object_description}.",
+        "The page shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "schema_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "all_field_count": [
+        "How many fields are listed inside the \"{table_label}\" table?",
+        "Count the field rows in \"{table_label}\".",
+        "What is the total number of fields under \"{table_label}\"?",
+        "Using the \"{table_label}\" table, how many field rows are shown?",
+        "How many fields does the \"{table_label}\" entity list?"
+      ],
+      "attribute_field_count": [
+        "How many ordinary attribute fields are listed inside the \"{table_label}\" table?",
+        "Count the field rows in \"{table_label}\" that are not marked PK or FK.",
+        "What is the number of non-key fields under \"{table_label}\"?",
+        "Using the key badges, how many fields in \"{table_label}\" are ordinary attributes?",
+        "How many fields in \"{table_label}\" have no PK or FK marker?"
+      ],
+      "total_relationship_count": [
+        "How many relationship lines are shown in the schema?",
+        "Count all relationships defined in the schema.",
+        "What is the total number of schema relationships?",
+        "Using the relationship lines between tables, how many relationships are shown?",
+        "Across the schema, count every relationship line once."
+      ],
+      "join_path_length_value": [
+        "What is the fewest number of relationship lines needed to connect \"{source_table_label}\" to \"{target_table_label}\"?",
+        "Using the schema relationships, what is the shortest join-path length from \"{source_table_label}\" to \"{target_table_label}\"?",
+        "How many relationship lines are on the shortest path between \"{source_table_label}\" and \"{target_table_label}\"?",
+        "Find the shortest relationship path connecting \"{source_table_label}\" and \"{target_table_label}\". How many lines does it contain?",
+        "Between \"{source_table_label}\" and \"{target_table_label}\", count the relationship lines in the shortest connecting path."
+      ],
+      "target_table_for_relationship_label": [
+        "From table \"{source_table_label}\", follow relationship \"{relationship_label}\". Which table is at the other end?",
+        "Starting at \"{source_table_label}\", what table does the \"{relationship_label}\" relationship connect to?",
+        "Use the relationship labeled \"{relationship_label}\" from \"{source_table_label}\". What is the target table label?",
+        "For the \"{relationship_label}\" relationship leaving \"{source_table_label}\", name the table at the other endpoint.",
+        "Which table is reached from \"{source_table_label}\" by following \"{relationship_label}\"?"
+      ],
+      "relationship_cardinality_between_tables": [
+        "Between table \"{source_table_label}\" and table \"{target_table_label}\", what cardinality label do the endpoint markers show?",
+        "Read the cardinality markers on the relationship from \"{source_table_label}\" to \"{target_table_label}\". What normalized cardinality label is shown?",
+        "For the relationship connecting \"{source_table_label}\" and \"{target_table_label}\", identify the cardinality class.",
+        "Using the endpoint markers between \"{source_table_label}\" and \"{target_table_label}\", what cardinality label applies?",
+        "What normalized relationship cardinality is shown for \"{source_table_label}\" to \"{target_table_label}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:database_schema_diagram": {
+      "object_description": "database tables with field rows, key markers, cardinality markers, and relationship lines"
+    },
+    "query:all_field_count": {
+      "answer_hint": "set \"answer\" to the integer count of visible field rows in the requested table",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted field rows",
+      "json_example": "{\"annotation\":[[90,120,220,146],[90,150,220,176]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:attribute_field_count": {
+      "answer_hint": "set \"answer\" to the integer count of visible non-PK and non-FK field rows in the requested table",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted field rows",
+      "json_example": "{\"annotation\":[[90,150,220,176],[90,180,220,206]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:total_relationship_count": {
+      "answer_hint": "set \"answer\" to the integer count of relationship lines",
+      "annotation_hint": "set \"annotation\" to a JSON array of line segments; each segment is [[x0, y0], [x1, y1]] using the endpoints of one counted relationship line",
+      "json_example": "{\"annotation\":[[[150,180],[330,260]],[[420,260],[610,360]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:join_path_length_value": {
+      "answer_hint": "set \"answer\" to the integer number of relationship lines on the shortest path between the two requested tables",
+      "annotation_hint": "set \"annotation\" to a JSON array of line segments; each segment is [[x0, y0], [x1, y1]] for one relationship line on the shortest path",
+      "json_example": "{\"annotation\":[[[150,180],[330,260]],[[330,260],[520,260]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:target_table_for_relationship_label": {
+      "answer_hint": "set \"answer\" to the exact target table label as shown",
+      "annotation_hint": "set \"annotation\" to a [x0, y0, x1, y1] box in image pixel coordinates around the target table",
+      "json_example": "{\"annotation\":[480,150,650,330],\"answer\":\"Order\"}",
+      "json_example_answer_only": "{\"answer\":\"Order\"}"
+    },
+    "query:relationship_cardinality_between_tables": {
+      "answer_hint": "set \"answer\" to one of \"one_to_one\", \"one_to_many\", \"optional_many\", or \"many_to_many\"",
+      "annotation_hint": "set \"annotation\" to an object with keys \"source_cardinality_marker\" and \"target_cardinality_marker\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+      "json_example": "{\"annotation\":{\"source_cardinality_marker\":[270,202,300,226],\"target_cardinality_marker\":[440,202,470,226]},\"answer\":\"one_to_many\"}",
+      "json_example_answer_only": "{\"answer\":\"one_to_many\"}"
+    }
+  },
+  "dynamic_slots": {
+    "table_label": {"type": "string"},
+    "source_table_label": {"type": "string"},
+    "target_table_label": {"type": "string"},
+    "relationship_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:database_schema_diagram": [
+      "object_description"
+    ],
+    "query:all_field_count": [
+      "table_label"
+    ],
+    "query:attribute_field_count": [
+      "table_label"
+    ],
+    "query:total_relationship_count": [],
+    "query:join_path_length_value": [
+      "source_table_label",
+      "target_table_label"
+    ],
+    "query:target_table_for_relationship_label": [
+      "source_table_label",
+      "relationship_label"
+    ],
+    "query:relationship_cardinality_between_tables": [
+      "source_table_label",
+      "target_table_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "bundle_id": "illustrations_environment_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "environment_scene": [
+        "The image shows {environment_setting} with illustrated foreground objects and visible environmental features.",
+        "The scene shows {environment_setting} with foreground objects placed around visible roads, rivers, buildings, or crossings.",
+        "The picture shows {environment_setting} with foreground objects and environmental features.",
+        "The canvas contains {environment_setting} with illustrated foreground objects and scene features.",
+        "This illustration shows {environment_setting} with foreground objects and visible environment features."
+      ]
+    },
+    "task": {
+      "environment_count_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "environment_setting": {"type": "string"},
+    "question_text": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:environment_scene": [
+      "environment_setting"
+    ],
+    "task:environment_count_query": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "json_output_contract": "Return a JSON object with \"answer\" and \"annotation\".",
+    "json_output_contract_answer_only": "Return a JSON object with \"answer\" only.",
+    "question_text_feature_relation_object_count": "How many foreground objects are {feature_relation_phrase}? If none are there, answer 0.",
+    "question_text_crossing_feature_count": "How many {crossing_name} cross the {crossed_feature_name}? If none are there, answer 0.",
+    "question_text_building_window_count": "How many {window_phrase} are shown on the buildings? If none are there, answer 0.",
+    "question_text_missing_patch_label": "Which option exactly fills the missing region?",
+    "question_text_rotated_tile_label": "One of the lettered tiles is rotated relative to the rest of the environment image. Which tile is it?",
+    "answer_hint_feature_relation": "set \"answer\" to the count of foreground objects {feature_relation_phrase} as an integer, using 0 if none match",
+    "annotation_hint_feature_relation": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted foreground object {feature_relation_phrase}; use [] if none match",
+    "json_example_feature_relation": "{\"annotation\":[[238,390,322,474],[468,460,560,556]],\"answer\":2}",
+    "json_example_answer_only_feature_relation": "{\"answer\":0}",
+    "answer_hint_crossing_feature": "set \"answer\" to the count of {crossing_name} crossing the {crossed_feature_name} as an integer, using 0 if none match",
+    "annotation_hint_crossing_feature": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {crossing_name}; use [] if none match",
+    "json_example_crossing_feature": "{\"annotation\":[[334,420,470,472],[644,412,776,464]],\"answer\":2}",
+    "json_example_answer_only_crossing_feature": "{\"answer\":0}",
+    "answer_hint_building_window": "set \"answer\" to the count of {window_phrase} on the buildings as an integer, using 0 if none match",
+    "annotation_hint_building_window": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {window_phrase}; use [] if none match",
+    "json_example_building_window": "{\"annotation\":[[444,162,468,186],[486,162,510,186],[444,210,468,234]],\"answer\":3}",
+    "json_example_answer_only_building_window": "{\"answer\":0}",
+    "answer_hint_missing_patch": "set \"answer\" to the selected option letter as a string",
+    "annotation_hint_missing_patch": "set \"annotation\" to a JSON object with keys \"missing_region\" and \"selected_option\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+    "json_example_missing_patch": "{\"annotation\":{\"missing_region\":[214,128,374,252],\"selected_option\":[562,676,722,800]},\"answer\":\"C\"}",
+    "json_example_answer_only_missing_patch": "{\"answer\":\"C\"}",
+    "answer_hint_rotated_tile": "set \"answer\" to the letter of the rotated tile",
+    "annotation_hint_rotated_tile": "set \"annotation\" to one [x0, y0, x1, y1] box around the rotated tile in image pixel coordinates",
+    "json_example_rotated_tile": "{\"annotation\":[350,42,670,362],\"answer\":\"B\"}",
+    "json_example_answer_only_rotated_tile": "{\"answer\":\"B\"}"
+  }
+}

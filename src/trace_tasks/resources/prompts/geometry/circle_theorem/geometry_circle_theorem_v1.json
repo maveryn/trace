@@ -1,0 +1,414 @@
+{
+  "bundle_id": "geometry_circle_theorem_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "circle_theorem_scene": [
+        "The diagram shows a circle with {object_description}.",
+        "This circle diagram shows {object_description}.",
+        "The figure shows a circle with {object_description}.",
+        "The geometry diagram shows a circle with {object_description}.",
+        "The image shows a circle with {object_description}."
+      ]
+    },
+    "task": {
+      "circle_theorem_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "diameter_perpendicular_chord_length": [
+        "The diameter {diameter_segment} meets chord {chord_segment} at {intersection_label}. What is the length of {answer_segment}?",
+        "{diameter_segment} is a diameter and crosses chord {chord_segment} at {intersection_label}. Find the length of {answer_segment}.",
+        "Using the shown diameter {diameter_segment} and chord {chord_segment}, determine the length of {answer_segment}.",
+        "In the diagram, diameter {diameter_segment} and chord {chord_segment} meet at {intersection_label}. What is the length of {answer_segment}?",
+        "Find the segment length {answer_segment} using diameter {diameter_segment} and chord {chord_segment}."
+      ],
+      "secant_secant_variable_segment_length": [
+        "From exterior point {external_point}, two lines cross the circle at {near_point},{far_point} and {near_point_alt},{far_point_alt}. What is the length of {answer_segment}?",
+        "Using the two secants from {external_point}, determine the length of {answer_segment}.",
+        "Find the missing segment length {answer_segment} from the labeled secants.",
+        "Use the two secant measurements to find the length of {answer_segment}.",
+        "Two lines from {external_point} pass through the circle. What is the length of {answer_segment}?"
+      ],
+      "tangent_secant_length": [
+        "From exterior point {external_point}, one segment touches the circle at {tangent_point} and another line crosses the circle at {near_point} then {far_point}. What is the length of {answer_segment}?",
+        "Using the labeled tangent and secant from {external_point}, find the length of {answer_segment}.",
+        "The line from {external_point} touches the circle at {tangent_point}; the other line passes through {near_point} and {far_point}. What is the length of {answer_segment}?",
+        "Determine the segment length {answer_segment} from the visible measurements.",
+        "Find the missing segment length {answer_segment} using the labeled circle."
+      ],
+      "secant_secant_length": [
+        "From exterior point {external_point}, one line crosses the circle at {near_point} then {far_point}; the other crosses at {near_point_alt} then {far_point_alt}. What is the length of {answer_segment}?",
+        "Using the two crossing lines from {external_point}, find the outside segment {answer_segment}.",
+        "Two lines from {external_point} pass through the circle. Determine the length of {answer_segment}.",
+        "Find the missing outside segment {answer_segment} from the visible measurements.",
+        "Use the labeled circle to determine the length of {answer_segment}."
+      ],
+      "intersecting_chords_arc_measure": [
+        "Chords {first_chord_segment} and {second_chord_segment} meet at {intersection_label}. What is the degree measure of {answer_arc}?",
+        "Using the two chords crossing at {intersection_label}, find the degree measure of {answer_arc}.",
+        "Two chords cross inside the circle. Determine the degree measure of {answer_arc}.",
+        "Find the degree measure of {answer_arc} from the visible angle and arc measurements.",
+        "Use the labeled circle to determine the degree measure of {answer_arc}."
+      ],
+      "multi_step_angle_value": [
+        "Chords {first_chord_segment} and {second_chord_segment} meet at {intersection_label}. What is the measure of {answer_angle}?",
+        "Using the two chords crossing at {intersection_label}, find the measure of {answer_angle}.",
+        "Two chords cross inside the circle. Determine the measure of {answer_angle}.",
+        "Find the measure of {answer_angle} from the visible arc measurements.",
+        "Use the labeled circle to determine the measure of {answer_angle}."
+      ],
+      "inscribed_angle_from_central": [
+        "What is the measure of {answer_angle}?",
+        "Using the labeled central angle, find the measure of {answer_angle}.",
+        "Determine the measure of {answer_angle} from the visible circle labels.",
+        "Find the missing inscribed angle {answer_angle}.",
+        "Use the labeled circle to determine the measure of {answer_angle}."
+      ],
+      "central_angle_from_inscribed": [
+        "What is the measure of {answer_angle}?",
+        "Using the labeled inscribed angle, find the measure of {answer_angle}.",
+        "Determine the measure of {answer_angle} from the visible circle labels.",
+        "Find the missing central angle {answer_angle}.",
+        "Use the labeled circle to determine the measure of {answer_angle}."
+      ],
+      "inscribed_angle_from_arc": [
+        "What is the measure of {answer_angle}?",
+        "Using the labeled intercepted arc, find the measure of {answer_angle}.",
+        "Determine the measure of {answer_angle} from the visible circle labels.",
+        "Find the missing inscribed angle {answer_angle}.",
+        "Use the labeled circle to determine the measure of {answer_angle}."
+      ],
+      "tangent_chord_angle_from_arc": [
+        "What is the measure of {answer_angle}?",
+        "Using the labeled intercepted arc, find the measure of {answer_angle}.",
+        "Determine the tangent-chord angle {answer_angle}.",
+        "Find the missing angle {answer_angle} from the visible circle labels.",
+        "Use the labeled circle to determine the measure of {answer_angle}."
+      ],
+      "tangent_chord_angle_from_inscribed": [
+        "What is the measure of {answer_angle}?",
+        "Using the labeled inscribed angle, find the measure of {answer_angle}.",
+        "Determine the tangent-chord angle {answer_angle}.",
+        "Find the missing angle {answer_angle} from the visible circle labels.",
+        "Use the labeled circle to determine the measure of {answer_angle}."
+      ],
+      "external_two_secants_angle_from_arcs": [
+        "From exterior point {external_point}, two secants cross the circle at {near_point},{far_point} and {near_point_alt},{far_point_alt}. Using arcs {far_arc} and {near_arc}, what is the measure of {answer_angle}?",
+        "Using the two secants from {external_point} and the labeled arcs {far_arc} and {near_arc}, find the measure of {answer_angle}.",
+        "Two secants from {external_point} intercept arcs {far_arc} and {near_arc}. Determine the outside angle {answer_angle}.",
+        "Find the missing outside angle {answer_angle} from the visible secants and arc labels.",
+        "Use the labeled arcs {far_arc} and {near_arc} to determine the measure of {answer_angle}."
+      ],
+      "opposite_angle_supplement": [
+        "What is the measure of {answer_angle}?",
+        "Find the measure of {answer_angle}.",
+        "Determine the measure of {answer_angle}.",
+        "What is angle {answer_angle}?",
+        "Find angle {answer_angle}."
+      ],
+      "exterior_angle_from_opposite_interior": [
+        "What is the measure of {answer_angle}?",
+        "Find the measure of {answer_angle}.",
+        "Determine the measure of {answer_angle}.",
+        "What is angle {answer_angle}?",
+        "Find angle {answer_angle}."
+      ],
+      "chord_length_from_radius_and_central_angle": [
+        "Using radius {radius_segment} and central angle {angle_name}, what is the length of chord {answer_segment}?",
+        "Find the length of chord {answer_segment} from the shown radius {radius_segment} and central angle {angle_name}.",
+        "The circle shows radius {radius_segment} and central angle {angle_name}. Determine chord length {answer_segment}.",
+        "Use the labeled radius and central angle to compute the length of chord {answer_segment}.",
+        "What is the length of chord {answer_segment} in the circle?"
+      ],
+      "chord_length_from_radius_and_inscribed_angle": [
+        "Using radius {radius_segment} and inscribed angle {angle_name}, what is the length of chord {answer_segment}?",
+        "Find the length of chord {answer_segment} from the shown radius {radius_segment} and inscribed angle {angle_name}.",
+        "The circle shows radius {radius_segment} and inscribed angle {angle_name}. Determine chord length {answer_segment}.",
+        "Use the labeled radius and inscribed angle to compute the length of chord {answer_segment}.",
+        "What is the length of chord {answer_segment} in the circle?"
+      ],
+      "radius_from_external_distance_and_angle": [
+        "Using external distance {external_distance_segment} and angle {angle_name}, what is the length of radius {answer_segment}?",
+        "Find radius length {answer_segment} from the shown exterior distance {external_distance_segment} and angle {angle_name}.",
+        "The circle shows exterior distance {external_distance_segment} and angle {angle_name}. Determine radius length {answer_segment}.",
+        "Use the tangent-radius right triangle to compute the length of {answer_segment}.",
+        "What is the length of radius {answer_segment} in the circle?"
+      ],
+      "tangent_length_from_radius_and_external_distance": [
+        "Using radius {radius_segment} and center-to-exterior distance {external_distance_segment}, what is the length of tangent segment {answer_segment}?",
+        "Find tangent length {answer_segment} from the shown radius {radius_segment} and distance {external_distance_segment}.",
+        "The circle shows radius {radius_segment} and exterior distance {external_distance_segment}. Determine tangent length {answer_segment}.",
+        "Use the tangent-radius right triangle to compute the length of {answer_segment}.",
+        "What is the length of tangent segment {answer_segment}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: set \"annotation\" to a JSON object with exactly these visible point-label keys: {annotation_keys}; each value must be that label's pixel point [x,y].\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation field: use exactly these visible point-label keys: {annotation_keys}; each value must be that label's pixel point [x,y].\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: JSON object with exactly these visible point-label keys: {annotation_keys}; each value must be that label's pixel point [x,y].\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: use exactly these visible point-label keys: {annotation_keys}; each value must be that label's pixel point [x,y].\nExample JSON:\n{json_example}",
+        "Annotation format: set \"annotation\" to the pixel point [x,y] for each of these visible point labels: {annotation_keys}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "object_description_default": "labeled points and shown measurements",
+      "object_description_chord_length": "labeled points, a radius label, a chord, and an angle mark",
+      "object_description_tangent_radius": "labeled center, tangent point, exterior point, a right-angle marker, and shown measurements",
+      "answer_hint_integer": "set \"answer\" to the requested value as an integer",
+      "answer_hint_number": "set \"answer\" to the requested chord length as a number rounded to one decimal place",
+      "answer_hint_tangent_radius_number": "set \"answer\" to the requested length as a number rounded to one decimal place"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "annotation_keys": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "angle_name": {
+      "type": "string"
+    },
+    "answer_angle": {
+      "type": "string"
+    },
+    "answer_arc": {
+      "type": "string"
+    },
+    "answer_segment": {
+      "type": "string"
+    },
+    "central_angle": {
+      "type": "string"
+    },
+    "chord_segment": {
+      "type": "string"
+    },
+    "diameter_segment": {
+      "type": "string"
+    },
+    "extension_point": {
+      "type": "string"
+    },
+    "external_distance_segment": {
+      "type": "string"
+    },
+    "external_point": {
+      "type": "string"
+    },
+    "far_arc": {
+      "type": "string"
+    },
+    "far_point": {
+      "type": "string"
+    },
+    "far_point_alt": {
+      "type": "string"
+    },
+    "first_chord_segment": {
+      "type": "string"
+    },
+    "inscribed_angle": {
+      "type": "string"
+    },
+    "inside_segment": {
+      "type": "string"
+    },
+    "intercepted_arc": {
+      "type": "string"
+    },
+    "intersection_label": {
+      "type": "string"
+    },
+    "known_angle": {
+      "type": "string"
+    },
+    "near_arc": {
+      "type": "string"
+    },
+    "near_point": {
+      "type": "string"
+    },
+    "near_point_alt": {
+      "type": "string"
+    },
+    "radius_segment": {
+      "type": "string"
+    },
+    "second_chord_segment": {
+      "type": "string"
+    },
+    "tangent_chord_angle": {
+      "type": "string"
+    },
+    "tangent_point": {
+      "type": "string"
+    },
+    "tangent_segment": {
+      "type": "string"
+    },
+    "angle_kind": {
+      "type": "string"
+    },
+    "inside_second_segment": {
+      "type": "string"
+    },
+    "known_arc": {
+      "type": "string"
+    },
+    "outside_second_segment": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:circle_theorem_scene": [
+      "object_description"
+    ],
+    "query:diameter_perpendicular_chord_length": [
+      "diameter_segment",
+      "chord_segment",
+      "intersection_label",
+      "answer_segment"
+    ],
+    "query:secant_secant_variable_segment_length": [
+      "external_point",
+      "near_point",
+      "far_point",
+      "near_point_alt",
+      "far_point_alt",
+      "answer_segment"
+    ],
+    "query:tangent_secant_length": [
+      "external_point",
+      "tangent_point",
+      "near_point",
+      "far_point",
+      "tangent_segment",
+      "inside_segment",
+      "answer_segment"
+    ],
+    "query:secant_secant_length": [
+      "external_point",
+      "near_point",
+      "far_point",
+      "near_point_alt",
+      "far_point_alt",
+      "answer_segment"
+    ],
+    "query:intersecting_chords_arc_measure": [
+      "first_chord_segment",
+      "second_chord_segment",
+      "intersection_label",
+      "answer_arc"
+    ],
+    "query:multi_step_angle_value": [
+      "first_chord_segment",
+      "second_chord_segment",
+      "intersection_label",
+      "answer_angle"
+    ],
+    "query:inscribed_angle_from_central": [
+      "central_angle",
+      "inscribed_angle",
+      "answer_angle"
+    ],
+    "query:central_angle_from_inscribed": [
+      "central_angle",
+      "inscribed_angle",
+      "answer_angle"
+    ],
+    "query:inscribed_angle_from_arc": [
+      "intercepted_arc",
+      "inscribed_angle",
+      "answer_angle"
+    ],
+    "query:tangent_chord_angle_from_arc": [
+      "tangent_chord_angle",
+      "intercepted_arc",
+      "answer_angle"
+    ],
+    "query:tangent_chord_angle_from_inscribed": [
+      "tangent_chord_angle",
+      "inscribed_angle",
+      "answer_angle"
+    ],
+    "query:external_two_secants_angle_from_arcs": [
+      "external_point",
+      "near_point",
+      "far_point",
+      "near_point_alt",
+      "far_point_alt",
+      "near_arc",
+      "far_arc",
+      "answer_angle"
+    ],
+    "query:opposite_angle_supplement": [
+      "known_angle",
+      "answer_angle"
+    ],
+    "query:exterior_angle_from_opposite_interior": [
+      "known_angle",
+      "answer_angle",
+      "extension_point"
+    ],
+    "query:chord_length_from_radius_and_central_angle": [
+      "radius_segment",
+      "angle_name",
+      "answer_segment",
+      "chord_segment"
+    ],
+    "query:chord_length_from_radius_and_inscribed_angle": [
+      "radius_segment",
+      "angle_name",
+      "answer_segment",
+      "chord_segment"
+    ],
+    "query:radius_from_external_distance_and_angle": [
+      "external_distance_segment",
+      "angle_name",
+      "answer_segment",
+      "radius_segment"
+    ],
+    "query:tangent_length_from_radius_and_external_distance": [
+      "radius_segment",
+      "external_distance_segment",
+      "answer_segment",
+      "tangent_segment"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_keys",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "bundle_id": "charts_errorbar_series_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "errorbar_series_scene": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "errorbar_series_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "highest_upper_bound_x_label": [
+        "For series \"{target_series_label}\", which x-axis label has the {extremum_phrase} {bound_phrase}?",
+        "Find the x-axis label where \"{target_series_label}\" has the {extremum_phrase} {bound_phrase}.",
+        "Looking only at \"{target_series_label}\", which x label has the {extremum_phrase} {bound_phrase}?",
+        "Which visible x-axis label corresponds to the {extremum_phrase} {bound_phrase} for \"{target_series_label}\"?",
+        "For \"{target_series_label}\", identify the x-axis label with the {extremum_phrase} {bound_phrase}."
+      ],
+      "lowest_lower_bound_x_label": [
+        "For series \"{target_series_label}\", which x-axis label has the {extremum_phrase} {bound_phrase}?",
+        "Find the x-axis label where \"{target_series_label}\" has the {extremum_phrase} {bound_phrase}.",
+        "Looking only at \"{target_series_label}\", which x label has the {extremum_phrase} {bound_phrase}?",
+        "Which visible x-axis label corresponds to the {extremum_phrase} {bound_phrase} for \"{target_series_label}\"?",
+        "For \"{target_series_label}\", identify the x-axis label with the {extremum_phrase} {bound_phrase}."
+      ],
+      "overlap_target_errorbar_at_x_count": [
+        "At x-axis label \"{target_x_label}\", how many other series have error bars that overlap the error bar for \"{target_series_label}\"?",
+        "Compare all series at \"{target_x_label}\". How many other error bars overlap \"{target_series_label}\"?",
+        "At \"{target_x_label}\", count the other series whose error-bar interval overlaps the interval for \"{target_series_label}\".",
+        "Using the error bars at x label \"{target_x_label}\", how many non-target series overlap \"{target_series_label}\"?",
+        "For x label \"{target_x_label}\", how many other series share any error-bar range with \"{target_series_label}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:highest_upper_bound_x_label": {
+      "answer_hint": "set \"answer\" to the exact visible x-axis label as a string",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point on the selected error-bar endpoint",
+      "json_example": "{\"annotation\":[612,188],\"answer\":\"FY24\"}",
+      "json_example_answer_only": "{\"answer\":\"FY24\"}"
+    },
+    "query:lowest_lower_bound_x_label": {
+      "answer_hint": "set \"answer\" to the exact visible x-axis label as a string",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point on the selected error-bar endpoint",
+      "json_example": "{\"annotation\":[612,188],\"answer\":\"FY24\"}",
+      "json_example_answer_only": "{\"answer\":\"FY24\"}"
+    },
+    "query:overlap_target_errorbar_at_x_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of lower-to-upper error-bar interval segments for the counted overlapping marks, each segment written as [[x0,y0],[x1,y1]]",
+      "json_example": "{\"annotation\":[[[548,390],[548,300]],[[576,372],[576,282]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "target_series_label": {
+      "type": "string"
+    },
+    "target_x_label": {
+      "type": "string"
+    },
+    "bound_phrase": {
+      "type": "string"
+    },
+    "extremum_phrase": {
+      "type": "string"
+    }
+  }
+}

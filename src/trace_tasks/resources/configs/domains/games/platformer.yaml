@@ -1,0 +1,94 @@
+generation:
+  shared:
+    scene_variant_weights:
+      side_scroller: 1.0
+    style_variant_weights:
+      day: 1.0
+      cave: 1.0
+      neon: 1.0
+      snow: 1.0
+      sunset: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_platform_count_sampling: true
+    balanced_hazard_count_sampling: true
+    balanced_distractor_collectible_count_sampling: true
+    platform_count_support:
+    - 4
+    - 5
+    - 6
+    - 7
+    hazard_count_support:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    distractor_collectible_count_support:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    jump_visible_after_peak_min: 0.08
+    jump_visible_after_peak_max: 0.14
+  task_overrides:
+    task_games__platformer__jump_landing_label:
+      balanced_target_platform_label_sampling: true
+      target_platform_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+    task_games__platformer__collectible_count:
+      balanced_target_collectible_count_sampling: true
+      target_collectible_count_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+    task_games__platformer__jump_collectible_score_value:
+      score_on_arc_coin_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      score_on_arc_bonus_count_support:
+      - 1
+      - 2
+      score_off_arc_bonus_count_support:
+      - 1
+      - 2
+      - 3
+      score_bonus_value_support:
+      - 2
+      - 3
+      - 4
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 740
+    level_width_px: 860
+    level_height_px: 610
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    level_border_width_px: 5
+    platform_height_px: 34
+    player_width_px: 38
+    player_height_px: 58
+    hazard_width_px: 54
+    hazard_height_px: 54
+    collectible_radius_px: 18
+    path_width_px: 6
+    label_font_size_px: 24
+prompt:
+  shared:
+    bundle_id: games_platformer_v1
+    scene_key: visible_platformer_level
+    task_key: platformer_level_query

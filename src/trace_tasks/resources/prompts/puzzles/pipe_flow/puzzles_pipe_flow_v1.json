@@ -1,0 +1,93 @@
+{
+  "bundle_id": "puzzles_pipe_flow_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description_water_pipe": "a pipe-tile grid with a green start marker and a red triangular finish flag",
+    "object_description_circuit_trace": "a circuit-trace tile grid with a green start marker and a red triangular finish flag",
+    "object_description_industrial_conduit": "an industrial conduit tile grid with a green start marker and red finish flag"
+  },
+  "templates": {
+    "scene": {
+      "pipe_flow": [
+        "The image shows {object_description}.",
+        "The pipe puzzle shows {object_description}.",
+        "This repair puzzle shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "pipe_flow_repair_tile_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "pipe_flow_misrotated_tile_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "pipe_flow_repair_tile_label": [
+        "Flow can pass only through matching openings on adjacent tile edges. Without rotating or flipping any option, which option fills the black 2x2 gap so the green start connects to the red finish flag?",
+        "Choose the labeled 2x2 repair piece that, exactly as drawn, completes the path from the green start marker to the red finish flag when placed in the black gap.",
+        "Find the single option whose displayed openings make a continuous path from the green start marker to the red finish flag through the black 2x2 gap. Do not rotate or flip options.",
+        "Which labeled 2x2 repair piece fits the missing black region as shown and restores flow from the green start marker to the red finish flag?",
+        "Select the option that completes the missing 2x2 region in its displayed orientation so the green start marker connects to the red finish flag through matching openings."
+      ],
+      "pipe_flow_misrotated_tile_label": [
+        "Flow can pass only through matching openings on adjacent tile edges. Which labeled tile should be rotated so the green start marker connects to the red finish flag?",
+        "One labeled pipe tile is rotated away from its correct orientation. Which label marks the tile that should be rotated to restore the path from the green start marker to the red finish flag?",
+        "Choose the labeled tile that needs to be rotated so the pipe openings make a continuous path from the green start marker to the red finish flag.",
+        "Exactly one of the labeled pipe tiles is in the wrong orientation. Which tile should be rotated to reconnect start to finish?",
+        "Select the label on the pipe tile that must be rotated so flow can travel from the green start marker to the red finish flag."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:pipe_flow_repair_tile_label_query": {
+      "answer_instruction": "the selected repair option letter as a string",
+      "annotation_hint": "Set annotation to an object with keys \"selected_option\" and \"missing_gap\". Each value is one image-pixel bounding box [x0,y0,x1,y1] around that visual witness.",
+      "json_example": "{\"annotation\":{\"selected_option\":[774,248,902,376],\"missing_gap\":[424,312,512,400]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:pipe_flow_misrotated_tile_label_query": {
+      "answer_instruction": "the selected tile letter as a string",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the tile that should be rotated.",
+      "json_example": "{\"annotation\":[376,248,420,286],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:pipe_flow": [
+      "object_description"
+    ]
+  }
+}

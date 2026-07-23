@@ -1,0 +1,1 @@
+"""Space-shooter games tasks."""

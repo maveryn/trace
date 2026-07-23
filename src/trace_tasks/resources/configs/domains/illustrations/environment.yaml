@@ -1,0 +1,105 @@
+generation:
+  shared:
+    balanced_sampling: true
+    theme_support:
+      - park_road
+      - river_meadow
+      - road_and_river
+      - canal_city
+      - skyline_street
+    relation_support:
+      - above
+      - below
+    crossing_type_support:
+      - bridge
+      - crosswalk
+  task_overrides:
+    task_illustrations__environment__feature_relation_object_count:
+      object_count_min: 12
+      object_count_max: 18
+      relation_support:
+        - above
+        - below
+        - "on"
+      feature_side_target_count_min: 1
+      feature_side_target_count_max: 6
+      on_feature_target_count_min: 1
+      on_feature_target_count_max: 6
+    task_illustrations__environment__crossing_feature_count:
+      object_count_min: 12
+      object_count_max: 18
+      crossing_target_count_min: 1
+      crossing_target_count_max: 5
+    task_illustrations__environment__lit_window_count:
+      object_count_min: 8
+      object_count_max: 14
+      target_count_min: 1
+      target_count_max: 6
+      theme_support:
+        - canal_city
+        - skyline_street
+      window_mode_support:
+        - lit
+    task_illustrations__environment__missing_patch_label:
+      source_object_count_min: 12
+      source_object_count_max: 18
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 34
+    task_illustrations__environment__rotated_tile_label:
+      source_object_count_min: 12
+      source_object_count_max: 18
+      rotation_degrees_support:
+        - 90
+        - 270
+      min_tile_detail_score: 160
+      min_rotation_delta: 7
+
+rendering:
+  shared:
+    environment_canvas_width: 1280
+    environment_canvas_height: 840
+    environment_object_size_min_px: 62
+    environment_object_size_max_px: 116
+    environment_min_gap_px: 6
+    environment_max_overlap_fraction: 0.02
+    environment_placement_max_attempts: 420
+    environment_render_scale: 2
+    skyline_building_min: 7
+    skyline_building_max: 14
+    art_style_support:
+      - flat_vector
+      - outlined_cartoon
+      - paper_cutout
+      - soft_shadow
+      - ink_sketch
+      - watercolor_wash
+    art_style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+      ink_sketch: 1.0
+      watercolor_wash: 1.0
+  task_overrides:
+    task_illustrations__environment__feature_relation_object_count:
+      environment_object_size_min_px: 54
+      environment_object_size_max_px: 96
+      environment_placement_max_attempts: 720
+    task_illustrations__environment__lit_window_count:
+      environment_object_size_min_px: 58
+      environment_object_size_max_px: 108
+      skyline_building_min: 4
+      skyline_building_max: 7
+
+prompt:
+  shared:
+    bundle_id: illustrations_environment_v1
+    scene_key: environment_scene
+    task_key: environment_count_query

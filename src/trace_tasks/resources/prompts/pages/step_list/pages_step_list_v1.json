@@ -1,0 +1,126 @@
+{
+  "bundle_id": "pages_step_list_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "step_list": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "step_lookup_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "offset_after_named_step": [
+        "What step title is {relative_offset_phrase} the step titled {source_step_title}?",
+        "Find {source_step_title}. What title is printed {relative_offset_phrase} it?",
+        "Starting at {source_step_title}, move {relative_offset_phrase}. What step title do you reach?",
+        "Which title appears {relative_offset_phrase} the step titled {source_step_title}?",
+        "Read the title of the step {relative_offset_phrase} {source_step_title}."
+      ],
+      "offset_before_named_step": [
+        "What step title is {relative_offset_phrase} the step titled {source_step_title}?",
+        "Find {source_step_title}. What title is printed {relative_offset_phrase} it?",
+        "Starting at {source_step_title}, move {relative_offset_phrase}. What step title do you reach?",
+        "Which title appears {relative_offset_phrase} the step titled {source_step_title}?",
+        "Read the title of the step {relative_offset_phrase} {source_step_title}."
+      ],
+      "between_named_steps_count": [
+        "How many numbered steps are strictly between {first_step_title} and {second_step_title}?",
+        "Count the steps between the step titled {first_step_title} and the step titled {second_step_title}.",
+        "What is the number of steps separating {first_step_title} from {second_step_title}, excluding those two steps?",
+        "Between {first_step_title} and {second_step_title}, how many other steps are listed?",
+        "Find {first_step_title} and {second_step_title}. How many step cards lie between them?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:step_list": {
+      "object_description": "a numbered workflow step list where each step card has labeled Title and Detail fields plus other small fields"
+    },
+    "query:offset_after_named_step": {
+      "answer_hint": "set \"answer\" to the exact visible title of the step reached by the requested offset",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box around the answer step title",
+      "json_example": "{\"annotation\":[220,216,300,244],\"answer\":\"Approve\"}",
+      "json_example_answer_only": "{\"answer\":\"Approve\"}"
+    },
+    "query:offset_before_named_step": {
+      "answer_hint": "set \"answer\" to the exact visible title of the step reached by the requested offset",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box around the answer step title",
+      "json_example": "{\"annotation\":[220,216,300,244],\"answer\":\"Approve\"}",
+      "json_example_answer_only": "{\"answer\":\"Approve\"}"
+    },
+    "query:between_named_steps_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"first_named_title\" and \"second_named_title\", each containing one [x0, y0, x1, y1] box around the corresponding named step title",
+      "json_example": "{\"annotation\":{\"first_named_title\":[220,216,340,244],\"second_named_title\":[220,492,320,520]},\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    }
+  },
+  "dynamic_slots": {
+    "source_step_title": {"type": "string"},
+    "target_step_title": {"type": "string"},
+    "first_step_title": {"type": "string"},
+    "second_step_title": {"type": "string"},
+    "relative_offset_phrase": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:step_list": [
+      "object_description"
+    ],
+    "query:offset_after_named_step": [
+      "source_step_title",
+      "relative_offset_phrase"
+    ],
+    "query:offset_before_named_step": [
+      "source_step_title",
+      "relative_offset_phrase"
+    ],
+    "query:between_named_steps_count": [
+      "first_step_title",
+      "second_step_title"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

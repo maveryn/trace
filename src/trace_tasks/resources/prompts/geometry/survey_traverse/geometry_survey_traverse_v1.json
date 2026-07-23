@@ -1,0 +1,126 @@
+{
+  "bundle_id": "geometry_survey_traverse_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "survey_traverse_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This survey sketch shows {object_description}.",
+        "The image shows {object_description}.",
+        "This technical diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "outgoing_bearing_from_turn_value_query": [
+        "Find the outgoing bearing marked ?. Use the incoming bearing, the shown left/right turn angle, and the north reference.",
+        "Determine the missing outgoing bearing after the shown station turn. Bearings are measured clockwise from north.",
+        "Use the traverse turn note and the north reference to compute the bearing marked ?.",
+        "Find the bearing of the outgoing line after applying the visible left/right turn at the middle station.",
+        "Use the incoming survey bearing and the marked turn angle to determine the missing outgoing bearing."
+      ],
+      "station_elevation_value_query": [
+        "Find the station elevation marked ?. Use the benchmark elevation, backsight, and foresight readings in the field note.",
+        "Compute the missing station elevation from the leveling field note.",
+        "Use the benchmark elevation and staff readings to determine the elevation marked ?.",
+        "Find the target station elevation by using the benchmark, backsight, and foresight values shown.",
+        "Use the leveling sketch and field note to compute the missing elevation marked ?."
+      ],
+      "traverse_area_value_query": [
+        "Find the area marked ?. Use the chainage intervals along the baseline and the perpendicular offsets in the field note.",
+        "Compute the area between the baseline and offset line by summing the trapezoids between adjacent stations.",
+        "Use each adjacent pair of chainages and offsets to find the total offset-traverse area marked ?.",
+        "Find the marked survey area from the baseline chainages and perpendicular offsets.",
+        "Use the offset sketch and field note to compute the total area between the baseline and the shown offset line."
+      ]
+    },
+    "query": {
+      "single": [
+        "Use the bearing labels as degrees clockwise from north.",
+        "Apply the shown turn to the incoming bearing.",
+        "Use the left/right turn direction exactly as shown.",
+        "Normalize the final bearing to a value from 0 to 359 degrees.",
+        "Use the visible turn arc and bearing note."
+      ],
+      "leveling_station_elevation": [
+        "First add backsight to the benchmark elevation, then subtract foresight for the target station.",
+        "Use height of instrument from the benchmark and backsight, then apply the foresight reading.",
+        "Compute benchmark elevation plus backsight minus foresight.",
+        "Use the same elevation units shown in the field note.",
+        "The answer is the target station elevation, not the height of instrument."
+      ],
+      "offset_trapezoid_area": [
+        "For each adjacent station pair, multiply the chainage interval by the average of the two offsets, then add the results.",
+        "Each neighboring pair of offsets forms one trapezoid over the baseline interval.",
+        "Use only adjacent chainage intervals; do not multiply total baseline length by one average offset.",
+        "Add the area contributions from all adjacent station intervals.",
+        "The answer is the total area between the baseline and the offset line."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_instruction}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:survey_traverse_scene": {
+      "object_description": "a survey field sketch with a diagram and a field-note panel"
+    },
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "task:outgoing_bearing_from_turn_value_query": {
+      "answer_hint": "set \"answer\" to the marked survey bearing as an integer number of degrees clockwise from north"
+    },
+    "task:station_elevation_value_query": {
+      "answer_hint": "set \"answer\" to the missing station elevation as an integer value in the same units shown"
+    },
+    "task:traverse_area_value_query": {
+      "answer_hint": "set \"answer\" to the marked survey area as an integer number of square units"
+    }
+  },
+  "dynamic_slots": {
+    "annotation_instruction": {
+      "type": "string"
+    },
+    "annotation_key_list": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:survey_traverse_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_instruction",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

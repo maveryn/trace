@@ -1,0 +1,81 @@
+generation:
+  shared:
+    scene_variant_weights:
+      two_lane_track: 1.0
+    style_variant_weights:
+      arcade_lane: 1.0
+      city_road: 1.0
+      forest_path: 1.0
+      neon_track: 1.0
+      paper_course: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_row_count_sampling: true
+    balanced_start_lane_sampling: true
+    row_count_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    start_lane_support:
+    - 0
+    - 1
+  task_overrides:
+    task_games__lane_runner__path_coin_count:
+      balanced_target_answer_sampling: true
+      target_answer_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    task_games__lane_runner__safe_path_label:
+      balanced_option_count_sampling: true
+      balanced_answer_option_index_sampling: true
+      option_count_support:
+      - 4
+      - 6
+      answer_option_index_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+rendering:
+  shared:
+    dynamic_canvas_size_enabled: true
+    canvas_min_width: 360
+    canvas_min_height: 430
+    canvas_outer_margin_px: 72
+    cell_size_px: 80
+    cell_gap_px: 7
+    panel_margin_px: 28
+    start_band_height_px: 44
+    finish_band_height_px: 42
+    coin_radius_px: 17
+    runner_radius_px: 20
+    hazard_radius_px: 18
+    path_line_width_px: 7
+    path_label_font_size_px: 18
+    option_card_cell_size_px: 80
+    option_card_gap_px: 7
+    option_card_margin_px: 10
+    option_card_area_gap_px: 28
+    grid_line_width_px: 3
+    label_font_size_px: 20
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    layout_jitter_enabled: true
+    layout_jitter_mode: slack_fraction
+    layout_jitter_min_margin_px: 24
+    layout_jitter_x_slack_fraction_min: -0.75
+    layout_jitter_x_slack_fraction_max: 0.75
+    layout_jitter_y_slack_fraction_min: -0.75
+    layout_jitter_y_slack_fraction_max: 0.75
+prompt:
+  shared:
+    bundle_id: games_lane_runner_v1
+    scene_key: lane_runner_track
+    task_key: lane_runner_query

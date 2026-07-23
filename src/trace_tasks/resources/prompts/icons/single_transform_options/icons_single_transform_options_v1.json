@@ -1,0 +1,149 @@
+{
+  "bundle_id": "icons_single_transform_options_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "single_transform_options_transformation": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ],
+      "single_transform_options_inverse_transformation": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "transformation_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "rotate_90_clockwise_result_label": [
+        "Which labeled option shows the Reference icon after a 90 degree clockwise rotation?",
+        "Which option label matches the Reference icon rotated 90 degrees clockwise?",
+        "Find the labeled option that shows the Reference icon after rotating it 90 degrees clockwise.",
+        "What option letter is the 90 degree clockwise rotation of the Reference icon?",
+        "Select the option that matches a 90 degree clockwise rotation of the Reference icon."
+      ],
+      "rotate_90_counterclockwise_result_label": [
+        "Which labeled option shows the Reference icon after a 90 degree counterclockwise rotation?",
+        "Which option label matches the Reference icon rotated 90 degrees counterclockwise?",
+        "Find the labeled option that shows the Reference icon after rotating it 90 degrees counterclockwise.",
+        "What option letter is the 90 degree counterclockwise rotation of the Reference icon?",
+        "Select the option that matches a 90 degree counterclockwise rotation of the Reference icon."
+      ],
+      "rotate_180_result_label": [
+        "Which labeled option shows the Reference icon after a 180 degree rotation?",
+        "Which option label matches the Reference icon rotated 180 degrees?",
+        "Find the labeled option that shows the Reference icon after rotating it 180 degrees.",
+        "What option letter is the 180 degree rotation of the Reference icon?",
+        "Select the option that matches a 180 degree rotation of the Reference icon."
+      ],
+      "flip_horizontal_result_label": [
+        "Which labeled option shows the Reference icon after a horizontal flip?",
+        "Which option label matches the Reference icon flipped horizontally?",
+        "Find the labeled option that shows the Reference icon after a horizontal flip.",
+        "What option letter is the horizontal flip of the Reference icon?",
+        "Select the option that matches a horizontal flip of the Reference icon."
+      ],
+      "flip_vertical_result_label": [
+        "Which labeled option shows the Reference icon after a vertical flip?",
+        "Which option label matches the Reference icon flipped vertically?",
+        "Find the labeled option that shows the Reference icon after a vertical flip.",
+        "What option letter is the vertical flip of the Reference icon?",
+        "Select the option that matches a vertical flip of the Reference icon."
+      ],
+      "rotate_90_clockwise_source_label": [
+        "Which of the four labeled options would become the Reference icon after a 90 degree clockwise rotation?",
+        "Which option would match the Reference icon if that option were rotated 90 degrees clockwise?",
+        "Find the source option that becomes the Reference icon after rotating it 90 degrees clockwise.",
+        "What option letter would produce the Reference icon after a 90 degree clockwise rotation?",
+        "Select the option that would become the Reference icon after a 90 degree clockwise rotation."
+      ],
+      "rotate_90_counterclockwise_source_label": [
+        "Which of the four labeled options would become the Reference icon after a 90 degree counterclockwise rotation?",
+        "Which option would match the Reference icon if that option were rotated 90 degrees counterclockwise?",
+        "Find the source option that becomes the Reference icon after rotating it 90 degrees counterclockwise.",
+        "What option letter would produce the Reference icon after a 90 degree counterclockwise rotation?",
+        "Select the option that would become the Reference icon after a 90 degree counterclockwise rotation."
+      ],
+      "rotate_180_source_label": [
+        "Which of the four labeled options would become the Reference icon after a 180 degree rotation?",
+        "Which option would match the Reference icon if that option were rotated 180 degrees?",
+        "Find the source option that becomes the Reference icon after rotating it 180 degrees.",
+        "What option letter would produce the Reference icon after a 180 degree rotation?",
+        "Select the option that would become the Reference icon after a 180 degree rotation."
+      ],
+      "flip_horizontal_source_label": [
+        "Which of the four labeled options would become the Reference icon after a horizontal flip?",
+        "Which option would match the Reference icon if that option were flipped horizontally?",
+        "Find the source option that becomes the Reference icon after flipping it horizontally.",
+        "What option letter would produce the Reference icon after a horizontal flip?",
+        "Select the option that would become the Reference icon after a horizontal flip."
+      ],
+      "flip_vertical_source_label": [
+        "Which of the four labeled options would become the Reference icon after a vertical flip?",
+        "Which option would match the Reference icon if that option were flipped vertically?",
+        "Find the source option that becomes the Reference icon after flipping it vertically.",
+        "What option letter would produce the Reference icon after a vertical flip?",
+        "Select the option that would become the Reference icon after a vertical flip."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:single_transform_options_transformation": {
+      "object_description": "a Reference icon with a transform cue and six labeled option icons"
+    },
+    "scene:single_transform_options_inverse_transformation": {
+      "object_description": "a transformed Reference icon with a transform cue and four labeled source-option icons"
+    },
+    "global": {
+      "annotation_hint": "set \"annotation\" to a JSON object with keys \"reference_icon\" and \"selected_option\", each a [x0, y0, x1, y1] box in image pixel coordinates",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":{\"reference_icon\":[82,144,250,312],\"selected_option\":[532,104,702,274]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:single_transform_options_transformation": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

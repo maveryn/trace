@@ -1,0 +1,93 @@
+{
+  "bundle_id": "geometry_concentric_circle_chord_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "concentric_circle_chord_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "concentric_circle_chord_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "chord_length_from_radii": [
+        "What is the length of the chord of the outer circle?",
+        "Find the length of the outer-circle chord.",
+        "Determine the chord length of the outer circle.",
+        "What is the length of the chord shown on the outer circle?",
+        "Use the labeled diagram to find the outer chord length."
+      ],
+      "inner_radius_from_chord": [
+        "What is the radius of the inner circle?",
+        "Find the radius of the inner circle.",
+        "Determine the inner circle radius.",
+        "What is the missing inner radius?",
+        "Use the labeled diagram to find the inner radius."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:concentric_circle_chord_scene": {
+      "object_description": "two concentric circles with a chord of the outer circle tangent to the inner circle"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\".",
+      "answer_hint_integer": "set \"answer\" to the requested measurement as an integer",
+      "answer_hint": "set \"answer\" to the requested measurement as an integer",
+      "json_example_answer_only": "{\"answer\":24}"
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"answer\" and \"annotation\".",
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these visible point-label keys: \"O\", \"A\", \"B\", \"T\"; each value must be that labeled construction point's pixel point [x,y]",
+      "answer_hint_integer": "set \"answer\" to the requested measurement as an integer",
+      "answer_hint": "set \"answer\" to the requested measurement as an integer",
+      "json_example": "{\"annotation\":{\"O\":[326,292],\"A\":[155,242],\"B\":[497,242],\"T\":[326,242]},\"answer\":24}"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:concentric_circle_chord_scene": [
+      "object_description"
+    ],
+    "query:chord_length_from_radii": [],
+    "query:inner_radius_from_chord": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

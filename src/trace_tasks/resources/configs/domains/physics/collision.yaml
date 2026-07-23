@@ -1,0 +1,220 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+  task_overrides:
+    task_physics__collision__sticky_collision_direction_choice:
+      scene_variant_weights:
+        wide_table: 1.0
+        compact_table: 1.0
+        gridded_table: 1.0
+      correct_option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_correct_option_letter_sampling: true
+      balanced_target_answer_sampling: true
+      component_answer_support:
+      - -6
+      - -5
+      - -4
+      - -3
+      - -2
+      - -1
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      mass_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      speed_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+    task_physics__collision__sticky_collision_speed_value:
+      scene_variant_weights:
+        wide_table: 1.0
+        compact_table: 1.0
+        gridded_table: 1.0
+      correct_option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_correct_option_letter_sampling: true
+      balanced_target_answer_sampling: true
+      component_answer_support:
+      - -6
+      - -5
+      - -4
+      - -3
+      - -2
+      - -1
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      mass_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      speed_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      speed_answer_tenths_support:
+      - 28
+      - 36
+      - 42
+      - 50
+      - 57
+
+rendering:
+  task_overrides:
+    task_physics__collision__sticky_collision_direction_choice:
+      canvas_width: 1180
+      canvas_height: 760
+      table_left_px: 52
+      table_top_px: 48
+      table_width_px: 1076
+      table_height_px: 506
+      table_corner_radius_px: 22
+      collision_center_x_px: 436
+      collision_center_y_px: 304
+      compact_collision_center_x_px: 420
+      compact_collision_center_y_px: 292
+      horizontal_start_distance_px: 300
+      vertical_start_distance_px: 200
+      compact_start_distance_delta_px: -20
+      puck_radius_px: 42
+      stuck_radius_px: 50
+      motion_arrow_width_px: 8
+      motion_arrow_width_px_min: 7
+      motion_arrow_width_px_max: 9
+      final_arrow_width_px: 8
+      final_arrow_width_px_min: 7
+      final_arrow_width_px_max: 9
+      arrow_head_length_px: 24
+      arrow_head_width_px: 22
+      label_font_size_px: 23
+      puck_font_size_px: 30
+      option_font_size_px: 24
+      label_stroke_width_px: 2
+      label_stroke_width_px_min: 1
+      label_stroke_width_px_max: 3
+      option_panel_top_px: 584
+      option_cell_left_px: 262
+      option_cell_width_px: 164
+      option_arrow_length_px: 74
+      option_arrow_width_px: 7
+      option_arrow_width_px_min: 6
+      option_arrow_width_px_max: 8
+      option_arrow_head_length_px: 20
+      option_arrow_head_width_px: 18
+      grid_spacing_px: 44
+      layout_jitter_enabled: true
+      layout_jitter_min_margin_px: 20
+      layout_jitter_x_px_min: -28
+      layout_jitter_x_px_max: 28
+      layout_jitter_y_px_min: -18
+      layout_jitter_y_px_max: 10
+    task_physics__collision__sticky_collision_speed_value:
+      canvas_width: 1180
+      canvas_height: 640
+      show_candidate_options: false
+      table_left_px: 52
+      table_top_px: 48
+      table_width_px: 1076
+      table_height_px: 506
+      table_corner_radius_px: 22
+      collision_center_x_px: 436
+      collision_center_y_px: 304
+      compact_collision_center_x_px: 420
+      compact_collision_center_y_px: 292
+      horizontal_start_distance_px: 300
+      vertical_start_distance_px: 200
+      compact_start_distance_delta_px: -20
+      puck_radius_px: 42
+      stuck_radius_px: 50
+      motion_arrow_width_px: 8
+      motion_arrow_width_px_min: 7
+      motion_arrow_width_px_max: 9
+      final_arrow_width_px: 8
+      final_arrow_width_px_min: 7
+      final_arrow_width_px_max: 9
+      arrow_head_length_px: 24
+      arrow_head_width_px: 22
+      label_font_size_px: 23
+      puck_font_size_px: 30
+      option_font_size_px: 24
+      label_stroke_width_px: 2
+      label_stroke_width_px_min: 1
+      label_stroke_width_px_max: 3
+      option_panel_top_px: 584
+      option_cell_left_px: 82
+      option_cell_width_px: 164
+      option_arrow_length_px: 74
+      option_arrow_width_px: 7
+      option_arrow_width_px_min: 6
+      option_arrow_width_px_max: 8
+      option_arrow_head_length_px: 20
+      option_arrow_head_width_px: 18
+      grid_spacing_px: 44
+      layout_jitter_enabled: true
+      layout_jitter_min_margin_px: 20
+      layout_jitter_x_px_min: -28
+      layout_jitter_x_px_max: 28
+      layout_jitter_y_px_min: -18
+      layout_jitter_y_px_max: 10
+
+prompt:
+  shared:
+    bundle_id: physics_collision_v1
+  task_overrides:
+    task_physics__collision__sticky_collision_direction_choice:
+      task_key: sticky_collision_direction_choice_query
+    task_physics__collision__sticky_collision_speed_value:
+      task_key: sticky_collision_speed_value_query

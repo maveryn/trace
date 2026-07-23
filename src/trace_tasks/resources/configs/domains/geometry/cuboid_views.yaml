@@ -1,0 +1,12 @@
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 580
+    line_width: 4
+    label_font_size: 22
+    small_label_font_size: 18
+prompt:
+  shared:
+    bundle_id: geometry_cuboid_orthographic_views_v1
+    scene_key: cuboid_orthographic_views_scene
+    task_key: cuboid_orthographic_value_query

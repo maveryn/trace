@@ -1,0 +1,97 @@
+{
+  "bundle_id": "graph_options_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "graph_options": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "structure_match_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "same_structure_label": [
+        "Which option has the same labeled graph structure as the Reference, ignoring layout?",
+        "Choose the option whose labeled nodes and edges match the Reference graph exactly, regardless of placement.",
+        "Which option is structurally identical to the Reference graph when node positions are ignored?",
+        "Find the option with the same node labels and same edge connections as the Reference.",
+        "Which labeled option represents the same graph as the Reference?"
+      ],
+      "contained_subgraph_label": [
+        "Which option is contained in the Target Graph as a labeled subgraph?",
+        "Choose the option whose node labels and edges all appear inside the Target Graph.",
+        "Which option shows a labeled subgraph of the Target Graph?",
+        "Find the option where every shown node and edge is present in the Target Graph.",
+        "Which labeled option is fully contained within the Target Graph?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:same_structure_label": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the selected option panel",
+      "answer_hint": "set \"answer\" to the exact option letter of the correct graph",
+      "json_example": "{\"annotation\":[472,520,828,742],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "query:contained_subgraph_label": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the selected option panel",
+      "answer_hint": "set \"answer\" to the exact option letter of the correct graph",
+      "json_example": "{\"annotation\":[472,520,828,742],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string",
+      "scope": "scene:graph_options",
+      "description": "Generated description of the rendered reference/target graph and option panels."
+    }
+  },
+  "required_slots_by_key": {
+    "scene:graph_options": [
+      "object_description"
+    ]
+  },
+  "code_prompt_defaults": {
+    "scene_key": "graph_options",
+    "task_key": "structure_match_label_query",
+    "object_description_undirected": "a reference or target labeled graph above four labeled graph options",
+    "object_description_directed": "a reference or target labeled directed graph above four labeled directed-graph options; arrow directions matter",
+    "object_description_same_structure_undirected": "a Reference labeled graph above four labeled graph options",
+    "object_description_same_structure_directed": "a Reference labeled directed graph above four labeled directed-graph options; arrow directions matter",
+    "object_description_contained_subgraph_undirected": "a Target Graph above four labeled graph options",
+    "object_description_contained_subgraph_directed": "a Target Graph above four labeled directed-graph options; arrow directions matter"
+  }
+}

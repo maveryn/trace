@@ -1,0 +1,173 @@
+{
+  "bundle_id": "games_go_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_go_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "go_group_property_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_group_liberty_count": [
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} How many liberties does the marked {player_color} group have?",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} Count the liberties of the marked {player_color} group.",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} What is the number of liberties for the marked {player_color} group?",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} How many empty neighboring intersections belong to the marked {player_color} group as liberties?",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} Determine the liberty count of the marked {player_color} group."
+      ],
+      "marked_group_adjacent_enemy_count": [
+        "{marked_group_rule_text} {group_rule_text} {adjacent_enemy_rule_text} How many opponent stones are directly adjacent to the marked {player_color} group?",
+        "{marked_group_rule_text} {group_rule_text} {adjacent_enemy_rule_text} Count the opponent stones touching the marked {player_color} group edge to edge.",
+        "{marked_group_rule_text} {group_rule_text} {adjacent_enemy_rule_text} What is the number of opponent stones directly adjacent to the marked {player_color} group?",
+        "{marked_group_rule_text} {group_rule_text} {adjacent_enemy_rule_text} Determine the adjacent opponent-stone count for the marked {player_color} group.",
+        "{marked_group_rule_text} {group_rule_text} {adjacent_enemy_rule_text} How many enemy stones touch the marked {player_color} group orthogonally?"
+      ],
+      "marked_group_shared_liberty_count": [
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} {shared_liberty_rule_text} How many shared liberties does the marked {player_color} group have?",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} {shared_liberty_rule_text} Count the shared liberties of the marked {player_color} group.",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} {shared_liberty_rule_text} What is the number of marked-group liberties that also touch an opponent stone?",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} {shared_liberty_rule_text} Determine how many liberties of the marked {player_color} group are shared with opponent stones.",
+        "{marked_group_rule_text} {group_rule_text} {liberty_rule_text} {shared_liberty_rule_text} How many empty neighboring intersections of the marked {player_color} group also touch an enemy stone?"
+      ],
+      "marked_group_stone_count": [
+        "{marked_stone_rule_text} {group_rule_text} How many stones are in the connected group containing the marked {player_color} stone?",
+        "{marked_stone_rule_text} {group_rule_text} Count the stones in the marked {player_color} stone's connected group.",
+        "{marked_stone_rule_text} {group_rule_text} What is the size of the connected group containing the marked {player_color} stone?",
+        "{marked_stone_rule_text} {group_rule_text} How many same-color stones connect edge to edge with the marked {player_color} stone's group?",
+        "{marked_stone_rule_text} {group_rule_text} Determine the number of stones in the connected group that contains the marked {player_color} stone."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_go_board": [
+      "object_description"
+    ],
+    "query:marked_group_liberty_count": [
+      "marked_group_rule_text",
+      "group_rule_text",
+      "liberty_rule_text",
+      "player_color"
+    ],
+    "query:marked_group_adjacent_enemy_count": [
+      "marked_group_rule_text",
+      "group_rule_text",
+      "adjacent_enemy_rule_text",
+      "player_color"
+    ],
+    "query:marked_group_shared_liberty_count": [
+      "marked_group_rule_text",
+      "group_rule_text",
+      "liberty_rule_text",
+      "shared_liberty_rule_text",
+      "player_color"
+    ],
+    "query:marked_group_stone_count": [
+      "marked_stone_rule_text",
+      "group_rule_text",
+      "player_color"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "adjacent_enemy_rule_text": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "group_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "liberty_rule_text": {
+      "type": "string"
+    },
+    "marked_group_rule_text": {
+      "type": "string"
+    },
+    "marked_stone_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "player_color": {
+      "type": "string"
+    },
+    "shared_liberty_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_open_board": "a Go board with black and white stones and many open intersections",
+    "object_description_crowded_board": "a Go board with many surrounding black and white stones",
+    "group_rule_text": "Same-color stones connected edge to edge form one group.",
+    "liberty_rule_text": "A liberty is an empty orthogonal neighbor of the group; diagonals do not count.",
+    "adjacent_enemy_rule_text": "Count only opponent stones touching the marked group edge to edge; diagonals do not count.",
+    "shared_liberty_rule_text": "A shared liberty also touches at least one opponent stone edge to edge.",
+    "marked_group_rule_text": "The red outlined {player_color} stones are the marked group.",
+    "marked_stone_rule_text": "The red outlined {player_color} stone marks the group to inspect.",
+    "annotation_hint_marked_group_liberty_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at every liberty of the marked {player_color} group",
+    "answer_hint_marked_group_liberty_count": "set \"answer\" to the number of liberties of the marked {player_color} group",
+    "annotation_hint_marked_group_adjacent_enemy_count": "set \"annotation\" to a JSON array of pixel-space stone boxes [x0, y0, x1, y1] for every opponent stone directly adjacent to the marked {player_color} group",
+    "answer_hint_marked_group_adjacent_enemy_count": "set \"answer\" to the number of opponent stones directly adjacent to the marked {player_color} group",
+    "annotation_hint_marked_group_shared_liberty_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at every shared liberty of the marked {player_color} group",
+    "answer_hint_marked_group_shared_liberty_count": "set \"answer\" to the number of shared liberties of the marked {player_color} group",
+    "annotation_hint_marked_group_stone_count": "set \"annotation\" to a JSON array of pixel-space stone boxes [x0, y0, x1, y1] for every stone in the connected group containing the marked {player_color} stone",
+    "answer_hint_marked_group_stone_count": "set \"answer\" to the number of stones in the connected group containing the marked {player_color} stone"
+  }
+}

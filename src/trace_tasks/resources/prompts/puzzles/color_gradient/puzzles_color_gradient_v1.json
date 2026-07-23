@@ -1,0 +1,88 @@
+{
+  "bundle_id": "puzzles_color_gradient_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "color_gradient": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This puzzle shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "color_gradient_violation_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color_gradient_completion_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "color_gradient_violation_cell_label": [
+        "Which labeled swatch breaks the color progression pattern?",
+        "Identify the swatch label that does not fit the color progression.",
+        "One swatch interrupts the smooth color progression. Which label marks it?",
+        "Use the row and column color changes to find the out-of-pattern swatch. Which label is it?",
+        "Which labeled cell has the color that violates the swatch-grid progression?"
+      ],
+      "linear_gradient_completion_label": [
+        "Which labeled option completes the missing swatch in the color gradient?",
+        "Choose the option label whose color fits the blank position in the gradient row.",
+        "One swatch is missing from the linear color progression. Which option belongs there?",
+        "Use the colors before and after the blank swatch to pick the completing option label.",
+        "Which labeled color option should replace the blank swatch?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:color_gradient_violation_cell_label": {
+      "answer_instruction": "the single capital-letter label of the swatch that breaks the progression",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] for that swatch cell.",
+      "json_example": "{\"annotation\":[324,188,432,296],\"answer\":\"F\"}",
+      "json_example_answer_only": "{\"answer\":\"F\"}"
+    },
+    "query:linear_gradient_completion_label": {
+      "answer_instruction": "the single capital-letter label of the option that completes the color gradient",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] for the selected option swatch.",
+      "json_example": "{\"annotation\":[524,420,628,524],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:color_gradient": [
+      "object_description"
+    ]
+  }
+}

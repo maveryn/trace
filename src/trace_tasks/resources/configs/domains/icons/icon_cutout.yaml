@@ -1,0 +1,69 @@
+generation:
+  shared:
+    object_count_min: 6
+    object_count_max: 6
+    pool_manifest: all_icons.txt
+rendering:
+  shared:
+    canvas_width: 1104
+    canvas_height: 640
+    reference_panel_width_px: 296
+    panel_gap_px: 24
+    outer_margin_px: 24
+    panel_padding_px: 20
+    panel_corner_radius_px: 18
+    panel_title_font_size_px: 24
+    scene_icon_size_min_px: 96
+    scene_icon_size_max_px: 112
+    reference_icon_size_px: 224
+    scene_max_overlap_fraction: 0.05
+    scene_placement_max_attempts: 160
+    scene_size_shrink_rounds: 6
+    scene_size_shrink_factor: 0.9
+    cell_padding_px: 10
+    cell_border_rgb:
+    - 218
+    - 223
+    - 233
+    cell_label_color_rgb:
+    - 52
+    - 60
+    - 77
+    cell_label_font_size_px: 22
+    fragment_window_styles:
+    - rectangle
+    - rounded
+    - ellipse
+    fragment_window_width_fraction_range:
+    - 0.44
+    - 0.7
+    fragment_window_height_fraction_range:
+    - 0.44
+    - 0.7
+    fragment_visible_alpha_ratio_range:
+    - 0.34
+    - 0.64
+    fragment_alpha_density_min: 0.08
+    fragment_sampling_attempts: 240
+    fragment_frame_rgb:
+    - 78
+    - 91
+    - 116
+    fragment_frame_width_px: 3
+    reference_content_padding_px: 18
+    scene_content_side_padding_px: 14
+    scene_content_bottom_padding_px: 14
+    scene_content_top_offset_px: 42
+    rotation_candidates_degrees:
+    - 0
+    palette_size_min: 8
+    palette_size_max: 12
+    color_channel_min: 24
+    color_channel_max: 220
+    min_color_distance: 40.0
+    color_distance_space: lab
+prompt:
+  shared:
+    bundle_id: icons_icon_cutout_v1
+    scene_key: icon_cutout_relation
+    task_key: icon_cutout_query

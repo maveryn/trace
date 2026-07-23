@@ -1,0 +1,90 @@
+{
+  "bundle_id": "physics_pv_diagram_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "pressure_volume_diagram": [
+        "The image shows pressure-volume diagrams with pressure on the vertical axis and volume on the horizontal axis.",
+        "The diagram shows pressure-volume plots with visible process arrows and labeled axes.",
+        "This figure shows pressure-volume axes and process arrows for gas work.",
+        "The visual shows PV diagrams where arrow direction indicates volume change.",
+        "The image contains pressure-volume plots for reading gas-work relationships."
+      ]
+    },
+    "task": {
+      "pv_work_value": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "pv_process_sign_choice": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "work_value": [
+        "For the highlighted horizontal process, compute pressure times final volume minus initial volume. What is the signed work in joules? Use 1 kPa*L = 1 J.",
+        "Using the highlighted PV process, compute P x (V_final - V_initial). What signed integer work is done by the gas in joules?",
+        "Read the pressure and the initial and final volumes on the highlighted process. What is the signed work P x delta V in joules?",
+        "For the highlighted horizontal process, determine the signed work done by the gas. Expansion is positive and compression is negative.",
+        "What integer value gives the gas work for the highlighted PV path, using pressure times change in volume?"
+      ],
+      "process_sign_choice": [
+        "Which labeled process A-H has {target_sign} work done by the gas?",
+        "Choose the option letter for the PV process whose gas work is {target_sign}.",
+        "Among the labeled candidate processes, which one has {target_sign} work done by the gas?",
+        "Using the direction of volume change on each mini PV diagram, which option has {target_sign} gas work?",
+        "Which labeled PV process matches the requested work sign: {target_sign}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "target_sign": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "static_slots_by_key": {
+    "query:work_value": {
+      "answer_hint": "set \"answer\" to the signed integer work in joules",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] pixel box around the highlighted PV path and shaded work region"
+    },
+    "query:process_sign_choice": {
+      "answer_hint": "set \"answer\" to the option letter of the labeled process with the requested work sign",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] pixel box around the process arrow in the correct mini diagram"
+    }
+  },
+  "required_slots_by_key": {
+    "query:process_sign_choice": [
+      "target_sign"
+    ]
+  }
+}

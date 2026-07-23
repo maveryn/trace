@@ -1,0 +1,79 @@
+{
+  "bundle_id": "icons_wallpaper_panels_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "wallpaper_panel_violation_scene": [
+        "The image shows four labeled wallpaper panels filled with repeated icon motifs.",
+        "The figure shows four labeled wallpaper panels filled with repeated icon motifs.",
+        "This image shows four labeled wallpaper panels filled with repeated icon motifs.",
+        "The scene shows four labeled wallpaper panels filled with repeated icon motifs.",
+        "The picture shows four labeled wallpaper panels filled with repeated icon motifs."
+      ],
+      "wallpaper_reference_match_scene": [
+        "The image shows one Reference wallpaper panel above four labeled wallpaper panels filled with repeated icon motifs.",
+        "The figure shows one Reference wallpaper panel above four labeled wallpaper panels filled with repeated icon motifs.",
+        "This image shows one Reference wallpaper panel above four labeled wallpaper panels filled with repeated icon motifs.",
+        "The scene shows one Reference wallpaper panel above four labeled wallpaper panels filled with repeated icon motifs.",
+        "The picture shows one Reference wallpaper panel above four labeled wallpaper panels filled with repeated icon motifs."
+      ]
+    },
+    "task": {
+      "motif_violation_label": [
+        "Which labeled wallpaper panel uses a different wallpaper pattern from the others?",
+        "Select the labeled wallpaper panel that has a different wallpaper pattern from the rest.",
+        "Which panel letter marks the wallpaper pattern that does not match the other panels?",
+        "Find the labeled wallpaper panel whose repeated motif pattern differs from the others.",
+        "Which labeled panel is the odd one out in its wallpaper pattern?"
+      ],
+      "same_pattern_as_reference_label": [
+        "Which labeled panel has the same wallpaper pattern as the Reference panel?",
+        "Select the labeled panel whose wallpaper pattern matches the Reference panel.",
+        "Which panel letter uses the same repeated motif arrangement as the Reference panel?",
+        "Find the labeled wallpaper panel that matches the Reference panel's pattern.",
+        "Which labeled panel has the same wallpaper arrangement as Reference?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:motif_violation_label": {
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates for the selected wallpaper panel",
+      "answer_hint": "set \"answer\" to the selected panel letter",
+      "json_example": "{\"annotation\":[420,220,620,400],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:same_pattern_as_reference_label": {
+      "annotation_hint": "set \"annotation\" to a JSON object with keys \"reference_panel\" and \"selected_panel\", each mapped to one [x0, y0, x1, y1] box in image pixel coordinates",
+      "answer_hint": "set \"answer\" to the selected panel letter",
+      "json_example": "{\"annotation\":{\"reference_panel\":[36,36,320,604],\"selected_panel\":[420,220,620,400]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "required_slots_by_key": {
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

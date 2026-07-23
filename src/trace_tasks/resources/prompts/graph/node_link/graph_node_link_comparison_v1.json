@@ -1,0 +1,136 @@
+{
+  "bundle_id": "graph_node_link_comparison_v1",
+  "schema_version": "v0",
+  "task_templates": {
+    "largest_component_size_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "extreme_degree_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:single_graph_comparison": [
+      "object_description"
+    ],
+    "query:largest_component_size": [],
+    "query:max_degree_value": [],
+    "query:min_degree_value": [],
+    "query:max_in_degree_value": [],
+    "query:min_in_degree_value": [],
+    "query:max_out_degree_value": [],
+    "query:min_out_degree_value": [],
+    "query:max_total_degree_value": [],
+    "query:min_total_degree_value": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "single_graph_comparison": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "largest_component_size": [
+      "How many nodes are in the largest connected component?",
+      "Count the nodes in the largest connected component.",
+      "What is the size of the largest connected component?",
+      "Find the largest connected component. How many nodes does it contain?",
+      "How many labeled nodes belong to the largest connected component?"
+    ],
+    "max_degree_value": [
+      "What is the highest degree of any node?",
+      "Find the maximum node degree in the graph.",
+      "What is the largest number of edges incident to any node?",
+      "Among all labeled nodes, what is the greatest degree value?",
+      "What is the maximum number of other nodes connected to any node?"
+    ],
+    "min_degree_value": [
+      "What is the lowest degree of any node?",
+      "Find the minimum node degree in the graph.",
+      "What is the smallest number of edges incident to any node?",
+      "Among all labeled nodes, what is the least degree value?",
+      "What is the minimum number of other nodes connected to any node?"
+    ],
+    "max_in_degree_value": [
+      "What is the highest in-degree of any node?",
+      "Find the maximum in-degree in the directed graph.",
+      "What is the largest number of incoming arrows received by any node?",
+      "Among all labeled nodes, what is the greatest in-degree value?",
+      "What is the maximum number of directed edges ending at any node?"
+    ],
+    "min_in_degree_value": [
+      "What is the lowest in-degree of any node?",
+      "Find the minimum in-degree in the directed graph.",
+      "What is the smallest number of incoming arrows received by any node?",
+      "Among all labeled nodes, what is the least in-degree value?",
+      "What is the minimum number of directed edges ending at any node?"
+    ],
+    "max_out_degree_value": [
+      "What is the highest out-degree of any node?",
+      "Find the maximum out-degree in the directed graph.",
+      "What is the largest number of outgoing arrows sent by any node?",
+      "Among all labeled nodes, what is the greatest out-degree value?",
+      "What is the maximum number of directed edges starting at any node?"
+    ],
+    "min_out_degree_value": [
+      "What is the lowest out-degree of any node?",
+      "Find the minimum out-degree in the directed graph.",
+      "What is the smallest number of outgoing arrows sent by any node?",
+      "Among all labeled nodes, what is the least out-degree value?",
+      "What is the minimum number of directed edges starting at any node?"
+    ],
+    "max_total_degree_value": [
+      "What is the highest total degree of any node?",
+      "Find the maximum total degree in the directed graph.",
+      "What is the largest number of incoming plus outgoing arrows incident to any node?",
+      "Among all labeled nodes, what is the greatest total-degree value?",
+      "What is the maximum number of directed edges that either enter or leave any node?"
+    ],
+    "min_total_degree_value": [
+      "What is the lowest total degree of any node?",
+      "Find the minimum total degree in the directed graph.",
+      "What is the smallest number of incoming plus outgoing arrows incident to any node?",
+      "Among all labeled nodes, what is the least total-degree value?",
+      "What is the minimum number of directed edges that either enter or leave any node?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

@@ -1,0 +1,114 @@
+generation:
+  shared:
+    branch_count_min: 5
+    branch_count_max: 7
+    child_count_min: 2
+    child_count_max: 8
+    marked_count_min: 1
+    marked_count_max: 5
+    balanced_context_sampling: true
+    balanced_layout_sampling: true
+    balanced_style_sampling: true
+    context_weights:
+      travel_plans: 1.0
+      career_options: 1.0
+      climate_actions: 1.0
+      community_groups: 1.0
+      shopping_tips: 1.0
+      science_topics: 1.0
+    layout_weights:
+      radial_mind_map: 1.0
+      left_right_map: 1.0
+      clustered_map: 1.0
+    style_weights:
+      bright_notes: 1.0
+      ink_outline: 1.0
+      soft_cards: 1.0
+      technical_pastel: 1.0
+rendering:
+  shared:
+    canvas_width: 1344
+    canvas_height: 944
+    outer_margin_px: 41
+    panel_padding_px: 23
+    panel_corner_radius_px: 22
+    title_band_height_px: 58
+    central_node_width_px: 171
+    central_node_height_px: 79
+    central_circle_diameter_px: 153
+    branch_node_width_px: 151
+    branch_node_height_px: 43
+    branch_circle_diameter_px: 86
+    child_node_width_px: 128
+    child_node_height_px: 34
+    node_corner_radius_px: 13
+    node_border_width_px: 2
+    connector_width_px: 2
+    title_font_size_px: 27
+    central_font_size_px: 18
+    branch_font_size_px: 14
+    child_font_size_px: 12
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -20
+    layout_jitter_x_px_max: 20
+    layout_jitter_y_px_min: -16
+    layout_jitter_y_px_max: 16
+    layout_jitter_min_margin_px: 18
+prompt:
+  shared:
+    bundle_id: pages_concept_map_v1
+visual:
+  background:
+    enabled: true
+    styles:
+      paper_light:
+        kind: solid
+        color:
+        - 247
+        - 248
+        - 244
+      paper_cool:
+        kind: solid
+        color:
+        - 238
+        - 244
+        - 248
+      paper_warm:
+        kind: solid
+        color:
+        - 249
+        - 243
+        - 234
+      paper_mint:
+        kind: solid
+        color:
+        - 239
+        - 247
+        - 241
+    weights:
+      paper_light: 1.0
+      paper_cool: 1.0
+      paper_warm: 1.0
+      paper_mint: 1.0
+  noise:
+    apply_prob: 0.3
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.03
+        - 0.14
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 90.0
+        - 98.0
+      noise:
+        alpha:
+        - 0.003
+        - 0.01

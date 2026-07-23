@@ -1,0 +1,126 @@
+generation:
+  shared:
+    scene_variant_weights:
+      square_board: 1.0
+      wide_board: 1.0
+      tall_board: 1.0
+    style_variant_weights:
+      faceted_jewels: 1.0
+      round_candies: 1.0
+      beveled_tiles: 1.0
+      diamond_gems: 1.0
+      orb_tokens: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_row_count_sampling: true
+    balanced_col_count_sampling: true
+    balanced_gem_type_count_sampling: true
+    balanced_option_count_sampling: true
+    balanced_target_answer_sampling: true
+    row_count_support:
+    - 5
+    - 6
+    - 7
+    col_count_support:
+    - 5
+    - 6
+    - 7
+    gem_type_count_support:
+    - 5
+    - 6
+    option_count_support:
+    - 4
+    gem_count_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+  task_overrides:
+    task_games__match3__max_clear_swap_label:
+      row_count_support:
+      - 5
+      col_count_support:
+      - 5
+      gem_type_count_support:
+      - 5
+      option_count_support:
+      - 4
+    task_games__match3__swap_clear_count:
+      row_count_support:
+      - 5
+      col_count_support:
+      - 5
+      gem_type_count_support:
+      - 5
+      swap_clear_count_answer_support:
+      - 0
+      - 3
+      - 4
+      - 5
+      - 6
+    task_games__match3__gem_count:
+      row_count_support:
+      - 5
+      col_count_support:
+      - 5
+      gem_type_count_support:
+      - 5
+      gem_count_answer_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 720
+    panel_margin_px: 42
+    board_inner_margin_px: 38
+    index_margin_px: 34
+    cell_size_px: 78
+    cell_gap_px: 8
+    gem_inset_px: 10
+    label_font_size_px: 21
+    index_font_size_px: 18
+    arrow_width_px: 7
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+  task_overrides:
+    task_games__match3__max_clear_swap_label:
+      arrow_width_px: 9
+prompt:
+  shared:
+    bundle_id: games_match3_v1
+    scene_key: match3_grid
+    task_key: match3_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

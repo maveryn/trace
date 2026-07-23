@@ -1,0 +1,73 @@
+generation:
+  shared:
+    readout_series_count_min: 4
+    readout_series_count_max: 5
+    readout_x_count_min: 6
+    readout_x_count_max: 10
+    readout_y_value_min: 10
+    readout_y_value_max: 90
+    readout_min_series_gap_at_x: 4
+rendering:
+  shared:
+    chart_context_profile: report_paragraph
+    chart_context_mode_weights:
+      clean: 0.3
+      minimal: 0.4
+      paragraph_box: 0.3
+    readout_canvas_width: 1440
+    readout_canvas_height: 820
+    readout_plot_margin_left_px: 112
+    readout_plot_margin_right_px: 370
+    readout_plot_margin_top_px: 78
+    readout_plot_margin_bottom_px: 126
+    readout_point_radius_px_min: 6
+    readout_point_radius_px_max: 8
+    readout_tick_font_size_px: 17
+    readout_axis_label_font_size_px: 19
+    readout_value_font_size_px: 16
+    readout_legend_font_size_px: 21
+    readout_title_font_size_px: 26
+    readout_title_probability: 0.35
+    readout_legend_gap_px: 80
+    series_palette_rgb:
+    - - 45
+      - 103
+      - 178
+    - - 211
+      - 86
+      - 70
+    - - 55
+      - 145
+      - 92
+    - - 133
+      - 86
+      - 175
+    - - 213
+      - 136
+      - 41
+prompt:
+  shared:
+    bundle_id: charts_scatter_readout_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.014

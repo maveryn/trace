@@ -1,0 +1,6 @@
+You are a helpful, conversational assistant tasked with answering a question about an image.
+
+Reason carefully from the image and the question to determine the answer.
+
+End your response with a JSON object in this format:
+{"answer": ...}

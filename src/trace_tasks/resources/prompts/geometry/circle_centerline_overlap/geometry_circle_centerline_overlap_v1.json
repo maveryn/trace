@@ -1,0 +1,93 @@
+{
+  "bundle_id": "geometry_circle_centerline_overlap_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "circle_centerline_overlap_scene": [
+        "The diagram shows {circle_count_description} overlapping circles whose centers lie on one line. Boundary labels mark where circles cross the shared centerline; radius labels and centerline segment labels are visible.",
+        "The figure shows {circle_count_description} overlapping circles whose centers lie on one line. Boundary labels mark where circles cross the shared centerline; radius labels and centerline segment labels are visible.",
+        "The image shows {circle_count_description} overlapping circles whose centers lie on one line. Boundary labels mark where circles cross the shared centerline; radius labels and centerline segment labels are visible.",
+        "This diagram shows {circle_count_description} overlapping circles whose centers lie on one line. Boundary labels mark where circles cross the shared centerline; radius labels and centerline segment labels are visible.",
+        "This figure shows {circle_count_description} overlapping circles whose centers lie on one line. Boundary labels mark where circles cross the shared centerline; radius labels and centerline segment labels are visible."
+      ]
+    },
+    "task": {
+      "segment_length_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "center_distance_from_overlap": [
+        "Find {target_name}.",
+        "Find the length of {target_name}.",
+        "What is {target_name}?",
+        "Determine {target_name}.",
+        "Solve for {target_name}."
+      ],
+      "boundary_segment_from_overlap": [
+        "Find {target_name}.",
+        "Find the length of {target_name}.",
+        "What is {target_name}?",
+        "Determine {target_name}.",
+        "Solve for {target_name}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Use JSON only.\nFinal answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: set \"annotation\" to the pixel segment [[x0,y0],[x1,y1]] for the requested segment {target_name}.\nAnswer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Annotation format: set \"annotation\" to the pixel segment [[x0,y0],[x1,y1]] for the requested segment {target_name}.\nRequired answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Annotation format: set \"annotation\" to the pixel segment [[x0,y0],[x1,y1]] for the requested segment {target_name}.\nFormat for the \"answer\" field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Annotation format: set \"annotation\" to the pixel segment [[x0,y0],[x1,y1]] for the requested segment {target_name}.\nAnswer field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Use JSON only.\nFinal answer format: set \"answer\" to the requested segment length as an integer.\nAnnotation format: set \"annotation\" to the pixel segment [[x0,y0],[x1,y1]] for the requested segment {target_name}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {},
+  "dynamic_slots": {
+    "circle_count_description": {
+      "type": "string"
+    },
+    "measure_label_kind": {
+      "type": "string"
+    },
+    "target_name": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:circle_centerline_overlap_scene": [
+      "circle_count_description"
+    ],
+    "query:center_distance_from_overlap": [
+      "target_name"
+    ],
+    "query:boundary_segment_from_overlap": [
+      "target_name"
+    ],
+    "output:answer_only": [
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "target_name",
+      "json_example"
+    ]
+  }
+}

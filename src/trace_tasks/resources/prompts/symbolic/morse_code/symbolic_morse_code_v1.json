@@ -1,0 +1,92 @@
+{
+  "bundle_id": "symbolic_morse_code_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "morse_code": [
+        "A Morse-code notation panel shows {object_description}.",
+        "This Morse-code panel shows {object_description}.",
+        "The notation panel shows {object_description}.",
+        "A visual Morse-code panel presents {object_description}.",
+        "The Morse-code card shows {object_description}."
+      ]
+    },
+    "task": {
+      "morse_word_read_label": [
+        "Which option shows the word written by the Morse code?",
+        "Read the Morse code and select the matching word option.",
+        "Which labeled word option matches the Morse code shown above?",
+        "Choose the option that spells the word encoded by the Morse code.",
+        "Which option letter gives the word represented by the Morse-code symbols?"
+      ],
+      "word_morse_match_label": [
+        "Which option shows the Morse code for the word shown above?",
+        "Select the Morse-code option that matches the displayed word.",
+        "Which labeled Morse-code card encodes the source word?",
+        "Choose the option whose Morse-code symbols spell the word shown above.",
+        "Which option letter matches the source word in Morse code?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:morse_code": [
+      "object_description"
+    ],
+    "task:morse_word_read_label": [],
+    "task:word_morse_match_label": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_morse_word_read_label_clean_card": "a clean Morse-code word card above four labeled word options",
+    "object_description_morse_word_read_label_notebook_card": "a notebook-style Morse-code word card above four labeled word options",
+    "object_description_morse_word_read_label_exam_scan": "an exam-scan-style Morse-code word card above four labeled word options",
+    "object_description_word_morse_match_label_clean_card": "a clean source word above four labeled Morse-code options",
+    "object_description_word_morse_match_label_notebook_card": "a notebook-style source word above four labeled Morse-code options",
+    "object_description_word_morse_match_label_exam_scan": "an exam-scan-style source word above four labeled Morse-code options",
+    "annotation_hint_morse_word_read_label": "set \"annotation\" to an object with keys \"source_code\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_morse_word_read_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_morse_word_read_label": "{\"annotation\":{\"source_code\":[172,88,808,230],\"selected_option\":[523,489,763,559]},\"answer\":\"D\"}",
+    "json_example_answer_only_morse_word_read_label": "{\"answer\":\"D\"}",
+    "annotation_hint_word_morse_match_label": "set \"annotation\" to an object with keys \"source_word\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_word_morse_match_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_word_morse_match_label": "{\"annotation\":{\"source_word\":[312,56,668,136],\"selected_option\":[350,400,630,532]},\"answer\":\"D\"}",
+    "json_example_answer_only_word_morse_match_label": "{\"answer\":\"D\"}",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+  }
+}

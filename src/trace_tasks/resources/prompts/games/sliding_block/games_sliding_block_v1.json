@@ -1,0 +1,148 @@
+{
+  "bundle_id": "games_sliding_block_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "sliding_block": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "sliding_block_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "blocker_count": [
+        "Count the blocks currently occupying the red target block T's straight path to the exit.",
+        "How many blocks are in the red target block T's direct exit path?",
+        "Determine the number of blocks blocking the red target block labeled T from sliding straight to the exit.",
+        "Count every block that lies between the red target block T and the exit arrow along T's row or column.",
+        "How many rectangular blocks currently block the red target block T from sliding straight out?"
+      ],
+      "movable_block_count": [
+        "Horizontal blocks, which are wider than tall, can slide only left or right. Vertical blocks, which are taller than wide, can slide only up or down. How many blocks can make at least one legal one-cell slide without leaving the board or overlapping another block?",
+        "A horizontal block may move only left or right, and a vertical block may move only up or down. Count the blocks with at least one legal one-cell slide that stays inside the board and avoids other blocks.",
+        "Horizontal lying blocks can slide left or right only; vertical standing blocks can slide up or down only. How many labeled blocks can move one cell from their current position without colliding or going off the board?",
+        "Count every block that can slide one cell in its allowed direction: horizontal blocks left or right, vertical blocks up or down. The slide must stay inside the board and not overlap another block.",
+        "Using the rule that horizontal blocks move left/right and vertical blocks move up/down, how many labeled blocks can slide at least one cell without leaving the board or overlapping another block?"
+      ],
+      "horizontal_block_count": [
+        "How many horizontal blocks are on the board?",
+        "Count the labeled blocks that are wider than they are tall.",
+        "How many blocks have horizontal orientation?",
+        "Count every rectangular block that lies horizontally.",
+        "How many labeled blocks are horizontal?"
+      ],
+      "vertical_block_count": [
+        "How many vertical blocks are on the board?",
+        "Count the labeled blocks that are taller than they are wide.",
+        "How many blocks have vertical orientation?",
+        "Count every rectangular block that lies vertically.",
+        "How many labeled blocks are vertical?"
+      ],
+      "move_result_label": [
+        "Apply these slides in order: {move_sequence_description}. Which labeled option shows the final board?",
+        "After making these moves in sequence, {move_sequence_description}, select the matching final-board option.",
+        "Use the original board, perform these slides in order: {move_sequence_description}. Which option is the resulting board?",
+        "Follow the slide sequence {move_sequence_description}. Choose the option that matches the board afterward.",
+        "Which labeled option shows the board after this slide sequence: {move_sequence_description}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:sliding_block": [
+      "object_description"
+    ],
+    "query:blocker_count": [],
+    "query:movable_block_count": [],
+    "query:horizontal_block_count": [],
+    "query:vertical_block_count": [],
+    "query:move_result_label": [
+      "move_sequence_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "move_sequence_description": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description": "a sliding-block puzzle board with labeled rectangular blocks",
+    "object_description_blocker_count": "a sliding-block puzzle board with labeled rectangular blocks, an exit arrow, and one red target block labeled T",
+    "object_description_movable_block_count": "a sliding-block puzzle board with labeled rectangular blocks",
+    "object_description_block_orientation_count": "a sliding-block puzzle board with labeled rectangular blocks",
+    "object_description_move_result_label": "a sliding-block puzzle board with labeled rectangular blocks and four final-board options",
+    "answer_hint_integer": "set \"answer\" to the integer count",
+    "answer_hint_option_letter": "set \"answer\" to only the selected option letter",
+    "annotation_hint_blocker_count": "set \"annotation\" to a JSON array of pixel-space bounding boxes [x0,y0,x1,y1] for the blocking blocks",
+    "annotation_hint_movable_block_count": "set \"annotation\" to a JSON array of pixel-space bounding boxes [x0,y0,x1,y1] for the movable blocks",
+    "annotation_hint_block_orientation_count": "set \"annotation\" to a JSON array of pixel-space bounding boxes [x0,y0,x1,y1] for the blocks matching the requested orientation",
+    "annotation_hint_move_result_label": "set \"annotation\" to a JSON object with keys \"source_board\" and \"selected_option\"; each value is an image-pixel bounding box [x0,y0,x1,y1] for the original board and the selected option panel",
+    "json_example_blocker_count": "{\"annotation\":[[120,160,210,245],[225,160,315,245]],\"answer\":2}",
+    "json_example_movable_block_count": "{\"annotation\":[[110,150,195,235],[310,250,390,335]],\"answer\":2}",
+    "json_example_block_orientation_count": "{\"annotation\":[[110,150,235,220],[310,250,430,320]],\"answer\":2}",
+    "json_example_move_result_label": "{\"annotation\":{\"source_board\":[80,120,300,340],\"selected_option\":[430,500,650,680]},\"answer\":\"B\"}",
+    "json_example_answer_only_blocker_count": "{\"answer\":2}",
+    "json_example_answer_only_movable_block_count": "{\"answer\":2}",
+    "json_example_answer_only_block_orientation_count": "{\"answer\":2}",
+    "json_example_answer_only_move_result_label": "{\"answer\":\"B\"}"
+  }
+}

@@ -1,0 +1,105 @@
+generation:
+  shared:
+    scene_variant_weights:
+      single_card: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      mint: 1.0
+      lavender: 1.0
+      amber: 1.0
+      slate: 1.0
+    mark_shape_weights:
+      ellipse: 1.0
+      cell: 1.0
+      ring: 1.0
+    cell_fill_pattern_weights:
+      solid: 1.0
+      column_tint: 1.0
+      checker_tint: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_mark_shape_sampling: true
+    balanced_cell_fill_pattern_sampling: true
+    balanced_target_answer_sampling: true
+  task_overrides:
+    task_games__bingo__completed_column_label:
+      target_column_label_weights:
+        B: 1.0
+        I: 1.0
+        N: 1.0
+        G: 1.0
+        O: 1.0
+      balanced_target_column_label_sampling: true
+      column_distractor_mark_prob: 0.2
+    task_games__bingo__completed_line_sum_value:
+      line_axis_weights:
+        row: 1.0
+        column: 1.0
+      balanced_line_axis_sampling: true
+      balanced_target_line_index_sampling: true
+      line_sum_distractor_mark_prob: 0.2
+      target_line_index_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+    task_games__bingo__near_complete_line_count:
+      axis_distractor_mark_prob: 0.2
+      near_complete_line_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+    task_games__bingo__called_number_match_count:
+      balanced_called_number_count_sampling: true
+      called_number_match_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      called_number_count_support:
+      - 5
+      - 6
+      - 7
+      - 8
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    card_width_px: 760
+    card_height_px: 620
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 440
+    canvas_side_padding_px: 140
+    canvas_vertical_padding_px: 70
+    card_corner_radius_px: 24
+    panel_margin_px: 56
+    title_font_size_px: 34
+    title_band_height_px: 62
+    header_font_size_px: 28
+    header_height_px: 42
+    grid_gap_px: 18
+    number_font_size_px: 28
+    cell_corner_radius_px: 14
+    cell_gap_px: 10
+    mark_inset_px: 12
+    called_panel_width_px: 220
+    called_panel_gap_px: 32
+    called_panel_title_font_size_px: 26
+    called_panel_number_font_size_px: 25
+    mark_shape: ellipse
+    cell_fill_pattern: solid
+prompt:
+  shared:
+    bundle_id: games_bingo_v1
+    scene_key: visible_bingo_card
+    task_key: bingo_card_query

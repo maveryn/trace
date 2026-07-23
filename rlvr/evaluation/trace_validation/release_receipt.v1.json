@@ -1,0 +1,80 @@
+{
+  "schema_version": "trace-validation-release-receipt-v1",
+  "immutable_source": {
+    "dataset_repo_id": "maveryn/trace-eval-runs",
+    "dataset_revision": "cf0d14aed86db2661d397ce8b68b36171873478d",
+    "run_id": "trace-iid-validation-2000-answer-seed42-8models-v1",
+    "run_root": "runs/trace-iid-validation-2000-answer-seed42-8models-v1",
+    "files": {
+      "export_manifest": {
+        "path": "metadata/manifest.json",
+        "sha256": "73fe4d1d5e8008452720206fbbf404960b0490a397823fd3f4c77ddc94634a48"
+      },
+      "benchmark_scores": {
+        "path": "metadata/results/benchmark_scores.json",
+        "sha256": "c35240e88e681434ed26de321015ef62b3ee9a438e20613d606e16b393263da9"
+      },
+      "run_metadata": {
+        "path": "metadata/runs/trace-iid-validation-2000-answer-seed42-8models-v1.json",
+        "sha256": "7adea820e7df766e308f2a314e0c40f6c161ad52fe71dfacfb5afd4874d1f801"
+      },
+      "suite_metadata": {
+        "path": "metadata/suites/trace_validation_iid2000_v1.json",
+        "sha256": "286e6415a873fe87bf9f6f0f84b70c160e03fbc080cf988d006a2174bda11751"
+      }
+    }
+  },
+  "source_execution": {
+    "evaluation_harness_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+    "producer_code_revision": "8b7485e07e2d9ee98dd6c75b473f5670bf4edb1d",
+    "producer_code_sha256": "213fdb7e29353bd1babfe758c2e0d7b654d33659b412274ef1f213e15701c672",
+    "source_suite_sha256": "8ca9888542175e37cd1dfcfad0d48ec9d3340752b78394277ba6cd0244eaf776",
+    "dataset_manifest_sha256": "825215fe98d1af3178c07449603d653cccb30a4eef63e4b9dc1cd45c3e43ce36",
+    "source_selection_sha256": "76a244d9b22628aa2b30b45236cd8d49523c1c7b9c175da18c144877644811d4",
+    "source_slice_set_sha256": "2c9cc7b6e01c1014ebe4fe252e0bdff67bf8b5bb5ed1809a8173d31f05cbf13f",
+    "summary_sha256": "c4dda04ab5391ed7283a7b85c5e0730f177c9a469adb43691e951566d6999e45",
+    "contracts": {
+      "deterministic_extraction": "trace-validation-answer-extraction-v1",
+      "judge_extraction": "trace-validation-qwen3-answer-extractor-v2",
+      "scoring": "trace-validation-answer-scoring-v2"
+    },
+    "judge": {
+      "repo_id": "Qwen/Qwen3-32B",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137"
+    }
+  },
+  "campaign_verification": {
+    "status": "ok",
+    "models": 8,
+    "seed": 42,
+    "rows_per_model": 2000,
+    "generation_rows": 16000,
+    "scored_rows": 16000,
+    "judge_pending_rows": 601,
+    "judge_result_rows": 601,
+    "unresolved_rows": 180
+  },
+  "source_artifacts": {
+    "responses": {
+      "parts": 8,
+      "rows": 16000
+    },
+    "extractions": {
+      "parts": 8,
+      "rows": 16000
+    },
+    "scores": {
+      "parts": 8,
+      "row_records": 16000,
+      "aggregate_records": 8
+    }
+  },
+  "public_release": {
+    "suite_path": "rlvr/evaluation/trace_validation/suite.v1.json",
+    "suite_sha256": "f9cccdcdddb6135c16d3a9d434f985b51e4105c07ff0c74a54a71a4dfe7c85c7",
+    "results_path": "rlvr/evaluation/trace_validation/results.v1.json",
+    "results_sha256": "1e2b78d46dbbd606210653b584ed77dc436d16bbdc0d329c5aaf55718dc37e11",
+    "result_rows": 8,
+    "derivation": "Exact aggregate scores copied from the immutable benchmark_scores metadata file named above."
+  }
+}

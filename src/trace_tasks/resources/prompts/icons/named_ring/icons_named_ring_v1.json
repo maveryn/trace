@@ -1,0 +1,93 @@
+{
+  "bundle_id": "icons_named_ring_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "single_scene_counting": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "counting_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ],
+      "nearest_marker_counting_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "question_text": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:single_scene_counting": [
+      "object_description"
+    ],
+    "task:counting_query": [
+      "question_text"
+    ],
+    "task:nearest_marker_counting_query": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description": "a ring of icons with endpoint markers A and B",
+    "question_text_clockwise_arc_shape_count": "Starting at marker A and moving clockwise to marker B, how many \"{target_shape_name}\" icons are strictly between A and B?",
+    "question_text_counterclockwise_arc_shape_count": "Starting at marker A and moving counterclockwise to marker B, how many \"{target_shape_name}\" icons are strictly between A and B?",
+    "question_text": "How many \"{target_shape_name}\" icons are closer to marker A than to marker B? Do not count icons equally far from A and B.",
+    "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted \"{target_shape_name}\" icon strictly between A and B along the {direction} arc",
+    "nearest_marker_annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted \"{target_shape_name}\" icon closer to marker A than marker B",
+    "nearest_marker_answer_hint": "set \"answer\" to the count as an integer",
+    "nearest_marker_json_example": "{\"annotation\":[[176,168,236,228],[384,298,444,358]],\"answer\":2}",
+    "nearest_marker_json_example_answer_only": "{\"answer\":2}",
+    "answer_hint": "set \"answer\" to the count as an integer",
+    "json_example": "{\"annotation\":[[176,168,236,228],[384,298,444,358]],\"answer\":2}",
+    "json_example_answer_only": "{\"answer\":2}"
+  }
+}

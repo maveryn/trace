@@ -1,0 +1,170 @@
+{
+  "bundle_id": "pages_web_action_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "web_action": [
+        "The image shows {object_description}.",
+        "The screen shows {object_description}.",
+        "This screen shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "web_action_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "click_target_label": [
+        "Instruction: {instruction_text}. Which candidate label marks the target control?",
+        "Instruction: {instruction_text}. Which labeled web control matches the guide code and page context?",
+        "Use the guide code and page context for this instruction: {instruction_text}. What candidate label marks the target?",
+        "Find the control implied by this guide-code instruction: {instruction_text}. Which label is shown?",
+        "Choose the candidate label for this guided click target: {instruction_text}."
+      ],
+      "type_field_label": [
+        "Instruction: {instruction_text}. Which candidate label marks the target input?",
+        "Instruction: {instruction_text}. Which labeled input field matches the guide code and page context?",
+        "Use the guide code and page context for this instruction: {instruction_text}. What candidate label marks the input?",
+        "Find the input implied by this guide-code instruction: {instruction_text}. Which label is shown?",
+        "Choose the candidate label for this guided text-entry target: {instruction_text}."
+      ],
+      "select_option_label": [
+        "Instruction: {instruction_text}. Which candidate label marks the target option?",
+        "Instruction: {instruction_text}. Which labeled option matches the guide code and page context?",
+        "Use the guide code and page context for this instruction: {instruction_text}. What candidate label marks the option?",
+        "Find the option implied by this guide-code instruction: {instruction_text}. Which label is shown?",
+        "Choose the candidate label for this guided selection target: {instruction_text}."
+      ],
+      "click_guide_code_target_count": [
+        "How many candidate controls use guide code \"{guide_code}\"?",
+        "Count the candidate web controls marked with guide code \"{guide_code}\".",
+        "What is the number of candidate controls that show guide code \"{guide_code}\"?",
+        "How many labeled controls match guide code \"{guide_code}\"?",
+        "Count all visible candidate controls using guide code \"{guide_code}\"."
+      ],
+      "type_field_guide_code_target_count": [
+        "How many candidate inputs use guide code \"{guide_code}\"?",
+        "Count the candidate input fields marked with guide code \"{guide_code}\".",
+        "What is the number of candidate inputs that show guide code \"{guide_code}\"?",
+        "How many labeled inputs match guide code \"{guide_code}\"?",
+        "Count all visible candidate inputs using guide code \"{guide_code}\"."
+      ],
+      "select_option_guide_code_target_count": [
+        "How many candidate options use guide code \"{guide_code}\"?",
+        "Count the candidate option controls marked with guide code \"{guide_code}\".",
+        "What is the number of candidate options that show guide code \"{guide_code}\"?",
+        "How many labeled options match guide code \"{guide_code}\"?",
+        "Count all visible candidate options using guide code \"{guide_code}\"."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:web_action": {
+      "object_description": "a browser page with an action instruction banner, a visible guide-code table, and candidate markers on targetable web controls"
+    },
+    "query:click_target_label": {
+      "answer_hint": "set \"answer\" to the selected candidate label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] pixel box around the target button and its candidate label marker",
+      "json_example": "{\"annotation\":[410,378,584,442],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:type_field_label": {
+      "answer_hint": "set \"answer\" to the selected candidate label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] pixel box around the target input and its candidate label marker",
+      "json_example": "{\"annotation\":[410,378,584,442],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:select_option_label": {
+      "answer_hint": "set \"answer\" to the selected candidate label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] pixel box around the target option and its candidate label marker",
+      "json_example": "{\"annotation\":[410,378,584,442],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:click_guide_code_target_count": {
+      "answer_hint": "set \"answer\" to the number of matching candidate controls",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around every candidate control that matches the requested guide code",
+      "json_example": "{\"annotation\":[[410,378,584,442],[410,452,584,516],[410,526,584,590]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:type_field_guide_code_target_count": {
+      "answer_hint": "set \"answer\" to the number of matching candidate inputs",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around every candidate input that matches the requested guide code",
+      "json_example": "{\"annotation\":[[410,378,584,442],[410,452,584,516],[410,526,584,590]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:select_option_guide_code_target_count": {
+      "answer_hint": "set \"answer\" to the number of matching candidate options",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around every candidate option that matches the requested guide code",
+      "json_example": "{\"annotation\":[[410,378,584,442],[410,452,584,516],[410,526,584,590]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "instruction_text": {"type": "string"},
+    "context_label": {"type": "string"},
+    "action_label": {"type": "string"},
+    "guide_code": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:web_action": [
+      "object_description"
+    ],
+    "query:click_target_label": [
+      "instruction_text"
+    ],
+    "query:type_field_label": [
+      "instruction_text"
+    ],
+    "query:select_option_label": [
+      "instruction_text"
+    ],
+    "query:click_guide_code_target_count": [
+      "guide_code"
+    ],
+    "query:type_field_guide_code_target_count": [
+      "guide_code"
+    ],
+    "query:select_option_guide_code_target_count": [
+      "guide_code"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

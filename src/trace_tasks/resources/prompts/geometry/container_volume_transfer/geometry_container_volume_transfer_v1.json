@@ -1,0 +1,135 @@
+{
+  "bundle_id": "geometry_container_volume_transfer_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "container_volume_transfer_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "fill_count_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "resulting_height_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "cone_to_cylinder_fill_count": [
+        "How many full source-cone pours are needed to fill the target cylinder?",
+        "Using the visible dimensions, how many full pours from the source cone fill the target cylinder?",
+        "What integer count replaces ? for the number of full cone pours needed?",
+        "Find the number of full source-container pours needed to fill the target container.",
+        "How many complete pours from the cone source match the target cylinder capacity?"
+      ],
+      "cylinder_to_cuboid_fill_count": [
+        "How many full source-cylinder pours are needed to fill the target rectangular tank?",
+        "Using the visible dimensions, how many full pours from the source cylinder fill the target cuboid?",
+        "What integer count replaces ? for the number of full cylinder pours needed?",
+        "Find the number of full source-container pours needed to fill the target container.",
+        "How many complete pours from the cylinder source match the target rectangular-tank capacity?"
+      ],
+      "cone_pours_to_cylinder_height": [
+        "After the displayed number of full source-cone pours is poured into the target cylinder, what liquid height is marked by the horizontal fill line?",
+        "Use the source-cone dimensions, target-cylinder base area, and full-pour count to find the marked target liquid height.",
+        "What target-cylinder liquid height does the marked fill line show after the displayed full cone pours?",
+        "Compute the target-cylinder liquid height reached by the shown full cone pours.",
+        "What target-cylinder liquid height replaces the height=? mark?"
+      ],
+      "cylinder_pours_to_cuboid_height": [
+        "After the displayed number of full source-cylinder pours is poured into the target rectangular tank, what liquid height is marked by the horizontal fill line?",
+        "Use the source-cylinder dimensions, target-tank length and width, and full-pour count to find the marked target liquid height.",
+        "What target-tank liquid height does the marked fill line show after the displayed full cylinder pours?",
+        "Compute the target-tank liquid height reached by the shown full cylinder pours.",
+        "What target-tank liquid height replaces the height=? mark?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: set \"annotation\" to a JSON object with exactly these visible bounding-box keys: {annotation_keys}; each value must be the pixel bounding box [x0,y0,x1,y1] around the named visual witness.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: set \"annotation\" to a JSON object with exactly these visible bounding-box keys: {annotation_keys}; each value must be the pixel bounding box [x0,y0,x1,y1] around the named visual witness.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: set \"annotation\" to a JSON object with exactly these visible bounding-box keys: {annotation_keys}; each value must be the pixel bounding box [x0,y0,x1,y1] around the named visual witness.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: set \"annotation\" to a JSON object with exactly these visible bounding-box keys: {annotation_keys}; each value must be the pixel bounding box [x0,y0,x1,y1] around the named visual witness.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"answer\" field: {answer_hint}.\nAnnotation format: set \"annotation\" to a JSON object with exactly these visible bounding-box keys: {annotation_keys}; each value must be the pixel bounding box [x0,y0,x1,y1] around the named visual witness.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:container_volume_transfer_scene": {
+      "object_description": "a source container, a target container, visible dimensions, and transfer labels"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\".",
+      "answer_hint_integer": "set \"answer\" to the requested count or volume as an integer",
+      "answer_hint_decimal": "set \"answer\" to the target liquid height as a number rounded to one decimal place when needed"
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"answer\" and \"annotation\".",
+      "answer_hint_integer": "set \"answer\" to the requested count or volume as an integer",
+      "answer_hint_decimal": "set \"answer\" to the target liquid height as a number rounded to one decimal place when needed"
+    }
+  },
+  "dynamic_slots": {
+    "annotation_keys": {
+      "type": "string",
+      "scope": "output:answer_and_annotation",
+      "description": "The named container bounding-box roles required in the annotation map."
+    },
+    "answer_hint": {
+      "type": "string",
+      "scope": "output",
+      "description": "Task-specific answer-format instruction selected by the public task."
+    },
+    "json_example": {
+      "type": "json",
+      "scope": "output:answer_and_annotation",
+      "description": "A task-specific answer-and-annotation JSON example."
+    },
+    "json_example_answer_only": {
+      "type": "json",
+      "scope": "output:answer_only",
+      "description": "A task-specific answer-only JSON example."
+    }
+  },
+  "required_slots_by_key": {
+    "scene:container_volume_transfer_scene": [
+      "object_description"
+    ],
+    "query:cone_to_cylinder_fill_count": [],
+    "query:cylinder_to_cuboid_fill_count": [],
+    "query:cone_pours_to_cylinder_height": [],
+    "query:cylinder_pours_to_cuboid_height": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_keys",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

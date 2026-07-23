@@ -1,0 +1,158 @@
+{
+  "bundle_id": "geometry_rectangular_solid_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "rectangular_solid_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "cuboid_volume_missing_dimension_value": [
+        "Use the visible cuboid volume and dimensions.",
+        "Use the labeled cuboid measurements.",
+        "Use the volume readout and the known cuboid dimensions.",
+        "Use the rectangular-prism volume relationship.",
+        "Use the visible length, width, height, and volume labels."
+      ],
+      "cuboid_surface_area_value": [
+        "Use the visible cuboid dimensions.",
+        "Use the labeled rectangular-prism measurements.",
+        "Use the total surface-area formula for the cuboid.",
+        "Use the length, width, and height labels.",
+        "Use the visible cuboid side dimensions."
+      ],
+      "cube_edge_from_frame_length_value": [
+        "Use the bright highlighted cube-frame edges and their total length.",
+        "Use only the bright highlighted edges of the cube frame; the pale edges show the rest of the cube.",
+        "Use the highlighted frame-length readout and the marked cube edge.",
+        "Use the shown highlighted cube wire-frame measurement.",
+        "Use the bright highlighted cube-frame path."
+      ],
+      "open_box_net_dimension_value": [
+        "Use the corner-cut sheet net.",
+        "Use the sheet dimensions and the equal corner cutouts.",
+        "Use the visible open-top-box net.",
+        "Use the corner-cut net that folds into an open-top box.",
+        "Use the shown sheet, cutout, and base-panel information."
+      ]
+    },
+    "query": {
+      "missing_length_from_volume": [
+        "The length dimension L is marked with ?. What is L?",
+        "Using the volume and known dimensions, find the missing length L.",
+        "What is the value of the cuboid length L?",
+        "The cuboid length is unknown. What integer value replaces ??",
+        "Determine the missing length L."
+      ],
+      "missing_width_from_volume": [
+        "The width dimension W is marked with ?. What is W?",
+        "Using the volume and known dimensions, find the missing width W.",
+        "What is the value of the cuboid width W?",
+        "The cuboid width is unknown. What integer value replaces ??",
+        "Determine the missing width W."
+      ],
+      "missing_height_from_volume": [
+        "The height dimension H is marked with ?. What is H?",
+        "Using the volume and known dimensions, find the missing height H.",
+        "What is the value of the cuboid height H?",
+        "The cuboid height is unknown. What integer value replaces ??",
+        "Determine the missing height H."
+      ],
+      "single": [
+        "What is the total surface area of the cuboid?",
+        "Compute the cuboid's total surface area.",
+        "Find the total surface area of the rectangular solid.",
+        "The surface-area readout is marked with ?. What is its value?",
+        "Determine the cuboid surface area from L, W, and H."
+      ],
+      "cube_edge_from_partial_frame": [
+        "The bright highlighted part of the cube frame has the shown total length. What is one cube edge length?",
+        "Using the total length of the bright highlighted frame path, find one cube edge length.",
+        "What integer value should replace ? on the marked cube edge?",
+        "The bright highlighted cube-frame edges have the shown total length. What is one edge length?",
+        "Determine one cube edge length from the bright highlighted frame length."
+      ],
+      "open_box_dimension_from_corner_cut": [
+        "The square corner cutouts are removed and the sides fold up to form an open-top box. What resulting base dimension is marked with ??",
+        "After the equal corner squares are cut away and the flaps fold up, what is the marked base dimension?",
+        "The net folds into an open-top box. What integer value should replace ? on the base panel?",
+        "Using the sheet dimensions and cut size, find the marked resulting base dimension.",
+        "What is the marked base dimension of the open-top box formed from this net?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:rectangular_solid_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:rectangular_solid_scene": {
+      "object_description": "a labeled rectangular solid, cube frame, or open-box net with integer measurements and one missing value marker"
+    },
+    "task:cuboid_volume_missing_dimension_value": {
+      "annotation_hint": "set \"annotation\" to the target dimension guide segment as [[x0,y0],[x1,y1]]",
+      "answer_hint": "set \"answer\" to the requested missing dimension as an integer"
+    },
+    "task:cuboid_surface_area_value": {
+      "annotation_hint": "set \"annotation\" to the pixel bounding box [x0,y0,x1,y1] around the cuboid",
+      "answer_hint": "set \"answer\" to the total surface area as an integer"
+    },
+    "task:cube_edge_from_frame_length_value": {
+      "annotation_hint": "set \"annotation\" to the pixel bounding box [x0,y0,x1,y1] around the highlighted cube-frame path",
+      "answer_hint": "set \"answer\" to the cube edge length as an integer"
+    },
+    "task:open_box_net_dimension_value": {
+      "annotation_hint": "set \"annotation\" to the marked base-dimension segment as [[x0,y0],[x1,y1]]"
+    },
+    "query:open_box_dimension_from_corner_cut": {
+      "answer_hint": "set \"answer\" to the requested resulting base dimension as an integer"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\"."
+    }
+  },
+  "dynamic_slots": {
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  }
+}

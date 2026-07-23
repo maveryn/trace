@@ -1,0 +1,60 @@
+generation:
+  shared:
+    row_count_min: 5
+    row_count_max: 7
+    column_count_min: 6
+    column_count_max: 8
+    calendar_row_count_min: 4
+    calendar_row_count_max: 6
+    colorbar_row_count_min: 3
+    colorbar_row_count_max: 4
+    colorbar_column_count_min: 4
+    colorbar_column_count_max: 5
+    heat_bin_count: 5
+    colorbar_ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    colorbar_threshold_values: [30, 40, 50, 60, 70]
+    colorbar_interval_min_width: 30
+    colorbar_interval_max_width: 40
+    colorbar_value_margin: 12
+    colorbar_threshold_answer_min: 1
+    colorbar_threshold_answer_max: 8
+    colorbar_interval_answer_min: 1
+    colorbar_interval_answer_max: 6
+    scene_variant_weights:
+      intensity_heatmap: 1.0
+      signed_change_heatmap: 1.0
+      calendar_heatmap: 1.0
+    condition_kind_weights:
+      hot: 1.0
+      cool: 1.0
+      increase: 1.0
+      decrease: 1.0
+    extremum_direction_weights:
+      hottest: 1.0
+      coolest: 1.0
+    query_axis_weights:
+      row: 1.0
+      column: 1.0
+rendering:
+  shared:
+    chart_context_profile: report_paragraph
+    canvas_width: 1260
+    canvas_height: 820
+    outer_margin_px: 42
+    panel_padding_px: 28
+    title_band_height_px: 68
+    legend_height_px: 72
+    row_label_width_px: 150
+    col_label_height_px: 46
+    cell_gap_px: 4
+    cell_border_width_px: 2
+    title_font_size_px: 30
+    axis_font_size_px: 20
+    legend_font_size_px: 18
+    grid_border_rgb: [80, 92, 104]
+    cell_border_rgb: [255, 255, 255]
+prompt:
+  shared:
+    bundle_id: charts_heatmap_v1
+    scene_key: heatmap_scene
+    task_key: heatmap_query

@@ -1,0 +1,394 @@
+{
+  "files": [
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/__init__.py",
+      "public_sha256": "71e3d6e8033cdaa74d9a0e7725c838f979a89f70446e4037ad8441d06710dada",
+      "source_sha256": "71e3d6e8033cdaa74d9a0e7725c838f979a89f70446e4037ad8441d06710dada"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/models/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/models/monkey_patch.py",
+      "public_sha256": "235f15787033941179df2380aa586c1de1af90444fedcf4e2ff4da3eb5d4c08b",
+      "source_sha256": "235f15787033941179df2380aa586c1de1af90444fedcf4e2ff4da3eb5d4c08b"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/models/transformers/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/models/transformers/flash_attention_utils.py",
+      "public_sha256": "115ef6731be9d9220040aef4362d9c304843df907e56f5c9d118d2633cc0995e",
+      "source_sha256": "115ef6731be9d9220040aef4362d9c304843df907e56f5c9d118d2633cc0995e"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/models/transformers/qwen2_vl.py",
+      "public_sha256": "38ca4470f7250106a1ec24999128f6bc3b59493ffb4a794e821481aea794e06d",
+      "source_sha256": "38ca4470f7250106a1ec24999128f6bc3b59493ffb4a794e821481aea794e06d"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/models/transformers/qwen3_vl.py",
+      "public_sha256": "84702e3f5a795e061e87ad269e48d7ec5c5061d7b852cabcced2799815b65244",
+      "source_sha256": "84702e3f5a795e061e87ad269e48d7ec5c5061d7b852cabcced2799815b65244"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/protocol.py",
+      "public_sha256": "a634340a086a986c03c96ad27c58da3df792ad4ebd09741c9109d689e2cfebd1",
+      "source_sha256": "a634340a086a986c03c96ad27c58da3df792ad4ebd09741c9109d689e2cfebd1"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/base/__init__.py",
+      "public_sha256": "54c1bcd50ca1c03e4e08d38208bec3db525eaaf46a987b83d032a316d488c1e4",
+      "source_sha256": "54c1bcd50ca1c03e4e08d38208bec3db525eaaf46a987b83d032a316d488c1e4"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/base/decorator.py",
+      "public_sha256": "2fe8e039eade8d92390d09a4fb1526183f4c110566825452b15e39843e9d3add",
+      "source_sha256": "2fe8e039eade8d92390d09a4fb1526183f4c110566825452b15e39843e9d3add"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/base/register_center/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/base/register_center/ray.py",
+      "public_sha256": "7c0a3ea7a3f49b4bbd0a5b0f51136b160dca09cdfded5f52ed4d72aa011bce1e",
+      "source_sha256": "7c0a3ea7a3f49b4bbd0a5b0f51136b160dca09cdfded5f52ed4d72aa011bce1e"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/base/worker.py",
+      "public_sha256": "ecbbe21a48dd6133700d2028e720eb26870683a0439d8499b43a44bd6486fb99",
+      "source_sha256": "ecbbe21a48dd6133700d2028e720eb26870683a0439d8499b43a44bd6486fb99"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/base/worker_group.py",
+      "public_sha256": "3c3ab71b7d4e18ace6e150585fe3b2134a4419059089885874067fa35962fc90",
+      "source_sha256": "3c3ab71b7d4e18ace6e150585fe3b2134a4419059089885874067fa35962fc90"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/ray/__init__.py",
+      "public_sha256": "5fc70fda13efb9a61e43b268b93cc3ce7fd48988e34d59d9a8fd520d7aa8ec72",
+      "source_sha256": "5fc70fda13efb9a61e43b268b93cc3ce7fd48988e34d59d9a8fd520d7aa8ec72"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/single_controller/ray/base.py",
+      "public_sha256": "039982ab0d10549df648427f10b945860c1b8260195faa9552f6336c809a49ab",
+      "source_sha256": "039982ab0d10549df648427f10b945860c1b8260195faa9552f6336c809a49ab"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/trainer/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "public_answer_only_adaptation",
+      "path": "verl/trainer/config.py",
+      "public_sha256": "498b3e845d92579ad919c56e28c93930ae01c6e773dd37fb400bd3df1e511f59",
+      "source_sha256": "74031bfaaaab52d39fbfa3512350d1d3437019328dc1c57d648dce7d49d10f84"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/trainer/core_algos.py",
+      "public_sha256": "871cadc71a8b04295ebdc8ff516ba242697e49cb27680920d4870a8431023d71",
+      "source_sha256": "871cadc71a8b04295ebdc8ff516ba242697e49cb27680920d4870a8431023d71"
+    },
+    {
+      "disposition": "public_answer_only_adaptation",
+      "path": "verl/trainer/data_loader.py",
+      "public_sha256": "085684a2548904a9823f000e8027ceb5b92e417a3fdc89bc9caece88b27d4b73",
+      "source_sha256": "7fe151db5f1501ae8ed16766734ac00b7b45d967714734e6c471f63fad6928a6"
+    },
+    {
+      "disposition": "internal_runtime_patch",
+      "path": "verl/trainer/main.py",
+      "public_sha256": "cb8830763992c79c1bfeedad960f2eebc7746a90616e5e2023aca4f962299868",
+      "source_sha256": "cb8830763992c79c1bfeedad960f2eebc7746a90616e5e2023aca4f962299868"
+    },
+    {
+      "disposition": "public_answer_only_adaptation",
+      "path": "verl/trainer/metrics.py",
+      "public_sha256": "ea93e5e49feecab1d861026f3d864ba76bdc2630307d717fb21c820a82a09c44",
+      "source_sha256": "236385a3132c662015f04956355f5b6f48be19f7f9bba46df5a10d3766966019"
+    },
+    {
+      "disposition": "internal_runtime_patch",
+      "path": "verl/trainer/ray_trainer.py",
+      "public_sha256": "3996d1967635d4f45e62f54bc86032b3cdd2a76f126cafca9cfe940cdb24762d",
+      "source_sha256": "3996d1967635d4f45e62f54bc86032b3cdd2a76f126cafca9cfe940cdb24762d"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/checkpoint/__init__.py",
+      "public_sha256": "af3f01995bb99df376811b5674c2fa3ccc91855ce46ee71d926a1721380c3c92",
+      "source_sha256": "af3f01995bb99df376811b5674c2fa3ccc91855ce46ee71d926a1721380c3c92"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/checkpoint/checkpoint_manager.py",
+      "public_sha256": "af20ef83b0289591dbd1ccbd91c46dc4a4aadf0094bd6f89edfd743c39f4904f",
+      "source_sha256": "af20ef83b0289591dbd1ccbd91c46dc4a4aadf0094bd6f89edfd743c39f4904f"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/checkpoint/fsdp_checkpoint_manager.py",
+      "public_sha256": "525fdef04dcc8aba2973407428dc6f600f064187625a892b7d39f205db199179",
+      "source_sha256": "525fdef04dcc8aba2973407428dc6f600f064187625a892b7d39f205db199179"
+    },
+    {
+      "disposition": "public_answer_only_adaptation",
+      "path": "verl/utils/dataset.py",
+      "public_sha256": "f8a07c920ba45671e0c1387abb39af3bd10a89623abcaffc1760bd72812ccc3a",
+      "source_sha256": "fd29579d412f01a5e34a946446e25d6385ebfad4cc925bedbeca1e0f7042c15b"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/flops_counter.py",
+      "public_sha256": "0b0121aeacd46cc29d721ea738f5fa5b1dde4866418b4c6de056f7cfce7574a6",
+      "source_sha256": "0b0121aeacd46cc29d721ea738f5fa5b1dde4866418b4c6de056f7cfce7574a6"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/fsdp_utils.py",
+      "public_sha256": "e3bb42cb978b313d12b264acdf4b258abe7d8bc02682e5bf4aae92f013a83ed2",
+      "source_sha256": "e3bb42cb978b313d12b264acdf4b258abe7d8bc02682e5bf4aae92f013a83ed2"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/logger/__init__.py",
+      "public_sha256": "1139d6b27e3b16de699fbfb62af96996929975179ca2ee8f6f7440b5592aa9aa",
+      "source_sha256": "1139d6b27e3b16de699fbfb62af96996929975179ca2ee8f6f7440b5592aa9aa"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/logger/gen_logger.py",
+      "public_sha256": "a34fc8761b5ddc3a02c3b368f1bae8b3f0b53cfb11fda8e294fc6e844c0ea95a",
+      "source_sha256": "a34fc8761b5ddc3a02c3b368f1bae8b3f0b53cfb11fda8e294fc6e844c0ea95a"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/logger/logger.py",
+      "public_sha256": "bef8fddc63d378770766fdba1f39937a98359e1f1c887084d970170933d91d24",
+      "source_sha256": "bef8fddc63d378770766fdba1f39937a98359e1f1c887084d970170933d91d24"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/model_utils.py",
+      "public_sha256": "fb83e18b441b1de34c04b9798d58ba8dbc49df84466aab998db0826fd2cbf316",
+      "source_sha256": "fb83e18b441b1de34c04b9798d58ba8dbc49df84466aab998db0826fd2cbf316"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/py_functional.py",
+      "public_sha256": "89be48d8c3a167febbf375a88a6fd5cec0f910741b1a4adeb55a40929d123c93",
+      "source_sha256": "89be48d8c3a167febbf375a88a6fd5cec0f910741b1a4adeb55a40929d123c93"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/seqlen_balancing.py",
+      "public_sha256": "f1319a58338d64cbdbfffb9f881e2fe484cffc2b405fe078d0835985b412169d",
+      "source_sha256": "f1319a58338d64cbdbfffb9f881e2fe484cffc2b405fe078d0835985b412169d"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/tokenizer.py",
+      "public_sha256": "0e20ac39d453e7dc7a4498da91806a7e2629eb59e34c47a26edfdf6ffa6401dc",
+      "source_sha256": "0e20ac39d453e7dc7a4498da91806a7e2629eb59e34c47a26edfdf6ffa6401dc"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/torch_dtypes.py",
+      "public_sha256": "c3bb3c5d061b364ba412f927a82775cdca6205380d8ecbc25548f938be0fd30f",
+      "source_sha256": "c3bb3c5d061b364ba412f927a82775cdca6205380d8ecbc25548f938be0fd30f"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/torch_functional.py",
+      "public_sha256": "fd686c86f5e479acb39d873fef8eadc048e616f8c7a868ea50c71e925667e651",
+      "source_sha256": "fd686c86f5e479acb39d873fef8eadc048e616f8c7a868ea50c71e925667e651"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/ulysses.py",
+      "public_sha256": "9ab1d44fec1a1cb985263a87933a731bf93b818f3ce2f785079c8b0aa50837b0",
+      "source_sha256": "9ab1d44fec1a1cb985263a87933a731bf93b818f3ce2f785079c8b0aa50837b0"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/utils/vllm_utils.py",
+      "public_sha256": "fa2bc6eb613477302c0222d75133e3121e5e2514fd007320d001b2bd426143e9",
+      "source_sha256": "fa2bc6eb613477302c0222d75133e3121e5e2514fd007320d001b2bd426143e9"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/__init__.py",
+      "public_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c",
+      "source_sha256": "e65abd77db034b4f29eb1268c24867f84919dbce22e28d1997e563ed1d94179c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/actor/__init__.py",
+      "public_sha256": "dd070e1e7e9a5b742a10091b0fe2cd5760107843a006055132377535210961a2",
+      "source_sha256": "dd070e1e7e9a5b742a10091b0fe2cd5760107843a006055132377535210961a2"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/actor/base.py",
+      "public_sha256": "d2fe132edff46e673e7c338615edd880efc7c347c16dde1cafbe063dd4318d01",
+      "source_sha256": "d2fe132edff46e673e7c338615edd880efc7c347c16dde1cafbe063dd4318d01"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/actor/config.py",
+      "public_sha256": "f95864cb05d3219296071ff13423a623c0261270e71b94c755ddd5814dafa926",
+      "source_sha256": "f95864cb05d3219296071ff13423a623c0261270e71b94c755ddd5814dafa926"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/actor/dp_actor.py",
+      "public_sha256": "2e7ba59831f4a8c0d01e918103f191554cb1bb70df7ee95efddc31c36bd6ded0",
+      "source_sha256": "2e7ba59831f4a8c0d01e918103f191554cb1bb70df7ee95efddc31c36bd6ded0"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/config.py",
+      "public_sha256": "00475242e75ea83b0692df09bf2ce42874d4eda35a7eedc56bc48938c0a0356c",
+      "source_sha256": "00475242e75ea83b0692df09bf2ce42874d4eda35a7eedc56bc48938c0a0356c"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/critic/__init__.py",
+      "public_sha256": "bb434041e7522163ce3ca2bbda2ce330fd2fffad0f95524f061cd0df64a70208",
+      "source_sha256": "bb434041e7522163ce3ca2bbda2ce330fd2fffad0f95524f061cd0df64a70208"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/critic/base.py",
+      "public_sha256": "d3d3cddc85e8da64dbc3cd256fd50a02f518da3a9cb15d2eebd9a14894113f48",
+      "source_sha256": "d3d3cddc85e8da64dbc3cd256fd50a02f518da3a9cb15d2eebd9a14894113f48"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/critic/config.py",
+      "public_sha256": "79c8641a766c3f611a55110d4cf4f140b95e9f606efa214d26df45c37c4402c8",
+      "source_sha256": "79c8641a766c3f611a55110d4cf4f140b95e9f606efa214d26df45c37c4402c8"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/critic/dp_critic.py",
+      "public_sha256": "7e597acdeff0082f04b64e33f797e3adbe31a1229e225d3491bff57f8b80dd8f",
+      "source_sha256": "7e597acdeff0082f04b64e33f797e3adbe31a1229e225d3491bff57f8b80dd8f"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/fsdp_workers.py",
+      "public_sha256": "4ce08f3214b9eeaf429c789f76ea2560156cbad003ce465e2eaf48233a99bad6",
+      "source_sha256": "4ce08f3214b9eeaf429c789f76ea2560156cbad003ce465e2eaf48233a99bad6"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/reward/__init__.py",
+      "public_sha256": "4c9c55efeb8c5fc040b685b2c0a7d69f529556de344f1681453392d7e7768893",
+      "source_sha256": "4c9c55efeb8c5fc040b685b2c0a7d69f529556de344f1681453392d7e7768893"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/reward/config.py",
+      "public_sha256": "45379894b777e130a1e881e5b5d626f8a18657aed4f066fcf8df496584c86376",
+      "source_sha256": "45379894b777e130a1e881e5b5d626f8a18657aed4f066fcf8df496584c86376"
+    },
+    {
+      "disposition": "internal_runtime_patch",
+      "path": "verl/workers/reward/function.py",
+      "public_sha256": "6650e283afcad96addd2bcd35f961e37ad1143cd18ed8d2b38fe3898223cf0fc",
+      "source_sha256": "6650e283afcad96addd2bcd35f961e37ad1143cd18ed8d2b38fe3898223cf0fc"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/rollout/__init__.py",
+      "public_sha256": "c6cb40fd12bcbf04fe8c9bef9f1669adec38f6a09956682a35cac4e6dc594560",
+      "source_sha256": "c6cb40fd12bcbf04fe8c9bef9f1669adec38f6a09956682a35cac4e6dc594560"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/rollout/base.py",
+      "public_sha256": "7cf5fe139d23f17ef028d71fc528425de061a6842ed6f74cfe0c7db49b7fd00d",
+      "source_sha256": "7cf5fe139d23f17ef028d71fc528425de061a6842ed6f74cfe0c7db49b7fd00d"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/rollout/config.py",
+      "public_sha256": "2d76cf77f02024f3326e9e24f970944ab26896e0fb00ea0af5f58a37c0e8171b",
+      "source_sha256": "2d76cf77f02024f3326e9e24f970944ab26896e0fb00ea0af5f58a37c0e8171b"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/rollout/vllm_rollout_spmd.py",
+      "public_sha256": "9ab0c46f239091f8bf78bcad8c61ee87ba2600dafee814430dd7de9457f6bc30",
+      "source_sha256": "9ab0c46f239091f8bf78bcad8c61ee87ba2600dafee814430dd7de9457f6bc30"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/sharding_manager/__init__.py",
+      "public_sha256": "d736c2258db98c57fa97613b0128268e438cfd48ed309ebc8decdf1947d40bce",
+      "source_sha256": "d736c2258db98c57fa97613b0128268e438cfd48ed309ebc8decdf1947d40bce"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/sharding_manager/base.py",
+      "public_sha256": "e7f8645a6e4b34dac2e19229bb0c18e5f1de4993fbcb7f84640ef1e6244d15c2",
+      "source_sha256": "e7f8645a6e4b34dac2e19229bb0c18e5f1de4993fbcb7f84640ef1e6244d15c2"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/sharding_manager/fsdp_ulysses.py",
+      "public_sha256": "dd3a8b3252787f3a711396e5015b24b3ea44a452db21f85c8680efa78646d64b",
+      "source_sha256": "dd3a8b3252787f3a711396e5015b24b3ea44a452db21f85c8680efa78646d64b"
+    },
+    {
+      "disposition": "upstream_exact",
+      "path": "verl/workers/sharding_manager/fsdp_vllm.py",
+      "public_sha256": "0066978584494778b7396fb4ccd20dffef557ae6ad165db39967e472b5c02308",
+      "source_sha256": "0066978584494778b7396fb4ccd20dffef557ae6ad165db39967e472b5c02308"
+    }
+  ],
+  "internal_source_revision": "847e9f5279f8111fdbfef1c8b8631fc621c23456",
+  "license": "Apache-2.0",
+  "license_path": "rlvr/easyr1_backend/LICENSE",
+  "schema_version": "trace-easyr1-vendor-manifest-v1",
+  "upstream_repository": "https://github.com/hiyouga/EasyR1",
+  "upstream_revision": "dd71bbd252694f5f850213eec15795b6b88d9fea"
+}

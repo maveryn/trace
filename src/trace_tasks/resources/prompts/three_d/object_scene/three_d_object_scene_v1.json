@@ -1,0 +1,534 @@
+{
+  "bundle_id": "three_d_object_scene_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "object_scene": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The image presents {object_description}.",
+        "The picture shows {object_description}.",
+        "The view shows {object_description}."
+      ]
+    },
+    "task": {
+      "camera_distance_extremum_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "marked_point_depth_extremum_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "marked_point_vertical_relation_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+            "point_on_object_line_query": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "line_side_query": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "reference_triangle_inside_query": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "point_camera_distance_order_query": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "object_relation_query": [
+                "",
+                "",
+                "",
+        "",
+        ""
+      ],
+      "reference_nearest_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "between_references_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occlusion_order_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "height_extremum_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "multiview_object_match_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "view_relation_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "closest_to_camera": [
+        "Which option describes the small 3D object closest to the camera?",
+        "From the camera view, which option describes the nearest small object?",
+        "Using the perspective depth cues, choose the option for the small object closest to the camera.",
+        "Which option describes the small shape closest to the viewer?",
+        "Among the candidate objects in the scene, which option is nearest to the camera?"
+      ],
+      "farthest_from_camera": [
+        "Which option describes the small 3D object farthest from the camera?",
+        "From the camera view, which option describes the small object farthest away?",
+        "Using the perspective depth cues, choose the option for the small object farthest from the camera.",
+        "Which option describes the small shape farthest from the viewer?",
+        "Among the candidate objects in the scene, which option is farthest from the camera?"
+      ],
+      "closest_marked_point": [
+        "Which marked floor point is closest to the camera?",
+        "From this camera view, which lettered floor point is nearest to the viewer?",
+        "Using the perspective depth cues, choose the marked floor point closest to the camera.",
+        "Among the lettered floor point markers, which one is closest to the viewer?",
+        "Which letter marks the floor point with the smallest camera distance?"
+      ],
+      "farthest_marked_point": [
+        "Which marked floor point is farthest from the camera?",
+        "From this camera view, which lettered floor point is farthest away from the viewer?",
+        "Using the perspective depth cues, choose the marked floor point farthest from the camera.",
+        "Among the lettered floor point markers, which one is farthest from the viewer?",
+        "Which letter marks the floor point with the greatest camera distance?"
+      ],
+      "directly_above_reference": [
+        "Which lettered point is directly above the {reference_name} in 3D space?",
+        "Choose the marked point that is vertically above the {reference_name}.",
+        "Which letter marks the point directly over the {reference_name}?",
+        "Which point marker is aligned above the {reference_name} along the vertical direction?",
+        "Find the point directly above the {reference_name}. Which letter is it?"
+      ],
+            "point_on_object_line": [
+                "Which marked point lies on the line connecting the {reference_a_name} and the {reference_b_name}?",
+                "Choose the marked point aligned with the {reference_a_name} and the {reference_b_name}.",
+                "Which letter marks the point on the line through the {reference_a_name} and the {reference_b_name}?",
+                "Find the marked point that lines up with the {reference_a_name} and the {reference_b_name}.",
+                "Which marked point is collinear with the {reference_a_name} and the {reference_b_name}?"
+            ],
+            "left_of_directed_line": [
+                "Which marked point is on the left side of the line from the {reference_a_name} to the {reference_b_name}?",
+                "From the {reference_a_name} toward the {reference_b_name}, which marked point is on the left side?",
+                "Choose the marked point left of the directed line from the {reference_a_name} to the {reference_b_name}.",
+                "Which point marker falls to the left of the line from the {reference_a_name} to the {reference_b_name}?",
+                "Looking from the {reference_a_name} to the {reference_b_name}, which marked point is left of the line?"
+            ],
+            "right_of_directed_line": [
+                "Which marked point is on the right side of the line from the {reference_a_name} to the {reference_b_name}?",
+                "From the {reference_a_name} toward the {reference_b_name}, which marked point is on the right side?",
+                "Choose the marked point right of the directed line from the {reference_a_name} to the {reference_b_name}.",
+                "Which point marker falls to the right of the line from the {reference_a_name} to the {reference_b_name}?",
+                "Looking from the {reference_a_name} to the {reference_b_name}, which marked point is right of the line?"
+            ],
+            "reference_triangle_inside": [
+                "Which marked point is inside the triangle formed by the {reference_a_name}, the {reference_b_name}, and the {reference_c_name}?",
+                "Choose the marked point inside the triangle made by the {reference_a_name}, the {reference_b_name}, and the {reference_c_name}.",
+                "Which letter marks the point inside the triangle formed by the {reference_a_name}, the {reference_b_name}, and the {reference_c_name}?",
+                "Find the marked point inside the triangle with corners at the {reference_a_name}, the {reference_b_name}, and the {reference_c_name}.",
+                "Which point marker lies inside the triangle formed by the {reference_a_name}, the {reference_b_name}, and the {reference_c_name}?"
+            ],
+            "camera_distance_order": [
+                "Which option orders the marked points from nearest to farthest from the camera?",
+                "Choose the option listing the marked points from closest to farthest from the camera.",
+                "Which option gives the marked-point order from nearest to farthest?",
+                "Using the depth cues, choose the option that orders the marked points from nearest to farthest.",
+                "Which option lists the marked points in increasing distance from the camera?"
+            ],
+            "on_top_of_prop": [
+                "Which option describes the small 3D object on top of the {reference_name}?",
+                "Choose the option for the object sitting on the {reference_name}.",
+                "Which option describes the small object placed on top of the {reference_name}?",
+        "Find the small object resting on the {reference_name} and choose its option.",
+        "Which option describes the small object directly on the {reference_name}?"
+      ],
+      "under_prop": [
+        "Which option describes the small 3D object under the {reference_name}?",
+        "Choose the option for the object beneath the {reference_name}.",
+        "Which option describes the small object placed under the {reference_name}?",
+        "Find the small object below the {reference_name} and choose its option.",
+        "Which option describes the small object directly underneath the {reference_name}?"
+      ],
+      "inside_prop": [
+        "Which option describes the small 3D object inside the {reference_name}?",
+        "Choose the option for the object inside the {reference_name}.",
+        "Which option describes the small object placed within the {reference_name}?",
+        "Find the small object contained by the {reference_name} and choose its option.",
+        "Which option describes the small object in the {reference_name}?"
+      ],
+      "closest_to_reference": [
+        "Which option describes the object closest to the {reference_name}?",
+        "Use the {reference_name} as the reference. Which option describes the nearest object?",
+        "Among the candidate objects, which option is closest to the {reference_name}?",
+        "Looking at the {reference_name}, choose the option for the nearest object.",
+        "Which option describes the object closest to the {reference_name}?"
+      ],
+      "farthest_from_reference": [
+        "Which option describes the object farthest from the {reference_name}?",
+        "Use the {reference_name} as the reference. Which option describes the farthest object?",
+        "Among the candidate objects, which option is farthest from the {reference_name}?",
+        "Looking at the {reference_name}, choose the option for the farthest object.",
+        "Which option describes the object farthest from the {reference_name}?"
+      ],
+      "between_references": [
+        "Which option describes the object between the {reference_a_name} and the {reference_b_name}?",
+        "Looking at the two named reference objects, which option describes the object between the {reference_a_name} and the {reference_b_name}?",
+        "Which option describes the object positioned between the {reference_a_name} and the {reference_b_name}?",
+        "Among the candidate objects, choose the option for the one in the space between the {reference_a_name} and the {reference_b_name}.",
+        "Which option describes the object along the gap between the {reference_a_name} and the {reference_b_name}?"
+      ],
+      "occludes_reference": [
+        "Which object occludes the {reference_name}?",
+        "Which object is occluding the {reference_name}?",
+        "Which object blocks part of the {reference_name}?",
+        "Which object covers part of the {reference_name}?",
+        "Which object partly covers the {reference_name}?"
+      ],
+      "highest_above_floor": [
+        "Among the listed options, which object is sitting highest above the floor?",
+        "Among the candidate options, which object is placed highest above the floor?",
+        "Which listed option describes the object at the greatest height above the floor?",
+        "Using the 3D height cues, choose the listed option for the object highest above the floor.",
+        "Which listed option describes the object raised the highest from the floor?"
+      ],
+      "lowest_above_floor": [
+        "Among the listed options, which object is sitting lowest above the floor?",
+        "Among the candidate options, which object is closest to the floor?",
+        "Which listed option describes the object at the lowest height above the floor?",
+        "Using the 3D height cues, choose the listed option for the object lowest above the floor.",
+        "Which listed option describes the object raised the least from the floor?"
+      ],
+      "same_object_in_second_view": [
+        "Which lettered object in the right view is the same physical object as the red-boxed object in the left view?",
+        "The two views show the same 3D setup. Which lettered object in the right view matches the red-boxed object in the left view?",
+        "Match the red-boxed object from the left view to the right view. Which letter is on that same object?",
+        "Using the two camera views, choose the right-view letter for the object boxed in red on the left.",
+        "Which option letter in the right view marks the same object that is boxed in red in the left view?"
+      ],
+      "on_top_of_reference_count": [
+        "How many small objects are on top of the {reference_name}?",
+        "Count the small objects sitting on the {reference_name}. How many are there?",
+        "What is the number of small objects placed on top of the {reference_name}?",
+        "Looking at the {reference_name}, how many small objects are resting on it?",
+        "How many of the small objects are on the {reference_name}?"
+      ],
+      "under_reference_count": [
+        "How many small objects are under the {reference_name}?",
+        "Count the small objects below the {reference_name}. How many are there?",
+        "What is the number of small objects placed under the {reference_name}?",
+        "Looking at the {reference_name}, how many small objects are underneath it?",
+        "How many of the small objects are beneath the {reference_name}?"
+      ],
+      "inside_reference_count": [
+        "How many small objects are inside the {reference_name}?",
+        "Count the small objects contained in the {reference_name}. How many are there?",
+        "What is the number of small objects placed inside the {reference_name}?",
+        "Looking at the {reference_name}, how many small objects are in it?",
+        "How many of the small objects are within the {reference_name}?"
+      ],
+      "left_of_reference_in_view_count": [
+        "How many other small objects appear to the left of the red-boxed reference object in the image?",
+        "In the image, count the other small objects that appear to the left of the red-boxed reference object. How many are there?",
+        "What is the number of other small objects visible to the left of the red-boxed reference object?",
+        "Looking at the image, how many other small objects appear image-left of the red-boxed reference object?",
+        "How many small objects, excluding the red-boxed reference object, appear to its left in the image?"
+      ],
+      "right_of_reference_in_view_count": [
+        "How many other small objects appear to the right of the red-boxed reference object in the image?",
+        "In the image, count the other small objects that appear to the right of the red-boxed reference object. How many are there?",
+        "What is the number of other small objects visible to the right of the red-boxed reference object?",
+        "Looking at the image, how many other small objects appear image-right of the red-boxed reference object?",
+        "How many small objects, excluding the red-boxed reference object, appear to its right in the image?"
+      ],
+      "closer_to_camera_than_reference_count": [
+        "How many other small objects are closer to the camera than the red-boxed reference object?",
+        "Using the perspective depth cues, count the other small objects that are closer to the camera than the red-boxed reference object. How many are there?",
+        "What is the number of other small objects with a smaller camera distance than the red-boxed reference object?",
+        "How many small objects, excluding the red-boxed reference object, are nearer to the camera than it is?",
+        "From this camera view, how many other small objects are closer than the red-boxed reference object?"
+      ],
+      "farther_from_camera_than_reference_count": [
+        "How many other small objects are farther from the camera than the red-boxed reference object?",
+        "Using the perspective depth cues, count the other small objects that are farther from the camera than the red-boxed reference object. How many are there?",
+        "What is the number of other small objects with a larger camera distance than the red-boxed reference object?",
+        "How many small objects, excluding the red-boxed reference object, are farther away from the camera than it is?",
+        "From this camera view, how many other small objects are farther away than the red-boxed reference object?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+    },
+    "task:camera_distance_extremum_query": {
+      "object_description": "a perspective 3D platform scene with several small objects and larger props",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] bounding box around the selected small object in the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":[318,260,366,308],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:marked_point_depth_extremum_query": {
+      "object_description": "a perspective 3D platform scene with objects and lettered floor point markers",
+      "annotation_hint": "set \"annotation\" to the point [x, y] at the center of the selected point marker",
+      "answer_hint": "set \"answer\" to the selected marked-point letter",
+      "json_example": "{\"annotation\":[318,260],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:marked_point_vertical_relation_query": {
+      "object_description": "a perspective 3D platform scene with small objects and lettered point markers",
+      "annotation_hint": "set \"annotation\" to the point [x, y] at the center of the selected point marker",
+      "answer_hint": "set \"answer\" to the selected marked-point letter",
+      "json_example": "{\"annotation\":[318,260],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+        "task:point_on_object_line_query": {
+            "object_description": "a perspective 3D platform scene with named objects and lettered point markers",
+            "annotation_hint": "set \"annotation\" to the point [x, y] at the center of the selected point marker",
+            "answer_hint": "set \"answer\" to the selected marked-point letter",
+            "json_example": "{\"annotation\":[318,260],\"answer\":\"C\"}",
+            "json_example_answer_only": "{\"answer\":\"C\"}"
+        },
+        "task:line_side_query": {
+            "object_description": "a perspective 3D platform scene with named objects and lettered point markers",
+            "annotation_hint": "set \"annotation\" to the point [x, y] at the center of the selected point marker",
+            "answer_hint": "set \"answer\" to the selected marked-point letter",
+            "json_example": "{\"annotation\":[318,260],\"answer\":\"C\"}",
+            "json_example_answer_only": "{\"answer\":\"C\"}"
+        },
+        "task:reference_triangle_inside_query": {
+            "object_description": "a perspective 3D platform scene with named objects and lettered point markers",
+            "annotation_hint": "set \"annotation\" to the point [x, y] at the center of the selected point marker",
+            "answer_hint": "set \"answer\" to the selected marked-point letter",
+            "json_example": "{\"annotation\":[318,260],\"answer\":\"C\"}",
+            "json_example_answer_only": "{\"answer\":\"C\"}"
+        },
+        "task:point_camera_distance_order_query": {
+            "object_description": "a perspective 3D platform scene with three marked floor points and an option panel",
+            "annotation_hint": "set \"annotation\" to an object mapping P, Q, and R to their marked-point centers [x, y]",
+            "answer_hint": "set \"answer\" to the selected option letter",
+            "json_example": "{\"annotation\":{\"P\":[318,260],\"Q\":[486,370],\"R\":[650,310]},\"answer\":\"C\"}",
+            "json_example_answer_only": "{\"answer\":\"C\"}"
+        },
+        "task:object_relation_query": {
+            "object_description": "a perspective 3D platform scene with small objects and larger props",
+            "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected small object in the scene",
+            "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":[318,260,366,308],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:reference_nearest_query": {
+      "object_description": "a large reference object and six smaller candidate objects",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected object in the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":[318,260,366,308],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:between_references_query": {
+      "object_description": "a perspective 3D platform scene with several objects and two reference objects",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected object in the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":[318,260,366,308],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:occlusion_order_query": {
+      "object_description": "a perspective 3D scene with a rectangular platform and several small objects",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected object in the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":[318,260,366,308],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:height_extremum_query": {
+      "object_description": "a perspective 3D platform scene with objects placed at different heights",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected object in the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "json_example": "{\"annotation\":[318,260,366,308],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:multiview_object_match_query": {
+      "object_description": "two side-by-side views of the same 3D setup",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the matching lettered object in the right view",
+      "answer_hint": "set \"answer\" to the selected object letter from the right view",
+      "json_example": "{\"annotation\":[842,228,902,296],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:view_relation_count_query": {
+      "object_description": "a perspective 3D platform scene with many small objects and one red-boxed reference object",
+      "annotation_hint": "set \"annotation\" to an array containing one bounding box [x0, y0, x1, y1] around each counted small object",
+      "answer_hint": "set \"answer\" to the number of counted small objects",
+      "json_example": "{\"annotation\":[[118,442,176,503],[391,316,448,374],[702,521,758,579]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "reference_name": {
+      "type": "string"
+    },
+    "target_color_name": {
+      "type": "string"
+    },
+    "target_object_name": {
+      "type": "string"
+    },
+    "relation_name": {
+      "type": "string"
+    },
+    "relation_phrase": {
+      "type": "string"
+    },
+    "reference_object_name": {
+      "type": "string"
+    },
+    "reference_a_name": {
+      "type": "string"
+    },
+    "reference_b_name": {
+      "type": "string"
+    },
+    "reference_c_name": {
+      "type": "string"
+    },
+    "target_shape_type": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:object_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ],
+    "query:directly_above_reference": [
+      "reference_name"
+    ],
+    "query:on_top_of_prop": [
+      "reference_name"
+    ],
+    "query:under_prop": [
+      "reference_name"
+    ],
+    "query:inside_prop": [
+      "reference_name"
+    ],
+    "query:closest_to_reference": [
+      "reference_name"
+    ],
+    "query:farthest_from_reference": [
+      "reference_name"
+    ],
+    "query:between_references": [
+      "reference_a_name",
+      "reference_b_name"
+    ],
+    "query:left_of_directed_line": [
+      "reference_a_name",
+      "reference_b_name"
+    ],
+    "query:right_of_directed_line": [
+      "reference_a_name",
+      "reference_b_name"
+    ],
+    "query:reference_triangle_inside": [
+      "reference_a_name",
+      "reference_b_name",
+      "reference_c_name"
+    ],
+    "query:occludes_reference": [
+      "reference_name"
+    ],
+    "query:on_top_of_reference_count": [
+      "reference_name"
+    ],
+    "query:under_reference_count": [
+      "reference_name"
+    ],
+    "query:inside_reference_count": [
+      "reference_name"
+    ],
+    "query:left_of_reference_in_view_count": [
+      "reference_name"
+    ],
+    "query:right_of_reference_in_view_count": [
+      "reference_name"
+    ],
+    "query:closer_to_camera_than_reference_count": [
+      "reference_name"
+    ],
+    "query:farther_from_camera_than_reference_count": [
+      "reference_name"
+    ]
+  }
+}

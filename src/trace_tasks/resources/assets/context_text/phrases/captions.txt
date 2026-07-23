@@ -1,0 +1,2600 @@
+Reference caption C81 for River.
+Review caption for Telecommunications records.
+Non-answer caption for Entertainment summary N48.
+Context note for Jade during the reference period.
+Context line from sample ledger during the planning window.
+Non-answer caption for Market Research summary Z84.
+Summary caption for coverage review.
+Supplemental note 6 for share.
+Context line from planning memo during the weekly summary.
+Supplemental context only; values are not part of the answer.
+Review caption for Fundraising records.
+Supplemental note 6 for load.
+Illustrative note from the review packet.
+Illustrative note from the source table.
+Review caption for Recreational records.
+Reference caption for response in the current cycle.
+Reference caption for response in the planning window.
+Context note for Jade during the weekly summary.
+Context line from field note during the daily review.
+Context note for Iris during the quarterly update.
+Reference caption U56 for Cedar.
+Review caption for Building Materials records.
+Reference caption E64 for River.
+Weekly caption for capacity review.
+Prepared from a routine sample record.
+Reference caption for supply in the current cycle.
+Context note for Maple during the reference period.
+Context line from tracking file during the reporting window.
+Quarterly caption for balance review.
+Illustrative note from the field note.
+Context line from sample ledger during the daily review.
+Reference caption for activity in the quarterly update.
+Illustrative note from the sample ledger.
+Prepared from a reference sample record.
+Supplemental note 8 for signal.
+Non-answer caption for Internet summary P83.
+Draft caption for pipeline review.
+Reference caption for supply in the reference period.
+Review caption for Legislative Office records.
+Prepared from a regional sample record.
+Reference caption for events in the current cycle.
+Non-answer caption for Education Management summary G61.
+Reference caption Z85 for Echo.
+Review caption for Libraries records.
+Illustrative note from the planning memo.
+Context note for Orion during the reference period.
+Non-answer caption for Defense and Space summary H71.
+Reference caption K66 for Iris.
+Prepared from a monthly sample record.
+Supplemental note 4 for share.
+Prepared from a baseline sample record.
+Review caption for Military records.
+Context note for River during the quarterly update.
+Weekly caption for activity review.
+Review caption for Defense and Space records.
+Non-answer caption for Judiciary summary Y30.
+Context line from tracking file during the quarterly update.
+Context line from tracking file during the current cycle.
+Reference caption for access in the reporting window.
+Non-answer caption for Outsourcing Offshoring summary W27.
+Current caption for reach review.
+Context line from field note during the current cycle.
+Reference caption N49 for Cedar.
+Baseline caption for pipeline review.
+Review caption for Investment Management records.
+Review caption for Sporting Goods records.
+Context line from tracking file during the weekly summary.
+Reference caption C68 for Quartz.
+Prepared from a draft sample record.
+Context note for Willow during the monthly review.
+Context note for Harbor during the reference period.
+Non-answer caption for Music summary V33.
+Quarterly caption for trend review.
+Reference caption for output in the daily review.
+Review caption for Packaging and Containers records.
+Reference caption A80 for Summit.
+Non-answer caption for Publishing summary Z89.
+Context note for Echo during the reference period.
+Reference caption for coverage in the reference period.
+Reference caption for risk in the weekly summary.
+Reference caption Q69 for Vertex.
+Review caption for Accounting records.
+Supplemental note 6 for throughput.
+Context note for Nimbus during the daily review.
+Prepared from a weekly sample record.
+Context note for Willow during the planning window.
+Prepared from a planning sample record.
+Reference caption for signal in the planning window.
+Context line from sample ledger during the reference period.
+Context note for Harbor during the weekly summary.
+Context note for Alpha during the reporting window.
+Review caption for Plastics records.
+Context note for Atlas during the quarterly update.
+Planning caption for status review.
+Planning caption for pipeline review.
+Supplemental note 2 for access.
+Reference caption Q38 for River.
+Review caption for Renewables and Environment records.
+Context line from tracking file during the daily review.
+Supplemental note 6 for reach.
+Context note for Cedar during the current cycle.
+Supplemental note 11 for growth.
+Reference caption D38 for Summit.
+Reference caption H94 for Cedar.
+Routine caption for margin review.
+Supplemental note 6 for flow.
+Reference caption L55 for Terra.
+Non-answer caption for Museums and Institutions summary L67.
+Quarterly caption for requests review.
+Non-answer caption for Medical Practice summary B94.
+Non-answer caption for Facilities Services summary E27.
+Reference caption for load in the daily review.
+Review caption for Human Resources records.
+Context line from admin file during the planning window.
+Prepared from a current sample record.
+Context note for Beacon during the reporting window.
+Review caption for Events Services records.
+Reference caption for output in the quarterly update.
+Supplemental note 11 for quality.
+Context note for Terra during the current cycle.
+Reference caption V22 for Harbor.
+Reference caption for units in the reporting window.
+Supplemental note 7 for requests.
+Supplemental note 10 for requests.
+Context note for Willow during the daily review.
+Internal caption for signal review.
+Supplemental note 6 for capacity.
+Supplemental note 9 for quality.
+Non-answer caption for Banking summary P50.
+Review caption for Executive Office records.
+Context line from internal log during the planning window.
+Review caption for Consumer Services records.
+Non-answer caption for Package Freight Delivery summary P82.
+Supplemental note 5 for share.
+Prepared from a internal sample record.
+Context line from sample ledger during the current cycle.
+Illustrative note from the tracking file.
+Context line from internal log during the monthly review.
+Supplemental note 9 for growth.
+Supplemental note 3 for status.
+Context note for Delta during the weekly summary.
+Reference caption V84 for Atlas.
+Prepared from a quarterly sample record.
+Context line from source table during the weekly summary.
+Non-answer caption for Human Resources summary W95.
+Context line from review packet during the reference period.
+Non-answer caption for Investment Management summary V97.
+Context note for Cedar during the quarterly update.
+Illustrative note from the admin file.
+Supplemental note 5 for pipeline.
+Routine caption for requests review.
+Current caption for share review.
+Current caption for supply review.
+Non-answer caption for Gambling and Casinos summary A86.
+Non-answer caption for Performing Arts summary M30.
+Context line from admin file during the quarterly update.
+Context line from audit sheet during the monthly review.
+Non-answer caption for Motion Pictures and Film summary Q90.
+Review caption for Security and Investigations records.
+Reference caption for requests in the reporting window.
+Reference caption for margin in the weekly summary.
+Supplemental note 7 for pipeline.
+Context note for Vertex during the planning window.
+Reference caption D48 for Delta.
+Context line from tracking file during the planning window.
+Review caption for Airlines Aviation records.
+Context line from review packet during the quarterly update.
+Context line from audit sheet during the weekly summary.
+Review caption for Dairy records.
+Internal caption for load review.
+Supplemental note 10 for pipeline.
+Supplemental note 5 for flow.
+Context line from internal log during the weekly summary.
+Illustrative note from the internal log.
+Non-answer caption for Pharmaceuticals summary G67.
+Supplemental note 7 for growth.
+Regional caption for capacity review.
+Supplemental note 9 for output.
+Reference caption U31 for Iris.
+Reference caption D91 for Willow.
+Supplemental note 5 for requests.
+Illustrative note from the audit sheet.
+Context note for River during the daily review.
+Context line from audit sheet during the planning window.
+Context line from admin file during the current cycle.
+Reference caption for coverage review.
+Supplemental note 5 for output.
+Weekly caption for score review.
+Review caption for Maritime records.
+Operating caption for response review.
+Review caption for Wireless records.
+Review caption for Logistics and Supply Chain records.
+Non-answer caption for Professional Training summary R21.
+Reference caption A29 for Atlas.
+Weekly caption for margin review.
+Reference caption for index in the current cycle.
+Draft caption for balance review.
+Non-answer caption for Plastics summary S87.
+Reference caption A13 for Iris.
+Reference caption T37 for Cedar.
+Reference caption for share in the reference period.
+Context line from review packet during the current cycle.
+Context line from admin file during the monthly review.
+Review caption for Public Relations records.
+Context note for Echo during the current cycle.
+Context note for Terra during the weekly summary.
+Reference caption for demand in the reporting window.
+Context note for Orion during the planning window.
+Non-answer caption for Fishery summary R94.
+Reference caption C42 for Willow.
+Context note for Cedar during the reporting window.
+Routine caption for load review.
+Supplemental note 4 for requests.
+Reference caption for growth in the monthly review.
+Non-answer caption for Sporting Goods summary F25.
+Context note for Vertex during the daily review.
+Reference caption N32 for Orion.
+Reference caption for index in the reporting window.
+Review caption for Religious Institutions records.
+Supplemental note 3 for output.
+Supplemental note 11 for demand.
+Planning caption for coverage review.
+Non-answer caption for Pharmaceuticals summary S40.
+Baseline caption for flow review.
+Reference caption for events in the monthly review.
+Reference caption Y34 for Summit.
+Context note for Alpha during the quarterly update.
+Context note for Summit during the daily review.
+Quarterly caption for response review.
+Reference caption Q16 for Atlas.
+Reference caption U46 for Maple.
+Reference caption for reach in the daily review.
+Non-answer caption for Luxury Goods and Jewelry summary Q30.
+Reference caption for volume in the quarterly update.
+Review caption for Hospital and Health Care records.
+Reference caption for quality in the daily review.
+Reference caption for activity in the reporting window.
+Draft caption for flow review.
+Review caption for Computer Software records.
+Reference caption N29 for Vertex.
+Review caption for Tobacco records.
+Context note for Summit during the planning window.
+Reference caption L56 for Delta.
+Context line from field note during the reference period.
+Context note for Harbor during the current cycle.
+Reference caption for reach in the weekly summary.
+Baseline caption for access review.
+Reference caption for flow review.
+Review caption for Oil and Energy records.
+Review caption for Package Freight Delivery records.
+Reference caption Y37 for Jade.
+Review caption for Primary Secondary records.
+Context note for Atlas during the daily review.
+Supplemental note 8 for units.
+Context line from source table during the daily review.
+Non-answer caption for Investment Banking Venture summary C83.
+Supplemental note 6 for score.
+Regional caption for growth review.
+Reference caption P97 for Cedar.
+Non-answer caption for Wine and Spirits summary L53.
+Reference caption L26 for Cedar.
+Context note for Nimbus during the monthly review.
+Reference caption E72 for Cedar.
+Review caption for Environmental Services records.
+Reference caption for access in the reference period.
+Reference caption for quality in the quarterly update.
+Reference caption for pipeline in the weekly summary.
+Operating caption for trend review.
+Baseline caption for volume review.
+Non-answer caption for Sporting Goods summary A62.
+Review caption for Machinery records.
+Context line from field note during the monthly review.
+Review caption for Marketing and Advertising records.
+Context note for Iris during the reference period.
+Prepared from a summary sample record.
+Weekly caption for risk review.
+Context line from planning memo during the reference period.
+Reference caption Y50 for Vertex.
+Baseline caption for throughput review.
+Non-answer caption for Program Development summary A75.
+Non-answer caption for Market Research summary N97.
+Reference caption M23 for Echo.
+Supplemental note 8 for growth.
+Supplemental note 5 for score.
+Reference caption for events in the quarterly update.
+Supplemental note 11 for units.
+Context note for Nimbus during the quarterly update.
+Review caption for Facilities Services records.
+Reference caption M47 for Maple.
+Supplemental note 2 for share.
+Reference caption V74 for Atlas.
+Non-answer caption for Writing and Editing summary D34.
+Current caption for events review.
+Review caption for Consumer Goods records.
+Reference caption for flow in the reference period.
+Reference caption for score in the current cycle.
+Context note for Jade during the reporting window.
+Supplemental note 8 for requests.
+Reference caption K56 for Echo.
+Supplemental note 3 for events.
+Supplemental note 8 for supply.
+Current caption for access review.
+Routine caption for flow review.
+Context note for Atlas during the monthly review.
+Review caption for Architecture and Planning records.
+Review caption for Wholesale records.
+Reference caption for risk in the current cycle.
+Reference caption for activity review.
+Reference caption for risk in the reference period.
+Supplemental note 11 for access.
+Supplemental note 2 for activity.
+Context note for River during the current cycle.
+Context line from admin file during the reference period.
+Reference caption U69 for Vertex.
+Non-answer caption for Higher Education summary K96.
+Operating caption for demand review.
+Reference caption for load in the reference period.
+Context line from field note during the reporting window.
+Context line from audit sheet during the reporting window.
+Supplemental note 5 for units.
+Context note for Quartz during the monthly review.
+Draft caption for units review.
+Reference caption for supply in the daily review.
+Non-answer caption for Market Research summary T61.
+Review caption for Construction records.
+Reference caption N75 for Alpha.
+Non-answer caption for Shipbuilding summary P92.
+Supplemental note 5 for activity.
+Reference caption C75 for River.
+Reference caption for throughput review.
+Reference caption Q14 for Nimbus.
+Review caption for Automotive records.
+Non-answer caption for Think Tanks summary M22.
+Reference caption for risk in the monthly review.
+Non-answer caption for Pharmaceuticals summary Y17.
+Reference caption D20 for River.
+Reference caption F21 for Cedar.
+Routine caption for growth review.
+Non-answer caption for Facilities Services summary Q72.
+Non-answer caption for Education Management summary Z78.
+Non-answer caption for Furniture summary N44.
+Context note for Alpha during the weekly summary.
+Non-answer caption for Industrial Automation summary M65.
+Reference caption Q75 for Nimbus.
+Summary caption for volume review.
+Non-answer caption for Computer Games summary V13.
+Context note for Vertex during the reference period.
+Summary caption for status review.
+Context line from internal log during the daily review.
+Context line from tracking file during the monthly review.
+Supplemental note 9 for response.
+Review caption for Pharmaceuticals records.
+Summary caption for balance review.
+Non-answer caption for Primary Secondary summary Y66.
+Summary caption for score review.
+Weekly caption for access review.
+Context note for River during the weekly summary.
+Supplemental note 10 for access.
+Context line from review packet during the daily review.
+Context line from planning memo during the planning window.
+Context line from tracking file during the reference period.
+Context line from planning memo during the monthly review.
+Non-answer caption for Furniture summary C37.
+Reference caption for signal in the quarterly update.
+Supplemental note 2 for risk.
+Reference caption Z21 for Cedar.
+Non-answer caption for Photography summary H21.
+Non-answer caption for Supermarkets summary G33.
+Reference caption for score in the monthly review.
+Review caption for Fine Art records.
+Non-answer caption for Package Freight Delivery summary Y18.
+Non-answer caption for Ranching summary A66.
+Draft caption for throughput review.
+Quarterly caption for pipeline review.
+Non-answer caption for Online Publishing summary M27.
+Review caption for Design records.
+Reference caption Q13 for Nimbus.
+Reference caption for balance in the reporting window.
+Reference caption F61 for Terra.
+Context line from field note during the planning window.
+Reference caption K65 for Delta.
+Summary caption for pipeline review.
+Non-answer caption for Government Relations summary N98.
+Reference caption for growth in the reference period.
+Prepared from a operating sample record.
+Supplemental note 3 for access.
+Context note for Maple during the planning window.
+Reference caption E21 for Beacon.
+Internal caption for activity review.
+Quarterly caption for units review.
+Review caption for Supermarkets records.
+Context note for Maple during the current cycle.
+Supplemental note 7 for trend.
+Supplemental note 6 for pipeline.
+Review caption for Medical Practice records.
+Reference caption G85 for Jade.
+Reference caption for score in the planning window.
+Reference caption D33 for Nimbus.
+Context line from sample ledger during the reporting window.
+Supplemental note 10 for units.
+Reference caption D38 for Delta.
+Supplemental note 2 for coverage.
+Context line from planning memo during the daily review.
+Internal caption for status review.
+Supplemental note 6 for supply.
+Draft caption for load review.
+Non-answer caption for International Affairs summary R18.
+Non-answer caption for Alternative Medicine summary R25.
+Context note for Beacon during the quarterly update.
+Non-answer caption for Museums and Institutions summary W90.
+Supplemental note 5 for signal.
+Context line from audit sheet during the current cycle.
+Review caption for Paper and Forest Products records.
+Reference caption for reach in the monthly review.
+Reference caption for access in the planning window.
+Non-answer caption for Higher Education summary P46.
+Weekly caption for quality review.
+Reference caption T10 for Atlas.
+Review caption for Retail records.
+Non-answer caption for Airlines Aviation summary U33.
+Routine caption for pipeline review.
+Supplemental note 4 for coverage.
+Routine caption for risk review.
+Summary caption for index review.
+Supplemental note 4 for units.
+Context line from source table during the reference period.
+Reference caption for capacity in the weekly summary.
+Reference caption J59 for Echo.
+Reference caption for trend in the daily review.
+Internal caption for demand review.
+Supplemental note 4 for growth.
+Context line from admin file during the daily review.
+Reference caption L96 for Jade.
+Context note for Maple during the weekly summary.
+Reference caption for score in the reporting window.
+Context line from audit sheet during the quarterly update.
+Reference caption for growth in the daily review.
+Reference caption H32 for Willow.
+Reference caption for trend in the reporting window.
+Reference caption C76 for Vertex.
+Supplemental note 10 for balance.
+Non-answer caption for Outsourcing Offshoring summary E61.
+Supplemental note 11 for capacity.
+Reference caption for response in the reference period.
+Supplemental note 2 for balance.
+Non-answer caption for Wine and Spirits summary H13.
+Reference caption for margin in the planning window.
+Supplemental note 2 for growth.
+Supplemental note 6 for units.
+Supplemental note 11 for index.
+Reference caption Q59 for Echo.
+Review caption for Semiconductors records.
+Review caption for Entertainment records.
+Supplemental note 11 for load.
+Reference caption W79 for Vertex.
+Context line from field note during the weekly summary.
+Context line from audit sheet during the daily review.
+Reference caption U13 for Atlas.
+Supplemental note 11 for response.
+Reference caption M49 for Nimbus.
+Non-answer caption for Sporting Goods summary Y92.
+Context line from source table during the planning window.
+Review caption for Market Research records.
+Supplemental note 10 for trend.
+Review caption for Research records.
+Reference caption F76 for Alpha.
+Review caption for Judiciary records.
+Reference caption for load in the current cycle.
+Non-answer caption for Farming summary A64.
+Operating caption for throughput review.
+Non-answer caption for Apparel and Fashion summary P96.
+Current caption for trend review.
+Context note for River during the planning window.
+Context note for Willow during the current cycle.
+Context note for Harbor during the reporting window.
+Review caption for Civil Engineering records.
+Non-answer caption for Computer Games summary S13.
+Supplemental note 10 for output.
+Context note for Summit during the current cycle.
+Non-answer caption for Farming summary S90.
+Weekly caption for balance review.
+Reference caption for margin in the current cycle.
+Reference caption for coverage in the daily review.
+Supplemental note 7 for flow.
+Reference caption for reach in the reporting window.
+Review caption for Think Tanks records.
+Non-answer caption for Sporting Goods summary X84.
+Review caption for Apparel and Fashion records.
+Context note for Harbor during the daily review.
+Monthly caption for quality review.
+Review caption for Photography records.
+Quarterly caption for access review.
+Supplemental note 4 for supply.
+Review caption for Import and Export records.
+Reference caption for supply in the monthly review.
+Reference caption for balance in the weekly summary.
+Review caption for Facilities and Services records.
+Reference caption V75 for Atlas.
+Summary caption for flow review.
+Review caption for Information Services records.
+Supplemental note 7 for share.
+Non-answer caption for Security and Investigations summary H49.
+Quarterly caption for load review.
+Supplemental note 2 for response.
+Review caption for Food and Beverages records.
+Draft caption for events review.
+Supplemental note 9 for units.
+Reference caption D97 for Atlas.
+Supplemental note 2 for capacity.
+Reference caption for load in the quarterly update.
+Review caption for Wine and Spirits records.
+Non-answer caption for Food and Beverages summary J54.
+Reference caption F69 for Alpha.
+Reference caption for status in the current cycle.
+Non-answer caption for Photography summary F14.
+Planning caption for volume review.
+Supplemental note 6 for events.
+Non-answer caption for Import and Export summary Z83.
+Routine caption for events review.
+Supplemental note 3 for supply.
+Draft caption for status review.
+Context note for Atlas during the reference period.
+Non-answer caption for Professional Training summary C79.
+Non-answer caption for Recreational summary R61.
+Reference caption X76 for Summit.
+Review caption for Restaurants records.
+Reference caption K89 for Orion.
+Reference caption for reach in the quarterly update.
+Operating caption for balance review.
+Reference caption V35 for River.
+Review caption for Computer Games records.
+Reference caption Q18 for Vertex.
+Context line from source table during the quarterly update.
+Reference caption Z67 for Cedar.
+Non-answer caption for Printing summary V39.
+Supplemental note 3 for response.
+Review caption for Food Production records.
+Summary caption for demand review.
+Review caption for Government Relations records.
+Supplemental note 9 for capacity.
+Reference caption S19 for Harbor.
+Reference caption for status in the reporting window.
+Supplemental note 5 for events.
+Non-answer caption for Judiciary summary D57.
+Non-answer caption for Paper and Forest Products summary S68.
+Supplemental note 8 for demand.
+Reference caption for share in the quarterly update.
+Reference caption Q20 for Cedar.
+Weekly caption for status review.
+Non-answer caption for Computer Games summary Z92.
+Reference caption for coverage in the current cycle.
+Non-answer caption for Packaging and Containers summary K51.
+Review caption for Utilities records.
+Context note for Harbor during the planning window.
+Draft caption for trend review.
+Non-answer caption for Hospital and Health Care summary Y26.
+Non-answer caption for Law Enforcement summary F64.
+Reference caption for demand in the daily review.
+Review caption for Broadcast Media records.
+Baseline caption for trend review.
+Monthly caption for response review.
+Reference caption for demand in the monthly review.
+Reference caption A71 for Iris.
+Context line from review packet during the reporting window.
+Reference caption for requests review.
+Review caption for Gambling and Casinos records.
+Reference caption A51 for Vertex.
+Review caption for Consumer Electronics records.
+Context line from planning memo during the current cycle.
+Reference caption for balance in the monthly review.
+Review caption for Printing records.
+Context note for Beacon during the reference period.
+Reference caption for trend review.
+Context note for Jade during the current cycle.
+Context line from source table during the monthly review.
+Monthly caption for reach review.
+Non-answer caption for Aviation and Aerospace summary Y82.
+Non-answer caption for Translation and Localization summary N98.
+Context note for Delta during the quarterly update.
+Reference caption for volume in the reference period.
+Reference caption E57 for Delta.
+Context note for Quartz during the daily review.
+Internal caption for response review.
+Non-answer caption for Semiconductors summary H60.
+Review caption for Outsourcing Offshoring records.
+Routine caption for supply review.
+Reference caption for volume in the daily review.
+Supplemental note 8 for pipeline.
+Supplemental note 8 for reach.
+Planning caption for throughput review.
+Reference caption for balance in the daily review.
+Context note for Nimbus during the reference period.
+Monthly caption for demand review.
+Reference caption H59 for Summit.
+Reference caption for demand in the reference period.
+Non-answer caption for Religious Institutions summary Z25.
+Non-answer caption for Environmental Services summary Z49.
+Supplemental note 6 for coverage.
+Supplemental note 6 for margin.
+Reference caption Z83 for Beacon.
+Supplemental note 3 for trend.
+Reference caption for flow in the planning window.
+Reference caption C53 for Orion.
+Draft caption for coverage review.
+Non-answer caption for Pharmaceuticals summary Q20.
+Review caption for Insurance records.
+Reference caption for supply review.
+Reference caption for flow in the quarterly update.
+Reference caption for trend in the weekly summary.
+Context note for Echo during the planning window.
+Non-answer caption for Package Freight Delivery summary Z16.
+Supplemental note 7 for signal.
+Reference caption for demand in the current cycle.
+Reference caption for coverage in the reporting window.
+Reference caption for growth in the quarterly update.
+Reference caption T40 for Vertex.
+Reference caption for share in the daily review.
+Context note for Iris during the current cycle.
+Supplemental note 11 for margin.
+Context note for Vertex during the monthly review.
+Non-answer caption for Fishery summary G33.
+Supplemental note 5 for trend.
+Non-answer caption for Nanotechnology summary T23.
+Reference caption for output in the current cycle.
+Baseline caption for risk review.
+Reference caption Z64 for Atlas.
+Context line from internal log during the reporting window.
+Non-answer caption for Investment Management summary S59.
+Context line from review packet during the weekly summary.
+Reference caption T10 for River.
+Reference caption L85 for Terra.
+Non-answer caption for Alternative Medicine summary E11.
+Planning caption for units review.
+Supplemental note 4 for flow.
+Context note for Beacon during the planning window.
+Reference caption R18 for Summit.
+Non-answer caption for Management Consulting summary U32.
+Non-answer caption for Judiciary summary J46.
+Review caption for Banking records.
+Reference caption T65 for Vertex.
+Reference caption E41 for Cedar.
+Context line from internal log during the reference period.
+Reference caption for events in the reference period.
+Context note for Vertex during the reporting window.
+Non-answer caption for Paper and Forest Products summary B57.
+Supplemental note 3 for margin.
+Non-answer caption for Glass Ceramics and Concrete summary K69.
+Routine caption for reach review.
+Supplemental note 10 for supply.
+Review caption for Shipbuilding records.
+Context note for Delta during the reporting window.
+Regional caption for share review.
+Reference caption Y68 for Cedar.
+Review caption for Industrial Automation records.
+Review caption for Luxury Goods and Jewelry records.
+Summary caption for response review.
+Context note for Terra during the quarterly update.
+Context note for Alpha during the reference period.
+Monthly caption for events review.
+Context note for River during the reference period.
+Reference caption A45 for Vertex.
+Supplemental note 9 for demand.
+Reference caption H25 for Alpha.
+Reference caption F96 for Orion.
+Supplemental note 2 for load.
+Reference caption H47 for Iris.
+Non-answer caption for Libraries summary M51.
+Review caption for Museums and Institutions records.
+Reference caption for activity in the reference period.
+Reference caption H85 for Alpha.
+Reference caption for growth in the reporting window.
+Monthly caption for throughput review.
+Reference caption for quality in the reference period.
+Supplemental note 7 for events.
+Reference caption for output in the reference period.
+Reference caption Q24 for Cedar.
+Non-answer caption for Gambling and Casinos summary C88.
+Quarterly caption for score review.
+Non-answer caption for Maritime summary E78.
+Non-answer caption for Ranching summary M30.
+Non-answer caption for Law Enforcement summary F11.
+Non-answer caption for Philanthropy summary A28.
+Reference caption Q89 for Echo.
+Context line from internal log during the current cycle.
+Non-answer caption for Financial Services summary H66.
+Reference caption Q30 for Nimbus.
+Reference caption U69 for Cedar.
+Reference caption L74 for Atlas.
+Non-answer caption for Paper and Forest Products summary J68.
+Supplemental note 9 for supply.
+Draft caption for access review.
+Reference caption P14 for Alpha.
+Non-answer caption for Public Safety summary W36.
+Reference caption M21 for Jade.
+Supplemental note 10 for volume.
+Context note for Quartz during the reporting window.
+Non-answer caption for Staffing and Recruiting summary H19.
+Reference caption C94 for Vertex.
+Reference caption for margin in the reference period.
+Baseline caption for reach review.
+Supplemental note 5 for margin.
+Non-answer caption for Investment Banking Venture summary P23.
+Reference caption for signal in the reference period.
+Non-answer caption for Capital Markets summary K76.
+Supplemental note 11 for share.
+Context line from source table during the current cycle.
+Reference caption P75 for Maple.
+Non-answer caption for Retail summary V92.
+Reference caption K91 for Summit.
+Internal caption for throughput review.
+Review caption for Performing Arts records.
+Non-answer caption for Import and Export summary J79.
+Reference caption for activity in the planning window.
+Reference caption for supply in the reporting window.
+Supplemental note 8 for flow.
+Non-answer caption for E Learning summary L24.
+Reference caption for quality in the reporting window.
+Non-answer caption for Computer Hardware summary S75.
+Reference caption for response in the weekly summary.
+Context note for Cedar during the daily review.
+Reference caption for volume in the reporting window.
+Context note for Beacon during the monthly review.
+Reference caption for requests in the weekly summary.
+Current caption for capacity review.
+Reference caption V83 for Alpha.
+Supplemental note 6 for signal.
+Context note for Terra during the monthly review.
+Supplemental note 4 for access.
+Context note for Alpha during the daily review.
+Non-answer caption for Telecommunications summary K19.
+Monthly caption for share review.
+Context note for Orion during the reporting window.
+Supplemental note 4 for volume.
+Review caption for Media Production records.
+Supplemental note 7 for supply.
+Reference caption for capacity in the quarterly update.
+Supplemental note 11 for status.
+Context line from sample ledger during the monthly review.
+Non-answer caption for Computer Games summary Q22.
+Context line from audit sheet during the reference period.
+Supplemental note 10 for response.
+Review caption for Capital Markets records.
+Review caption for Mining and Metals records.
+Weekly caption for signal review.
+Supplemental note 10 for score.
+Reference caption V54 for Nimbus.
+Context note for Quartz during the quarterly update.
+Context note for Beacon during the current cycle.
+Non-answer caption for Law Practice summary B97.
+Context note for Cedar during the monthly review.
+Reference caption for flow in the daily review.
+Context note for Jade during the planning window.
+Non-answer caption for Higher Education summary P48.
+Supplemental note 8 for share.
+Non-answer caption for Graphic Design summary U68.
+Review caption for Warehousing records.
+Context note for Delta during the reference period.
+Reference caption S31 for Atlas.
+Context note for Summit during the reporting window.
+Review caption for Textiles records.
+Reference caption for status in the daily review.
+Reference caption P35 for Cedar.
+Supplemental note 11 for signal.
+Reference caption A39 for Delta.
+Reference caption K38 for Orion.
+Routine caption for activity review.
+Reference caption X84 for Cedar.
+Current caption for load review.
+Non-answer caption for Performing Arts summary V44.
+Reference caption N78 for Vertex.
+Context note for Quartz during the planning window.
+Supplemental note 8 for load.
+Review caption for Online Publishing records.
+Supplemental note 3 for growth.
+Supplemental note 6 for growth.
+Supplemental note 9 for access.
+Summary caption for supply review.
+Monthly caption for units review.
+Supplemental note 4 for quality.
+Context note for Willow during the reporting window.
+Non-answer caption for Facilities and Services summary X13.
+Non-answer caption for Restaurants summary J80.
+Review caption for Chemicals records.
+Reference caption P24 for Vertex.
+Reference caption J93 for River.
+Draft caption for supply review.
+Supplemental note 5 for load.
+Monthly caption for balance review.
+Context note for Delta during the monthly review.
+Non-answer caption for Facilities and Services summary S45.
+Reference caption D50 for Terra.
+Reference caption M24 for Nimbus.
+Reference caption X24 for Harbor.
+Review caption for Writing and Editing records.
+Context note for Beacon during the weekly summary.
+Non-answer caption for Semiconductors summary Z41.
+Non-answer caption for Tobacco summary R61.
+Non-answer caption for Hospitality summary U19.
+Reference caption for units review.
+Context line from sample ledger during the quarterly update.
+Reference caption G69 for Willow.
+Reference caption for capacity review.
+Context line from review packet during the monthly review.
+Supplemental note 3 for activity.
+Context note for Nimbus during the current cycle.
+Non-answer caption for Performing Arts summary J78.
+Reference caption for quality in the monthly review.
+Reference caption A30 for Iris.
+Reference caption for response in the daily review.
+Reference caption for units in the monthly review.
+Planning caption for growth review.
+Non-answer caption for Machinery summary U73.
+Context note for Quartz during the reference period.
+Reference caption Y84 for Terra.
+Reference caption U90 for Maple.
+Context note for Orion during the daily review.
+Non-answer caption for Investment Banking Venture summary T32.
+Reference caption H30 for Cedar.
+Non-answer caption for Insurance summary A82.
+Reference caption for events in the reporting window.
+Review caption for Internet records.
+Reference caption for requests in the monthly review.
+Non-answer caption for E Learning summary J42.
+Reference caption M24 for Alpha.
+Context line from admin file during the reporting window.
+Non-answer caption for Banking summary M48.
+Reference caption for volume in the current cycle.
+Reference caption W23 for Orion.
+Context note for Atlas during the current cycle.
+Reference caption B41 for Vertex.
+Non-answer caption for Graphic Design summary T45.
+Planning caption for balance review.
+Context note for Maple during the quarterly update.
+Reference caption for events in the weekly summary.
+Review caption for Publishing records.
+Planning caption for risk review.
+Reference caption for signal in the monthly review.
+Supplemental note 3 for throughput.
+Context note for Echo during the reporting window.
+Reference caption X67 for Iris.
+Reference caption Y96 for Cedar.
+Reference caption L47 for Alpha.
+Context note for Quartz during the current cycle.
+Reference caption R43 for Alpha.
+Reference caption W67 for Vertex.
+Reference caption for trend in the quarterly update.
+Non-answer caption for Consumer Services summary A83.
+Context note for Terra during the planning window.
+Reference caption K52 for Jade.
+Non-answer caption for Computer Hardware summary Q73.
+Reference caption L49 for Orion.
+Review caption for Glass Ceramics and Concrete records.
+Non-answer caption for Hospital and Health Care summary V33.
+Non-answer caption for Computer Hardware summary P34.
+Operating caption for load review.
+Supplemental note 5 for capacity.
+Review caption for Financial Services records.
+Context line from review packet during the planning window.
+Reference caption for score review.
+Reference caption A35 for Willow.
+Non-answer caption for Internet summary U61.
+Reference caption for access in the weekly summary.
+Baseline caption for demand review.
+Non-answer caption for Public Relations summary X56.
+Reference caption for units in the reference period.
+Reference caption N81 for Atlas.
+Reference caption for quality in the weekly summary.
+Supplemental note 9 for share.
+Non-answer caption for Leisure and Travel summary H73.
+Reference caption for margin in the daily review.
+Review caption for Alternative Medicine records.
+Supplemental note 10 for flow.
+Routine caption for throughput review.
+Reference caption D70 for Orion.
+Review caption for Health Wellness and Fitness records.
+Supplemental note 11 for events.
+Reference caption for quality in the planning window.
+Non-answer caption for Shipbuilding summary A18.
+Reference caption X21 for River.
+Reference caption W57 for Echo.
+Reference caption X25 for Nimbus.
+Reference caption for requests in the reference period.
+Reference caption for status in the planning window.
+Supplemental note 9 for signal.
+Context line from admin file during the weekly summary.
+Non-answer caption for Investment Management summary L24.
+Reference caption for growth in the planning window.
+Reference caption Y23 for Iris.
+Non-answer caption for Commercial Real Estate summary Q25.
+Non-answer caption for Education Management summary Z82.
+Context note for Iris during the daily review.
+Reference caption P54 for Harbor.
+Context note for Summit during the weekly summary.
+Context line from planning memo during the reporting window.
+Reference caption Z65 for Harbor.
+Supplemental note 4 for output.
+Non-answer caption for Fine Art summary S62.
+Reference caption N21 for Iris.
+Non-answer caption for Computer Hardware summary U65.
+Supplemental note 11 for balance.
+Routine caption for response review.
+Non-answer caption for Religious Institutions summary K14.
+Reference caption L56 for Beacon.
+Review caption for Staffing and Recruiting records.
+Reference caption B80 for Jade.
+Reference caption U53 for Delta.
+Reference caption G26 for Terra.
+Weekly caption for coverage review.
+Supplemental note 2 for status.
+Non-answer caption for Media Production summary J65.
+Review caption for Law Practice records.
+Reference caption H61 for Iris.
+Reference caption U73 for River.
+Summary caption for signal review.
+Reference caption for capacity in the planning window.
+Supplemental note 3 for units.
+Reference caption for coverage in the planning window.
+Reference caption M22 for Orion.
+Non-answer caption for Oil and Energy summary W13.
+Reference caption A47 for Echo.
+Supplemental note 5 for response.
+Regional caption for score review.
+Non-answer caption for Leisure and Travel summary P31.
+Reference caption Y63 for Echo.
+Non-answer caption for Outsourcing Offshoring summary Y55.
+Non-answer caption for Program Development summary V91.
+Non-answer caption for Judiciary summary T69.
+Supplemental note 6 for quality.
+Reference caption for reach in the current cycle.
+Operating caption for units review.
+Reference caption D84 for Alpha.
+Context note for Cedar during the weekly summary.
+Non-answer caption for Music summary L70.
+Non-answer caption for Environmental Services summary W48.
+Non-answer caption for Hospital and Health Care summary K14.
+Baseline caption for load review.
+Non-answer caption for Furniture summary S80.
+Non-answer caption for Higher Education summary G31.
+Non-answer caption for Music summary B33.
+Context note for Delta during the planning window.
+Review caption for Graphic Design records.
+Non-answer caption for Commercial Real Estate summary T78.
+Reference caption for coverage in the weekly summary.
+Non-answer caption for Graphic Design summary B97.
+Reference caption P63 for Willow.
+Reference caption for share in the current cycle.
+Non-answer caption for Information Services summary U44.
+Reference caption H37 for Harbor.
+Review caption for Program Development records.
+Reference caption for units in the current cycle.
+Review caption for Aviation and Aerospace records.
+Reference caption T91 for Summit.
+Context line from field note during the quarterly update.
+Routine caption for demand review.
+Context note for Echo during the monthly review.
+Reference caption for capacity in the current cycle.
+Non-answer caption for Consumer Services summary G95.
+Non-answer caption for Computer Networking summary E31.
+Reference caption for units in the weekly summary.
+Context note for Alpha during the monthly review.
+Context note for Echo during the daily review.
+Routine caption for trend review.
+Context note for Maple during the monthly review.
+Regional caption for coverage review.
+Non-answer caption for Design summary C89.
+Reference caption D57 for Atlas.
+Non-answer caption for Information Services summary B59.
+Context note for Terra during the reference period.
+Reference caption M84 for Terra.
+Reference caption for capacity in the monthly review.
+Regional caption for balance review.
+Planning caption for demand review.
+Review caption for Political Organization records.
+Reference caption for access review.
+Summary caption for output review.
+Non-answer caption for Facilities and Services summary B84.
+Current caption for response review.
+Supplemental note 5 for index.
+Reference caption X13 for Maple.
+Non-answer caption for Legal Services summary S46.
+Reference caption G17 for Quartz.
+Non-answer caption for Military summary H93.
+Reference caption for throughput in the reference period.
+Non-answer caption for Financial Services summary W87.
+Reference caption E38 for Jade.
+Reference caption W27 for River.
+Non-answer caption for Graphic Design summary H93.
+Supplemental note 7 for coverage.
+Supplemental note 11 for flow.
+Baseline caption for capacity review.
+Review caption for Real Estate records.
+Supplemental note 2 for index.
+Non-answer caption for E Learning summary F18.
+Weekly caption for growth review.
+Supplemental note 8 for output.
+Reference caption U65 for Terra.
+Reference caption for growth review.
+Reference caption C12 for Quartz.
+Non-answer caption for Biotechnology summary M77.
+Context note for Iris during the planning window.
+Reference caption E34 for Harbor.
+Non-answer caption for Renewables and Environment summary E90.
+Reference caption for status in the monthly review.
+Reference caption M62 for Delta.
+Reference caption N15 for Atlas.
+Review caption for Government Administration records.
+Supplemental note 4 for reach.
+Supplemental note 6 for demand.
+Planning caption for output review.
+Planning caption for quality review.
+Context note for Echo during the weekly summary.
+Reference caption A74 for Willow.
+Non-answer caption for Religious Institutions summary U48.
+Monthly caption for activity review.
+Non-answer caption for Legislative Office summary A39.
+Operating caption for requests review.
+Reference caption P17 for Echo.
+Non-answer caption for Leisure and Travel summary X84.
+Non-answer caption for Luxury Goods and Jewelry summary C80.
+Supplemental note 5 for reach.
+Reference caption for pipeline in the quarterly update.
+Supplemental note 4 for capacity.
+Non-answer caption for Food Production summary N74.
+Context note for Vertex during the current cycle.
+Non-answer caption for Publishing summary M21.
+Context line from sample ledger during the weekly summary.
+Non-answer caption for Construction summary U63.
+Non-answer caption for Computer Networking summary R83.
+Reference caption for pipeline in the monthly review.
+Reference caption S92 for Nimbus.
+Context note for Atlas during the planning window.
+Reference caption for demand in the planning window.
+Reference caption for capacity in the daily review.
+Reference caption W51 for Summit.
+Reference caption V92 for Vertex.
+Reference caption Y97 for Beacon.
+Review caption for Fishery records.
+Reference caption D97 for Harbor.
+Quarterly caption for risk review.
+Reference caption N30 for River.
+Supplemental note 9 for flow.
+Supplemental note 6 for access.
+Non-answer caption for Veterinary summary B37.
+Review caption for Legal Services records.
+Non-answer caption for Leisure and Travel summary P32.
+Non-answer caption for Accounting summary V17.
+Reference caption E10 for Terra.
+Non-answer caption for Performing Arts summary N50.
+Reference caption D97 for Maple.
+Supplemental note 2 for margin.
+Non-answer caption for Hospital and Health Care summary W62.
+Planning caption for load review.
+Reference caption for margin in the quarterly update.
+Monthly caption for requests review.
+Non-answer caption for Media Production summary Q92.
+Non-answer caption for Professional Training summary X34.
+Supplemental note 3 for pipeline.
+Review caption for Nanotechnology records.
+Non-answer caption for Wholesale summary Z94.
+Non-answer caption for Wireless summary L78.
+Regional caption for events review.
+Supplemental note 3 for score.
+Reference caption D84 for Harbor.
+Context note for Summit during the reference period.
+Context line from internal log during the quarterly update.
+Non-answer caption for Law Enforcement summary J98.
+Current caption for flow review.
+Context line from planning memo during the quarterly update.
+Current caption for requests review.
+Non-answer caption for Medical Device summary F19.
+Non-answer caption for Construction summary T22.
+Context note for Jade during the monthly review.
+Review caption for Farming records.
+Non-answer caption for Shipbuilding summary R30.
+Reference caption for quality in the current cycle.
+Non-answer caption for Luxury Goods and Jewelry summary J23.
+Draft caption for quality review.
+Supplemental note 10 for demand.
+Review caption for Management Consulting records.
+Summary caption for load review.
+Reference caption C49 for Nimbus.
+Supplemental note 4 for trend.
+Summary caption for growth review.
+Non-answer caption for Furniture summary L29.
+Supplemental note 10 for margin.
+Context note for Terra during the daily review.
+Review caption for International Affairs records.
+Baseline caption for index review.
+Non-answer caption for Recreational summary Y47.
+Supplemental note 3 for signal.
+Supplemental note 9 for trend.
+Monthly caption for risk review.
+Context note for Delta during the current cycle.
+Reference caption H23 for River.
+Non-answer caption for Human Resources summary Z48.
+Non-answer caption for Events Services summary D72.
+Supplemental note 9 for throughput.
+Supplemental note 8 for margin.
+Reference caption for index in the quarterly update.
+Current caption for throughput review.
+Reference caption L55 for Nimbus.
+Non-answer caption for Education Management summary Z44.
+Review caption for Philanthropy records.
+Reference caption for signal in the current cycle.
+Operating caption for reach review.
+Non-answer caption for Law Practice summary K55.
+Reference caption S96 for Atlas.
+Current caption for volume review.
+Reference caption for trend in the current cycle.
+Reference caption L44 for Orion.
+Review caption for Commercial Real Estate records.
+Supplemental note 2 for demand.
+Supplemental note 9 for balance.
+Reference caption R98 for Harbor.
+Reference caption G76 for Orion.
+Non-answer caption for Automotive summary Y61.
+Operating caption for index review.
+Reference caption G59 for Beacon.
+Reference caption U62 for Delta.
+Non-answer caption for Cosmetics summary F10.
+Supplemental note 7 for capacity.
+Context note for Orion during the quarterly update.
+Reference caption for risk in the daily review.
+Reference caption C24 for Orion.
+Non-answer caption for Arts and Crafts summary V52.
+Supplemental note 9 for activity.
+Weekly caption for supply review.
+Reference caption for units in the quarterly update.
+Non-answer caption for Performing Arts summary D61.
+Review caption for Public Policy records.
+Reference caption M10 for Maple.
+Review caption for E Learning records.
+Non-answer caption for Apparel and Fashion summary X55.
+Summary caption for activity review.
+Reference caption for capacity in the reporting window.
+Summary caption for margin review.
+Non-answer caption for Professional Training summary Y50.
+Context note for Delta during the daily review.
+Non-answer caption for Packaging and Containers summary B80.
+Internal caption for access review.
+Reference caption for throughput in the planning window.
+Review caption for Animation records.
+Supplemental note 8 for risk.
+Reference caption for risk in the planning window.
+Monthly caption for index review.
+Weekly caption for demand review.
+Current caption for pipeline review.
+Non-answer caption for Internet summary U11.
+Reference caption B76 for River.
+Supplemental note 5 for supply.
+Reference caption X52 for Terra.
+Supplemental note 2 for trend.
+Review caption for Hospitality records.
+Reference caption S67 for Alpha.
+Non-answer caption for Venture Capital summary N21.
+Current caption for growth review.
+Review caption for Biotechnology records.
+Context note for Atlas during the weekly summary.
+Reference caption for status in the quarterly update.
+Reference caption J81 for Echo.
+Supplemental note 11 for output.
+Reference caption G12 for Nimbus.
+Reference caption P69 for Summit.
+Reference caption D82 for Orion.
+Summary caption for capacity review.
+Non-answer caption for Sports summary Y37.
+Non-answer caption for Judiciary summary C66.
+Current caption for score review.
+Non-answer caption for Airlines Aviation summary Y94.
+Non-answer caption for Government Administration summary Z12.
+Supplemental note 9 for events.
+Reference caption for demand in the quarterly update.
+Non-answer caption for Gambling and Casinos summary F29.
+Reference caption for supply in the planning window.
+Non-answer caption for Music summary H83.
+Operating caption for signal review.
+Reference caption for requests in the current cycle.
+Reference caption Q33 for Terra.
+Supplemental note 8 for throughput.
+Non-answer caption for Shipbuilding summary S74.
+Non-answer caption for Sporting Goods summary E51.
+Non-answer caption for Shipbuilding summary F91.
+Regional caption for signal review.
+Reference caption L18 for Cedar.
+Weekly caption for flow review.
+Non-answer caption for Higher Education summary P17.
+Reference caption G44 for Quartz.
+Context note for Atlas during the reporting window.
+Context note for Beacon during the daily review.
+Supplemental note 6 for requests.
+Reference caption S22 for Echo.
+Non-answer caption for Real Estate summary Z38.
+Reference caption for share in the weekly summary.
+Summary caption for requests review.
+Context line from source table during the reporting window.
+Reference caption A62 for Terra.
+Context note for Nimbus during the reporting window.
+Reference caption for throughput in the daily review.
+Supplemental note 3 for share.
+Context note for Alpha during the current cycle.
+Reference caption B55 for Iris.
+Operating caption for volume review.
+Reference caption Y59 for Vertex.
+Reference caption for score in the weekly summary.
+Context note for Orion during the weekly summary.
+Non-answer caption for Package Freight Delivery summary S93.
+Reference caption L37 for Alpha.
+Reference caption J10 for Atlas.
+Non-answer caption for Military summary N97.
+Reference caption for status in the reference period.
+Reference caption Z32 for Nimbus.
+Routine caption for units review.
+Non-answer caption for E Learning summary R85.
+Non-answer caption for Wine and Spirits summary J70.
+Context note for Jade during the daily review.
+Review caption for Professional Training records.
+Reference caption D47 for Willow.
+Non-answer caption for Commercial Real Estate summary T67.
+Monthly caption for signal review.
+Context note for Summit during the monthly review.
+Internal caption for flow review.
+Reference caption for quality review.
+Reference caption for output review.
+Reference caption Y58 for Echo.
+Reference caption T50 for Terra.
+Supplemental note 7 for access.
+Review caption for Medical Device records.
+Non-answer caption for Luxury Goods and Jewelry summary K78.
+Supplemental note 10 for share.
+Non-answer caption for Outsourcing Offshoring summary S72.
+Reference caption X83 for Quartz.
+Non-answer caption for Online Publishing summary B45.
+Internal caption for risk review.
+Reference caption D23 for Harbor.
+Supplemental note 7 for response.
+Reference caption U56 for Nimbus.
+Context note for Terra during the reporting window.
+Non-answer caption for Writing and Editing summary L66.
+Reference caption U54 for Summit.
+Supplemental note 2 for units.
+Non-answer caption for Alternative Medicine summary N37.
+Non-answer caption for Consumer Electronics summary X23.
+Context note for Nimbus during the planning window.
+Internal caption for volume review.
+Non-answer caption for Cosmetics summary W32.
+Reference caption D14 for Delta.
+Reference caption N41 for Orion.
+Operating caption for pipeline review.
+Reference caption V46 for Delta.
+Reference caption for access in the daily review.
+Reference caption for supply in the weekly summary.
+Non-answer caption for Leisure and Travel summary Z43.
+Reference caption L73 for Harbor.
+Routine caption for share review.
+Supplemental note 3 for balance.
+Reference caption K48 for Jade.
+Non-answer caption for Nanotechnology summary S48.
+Operating caption for share review.
+Non-answer caption for Legal Services summary T18.
+Current caption for coverage review.
+Reference caption G63 for Echo.
+Non-answer caption for Packaging and Containers summary T59.
+Context note for Vertex during the quarterly update.
+Reference caption Y50 for Summit.
+Reference caption L71 for Iris.
+Reference caption for coverage in the monthly review.
+Reference caption for flow in the weekly summary.
+Supplemental note 8 for capacity.
+Reference caption D60 for Cedar.
+Reference caption for growth in the current cycle.
+Reference caption B78 for Atlas.
+Reference caption for score in the quarterly update.
+Reference caption for coverage in the quarterly update.
+Supplemental note 2 for throughput.
+Non-answer caption for Media Production summary F59.
+Summary caption for reach review.
+Review caption for Computer Networking records.
+Non-answer caption for Health Wellness and Fitness summary H28.
+Quarterly caption for quality review.
+Non-answer caption for Investment Banking Venture summary X35.
+Reference caption H43 for Iris.
+Reference caption Q88 for Terra.
+Non-answer caption for Financial Services summary C44.
+Reference caption C31 for Echo.
+Reference caption T58 for Jade.
+Non-answer caption for International Affairs summary K37.
+Non-answer caption for Public Policy summary D69.
+Non-answer caption for Legal Services summary H36.
+Supplemental note 7 for demand.
+Reference caption Q26 for Nimbus.
+Supplemental note 7 for balance.
+Internal caption for output review.
+Internal caption for balance review.
+Non-answer caption for Logistics and Supply Chain summary N57.
+Non-answer caption for Translation and Localization summary V17.
+Review caption for Venture Capital records.
+Non-answer caption for Food Production summary G17.
+Reference caption for risk in the quarterly update.
+Non-answer caption for Telecommunications summary Z81.
+Non-answer caption for Professional Training summary S86.
+Supplemental note 4 for balance.
+Reference caption H83 for Nimbus.
+Reference caption R17 for Cedar.
+Non-answer caption for Broadcast Media summary Y26.
+Non-answer caption for Shipbuilding summary F40.
+Reference caption Y14 for Harbor.
+Context note for Harbor during the quarterly update.
+Reference caption for signal in the reporting window.
+Reference caption N33 for Orion.
+Reference caption Q82 for Orion.
+Internal caption for events review.
+Supplemental note 10 for risk.
+Non-answer caption for Hospitality summary J50.
+Non-answer caption for Wholesale summary U90.
+Context note for Nimbus during the weekly summary.
+Reference caption C96 for Beacon.
+Reference caption F25 for Terra.
+Reference caption for activity in the daily review.
+Non-answer caption for Capital Markets summary Y37.
+Context note for Cedar during the reference period.
+Baseline caption for output review.
+Review caption for Higher Education records.
+Non-answer caption for Health Wellness and Fitness summary B80.
+Supplemental note 10 for throughput.
+Current caption for risk review.
+Non-answer caption for Semiconductors summary F17.
+Reference caption P13 for Delta.
+Non-answer caption for Law Practice summary W13.
+Context note for Quartz during the weekly summary.
+Reference caption for pipeline in the current cycle.
+Reference caption for risk review.
+Reference caption G30 for Alpha.
+Non-answer caption for Think Tanks summary T35.
+Context note for Cedar during the planning window.
+Non-answer caption for E Learning summary P14.
+Reference caption for index in the weekly summary.
+Reference caption M46 for Terra.
+Reference caption for activity in the monthly review.
+Supplemental note 6 for volume.
+Non-answer caption for Fundraising summary Q65.
+Reference caption A72 for Atlas.
+Reference caption N31 for Cedar.
+Baseline caption for score review.
+Supplemental note 2 for flow.
+Planning caption for events review.
+Supplemental note 8 for coverage.
+Context note for Harbor during the monthly review.
+Non-answer caption for Think Tanks summary Q32.
+Reference caption G96 for Summit.
+Reference caption T77 for Nimbus.
+Reference caption A27 for Beacon.
+Operating caption for score review.
+Summary caption for quality review.
+Supplemental note 6 for balance.
+Review caption for Music records.
+Non-answer caption for Commercial Real Estate summary R81.
+Reference caption D84 for Terra.
+Monthly caption for access review.
+Reference caption Y24 for Jade.
+Non-answer caption for Investment Banking Venture summary J19.
+Non-answer caption for Motion Pictures and Film summary C56.
+Reference caption Q98 for Terra.
+Non-answer caption for Motion Pictures and Film summary B14.
+Supplemental note 2 for output.
+Non-answer caption for Environmental Services summary G26.
+Reference caption E63 for Harbor.
+Non-answer caption for Information Services summary E13.
+Non-answer caption for Government Relations summary Y13.
+Reference caption for flow in the reporting window.
+Supplemental note 3 for demand.
+Supplemental note 4 for risk.
+Reference caption for throughput in the quarterly update.
+Supplemental note 7 for volume.
+Non-answer caption for Glass Ceramics and Concrete summary S72.
+Non-answer caption for Computer Hardware summary L82.
+Reference caption V37 for Atlas.
+Reference caption N18 for Iris.
+Reference caption for output in the planning window.
+Supplemental note 4 for throughput.
+Supplemental note 7 for margin.
+Reference caption C45 for Orion.
+Reference caption T22 for Terra.
+Reference caption J38 for Willow.
+Reference caption E52 for Harbor.
+Review caption for Education Management records.
+Non-answer caption for Program Development summary A97.
+Non-answer caption for Professional Training summary Z98.
+Reference caption E68 for Echo.
+Reference caption N54 for Beacon.
+Supplemental note 9 for pipeline.
+Non-answer caption for International Affairs summary U43.
+Context note for Orion during the monthly review.
+Non-answer caption for Computer Games summary S80.
+Reference caption C56 for Delta.
+Reference caption N95 for Beacon.
+Quarterly caption for demand review.
+Planning caption for signal review.
+Reference caption F98 for Atlas.
+Non-answer caption for Farming summary W92.
+Supplemental note 3 for risk.
+Reference caption S63 for Vertex.
+Non-answer caption for Computer Networking summary Q33.
+Non-answer caption for Sports summary H35.
+Supplemental note 11 for reach.
+Reference caption for requests in the daily review.
+Reference caption S82 for Cedar.
+Reference caption Y15 for Willow.
+Non-answer caption for Events Services summary N71.
+Supplemental note 10 for activity.
+Reference caption W83 for Cedar.
+Quarterly caption for output review.
+Reference caption Z68 for Delta.
+Non-answer caption for Banking summary W75.
+Non-answer caption for Machinery summary J70.
+Reference caption F88 for Cedar.
+Supplemental note 5 for quality.
+Monthly caption for trend review.
+Draft caption for score review.
+Non-answer caption for Hospital and Health Care summary T32.
+Review caption for Newspapers records.
+Review caption for Investment Banking Venture records.
+Reference caption for requests in the quarterly update.
+Current caption for quality review.
+Monthly caption for supply review.
+Non-answer caption for Outsourcing Offshoring summary L15.
+Non-answer caption for Motion Pictures and Film summary B50.
+Context note for Iris during the monthly review.
+Non-answer caption for Luxury Goods and Jewelry summary G83.
+Context note for Orion during the current cycle.
+Non-answer caption for Venture Capital summary Z61.
+Reference caption for status review.
+Review caption for Public Safety records.
+Reference caption N30 for Maple.
+Non-answer caption for Management Consulting summary C43.
+Reference caption U59 for Terra.
+Non-answer caption for Construction summary T78.
+Reference caption A48 for Willow.
+Regional caption for demand review.
+Reference caption U49 for Summit.
+Non-answer caption for Market Research summary A31.
+Non-answer caption for Biotechnology summary V21.
+Reference caption Q29 for Terra.
+Supplemental note 9 for risk.
+Reference caption N84 for Alpha.
+Reference caption K17 for Orion.
+Reference caption X50 for Orion.
+Reference caption for flow in the current cycle.
+Reference caption M74 for Maple.
+Reference caption K78 for Atlas.
+Review caption for Computer Hardware records.
+Reference caption J62 for Nimbus.
+Routine caption for volume review.
+Monthly caption for growth review.
+Regional caption for reach review.
+Reference caption for demand in the weekly summary.
+Reference caption C27 for Vertex.
+Baseline caption for requests review.
+Reference caption W74 for Alpha.
+Reference caption E77 for Harbor.
+Non-answer caption for Furniture summary C73.
+Non-answer caption for Mining and Metals summary D80.
+Reference caption G35 for Atlas.
+Reference caption for score in the reference period.
+Review caption for Arts and Crafts records.
+Review caption for Ranching records.
+Non-answer caption for Military summary Q55.
+Reference caption for margin in the monthly review.
+Non-answer caption for Media Production summary T65.
+Non-answer caption for Professional Training summary L89.
+Reference caption R35 for Nimbus.
+Context note for Jade during the quarterly update.
+Regional caption for requests review.
+Reference caption R31 for Jade.
+Non-answer caption for Professional Training summary T78.
+Reference caption L66 for Harbor.
+Reference caption N16 for Harbor.
+Reference caption for share in the monthly review.
+Reference caption X44 for Delta.
+Supplemental note 11 for throughput.
+Non-answer caption for Retail summary W32.
+Non-answer caption for Fine Art summary H35.
+Non-answer caption for Newspapers summary M18.
+Non-answer caption for Insurance summary R67.
+Reference caption for load in the planning window.
+Reference caption for requests in the planning window.
+Reference caption V30 for Delta.
+Reference caption M80 for Iris.
+Supplemental note 2 for signal.
+Reference caption J56 for Beacon.
+Reference caption for output in the weekly summary.
+Non-answer caption for Recreational summary F57.
+Non-answer caption for Accounting summary S75.
+Supplemental note 10 for index.
+Reference caption K72 for Harbor.
+Non-answer caption for Government Administration summary U75.
+Review caption for Law Enforcement records.
+Non-answer caption for Marketing and Advertising summary R17.
+Reference caption for risk in the reporting window.
+Non-answer caption for Apparel and Fashion summary X30.
+Supplemental note 4 for pipeline.
+Non-answer caption for Government Administration summary C29.
+Reference caption Y56 for Iris.
+Reference caption for output in the monthly review.
+Reference caption for events review.
+Reference caption R37 for Summit.
+Review caption for Sports records.
+Non-answer caption for Gambling and Casinos summary Z74.
+Reference caption E49 for River.
+Non-answer caption for Writing and Editing summary W21.
+Reference caption V18 for Beacon.
+Non-answer caption for Railroad Manufacture summary J78.
+Non-answer caption for Law Practice summary L89.
+Quarterly caption for coverage review.
+Draft caption for risk review.
+Supplemental note 6 for index.
+Regional caption for output review.
+Non-answer caption for Mental Health Care summary J83.
+Non-answer caption for Oil and Energy summary J22.
+Non-answer caption for Political Organization summary G74.
+Draft caption for requests review.
+Reference caption C81 for Summit.
+Reference caption V82 for Atlas.
+Regional caption for quality review.
+Reference caption P84 for Willow.
+Context note for Iris during the reporting window.
+Reference caption S94 for Atlas.
+Non-answer caption for Retail summary F74.
+Weekly caption for trend review.
+Internal caption for units review.
+Reference caption H15 for Jade.
+Reference caption for index in the planning window.
+Quarterly caption for signal review.
+Reference caption G13 for Willow.
+Non-answer caption for Animation summary Y34.
+Non-answer caption for Performing Arts summary Z23.
+Non-answer caption for Veterinary summary C26.
+Quarterly caption for share review.
+Non-answer caption for Tobacco summary P11.
+Reference caption T50 for Quartz.
+Reference caption F40 for Iris.
+Review caption for Leisure and Travel records.
+Non-answer caption for Market Research summary L74.
+Non-answer caption for Commercial Real Estate summary B32.
+Reference caption for supply in the quarterly update.
+Supplemental note 9 for margin.
+Reference caption H38 for Nimbus.
+Planning caption for requests review.
+Reference caption L62 for Terra.
+Reference caption M83 for Willow.
+Non-answer caption for Information Services summary J54.
+Supplemental note 4 for signal.
+Non-answer caption for Human Resources summary V40.
+Non-answer caption for Semiconductors summary M51.
+Reference caption X35 for Alpha.
+Reference caption Q89 for Delta.
+Reference caption W30 for Echo.
+Reference caption Q48 for Summit.
+Operating caption for capacity review.
+Supplemental note 2 for pipeline.
+Non-answer caption for Health Wellness and Fitness summary J66.
+Context note for River during the monthly review.
+Non-answer caption for Chemicals summary Z88.
+Reference caption P79 for Delta.
+Reference caption R32 for Echo.
+Review caption for Translation and Localization records.
+Monthly caption for coverage review.
+Non-answer caption for Internet summary Y35.
+Supplemental note 2 for score.
+Non-answer caption for Legislative Office summary W10.
+Non-answer caption for Plastics summary K76.
+Reference caption C74 for Willow.
+Non-answer caption for Leisure and Travel summary K80.
+Non-answer caption for Medical Practice summary G83.
+Supplemental note 11 for volume.
+Non-answer caption for Semiconductors summary S87.
+Reference caption for response in the monthly review.
+Non-answer caption for Tobacco summary U70.
+Supplemental note 7 for reach.
+Reference caption Y92 for Summit.
+Reference caption for growth in the weekly summary.
+Supplemental note 10 for growth.
+Reference caption for activity in the current cycle.
+Reference caption J17 for River.
+Reference caption D24 for Beacon.
+Non-answer caption for Mental Health Care summary J75.
+Non-answer caption for Government Relations summary X11.
+Routine caption for access review.
+Reference caption V41 for Orion.
+Reference caption U46 for Cedar.
+Summary caption for units review.
+Reference caption V51 for Quartz.
+Reference caption for margin in the reporting window.
+Reference caption L58 for Vertex.
+Non-answer caption for Luxury Goods and Jewelry summary M11.
+Reference caption B63 for Summit.
+Supplemental note 8 for quality.
+Non-answer caption for Financial Services summary Y51.
+Supplemental note 7 for activity.
+Reference caption G44 for Cedar.
+Reference caption Q78 for Nimbus.
+Reference caption W98 for Delta.
+Reference caption B30 for Nimbus.
+Supplemental note 8 for score.
+Draft caption for share review.
+Reference caption V12 for Terra.
+Reference caption E36 for Maple.
+Non-answer caption for Airlines Aviation summary V89.
+Non-answer caption for Wine and Spirits summary L32.
+Supplemental note 8 for events.
+Reference caption E32 for Delta.
+Non-answer caption for Arts and Crafts summary V25.
+Reference caption S61 for Harbor.
+Reference caption Z42 for Harbor.
+Supplemental note 8 for response.
+Supplemental note 8 for balance.
+Non-answer caption for Farming summary D75.
+Non-answer caption for Venture Capital summary Q50.
+Reference caption J30 for Orion.
+Supplemental note 11 for requests.
+Quarterly caption for margin review.
+Non-answer caption for Wholesale summary U49.
+Reference caption H33 for Cedar.
+Internal caption for quality review.
+Non-answer caption for Internet summary L80.
+Reference caption for throughput in the reporting window.
+Current caption for index review.
+Supplemental note 7 for load.
+Reference caption T20 for Maple.
+Reference caption for throughput in the monthly review.
+Non-answer caption for Entertainment summary P76.
+Context note for Vertex during the weekly summary.
+Supplemental note 2 for requests.
+Review caption for Railroad Manufacture records.
+Reference caption A68 for Orion.
+Reference caption J64 for Terra.
+Supplemental note 3 for index.
+Reference caption for pipeline in the daily review.
+Non-answer caption for Industrial Automation summary S23.
+Non-answer caption for Package Freight Delivery summary U93.
+Reference caption N30 for Terra.
+Non-answer caption for Recreational summary U32.
+Reference caption X40 for Summit.
+Non-answer caption for Investment Banking Venture summary T47.
+Non-answer caption for Textiles summary X85.
+Non-answer caption for Hospital and Health Care summary K78.
+Reference caption W73 for Willow.
+Reference caption D16 for Orion.
+Non-answer caption for Leisure and Travel summary S33.
+Supplemental note 5 for risk.
+Regional caption for risk review.
+Quarterly caption for growth review.
+Supplemental note 9 for index.
+Reference caption Q85 for Delta.
+Reference caption N38 for Nimbus.
+Reference caption X45 for Quartz.
+Reference caption L63 for Nimbus.
+Supplemental note 4 for score.
+Non-answer caption for Renewables and Environment summary R53.
+Internal caption for growth review.
+Reference caption G69 for Iris.
+Review caption for Cosmetics records.
+Reference caption E92 for Harbor.
+Non-answer caption for Environmental Services summary L80.
+Reference caption Z97 for Nimbus.
+Reference caption D97 for Iris.
+Internal caption for score review.
+Non-answer caption for Building Materials summary W75.
+Non-answer caption for Consumer Goods summary M12.
+Non-answer caption for Textiles summary U97.
+Reference caption W17 for Summit.
+Reference caption C78 for Echo.
+Reference caption D93 for Quartz.
+Reference caption K15 for River.
+Reference caption for demand review.
+Reference caption C60 for River.
+Non-answer caption for Judiciary summary C11.
+Reference caption B87 for Harbor.
+Non-answer caption for Health Wellness and Fitness summary B44.
+Reference caption A30 for River.
+Review caption for Motion Pictures and Film records.
+Non-answer caption for Online Publishing summary H87.
+Reference caption J39 for Summit.
+Reference caption U30 for Delta.
+Non-answer caption for Glass Ceramics and Concrete summary C22.
+Reference caption K22 for Summit.
+Non-answer caption for Consumer Services summary K33.
+Non-answer caption for Graphic Design summary Q88.
+Reference caption S21 for Atlas.
+Non-answer caption for Public Relations summary E24.
+Non-answer caption for Higher Education summary X14.
+Non-answer caption for Media Production summary C92.
+Non-answer caption for Public Policy summary B18.
+Reference caption R44 for Cedar.
+Non-answer caption for Consumer Goods summary F25.
+Non-answer caption for Automotive summary D33.
+Weekly caption for output review.
+Supplemental note 10 for signal.
+Reference caption W13 for Vertex.
+Non-answer caption for Retail summary U81.
+Reference caption G50 for Harbor.
+Supplemental note 8 for volume.
+Non-answer caption for Oil and Energy summary Y47.
+Reference caption G32 for Beacon.
+Reference caption B37 for River.
+Non-answer caption for Marketing and Advertising summary P15.
+Reference caption S53 for Iris.
+Reference caption K81 for Beacon.
+Reference caption G87 for Orion.
+Reference caption H74 for Cedar.
+Current caption for demand review.
+Reference caption N24 for Atlas.
+Reference caption for response review.
+Supplemental note 8 for index.
+Reference caption H44 for Summit.
+Reference caption K81 for Echo.
+Reference caption for share in the reporting window.
+Reference caption F20 for Jade.
+Reference caption V78 for Quartz.
+Supplemental note 5 for status.
+Supplemental note 7 for index.
+Quarterly caption for supply review.
+Reference caption M97 for Echo.
+Non-answer caption for Defense and Space summary T29.
+Reference caption E79 for Nimbus.
+Non-answer caption for Religious Institutions summary V31.
+Reference caption A52 for Nimbus.
+Review caption for Mental Health Care records.
+Reference caption H74 for Nimbus.
+Non-answer caption for Health Wellness and Fitness summary V98.
+Reference caption X74 for Delta.
+Non-answer caption for Fine Art summary F79.
+Non-answer caption for Animation summary Q78.
+Non-answer caption for Management Consulting summary T15.
+Reference caption K81 for Alpha.
+Reference caption S88 for Jade.
+Reference caption T64 for Vertex.
+Supplemental note 3 for capacity.
+Non-answer caption for Shipbuilding summary E70.
+Supplemental note 6 for trend.
+Reference caption H79 for Nimbus.
+Reference caption for score in the daily review.
+Reference caption X53 for River.
+Reference caption W80 for River.
+Planning caption for margin review.
+Reference caption B59 for Iris.
+Non-answer caption for Real Estate summary W35.
+Reference caption X84 for Nimbus.
+Review caption for Veterinary records.
+Non-answer caption for Pharmaceuticals summary V45.
+Reference caption H50 for Nimbus.
+Routine caption for quality review.
+Routine caption for balance review.
+Reference caption for access in the current cycle.
+Context note for Alpha during the planning window.
+Reference caption S50 for Maple.
+Non-answer caption for Medical Practice summary T26.
+Reference caption A96 for Harbor.
+Reference caption for access in the quarterly update.
+Supplemental note 6 for risk.
+Reference caption A98 for Maple.
+Reference caption H35 for Delta.
+Reference caption for pipeline in the planning window.
+Non-answer caption for Packaging and Containers summary N51.
+Non-answer caption for Food Production summary X14.
+Operating caption for margin review.
+Reference caption Y55 for Quartz.
+Baseline caption for signal review.
+Reference caption V92 for Alpha.
+Reference caption V68 for Beacon.
+Non-answer caption for Military summary E43.
+Non-answer caption for Tobacco summary W89.
+Reference caption H21 for Delta.
+Reference caption C40 for Alpha.
+Non-answer caption for Philanthropy summary F83.
+Reference caption for output in the reporting window.
+Context note for Willow during the weekly summary.
+Supplemental note 5 for demand.
+Reference caption K77 for Quartz.
+Non-answer caption for Broadcast Media summary T74.
+Reference caption Q15 for River.
+Reference caption E89 for Maple.
+Non-answer caption for Staffing and Recruiting summary D89.
+Supplemental note 6 for output.
+Reference caption J95 for River.
+Weekly caption for response review.
+Non-answer caption for Public Policy summary D47.
+Regional caption for margin review.
+Non-answer caption for E Learning summary T57.
+Non-answer caption for Cosmetics summary F44.
+Non-answer caption for Telecommunications summary G18.
+Regional caption for supply review.
+Non-answer caption for Animation summary M69.
+Non-answer caption for Investment Management summary K54.
+Reference caption A73 for Beacon.
+Non-answer caption for Public Policy summary Y51.
+Non-answer caption for Furniture summary G97.
+Non-answer caption for Luxury Goods and Jewelry summary Z47.
+Supplemental note 2 for volume.
+Reference caption U57 for Atlas.
+Non-answer caption for Judiciary summary P33.
+Context note for Maple during the reporting window.
+Reference caption J53 for Quartz.
+Non-answer caption for Building Materials summary H56.
+Non-answer caption for Government Administration summary R72.
+Non-answer caption for Paper and Forest Products summary T76.
+Reference caption R87 for Delta.
+Reference caption W16 for Terra.
+Reference caption E53 for Jade.
+Non-answer caption for Sporting Goods summary K36.
+Reference caption J47 for Jade.
+Supplemental note 6 for activity.
+Non-answer caption for Government Relations summary U77.
+Non-answer caption for Program Development summary V17.
+Supplemental note 11 for coverage.
+Reference caption Y69 for Maple.
+Non-answer caption for Translation and Localization summary R31.
+Reference caption X12 for Willow.
+Reference caption for index in the reference period.
+Reference caption for balance in the quarterly update.
+Supplemental note 2 for reach.
+Reference caption H86 for Willow.
+Routine caption for output review.
+Current caption for output review.
+Non-answer caption for Medical Device summary J10.
+Reference caption X69 for Willow.
+Reference caption U41 for Atlas.
+Non-answer caption for Museums and Institutions summary M95.
+Reference caption N55 for Vertex.
+Reference caption L32 for Willow.
+Non-answer caption for Fine Art summary J95.
+Reference caption B44 for Atlas.
+Weekly caption for pipeline review.
+Routine caption for coverage review.
+Non-answer caption for Luxury Goods and Jewelry summary V35.
+Supplemental note 7 for throughput.
+Reference caption H32 for Orion.
+Non-answer caption for Civil Engineering summary G61.
+Non-answer caption for Paper and Forest Products summary N76.
+Reference caption for throughput in the current cycle.
+Quarterly caption for status review.
+Non-answer caption for Program Development summary X41.
+Non-answer caption for Wireless summary K24.
+Reference caption X48 for Alpha.
+Non-answer caption for Political Organization summary N69.
+Reference caption K61 for Terra.
+Operating caption for flow review.
+Non-answer caption for Renewables and Environment summary W20.
+Reference caption for status in the weekly summary.
+Non-answer caption for Photography summary V47.
+Quarterly caption for events review.
+Non-answer caption for Hospitality summary C29.
+Non-answer caption for Arts and Crafts summary G73.
+Reference caption for balance in the planning window.
+Context note for Summit during the quarterly update.
+Internal caption for capacity review.
+Reference caption X34 for Vertex.
+Reference caption B97 for Nimbus.
+Baseline caption for response review.
+Reference caption K18 for Jade.
+Non-answer caption for Animation summary E40.
+Reference caption for flow in the monthly review.
+Current caption for margin review.
+Reference caption D40 for Terra.
+Reference caption Q41 for Iris.
+Non-answer caption for Mental Health Care summary J63.
+Non-answer caption for Translation and Localization summary Y60.
+Reference caption Z79 for Summit.
+Reference caption Y17 for Maple.
+Non-answer caption for Wireless summary T73.
+Reference caption S98 for Orion.
+Non-answer caption for Mining and Metals summary V11.
+Non-answer caption for Architecture and Planning summary R27.
+Reference caption for signal in the weekly summary.
+Reference caption X21 for Harbor.
+Non-answer caption for Airlines Aviation summary W40.
+Non-answer caption for Ranching summary N85.
+Context note for River during the reporting window.
+Non-answer caption for Dairy summary R57.
+Non-answer caption for Fine Art summary G43.
+Non-answer caption for Program Development summary U98.
+Reference caption Z73 for Jade.
+Non-answer caption for Restaurants summary E12.
+Reference caption M75 for Echo.
+Non-answer caption for Consumer Electronics summary T67.
+Baseline caption for units review.
+Reference caption Y54 for Maple.
+Reference caption T61 for Terra.
+Non-answer caption for Computer Hardware summary N75.
+Context note for Willow during the reference period.
+Planning caption for response review.
+Summary caption for risk review.
+Non-answer caption for Fundraising summary F80.
+Non-answer caption for Music summary S38.
+Reference caption for pipeline in the reference period.
+Supplemental note 9 for status.
+Non-answer caption for Mining and Metals summary C12.
+Reference caption E56 for Echo.
+Reference caption Z58 for Echo.
+Non-answer caption for Aviation and Aerospace summary X27.
+Reference caption E56 for Terra.
+Reference caption A60 for Alpha.
+Reference caption L78 for Nimbus.
+Non-answer caption for Package Freight Delivery summary A54.
+Supplemental note 10 for reach.
+Reference caption H48 for Terra.
+Reference caption U87 for River.
+Reference caption E71 for Willow.
+Non-answer caption for Events Services summary Y67.
+Supplemental note 10 for load.
+Non-answer caption for Architecture and Planning summary M82.
+Non-answer caption for Entertainment summary T69.
+Quarterly caption for reach review.
+Reference caption M79 for Harbor.
+Reference caption K41 for Delta.
+Context note for Iris during the weekly summary.
+Reference caption P50 for Iris.
+Non-answer caption for Recreational summary K17.
+Reference caption J88 for Quartz.
+Reference caption B12 for Vertex.
+Non-answer caption for Environmental Services summary B64.
+Reference caption M66 for Beacon.
+Reference caption for signal in the daily review.
+Reference caption F52 for Jade.
+Reference caption F25 for Quartz.
+Reference caption Z78 for Alpha.
+Supplemental note 11 for pipeline.
+Reference caption for load in the monthly review.
+Regional caption for units review.
+Reference caption Z92 for Maple.
+Reference caption X90 for Delta.
+Non-answer caption for Printing summary G88.
+Reference caption B79 for Maple.
+Non-answer caption for Legal Services summary E23.
+Reference caption L67 for Quartz.
+Non-answer caption for Airlines Aviation summary Q50.
+Supplemental note 3 for reach.
+Reference caption F58 for Beacon.
+Non-answer caption for Semiconductors summary U52.
+Non-answer caption for Staffing and Recruiting summary F34.
+Non-answer caption for Hospital and Health Care summary D26.
+Reference caption P95 for Terra.
+Planning caption for activity review.
+Current caption for status review.
+Reference caption Y22 for Atlas.
+Reference caption T60 for Vertex.
+Supplemental note 7 for units.
+Non-answer caption for Music summary S93.
+Non-answer caption for Semiconductors summary D10.
+Non-answer caption for Computer Networking summary W46.
+Reference caption L15 for Jade.
+Supplemental note 8 for trend.
+Reference caption V71 for River.
+Reference caption E67 for Terra.
+Reference caption C57 for Willow.
+Context note for Maple during the daily review.
+Non-answer caption for Recreational summary X13.
+Reference caption T39 for Echo.
+Non-answer caption for Legislative Office summary Q84.
+Non-answer caption for Public Policy summary J87.
+Reference caption T59 for Jade.
+Non-answer caption for Food and Beverages summary D82.
+Internal caption for pipeline review.
+Non-answer caption for Oil and Energy summary M84.
+Reference caption B46 for Beacon.
+Reference caption K52 for Echo.
+Non-answer caption for Veterinary summary Q68.
+Weekly caption for units review.
+Non-answer caption for Maritime summary Q26.
+Reference caption E71 for Nimbus.
+Reference caption V39 for Orion.
+Reference caption F42 for Iris.
+Reference caption L10 for Summit.
+Reference caption for load review.
+Reference caption N49 for Nimbus.
+Non-answer caption for Investment Management summary M51.
+Reference caption W44 for Atlas.
+Non-answer caption for Photography summary R45.
+Reference caption B11 for Iris.
+Non-answer caption for Writing and Editing summary X61.
+Reference caption Z80 for Terra.
+Weekly caption for requests review.
+Reference caption V41 for Alpha.
+Reference caption M54 for Iris.
+Regional caption for pipeline review.
+Supplemental note 11 for supply.
+Non-answer caption for Recreational summary D66.
+Reference caption G18 for Echo.
+Non-answer caption for Legislative Office summary L81.
+Non-answer caption for Glass Ceramics and Concrete summary F92.
+Quarterly caption for throughput review.
+Summary caption for throughput review.
+Supplemental note 10 for events.
+Reference caption E33 for Alpha.
+Non-answer caption for Plastics summary H34.
+Reference caption E87 for Alpha.
+Non-answer caption for Research summary E89.
+Reference caption G13 for Alpha.
+Non-answer caption for Consumer Goods summary G66.
+Summary caption for share review.
+Supplemental note 11 for score.
+Reference caption for trend in the planning window.
+Baseline caption for activity review.
+Reference caption V95 for Delta.
+Reference caption N29 for Beacon.
+Non-answer caption for E Learning summary L50.
+Non-answer caption for Import and Export summary H13.
+Non-answer caption for Defense and Space summary W34.
+Reference caption S20 for Alpha.
+Reference caption M15 for Harbor.
+Supplemental note 3 for flow.
+Reference caption A12 for Summit.
+Non-answer caption for Newspapers summary C58.
+Regional caption for flow review.
+Reference caption Y82 for Vertex.
+Non-answer caption for Oil and Energy summary Q60.
+Reference caption R12 for Delta.
+Draft caption for response review.
+Non-answer caption for Public Safety summary N47.
+Reference caption for volume in the planning window.
+Reference caption G39 for Vertex.
+Supplemental note 4 for status.
+Supplemental note 3 for volume.
+Reference caption R97 for Echo.
+Reference caption K92 for Vertex.
+Non-answer caption for Consumer Goods summary L57.
+Non-answer caption for Supermarkets summary K35.
+Non-answer caption for International Affairs summary E55.
+Reference caption N83 for Harbor.
+Reference caption Y70 for Harbor.
+Non-answer caption for Commercial Real Estate summary Z49.
+Non-answer caption for Professional Training summary E55.
+Reference caption P60 for Jade.
+Reference caption L66 for Alpha.
+Non-answer caption for International Affairs summary K66.
+Reference caption P67 for Beacon.
+Non-answer caption for Music summary U95.
+Non-answer caption for Performing Arts summary A29.
+Non-answer caption for Furniture summary M19.
+Supplemental note 4 for index.
+Supplemental note 9 for score.
+Supplemental note 3 for load.
+Non-answer caption for Facilities and Services summary E74.
+Non-answer caption for Performing Arts summary N13.
+Reference caption D53 for Alpha.
+Non-answer caption for Facilities and Services summary Z23.
+Reference caption D67 for Summit.
+Reference caption S83 for Cedar.
+Reference caption for pipeline in the reporting window.
+Reference caption G73 for Terra.
+Non-answer caption for Internet summary F88.
+Reference caption Q89 for Quartz.
+Reference caption T34 for River.
+Reference caption K13 for Willow.
+Supplemental note 4 for load.
+Reference caption for units in the daily review.
+Reference caption Q95 for River.
+Routine caption for signal review.
+Reference caption X48 for Cedar.
+Reference caption B64 for Harbor.
+Non-answer caption for Wholesale summary C12.
+Reference caption V68 for Iris.
+Reference caption D14 for Atlas.
+Reference caption W66 for Delta.
+Non-answer caption for Media Production summary V86.
+Reference caption S55 for Maple.
+Non-answer caption for Human Resources summary G37.
+Reference caption X11 for Summit.
+Non-answer caption for Performing Arts summary U19.
+Non-answer caption for Cosmetics summary B48.
+Supplemental note 5 for volume.
+Reference caption X17 for Harbor.
+Reference caption W65 for Iris.
+Non-answer caption for International Affairs summary V40.
+Non-answer caption for Legislative Office summary K52.
+Reference caption K62 for Summit.
+Reference caption P84 for River.
+Non-answer caption for Shipbuilding summary D23.
+Reference caption Z30 for Harbor.
+Non-answer caption for Packaging and Containers summary D97.
+Reference caption B20 for Harbor.
+Supplemental note 9 for requests.
+Reference caption G20 for Iris.
+Reference caption K83 for Cedar.
+Non-answer caption for Management Consulting summary L54.
+Reference caption K78 for Iris.
+Non-answer caption for Facilities and Services summary R97.
+Reference caption U56 for Alpha.
+Current caption for units review.
+Non-answer caption for Human Resources summary D29.
+Reference caption E18 for Beacon.
+Regional caption for trend review.
+Planning caption for score review.
+Non-answer caption for Market Research summary Q34.
+Supplemental note 9 for load.
+Reference caption Z58 for Vertex.
+Non-answer caption for International Affairs summary K45.
+Internal caption for margin review.
+Non-answer caption for Cosmetics summary D78.
+Non-answer caption for Online Publishing summary S71.
+Supplemental note 11 for risk.
+Reference caption L24 for Cedar.
+Review caption for Furniture records.
+Non-answer caption for Automotive summary X17.
+Supplemental note 10 for status.
+Reference caption M47 for River.
+Reference caption G65 for Summit.
+Operating caption for risk review.
+Reference caption for units in the planning window.
+Non-answer caption for Translation and Localization summary P34.
+Supplemental note 10 for quality.
+Non-answer caption for Apparel and Fashion summary B94.
+Non-answer caption for Government Relations summary Q78.
+Non-answer caption for Import and Export summary F89.
+Non-answer caption for Sports summary X45.
+Non-answer caption for Outsourcing Offshoring summary L53.
+Reference caption V13 for Delta.
+Monthly caption for margin review.
+Supplemental note 6 for status.
+Non-answer caption for Translation and Localization summary E85.
+Reference caption X17 for Summit.
+Non-answer caption for Paper and Forest Products summary W95.
+Reference caption Q14 for Iris.
+Non-answer caption for Medical Practice summary V49.
+Reference caption for throughput in the weekly summary.
+Reference caption C39 for Echo.
+Reference caption X46 for Iris.
+Non-answer caption for Telecommunications summary K68.
+Non-answer caption for Chemicals summary G75.
+Non-answer caption for Health Wellness and Fitness summary X88.
+Non-answer caption for Capital Markets summary J25.
+Reference caption M48 for Willow.
+Reference caption for response in the reporting window.
+Reference caption Y28 for Alpha.
+Non-answer caption for Wireless summary T72.
+Regional caption for load review.
+Reference caption P57 for Maple.
+Reference caption C66 for Willow.
+Non-answer caption for Performing Arts summary D72.
+Reference caption W38 for Terra.
+Reference caption R47 for Quartz.
+Reference caption Q35 for Delta.
+Non-answer caption for Financial Services summary M11.
+Reference caption Q18 for Atlas.
+Planning caption for reach review.
+Reference caption C57 for Maple.
+Non-answer caption for Legislative Office summary F21.
+Non-answer caption for Internet summary N43.
+Reference caption B30 for Vertex.
+Reference caption P23 for Willow.
+Reference caption N72 for Quartz.
+Reference caption X13 for Alpha.
+Non-answer caption for Newspapers summary Z63.
+Non-answer caption for Hospital and Health Care summary K17.
+Non-answer caption for Medical Device summary H45.
+Reference caption G32 for Alpha.
+Reference caption for balance in the current cycle.
+Reference caption A59 for Atlas.
+Reference caption J26 for Orion.
+Non-answer caption for Graphic Design summary Z17.
+Non-answer caption for Performing Arts summary Y51.
+Reference caption P38 for Alpha.
+Non-answer caption for Package Freight Delivery summary R70.
+Reference caption G79 for Jade.
+Non-answer caption for Paper and Forest Products summary U48.
+Non-answer caption for Railroad Manufacture summary L15.
+Non-answer caption for Computer Hardware summary A57.
+Non-answer caption for Investment Banking Venture summary V53.
+Non-answer caption for Chemicals summary S94.
+Reference caption H20 for Alpha.
+Reference caption F54 for Echo.
+Reference caption U44 for Maple.
+Non-answer caption for Aviation and Aerospace summary E62.
+Reference caption Y14 for Willow.
+Non-answer caption for Consumer Goods summary L20.
+Reference caption R65 for Harbor.
+Non-answer caption for Industrial Automation summary T90.
+Reference caption R33 for Harbor.
+Reference caption D81 for Summit.
+Reference caption L86 for River.
+Baseline caption for coverage review.
+Reference caption P21 for Summit.
+Reference caption B81 for Orion.
+Non-answer caption for E Learning summary R91.
+Non-answer caption for Consumer Services summary P65.
+Reference caption N23 for Nimbus.
+Non-answer caption for Mining and Metals summary D57.
+Reference caption D46 for Maple.
+Reference caption V37 for Terra.
+Reference caption P35 for Alpha.
+Reference caption H33 for Maple.
+Summary caption for events review.
+Reference caption for reach in the planning window.
+Supplemental note 11 for activity.
+Reference caption N19 for Jade.
+Non-answer caption for Recreational summary N66.
+Reference caption J96 for Orion.
+Reference caption C35 for Jade.
+Planning caption for trend review.
+Reference caption C45 for Cedar.
+Reference caption for activity in the weekly summary.
+Non-answer caption for Sports summary G39.
+Non-answer caption for Translation and Localization summary K19.
+Non-answer caption for Outsourcing Offshoring summary W61.
+Reference caption for trend in the monthly review.
+Reference caption G58 for Atlas.
+Summary caption for trend review.
+Reference caption S72 for Jade.
+Reference caption U62 for Jade.
+Supplemental note 5 for access.
+Planning caption for capacity review.
+Reference caption W53 for Orion.
+Reference caption H65 for Delta.
+Routine caption for status review.
+Reference caption N46 for Jade.
+Non-answer caption for Telecommunications summary H68.
+Supplemental note 5 for growth.
+Non-answer caption for Executive Office summary C44.
+Reference caption Z38 for Delta.
+Reference caption C96 for Nimbus.
+Non-answer caption for Fishery summary A98.
+Reference caption M82 for Delta.
+Reference caption V31 for Vertex.
+Reference caption C84 for Atlas.
+Regional caption for throughput review.
+Reference caption V15 for Iris.
+Planning caption for access review.
+Reference caption M72 for River.
+Monthly caption for volume review.
+Non-answer caption for Entertainment summary C64.
+Non-answer caption for Leisure and Travel summary C39.
+Reference caption G69 for Orion.
+Non-answer caption for Photography summary C86.
+Baseline caption for supply review.
+Reference caption Z39 for Orion.
+Reference caption J11 for Terra.
+Non-answer caption for Military summary R11.
+Reference caption T89 for Nimbus.
+Non-answer caption for Consumer Services summary M83.
+Non-answer caption for Human Resources summary R94.
+Operating caption for coverage review.
+Non-answer caption for Banking summary J19.
+Non-answer caption for Logistics and Supply Chain summary R34.
+Non-answer caption for Renewables and Environment summary L29.
+Reference caption P55 for Alpha.
+Reference caption E42 for Alpha.
+Non-answer caption for Venture Capital summary J23.
+Reference caption B69 for Cedar.
+Reference caption J35 for Cedar.
+Non-answer caption for Museums and Institutions summary Q65.
+Reference caption M71 for Iris.
+Non-answer caption for Telecommunications summary R17.
+Reference caption N90 for Alpha.
+Reference caption G32 for Orion.
+Reference caption F86 for Cedar.
+Planning caption for share review.
+Non-answer caption for Information Services summary S79.
+Non-answer caption for Executive Office summary U79.
+Reference caption L50 for Maple.
+Reference caption Z12 for Echo.
+Reference caption Y80 for Jade.
+Non-answer caption for Marketing and Advertising summary M45.
+Reference caption for index review.
+Non-answer caption for Wine and Spirits summary T79.
+Non-answer caption for Entertainment summary R67.
+Non-answer caption for Retail summary U26.
+Non-answer caption for Consumer Goods summary C11.
+Non-answer caption for Tobacco summary H17.
+Reference caption U53 for Alpha.
+Reference caption X81 for Nimbus.
+Non-answer caption for Food and Beverages summary Q90.
+Baseline caption for growth review.
+Reference caption for pipeline review.
+Non-answer caption for Facilities Services summary G60.
+Non-answer caption for Packaging and Containers summary S36.
+Reference caption A94 for Delta.
+Non-answer caption for Museums and Institutions summary M52.
+Reference caption Z65 for Atlas.
+Non-answer caption for E Learning summary Q49.
+Operating caption for events review.
+Regional caption for access review.
+Non-answer caption for Renewables and Environment summary Y93.
+Context note for Echo during the quarterly update.
+Non-answer caption for Shipbuilding summary F14.
+Non-answer caption for Philanthropy summary M90.
+Reference caption A41 for Echo.
+Non-answer caption for Computer Networking summary U70.
+Reference caption T20 for River.
+Reference caption Y52 for Harbor.
+Non-answer caption for Libraries summary U40.
+Reference caption K82 for Echo.
+Reference caption N45 for River.
+Reference caption for volume in the monthly review.
+Non-answer caption for Performing Arts summary P20.
+Reference caption J29 for Cedar.
+Reference caption for access in the monthly review.
+Reference caption for volume in the weekly summary.
+Supplemental note 7 for risk.
+Non-answer caption for Utilities summary P93.
+Reference caption R76 for Beacon.
+Monthly caption for status review.
+Reference caption B75 for Nimbus.
+Reference caption F48 for Vertex.
+Reference caption N27 for Atlas.
+Non-answer caption for Information Services summary F81.
+Non-answer caption for Outsourcing Offshoring summary G72.
+Non-answer caption for Public Safety summary K90.
+Supplemental note 5 for coverage.
+Non-answer caption for Construction summary S78.
+Reference caption W85 for Cedar.
+Non-answer caption for Packaging and Containers summary L90.
+Non-answer caption for Import and Export summary P47.
+Non-answer caption for Medical Practice summary J38.
+Reference caption for index in the monthly review.
+Reference caption E33 for Quartz.
+Reference caption X10 for Vertex.
+Non-answer caption for Market Research summary E33.
+Non-answer caption for Government Administration summary S94.
+Reference caption V66 for Vertex.
+Reference caption B39 for Orion.
+Non-answer caption for Banking summary Q48.
+Non-answer caption for Paper and Forest Products summary D65.
+Non-answer caption for Public Relations summary Y39.
+Non-answer caption for Online Publishing summary V54.
+Non-answer caption for Political Organization summary E84.
+Reference caption C90 for Alpha.
+Reference caption X73 for Nimbus.
+Non-answer caption for Industrial Automation summary B39.
+Supplemental note 4 for demand.
+Reference caption K79 for Terra.
+Non-answer caption for Consumer Goods summary B12.
+Non-answer caption for Military summary E55.
+Reference caption Q30 for River.
+Reference caption S87 for River.
+Reference caption C44 for Summit.
+Reference caption Q24 for Quartz.
+Non-answer caption for Religious Institutions summary V74.
+Reference caption Y77 for Vertex.
+Regional caption for index review.
+Reference caption G68 for Willow.
+Reference caption P15 for River.
+Internal caption for requests review.
+Non-answer caption for Legal Services summary L52.
+Reference caption K98 for Terra.
+Reference caption K46 for Orion.
+Non-answer caption for Consumer Services summary B68.
+Non-answer caption for Plastics summary H71.
+Draft caption for activity review.
+Non-answer caption for Building Materials summary J43.
+Non-answer caption for Consumer Goods summary S56.
+Non-answer caption for Online Publishing summary K80.
+Non-answer caption for Food Production summary V24.
+Reference caption Z48 for Vertex.
+Non-answer caption for Consumer Electronics summary D34.
+Non-answer caption for Oil and Energy summary Z26.
+Non-answer caption for Staffing and Recruiting summary Z31.
+Reference caption L46 for Quartz.
+Reference caption T94 for Cedar.
+Summary caption for access review.
+Non-answer caption for Computer Networking summary V60.
+Draft caption for output review.
+Non-answer caption for Plastics summary A94.
+Non-answer caption for Legislative Office summary G66.
+Non-answer caption for Museums and Institutions summary X51.
+Reference caption S25 for Orion.
+Non-answer caption for Fundraising summary J39.
+Non-answer caption for Medical Practice summary M94.
+Supplemental note 3 for requests.
+Non-answer caption for Management Consulting summary K68.
+Reference caption C11 for River.
+Non-answer caption for Maritime summary S46.
+Non-answer caption for Automotive summary W42.
+Non-answer caption for Textiles summary L98.
+Reference caption E16 for River.
+Non-answer caption for Computer Software summary E70.
+Non-answer caption for Shipbuilding summary N16.
+Non-answer caption for Hospital and Health Care summary F62.
+Reference caption Z63 for Orion.
+Non-answer caption for Restaurants summary G90.
+Non-answer caption for E Learning summary S14.
+Non-answer caption for Media Production summary M39.
+Non-answer caption for Media Production summary X93.
+Operating caption for activity review.
+Reference caption N91 for Orion.
+Reference caption V64 for Atlas.
+Non-answer caption for Cosmetics summary V33.
+Reference caption U63 for Delta.
+Reference caption U52 for Cedar.
+Reference caption N79 for Orion.
+Reference caption N82 for Beacon.
+Baseline caption for quality review.
+Non-answer caption for Airlines Aviation summary H98.
+Reference caption F17 for River.
+Reference caption N47 for Atlas.
+Non-answer caption for Government Administration summary Q73.
+Non-answer caption for Facilities and Services summary F74.
+Reference caption R30 for Cedar.
+Reference caption U14 for Delta.
+Non-answer caption for Legal Services summary N96.
+Reference caption Z93 for Orion.
+Reference caption for capacity in the reference period.
+Reference caption J60 for Beacon.
+Reference caption X63 for Terra.
+Non-answer caption for Telecommunications summary A35.
+Non-answer caption for Recreational summary G45.
+Non-answer caption for Veterinary summary W58.
+Non-answer caption for Airlines Aviation summary C20.
+Supplemental note 7 for quality.
+Reference caption K77 for Willow.
+Reference caption for balance review.
+Reference caption Y38 for Iris.
+Reference caption V93 for Iris.
+Reference caption T44 for Alpha.
+Draft caption for growth review.
+Monthly caption for pipeline review.
+Non-answer caption for Events Services summary L55.
+Supplemental note 7 for score.
+Non-answer caption for Biotechnology summary E51.
+Reference caption Y57 for Beacon.
+Reference caption S38 for Harbor.
+Reference caption A91 for Quartz.
+Non-answer caption for Fishery summary D69.
+Reference caption T14 for Quartz.
+Non-answer caption for Political Organization summary F96.
+Non-answer caption for Plastics summary N68.
+Reference caption for load in the reporting window.
+Reference caption G23 for Atlas.
+Non-answer caption for Sporting Goods summary N45.
+Non-answer caption for Biotechnology summary F91.
+Non-answer caption for Semiconductors summary S98.
+Non-answer caption for Computer Hardware summary E91.
+Reference caption D32 for Iris.
+Non-answer caption for Restaurants summary G83.
+Planning caption for supply review.
+Reference caption R57 for Jade.
+Reference caption Y42 for Vertex.
+Reference caption K45 for Jade.
+Reference caption V64 for Quartz.
+Non-answer caption for Glass Ceramics and Concrete summary K38.
+Reference caption U89 for Orion.
+Reference caption H81 for Orion.
+Reference caption B22 for Harbor.
+Non-answer caption for Computer Hardware summary C37.
+Non-answer caption for Public Policy summary B55.
+Reference caption C21 for Cedar.
+Reference caption P78 for Cedar.
+Reference caption A69 for Maple.
+Reference caption W98 for Orion.
+Non-answer caption for Industrial Automation summary H88.
+Reference caption Y72 for River.
+Non-answer caption for Writing and Editing summary M79.
+Reference caption J43 for Vertex.
+Reference caption E72 for Summit.
+Non-answer caption for E Learning summary U75.
+Non-answer caption for Fine Art summary S72.
+Supplemental note 10 for capacity.
+Reference caption F98 for Alpha.
+Monthly caption for output review.
+Reference caption for load in the weekly summary.
+Reference caption V52 for Jade.
+Non-answer caption for Maritime summary N86.
+Reference caption X17 for Iris.
+Reference caption L18 for Iris.
+Draft caption for signal review.
+Reference caption Z82 for Harbor.
+Non-answer caption for Investment Banking Venture summary H14.
+Reference caption T87 for Atlas.
+Reference caption Z74 for Summit.
+Reference caption K57 for Maple.
+Supplemental note 4 for events.
+Non-answer caption for Management Consulting summary W40.
+Reference caption U94 for Echo.
+Reference caption D72 for Alpha.
+Non-answer caption for Health Wellness and Fitness summary J98.
+Reference caption V81 for Atlas.
+Non-answer caption for Semiconductors summary V32.
+Non-answer caption for Wireless summary V10.
+Non-answer caption for Sporting Goods summary F26.
+Reference caption Z67 for Orion.
+Reference caption H40 for Summit.
+Reference caption R66 for Atlas.
+Reference caption N18 for Maple.
+Non-answer caption for Industrial Automation summary G94.
+Non-answer caption for Environmental Services summary M21.
+Non-answer caption for Sporting Goods summary K97.
+Reference caption Y89 for Alpha.
+Non-answer caption for Program Development summary T75.
+Reference caption T38 for Cedar.
+Non-answer caption for International Affairs summary X23.
+Reference caption L82 for River.
+Reference caption M10 for Jade.
+Non-answer caption for Motion Pictures and Film summary B68.
+Reference caption S87 for Quartz.
+Supplemental note 3 for quality.
+Non-answer caption for Paper and Forest Products summary Z80.
+Non-answer caption for Civil Engineering summary F82.
+Non-answer caption for Computer Networking summary V81.
+Reference caption M34 for Terra.
+Non-answer caption for Dairy summary P71.
+Reference caption for volume review.
+Reference caption D14 for Summit.
+Non-answer caption for Mining and Metals summary C36.
+Non-answer caption for Sporting Goods summary M87.
+Reference caption T40 for Harbor.
+Reference caption K41 for Atlas.
+Non-answer caption for Retail summary A91.
+Non-answer caption for Paper and Forest Products summary S33.
+Reference caption M96 for Jade.
+Reference caption P19 for Summit.
+Reference caption D97 for Cedar.
+Reference caption H76 for Quartz.
+Non-answer caption for Computer Software summary V63.
+Reference caption E13 for Jade.
+Non-answer caption for Hospitality summary Q62.
+Regional caption for response review.
+Non-answer caption for Wireless summary D63.
+Reference caption Q78 for Terra.
+Reference caption P42 for Willow.
+Non-answer caption for Computer Hardware summary X49.
+Non-answer caption for Investment Management summary F84.
+Reference caption Y33 for Iris.
+Non-answer caption for Mining and Metals summary V53.
+Non-answer caption for Higher Education summary C27.
+Non-answer caption for Design summary B41.
+Non-answer caption for Oil and Energy summary M47.
+Reference caption for index in the daily review.
+Reference caption T15 for Nimbus.
+Reference caption E66 for Iris.
+Reference caption V84 for Terra.
+Non-answer caption for Religious Institutions summary A52.
+Non-answer caption for Public Policy summary Q51.
+Non-answer caption for Primary Secondary summary J56.
+Reference caption for reach in the reference period.
+Non-answer caption for Capital Markets summary Y56.
+Reference caption U95 for Cedar.
+Reference caption G28 for Quartz.
+Non-answer caption for Mining and Metals summary J53.
+Reference caption P24 for Maple.
+Draft caption for margin review.
+Reference caption L89 for Nimbus.
+Weekly caption for share review.
+Non-answer caption for Printing summary Y54.
+Draft caption for reach review.
+Reference caption U24 for River.
+Non-answer caption for Dairy summary Q66.
+Reference caption G55 for Iris.
+Monthly caption for score review.
+Non-answer caption for Consumer Services summary S88.
+Reference caption E30 for Terra.
+Non-answer caption for Professional Training summary E47.
+Non-answer caption for Government Relations summary V73.
+Non-answer caption for Nanotechnology summary Q20.
+Reference caption S26 for Jade.
+Reference caption E71 for Harbor.
+Non-answer caption for Staffing and Recruiting summary N36.
+Non-answer caption for Management Consulting summary Y56.
+Reference caption L64 for River.
+Non-answer caption for Security and Investigations summary Z80.
+Non-answer caption for Restaurants summary T82.
+Reference caption L11 for Beacon.
+Non-answer caption for Education Management summary K31.
+Non-answer caption for Apparel and Fashion summary Y65.
+Non-answer caption for Legislative Office summary B26.
+Supplemental note 6 for response.
+Reference caption R73 for Jade.
+Operating caption for output review.
+Reference caption for share review.
+Reference caption Q92 for Echo.
+Weekly caption for events review.
+Reference caption U93 for Summit.
+Reference caption H10 for Orion.
+Non-answer caption for Legal Services summary R59.
+Reference caption S69 for Willow.
+Reference caption A66 for Harbor.
+Non-answer caption for Utilities summary J93.
+Reference caption S60 for Vertex.
+Non-answer caption for Machinery summary S74.
+Supplemental note 7 for output.
+Reference caption T57 for Orion.
+Non-answer caption for Government Relations summary G68.
+Non-answer caption for Cosmetics summary G95.
+Non-answer caption for Think Tanks summary D32.
+Reference caption P41 for Atlas.
+Non-answer caption for Government Administration summary R34.
+Non-answer caption for Sporting Goods summary R43.
+Supplemental note 2 for quality.
+Non-answer caption for Museums and Institutions summary H93.
+Non-answer caption for Warehousing summary X85.
+Reference caption R89 for Nimbus.
+Non-answer caption for Package Freight Delivery summary V77.
+Reference caption E98 for Alpha.
+Non-answer caption for Performing Arts summary N72.
+Non-answer caption for Airlines Aviation summary A22.
+Non-answer caption for Furniture summary N85.
+Non-answer caption for Financial Services summary Q87.
+Reference caption R27 for Summit.
+Reference caption for margin review.
+Non-answer caption for Commercial Real Estate summary F26.
+Reference caption A91 for Willow.
+Reference caption X90 for Harbor.
+Reference caption E20 for Nimbus.

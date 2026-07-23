@@ -1,0 +1,68 @@
+{
+  "bundle_id": "geometry_area_partition_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+      "scene": {
+        "area_partition_scene": [
+          "The diagram shows a shaded region in a {shape_type}.",
+          "The figure shows a shaded region in a {shape_type}.",
+          "The image shows a shaded region in a {shape_type}.",
+          "This geometry diagram shows a shaded region in a {shape_type}.",
+          "The labeled diagram shows a shaded region in a {shape_type}."
+        ]
+      },
+    "task": {
+      "area_partition_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "total_area_from_shaded_partition": [
+        "What is the total area of the outer shape?",
+        "Find the total area of the outer shape.",
+        "Determine the total area of the whole shape.",
+        "What is the area of the entire shape?",
+        "Find the area of the whole outer figure."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:total_area_from_shaded_partition": {
+      "answer_hint": "set \"answer\" to the total area as an integer",
+      "annotation_hint": "set \"annotation\" to a JSON object with keys \"outer_shape\" and \"shaded_region\", where each value is a pixel bounding box [x0,y0,x1,y1]",
+      "json_example": "{\"annotation\":{\"outer_shape\":[110,140,650,435],\"shaded_region\":[120,160,360,420]},\"answer\":186}",
+      "json_example_answer_only": "{\"answer\":186}"
+    }
+  },
+  "dynamic_slots": {
+    "shape_type": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:area_partition_scene": [
+      "shape_type"
+    ]
+  }
+}

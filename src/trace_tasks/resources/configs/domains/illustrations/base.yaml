@@ -1,0 +1,38 @@
+prompt:
+  shared:
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+      in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for
+      the final answer.
+rendering:
+  shared:
+    canvas_profile_support:
+    - landscape
+    - square
+    - portrait
+    art_style_support:
+    - flat_vector
+    - outlined_cartoon
+    - paper_cutout
+    - soft_shadow
+    art_style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+    environment_canvas_width: 1280
+    environment_canvas_height: 840
+    environment_object_count_min: 10
+    environment_object_count_max: 18
+    environment_object_size_min_px: 62
+    environment_object_size_max_px: 116
+    environment_min_gap_px: 6
+    environment_max_overlap_fraction: 0.02
+    environment_placement_max_attempts: 420
+    environment_render_scale: 2
+    environment_theme_weights:
+      park_road: 1.0
+      river_meadow: 1.0
+      road_and_river: 1.0
+      canal_city: 1.0
+      skyline_street: 1.0

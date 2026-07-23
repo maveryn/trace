@@ -1,0 +1,101 @@
+{
+  "bundle_id": "physics_orbital_motion_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "orbital_motion_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This orbit diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "orbital_motion_focus_location_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "orbital_motion_speed_extremum_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "focus_location_label": [
+        "Which labeled point can be the Sun at a focus of the elliptical orbit?",
+        "Which candidate point is a focus of the shown ellipse?",
+        "Choose the labeled point that lies at a focus of the shown ellipse.",
+        "Which option marks a valid focus location for the Sun in this orbit?",
+        "Which labeled point is the focus location?"
+      ],
+      "greatest_speed_position_label": [
+        "At which labeled planet position is the orbital speed greatest?",
+        "Which labeled position has the greatest orbital speed?",
+        "Choose the planet position where the orbiting body moves fastest.",
+        "Which labeled point on the orbit has maximum speed?",
+        "Among the candidate positions, where is the orbital speed greatest?"
+      ],
+      "least_speed_position_label": [
+        "At which labeled planet position is the orbital speed least?",
+        "Which labeled position has the least orbital speed?",
+        "Choose the planet position where the orbiting body moves slowest.",
+        "Which labeled point on the orbit has minimum speed?",
+        "Among the candidate positions, where is the orbital speed least?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:orbital_motion_diagram": {
+      "object_description": "an elliptical orbit with labeled candidate points"
+    },
+    "query:focus_location_label": {
+      "answer_hint": "set \"answer\" to the label of the candidate point that can be the Sun at a focus",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected focus candidate marker"
+    },
+    "query:greatest_speed_position_label": {
+      "answer_hint": "set \"answer\" to the label of the planet position with greatest speed",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected planet-position marker"
+    },
+    "query:least_speed_position_label": {
+      "answer_hint": "set \"answer\" to the label of the planet position with least speed",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected planet-position marker"
+    }
+  },
+  "dynamic_slots": {
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:orbital_motion_diagram": [
+      "object_description"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+generation:
+  task_overrides:
+    task_geometry__circle_centerline_overlap__segment_length_value: {}
+rendering:
+  task_overrides:
+    task_geometry__circle_centerline_overlap__segment_length_value:
+      canvas_width: 820
+      canvas_height: 600
+      line_width: 3
+      label_font_size: 22
+      small_label_font_size: 18
+prompt:
+  shared:
+    bundle_id: geometry_circle_centerline_overlap_v1
+    scene_key: circle_centerline_overlap_scene
+    task_key: segment_length_value_query

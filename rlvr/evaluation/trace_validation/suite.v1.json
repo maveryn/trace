@@ -1,0 +1,125 @@
+{
+  "schema_version": "trace-validation-suite-v1",
+  "suite_id": "trace-validation-2000-seed42-v1",
+  "description": "Eight-model evaluation on 2,000 unseen TRACE validation instances sampled from the same task programs as training.",
+  "dataset": {
+    "repo_id": "maveryn/trace",
+    "revision": "e317b746b258630682367cc6a9d87dedd195113c",
+    "split": "validation",
+    "file": "data/validation/trace_rlvr_validation_iid_2000_all1000_seed1042.parquet",
+    "sha256": "0cb46bcf858ae3e9f39b88f60a24549a5de133976b9e8b74a45b4e6e4d699470",
+    "rows": 2000,
+    "tasks": 1000,
+    "samples_per_task": 2,
+    "distribution": "same_task_programs_nonoverlapping_samples",
+    "prompt_key": "prompt_answer",
+    "image_key": "images"
+  },
+  "prompt": {
+    "system_prompt_file": "rlvr/examples/prompts/trace_vero_json_system_prompt_answer.txt",
+    "system_prompt_sha256": "f394927d9abcfb7a1e43ef48a30c29b8c70e6facdbda314d7b27c59d8c3ae900",
+    "chat_template": "native_checkpoint_template",
+    "add_generation_prompt": true
+  },
+  "generation": {
+    "seed": 42,
+    "responses_per_prompt": 1,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": -1,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "max_tokens": 2048,
+    "min_image_pixels": 262144,
+    "max_image_pixels": 4194304,
+    "server_generation_config": "vllm"
+  },
+  "scoring": {
+    "strict_contract": "trace-answer-exact-json-v1",
+    "deterministic_extraction": "trace-validation-answer-extraction-v1",
+    "semantic_match": "trace-answer-exact-match-v0",
+    "judge_only_on": [
+      "missing",
+      "ambiguous"
+    ],
+    "unresolved_rows_score": 0,
+    "drop_failed_rows": false
+  },
+  "judge": {
+    "repo_id": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "served_model_name": "qwen3-32b-trace-validation-extractor",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "thinking": false,
+    "max_token_retries": [
+      128,
+      256,
+      512
+    ],
+    "input_fields": [
+      "raw_response",
+      "answer_type"
+    ],
+    "forbidden_fields": [
+      "image",
+      "question",
+      "choices",
+      "answer_gt_value"
+    ]
+  },
+  "models": [
+    {
+      "slug": "qwen2.5-vl-3b-base",
+      "label": "Qwen2.5-VL-3B Base",
+      "repo_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3"
+    },
+    {
+      "slug": "trace-qwen2.5-vl-3b",
+      "label": "TRACE Qwen2.5-VL-3B",
+      "repo_id": "maveryn/trace-qwen2.5-vl-3b",
+      "revision": "2ec2374d5c219e6b12e26bda93d3b3adeb1e30c5",
+      "runtime_view_revision": "sha256set:fd7d9ef4dd828eb950ce29c8ccde0432ccd31420529d4f023300ede928d070a1"
+    },
+    {
+      "slug": "qwen2.5-vl-7b-base",
+      "label": "Qwen2.5-VL-7B Base",
+      "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+    },
+    {
+      "slug": "trace-qwen2.5-vl-7b",
+      "label": "TRACE Qwen2.5-VL-7B",
+      "repo_id": "maveryn/trace-qwen2.5-vl-7b",
+      "revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d",
+      "runtime_view_revision": "sha256set:28421ef2be848d24e2a9fa363d885f42c651bfb6fa986de3d07faa9d78da47cf"
+    },
+    {
+      "slug": "game-rl-qwen2.5-vl-7b",
+      "label": "Game-RL Qwen2.5-VL-7B",
+      "repo_id": "OpenMOSS-Team/Game-RL-Qwen2.5-VL-7B",
+      "revision": "205b5934ce70504cfd6ae26b16f705d0b98b9306",
+      "runtime_view_revision": "sha256set:2a805cbedc07225555712644c3569019da15a30108bb50b2dbe60d9562d24b2f"
+    },
+    {
+      "slug": "sphinx-qwen2.5-vl-7b",
+      "label": "Sphinx Qwen2.5-VL-7B",
+      "repo_id": "xashru/sphinx_qwen7b_500",
+      "revision": "6ffefb03d5cb0767683bfb42a084ea86b707ef9a"
+    },
+    {
+      "slug": "pcgrpo-qwen2.5-vl-7b",
+      "label": "PCGRPO Qwen2.5-VL-7B",
+      "repo_id": "armenjeddi/PCGRPO-Qwen2.5-VL-7B-Jigsaw-with-curriculum-with-grpo-care",
+      "revision": "921bbced4176f5d362e98c843a57656c5d78dad7"
+    },
+    {
+      "slug": "vero-qwen2.5-vl-7b",
+      "label": "VERO Qwen2.5-VL-7B",
+      "repo_id": "zlab-princeton/Vero-Qwen25-7B",
+      "revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+generation:
+  shared:
+    scene_variant_weights:
+      sparse_links: 1.0
+      mixed_links: 1.0
+      dense_links: 1.0
+    style_variant_weights:
+      woodcut: 1.0
+      ink_diagram: 1.0
+      garden_cloth: 1.0
+      night_lines: 1.0
+      parchment: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_size_sampling: true
+    board_size_support:
+    - 4
+    - 5
+    - 6
+    min_total_piece_count: 4
+    max_total_piece_count: 12
+  task_overrides:
+    task_games__irregular_link_board__capture_move_count:
+      balanced_target_answer_sampling: true
+      capture_board_size_support:
+      - 5
+      - 6
+      target_answer_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    task_games__irregular_link_board__marked_piece_destination_count:
+      balanced_target_answer_sampling: true
+      target_answer_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+rendering:
+  shared:
+    canvas_width: 780
+    canvas_height: 760
+    panel_margin_px: 52
+    max_board_size_px: 560
+    edge_width_px: 5
+    point_radius_px: 14
+    piece_radius_px: 23
+    marker_width_px: 5
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 540
+    canvas_side_padding_px: 150
+    canvas_vertical_padding_px: 150
+prompt:
+  shared:
+    bundle_id: games_irregular_link_board_v1
+    scene_key: irregular_link_board
+    task_key: irregular_link_board_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

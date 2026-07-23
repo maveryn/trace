@@ -1,0 +1,122 @@
+{
+  "bundle_id": "icons_venn_field_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "venn_field_scene": [
+        "The image shows a panel of icons and two overlapping marked circles.",
+        "The figure shows a panel of icons with two overlapping marked circles.",
+        "This image shows icons arranged around two overlapping marked circles.",
+        "The scene shows icons and two overlapping marked circles.",
+        "The picture shows icons with two overlapping marked circles."
+      ]
+    },
+    "task": {
+      "scoped_attribute_count": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "same_region_as_reference_count": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "The two circles divide the panel into four regions: left circle only, right circle only, the overlap of both circles, and outside both circles. Using icon centers to decide regions, how many {target_description} are in the same region as the marked reference icon?",
+        "Treat each icon's center as its Venn-region position. The four regions are left circle only, right circle only, both-circle overlap, and outside both circles. Count the {target_description} in the same region as the marked reference icon.",
+        "Using the center of each icon, classify it as left-only, right-only, in both circles, or outside both circles. How many {target_description} share the marked reference icon's region?",
+        "The marked reference icon belongs to exactly one of four center-based regions: left circle only, right circle only, overlap of both circles, or outside both circles. How many {target_description} are in that same region?",
+        "By icon center, the possible regions are left-only, right-only, both-circle overlap, and outside both circles. Find the number of {target_description} in the marked reference icon's region."
+      ],
+      "inside_both_circles_count": [
+        "How many {target_description} have centers inside both marked circles?",
+        "Count the {target_description} whose centers are inside both marked circles.",
+        "How many {target_description} are centered in the overlap of the two marked circles?",
+        "Find the number of {target_description} with centers inside both circles.",
+        "How many {target_description} have centers in the shared region of the marked circles?"
+      ],
+      "inside_either_circle_count": [
+        "How many {target_description} have centers inside at least one marked circle?",
+        "Count the {target_description} whose centers are inside either marked circle.",
+        "How many {target_description} are centered in one or both of the marked circles?",
+        "Find the number of {target_description} with centers inside at least one circle.",
+        "How many {target_description} have centers in the union of the two marked circles?"
+      ],
+      "inside_exactly_one_circle_count": [
+        "How many {target_description} have centers inside exactly one marked circle?",
+        "Count the {target_description} whose centers are inside one marked circle but not both.",
+        "How many {target_description} are centered in exactly one of the marked circles?",
+        "Find the number of {target_description} with centers in only one circle.",
+        "How many {target_description} have centers in a non-overlap part of the marked circles?"
+      ],
+      "outside_both_circles_count": [
+        "How many {target_description} have centers outside both marked circles?",
+        "Count the {target_description} whose centers are outside both marked circles.",
+        "How many {target_description} are centered outside the two marked circles?",
+        "Find the number of {target_description} with centers outside both circles.",
+        "How many {target_description} have centers in neither marked circle?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates for every counted target icon",
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "json_example": "{\"annotation\":[[116,128,168,180],[634,302,686,354]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "target_description": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "query:inside_both_circles_count": [
+      "target_description"
+    ],
+    "query:inside_either_circle_count": [
+      "target_description"
+    ],
+    "query:inside_exactly_one_circle_count": [
+      "target_description"
+    ],
+    "query:outside_both_circles_count": [
+      "target_description"
+    ],
+    "query:single": [
+      "target_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "bundle_id": "games_minesweeper_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_minesweeper_grid": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "minesweeper_grid_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "forced_mine_count": [
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). How many hidden cells are forced to be mines?",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). Count the hidden cells that must contain mines.",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). Determine how many hidden cells are certainly mines.",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s) and nearby flags. How many hidden cells must be mines?",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). How many covered cells are guaranteed to contain mines?"
+      ],
+      "forced_safe_count": [
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). How many hidden cells are forced to be safe?",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). Count the hidden cells that cannot contain mines.",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). Determine how many hidden cells are certainly safe.",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s) and nearby flags. How many hidden cells must be safe?",
+        "{minesweeper_rule_text} Use the outlined opened clue cell(s). How many covered cells are guaranteed not to contain mines?"
+      ],
+      "forced_mine_cell_label": [
+        "{minesweeper_rule_text} Among the labeled hidden cells A-D, which one is guaranteed to be a mine?",
+        "{minesweeper_rule_text} Which labeled hidden cell A-D must contain a mine?",
+        "{minesweeper_rule_text} Using the visible numbers and nearby flags, which labeled covered cell is certainly a mine?",
+        "{minesweeper_rule_text} Choose the labeled hidden cell that is forced to be a mine.",
+        "{minesweeper_rule_text} Which labeled hidden cell is guaranteed to contain a mine?"
+      ],
+      "remaining_mine_count": [
+        "{minesweeper_rule_text} Use the outlined opened clue cell. How many more mines must be adjacent to that marked number?",
+        "{minesweeper_rule_text} Use the outlined opened clue cell. Count the additional adjacent mines still needed by the marked number.",
+        "{minesweeper_rule_text} Use the outlined opened clue cell and nearby flags. How many more adjacent mines does that number require?",
+        "{minesweeper_rule_text} For the outlined opened clue cell, how many adjacent mines are still unaccounted for?",
+        "{minesweeper_rule_text} Use the marked opened number cell. How many more mines must touch it?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_minesweeper_grid": [
+      "object_description"
+    ],
+    "query:forced_mine_count": [
+      "minesweeper_rule_text"
+    ],
+    "query:forced_safe_count": [
+      "minesweeper_rule_text"
+    ],
+    "query:forced_mine_cell_label": [
+      "minesweeper_rule_text"
+    ],
+    "query:remaining_mine_count": [
+      "minesweeper_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "minesweeper_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_open_grid": "a Minesweeper grid with opened number cells, hidden cells, and a few flags",
+    "object_description_mixed_grid": "a Minesweeper grid with opened number cells, hidden cells, flags, and extra hidden distractor cells",
+    "minesweeper_rule_text": "In Minesweeper, each opened number tells how many mines are in its eight neighboring cells, and each flag marks a known mine. If a number already has that many adjacent flags, its other hidden neighbors are safe. If the number still needs exactly all remaining hidden neighbors, those hidden neighbors are mines.",
+    "annotation_hint_forced_mine_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each hidden cell forced to be a mine",
+    "answer_hint_forced_mine_count": "set \"answer\" to the count of hidden cells that must be mines",
+    "annotation_hint_forced_safe_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each hidden cell forced to be safe",
+    "answer_hint_forced_safe_count": "set \"answer\" to the count of hidden cells that must be safe",
+    "annotation_hint_forced_mine_cell_label": "set \"annotation\" to the [x, y] pixel point at the center of the labeled hidden cell that is guaranteed to be a mine",
+    "answer_hint_forced_mine_cell_label": "set \"answer\" to the single option letter printed inside the guaranteed mine cell",
+    "annotation_hint_remaining_mine_count": "set \"annotation\" to the [x, y] pixel point at the center of the marked opened number cell",
+    "answer_hint_remaining_mine_count": "set \"answer\" to the number of additional mines that must be adjacent to the marked opened number cell"
+  }
+}

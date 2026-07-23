@@ -1,0 +1,37 @@
+generation:
+  shared:
+    panel_graph_abs_max: 4
+    panel_count: 6
+    panel_labels:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+  task_overrides:
+    task_geometry__coordinate_panels__point_set_transform_match_label:
+      transform_point_count: 3
+rendering:
+  shared:
+    panel_canvas_width: 1024
+    panel_canvas_height: 720
+    panel_grid_min: -6
+    panel_grid_max: 6
+    panel_marker_radius_px: 7
+    panel_marker_radius_px_min: 6
+    panel_marker_radius_px_max: 8
+    label_font_size_min: 17
+    label_font_size_max: 28
+    label_stroke_width: 1
+    label_offset_px: 18
+prompt:
+  shared:
+    bundle_id: geometry_coordinate_quadrilateral_v0
+    scene_key: coordinate_panels_scene
+    task_key: coordinate_quadrilateral_query
+  task_overrides:
+    task_geometry__coordinate_panels__segment_relation_match_label:
+      task_key: coordinate_segment_relation_query
+    task_geometry__coordinate_panels__point_set_transform_match_label:
+      task_key: coordinate_point_set_transform_query

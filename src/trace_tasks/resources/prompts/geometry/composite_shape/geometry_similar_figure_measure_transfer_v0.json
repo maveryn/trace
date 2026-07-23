@@ -1,0 +1,161 @@
+{
+  "bundle_id": "geometry_similar_figure_measure_transfer_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "corresponding_side_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scale_factor_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "area_scale_side_length_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:similar_figure_measure_transfer_scene": [
+      "object_description"
+    ],
+    "query:direct_side_transfer": [
+      "target_name"
+    ],
+    "query:two_pair_side_transfer": [
+      "target_name"
+    ],
+    "query:nested_side_transfer": [
+      "target_name"
+    ],
+    "query:scale_factor_from_side_pair": [
+      "target_name"
+    ],
+    "query:scale_factor_from_perimeter_pair": [
+      "target_name"
+    ],
+    "query:scale_factor_from_area_pair": [
+      "target_name"
+    ],
+    "query:side_length_from_area_pair": [
+      "target_name"
+    ],
+    "query:side_length_from_area_ratio": [
+      "target_name"
+    ],
+    "query:side_length_from_area_and_known_side": [
+      "target_name"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "similar_figure_measure_transfer_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "direct_side_transfer": [
+      "Use the corresponding side marks in the similar figures. What is the length of \"{target_name}\"?",
+      "Use the matching sides in the two similar figures. What is the length of \"{target_name}\"?",
+      "Find the missing corresponding side length in the similar figures. What is the length of \"{target_name}\"?",
+      "Based on the visible corresponding side labels, what is the length of \"{target_name}\"?",
+      "Use the similarity scale shown by the marked sides. What is the length of \"{target_name}\"?"
+    ],
+    "two_pair_side_transfer": [
+      "Use the marked pair of corresponding sides to transfer the scale. What is the length of \"{target_name}\"?",
+      "The similar figures show one complete side pair and one missing side. What is the length of \"{target_name}\"?",
+      "Find the scale from the visible corresponding side pair, then find the length of \"{target_name}\".",
+      "Use the two marked side pairs in the similar figures. What is the length of \"{target_name}\"?",
+      "Based on the corresponding side marks and lengths, what is the length of \"{target_name}\"?"
+    ],
+    "nested_side_transfer": [
+      "Use the nested similar figures and corresponding side labels. What is the length of \"{target_name}\"?",
+      "In the nested similar figures, transfer the side scale to find \"{target_name}\".",
+      "Find the missing side length in the nested similar figures. What is the length of \"{target_name}\"?",
+      "Use the visible nested side relationship. What is the length of \"{target_name}\"?",
+      "Based on the corresponding sides in the nested figures, what is the length of \"{target_name}\"?"
+    ],
+    "scale_factor_from_side_pair": [
+      "Use the corresponding side lengths. What is \"{target_name}\"?",
+      "Find the linear scale factor using the marked side pair. What is \"{target_name}\"?",
+      "Based on the matching side labels, what is \"{target_name}\"?",
+      "Use the visible side-pair measurements to find \"{target_name}\".",
+      "From the corresponding sides, what is \"{target_name}\"?"
+    ],
+    "scale_factor_from_perimeter_pair": [
+      "Use the two perimeter labels for the similar figures. What is \"{target_name}\"?",
+      "Find the linear scale factor from the visible perimeters. What is \"{target_name}\"?",
+      "Based on the perimeter measurements, what is \"{target_name}\"?",
+      "Use the similar-figure perimeter relationship to find \"{target_name}\".",
+      "From the two shown perimeters, what is \"{target_name}\"?"
+    ],
+    "scale_factor_from_area_pair": [
+      "Use the two area labels for the similar figures. What is \"{target_name}\"?",
+      "Find the linear scale factor from the visible areas. What is \"{target_name}\"?",
+      "Based on the area measurements, what is \"{target_name}\"?",
+      "Use the similar-figure area relationship to find \"{target_name}\".",
+      "From the two shown areas, what is \"{target_name}\"?"
+    ],
+    "side_length_from_area_pair": [
+      "Use the area labels to get the scale between the similar figures. What is the length of \"{target_name}\"?",
+      "Find the linear scale from the two areas, then find \"{target_name}\".",
+      "Based on the visible area labels and corresponding side, what is the length of \"{target_name}\"?",
+      "Use the similar-figure area relationship. What is the length of \"{target_name}\"?",
+      "Transfer the side length using the area scale. What is the length of \"{target_name}\"?"
+    ],
+    "side_length_from_area_ratio": [
+      "Use the shown area ratio to get the linear scale. What is the length of \"{target_name}\"?",
+      "Find the side scale from the area ratio, then find \"{target_name}\".",
+      "Based on the visible area ratio and source side, what is the length of \"{target_name}\"?",
+      "Use the similar-figure area-ratio relationship. What is the length of \"{target_name}\"?",
+      "Transfer the side length using the displayed area ratio. What is the length of \"{target_name}\"?"
+    ],
+    "side_length_from_area_and_known_side": [
+      "Use the area labels and corresponding side label. What is the length of \"{target_name}\"?",
+      "Find the linear scale from the areas, then transfer the side length to \"{target_name}\".",
+      "In the nested similar figures, use the areas and source side. What is the length of \"{target_name}\"?",
+      "Based on the visible area scale and side label, what is the length of \"{target_name}\"?",
+      "Use the nested similar-figure area relationship. What is the length of \"{target_name}\"?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

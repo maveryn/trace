@@ -1,0 +1,68 @@
+{
+  "schema_version": "trace_eval_post_run_patches_v1",
+  "suite_id": "trace_eval_v1",
+  "reviewed_on": "2026-07-21",
+  "producer_revision": "5cea97310204b197fdacecdd83ef938c1e3b67cd",
+  "canonical_results_recomputed": false,
+  "policy": "Changes introduced after the canonical campaign are reviewed separately. They never replace the producer revision or silently alter the frozen score source.",
+  "patches": [
+    {
+      "patch_id": "countqa-cached-answer-normalization",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_paths": [
+        "rlvr/vlmevalkit_extensions/trace_local_vqa.py",
+        "tests/test_evochart_vlmeval_extension.py"
+      ],
+      "review_status": "approved_for_public_application",
+      "changes_canonical_results": false,
+      "rationale": "Normalize pandas-inferred cached CountQA answers back to the string representation produced by a fresh fetch, preserving preparation and generation manifest identity. The focused test proves null, integer, and whitespace behavior without rescoring the paper runs."
+    },
+    {
+      "patch_id": "tokenless-local-archive-build",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_paths": [
+        "scripts/final25_hf_archive.py",
+        "tests/test_final25_hf_archive.py"
+      ],
+      "review_status": "approved_for_public_application",
+      "changes_canonical_results": false,
+      "rationale": "Expose a local build-only archive operation that neither reads a token nor contacts Hugging Face. The public adaptation must use neutral trace_eval naming and retain only new-run publication behavior."
+    },
+    {
+      "patch_id": "vllm-optional-server-arguments",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_paths": [
+        "scripts/start_vllm_endpoint_pool.sh",
+        "tests/test_trace_final26_single_model_launcher.py"
+      ],
+      "review_status": "approved_for_public_application",
+      "changes_canonical_results": false,
+      "rationale": "Forward optional mm-processor-kwargs and generation-config arguments only when explicitly configured. Their unset defaults preserve the producer launch behavior; any enabled invocation is bound by the recorded public code and campaign fingerprints."
+    },
+    {
+      "patch_id": "vllm-truncated-image-sitecustomize",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_paths": [
+        "scripts/start_vllm_endpoint_pool.sh",
+        "scripts/vllm_sitecustomize/sitecustomize.py",
+        "scripts/trace_eval_code_provenance.py",
+        "tests/test_trace_final26_single_model_launcher.py"
+      ],
+      "review_status": "excluded_behavior_change",
+      "changes_canonical_results": false,
+      "rationale": "Globally enabling Pillow truncated-image tolerance changes server decoding behavior. It is excluded unless a separate benchmark-specific necessity and invariance review is completed."
+    },
+    {
+      "patch_id": "private-archive-migration-reemit-iid",
+      "source_revision": "b7e4bcf2bae88684a442834419d41d74c58e3eac",
+      "source_paths": [
+        "scripts/migrate_trace_eval_archive.py",
+        "scripts/reemit_trace_eval_internal_archive.py",
+        "scripts/trace_eval_archive_migration_lib.py"
+      ],
+      "review_status": "excluded_internal_only",
+      "changes_canonical_results": false,
+      "rationale": "Private repository migration, re-emission, and recovery remain outside the canonical 24-benchmark public interface. TRACE validation is released as a separately pinned workflow and result source; it does not change the trace_eval_v1 producer revision or scores."
+    }
+  ]
+}

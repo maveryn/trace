@@ -1,0 +1,20 @@
+generation:
+  shared:
+    object_count: 6
+    target_count_min: 1
+    target_count_max: 5
+    right_angle_count_min: 1
+    right_angle_count_max: 5
+
+rendering:
+  shared:
+    canvas_size: 768
+    graph_cells_min: 14
+    graph_cells_max: 20
+    margin_px: 56
+    content_pad_px: 18
+
+prompt:
+  bundle_id: geometry_graph_paper_v1
+  scene_key: graph_paper_scene
+  task_key: graph_paper_task

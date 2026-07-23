@@ -1,0 +1,124 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      center_fulcrum: 1.0
+      offset_fulcrum: 1.0
+      textured_beam: 1.0
+    torque_side_weights:
+      left: 1.0
+      right: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_torque_side_sampling: true
+    balanced_target_answer_sampling: true
+    distance_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    torque_answer_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    missing_weight_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    weight_value_min: 1
+    weight_value_max: 9
+    max_side_weights: 4
+    missing_weight_max_side_weights: 2
+    missing_weight_scene_variant_weights:
+      textured_beam: 1.0
+  task_overrides:
+    task_physics__lever__side_torque_value:
+      max_side_weights: 3
+
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 640
+    beam_width_px: 1140
+    beam_height_px: 22
+    beam_height_px_min: 20
+    beam_height_px_max: 24
+    beam_corner_radius_px: 10
+    beam_center_y_px: 350
+    fulcrum_width_px: 110
+    fulcrum_height_px: 84
+    fulcrum_offset_px: 76
+    slot_spacing_px: 66
+    distance_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    weight_box_width_px: 58
+    weight_box_height_px: 52
+    weight_box_gap_px: 8
+    weight_font_size_px: 26
+    distance_font_size_px: 22
+    label_stroke_width_px: 3
+    label_stroke_width_px_min: 2
+    label_stroke_width_px_max: 4
+    texture_line_width_px: 2
+    texture_line_width_px_min: 1
+    texture_line_width_px_max: 3
+    texture_spacing_px: 18
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -24
+    layout_jitter_x_px_max: 24
+    layout_jitter_y_px_min: -14
+    layout_jitter_y_px_max: 18
+
+prompt:
+  shared:
+    bundle_id: physics_lever_v1
+  task_overrides:
+    task_physics__lever__side_torque_value:
+      task_key: side_torque_value_query
+    task_physics__lever__missing_weight_balance_value:
+      task_key: missing_weight_balance_value_query

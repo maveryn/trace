@@ -1,0 +1,107 @@
+{
+  "bundle_id": "symbolic_braille_cell_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "braille_cell": [
+        "A Braille-cell notation panel shows {object_description}.",
+        "This Braille-cell panel shows {object_description}.",
+        "The notation panel shows {object_description}.",
+        "A visual Braille panel presents {object_description}.",
+        "The Braille notation card shows {object_description}."
+      ]
+    },
+    "task": {
+      "braille_matching_pattern_label": [
+        "Which labeled option has the same raised-dot pattern as the reference Braille cell?",
+        "Select the option whose Braille cell matches the reference pattern.",
+        "Which option shows the same raised dots as the REF Braille cell?",
+        "Find the labeled Braille option that matches the reference cell.",
+        "Which option letter matches the reference Braille-cell pattern?"
+      ],
+      "braille_word_read_label": [
+        "Which option shows the word written by the Braille plate?",
+        "Read the Braille word plate and select the matching word option.",
+        "Which labeled word option matches the Braille plate shown above?",
+        "Choose the option that spells the word encoded by the Braille plate.",
+        "Which option letter gives the word represented by the Braille cells?"
+      ],
+      "word_braille_match_label": [
+        "Which option shows the Braille for the word shown above?",
+        "Select the Braille option that matches the displayed word.",
+        "Which labeled Braille plate encodes the source word?",
+        "Choose the option whose Braille cells spell the word shown above.",
+        "Which option letter matches the source word in Braille?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:braille_cell": [
+      "object_description"
+    ],
+    "task:braille_matching_pattern_label": [],
+    "task:braille_word_read_label": [],
+    "task:word_braille_match_label": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_matching_pattern_label_clean_card": "a clean Braille reference cell and six labeled Braille option cells",
+    "object_description_matching_pattern_label_notebook_card": "a notebook-style Braille reference cell and six labeled Braille option cells",
+    "object_description_matching_pattern_label_exam_scan": "an exam-scan-style Braille reference cell and six labeled Braille option cells",
+    "object_description_braille_word_read_label_clean_card": "a clean Braille word plate above four labeled word options",
+    "object_description_braille_word_read_label_notebook_card": "a notebook-style Braille word plate above four labeled word options",
+    "object_description_braille_word_read_label_exam_scan": "an exam-scan-style Braille word plate above four labeled word options",
+    "object_description_word_braille_match_label_clean_card": "a clean source word above four labeled Braille word-plate options",
+    "object_description_word_braille_match_label_notebook_card": "a notebook-style source word above four labeled Braille word-plate options",
+    "object_description_word_braille_match_label_exam_scan": "an exam-scan-style source word above four labeled Braille word-plate options",
+    "annotation_hint_matching_pattern_label": "set \"annotation\" to an object with keys \"reference_cell\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_matching_pattern_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_matching_pattern_label": "{\"annotation\":{\"reference_cell\":[90,248,222,432],\"selected_option\":[548,110,680,294]},\"answer\":\"C\"}",
+    "json_example_answer_only_matching_pattern_label": "{\"answer\":\"C\"}",
+    "annotation_hint_braille_word_read_label": "set \"annotation\" to an object with keys \"source_plate\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_braille_word_read_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_braille_word_read_label": "{\"annotation\":{\"source_plate\":[172,88,808,248],\"selected_option\":[560,492,820,562]},\"answer\":\"D\"}",
+    "json_example_answer_only_braille_word_read_label": "{\"answer\":\"D\"}",
+    "annotation_hint_word_braille_match_label": "set \"annotation\" to an object with keys \"source_word\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_word_braille_match_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_word_braille_match_label": "{\"annotation\":{\"source_word\":[312,56,668,136],\"selected_option\":[350,422,630,576]},\"answer\":\"D\"}",
+    "json_example_answer_only_word_braille_match_label": "{\"answer\":\"D\"}",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+  }
+}

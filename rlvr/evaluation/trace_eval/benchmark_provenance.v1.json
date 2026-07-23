@@ -1,0 +1,684 @@
+{
+  "schema_version": "trace_eval_benchmark_provenance_v1",
+  "suite_id": "trace_eval_v1",
+  "status": "reviewed_release_input",
+  "reviewed_on": "2026-07-18",
+  "policy": {
+    "benchmark_payloads_in_release": false,
+    "source_revisions": "Immutable upstream revisions are release fetch pins. The exact campaign input is additionally bound by the VLMEvalKit artifact checksum where one exists.",
+    "licenses": "A missing or scoped upstream data license is recorded explicitly and is not inferred from a paper or website license.",
+    "redistribution": "The public release contains fetch metadata and citations only; it does not redistribute benchmark prompts, answers, images, or normalized TSV files."
+  },
+  "vlmevalkit": {
+    "repository": "https://github.com/open-compass/VLMEvalKit",
+    "revision": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "chartqapro",
+      "public_name": "ChartQAPro",
+      "official_alias": "ChartQAPro_CoT",
+      "category": "Charts & Tables",
+      "row_count": 1948,
+      "source": {
+        "repository": "https://huggingface.co/datasets/ahmed-masry/ChartQAPro",
+        "revision": "e27c2874825874d6767d2bbc538ed4f0dc2c64c2",
+        "revision_kind": "hugging_face_commit",
+        "split": "test",
+        "source_row_count": 1948
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/chartqapro.tsv",
+        "checksum": {"algorithm": "md5", "value": "27653ea8dd8dd3a85bc4f432db96447a"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "MIT",
+        "evidence": "https://huggingface.co/datasets/ahmed-masry/ChartQAPro/blob/e27c2874825874d6767d2bbc538ed4f0dc2c64c2/README.md"
+      },
+      "citations": [{"title": "ChartQAPro: A More Diverse and Challenging Benchmark for Chart Question Answering", "url": "https://arxiv.org/abs/2504.05506"}],
+      "prompt_route": "Pinned VLMEvalKit ChartQAPro.build_prompt for ChartQAPro_CoT.",
+      "official_scorer": "Pinned VLMEvalKit ChartQAPro.evaluate normalized-answer metric.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "charxivreason",
+      "public_name": "CharXivReason",
+      "official_alias": "CharXiv_reasoning_val",
+      "category": "Charts & Tables",
+      "row_count": 1000,
+      "source": {
+        "repository": "https://huggingface.co/datasets/princeton-nlp/CharXiv",
+        "revision": "f441eb632fc62f6f777830a0f47619e6e86459b0",
+        "revision_kind": "hugging_face_commit",
+        "split": "validation/reasoning",
+        "source_row_count": 1000
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/CharXiv_reasoning_val.tsv",
+        "checksum": {"algorithm": "md5", "value": "6fc1a522ad32c2e3d72a89857b8cf10b"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "CC-BY-SA-4.0",
+        "evidence": "https://huggingface.co/datasets/princeton-nlp/CharXiv/blob/f441eb632fc62f6f777830a0f47619e6e86459b0/README.md"
+      },
+      "citations": [{"title": "CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs", "url": "https://arxiv.org/abs/2406.18521"}],
+      "prompt_route": "Pinned VLMEvalKit CharXiv reasoning prompt and benchmark grading prompt.",
+      "official_scorer": "Pinned CharXiv reasoning rubric, served by the release-pinned Qwen3-32B judge.",
+      "adapter": {"status": "approved", "description": "Queueing and fail-loud judge validation only; benchmark grading content is unchanged."}
+    },
+    {
+      "benchmark_id": "tablevqabench",
+      "public_name": "TableVQABench",
+      "official_alias": "TableVQABench",
+      "category": "Charts & Tables",
+      "row_count": 1500,
+      "source": {
+        "repository": "https://huggingface.co/datasets/terryoo/TableVQA-Bench",
+        "revision": "17e291af2b1cbc9340509a0412a6f1c05b0a76b5",
+        "revision_kind": "hugging_face_commit",
+        "split": "vwtq (750) + vwtq_syn (250) + vtabfact (250) + fintabnetqa (250)",
+        "source_row_count": 1500,
+        "upstream_code": "https://github.com/naver-ai/tablevqabench"
+      },
+      "evaluation_artifact": {
+        "url": "https://pai-aigc-photog.oss-cn-hangzhou.aliyuncs.com/mentor-vil/datasets/tablevqa-bench.tsv",
+        "checksum": {"algorithm": "md5", "value": "2550adc61bdc82d8e62f3b003de7c62d"}
+      },
+      "license_or_terms": {
+        "status": "declared_by_dataset_packaging",
+        "expression": "CC-BY-4.0",
+        "evidence": "https://huggingface.co/datasets/terryoo/TableVQA-Bench/tree/17e291af2b1cbc9340509a0412a6f1c05b0a76b5"
+      },
+      "citations": [{"title": "TableVQA-Bench: A Visual Question Answering Benchmark on Multiple Table Domains", "url": "https://arxiv.org/abs/2404.19205"}],
+      "prompt_route": "Pinned VLMEvalKit TableVQABench.build_prompt, including the benchmark-specific prompt for each source split.",
+      "official_scorer": "Pinned FinTabNetQA, VTabFact, VWTQ, and VWTQ-Syn scorers; primary score is their unweighted macro mean.",
+      "adapter": {"status": "approved", "description": "Remove only one official leading 'Answer: ' wrapper before the unchanged four scorers."}
+    },
+    {
+      "benchmark_id": "evochart",
+      "public_name": "EvoChart",
+      "official_alias": "EvoChart",
+      "category": "Charts & Tables",
+      "row_count": 1250,
+      "source": {
+        "repository": "https://huggingface.co/datasets/gsarch/EvoChart-QA",
+        "revision": "7ad141b29ccd734df073e163f59bb7cad8f2ed29",
+        "revision_kind": "hugging_face_commit",
+        "split": "train (the repository's complete evaluation set)",
+        "source_row_count": 1250,
+        "upstream_code_revision": "https://github.com/MuyeHuang/EvoChart/tree/6cd37bfb0cae34f6521e29fe7a6465e9850958fb"
+      },
+      "evaluation_artifact": {
+        "url": "https://huggingface.co/datasets/gsarch/EvoChart-QA/tree/7ad141b29ccd734df073e163f59bb7cad8f2ed29",
+        "checksum": null
+      },
+      "license_or_terms": {
+        "status": "scope_unclear",
+        "expression": "Dataset card declares 'other'; code repository is GPL-3.0",
+        "evidence": "https://huggingface.co/datasets/gsarch/EvoChart-QA/blob/7ad141b29ccd734df073e163f59bb7cad8f2ed29/README.md"
+      },
+      "citations": [{"title": "EvoChart: A Benchmark and a Self-Training Approach Towards Real-World Chart Understanding", "url": "https://arxiv.org/abs/2409.01577"}],
+      "prompt_route": "TRACE EvoChart adapter over pinned VLMEvalKit ImageBaseDataset; appends the documented boxed-final-answer suffix.",
+      "official_scorer": "Deterministic EvoChart metric: exact text, exact clear numeric, and 5% relative tolerance for unclear numeric rows.",
+      "adapter": {"status": "approved_required", "implementation": "rlvr/vlmevalkit_extensions/evochart.py", "description": "Pinned VLMEvalKit has no EvoChart evaluator; the adapter pins the dataset revision and implements the published deterministic metric without an LLM judge."}
+    },
+    {
+      "benchmark_id": "mathvision",
+      "public_name": "MathVision",
+      "official_alias": "MathVision",
+      "category": "Visual Math",
+      "row_count": 3040,
+      "source": {
+        "repository": "https://huggingface.co/datasets/MathLLMs/MathVision",
+        "revision": "2837ddb3f13abaf6b3997c12d80753e5470bd46a",
+        "revision_kind": "hugging_face_commit",
+        "split": "test",
+        "source_row_count": 3040
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/MathVision.tsv",
+        "checksum": {"algorithm": "md5", "value": "93f6de14f7916e598aa1b7165589831e"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "MIT",
+        "evidence": "https://huggingface.co/datasets/MathLLMs/MathVision/tree/2837ddb3f13abaf6b3997c12d80753e5470bd46a"
+      },
+      "citations": [{"title": "Measuring Multimodal Mathematical Reasoning with MATH-Vision Dataset", "url": "https://arxiv.org/abs/2402.14804"}],
+      "prompt_route": "Pinned VLMEvalKit MathVision.build_prompt.",
+      "official_scorer": "Pinned MathVision answer prefetch/extraction and normalized answer scorer.",
+      "adapter": {"status": "approved", "description": "Qwen3-32B replaces the unavailable proprietary extraction backend; official prompts and normalization are retained and malformed output fails the job."}
+    },
+    {
+      "benchmark_id": "mathvista",
+      "public_name": "MathVista",
+      "official_alias": "MathVista_MINI",
+      "category": "Visual Math",
+      "row_count": 1000,
+      "source": {
+        "repository": "https://huggingface.co/datasets/AI4Math/MathVista",
+        "revision": "2b6ad69445fbb5695c9b165475e8decdbeb97747",
+        "revision_kind": "hugging_face_commit",
+        "split": "testmini",
+        "source_row_count": 1000
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/MathVista_MINI.tsv",
+        "checksum": {"algorithm": "md5", "value": "f199b98e178e5a2a20e7048f5dcb0464"}
+      },
+      "license_or_terms": {
+        "status": "declared_with_source_dataset_terms",
+        "expression": "CC-BY-SA-4.0 for MathVista contributions; original source-dataset rights and test-only conditions also apply",
+        "evidence": "https://github.com/lupantech/MathVista/tree/main#-license"
+      },
+      "citations": [{"title": "MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts", "url": "https://arxiv.org/abs/2310.02255"}],
+      "prompt_route": "Pinned VLMEvalKit MathVista.build_prompt for MathVista_MINI.",
+      "official_scorer": "Pinned MathVista answer prefetch/extraction and normalized answer scorer.",
+      "adapter": {"status": "approved", "description": "Qwen3-32B is the pinned extraction backend; benchmark prompts and scorer are unchanged."}
+    },
+    {
+      "benchmark_id": "mathverse",
+      "public_name": "MathVerse",
+      "official_alias": "MathVerse_MINI_Vision_Only_cot",
+      "category": "Visual Math",
+      "row_count": 788,
+      "source": {
+        "repository": "https://huggingface.co/datasets/AI4Math/MathVerse",
+        "revision": "3bc86196678bad115a923d2851c6821dbe235939",
+        "revision_kind": "hugging_face_commit",
+        "split": "testmini / Vision Only variant",
+        "source_row_count": 788
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/benchmarks/MathVerse/MathVerse_MINIVOnly.tsv",
+        "checksum": {"algorithm": "md5", "value": "68a11d4680014ac881fa37adeadea3a4"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "MIT",
+        "evidence": "https://huggingface.co/datasets/AI4Math/MathVerse/tree/3bc86196678bad115a923d2851c6821dbe235939"
+      },
+      "citations": [{"title": "MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?", "url": "https://arxiv.org/abs/2403.14624"}],
+      "prompt_route": "Pinned VLMEvalKit MathVerse CoT prompt for the Vision Only testmini variant.",
+      "official_scorer": "Pinned MathVerse extraction and strict binary correctness prompts/parsers.",
+      "adapter": {"status": "approved", "description": "Qwen3-32B serves the official judge prompts; invalid judge output retries and then fails rather than becoming zero."}
+    },
+    {
+      "benchmark_id": "wemath",
+      "public_name": "WeMath",
+      "official_alias": "WeMath_COT",
+      "category": "Visual Math",
+      "row_count": 1740,
+      "source": {
+        "repository": "https://huggingface.co/datasets/We-Math/We-Math",
+        "revision": "527c44d4d94c4e3c7c98157460146a8b18c8420a",
+        "revision_kind": "hugging_face_commit",
+        "split": "testmini",
+        "source_row_count": 1740
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/WeMath.tsv",
+        "checksum": {"algorithm": "md5", "value": "b5e969a075f01290a542411fb7766388"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "CC-BY-NC-4.0",
+        "evidence": "https://huggingface.co/datasets/We-Math/We-Math/tree/527c44d4d94c4e3c7c98157460146a8b18c8420a"
+      },
+      "citations": [{"title": "We-Math: Does Your Large Multimodal Model Achieve Human-like Mathematical Reasoning?", "url": "https://aclanthology.org/2025.acl-long.983/"}],
+      "prompt_route": "Pinned VLMEvalKit WeMath.build_prompt for WeMath_COT.",
+      "official_scorer": "Pinned WeMath.evaluate Score (Strict) percent metric.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "phyx_mini_mc",
+      "public_name": "PhyX mini MC",
+      "official_alias": "PhyX_mini_MC",
+      "category": "Science & General",
+      "row_count": 1000,
+      "source": {
+        "repository": "https://huggingface.co/datasets/Cloudriver/PhyX",
+        "revision": "5a23a2762d0626b5f319bd725138cc9b18b45d8f",
+        "revision_kind": "hugging_face_commit",
+        "split": "data_for_llms_eval/phyx_mini_mc (testmini, multiple choice, text-de-duplicated)",
+        "source_row_count": 1000
+      },
+      "evaluation_artifact": {
+        "url": "https://huggingface.co/datasets/Cloudriver/PhyX/resolve/5a23a2762d0626b5f319bd725138cc9b18b45d8f/data_tsv_vlmevalkit/PhyX_mini_MC.tsv",
+        "checksum": {"algorithm": "md5", "value": "3587d8804b66a8e7678f3496716fa84f"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "MIT",
+        "evidence": "https://huggingface.co/datasets/Cloudriver/PhyX/tree/5a23a2762d0626b5f319bd725138cc9b18b45d8f"
+      },
+      "citations": [{"title": "PhyX: Does Your Model Have the Wits for Physical Reasoning?", "url": "https://arxiv.org/abs/2505.15929"}],
+      "prompt_route": "Pinned VLMEvalKit PhyX prompt for PhyX_mini_MC.",
+      "official_scorer": "Pinned VLMEvalKit PhyX multiple-choice aggregation after option extraction.",
+      "adapter": {"status": "approved", "description": "Deterministic final-option normalization before the unchanged PhyX aggregation."}
+    },
+    {
+      "benchmark_id": "mmmu_pro_vision",
+      "public_name": "MMMU-ProVis",
+      "official_alias": "MMMU_Pro_V_COT",
+      "category": "Science & General",
+      "row_count": 1730,
+      "source": {
+        "repository": "https://huggingface.co/datasets/MMMU/MMMU_Pro",
+        "revision": "563f3e84bb3b90893083a1f039cfa13077f2302b",
+        "revision_kind": "hugging_face_commit",
+        "split": "vision/test",
+        "source_row_count": 1730
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/MMMU_Pro_V.tsv",
+        "checksum": {"algorithm": "md5", "value": "d01441a87b3dbe721b5a04652ae38009"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "Apache-2.0",
+        "evidence": "https://huggingface.co/datasets/MMMU/MMMU_Pro/tree/563f3e84bb3b90893083a1f039cfa13077f2302b"
+      },
+      "citations": [{"title": "MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark", "url": "https://arxiv.org/abs/2409.02813"}],
+      "prompt_route": "Pinned VLMEvalKit MMMU-Pro vision-only CoT prompt.",
+      "official_scorer": "Pinned VLMEvalKit MMMU-Pro multiple-choice metric.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "realworldqa",
+      "public_name": "RealWorldQA",
+      "official_alias": "RealWorldQA",
+      "category": "Science & General",
+      "row_count": 765,
+      "source": {
+        "repository": "https://huggingface.co/datasets/xai-org/RealworldQA",
+        "revision": "17e7f75e092e47169732462ea3cdfebe911105dd",
+        "revision_kind": "hugging_face_commit",
+        "split": "test",
+        "source_row_count": 765
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/RealWorldQA.tsv",
+        "checksum": {"algorithm": "md5", "value": "4de008f55dc4fd008ca9e15321dc44b7"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "CC-BY-ND-4.0",
+        "evidence": "https://huggingface.co/datasets/xai-org/RealworldQA/blob/17e7f75e092e47169732462ea3cdfebe911105dd/README.md"
+      },
+      "citations": [{"title": "RealWorldQA dataset card", "url": "https://huggingface.co/datasets/xai-org/RealworldQA"}],
+      "prompt_route": "Pinned VLMEvalKit ImageMCQDataset prompt for RealWorldQA.",
+      "official_scorer": "Pinned VLMEvalKit multiple-choice accuracy.",
+      "adapter": {"status": "approved", "description": "Deterministic option extraction is applied before the unchanged pinned metric."}
+    },
+    {
+      "benchmark_id": "mmstar",
+      "public_name": "MMStar",
+      "official_alias": "MMStar",
+      "category": "Science & General",
+      "row_count": 1500,
+      "source": {
+        "repository": "https://huggingface.co/datasets/Lin-Chen/MMStar",
+        "revision": "bc98d668301da7b14f648724866e57302778ab27",
+        "revision_kind": "hugging_face_commit",
+        "split": "val",
+        "source_row_count": 1500,
+        "upstream_code_revision": "https://github.com/MMStar-Benchmark/MMStar/tree/88f243ab4a39cb339530085c33aecb22819881a1"
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/MMStar.tsv",
+        "checksum": {"algorithm": "md5", "value": "e1ecd2140806c1b1bbf54b43372efb9e"}
+      },
+      "license_or_terms": {
+        "status": "not_declared",
+        "expression": null,
+        "evidence": "https://huggingface.co/datasets/Lin-Chen/MMStar/blob/bc98d668301da7b14f648724866e57302778ab27/README.md"
+      },
+      "citations": [{"title": "Are We on the Right Way for Evaluating Large Vision-Language Models?", "url": "https://arxiv.org/abs/2403.20330"}],
+      "prompt_route": "Pinned VLMEvalKit ImageMCQDataset prompt for MMStar.",
+      "official_scorer": "Pinned VLMEvalKit multiple-choice accuracy.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "embspatial",
+      "public_name": "EmbSpatial",
+      "official_alias": "EmbSpatialBench",
+      "category": "Spatial Reasoning",
+      "row_count": 3640,
+      "source": {
+        "repository": "https://huggingface.co/datasets/Phineas476/EmbSpatial-Bench",
+        "revision": "e2733cacf0f20371518c687176e881d79644e61e",
+        "revision_kind": "hugging_face_commit",
+        "split": "full benchmark",
+        "source_row_count": 3640
+      },
+      "evaluation_artifact": {
+        "repository": "https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data",
+        "repository_revision": "52bb1dd2bc5cd58a291b3a780dab08d19c0ccf0d",
+        "path": "EmbSpatialBench.tsv",
+        "checksum": {"algorithm": "md5", "value": "a836cfd8fbe84bb42928ecef1e62ad32"}
+      },
+      "license_or_terms": {
+        "status": "declared_by_source_dataset_card",
+        "expression": "CC-BY-4.0",
+        "evidence": "https://huggingface.co/datasets/Phineas476/EmbSpatial-Bench/blob/e2733cacf0f20371518c687176e881d79644e61e/README.md"
+      },
+      "citations": [{"title": "EmbSpatial-Bench: Benchmarking Spatial Understanding for Embodied Tasks with Large Vision-Language Models", "url": "https://aclanthology.org/2024.acl-short.33/"}],
+      "prompt_route": "Pinned VLMEvalKit EmbSpatialBench.build_prompt.",
+      "official_scorer": "Pinned VLMEvalKit EmbSpatialBench.evaluate grouped multiple-choice metric.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "spatialvizbench_cot",
+      "public_name": "SpatialVizBench COT",
+      "official_alias": "SpatialVizBench_CoT",
+      "category": "Spatial Reasoning",
+      "row_count": 1180,
+      "source": {
+        "repository": "https://huggingface.co/datasets/Anonymous285714/SpatialViz-Bench",
+        "revision": "f38482a83f8f29e3cf9e07cb131d4de0f2cbd2f0",
+        "revision_kind": "hugging_face_commit",
+        "split": "test",
+        "source_row_count": 1180
+      },
+      "evaluation_artifact": {
+        "repository": "https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data",
+        "repository_revision": "52bb1dd2bc5cd58a291b3a780dab08d19c0ccf0d",
+        "path": "SpatialVizBench.tsv",
+        "checksum": {"algorithm": "md5", "value": "5ed4cb6463bfed0a92e52ffc4e8b6257"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "MIT",
+        "evidence": "https://huggingface.co/datasets/Anonymous285714/SpatialViz-Bench/tree/f38482a83f8f29e3cf9e07cb131d4de0f2cbd2f0"
+      },
+      "citations": [{"title": "SpatialViz-Bench: Automatically Generated Spatial Visualization Reasoning Tasks for MLLMs", "url": "https://arxiv.org/abs/2507.07610"}],
+      "prompt_route": "Pinned VLMEvalKit SpatialVizBench.build_prompt for the CoT variant.",
+      "official_scorer": "Pinned SpatialVizBench.evaluate, including its official retry and INVALID fallback.",
+      "adapter": {"status": "none", "description": "No fallback repair or post-hoc inference is permitted."}
+    },
+    {
+      "benchmark_id": "cvbench_3d",
+      "public_name": "CV-Bench 3D",
+      "official_alias": "CV-Bench-3D",
+      "category": "Spatial Reasoning",
+      "row_count": 1200,
+      "source": {
+        "repository": "https://huggingface.co/datasets/nyu-visionx/CV-Bench",
+        "revision": "bc284db50d036958861cb60cdd7b77612052ce0d",
+        "revision_kind": "hugging_face_commit",
+        "split": "3D/test",
+        "source_row_count": 1200
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/CV-Bench-3D.tsv",
+        "checksum": {"algorithm": "md5", "value": "bb94c0d568d652d15b60e001ac40a170"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "Apache-2.0",
+        "evidence": "https://huggingface.co/datasets/nyu-visionx/CV-Bench/tree/bc284db50d036958861cb60cdd7b77612052ce0d"
+      },
+      "citations": [{"title": "Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs", "url": "https://arxiv.org/abs/2406.16860"}],
+      "prompt_route": "Pinned VLMEvalKit CVBench.build_prompt for the 3D subset.",
+      "official_scorer": "Pinned VLMEvalKit CVBench multiple-choice accuracy.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "erqa",
+      "public_name": "ERQA",
+      "official_alias": "ERQA",
+      "category": "Spatial Reasoning",
+      "row_count": 400,
+      "source": {
+        "repository": "https://github.com/embodiedreasoning/ERQA",
+        "revision": "5bba488252c5b345a43335bfb9239b6bf12bd91c",
+        "revision_kind": "git_commit",
+        "split": "full released benchmark/test",
+        "source_row_count": 400
+      },
+      "evaluation_artifact": {
+        "repository": "https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data",
+        "repository_revision": "52bb1dd2bc5cd58a291b3a780dab08d19c0ccf0d",
+        "path": "ERQA.tsv",
+        "checksum": {"algorithm": "md5", "value": "40d45d4f0bb1852dbc68b28ee70d4ca5"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "CC-BY-4.0",
+        "evidence": "https://github.com/embodiedreasoning/ERQA/blob/5bba488252c5b345a43335bfb9239b6bf12bd91c/LICENSE"
+      },
+      "citations": [{"title": "Gemini Robotics: Bringing AI into the Physical World", "url": "https://arxiv.org/abs/2503.20020"}],
+      "prompt_route": "Pinned EASI ERQABench.build_prompt.",
+      "official_scorer": "Pinned EASI ERQABench.evaluate grouped multiple-choice metric.",
+      "adapter": {"status": "approved_required", "description": "Registry construction selects ERQABench rather than the duplicate incomplete ERQADataset class; prompt and answer content are unchanged."}
+    },
+    {
+      "benchmark_id": "blink",
+      "public_name": "BLINK",
+      "official_alias": "BLINK",
+      "category": "Perception & Counting",
+      "row_count": 1901,
+      "source": {
+        "repository": "https://huggingface.co/datasets/BLINK-Benchmark/BLINK",
+        "revision": "a3666eb249237ba3d5eca8db21176cc47967e040",
+        "revision_kind": "hugging_face_commit",
+        "split": "validation across all 14 tasks",
+        "source_row_count": 1901
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/BLINK.tsv",
+        "checksum": {"algorithm": "md5", "value": "d5e8af148b10ac69f535ff7b23f3f989"}
+      },
+      "license_or_terms": {
+        "status": "declared_with_source_dataset_disclaimer",
+        "expression": "Apache-2.0; component image-source rights and the dataset-card disclaimer also apply",
+        "evidence": "https://huggingface.co/datasets/BLINK-Benchmark/BLINK/blob/a3666eb249237ba3d5eca8db21176cc47967e040/README.md"
+      },
+      "citations": [{"title": "BLINK: Multimodal Large Language Models Can See but Not Perceive", "url": "https://arxiv.org/abs/2404.12390"}],
+      "prompt_route": "Pinned VLMEvalKit ImageMCQDataset BLINK prompt.",
+      "official_scorer": "Pinned VLMEvalKit BLINK multiple-choice accuracy.",
+      "adapter": {"status": "none", "description": "No benchmark-content adapter."}
+    },
+    {
+      "benchmark_id": "countbenchqa",
+      "public_name": "CountBenchQA",
+      "official_alias": "CountBenchQA",
+      "category": "Perception & Counting",
+      "row_count": 487,
+      "source": {
+        "repository": "https://huggingface.co/datasets/vikhyatk/CountBenchQA",
+        "revision": "76d600309e9d6147bd3713b4cd431518ac1206c8",
+        "revision_kind": "hugging_face_commit",
+        "split": "test, VLMEvalKit normalized artifact",
+        "source_row_count": 491,
+        "evaluated_row_note": "The pinned VLMEvalKit TSV contains 487 evaluable rows; the four-row difference from the source card is part of the pinned upstream artifact, not a TRACE filter."
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/CountBenchQA.tsv",
+        "checksum": {"algorithm": "md5", "value": "fc73c8d4ffa665431448753f094d56ff"}
+      },
+      "license_or_terms": {
+        "status": "not_declared",
+        "expression": null,
+        "evidence": "https://huggingface.co/datasets/vikhyatk/CountBenchQA/blob/76d600309e9d6147bd3713b4cd431518ac1206c8/README.md"
+      },
+      "citations": [
+        {"title": "CountBenchQA dataset card", "url": "https://huggingface.co/datasets/vikhyatk/CountBenchQA"},
+        {"title": "Teaching CLIP to Count to Ten", "url": "https://arxiv.org/abs/2302.12066"}
+      ],
+      "prompt_route": "Pinned VLMEvalKit CountBenchQA.build_prompt.",
+      "official_scorer": "Pinned VLMEvalKit CountBenchQA normalized exact-integer accuracy.",
+      "adapter": {"status": "none", "description": "TRACE does not select or drop CountBenchQA rows."}
+    },
+    {
+      "benchmark_id": "countqa",
+      "public_name": "CountQA",
+      "official_alias": "CountQA",
+      "category": "Perception & Counting",
+      "row_count": 1528,
+      "source": {
+        "repository": "https://huggingface.co/datasets/Jayant-Sravan/CountQA",
+        "revision": "f92cc6fe46542c61e2916e3d2ae9a911e2216b1a",
+        "revision_kind": "hugging_face_commit",
+        "split": "test; 1,001 image records expanded to all question/answer pairs",
+        "source_row_count": 1001,
+        "evaluated_question_count": 1528
+      },
+      "evaluation_artifact": {
+        "url": "https://huggingface.co/datasets/Jayant-Sravan/CountQA/tree/f92cc6fe46542c61e2916e3d2ae9a911e2216b1a",
+        "checksum": null
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "CC-BY-4.0",
+        "evidence": "https://huggingface.co/datasets/Jayant-Sravan/CountQA/blob/f92cc6fe46542c61e2916e3d2ae9a911e2216b1a/README.md"
+      },
+      "citations": [{"title": "CountQA: How Well Do MLLMs Count in the Wild?", "url": "https://arxiv.org/abs/2508.06585"}],
+      "prompt_route": "TRACE CountQA adapter expands every test image's question list and appends the boxed-final-answer suffix.",
+      "official_scorer": "Deterministic normalized exact-integer accuracy.",
+      "adapter": {"status": "approved_required", "implementation": "rlvr/vlmevalkit_extensions/trace_local_vqa.py:CountQA", "description": "Pinned VLMEvalKit has no CountQA loader; the adapter pins the HF revision, expands all QA pairs, and uses deterministic integer scoring."}
+    },
+    {
+      "benchmark_id": "treebench",
+      "public_name": "TreeBench",
+      "official_alias": "TreeBench",
+      "category": "Perception & Counting",
+      "row_count": 405,
+      "source": {
+        "repository": "https://huggingface.co/datasets/HaochenWang/TreeBench",
+        "revision": "a4eb437ab71d14f6ab1a4cf05213d0f72f831b71",
+        "revision_kind": "hugging_face_commit",
+        "split": "full released benchmark",
+        "source_row_count": 405
+      },
+      "evaluation_artifact": {
+        "url": "https://huggingface.co/datasets/HaochenWang/TreeBench/resolve/a4eb437ab71d14f6ab1a4cf05213d0f72f831b71/TreeBench.tsv",
+        "checksum": null
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "Apache-2.0",
+        "evidence": "https://huggingface.co/datasets/HaochenWang/TreeBench/blob/a4eb437ab71d14f6ab1a4cf05213d0f72f831b71/README.md"
+      },
+      "citations": [{"title": "Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Methodology", "url": "https://arxiv.org/abs/2507.07999"}],
+      "prompt_route": "Pinned VLMEvalKit TreeBench.build_prompt; OCR choices remain in the source image as required.",
+      "official_scorer": "Pinned TreeBench dimension metric after source-label option extraction.",
+      "adapter": {"status": "approved_required", "description": "Dataset construction repairs the documented shifted option metadata row without changing its prompt or answer; final boxed source-label extraction is narrowly supported."}
+    },
+    {
+      "benchmark_id": "puzzlevqa",
+      "public_name": "PuzzleVQA",
+      "official_alias": "PuzzleVQA",
+      "category": "Puzzles & Logic",
+      "row_count": 2000,
+      "source": {
+        "repository": "https://huggingface.co/datasets/declare-lab/PuzzleVQA",
+        "revision": "09290d05682a941782582ec8bbd5903347b2baff",
+        "revision_kind": "hugging_face_commit",
+        "split": "train (the repository's complete benchmark release)",
+        "source_row_count": 2000,
+        "upstream_code_revision": "https://github.com/declare-lab/LLM-PuzzleTest/tree/9b3a074cca0cfe3f06ef57acae425992fe98a8fb/PuzzleVQA"
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/PuzzleVQA.tsv",
+        "checksum": {"algorithm": "md5", "value": "6a4a40bd8967db728c06202e8265a49b"}
+      },
+      "license_or_terms": {
+        "status": "repository_license_scope_not_explicit_for_dataset",
+        "expression": "MIT repository license; the HF dataset card has no separate license field",
+        "evidence": "https://github.com/declare-lab/LLM-PuzzleTest/blob/9b3a074cca0cfe3f06ef57acae425992fe98a8fb/LICENSE"
+      },
+      "citations": [{"title": "PuzzleVQA: Diagnosing Multimodal Reasoning Challenges of Language Models with Abstract Visual Patterns", "url": "https://arxiv.org/abs/2403.13315"}],
+      "prompt_route": "Pinned VLMEvalKit PuzzleVQA.build_prompt.",
+      "official_scorer": "Pinned VLMEvalKit PuzzleVQA exact matching metric.",
+      "adapter": {"status": "approved", "description": "Accept one unambiguous final A-D choice from an answer block or final box before the unchanged scorer; conflicting choices remain unresolved."}
+    },
+    {
+      "benchmark_id": "visualpuzzles",
+      "public_name": "VisualPuzzles",
+      "official_alias": "VisualPuzzles",
+      "category": "Puzzles & Logic",
+      "row_count": 1168,
+      "source": {
+        "repository": "https://huggingface.co/datasets/neulab/VisualPuzzles",
+        "revision": "e6bc28fb1adcd27f25476b917e8c35c67b64027b",
+        "revision_kind": "hugging_face_commit",
+        "split": "train (the repository's complete benchmark release)",
+        "source_row_count": 1168
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/VisualPuzzles.tsv",
+        "checksum": {"algorithm": "md5", "value": "12bcc3f6dd7a11b33ffcd526b5601076"}
+      },
+      "license_or_terms": {
+        "status": "declared",
+        "expression": "MIT",
+        "evidence": "https://huggingface.co/datasets/neulab/VisualPuzzles/tree/e6bc28fb1adcd27f25476b917e8c35c67b64027b"
+      },
+      "citations": [{"title": "VisualPuzzles: Decoupling Multimodal Reasoning Evaluation from Domain Knowledge", "url": "https://arxiv.org/abs/2504.10342"}],
+      "prompt_route": "Pinned VLMEvalKit VisualPuzzles.build_prompt.",
+      "official_scorer": "Pinned VLMEvalKit VisualPuzzles multiple-choice metric.",
+      "adapter": {"status": "approved", "description": "Accept one unambiguous final A-D choice from an answer block or final box before the unchanged scorer; conflicting choices remain unresolved."}
+    },
+    {
+      "benchmark_id": "logicvista",
+      "public_name": "LogicVista",
+      "official_alias": "LogicVista",
+      "category": "Puzzles & Logic",
+      "row_count": 447,
+      "source": {
+        "repository": "https://huggingface.co/datasets/lscpku/LogicVista",
+        "revision": "6da949acf6ae287b59c98d1a92c8c650dd02550d",
+        "revision_kind": "hugging_face_commit",
+        "split": "test, VLMEvalKit normalized artifact",
+        "source_row_count": 448,
+        "evaluated_row_note": "The pinned VLMEvalKit TSV contains 447 rows; the one-row difference from the source card is part of the pinned artifact.",
+        "upstream_code_revision": "https://github.com/Yijia-Xiao/LogicVista/tree/e5795f17189ce1243231250af7d8c112ae2c5a57"
+      },
+      "evaluation_artifact": {
+        "url": "https://opencompass.openxlab.space/utils/VLMEval/LogicVista.tsv",
+        "checksum": {"algorithm": "md5", "value": "41c5d33adf33765c399e0e6ae588c061"}
+      },
+      "license_or_terms": {
+        "status": "scoped_source_terms",
+        "expression": "Apache-2.0 repository license; benchmark images originate from separately licensed test banks recorded by the dataset",
+        "evidence": "https://github.com/Yijia-Xiao/LogicVista/blob/e5795f17189ce1243231250af7d8c112ae2c5a57/LICENSE"
+      },
+      "citations": [{"title": "LogicVista: Multimodal LLM Logical Reasoning Benchmark in Visual Contexts", "url": "https://arxiv.org/abs/2407.04973"}],
+      "prompt_route": "Pinned VLMEvalKit LogicVista.build_prompt.",
+      "official_scorer": "Pinned option-set extraction schedule and exact normalized option-set comparison.",
+      "adapter": {"status": "approved_required", "description": "Numeric source labels are mapped to their corresponding option letters before unchanged exact-set comparison. Fail-loud judge handling is retained; baseline-specific repair receipts remain internal."}
+    },
+    {
+      "benchmark_id": "mme_reasoning",
+      "public_name": "MME-Reasoning",
+      "official_alias": "MME-Reasoning",
+      "category": "Puzzles & Logic",
+      "row_count": 1188,
+      "source": {
+        "repository": "https://huggingface.co/datasets/InternScience/MME-Reasoning",
+        "revision": "fa63872e19d9fb10d74e993655435f91642d4d96",
+        "revision_kind": "hugging_face_commit",
+        "split": "full released benchmark",
+        "source_row_count": 1188,
+        "upstream_code_revision": "https://github.com/Alpha-Innovator/MME-Reasoning/tree/104060ed6b55a16503cd392fb11848d766c3e049"
+      },
+      "evaluation_artifact": {
+        "url": "https://huggingface.co/datasets/InternScience/MME-Reasoning/resolve/fa63872e19d9fb10d74e993655435f91642d4d96/MME_Reasoning.tsv",
+        "checksum": {"algorithm": "md5", "value": "b243f44778782d3821523689f6b40a1e"}
+      },
+      "license_or_terms": {
+        "status": "repository_license_scope_not_explicit_for_dataset",
+        "expression": "Apache-2.0 repository license; the HF dataset card has no separate license field",
+        "evidence": "https://github.com/Alpha-Innovator/MME-Reasoning/blob/104060ed6b55a16503cd392fb11848d766c3e049/LICENSE"
+      },
+      "citations": [{"title": "MME-Reasoning: A Comprehensive Benchmark for Logical Reasoning in MLLMs", "url": "https://arxiv.org/abs/2505.21327"}],
+      "prompt_route": "Pinned VLMEvalKit MME-Reasoning generation prompt and official task-specific extraction prompts.",
+      "official_scorer": "Official choice, open-answer, and structured-puzzle functions; Qwen3-32B is used only where the official open-answer contract requires semantic correctness.",
+      "adapter": {"status": "approved_required", "implementation": "scripts/run_mme_reasoning_eval.py", "description": "Choice output is normalized to the official A or A,C form; official retry temperatures are retained and infrastructure failures fail the job."}
+    }
+  ]
+}

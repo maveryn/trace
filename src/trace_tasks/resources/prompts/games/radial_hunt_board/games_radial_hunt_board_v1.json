@@ -1,0 +1,119 @@
+{
+  "bundle_id": "games_radial_hunt_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "radial_hunt_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The board shows {object_description}."
+      ]
+    },
+    "task": {
+      "radial_hunt_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_piece_destination_count": [
+        "{movement_rule_text} How many simple-move destinations does the X-marked piece have?",
+        "{movement_rule_text} Count the adjacent empty points the X-marked piece can reach with one simple move.",
+        "{movement_rule_text} What is the number of one-step destinations for the X-marked piece?",
+        "{movement_rule_text} Count only empty points connected to the X-marked piece by one drawn line segment.",
+        "{movement_rule_text} How many adjacent empty points can the X-marked piece reach without a capture jump?"
+      ],
+      "capture_move_count": [
+        "{capture_rule_text} How many legal moves for the X-marked piece would capture at least one opposing piece?",
+        "{capture_rule_text} Count the legal capture moves for the X-marked piece.",
+        "{capture_rule_text} What is the number of jump-over capture moves for the X-marked piece?",
+        "{capture_rule_text} Count only landing points where the X-marked piece would capture an opposing piece.",
+        "{capture_rule_text} How many empty landing points can the X-marked piece reach by a capture jump?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:radial_hunt_board": [
+      "object_description"
+    ],
+    "query:marked_piece_destination_count": [
+      "movement_rule_text"
+    ],
+    "query:capture_move_count": [
+      "capture_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "capture_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "movement_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_open_position": "a radial point-and-line hunt board with three concentric circles, three diameters, and a few pieces",
+    "object_description_mixed_position": "a radial point-and-line hunt board with three concentric circles, three diameters, and several pieces",
+    "object_description_crowded_position": "a radial point-and-line hunt board with three concentric circles, three diameters, and many pieces",
+    "movement_rule_text": "A simple move goes one step along a drawn circle or diameter line to an adjacent empty point. Do not count capture jumps.",
+    "capture_rule_text": "A capture move jumps over one adjacent opposing piece along the same drawn circle or diameter line and lands on the empty point immediately beyond it.",
+    "annotation_hint_marked_piece_destination_count": "set \"annotation\" to [x, y] pixel points at the centers of every one-step adjacent empty destination for the X-marked piece; use an empty array when the count is 0",
+    "answer_hint_marked_piece_destination_count": "set \"answer\" to the number of one-step adjacent empty destinations for the X-marked piece",
+    "annotation_hint_capture_move_count": "set \"annotation\" to [x, y] pixel points at the centers of every empty point where the X-marked piece can land by a capture jump; use an empty array if there are none",
+    "answer_hint_capture_move_count": "set \"answer\" to the number of legal capture moves for the X-marked piece"
+  }
+}

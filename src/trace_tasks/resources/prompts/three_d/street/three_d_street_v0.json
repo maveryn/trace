@@ -1,0 +1,92 @@
+{
+  "bundle_id": "three_d_street_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "street_intersection_nearest_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "street_same_road_arm_reference_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "street_lane_ahead_object_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:street": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer field: {answer_hint}.\nAnnotation field: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "street": [
+      "The image shows {object_description}.",
+      "The scene shows {object_description}.",
+      "The image presents {object_description}.",
+      "The picture shows {object_description}.",
+      "The view shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "closest_to_intersection": [
+      "Which option describes the street object closest to the center of the intersection?",
+      "Choose the option for the street object nearest the intersection center.",
+      "Using the ground positions, which option describes the object nearest to the middle of the intersection?",
+      "Which option describes the object closest to where the roads meet?",
+      "Among the candidate street objects, which option is closest to the intersection center?"
+    ],
+    "same_road_arm_as_reference": [
+      "Which option describes the street object on the same road arm as the red-boxed object?",
+      "Choose the option for the street object on the same road arm as the red-boxed object.",
+      "Which option describes the object placed along the same road arm as the red-boxed object?",
+      "Using the road arms, which option describes the object that shares the same road arm as the red-boxed object?",
+      "Among the candidate street objects, which option is on the same road arm as the red-boxed object?"
+    ],
+    "ahead_along_lane": [
+      "Using the red arrow as the travel direction, which option describes the street object directly ahead of the red-boxed object if it continues along its lane?",
+      "Which option describes the object directly ahead of the red-boxed object along the lane indicated by the red arrow?",
+      "Follow the red-boxed object's red direction arrow along its lane. Which option describes the street object directly ahead?",
+      "If the red-boxed object keeps moving in the red-arrow direction along its lane, which option describes the object directly ahead?",
+      "Among the candidate street objects, which option is ahead of the red-boxed object in the lane shown by the red arrow?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

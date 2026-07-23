@@ -1,0 +1,156 @@
+{
+  "bundle_id": "games_tic_tac_toe_3d_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "tic_tac_toe_3d_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This game board shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "tic_tac_toe_3d_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "x_winning_move_label": [
+        "{winning_rule_text} Which labeled empty cell lets X complete a three-in-a-row?",
+        "{winning_rule_text} Which option is X's immediate winning move?",
+        "{winning_rule_text} Choose the labeled empty cell where X completes a line.",
+        "{winning_rule_text} Which labeled cell should X play to make three in a row?",
+        "{winning_rule_text} Which empty-cell label completes a line for X?"
+      ],
+      "o_winning_move_label": [
+        "{winning_rule_text} Which labeled empty cell lets O complete a three-in-a-row?",
+        "{winning_rule_text} Which option is O's immediate winning move?",
+        "{winning_rule_text} Choose the labeled empty cell where O completes a line.",
+        "{winning_rule_text} Which labeled cell should O play to make three in a row?",
+        "{winning_rule_text} Which empty-cell label completes a line for O?"
+      ],
+      "x_blocking_move_label": [
+        "{winning_rule_text} O has exactly one immediate winning line. Which labeled empty cell should X play to block it?",
+        "{winning_rule_text} Choose the labeled cell where X blocks O's immediate win.",
+        "{winning_rule_text} Which option stops O from completing three in a row on the next move?",
+        "{winning_rule_text} Which labeled empty cell should X occupy to block O's threat?",
+        "{winning_rule_text} Select the cell label for X's blocking move against O."
+      ],
+      "o_blocking_move_label": [
+        "{winning_rule_text} X has exactly one immediate winning line. Which labeled empty cell should O play to block it?",
+        "{winning_rule_text} Choose the labeled cell where O blocks X's immediate win.",
+        "{winning_rule_text} Which option stops X from completing three in a row on the next move?",
+        "{winning_rule_text} Which labeled empty cell should O occupy to block X's threat?",
+        "{winning_rule_text} Select the cell label for O's blocking move against X."
+      ],
+      "piece_count_in_layer": [
+        "How many {target_player} pieces are in the {target_layer_label} layer?",
+        "Count the {target_player} pieces in the {target_layer_label} layer.",
+        "What is the number of {target_player} pieces in the {target_layer_label} layer?",
+        "Determine how many {target_player} marks appear in the {target_layer_label} layer.",
+        "How many {target_player} marks are on the {target_layer_label} layer?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tic_tac_toe_3d_board": [
+      "object_description"
+    ],
+    "query:x_winning_move_label": [
+      "winning_rule_text"
+    ],
+    "query:o_winning_move_label": [
+      "winning_rule_text"
+    ],
+    "query:x_blocking_move_label": [
+      "winning_rule_text"
+    ],
+    "query:o_blocking_move_label": [
+      "winning_rule_text"
+    ],
+    "query:piece_count_in_layer": [
+      "target_layer_label",
+      "target_player"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "target_layer_label": {
+      "type": "label"
+    },
+    "target_player": {
+      "type": "string"
+    },
+    "winning_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_tic_tac_toe_3d": "three stacked 3 by 3 layers of a 3D Tic-Tac-Toe board, ordered from top to bottom",
+    "tic_tac_toe_3d_winning_rule_text": "A line can run within one layer, straight through the layers, diagonally across a face, or diagonally through all three layers.",
+    "annotation_hint_x_winning_move_label": "set \"annotation\" to an array containing [x0, y0, x1, y1] boxes for the three board cells that form the completed winning line for X",
+    "answer_hint_x_winning_move_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_o_winning_move_label": "set \"annotation\" to an array containing [x0, y0, x1, y1] boxes for the three board cells that form the completed winning line for O",
+    "answer_hint_o_winning_move_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_x_blocking_move_label": "set \"annotation\" to an array containing [x0, y0, x1, y1] boxes for the blocking cell and the two O cells in the immediate threat line",
+    "answer_hint_x_blocking_move_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_o_blocking_move_label": "set \"annotation\" to an array containing [x0, y0, x1, y1] boxes for the blocking cell and the two X cells in the immediate threat line",
+    "answer_hint_o_blocking_move_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_piece_count_in_layer": "set \"annotation\" to an array containing pixel-coordinate [x, y] points at the centers of all {target_player} pieces in the requested layer",
+    "answer_hint_piece_count_in_layer": "set \"answer\" to the number of {target_player} pieces in the requested layer"
+  }
+}

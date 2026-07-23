@@ -1,0 +1,89 @@
+{
+  "bundle_id": "geometry_solid_formula_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "solid_formula_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:solid_formula_scene": [
+      "object_description"
+    ],
+    "query:cylinder_cone_radius_from_volume_heights": [],
+    "query:cylinder_cone_height_from_volume_radius": [],
+    "query:prism_pyramid_height_from_volume": [],
+    "query:house_prism_length_from_volume": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "solid_formula_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The labeled diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "cylinder_cone_radius_from_volume_heights": [
+      "What is the missing shared radius?",
+      "Find the shared radius marked with a question mark.",
+      "Determine the unknown shared radius.",
+      "What shared radius is marked as missing?",
+      "Find the missing value of r."
+    ],
+    "cylinder_cone_height_from_volume_radius": [
+      "What is the missing cylinder height?",
+      "Find the cylinder height marked with a question mark.",
+      "Determine the unknown cylinder height.",
+      "What cylinder height is marked as missing?",
+      "Find the missing value of x."
+    ],
+    "prism_pyramid_height_from_volume": [
+      "What is the missing prism height?",
+      "Find the prism height marked with a question mark.",
+      "Determine the unknown prism height.",
+      "What value of x is marked as missing?",
+      "Find the missing value of x."
+    ],
+    "house_prism_length_from_volume": [
+      "What is the missing length of the compound prism?",
+      "Find the length marked with a question mark.",
+      "Determine the unknown length of the compound prism.",
+      "What value of L is marked as missing?",
+      "Find the missing value of L."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

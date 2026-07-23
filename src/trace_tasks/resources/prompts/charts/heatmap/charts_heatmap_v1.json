@@ -1,0 +1,137 @@
+{
+  "bundle_id": "charts_heatmap_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "heatmap_scene": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "heatmap_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "axis_condition_extremum_label": [
+        "Which {answer_axis} label has the most cells with {condition_phrase}?",
+        "Find the {answer_axis} with the largest number of cells with {condition_phrase}. What is its label?",
+        "Across all {answer_axis}s, which one contains the most cells with {condition_phrase}?",
+        "Using the heatmap colors, which {answer_axis} label has the most cells with {condition_phrase}?",
+        "What {answer_axis} label corresponds to the greatest count of cells with {condition_phrase}?"
+      ],
+      "axis_cell_extremum_label": [
+        "In {query_axis} \"{axis_label}\", which {answer_axis} label has the {extremum_phrase} cell?",
+        "Look only at {query_axis} \"{axis_label}\". What {answer_axis} label contains the {extremum_phrase} cell?",
+        "For {query_axis} \"{axis_label}\", what {answer_axis} label has the {extremum_phrase} cell?",
+        "Within the {query_axis} labeled \"{axis_label}\", which {answer_axis} is {extremum_phrase}?",
+        "What {answer_axis} label has the {extremum_phrase} cell in {query_axis} \"{axis_label}\"?"
+      ],
+      "condition_run_extremum_label": [
+        "Which row label has the longest consecutive run of cells with {condition_phrase}?",
+        "Find the row with the longest left-to-right run of cells with {condition_phrase}. What is its label?",
+        "Across all rows, which row contains the longest uninterrupted sequence of cells with {condition_phrase}?",
+        "Using the heatmap order from left to right, which row label has the longest run of cells with {condition_phrase}?",
+        "What row label corresponds to the longest consecutive streak of cells with {condition_phrase}?"
+      ],
+      "colorbar_above_threshold_cell_count": [
+        "Using the colorbar scale, how many cells have values above {threshold_value}?",
+        "How many heatmap cells are above {threshold_value} according to the colorbar scale?",
+        "Count the cells whose color corresponds to a value greater than {threshold_value} on the colorbar.",
+        "Using the numeric colorbar, what is the number of cells with values above {threshold_value}?",
+        "How many cells fall above {threshold_value} on the displayed color scale?"
+      ],
+      "colorbar_below_threshold_cell_count": [
+        "Using the colorbar scale, how many cells have values below {threshold_value}?",
+        "How many heatmap cells are below {threshold_value} according to the colorbar scale?",
+        "Count the cells whose color corresponds to a value less than {threshold_value} on the colorbar.",
+        "Using the numeric colorbar, what is the number of cells with values below {threshold_value}?",
+        "How many cells fall below {threshold_value} on the displayed color scale?"
+      ],
+      "colorbar_interval_cell_count": [
+        "Using the colorbar scale, how many cells have values from {lower_bound} to {upper_bound}, inclusive?",
+        "How many heatmap cells fall between {lower_bound} and {upper_bound}, inclusive, according to the colorbar?",
+        "Count the cells whose color corresponds to a value in the inclusive interval {lower_bound} to {upper_bound}.",
+        "Using the numeric colorbar, what is the number of cells with values from {lower_bound} through {upper_bound}?",
+        "How many cells fall within the inclusive colorbar range {lower_bound} to {upper_bound}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:axis_condition_extremum_label": {
+      "answer_hint": "set \"answer\" to the exact visible row or column label as a string",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes, one around each matching cell in the winning row or column",
+      "json_example": "{\"annotation\":[[220,167,260,207],[346,167,386,207],[472,167,512,207]],\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:axis_cell_extremum_label": {
+      "answer_hint": "set \"answer\" to the exact visible row or column label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the selected target cell",
+      "json_example": "{\"annotation\":[400,163,440,203],\"answer\":\"Orly\"}",
+      "json_example_answer_only": "{\"answer\":\"Orly\"}"
+    },
+    "query:condition_run_extremum_label": {
+      "answer_hint": "set \"answer\" to the exact visible row label as a string",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around the winning consecutive run cells, from left to right",
+      "json_example": "{\"annotation\":[[530,427,570,467],[593,427,633,467],[656,427,696,467]],\"answer\":\"Mesa\"}",
+      "json_example_answer_only": "{\"answer\":\"Mesa\"}"
+    },
+    "query:colorbar_above_threshold_cell_count": {
+      "answer_hint": "set \"answer\" to the requested cell count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around all counted cells, in row-major order",
+      "json_example": "{\"annotation\":[[220,167,260,207],[346,167,386,207],[472,167,512,207]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:colorbar_below_threshold_cell_count": {
+      "answer_hint": "set \"answer\" to the requested cell count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around all counted cells, in row-major order",
+      "json_example": "{\"annotation\":[[220,167,260,207],[346,167,386,207],[472,167,512,207]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:colorbar_interval_cell_count": {
+      "answer_hint": "set \"answer\" to the requested cell count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around all counted cells, in row-major order",
+      "json_example": "{\"annotation\":[[400,163,440,203],[400,223,440,263]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "answer_axis": {"type": "string"},
+    "condition_phrase": {"type": "string"},
+    "unanswerable_instruction": {"type": "string"},
+    "query_axis": {"type": "string"},
+    "axis_label": {"type": "string"},
+    "row_label": {"type": "string"},
+    "column_label": {"type": "string"},
+    "extremum_phrase": {"type": "string"},
+    "threshold_value": {"type": "string"},
+    "lower_bound": {"type": "string"},
+    "upper_bound": {"type": "string"}
+  }
+}

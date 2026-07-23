@@ -1,0 +1,88 @@
+generation:
+  shared:
+    scene_variant_weights:
+      open_board: 1.0
+      crowded_board: 1.0
+    player_color_weights:
+      red: 1.0
+      blue: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      slate: 1.0
+      paper: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_player_color_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_size_sampling: true
+    board_size_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    min_extra_own_stones: 2
+    max_extra_own_stones: 7
+    min_extra_opponent_stones: 5
+    max_extra_opponent_stones: 14
+  task_overrides:
+    task_games__hex__candidate_neighbor_count:
+      balanced_target_answer_sampling: true
+      neighbor_target_state_weights:
+        red: 1.0
+        blue: 1.0
+        empty: 1.0
+      balanced_neighbor_target_state_sampling: true
+      neighbor_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    task_games__hex__connection_gap_count:
+      balanced_target_answer_sampling: true
+      connection_gap_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    task_games__hex__winning_move_cell_label:
+      balanced_target_label_sampling: true
+      balanced_candidate_count_sampling: true
+      candidate_count_support:
+      - 4
+      - 5
+      - 6
+      winning_move_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 720
+    panel_margin_px: 42
+    max_board_width_px: 620
+    max_board_height_px: 580
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    hex_border_width_px: 3
+    stone_radius_fraction: 0.46
+    candidate_label_font_size_px: 30
+    side_band_width_px: 8
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 520
+    canvas_min_height_px: 500
+    canvas_side_padding_px: 45
+    canvas_vertical_padding_px: 45
+prompt:
+  shared:
+    bundle_id: games_hex_v1
+    scene_key: visible_hex_board
+    task_key: hex_connection_query

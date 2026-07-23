@@ -1,0 +1,94 @@
+{
+  "bundle_id": "graph_node_link_path_v1",
+  "schema_version": "v0",
+  "task_templates": {
+    "shortest_path_length_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "longest_path_length_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:single_graph_path": [
+      "object_description"
+    ],
+    "query:shortest_path_length": [
+      "source_label",
+      "goal_label"
+    ],
+    "query:directed_shortest_path_length": [
+      "source_label",
+      "goal_label"
+    ],
+    "query:directed_longest_path_length": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "single_graph_path": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "shortest_path_length": [
+      "The graph has a unique shortest path from node {source_label} to node {goal_label}. How many edges are in that path?",
+      "Following edges from node {source_label} to node {goal_label}, how many edges are in the unique shortest path?",
+      "What is the length, in edges, of the unique shortest path from {source_label} to {goal_label}?",
+      "Find the unique shortest path between nodes {source_label} and {goal_label}. How many edges does it contain?",
+      "How many edges lie on the unique shortest path from node {source_label} to node {goal_label}?"
+    ],
+    "directed_shortest_path_length": [
+      "There is a unique shortest path from node {source_label} to node {goal_label} when following the direction of the arrows. How many edges are in that path?",
+      "Following only arrow directions, how many edges are in the unique shortest path from {source_label} to {goal_label}?",
+      "What is the directed shortest-path length from node {source_label} to node {goal_label}?",
+      "Find the unique arrow-following shortest path from {source_label} to {goal_label}. How many edges does it contain?",
+      "How many directed edges lie on the unique shortest path from node {source_label} to node {goal_label}?"
+    ],
+    "directed_longest_path_length": [
+      "The directed graph has a unique longest directed path. How many edges are in that path?",
+      "Find the unique longest path when following arrow directions. How many directed edges does it contain?",
+      "What is the length, in directed edges, of the graph's unique longest path?",
+      "Among all arrow-following paths in the directed acyclic graph, the longest one is unique. How many edges are on it?",
+      "How many directed edges lie on the unique longest directed path in the graph?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

@@ -1,0 +1,117 @@
+{
+  "bundle_id": "geometry_solid_formula_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "solid_formula_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This labeled solid diagram shows {object_description}.",
+        "This geometry diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "solid_formula_value_query": [
+        "Use the labeled dimensions and volume to find the value marked ?.",
+        "Find the missing dimension marked ? from the visible solid measurements.",
+        "Use the solid-volume relationship shown by the diagram to solve the missing dimension.",
+        "Determine the unknown dimension marked ? using the labeled measurements.",
+        "Solve for the missing dimension from the volume and the shown dimensions."
+      ]
+    },
+    "query": {
+      "single": [
+        "What is the value marked with a question mark?",
+        "Find the missing dimension marked with a question mark.",
+        "Determine the unknown dimension in the solid.",
+        "What value is marked as missing?",
+        "Find the missing measurement."
+      ],
+      "cylinder_cone_height_from_volume_radius": [
+        "The solid is a cylinder with a cone on top. Use the radius, cone height, and total volume to find the cylinder height marked ?.",
+        "Find the cylinder height marked ?. The volume is the cylinder volume plus the cone volume.",
+        "Use V = πr²x + (1/3)πr²c, where x is the cylinder height marked ?.",
+        "The volume label is a multiple of π. Use the given radius and cone height to solve for the missing cylinder height.",
+        "Find the straight cylinder height, not the total height of the combined solid."
+      ],
+      "cylinder_cone_radius_from_volume_heights": [
+        "The solid is a cylinder with a cone on top. Use total height and cone height to get the cylinder height, then find the shared radius marked ?.",
+        "Find the radius marked ?. The volume is the cylinder volume plus the cone volume.",
+        "Use V = πr²(H-c) + (1/3)πr²c, where H is total height and c is cone height.",
+        "The volume label is a multiple of π. Use the shown heights to solve for the common radius.",
+        "Subtract cone height from total height to get the cylinder height before solving for r."
+      ],
+      "prism_pyramid_height_from_volume": [
+        "The solid is a rectangular prism with a pyramid cap. Use the base length, base width, pyramid height, and total volume to find the prism height marked ?.",
+        "Find the prism height marked ?. The volume is the prism volume plus the pyramid volume.",
+        "Use V = lwx + (1/3)lwp, where x is the prism height marked ?.",
+        "Use the labeled rectangular base and pyramid height to solve the missing prism height.",
+        "Find the vertical prism height, not the pyramid height."
+      ],
+      "house_prism_length_from_volume": [
+        "The solid is a house-shaped prism. Find the length marked ? using volume = cross-section area × length.",
+        "Find the prism length marked ?. The front cross-section is a rectangle plus a triangular roof.",
+        "Compute the cross-section area as base × wall height plus one-half × base × roof height, then use the volume.",
+        "Use the labeled base width, wall height, roof height, and volume to solve for the prism length.",
+        "Find the depth/length of the prism, not the width of the front face."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:solid_formula_scene": [
+      "object_description"
+    ],
+    "query:single": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:solid_formula_scene": {
+      "object_description": "a compound solid with labeled measurements and one dimension marked ?"
+    },
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\".",
+      "answer_hint_number": "set \"answer\" to the missing dimension rounded to one decimal place",
+      "answer_hint": "set \"answer\" to the missing dimension rounded to one decimal place"
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  }
+}

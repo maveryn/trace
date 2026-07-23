@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trace-tasks"
+version = "0.1.0"
+description = "A grounded visual reasoning task environment for verifiable post-training"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{name = "Md Tanvirul Alam"}]
+keywords = [
+    "visual-reasoning",
+    "synthetic-data",
+    "reinforcement-learning",
+    "rlvr",
+    "multimodal",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "Pillow>=9.0.0",
+    "cairosvg>=2.7.0",
+    "tqdm>=4.0.0",
+    "PyYAML>=6.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "networkx>=3.0",
+    "rfc8785>=0.1.4",
+    "blake3>=1.0.0",
+    "zstandard>=0.22.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+    "build>=1.2.0",
+    "setuptools>=77",
+    "wheel",
+]
+export = [
+    "pyarrow>=15.0.0",
+    "datasets>=2.18.0",
+]
+
+[project.scripts]
+trace-list = "trace_tasks.cli:list_main"
+trace-generate = "trace_tasks.cli:generate_main"
+trace-validate = "trace_tasks.cli:validate_main"
+trace-export = "trace_tasks.cli:export_main"
+
+[project.urls]
+Homepage = "https://maveryn.github.io/trace/"
+Documentation = "https://maveryn.github.io/trace/"
+Repository = "https://github.com/maveryn/trace"
+Issues = "https://github.com/maveryn/trace/issues"
+Paper = "https://github.com/maveryn/trace/blob/main/paper.pdf"
+Research = "https://maveryn.github.io/trace/research/"
+Collection = "https://huggingface.co/collections/maveryn/trace-6a604291b4be4ed6399b9f24"
+Dataset = "https://huggingface.co/datasets/maveryn/trace"
+"3B Model" = "https://huggingface.co/maveryn/trace-qwen2.5-vl-3b"
+"7B Model" = "https://huggingface.co/maveryn/trace-qwen2.5-vl-7b"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["trace_tasks*"]
+
+[tool.setuptools.package-data]
+trace_tasks = [
+    "configs/*.json",
+    "resources/**/*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]

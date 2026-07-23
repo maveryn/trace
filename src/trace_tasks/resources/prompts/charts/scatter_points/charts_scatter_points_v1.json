@@ -1,0 +1,209 @@
+{
+  "bundle_id": "charts_scatter_points_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "scatter_points": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "scatter_points_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+            "x_above_threshold_count": [
+                "How many data points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "Using the visible threshold guide, how many points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "How many plotted points satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "What is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "x_below_threshold_count": [
+                "How many data points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "Using the visible threshold guide, how many points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "How many plotted points satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "What is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "y_above_threshold_count": [
+                "How many data points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "Using the visible threshold guide, how many points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "How many plotted points satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "What is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "y_below_threshold_count": [
+                "How many data points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "Using the visible threshold guide, how many points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "How many plotted points satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "What is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "largest_mean_x_category_label": [
+                "Which category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Compare the category point clouds. Which category has the {mean_extremum_phrase} average {axis_phrase}-axis position?",
+                "Using all points in each category, what category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Which legend category's points have the {mean_extremum_phrase} mean {axis_phrase}-axis coordinate?",
+                "Find the category with the {mean_extremum_phrase} average value along the {axis_phrase}-axis."
+            ],
+            "smallest_mean_x_category_label": [
+                "Which category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Compare the category point clouds. Which category has the {mean_extremum_phrase} average {axis_phrase}-axis position?",
+                "Using all points in each category, what category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Which legend category's points have the {mean_extremum_phrase} mean {axis_phrase}-axis coordinate?",
+                "Find the category with the {mean_extremum_phrase} average value along the {axis_phrase}-axis."
+            ],
+            "largest_mean_y_category_label": [
+                "Which category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Compare the category point clouds. Which category has the {mean_extremum_phrase} average {axis_phrase}-axis position?",
+                "Using all points in each category, what category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Which legend category's points have the {mean_extremum_phrase} mean {axis_phrase}-axis coordinate?",
+                "Find the category with the {mean_extremum_phrase} average value along the {axis_phrase}-axis."
+            ],
+            "smallest_mean_y_category_label": [
+                "Which category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Compare the category point clouds. Which category has the {mean_extremum_phrase} average {axis_phrase}-axis position?",
+                "Using all points in each category, what category has the {mean_extremum_phrase} mean {axis_phrase}-axis value?",
+                "Which legend category's points have the {mean_extremum_phrase} mean {axis_phrase}-axis coordinate?",
+                "Find the category with the {mean_extremum_phrase} average value along the {axis_phrase}-axis."
+            ],
+            "category_x_above_threshold_count": [
+                "For category \"{target_category_label}\", how many points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Use the legend to locate category \"{target_category_label}\". How many of its points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "Within category \"{target_category_label}\", count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "How many plotted points from category \"{target_category_label}\" satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "For the visible category \"{target_category_label}\", what is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "category_x_below_threshold_count": [
+                "For category \"{target_category_label}\", how many points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Use the legend to locate category \"{target_category_label}\". How many of its points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "Within category \"{target_category_label}\", count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "How many plotted points from category \"{target_category_label}\" satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "For the visible category \"{target_category_label}\", what is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "category_y_above_threshold_count": [
+                "For category \"{target_category_label}\", how many points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Use the legend to locate category \"{target_category_label}\". How many of its points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "Within category \"{target_category_label}\", count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "How many plotted points from category \"{target_category_label}\" satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "For the visible category \"{target_category_label}\", what is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ],
+            "category_y_below_threshold_count": [
+                "For category \"{target_category_label}\", how many points have {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?",
+                "Use the legend to locate category \"{target_category_label}\". How many of its points are {threshold_direction_phrase} {threshold_value} on the {axis_phrase}-axis?",
+                "Within category \"{target_category_label}\", count the points whose {axis_phrase}-axis values are {threshold_direction_phrase} {threshold_value}.",
+                "How many plotted points from category \"{target_category_label}\" satisfy {axis_phrase} {threshold_direction_phrase} {threshold_value}?",
+                "For the visible category \"{target_category_label}\", what is the number of points with {axis_phrase}-axis values {threshold_direction_phrase} {threshold_value}?"
+            ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+                "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+        "query:x_above_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:x_below_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:y_above_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:y_below_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:largest_mean_x_category_label": {
+            "answer_hint": "set \"answer\" to the exact visible category label as a string",
+            "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer category's point cluster",
+            "json_example": "{\"annotation\":[210,260,675,438],\"answer\":\"Orchid\"}",
+            "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+        },
+        "query:smallest_mean_x_category_label": {
+            "answer_hint": "set \"answer\" to the exact visible category label as a string",
+            "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer category's point cluster",
+            "json_example": "{\"annotation\":[210,260,675,438],\"answer\":\"Orchid\"}",
+            "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+        },
+        "query:largest_mean_y_category_label": {
+            "answer_hint": "set \"answer\" to the exact visible category label as a string",
+            "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer category's point cluster",
+            "json_example": "{\"annotation\":[210,260,675,438],\"answer\":\"Orchid\"}",
+            "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+        },
+        "query:smallest_mean_y_category_label": {
+            "answer_hint": "set \"answer\" to the exact visible category label as a string",
+            "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer category's point cluster",
+            "json_example": "{\"annotation\":[210,260,675,438],\"answer\":\"Orchid\"}",
+            "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+        },
+        "query:category_x_above_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:category_x_below_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:category_y_above_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        },
+        "query:category_y_below_threshold_count": {
+            "answer_hint": "set \"answer\" to the requested count as an integer",
+            "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the supporting data points",
+            "json_example": "{\"annotation\":[[230,410],[512,288]],\"answer\":2}",
+            "json_example_answer_only": "{\"answer\":2}"
+        }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "axis_phrase": {"type": "string"},
+    "threshold_direction_phrase": {"type": "string"},
+    "threshold_value": {"type": "string"},
+    "mean_extremum_phrase": {"type": "string"},
+    "target_category_label": {"type": "string"}
+  }
+}

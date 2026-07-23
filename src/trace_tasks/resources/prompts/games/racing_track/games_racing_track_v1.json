@@ -1,0 +1,134 @@
+{
+  "bundle_id": "games_racing_track_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "racing_track_loop": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "racing_track_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "closest_to_finish_label": [
+        "{distance_rule_text} Which labeled car is closest to the finish line?",
+        "{distance_rule_text} Select the car with the shortest remaining distance to the finish line.",
+        "{distance_rule_text} Which car reaches the finish line next?",
+        "{distance_rule_text} Report the label of the car nearest to finishing.",
+        "{distance_rule_text} Identify the labeled car closest to the finish."
+      ],
+      "farthest_from_finish_label": [
+        "{distance_rule_text} Which labeled car is farthest from the finish line?",
+        "{distance_rule_text} Select the car with the longest remaining distance to the finish line.",
+        "{distance_rule_text} Which car has the most distance left before the finish line?",
+        "{distance_rule_text} Report the label of the car farthest from finishing.",
+        "{distance_rule_text} Identify the labeled car farthest from the finish."
+      ],
+      "car_ahead_count": [
+        "{ahead_rule_text} How many other cars are ahead of the marked car before the finish line?",
+        "{ahead_rule_text} Count the other cars between the marked car and the finish line.",
+        "{ahead_rule_text} What is the number of other cars ahead of the marked car?",
+        "{ahead_rule_text} Report how many labeled cars come after the marked car before the finish.",
+        "{ahead_rule_text} Count only the cars ahead of the marked car before the finish line."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:racing_track_loop": [
+      "object_description"
+    ],
+    "query:closest_to_finish_label": [
+      "distance_rule_text"
+    ],
+    "query:farthest_from_finish_label": [
+      "distance_rule_text"
+    ],
+    "query:car_ahead_count": [
+      "ahead_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "ahead_rule_text": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "distance_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_oval_loop": "a top-down loop racing track with a checkered finish line, a direction arrow, and labeled cars",
+    "object_description_rounded_loop": "a rounded loop racing track with a checkered finish line, a direction arrow, and labeled cars",
+    "object_description_kidney_loop": "a curved loop racing track with a checkered finish line, a direction arrow, and labeled cars",
+    "object_description_oval_loop_ahead_count": "a top-down loop racing track with a checkered finish line, a direction arrow, a marked car, and other labeled cars",
+    "object_description_rounded_loop_ahead_count": "a rounded loop racing track with a checkered finish line, a direction arrow, a marked car, and other labeled cars",
+    "object_description_kidney_loop_ahead_count": "a curved loop racing track with a checkered finish line, a direction arrow, a marked car, and other labeled cars",
+    "distance_rule_text": "Measure distance along the track in the arrow direction.",
+    "ahead_rule_text": "Follow the arrow direction from the marked car to the finish line. Do not count the marked car.",
+    "annotation_hint_closest_to_finish_label": "set \"annotation\" to [x, y], the pixel center of the selected car",
+    "answer_hint_closest_to_finish_label": "set \"answer\" to the selected car label as a capital letter",
+    "annotation_hint_farthest_from_finish_label": "set \"annotation\" to [x, y], the pixel center of the selected car",
+    "answer_hint_farthest_from_finish_label": "set \"answer\" to the selected car label as a capital letter",
+    "annotation_hint_car_ahead_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one around each counted car; use an empty array when none qualify",
+    "answer_hint_car_ahead_count": "set \"answer\" to the integer count of other cars ahead of the marked car before the finish line"
+  }
+}

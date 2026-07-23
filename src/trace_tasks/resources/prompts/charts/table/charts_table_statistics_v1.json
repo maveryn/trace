@@ -1,0 +1,167 @@
+{
+  "bundle_id": "charts_table_statistics_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "styled_table_statistics": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "summary_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "filtered_subset_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "column_sum": [
+        "What is the sum of the values in the \"{query_column}\" column?",
+        "Find the total of all values in the \"{query_column}\" column.",
+        "Determine the column sum for \"{query_column}\".",
+        "What total do you get when you add the values in \"{query_column}\"?",
+        "Compute the sum of the \"{query_column}\" column."
+      ],
+      "column_mean": [
+        "What is the mean of the values in the \"{query_column}\" column?",
+        "Find the average of all values in the \"{query_column}\" column.",
+        "Determine the column mean for \"{query_column}\".",
+        "What average value does the \"{query_column}\" column have?",
+        "Compute the mean of the \"{query_column}\" column."
+      ],
+      "column_median": [
+        "What is the median of the values in the \"{query_column}\" column?",
+        "Find the median value in the \"{query_column}\" column.",
+        "Determine the column median for \"{query_column}\".",
+        "What median value does the \"{query_column}\" column have?",
+        "Compute the median of the \"{query_column}\" column."
+      ],
+      "above_threshold_filtered_mean": [
+        "Among rows where {filter_condition}, what is the mean of the values in the \"{query_target_column}\" column?",
+        "Filter to rows where {filter_condition}. What average do their \"{query_target_column}\" values have?",
+        "Using only rows where {filter_condition}, determine the mean of the \"{query_target_column}\" column.",
+        "What is the average of the \"{query_target_column}\" values for rows where {filter_condition}?",
+        "Compute the mean of \"{query_target_column}\" over rows where {filter_condition}."
+      ],
+      "below_threshold_filtered_mean": [
+        "Among rows where {filter_condition}, what is the mean of the values in the \"{query_target_column}\" column?",
+        "Filter to rows where {filter_condition}. What average do their \"{query_target_column}\" values have?",
+        "Using only rows where {filter_condition}, determine the mean of the \"{query_target_column}\" column.",
+        "What is the average of the \"{query_target_column}\" values for rows where {filter_condition}?",
+        "Compute the mean of \"{query_target_column}\" over rows where {filter_condition}."
+      ],
+      "interval_filtered_mean": [
+        "Among rows where {filter_condition}, what is the mean of the values in the \"{query_target_column}\" column?",
+        "Filter to rows where {filter_condition}. What average do their \"{query_target_column}\" values have?",
+        "Using only rows where {filter_condition}, determine the mean of the \"{query_target_column}\" column.",
+        "What is the average of the \"{query_target_column}\" values for rows where {filter_condition}?",
+        "Compute the mean of \"{query_target_column}\" over rows where {filter_condition}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "filter_condition": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "query_filter_column": {
+      "type": "string"
+    },
+    "query_target_column": {
+      "type": "string"
+    },
+    "query_column": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:styled_table_statistics": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ],
+    "query:column_sum": [
+      "query_column"
+    ],
+    "query:column_mean": [
+      "query_column"
+    ],
+    "query:column_median": [
+      "query_column"
+    ],
+    "query:above_threshold_filtered_mean": [
+      "query_filter_column",
+      "query_target_column",
+      "filter_condition"
+    ],
+    "query:below_threshold_filtered_mean": [
+      "query_filter_column",
+      "query_target_column",
+      "filter_condition"
+    ],
+    "query:interval_filtered_mean": [
+      "query_filter_column",
+      "query_target_column",
+      "filter_condition"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+generation:
+  shared:
+    scene_variant_weights:
+      open_board: 1.0
+      crowded_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      wood_board: 1.0
+      slate_board: 1.0
+      paper_board: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_size_sampling: true
+    board_size_support:
+    - 6
+    - 7
+    - 8
+  task_overrides:
+    task_games__go__group_liberty_count:
+      balanced_player_color_sampling: true
+      balanced_target_answer_sampling: true
+      player_color_weights:
+        black: 1.0
+        white: 1.0
+      liberty_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 6
+      shared_liberty_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    task_games__go__group_adjacent_enemy_count:
+      balanced_player_color_sampling: true
+      balanced_target_answer_sampling: true
+      player_color_weights:
+        black: 1.0
+        white: 1.0
+      adjacent_enemy_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    task_games__go__marked_group_stone_count:
+      balanced_player_color_sampling: true
+      balanced_target_answer_sampling: true
+      marked_group_stone_count_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      player_color_weights:
+        black: 1.0
+        white: 1.0
+rendering:
+  shared:
+    canvas_width: 920
+    canvas_height: 920
+    panel_margin_px: 48
+    max_board_size_px: 760
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_padding_px: 78
+    board_corner_radius_px: 24
+    board_frame_width_px: 12
+    line_width_px: 4
+    point_radius_px: 4
+    stone_radius_fraction: 0.34
+    highlight_outline_width_px: 10
+    liberty_bbox_fraction: 0.72
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 560
+    canvas_side_padding_px: 110
+    canvas_vertical_padding_px: 110
+prompt:
+  shared:
+    bundle_id: games_go_v1
+    scene_key: visible_go_board
+    task_key: go_group_property_query

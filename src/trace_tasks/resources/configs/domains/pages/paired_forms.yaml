@@ -1,0 +1,158 @@
+generation:
+  shared:
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      purchase_receipt_pair: 1.0
+    item_count_min: 4
+    item_count_max: 6
+    quantity_min: 10
+    quantity_max: 49
+    unit_value_min: 2
+    unit_value_max: 12
+    discrepancy_min: 1
+    discrepancy_max: 6
+    mismatch_count_min: 2
+    mismatch_count_max: 3
+    direction_count_min: 1
+rendering:
+  shared:
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -24
+    layout_jitter_x_px_max: 24
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 18
+    layout_jitter_min_margin_px: 16
+    canvas_width: 1392
+    canvas_height: 848
+    outer_margin_px: 36
+    panel_gap_px: 28
+    panel_corner_radius_px: 18
+    panel_border_width_px: 2
+    panel_border_width_px_min: 2
+    panel_border_width_px_max: 3
+    title_band_height_px: 62
+    header_field_height_px: 46
+    table_header_height_px: 34
+    row_min_height_px: 38
+    row_max_height_px: 50
+    title_font_size_px: 28
+    subtitle_font_size_px: 17
+    label_font_size_px: 14
+    cell_font_size_px: 18
+    panel_fill_rgb:
+      - 252
+      - 251
+      - 247
+    panel_fill_rgb_options:
+      - [252, 251, 247]
+      - [248, 251, 250]
+      - [252, 248, 240]
+      - [247, 249, 253]
+      - [249, 247, 252]
+    panel_border_rgb:
+      - 96
+      - 105
+      - 116
+    panel_border_rgb_options:
+      - [96, 105, 116]
+      - [86, 112, 112]
+      - [121, 105, 88]
+      - [91, 101, 128]
+      - [112, 93, 122]
+    title_fill_rgb:
+      - 67
+      - 105
+      - 128
+    title_fill_rgb_options:
+      - [67, 105, 128]
+      - [80, 119, 111]
+      - [122, 101, 76]
+      - [91, 96, 132]
+    title_text_rgb:
+      - 255
+      - 255
+      - 255
+    field_fill_rgb:
+      - 255
+      - 255
+      - 255
+    field_border_rgb:
+      - 203
+      - 209
+      - 216
+    table_header_fill_rgb:
+      - 232
+      - 237
+      - 239
+    table_header_fill_rgb_options:
+      - [232, 237, 239]
+      - [229, 238, 233]
+      - [239, 234, 224]
+      - [232, 234, 244]
+      - [239, 231, 241]
+    row_alt_fill_rgb:
+      - 246
+      - 248
+      - 248
+    row_alt_fill_rgb_options:
+      - [246, 248, 248]
+      - [244, 249, 247]
+      - [250, 246, 241]
+    label_rgb:
+      - 66
+      - 73
+      - 82
+    text_rgb:
+      - 24
+      - 30
+      - 38
+    stroke_rgb:
+      - 255
+      - 255
+      - 255
+    divider_rgb:
+      - 212
+      - 218
+      - 224
+prompt:
+  shared:
+    bundle_id: pages_paired_forms_v1
+visual:
+  background:
+    enabled: true
+    styles:
+      paper_light:
+        kind: solid
+        color: [241, 241, 238]
+      paper_cool:
+        kind: solid
+        color: [239, 242, 243]
+      paper_warm:
+        kind: solid
+        color: [244, 241, 233]
+      paper_mint:
+        kind: solid
+        color: [237, 244, 241]
+      paper_lavender:
+        kind: solid
+        color: [242, 241, 247]
+    weights:
+      paper_light: 1.0
+      paper_cool: 1.0
+      paper_warm: 1.0
+      paper_mint: 1.0
+      paper_lavender: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+      - 1
+      - 1
+    value_ranges:
+      blur:
+        radius: [0.12, 0.35]
+      downsample:
+        scale: [0.9, 0.97]
+      jpeg:
+        quality: [80.0, 94.0]
+      noise:
+        alpha: [0.01, 0.035]

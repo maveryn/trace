@@ -1,0 +1,85 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      field_grid: 1.0
+    field_orientation_weights:
+      out_of_page: 1.0
+      into_page: 1.0
+    velocity_direction_weights:
+      east: 1.0
+      northeast: 1.0
+      north: 1.0
+      northwest: 1.0
+      west: 1.0
+      southwest: 1.0
+      south: 1.0
+      southeast: 1.0
+    direction_option_letter_weights:
+      B: 1.0
+      C: 1.0
+      D: 1.0
+      E: 1.0
+      G: 1.0
+      H: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_field_orientation_sampling: true
+    balanced_velocity_direction_sampling: true
+    balanced_charge_sign_sampling: true
+    balanced_direction_option_letter_sampling: true
+    balanced_target_answer_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    panel_left_px: 58
+    panel_top_px: 58
+    panel_width_px: 760
+    panel_height_px: 500
+    side_left_px: 850
+    side_top_px: 82
+    side_width_px: 270
+    field_symbol_spacing_px: 92
+    particle_radius_px: 36
+    arrow_length_px: 148
+    arrow_width_px: 9
+    arrow_head_length_px: 24
+    arrow_head_width_px: 22
+    option_cell_width_px: 126
+    option_cell_height_px: 104
+    option_cell_gap_x_px: 16
+    option_cell_gap_y_px: 20
+    option_arrow_length_px: 64
+    option_arrow_width_px: 8
+    option_arrow_head_length_px: 20
+    option_arrow_head_width_px: 18
+    label_font_size_px: 22
+    symbol_font_size_px: 30
+    particle_font_size_px: 31
+    option_font_size_px: 23
+    equation_font_size_px: 25
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -26
+    layout_jitter_x_px_max: 26
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 18
+
+prompt:
+  shared:
+    bundle_id: physics_magnetic_force_v1
+  task_overrides:
+    task_physics__magnetic_force__force_direction_choice:
+      task_key: force_direction_choice_query

@@ -1,0 +1,150 @@
+generation:
+  shared:
+    scene_variant_weights:
+      shop_catalog: 1.0
+      travel_booking: 1.0
+      support_center: 1.0
+      learning_portal: 1.0
+      finance_portal: 1.0
+      content_cms: 1.0
+    balanced_scene_variant_sampling: true
+    candidate_label_pool:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    - H
+    - I
+    - J
+    - K
+    - L
+    - M
+    - N
+    - O
+    - P
+    - Q
+    - R
+    - S
+    - T
+    - U
+    - V
+    - W
+    - X
+    - Y
+    - Z
+    web_click_item_count_min: 4
+    web_click_item_count_max: 6
+    web_click_action_count_min: 3
+    web_click_action_count_max: 4
+    web_type_section_count_min: 3
+    web_type_section_count_max: 4
+    web_type_field_count_min: 3
+    web_type_field_count_max: 4
+    web_select_group_count_min: 3
+    web_select_group_count_max: 4
+    web_select_option_count_min: 3
+    web_select_option_count_max: 4
+    web_item_pool:
+    - Trail Jacket
+    - Desk Lamp
+    - Noise Filter
+    - Canvas Tote
+    - Graph Notebook
+    - Travel Mug
+    - Studio Headset
+    - Cable Kit
+    web_click_action_pool:
+    - Details
+    - Compare
+    - Save
+    - Open
+    web_click_category_pool:
+    - Audio
+    - Office
+    - Travel
+    - Home
+    - Outdoor
+    - Creative
+    web_click_status_pool:
+    - Ready
+    - Backorder
+    - Featured
+    - Clearance
+    - Reserved
+    - Limited
+    web_section_pool:
+    - Account
+    - Traveler
+    - Billing
+    - Delivery
+    - Notifications
+    web_field_pool:
+    - Email
+    - Phone
+    - City
+    - Reference
+    - Notes
+    web_option_group_pool:
+    - Delivery speed
+    - Plan type
+    - Seat zone
+    - Alert channel
+    web_option_pool:
+    - Standard
+    - Priority
+    - Economy
+    - Window
+    - Monthly
+    - Email
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 800
+    browser_margin_px: 34
+    browser_margin_px_min: 32
+    browser_margin_px_max: 38
+    browser_bar_height_px: 58
+    browser_bar_height_px_min: 56
+    browser_bar_height_px_max: 62
+    instruction_height_px: 60
+    instruction_height_px_min: 58
+    instruction_height_px_max: 64
+    corner_radius_px: 16
+    control_corner_radius_px: 8
+    control_outline_width_px: 2
+    control_outline_width_px_min: 1
+    control_outline_width_px_max: 3
+    badge_size_px: 24
+    badge_size_px_min: 22
+    badge_size_px_max: 26
+    title_font_size_px: 24
+    title_font_size_px_min: 23
+    title_font_size_px_max: 25
+    body_font_size_px: 16
+    body_font_size_px_min: 15
+    body_font_size_px_max: 17
+    small_font_size_px: 13
+    small_font_size_px_min: 12
+    small_font_size_px_max: 14
+    label_font_size_px: 16
+    label_font_size_px_min: 15
+    label_font_size_px_max: 17
+prompt:
+  shared:
+    bundle_id: pages_web_action_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range: [1, 1]
+    value_ranges:
+      blur:
+        radius: [0.12, 0.35]
+      downsample:
+        scale: [0.9, 0.97]
+      jpeg:
+        quality: [80.0, 94.0]
+      noise:
+        alpha: [0.01, 0.04]

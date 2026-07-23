@@ -1,0 +1,33 @@
+generation:
+  shared:
+    scale_profile_weights:
+      celsius_weather: 1.0
+      celsius_lab: 1.0
+      fahrenheit_weather: 1.0
+      fahrenheit_compact: 1.0
+    balanced_scale_profile_sampling: true
+    balanced_target_answer_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1100
+    canvas_height: 720
+    panel_left_px: 58
+    panel_top_px: 52
+    panel_right_margin_px: 58
+    panel_bottom_margin_px: 56
+    thermometer_center_x_px: 550
+    thermometer_scale_top_px: 120
+    thermometer_scale_bottom_px: 562
+    tube_width_px: 46
+    bulb_radius_px: 58
+    title_font_size_px: 28
+    tick_font_size_px: 22
+    unit_font_size_px: 34
+
+prompt:
+  shared:
+    bundle_id: physics_thermometer_v1
+  task_overrides:
+    task_physics__thermometer__temperature_conversion_value:
+      task_key: temperature_conversion_query

@@ -1,0 +1,67 @@
+generation:
+  shared:
+    rubiks_palette_size: 6
+    scramble_move_count_min: 4
+    scramble_move_count_max: 8
+    post_move_sequence_count_min: 1
+    post_move_sequence_count_max: 3
+    direct_result_move_count_min: 1
+    direct_result_move_count_max: 2
+    inverse_base_move_count_min: 2
+    inverse_base_move_count_max: 2
+    face_color_count_answer_min: 1
+    face_color_count_answer_max: 6
+    option_count: 4
+    rubiks_dataset_max_attempts: 128
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      classic_net: 1.0
+      paper_net: 1.0
+      cool_net: 1.0
+rendering:
+  shared:
+    canvas_width: 1480
+    canvas_height: 780
+    scene_margin_left_px: 58
+    scene_margin_top_px: 52
+    main_cell_size_px: 44
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    net_panel_padding_px: 22
+    panel_corner_radius_px: 26
+    option_panel_width_px: 136
+    option_panel_height_px: 154
+    option_gap_px: 18
+    option_row_gap_px: 18
+    result_option_panel_width_px: 198
+    result_option_panel_height_px: 188
+    result_option_gap_px: 18
+    result_option_row_gap_px: 18
+    swatch_size_px: 78
+    border_width_px: 3
+    sticker_gap_px: 2
+    option_label_font_size_px: 29
+    face_label_font_size_px: 22
+    small_label_font_size_px: 18
+    number_font_size_px: 40
+    panel_fill_rgb: [248, 249, 252]
+    net_panel_fill_rgb: [252, 252, 255]
+    option_panel_fill_rgb: [251, 251, 255]
+    target_swatch_panel_fill_rgb: [248, 249, 252]
+    sticker_outline_rgb: [52, 58, 68]
+    border_color_rgb: [86, 94, 108]
+    text_color_rgb: [30, 34, 40]
+    text_stroke_rgb: [255, 255, 255]
+    coordinate_fill_rgb: [255, 246, 248]
+    coordinate_grid_rgb: [176, 124, 138]
+prompt:
+  shared:
+    bundle_id: puzzles_rubiks_net_v1
+    scene_key: rubiks_net
+  task_overrides:
+    task_puzzles__rubiks_net__post_move_sticker_color_label:
+      task_key: post_move_sticker_color_label_query
+    task_puzzles__rubiks_net__post_move_face_color_count_label:
+      task_key: post_move_face_color_count_label_query
+    task_puzzles__rubiks_net__rubiks_move_result_label:
+      task_key: rubiks_move_result_label_query

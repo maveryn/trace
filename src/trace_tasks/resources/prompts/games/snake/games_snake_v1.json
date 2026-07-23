@@ -1,0 +1,132 @@
+{
+  "bundle_id": "games_snake_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_snake_grid": [
+        "The image shows {object_description}.",
+        "The board shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "snake_grid_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "snake_length_count": [
+        "How many cells long is the snake, including the yellow head and all connected body cells?",
+        "Count the total length of the snake. Include the head and every connected body cell.",
+        "How many board cells are occupied by the snake, counting the head and tail?",
+        "Count every visible snake cell, including the head, body, and tail. What is the total?",
+        "What is the snake's total length in cells, including its head and tail?"
+      ],
+      "safe_direction_count": [
+        "{snake_rule_text} How many of the four next moves (up, down, left, right) are safe?",
+        "From the current head cell, count the directions among up, down, left, and right that are safe. {snake_rule_text}",
+        "{snake_rule_text} Count the safe next-move directions from the snake head.",
+        "How many immediate directions can the snake move without hitting the board edge, its body, or a gray wall cell? {snake_rule_text}",
+        "{snake_rule_text} Report the number of safe one-step directions from the head."
+      ],
+      "path_result_option_label": [
+        "{snake_rule_text} Follow these moves in order: {planned_moves}. Which labeled option shown in the image is the result? Point options mark possible final head cells; the GAME OVER option means the snake hits the board edge, its body, or a gray wall cell. {planned_move_wall_annotation_rule_text}",
+        "Simulate the listed moves from the current board: {planned_moves}. {snake_rule_text} Report the image option letter for the result. Point options are final head cells; GAME OVER means a hit before the moves finish. {planned_move_wall_annotation_rule_text}",
+        "{snake_rule_text} The planned moves are {planned_moves}. Choose the labeled option in the image that matches the result: a marked point cell or GAME OVER. {planned_move_wall_annotation_rule_text}",
+        "Trace the head through these moves: {planned_moves}. {snake_rule_text} Which option letter drawn in the image gives the result? {planned_move_wall_annotation_rule_text}",
+        "{snake_rule_text} After applying {planned_moves}, choose the visible option label for the final point or GAME OVER result. {planned_move_wall_annotation_rule_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_snake_grid": [
+      "object_description"
+    ],
+    "query:snake_length_count": [],
+    "query:safe_direction_count": [
+      "snake_rule_text"
+    ],
+    "query:path_result_option_label": [
+      "snake_rule_text",
+      "planned_moves",
+      "planned_move_wall_annotation_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "planned_move_wall_annotation_rule_text": {
+      "type": "string"
+    },
+    "planned_moves": {
+      "type": "string"
+    },
+    "snake_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_square_grid": "a Snake game board with a yellow snake head, connected body cells, red food, and gray wall cells",
+    "snake_rule_text": "A move is safe when the head stays inside the board and does not enter the snake body or a gray wall cell. Moving onto red food counts as safe.",
+    "planned_move_wall_annotation_rule_text": "For a game-over result, use boxes around the visible in-board head path cells up to the hit cell or board edge.",
+    "annotation_hint_snake_length_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around every snake-occupied cell, including the head and tail",
+    "answer_hint_snake_length_count": "set \"answer\" to the total number of snake-occupied cells as an integer",
+    "annotation_hint_safe_direction_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around each destination cell that is safe for the next move; include the food cell if it is safely reachable",
+    "answer_hint_safe_direction_count": "set \"answer\" to the number of safe next-move directions as an integer",
+    "annotation_hint_path_result_option_label": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around the in-board cells the head traverses until the result; for an off-board hit, use the visible path cells up to the board edge",
+    "answer_hint_path_result_option_label": "set \"answer\" to the option letter shown in the image, one of \"A\", \"B\", \"C\", or \"D\""
+  }
+}

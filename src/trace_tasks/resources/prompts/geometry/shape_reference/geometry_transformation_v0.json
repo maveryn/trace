@@ -1,0 +1,90 @@
+{
+  "bundle_id": "geometry_transformation_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "transformation_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:transformation_graph_scene": [
+      "object_description"
+    ],
+    "query:rotation_match": [
+      "rotation_instruction"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "transformation_graph_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "translation_match": [
+      "Which labeled polygon is the translation of the Reference by the shown vector?",
+      "Identify the labeled polygon that matches the Reference after translating it by the shown vector.",
+      "Use the shown vector. Which labeled polygon is the translated image of the Reference?",
+      "Which labeled polygon is the image of the Reference after the shown translation?",
+      "Apply the shown vector to the Reference. Which labeled polygon matches the result?"
+    ],
+    "reflection_match": [
+      "Which labeled polygon is the reflection of the Reference across line L?",
+      "Reflect the Reference across line L. Which labeled polygon matches the result?",
+      "Use line L as the reflection line. Which labeled polygon is the reflected image of the Reference?",
+      "Which labeled polygon matches the Reference after reflecting it across line L?",
+      "Identify the labeled polygon produced by reflecting the Reference across line L."
+    ],
+    "rotation_match": [
+      "Which labeled polygon is the image of the Reference after a {rotation_instruction} about point O?",
+      "Rotate the Reference by a {rotation_instruction} about point O. Which labeled polygon matches the result?",
+      "Using point O as the center, which labeled polygon matches the Reference after a {rotation_instruction}?",
+      "Which labeled polygon is produced by a {rotation_instruction} of the Reference about point O?",
+      "Apply a {rotation_instruction} about point O to the Reference. Which labeled polygon is correct?"
+    ]
+  },
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description": "a Reference polygon, one transformation cue, and labeled candidate polygons on a grid",
+    "json_output_contract": "Return a JSON object with keys \"answer\" and \"annotation\".",
+    "json_output_contract_answer_only": "Return a JSON object with key \"answer\".",
+    "annotation_hint_template": "set \"annotation\" to an array of exactly {vertex_count} pixel points [x,y] for the winning polygon vertices",
+    "answer_hint": "set \"answer\" to the single-letter label of the correct polygon",
+    "json_example": "{\"annotation\":[[110,120],[180,120],[150,190]],\"answer\":\"C\"}",
+    "json_example_answer_only": "{\"answer\":\"C\"}"
+  }
+}

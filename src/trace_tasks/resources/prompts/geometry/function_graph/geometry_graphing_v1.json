@@ -1,0 +1,146 @@
+{
+  "bundle_id": "geometry_graphing_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "graphing_scene": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "graphing_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "turning_point_count": [
+        "How many turning points are visible in the graph window?",
+        "Count the turning points visible on the plotted graph.",
+        "How many visible corners or turning points does the graph have?",
+        "Count the graph's turning points in the shown window.",
+        "How many turning-point coordinates are visible on the graph?"
+      ],
+      "local_extremum_count": [
+        "How many local {extremum_kind_adjective} points are visible in the graph window?",
+        "Count the visible local {extremum_kind_adjective} points on the plotted graph.",
+        "How many visible {extremum_visual_description} or local {extremum_kind_adjective} points does the curve have?",
+        "Count the graph's local {extremum_kind_adjective} points in the shown window.",
+        "How many local-{extremum_kind_adjective} coordinates are visible on the graph?"
+      ],
+      "average_rate_between_marked_points": [
+        "What is the average rate of change from point {point_label_start} to point {point_label_end}?",
+        "Compute the average rate of change between the marked points {point_label_start} and {point_label_end}.",
+        "Using the marked points {point_label_start} and {point_label_end}, what is the average rate of change?",
+        "What is the secant slope from {point_label_start} to {point_label_end}?",
+        "Find the average change in y per unit x from {point_label_start} to {point_label_end}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "object_description_quadratic": "a plotted function graph on graph paper",
+      "object_description_quadratic_with_guide_line": "a plotted function graph on graph paper and a dashed horizontal guide line",
+      "object_description_absolute_value": "a plotted function graph on graph paper",
+      "object_description_absolute_value_with_guide_line": "a plotted function graph on graph paper and a dashed horizontal guide line",
+      "object_description_cubic": "a plotted function graph on graph paper",
+      "object_description_cubic_with_guide_line": "a plotted function graph on graph paper and a dashed horizontal guide line",
+      "object_description_sinusoid": "a plotted function graph on graph paper",
+      "object_description_sinusoid_with_guide_line": "a plotted function graph on graph paper and a dashed horizontal guide line",
+      "object_description_piecewise_linear": "a plotted function graph on graph paper",
+      "object_description_piecewise_linear_with_guide_line": "a plotted function graph on graph paper and a dashed horizontal guide line",
+      "object_description_average_rate": "a plotted function graph on graph paper with marked points A and B",
+      "answer_hint_integer": "set \"answer\" to the requested count as an integer",
+      "answer_hint_number_one_decimal": "set \"answer\" to the average rate of change as a number rounded to one decimal place",
+      "annotation_hint_pixel_point_set": "set \"annotation\" to an array of every pixel point [x,y] that satisfies the question; use [] when there are none",
+      "annotation_hint_turning_point_count": "set \"annotation\" to an array containing every visible turning-point pixel point [x,y] where the graph changes from increasing to decreasing or decreasing to increasing; use [] when there are none",
+      "annotation_hint_local_extremum_count": "set \"annotation\" to an array containing every visible requested local-extremum pixel point [x,y]; use [] when there are none",
+      "annotation_hint_average_rate_points": "set \"annotation\" to an object with keys \"A\" and \"B\" whose values are the corresponding pixel points [x,y]",
+      "json_example_turning_point_count": "{\"annotation\":[[160,260],[320,380],[480,260]],\"answer\":3}",
+      "json_example_local_extremum_count": "{\"annotation\":[[220,380],[460,380]],\"answer\":2}",
+      "extremum_kind_adjective_minimum": "minimum",
+      "extremum_kind_adjective_maximum": "maximum",
+      "extremum_visual_description_minimum": "valleys",
+      "extremum_visual_description_maximum": "peaks",
+      "json_example_average_rate_points": "{\"annotation\":{\"A\":[180,320],\"B\":[360,260]},\"answer\":1.5}",
+      "json_example_turning_point_count_answer_only": "{\"answer\":3}",
+      "json_example_local_extremum_count_answer_only": "{\"answer\":2}",
+      "json_example_average_rate_points_answer_only": "{\"answer\":1.5}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "json"
+    },
+    "json_example_answer_only": {
+      "type": "json"
+    },
+    "extremum_kind_adjective": {
+      "type": "string"
+    },
+    "extremum_visual_description": {
+      "type": "string"
+    },
+    "point_label_start": {
+      "type": "label"
+    },
+    "point_label_end": {
+      "type": "label"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:graphing_scene": [
+      "object_description"
+    ],
+    "query:local_extremum_count": [
+      "extremum_kind_adjective",
+      "extremum_visual_description"
+    ],
+    "query:average_rate_between_marked_points": [
+      "point_label_start",
+      "point_label_end"
+    ],
+    "answer_or_annotation:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+# Reproduction-critical packages common to the two canonical run receipts.
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+torchaudio==2.8.0
+transformers==4.57.6
+vllm==0.10.2
+ray[default]==2.56.0
+flash-attn==2.8.3
+datasets==5.0.0
+pyarrow==24.0.0
+qwen-vl-utils==0.0.14
+liger-kernel==0.8.0
+accelerate==1.14.0
+peft==0.19.1
+huggingface-hub==0.36.2
+tensordict==0.13.0
+torchdata==0.11.0
+omegaconf==2.3.1
+safetensors==0.8.0
+xformers==0.0.32.post1
+cupy-cuda12x==14.1.1
+
+# Direct EasyR1 runtime dependencies from the canonical environment.
+codetiming==1.4.0
+mathruler==0.1.0
+numpy==2.2.6
+pandas==2.3.3
+pillow==12.2.0
+pylatexenc==2.10
+wandb==0.26.1

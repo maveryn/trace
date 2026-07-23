@@ -1,0 +1,114 @@
+generation:
+  shared:
+    node_count_min: 7
+    node_count_max: 13
+    max_depth: 4
+    label_max_chars: 3
+    label_variant_weights:
+      letters: 1.0
+      numbers: 1.0
+      named: 2.0
+    scene_variant_weights:
+      classic_tree: 1.0
+      paper_tree: 1.0
+      boxed_tree: 1.0
+    node_shape_variant_weights:
+      circle: 1.0
+      rounded_square: 1.0
+      hexagon: 1.0
+    node_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_label_variant_sampling: true
+    balanced_scene_variant_sampling: true
+    balanced_node_shape_variant_sampling: true
+    balanced_node_color_name_sampling: true
+  task_overrides:
+    task_graph__binary_tree__bst_path_operation_label:
+      key_min: 10
+      key_max: 99
+    task_graph__binary_tree__child_structure_node_count:
+      internal_count_min: 3
+      internal_count_max: 7
+    task_graph__binary_tree__depth_level_node_count:
+      depth_min: 1
+      depth_max: 4
+    task_graph__binary_tree__heap_property_violation_label:
+      node_count_min: 7
+      node_count_max: 10
+      key_min: 10
+      key_max: 99
+      heap_violation_gap_min: 8
+      heap_violation_gap_max: 18
+    task_graph__binary_tree__local_relative_node_label: {}
+    task_graph__binary_tree__lowest_common_ancestor_label: {}
+    task_graph__binary_tree__traversal_kth_label:
+      node_count_min: 7
+      node_count_max: 10
+      traversal_position_min: 2
+      traversal_position_max: 6
+
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 660
+    outer_margin_px: 28
+    panel_padding_px: 24
+    panel_corner_radius_px: 20
+    panel_title_font_size_px: 24
+    node_radius_min_px: 20
+    node_radius_max_px: 26
+    edge_width_px: 4
+    arrow_length_px: 12
+    arrow_width_px: 7
+    node_border_width_px: 2
+    label_font_size_px: 20
+    context_text_probability: 0.25
+    context_text_max_elements: 1
+    context_block_probability: 0.1
+    context_block_max_elements: 1
+    context_block_position_weights:
+      bottom: 1.0
+      left: 0.5
+      right: 0.5
+    context_block_clutter_level_weights:
+      low: 1.0
+      medium: 0.5
+      high: 0.0
+  task_overrides: {}
+
+prompt:
+  shared:
+    bundle_id: graph_binary_tree_v1
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer" in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for the final answer.
+  task_overrides:
+    task_graph__binary_tree__bst_path_operation_label:
+      scene_key: search_tree_operation
+      task_key: search_tree_operation_label_query
+    task_graph__binary_tree__child_structure_node_count:
+      scene_key: binary_tree_counting
+      task_key: binary_tree_node_count_query
+    task_graph__binary_tree__depth_level_node_count:
+      scene_key: binary_tree_counting
+      task_key: binary_tree_node_count_query
+    task_graph__binary_tree__heap_property_violation_label:
+      scene_key: search_tree_operation
+      task_key: search_tree_operation_label_query
+    task_graph__binary_tree__local_relative_node_label:
+      scene_key: binary_tree_relation
+      task_key: binary_tree_node_label_query
+    task_graph__binary_tree__lowest_common_ancestor_label:
+      scene_key: binary_tree_relation
+      task_key: binary_tree_node_label_query
+    task_graph__binary_tree__traversal_kth_label:
+      scene_key: binary_tree_order
+      task_key: binary_tree_traversal_label_query

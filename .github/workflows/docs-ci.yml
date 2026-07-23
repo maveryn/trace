@@ -1,0 +1,175 @@
+name: Documentation CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, rlvr, dev]
+    paths:
+      - ".github/workflows/docs-ci.yml"
+      - ".agents/skills/**"
+      - "**/*.md"
+      - "CITATION.cff"
+      - "constraints/release.txt"
+      - "MANIFEST.in"
+      - "docs/**"
+      - "mkdocs.yml"
+      - "paper.pdf"
+      - "pyproject.toml"
+      - "scripts/check_public_release.py"
+      - "scripts/check_docs_site.py"
+      - "scripts/check_skill_consistency.py"
+      - "tests/test_docs_site.py"
+      - "tests/test_public_paper.py"
+  pull_request:
+    branches: [main, rlvr, dev]
+    paths:
+      - ".github/workflows/docs-ci.yml"
+      - ".agents/skills/**"
+      - "**/*.md"
+      - "CITATION.cff"
+      - "constraints/release.txt"
+      - "MANIFEST.in"
+      - "docs/**"
+      - "mkdocs.yml"
+      - "paper.pdf"
+      - "pyproject.toml"
+      - "scripts/check_public_release.py"
+      - "scripts/check_docs_site.py"
+      - "scripts/check_skill_consistency.py"
+      - "tests/test_docs_site.py"
+      - "tests/test_public_paper.py"
+
+concurrency:
+  group: docs-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  documentation:
+    name: Documentation and repository hygiene
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: read
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check changed-file whitespace
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ -n "$BASE_SHA" ] && git cat-file -e "${BASE_SHA}^{commit}"; then
+            git diff --check "$BASE_SHA" "$HEAD_SHA"
+          else
+            git show --check --format= "$HEAD_SHA"
+          fi
+
+      - name: Scan tracked paths and text
+        run: |
+          python - <<'PY'
+          from scripts import check_public_release
+
+          tracked = check_public_release._git_tracked_files(
+              check_public_release.REPO_ROOT
+          )
+          check_public_release.check_repository_hygiene(
+              check_public_release.REPO_ROOT,
+              tracked,
+          )
+          print("documentation hygiene check passed")
+          PY
+
+      - name: Install skill-check dependency on dev
+        if: github.ref_name == 'dev' || github.base_ref == 'dev'
+        run: >-
+          python -m pip install --disable-pip-version-check
+          -c constraints/release.txt PyYAML
+
+      - name: Check repo-local skill consistency on dev
+        if: github.ref_name == 'dev' || github.base_ref == 'dev'
+        run: python scripts/check_skill_consistency.py
+
+      - name: Install documentation dependencies on main
+        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+        run: >-
+          python -m pip install --disable-pip-version-check
+          -c constraints/release.txt -r docs/requirements.txt pytest
+
+      - name: Build strict documentation site on main
+        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+        run: mkdocs build --strict --site-dir site
+
+      - name: Test documentation and paper contracts on main
+        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+        run: >-
+          python -m pytest -q
+          tests/test_docs_site.py
+          tests/test_public_paper.py
+
+      - name: Validate generated documentation site on main
+        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+        run: python scripts/check_docs_site.py --site-dir site
+
+      - name: Enforce Pages artifact size limit
+        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          site_root = Path("site")
+          limit_bytes = 100 * 1024 * 1024
+          size_bytes = sum(
+              path.stat().st_size for path in site_root.rglob("*") if path.is_file()
+          )
+          if size_bytes >= limit_bytes:
+              raise SystemExit(
+                  "documentation site must remain smaller than 100 MiB; "
+                  f"observed {size_bytes / (1024 * 1024):.2f} MiB"
+              )
+          print(f"documentation site size: {size_bytes / (1024 * 1024):.2f} MiB")
+          PY
+
+      - name: Configure GitHub Pages
+        if: >-
+          (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+          github.ref == 'refs/heads/main' &&
+          github.event.repository.visibility == 'public'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: >-
+          (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+          github.ref == 'refs/heads/main' &&
+          github.event.repository.visibility == 'public'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: Deploy documentation to GitHub Pages
+    if: >-
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.visibility == 'public'
+    needs: documentation
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v5

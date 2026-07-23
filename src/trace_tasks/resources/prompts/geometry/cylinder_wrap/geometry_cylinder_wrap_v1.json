@@ -1,0 +1,79 @@
+{
+  "bundle_id": "geometry_cylinder_wrap_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": false,
+  "templates": {
+    "scene": {
+      "cylinder_wrap_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "The labeled wrapping diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "surface_path_length_value_query": [
+        "What is the length of the marked path on the unwrapped cylinder side?",
+        "Use the unwrapped net to compute the marked path length.",
+        "Find the marked path length from the rectangular cylinder-side net.",
+        "What length does the marked diagonal path represent on the cylinder side?",
+        "Compute the length of the marked path shown on the cylinder net."
+      ],
+      "wrapped_mark_position_label_query": [
+        "Which labeled rim position matches the marked position on the unwrapped strip?",
+        "Find the rim label that corresponds to the marked position on the strip.",
+        "When the strip wraps around the cylinder, which labeled point does the mark align with?",
+        "Match the strip mark to the labeled top-view rim position.",
+        "Which candidate label shows where the marked strip position lands on the rim?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:surface_path_length_value_query": {
+      "object_description": "a cylinder side shown with its rectangular unwrapped net and a marked path",
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these keys: \"marked_surface_path\", \"circumference_dimension\", and \"height_dimension\"; each value must be the pixel bounding box [x0,y0,x1,y1] around that visible path or dimension annotation",
+      "answer_hint": "set \"answer\" to the marked path length as an integer",
+      "json_example": "{\"annotation\":{\"marked_surface_path\":[390,160,690,390],\"circumference_dimension\":[390,420,700,470],\"height_dimension\":[700,160,795,405]},\"answer\":15}",
+      "json_example_answer_only": "{\"answer\":15}"
+    },
+    "task:wrapped_mark_position_label_query": {
+      "object_description": "an unwrapped cylinder strip with one marked position and a top-view rim with labeled candidate positions",
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these keys: \"source_strip_mark\" and \"matching_rim_candidate\"; each value must be the pixel point [x,y] at the visible mark or candidate center",
+      "answer_hint": "set \"answer\" to the matching candidate label as a capital letter",
+      "json_example": "{\"annotation\":{\"source_strip_mark\":[340,140],\"matching_rim_candidate\":[545,280]},\"answer\":\"K\"}",
+      "json_example_answer_only": "{\"answer\":\"K\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:cylinder_wrap_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "bundle_id": "games_pacman_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_pacman_maze": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "pacman_maze_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "next_item_label": [
+        "Follow the highlighted route from Pac-Man. Which labeled bonus item is reached first?",
+        "Which labeled bonus item comes first along the highlighted route from Pac-Man?",
+        "Starting at Pac-Man and moving along the highlighted route, report the first bonus item label reached.",
+        "Among the labeled bonus items, which one is encountered first on the highlighted route?",
+        "Report the label of the first bonus item reached when following the highlighted route from Pac-Man."
+      ],
+      "pellet_count_before_ghost": [
+        "Follow the highlighted route from Pac-Man. How many normal pellets are reached before the first ghost on that route?",
+        "Starting at Pac-Man, count the normal pellets on the highlighted route before the first ghost is reached.",
+        "How many normal pellets come before the first ghost when following the highlighted route from Pac-Man?",
+        "Report the number of normal pellets Pac-Man would reach on the highlighted route before reaching the first ghost.",
+        "Count only the normal pellets before the first ghost along the highlighted route from Pac-Man."
+      ],
+      "route_score_value": [
+        "{score_rule_text} Following the highlighted route from Pac-Man, what is the total score from collectibles centered on that route?",
+        "{score_rule_text} Add only the normal pellets and printed-value bonus items whose centers lie on the highlighted route.",
+        "{score_rule_text} What total score is collected from route collectibles, ignoring all off-route items?",
+        "{score_rule_text} Count only collectibles centered on the highlighted route and report their total score.",
+        "{score_rule_text} Starting at Pac-Man, follow the highlighted route and add the scores of collectibles on that route."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_pacman_maze": [
+      "object_description"
+    ],
+    "query:next_item_label": [],
+    "query:pellet_count_before_ghost": [],
+    "query:route_score_value": [
+      "score_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "score_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_compact_maze": "a Pac-Man style maze with a visible Pac-Man marker, ghosts, normal pellets, bonus items, and a highlighted route",
+    "object_description_wide_maze": "a wider Pac-Man style maze with a visible Pac-Man marker, ghosts, normal pellets, bonus items, and a highlighted route",
+    "annotation_hint_next_item_label": "set \"annotation\" to one [x, y] point coordinate at the center of the first labeled bonus item reached along the highlighted route",
+    "answer_hint_next_item_label": "set \"answer\" to the single option letter of the first labeled bonus item reached along the highlighted route",
+    "annotation_hint_pellet_count_before_ghost": "set \"annotation\" to {\"counted_pellets\":[[x, y], ...], \"first_ghost\":[[x, y]]}, using center points for pellets before the ghost and the first route ghost",
+    "answer_hint_pellet_count_before_ghost": "set \"answer\" to the number of normal pellets reached before the first ghost on the highlighted route",
+    "annotation_hint_route_score_value": "set \"annotation\" to [x, y] pixel points at the centers of each normal pellet or printed-value bonus item included in the highlighted-route score",
+    "answer_hint_route_score_value": "set \"answer\" to the integer total score from collectibles centered on the highlighted route",
+    "score_rule_text": "Normal pellets score 1; bonus items score their printed value. Count only collectibles whose centers lie on the highlighted route. Ignore ghosts and all collectibles away from the highlighted route."
+  }
+}

@@ -1,0 +1,63 @@
+generation:
+  task_overrides:
+    task_symbolic__turing_tape__turing_written_symbol_count:
+      balanced_scene_variant_sampling: true
+      turing_tape_length_min: 8
+      turing_tape_length_max: 11
+      turing_steps_min: 3
+      turing_steps_max: 6
+      turing_symbol_count_min: 2
+      turing_symbol_count_max: 2
+      turing_answer_min: 1
+      turing_answer_max: 7
+      scene_variant_weights:
+        clean_grid: 1.0
+        lab_panel: 1.0
+        notebook_grid: 1.0
+    task_symbolic__turing_tape__final_head_position_value:
+      balanced_scene_variant_sampling: true
+      turing_tape_length_min: 8
+      turing_tape_length_max: 11
+      turing_steps_min: 3
+      turing_steps_max: 6
+      turing_symbol_count_min: 2
+      turing_symbol_count_max: 2
+      scene_variant_weights:
+        clean_grid: 1.0
+        lab_panel: 1.0
+        notebook_grid: 1.0
+
+rendering:
+  shared:
+    canvas_width: 780
+    canvas_height: 720
+    font_family: roboto
+    cell_size_px: 54
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    grid_gap_px: 2
+    panel_padding_px: 28
+    panel_corner_radius_px: 22
+    panel_border_width_px: 3
+    grid_line_width_px: 2
+    option_card_width_px: 150
+    option_card_height_px: 116
+    option_gap_px: 18
+    option_grid_cell_px: 14
+    label_font_size_px: 22
+    small_font_size_px: 16
+    arrow_width_px: 6
+  task_overrides:
+    task_symbolic__turing_tape__turing_written_symbol_count:
+      cell_size_px: 54
+    task_symbolic__turing_tape__final_head_position_value:
+      cell_size_px: 54
+
+prompt:
+  shared:
+    bundle_id: symbolic_turing_tape_v1
+
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range: [1, 2]

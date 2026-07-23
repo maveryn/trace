@@ -1,0 +1,93 @@
+{
+  "bundle_id": "geometry_circle_polygon_composite_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "tangential_quadrilateral_side_sum_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "square_circle_tangent_angle_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:circle_polygon_composite_scene": [
+      "object_description"
+    ],
+    "query:opposite_side_sum_from_tangent_quadrilateral": [
+      "target_pair",
+      "known_pair"
+    ],
+    "query:square_incircle_tangent_angle": [
+    ],
+    "query:square_semicircle_tangent_angle": [
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"answer\" field: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "circle_polygon_composite_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The labeled diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "opposite_side_sum_from_tangent_quadrilateral": [
+      "The side lengths for {known_pair} are labeled. What is {target_pair}?",
+      "Using the tangential quadrilateral, find {target_pair}. The visible side lengths are for {known_pair}.",
+      "The quadrilateral's sides are tangent to the circle. What is the sum {target_pair}?",
+      "Use the labeled opposite side lengths to determine {target_pair}.",
+      "In the tangential quadrilateral, what is the value of {target_pair}?"
+    ],
+    "square_incircle_tangent_angle": [
+      "A tangent touches the incircle at T. What is the angle marked ?",
+      "Use the tangent-radius construction to find angle ?.",
+      "The radius to T is perpendicular to the tangent line. What is the angle marked ?",
+      "Determine the angle marked ?.",
+      "Find angle ? using the tangent angle."
+    ],
+    "square_semicircle_tangent_angle": [
+      "A tangent touches the semicircle at T. What is the angle marked ?",
+      "Use the tangent-radius construction to find angle ?.",
+      "The radius to T is perpendicular to the tangent line. What is the angle marked ?",
+      "Determine the angle marked ?.",
+      "Find angle ? using the tangent angle."
+    ]
+  },
+  "allow_empty_task_templates": true
+}
