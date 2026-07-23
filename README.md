@@ -279,16 +279,6 @@ data contract, taxonomy, prompt system, verifiers, task authoring, resources,
 and validation workflows. The Markdown source starts at
 [docs/README.md](docs/README.md).
 
-## Star History
-
-<a href="https://www.star-history.com/?repos=maveryn%2Ftrace&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=maveryn/trace&type=date&theme=dark&legend=top-left&sealed_token=O0njzzT6woCEcOVsOtfSgeseGrO8Tyuk3-Zm0-u2BErbySBAJP6McRZKtsAr5i1wMoF4RHHTjjoReaZ9GUPYP95uqyHZzwc9-govDgvzhhOaRwR1HkMjNlmSsn5L0I6IP6VJdE-s54zhCS_78W-NFy2AHUV9ehHJ-wYC2fgadKL1qQvfVCdOgRld0U_e" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=maveryn/trace&type=date&legend=top-left&sealed_token=O0njzzT6woCEcOVsOtfSgeseGrO8Tyuk3-Zm0-u2BErbySBAJP6McRZKtsAr5i1wMoF4RHHTjjoReaZ9GUPYP95uqyHZzwc9-govDgvzhhOaRwR1HkMjNlmSsn5L0I6IP6VJdE-s54zhCS_78W-NFy2AHUV9ehHJ-wYC2fgadKL1qQvfVCdOgRld0U_e" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=maveryn/trace&type=date&legend=top-left&sealed_token=O0njzzT6woCEcOVsOtfSgeseGrO8Tyuk3-Zm0-u2BErbySBAJP6McRZKtsAr5i1wMoF4RHHTjjoReaZ9GUPYP95uqyHZzwc9-govDgvzhhOaRwR1HkMjNlmSsn5L0I6IP6VJdE-s54zhCS_78W-NFy2AHUV9ehHJ-wYC2fgadKL1qQvfVCdOgRld0U_e" />
- </picture>
-</a>
-
 ## Citation
 
 If you use Trace, please cite:
