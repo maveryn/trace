@@ -1,0 +1,52 @@
+generation:
+  shared:
+    rank_position_support:
+    - 1
+    - 2
+    - 3
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 1320
+    outer_margin_px: 36
+    header_height_px: 106
+    gap_px: 14
+    corner_radius_px: 10
+    outline_width_px: 2
+    title_font_size_px: 32
+    subtitle_font_size_px: 17
+    module_title_font_size_px: 17
+    label_font_size_px: 13
+    value_font_size_px: 14
+    field_font_size_px: 11
+    native_text_footer_height_px: 138
+    page_backdrop_blend_scale: 0.35
+    information_scene_shadow_policy: none
+    pages_context_text_enabled: false
+prompt:
+  shared:
+    bundle_id: pages_mixed_infographic_page_v1
+visual:
+  task_overrides: {}
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.2
+      downsample:
+        scale:
+        - 0.95
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.015

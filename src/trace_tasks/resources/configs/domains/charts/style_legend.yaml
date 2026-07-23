@@ -1,0 +1,77 @@
+generation:
+  shared:
+    style_legend_x_count_min: 5
+    style_legend_x_count_max: 9
+    style_legend_series_count_min: 4
+    style_legend_series_count_max: 6
+    style_legend_value_min: 0
+    style_legend_value_max: 100
+    style_legend_tick_step: 20
+    style_legend_extremum_gap_min: 8
+    style_legend_extremum_gap_max: 26
+    style_legend_threshold_answer_min: 0
+    style_legend_threshold_answer_max: 5
+    style_legend_threshold_values:
+    - 40
+    - 50
+    - 60
+    style_palette_mode_weights:
+      grayscale: 7.0
+      muted_color: 2.0
+      colorblind_safe: 1.0
+    balanced_style_palette_mode_sampling: true
+    legend_position_weights:
+      right: 3.0
+      top: 1.0
+    balanced_legend_position_sampling: true
+    x_label_bucket_weights:
+      dense_axis_compact_id: 1.0
+      temporal: 1.0
+      people_first: 0.35
+      places_cities: 0.35
+      organizations_tickers: 0.35
+      mixed_compact: 0.35
+    series_label_bucket_weights:
+      temporal: 0.0
+      organizations_tickers: 1.0
+      organizations_terms: 1.0
+      mixed_compact: 1.0
+      people_first: 0.5
+      people_surnames: 0.0
+      places_countries: 0.0
+      places_cities: 0.0
+      occupations: 0.0
+      industries: 0.0
+      mixed_proper: 0.0
+rendering:
+  shared:
+    style_legend_canvas_width: 1280
+    style_legend_canvas_height: 820
+    style_legend_margin_left_px: 88
+    style_legend_margin_right_px: 210
+    style_legend_margin_top_px: 92
+    style_legend_margin_bottom_px: 104
+    style_legend_title_font_size_px: 25
+    style_legend_tick_font_size_px: 14
+    style_legend_label_font_size_px: 15
+    style_legend_legend_font_size_px: 15
+    style_legend_axis_line_width_px_min: 1
+    style_legend_axis_line_width_px_max: 2
+    style_legend_grid_line_width_px: 1
+    style_legend_point_radius_px_min: 5
+    style_legend_point_radius_px_max: 7
+    style_legend_title_options:
+    - Scientific Series Comparison
+    - Model Response Profile
+    - Experimental Score Curves
+    - Method Performance Trace
+    - Parameter Sweep Results
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -14
+    layout_jitter_x_px_max: 14
+    layout_jitter_y_px_min: -10
+    layout_jitter_y_px_max: 10
+    layout_jitter_min_margin_px: 26
+prompt:
+  shared:
+    bundle_id: charts_style_legend_v1

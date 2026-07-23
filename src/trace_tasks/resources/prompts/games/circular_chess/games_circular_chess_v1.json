@@ -1,0 +1,163 @@
+{
+  "bundle_id": "games_circular_chess_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "circular_chess_board": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The scene contains {object_description}."
+      ]
+    },
+    "task": {
+      "circular_chess_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_piece_move_count": [
+        "The red marked piece is the piece to evaluate. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} How many legal destination cells does the marked piece have?",
+        "{circular_board_rule_text} The red marked piece is the piece to evaluate. {piece_rule_text} {landing_rule_text} Count the marked piece's legal destination cells.",
+        "Use the red marked piece. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} What is the number of legal cells it can move to?",
+        "{piece_rule_text} {circular_board_rule_text} {landing_rule_text} How many legal movement destinations are available to the red marked piece?",
+        "Count every legal destination cell for the red marked piece. {circular_board_rule_text} {piece_rule_text} {landing_rule_text}"
+      ],
+      "marked_piece_capture_count": [
+        "The red marked piece is the piece to evaluate. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} How many opponent pieces can the marked piece capture?",
+        "{circular_board_rule_text} The red marked piece is the piece to evaluate. {piece_rule_text} {landing_rule_text} Count the opponent pieces capturable by the marked piece.",
+        "Use the red marked piece. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} What is the number of opponent pieces it can capture?",
+        "{piece_rule_text} {circular_board_rule_text} {landing_rule_text} How many capture destinations are available to the red marked piece?",
+        "Count every opponent-occupied destination cell the red marked piece can capture. {circular_board_rule_text} {piece_rule_text} {landing_rule_text}"
+      ],
+      "white_piece_reaches_target_count": [
+        "The red marked cell is the target cell. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} How many {target_color_name} pieces can move to the target cell?",
+        "{circular_board_rule_text} The red marked cell is the target. {piece_rule_text} {landing_rule_text} Count the {target_color_name} pieces that can reach it.",
+        "Use the red marked cell as the target. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} What is the number of {target_color_name} pieces that can move there?",
+        "{piece_rule_text} {circular_board_rule_text} {landing_rule_text} Count every {target_color_name} piece that has the red marked cell as a legal destination.",
+        "How many {target_color_name} pieces could legally move onto the red marked target cell? {circular_board_rule_text} {piece_rule_text} {landing_rule_text}"
+      ],
+      "black_piece_reaches_target_count": [
+        "The red marked cell is the target cell. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} How many {target_color_name} pieces can move to the target cell?",
+        "{circular_board_rule_text} The red marked cell is the target. {piece_rule_text} {landing_rule_text} Count the {target_color_name} pieces that can reach it.",
+        "Use the red marked cell as the target. {circular_board_rule_text} {piece_rule_text} {landing_rule_text} What is the number of {target_color_name} pieces that can move there?",
+        "{piece_rule_text} {circular_board_rule_text} {landing_rule_text} Count every {target_color_name} piece that has the red marked cell as a legal destination.",
+        "How many {target_color_name} pieces could legally move onto the red marked target cell? {circular_board_rule_text} {piece_rule_text} {landing_rule_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:circular_chess_board": [
+      "object_description"
+    ],
+    "query:marked_piece_move_count": [
+      "circular_board_rule_text",
+      "piece_rule_text",
+      "landing_rule_text"
+    ],
+    "query:marked_piece_capture_count": [
+      "circular_board_rule_text",
+      "piece_rule_text",
+      "landing_rule_text"
+    ],
+    "query:white_piece_reaches_target_count": [
+      "circular_board_rule_text",
+      "piece_rule_text",
+      "landing_rule_text",
+      "target_color_name"
+    ],
+    "query:black_piece_reaches_target_count": [
+      "circular_board_rule_text",
+      "piece_rule_text",
+      "landing_rule_text",
+      "target_color_name"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "circular_board_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "landing_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "piece_rule_text": {
+      "type": "string"
+    },
+    "target_color_name": {
+      "type": "string"
+    },
+    "marked_piece_name": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_sparse_board": "a circular chess board with four rings, sixteen sectors per ring, and a small set of white and black chess pieces",
+    "object_description_crowded_board": "a circular chess board with four rings, sixteen sectors per ring, and many white and black chess pieces",
+    "circular_board_rule_text": "Sectors wrap around each ring; rings do not wrap inward or outward.",
+    "piece_rule_text_marked": "Use the marked piece's standard chess movement on this circular board.",
+    "piece_rule_text_mixed": "Use standard chess movement on this circular board. Rooks move around rings or across rings, bishops move diagonally between rings and sectors, queens combine rook and bishop movement, knights jump, and kings move one step.",
+    "landing_rule_text": "A piece may land on an empty cell or an opponent piece, but not on a friendly piece. Sliding pieces stop at the first occupied cell in a direction.",
+    "annotation_hint_marked_piece_move_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at the centers of every legal destination cell for the marked piece",
+    "answer_hint_marked_piece_move_count": "set \"answer\" to the number of legal destination cells for the marked piece",
+    "annotation_hint_marked_piece_capture_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at the centers of every opponent-occupied destination cell the marked piece can capture",
+    "answer_hint_marked_piece_capture_count": "set \"answer\" to the number of opponent pieces the marked piece can capture",
+    "annotation_hint_white_piece_reaches_target_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at the centers of every White piece that can move to the red marked target cell",
+    "answer_hint_white_piece_reaches_target_count": "set \"answer\" to the number of White pieces that can move to the red marked target cell",
+    "annotation_hint_black_piece_reaches_target_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at the centers of every Black piece that can move to the red marked target cell",
+    "answer_hint_black_piece_reaches_target_count": "set \"answer\" to the number of Black pieces that can move to the red marked target cell"
+  }
+}

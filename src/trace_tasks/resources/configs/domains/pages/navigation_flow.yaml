@@ -1,0 +1,126 @@
+generation:
+  shared:
+    scene_variant_weights:
+      office_document: 1.0
+      creative_workspace: 1.0
+      developer_ide: 1.0
+      cad_workspace: 1.0
+      scientific_plotter: 1.0
+      os_file_manager: 1.0
+    balanced_scene_variant_sampling: true
+    navigation_surface_weights:
+      menu_path: 1.0
+      sidebar_tree: 1.0
+      ribbon_group: 1.0
+    balanced_navigation_surface_sampling: true
+    menu_command_count_min: 3
+    menu_command_count_max: 4
+    ribbon_tab_count_min: 3
+    ribbon_tab_count_max: 5
+    ribbon_group_count_min: 2
+    ribbon_group_count_max: 3
+    ribbon_command_count_min: 3
+    ribbon_command_count_max: 4
+    candidate_label_pool:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+      - I
+      - J
+      - K
+      - L
+      - M
+      - N
+      - O
+      - P
+      - Q
+      - R
+      - S
+      - T
+      - U
+      - V
+      - W
+      - X
+      - Y
+      - Z
+    nav_menu_pool:
+      - File
+      - Edit
+      - View
+    nav_submenu_pool:
+      - Arrange
+      - Inspect
+    nav_menu_group_pool:
+      - Primary
+      - Advanced
+    nav_command_pool:
+      - Align
+      - Duplicate
+      - Export
+      - Preview
+    nav_sidebar_section_pool:
+      - Workspace
+      - Assets
+      - Settings
+      - Reports
+    nav_sidebar_group_pool:
+      - Pinned
+      - Recent
+      - Shared
+    nav_sidebar_item_pool:
+      - Overview
+      - Timeline
+      - Details
+    nav_ribbon_tab_pool:
+      - Home
+      - Insert
+      - Review
+      - Analyze
+      - Share
+    nav_ribbon_group_pool:
+      - Arrange
+      - Inspect
+      - Publish
+    nav_ribbon_command_pool:
+      - Compare
+      - Filter
+      - Attach
+      - Sync
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 800
+    window_margin_px: 42
+    title_bar_height_px: 46
+    menu_bar_height_px: 34
+    corner_radius_px: 16
+    control_corner_radius_px: 8
+    control_outline_width_px: 2
+    control_outline_width_px_min: 1
+    control_outline_width_px_max: 3
+    badge_size_px: 30
+    badge_size_px_min: 28
+    badge_size_px_max: 32
+    title_font_size_px: 24
+    title_font_size_px_min: 23
+    title_font_size_px_max: 25
+    body_font_size_px: 16
+    body_font_size_px_min: 15
+    body_font_size_px_max: 17
+    small_font_size_px: 13
+    small_font_size_px_min: 12
+    small_font_size_px_max: 14
+    label_font_size_px: 18
+    label_font_size_px_min: 17
+    label_font_size_px_max: 19
+prompt:
+  shared:
+    bundle_id: pages_navigation_flow_v1
+visual:
+  noise:
+    apply_prob: 0.0

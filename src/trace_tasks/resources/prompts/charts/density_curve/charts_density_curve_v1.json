@@ -1,0 +1,160 @@
+{
+  "bundle_id": "charts_density_curve_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "density_curve": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "density_curve_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "highest_mean_label": [
+        "Which density curve has the rightmost mean marker?",
+        "Find the curve label whose mean marker is furthest to the right.",
+        "Which labeled curve has the highest mean x-value?",
+        "Identify the density curve with the rightmost center-of-mass marker.",
+        "Which label corresponds to the density curve whose mean lies farthest right?"
+      ],
+      "lowest_mean_label": [
+        "Which density curve has the leftmost mean marker?",
+        "Find the curve label whose mean marker is furthest to the left.",
+        "Which labeled curve has the lowest mean x-value?",
+        "Identify the density curve with the leftmost center-of-mass marker.",
+        "Which label corresponds to the density curve whose mean lies farthest left?"
+      ],
+      "leftmost_mode_label": [
+        "Which density curve has the leftmost visible peak marker?",
+        "Find the curve label whose dominant peak is furthest to the left.",
+        "Which labeled curve has the lowest x-location for its main mode?",
+        "Identify the density curve with the leftmost peak marker.",
+        "Which label corresponds to the curve whose main peak lies farthest left?"
+      ],
+      "rightmost_mode_label": [
+        "Which density curve has the rightmost visible peak marker?",
+        "Find the curve label whose dominant peak is furthest to the right.",
+        "Which labeled curve has the highest x-location for its main mode?",
+        "Identify the density curve with the rightmost peak marker.",
+        "Which label corresponds to the curve whose main peak lies farthest right?"
+      ],
+      "greatest_interval_mass_label": [
+        "Inside the marked x-interval \"{interval_label}\", which density curve has the greatest shaded mass?",
+        "Using only the marked interval \"{interval_label}\", find the curve label with the largest area under the curve.",
+        "Which labeled density curve contributes the most mass inside \"{interval_label}\"?",
+        "Within the shaded interval \"{interval_label}\", which curve has the greatest density mass?",
+        "Find the label of the curve with the largest shaded area inside \"{interval_label}\"."
+      ],
+      "least_interval_mass_label": [
+        "Inside the marked x-interval \"{interval_label}\", which density curve has the least shaded mass?",
+        "Using only the marked interval \"{interval_label}\", find the curve label with the smallest area under the curve.",
+        "Which labeled density curve contributes the least mass inside \"{interval_label}\"?",
+        "Within the shaded interval \"{interval_label}\", which curve has the smallest density mass?",
+        "Find the label of the curve with the smallest shaded area inside \"{interval_label}\"."
+      ],
+      "highest_density_at_x_label": [
+        "At the marked x-value \"{reference_x_label}\", which density curve is highest?",
+        "Using the vertical reference line at x = {reference_x_label}, find the curve label with the greatest density.",
+        "Which labeled density curve has the highest y-value at x = {reference_x_label}?",
+        "At x = {reference_x_label}, which curve reaches the greatest density?",
+        "Look where the curves meet the marked x-position \"{reference_x_label}\". Which label is highest there?"
+      ],
+      "lowest_density_at_x_label": [
+        "At the marked x-value \"{reference_x_label}\", which density curve is lowest?",
+        "Using the vertical reference line at x = {reference_x_label}, find the curve label with the smallest density.",
+        "Which labeled density curve has the lowest y-value at x = {reference_x_label}?",
+        "At x = {reference_x_label}, which curve has the smallest density?",
+        "Look where the curves meet the marked x-position \"{reference_x_label}\". Which label is lowest there?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:highest_mean_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point at the center of the answer curve mean marker",
+      "json_example": "{\"annotation\":[228,522],\"answer\":\"Orchid\"}"
+    },
+    "query:lowest_mean_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point at the center of the answer curve mean marker",
+      "json_example": "{\"annotation\":[228,522],\"answer\":\"Orchid\"}"
+    },
+    "query:leftmost_mode_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point at the center of the answer curve peak marker",
+      "json_example": "{\"annotation\":[398,213],\"answer\":\"Orchid\"}"
+    },
+    "query:rightmost_mode_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point at the center of the answer curve peak marker",
+      "json_example": "{\"annotation\":[398,213],\"answer\":\"Orchid\"}"
+    },
+    "query:greatest_interval_mass_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to an [x,y] pixel point on the answer curve inside the marked interval",
+      "json_example": "{\"annotation\":[345,382],\"answer\":\"Orchid\"}"
+    },
+    "query:least_interval_mass_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to an [x,y] pixel point on the answer curve inside the marked interval",
+      "json_example": "{\"annotation\":[345,382],\"answer\":\"Orchid\"}"
+    },
+    "query:highest_density_at_x_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point on the answer curve at the marked x-position",
+      "json_example": "{\"annotation\":[420,245],\"answer\":\"Orchid\"}"
+    },
+    "query:lowest_density_at_x_label": {
+      "answer_hint": "set \"answer\" to the exact visible density-curve label as a string",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point on the answer curve at the marked x-position",
+      "json_example": "{\"annotation\":[420,245],\"answer\":\"Orchid\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "interval_label": {
+      "type": "string"
+    },
+    "reference_x_label": {
+      "type": "string"
+    }
+  }
+}

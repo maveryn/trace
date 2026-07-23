@@ -1,0 +1,303 @@
+rendering:
+  shared:
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -24
+    layout_jitter_x_px_max: 24
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 18
+    layout_jitter_min_margin_px: 16
+    canvas_width: 1280
+    canvas_height: 900
+    outer_margin_px: 46
+    panel_padding_px: 26
+    panel_corner_radius_px: 20
+    title_font_size_px: 30
+    title_band_height_px: 70
+    map_corner_radius_px: 24
+    map_border_width_px: 3
+    map_border_width_px_min: 2
+    map_border_width_px_max: 4
+    path_width_px: 12
+    path_width_px_min: 10
+    path_width_px_max: 14
+    highlighted_path_width_px: 18
+    highlighted_path_width_px_min: 16
+    highlighted_path_width_px_max: 20
+    landmark_width_px: 126
+    landmark_height_px: 58
+    landmark_corner_radius_px: 12
+    landmark_border_width_px: 3
+    landmark_border_width_px_min: 2
+    landmark_border_width_px_max: 4
+    landmark_label_font_size_px: 18
+    zone_label_font_size_px: 24
+    legend_font_size_px: 17
+    compass_font_size_px: 18
+    panel_fill_rgb:
+    - 252
+    - 252
+    - 249
+    panel_fill_rgb_options:
+    - - 252
+      - 252
+      - 249
+    - - 247
+      - 252
+      - 250
+    - - 255
+      - 250
+      - 242
+    - - 249
+      - 249
+      - 254
+    panel_border_rgb:
+    - 77
+    - 88
+    - 99
+    panel_border_rgb_options:
+    - - 77
+      - 88
+      - 99
+    - - 70
+      - 100
+      - 96
+    - - 109
+      - 91
+      - 74
+    - - 83
+      - 87
+      - 118
+    title_color_rgb:
+    - 34
+    - 40
+    - 48
+    map_fill_rgb:
+    - 246
+    - 247
+    - 240
+    map_fill_rgb_options:
+    - - 246
+      - 247
+      - 240
+    - - 240
+      - 248
+      - 246
+    - - 250
+      - 245
+      - 235
+    - - 243
+      - 245
+      - 252
+    - - 249
+      - 242
+      - 247
+    map_border_rgb:
+    - 86
+    - 96
+    - 91
+    map_border_rgb_options:
+    - - 86
+      - 96
+      - 91
+    - - 76
+      - 103
+      - 99
+    - - 112
+      - 93
+      - 75
+    - - 84
+      - 89
+      - 119
+    zone_border_rgb:
+    - 196
+    - 202
+    - 188
+    zone_border_rgb_options:
+    - - 196
+      - 202
+      - 188
+    - - 185
+      - 206
+      - 202
+    - - 210
+      - 198
+      - 180
+    - - 194
+      - 196
+      - 214
+    path_rgb:
+    - 184
+    - 186
+    - 176
+    path_rgb_options:
+    - - 184
+      - 186
+      - 176
+    - - 173
+      - 190
+      - 186
+    - - 192
+      - 179
+      - 163
+    - - 177
+      - 181
+      - 196
+    highlighted_path_rgb:
+    - 205
+    - 92
+    - 46
+    highlighted_path_rgb_options:
+    - - 205
+      - 92
+      - 46
+    - - 37
+      - 131
+      - 118
+    - - 87
+      - 101
+      - 186
+    - - 180
+      - 76
+      - 124
+    landmark_fill_rgb:
+    - 255
+    - 255
+    - 252
+    landmark_fill_rgb_options:
+    - - 255
+      - 255
+      - 252
+    - - 248
+      - 252
+      - 251
+    - - 252
+      - 248
+      - 239
+    - - 248
+      - 249
+      - 255
+    - - 253
+      - 247
+      - 252
+    landmark_border_rgb:
+    - 72
+    - 88
+    - 104
+    landmark_border_rgb_options:
+    - - 72
+      - 88
+      - 104
+    - - 70
+      - 101
+      - 99
+    - - 111
+      - 92
+      - 76
+    - - 79
+      - 84
+      - 119
+    - - 107
+      - 85
+      - 115
+    landmark_label_rgb:
+    - 28
+    - 34
+    - 42
+    label_stroke_rgb:
+    - 255
+    - 255
+    - 255
+    zone_label_rgb:
+    - 72
+    - 84
+    - 78
+    compass_rgb:
+    - 45
+    - 52
+    - 60
+    compass_rgb_options:
+    - - 45
+      - 52
+      - 60
+    - - 38
+      - 68
+      - 66
+    - - 78
+      - 61
+      - 45
+    - - 55
+      - 58
+      - 86
+visual:
+  background:
+    enabled: true
+    styles:
+      paper_light:
+        kind: solid
+        color:
+        - 241
+        - 241
+        - 238
+      paper_cool:
+        kind: solid
+        color:
+        - 239
+        - 242
+        - 243
+      paper_warm:
+        kind: solid
+        color:
+        - 244
+        - 241
+        - 233
+      paper_mint:
+        kind: solid
+        color:
+        - 237
+        - 244
+        - 241
+      paper_lavender:
+        kind: solid
+        color:
+        - 242
+        - 241
+        - 247
+    weights:
+      paper_light: 1.0
+      paper_cool: 1.0
+      paper_warm: 1.0
+      paper_mint: 1.0
+      paper_lavender: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.12
+        - 0.35
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 80.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.01
+        - 0.035
+generation:
+  shared:
+    landmark_count_min: 8
+    landmark_count_max: 12
+    direction_step_count_min: 2
+    direction_step_count_max: 4
+    highlighted_route_step_min: 2
+    highlighted_route_step_max: 5
+prompt:
+  shared:
+    bundle_id: pages_map_v1

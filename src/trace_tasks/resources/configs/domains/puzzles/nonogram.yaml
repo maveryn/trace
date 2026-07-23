@@ -1,0 +1,40 @@
+generation:
+  shared:
+    grid_rows_min: 3
+    grid_rows_max: 5
+    grid_cols_min: 3
+    grid_cols_max: 5
+    option_count_choices:
+    - 4
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      nonogram_blueprint: 1.0
+      nonogram_card: 1.0
+      nonogram_classic: 1.0
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 600
+    margin_top_px: 38
+    left_clue_width_px: 156
+    top_clue_height_px: 108
+    cell_size_px: 46
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    grid_line_width_px: 2
+    heavy_line_width_px: 4
+    option_panel_width_px: 158
+    option_panel_height_px: 138
+    option_gap_px: 18
+    option_y_px: 540
+    panel_corner_radius_px: 10
+    clue_font_size_px: 21
+    option_label_font_size_px: 23
+    question_font_size_px: 28
+prompt:
+  shared:
+    bundle_id: puzzles_nonogram_v1
+    scene_key: nonogram
+visual:
+  noise:
+    apply_prob: 0.15

@@ -1,0 +1,178 @@
+{
+  "bundle_id": "geometry_regular_polygon_decomposition_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "piece_area_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "central_angle_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "perimeter_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "side_length_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:regular_polygon_decomposition_scene": [
+      "object_description"
+    ],
+    "query:single_wedge_area_from_total": [
+      "target_name"
+    ],
+    "query:shaded_wedges_area_from_total": [
+      "target_name"
+    ],
+    "query:wedge_area_from_side_and_apothem": [
+      "target_name"
+    ],
+    "query:single_wedge_central_angle": [
+      "target_name"
+    ],
+    "query:marked_wedges_central_angle": [
+      "target_name"
+    ],
+    "query:perimeter_from_side_length": [
+      "target_name"
+    ],
+    "query:perimeter_from_total_area_and_apothem": [
+      "target_name"
+    ],
+    "query:side_length_from_perimeter": [
+      "target_name"
+    ],
+    "query:side_length_from_total_area_and_apothem": [
+      "target_name"
+    ],
+    "query:side_length_from_wedge_area_and_apothem": [
+      "target_name"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "regular_polygon_decomposition_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "single_wedge_area_from_total": [
+      "The regular polygon is cut into equal center wedges. What is the area of \"{target_name}\"?",
+      "Use the equal wedge decomposition of the regular polygon. What is the area of \"{target_name}\"?",
+      "The total area is labeled and one wedge is shaded. What is the area of \"{target_name}\"?",
+      "Based on the equal center wedges, what is the area of \"{target_name}\"?",
+      "Find the area of \"{target_name}\" from the visible regular-polygon decomposition."
+    ],
+    "shaded_wedges_area_from_total": [
+      "The regular polygon is cut into equal center wedges. What is the area of \"{target_name}\"?",
+      "Use the equal wedge decomposition of the regular polygon. What is the area of \"{target_name}\"?",
+      "The total area is labeled and several adjacent wedges are shaded. What is the area of \"{target_name}\"?",
+      "Based on the equal center wedges, what is the area of \"{target_name}\"?",
+      "Find the area of \"{target_name}\" from the visible regular-polygon decomposition."
+    ],
+    "wedge_area_from_side_and_apothem": [
+      "Use the labeled side length and apothem of the shaded wedge. What is the area of \"{target_name}\"?",
+      "The shaded wedge has its base and apothem labeled. What is the area of \"{target_name}\"?",
+      "Find the triangular wedge area from the visible side and apothem labels. What is the area of \"{target_name}\"?",
+      "Based on the side length and apothem, what is the area of \"{target_name}\"?",
+      "Use the marked regular-polygon wedge. What is the area of \"{target_name}\"?"
+    ],
+    "single_wedge_central_angle": [
+      "The regular polygon is cut into equal center wedges. What is the measure of \"{target_name}\"?",
+      "Use the equal central angles of the regular polygon. What is the measure of \"{target_name}\"?",
+      "One center wedge angle is marked. What is the measure of \"{target_name}\"?",
+      "Based on the regular-polygon decomposition, what is the measure of \"{target_name}\"?",
+      "Find the measure of \"{target_name}\" in degrees."
+    ],
+    "marked_wedges_central_angle": [
+      "The regular polygon is cut into equal center wedges. What is the measure of \"{target_name}\"?",
+      "Use the equal central angles of the regular polygon. What is the measure of \"{target_name}\"?",
+      "The marked angle spans the shaded adjacent wedges. What is the measure of \"{target_name}\"?",
+      "Based on the regular-polygon decomposition, what is the measure of \"{target_name}\"?",
+      "Find the measure of \"{target_name}\" in degrees."
+    ],
+    "perimeter_from_side_length": [
+      "Use the labeled side length of the regular polygon. What is the total perimeter of \"{target_name}\"?",
+      "The side length of the regular polygon is labeled. What is the total perimeter of \"{target_name}\"?",
+      "Find the total perimeter of \"{target_name}\" from the visible side-length label.",
+      "Based on the regular-polygon side label, what is the total perimeter of \"{target_name}\"?",
+      "What is the total perimeter of \"{target_name}\"?"
+    ],
+    "perimeter_from_total_area_and_apothem": [
+      "Use the labeled total area and apothem of the regular polygon. What is the total perimeter of \"{target_name}\"?",
+      "The total area and apothem are labeled. What is the total perimeter of \"{target_name}\"?",
+      "Find the total perimeter of \"{target_name}\" from the visible area and apothem labels.",
+      "Based on the labeled area and apothem, what is the total perimeter of \"{target_name}\"?",
+      "What is the total perimeter of \"{target_name}\"?"
+    ],
+    "side_length_from_perimeter": [
+      "Use the labeled perimeter of the regular polygon. What is the length of \"{target_name}\"?",
+      "The regular polygon perimeter is labeled. What is the length of \"{target_name}\"?",
+      "Find the side length of \"{target_name}\" from the visible perimeter label.",
+      "Based on the labeled perimeter, what is the length of \"{target_name}\"?",
+      "What is the length of \"{target_name}\"?"
+    ],
+    "side_length_from_total_area_and_apothem": [
+      "Use the labeled total area and apothem of the regular polygon. What is the length of \"{target_name}\"?",
+      "The total area and apothem are labeled. What is the length of \"{target_name}\"?",
+      "Find the side length of \"{target_name}\" from the visible area and apothem labels.",
+      "Based on the labeled total area and apothem, what is the length of \"{target_name}\"?",
+      "What is the length of \"{target_name}\"?"
+    ],
+    "side_length_from_wedge_area_and_apothem": [
+      "Use the labeled shaded wedge area and apothem. What is the length of \"{target_name}\"?",
+      "The shaded wedge area and apothem are labeled. What is the length of \"{target_name}\"?",
+      "Find the side length of \"{target_name}\" from the visible wedge-area and apothem labels.",
+      "Based on the shaded wedge and apothem, what is the length of \"{target_name}\"?",
+      "What is the length of \"{target_name}\"?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

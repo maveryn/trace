@@ -1,0 +1,191 @@
+{
+  "bundle_id": "geometry_analytical_measurement_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "analytical_measurement_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:parallel_section_scene": [
+      "object_description"
+    ],
+    "scene:pythagorean_length_scene": [
+      "object_description"
+    ],
+    "scene:triangle_special_segment_scene": [
+      "object_description"
+    ],
+    "scene:rectilinear_composite_scene": [
+      "object_description"
+    ],
+    "query:similar_triangles_side_length": [],
+    "query:parallel_section_cross_length": [],
+    "query:parallel_section_base_length": [],
+    "query:chained_rectangle_diagonal_length": [],
+    "query:rectangle_triangle_shared_height_length": [],
+    "query:angle_bisector_split_length": [],
+    "query:angle_bisector_base_length": [],
+    "query:centroid_vertex_segment_length": [],
+    "query:centroid_whole_median_length": [],
+    "query:rectangle_triangle_cutout_area": [],
+    "query:l_profile_area": [],
+    "query:house_outline_perimeter": [],
+    "query:tabbed_rectilinear_perimeter": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "parallel_section_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ],
+    "pythagorean_length_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ],
+    "triangle_special_segment_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ],
+    "rectilinear_composite_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "similar_triangles_side_length": [
+      "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+      "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+      "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+      "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+      "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?"
+    ],
+    "parallel_section_cross_length": [
+      "What is the length of segment \"DE\"?",
+      "What is the length of segment \"DE\"?",
+      "What is the length of segment \"DE\"?",
+      "What is the length of segment \"DE\"?",
+      "What is the length of segment \"DE\"?"
+    ],
+    "parallel_section_base_length": [
+      "What is the length of segment \"BC\"?",
+      "What is the length of segment \"BC\"?",
+      "What is the length of segment \"BC\"?",
+      "What is the length of segment \"BC\"?",
+      "What is the length of segment \"BC\"?"
+    ],
+    "chained_rectangle_diagonal_length": [
+      "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+      "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+      "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+      "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+      "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?"
+    ],
+    "rectangle_triangle_shared_height_length": [
+      "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+      "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+      "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+      "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+      "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\"."
+    ],
+    "angle_bisector_split_length": [
+      "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?"
+    ],
+    "angle_bisector_base_length": [
+      "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+      "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?"
+    ],
+    "centroid_vertex_segment_length": [
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?"
+    ],
+    "centroid_whole_median_length": [
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+      "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?"
+    ],
+    "rectangle_triangle_cutout_area": [
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?"
+    ],
+    "l_profile_area": [
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?",
+      "What is the area of the shaded region?"
+    ],
+    "house_outline_perimeter": [
+      "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+      "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+      "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+      "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+      "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?"
+    ],
+    "tabbed_rectilinear_perimeter": [
+      "What is the perimeter of the outer boundary of the shaded figure?",
+      "What is the perimeter of the outer boundary of the shaded figure?",
+      "What is the perimeter of the outer boundary of the shaded figure?",
+      "What is the perimeter of the outer boundary of the shaded figure?",
+      "What is the perimeter of the outer boundary of the shaded figure?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

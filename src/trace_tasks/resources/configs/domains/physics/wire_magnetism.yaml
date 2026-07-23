@@ -1,0 +1,25 @@
+generation:
+  shared:
+    current_direction_weights:
+      out_of_page: 1.0
+      into_page: 1.0
+    point_position_weights:
+      north: 1.0
+      south: 1.0
+      east: 1.0
+      west: 1.0
+    balanced_current_direction_sampling: true
+    balanced_point_position_sampling: true
+    balanced_target_answer_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1080
+    canvas_height: 700
+
+prompt:
+  shared:
+    bundle_id: physics_wire_magnetism_v1
+  task_overrides:
+    task_physics__wire_magnetism__wire_field_direction_choice:
+      task_key: wire_field_direction_choice_query

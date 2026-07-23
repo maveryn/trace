@@ -1,0 +1,86 @@
+{
+  "bundle_id": "three_d_warehouse_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "warehouse": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The image presents {object_description}.",
+        "The picture shows {object_description}.",
+        "The view shows {object_description}."
+      ]
+    },
+    "task": {
+      "warehouse_robot_forward_path_query": ["", "", "", "", ""],
+      "warehouse_robot_nearest_object_query": ["", "", "", "", ""]
+    },
+    "query": {
+      "first_object_ahead": [
+        "Which option describes the object the red-boxed robot will reach first if it moves straight ahead along the red arrow?",
+        "Choose the option for the first object in the red-boxed robot's forward path.",
+        "If the red-boxed robot continues straight along the red arrow, which option describes the object that comes first?",
+        "Which option describes the first warehouse object the red-boxed robot would encounter by moving straight forward?",
+        "Following the red-boxed robot's forward direction, which option describes the object reached first?"
+      ],
+      "closest_object_to_reference": [
+        "Which option describes the warehouse object closest to the {reference_object_name}?",
+        "Choose the option for the object nearest to the {reference_object_name}.",
+        "Among the candidate warehouse objects, which option is nearest to the {reference_object_name}?",
+        "Which option describes the object with the smallest distance to the {reference_object_name}?",
+        "Using ground positions, which option describes the warehouse object closest to the {reference_object_name}?"
+      ],
+      "closest_object_to_robot": [
+        "Which option describes the warehouse object closest to the robot?",
+        "Choose the option for the object nearest to the robot.",
+        "Among the candidate warehouse objects, which option is nearest to the robot?",
+        "Which option describes the object with the smallest distance to the robot?",
+        "Using ground positions, which option describes the warehouse object closest to the robot?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "object_description": "a perspective warehouse aisle with shelf racks, warehouse equipment, candidate objects, and a text option panel below the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected warehouse object in the scene",
+      "json_example": "{\"annotation\":[142,118,238,178],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:warehouse_robot_forward_path_query": {
+      "object_description": "a perspective warehouse aisle with shelf racks, warehouse equipment, one red-boxed robot with a red travel-direction arrow, candidate warehouse objects, and a text option panel below the scene"
+    },
+    "query:closest_object_to_reference": {
+      "object_description": "a perspective warehouse aisle with shelf racks, warehouse equipment, one red sphere reference object, candidate warehouse objects, and a text option panel below the scene"
+    },
+    "query:closest_object_to_robot": {
+      "object_description": "a perspective warehouse aisle with shelf racks, warehouse equipment, one robot, candidate warehouse objects, and a text option panel below the scene"
+    }
+  },
+  "dynamic_slots": {
+    "reference_object_name": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:warehouse": ["object_description"],
+    "query:closest_object_to_reference": ["reference_object_name"],
+    "output:answer_only": ["answer_hint", "json_example_answer_only"],
+    "output:answer_and_annotation": ["annotation_hint", "answer_hint", "json_example"]
+  }
+}

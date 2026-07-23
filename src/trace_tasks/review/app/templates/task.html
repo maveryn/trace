@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ task.task_id }} · Trace Review{% endblock %}
+{% block content %}
+<nav class="breadcrumbs"><a href="/">Tasks</a> / <a href="/domains/{{ task.domain }}">{{ task.domain }}</a> / <a href="/domains/{{ task.domain }}/scenes/{{ task.scene_id }}">{{ task.scene_id }}</a></nav>
+<section class="page-heading"><div><h1>{{ task.task_id }}</h1><p>{{ task.sample_count }} samples across {{ task.query_counts|length }} queries.</p></div>{% if task.materialized %}<span class="badge pass">materialized</span>{% else %}<span class="badge missing">not materialized</span>{% endif %}</section>
+{% if not task.materialized %}<section class="notice"><h2>Artifacts are not materialized</h2><p>Generate this task locally:</p><pre>{{ task.materialize_command }}</pre></section>{% endif %}
+{% if task.materialized %}
+<section class="panel"><h2>Recipe identity</h2><dl class="metadata-grid"><dt>Recipe</dt><dd><code>{{ task.recipe_id }}</code></dd><dt>Digest</dt><dd><code>{{ task.recipe_digest }}</code></dd><dt>Producer revision</dt><dd><code>{{ task.recipe_provenance.producer_revision }}</code></dd><dt>Producer repository</dt><dd>{{ task.recipe_provenance.producer_repository }}</dd></dl></section>
+<div class="two-column">
+<section class="panel"><h2>Public review audit</h2>
+  <form method="post" action="/domains/{{ task.domain }}/scenes/{{ task.scene_id }}/tasks/{{ task.task_id }}/audit">
+    <div class="check-grid">{% for field in audit_fields %}<label><input type="checkbox" name="{{ field }}" {% if audit[field] %}checked{% endif %}> {{ field|replace('_', ' ') }}</label>{% endfor %}</div>
+    <label>Notes<textarea name="notes" rows="4">{{ audit.notes }}</textarea></label>
+    <label>Reviewer<input name="updated_by" value="{{ audit.updated_by }}"></label>
+    <button type="submit">Save audit</button>
+  </form>
+</section>
+<section class="panel"><h2>Open an issue</h2>
+  <form method="post" action="/domains/{{ task.domain }}/scenes/{{ task.scene_id }}/tasks/{{ task.task_id }}/issues">
+    <label>Title<input name="title" required></label><label>Details<textarea name="body" rows="5" required></textarea></label>
+    <div class="form-row"><label>Category<select name="category">{% for category in issue_categories %}<option>{{ category }}</option>{% endfor %}</select></label><label>Severity<select name="severity">{% for severity in issue_severities %}<option {% if severity == 'issue' %}selected{% endif %}>{{ severity }}</option>{% endfor %}</select></label></div>
+    <label>Author<input name="author"></label><button type="submit">Create issue</button>
+  </form>
+</section></div>
+{% endif %}
+{% if issues %}<section><h2>Issues</h2><ul class="issue-list">{% for issue in issues %}<li><span class="badge {{ issue.status }}">{{ issue.status }}</span> <a href="/issues/{{ issue.id }}">{{ issue.title }}</a> · {{ issue.category }} / {{ issue.severity }}</li>{% endfor %}</ul></section>{% endif %}
+{% if task.distribution %}<section class="panel"><h2>Distribution summary</h2><pre>{{ task.distribution|tojson(indent=2) }}</pre></section>{% endif %}
+<section class="panel"><h2>Optional calibration</h2>{% if calibrations %}{% for calibration in calibrations %}<article><h3>{{ calibration.model }}</h3><p>{{ calibration.created_at }} · <code>{{ calibration.source }}</code></p><pre>{{ calibration.summary|tojson(indent=2) }}</pre><details><summary>Settings and provenance</summary><pre>{{ {'settings': calibration.settings, 'provenance': calibration.provenance}|tojson(indent=2) }}</pre></details></article>{% endfor %}{% else %}<p><span class="badge">not run</span> No schema-valid local calibration report covers this task.</p>{% endif %}</section>
+<section><h2>Samples</h2>
+{% if task.query_counts %}<nav class="query-links">Queries: {% for query_id, count in task.query_counts|dictsort %}<a href="/domains/{{ task.domain }}/scenes/{{ task.scene_id }}/tasks/{{ task.task_id }}/queries/{{ query_id }}">{{ query_id }} ({{ count }})</a>{% endfor %}</nav>{% endif %}
+{% if samples %}<div class="sample-grid">{% for sample in samples %}<a class="sample-card" href="/samples/{{ sample.uid }}">{% if sample.image_exists %}<img loading="lazy" src="/media/{{ sample.media_id }}" alt="Review sample {{ sample.query_id }} {{ sample.ordinal }}">{% else %}<div class="image-missing">image missing</div>{% endif %}<strong>{{ sample.query_id }}</strong><span>#{{ "%04d"|format(sample.ordinal) }}</span></a>{% endfor %}</div>{% else %}<p>No samples have been materialized.</p>{% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,1 @@
+"""Pages infographic scene."""

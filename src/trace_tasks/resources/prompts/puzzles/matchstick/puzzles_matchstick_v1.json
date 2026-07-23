@@ -1,0 +1,114 @@
+{
+  "bundle_id": "puzzles_matchstick_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "matchstick": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This puzzle diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "equation_repair_stick_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "max_square_count_after_additions_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "matchstick_number_transform_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "add_one_stick": [
+        "Which labeled number can be made from the Source number by adding exactly one stick?",
+        "Add one stick to the Source number. Which option shows a reachable number?",
+        "Select the candidate number that can be formed by adding exactly one stick to the Source.",
+        "Use one added stick to change the Source number. Which labeled option is possible?",
+        "Choose the option reachable from the Source number after adding exactly one stick."
+      ],
+      "remove_one_stick": [
+        "Which labeled number can be made from the Source number by removing exactly one stick?",
+        "Remove one stick from the Source number. Which option shows a reachable number?",
+        "Select the candidate number that can be formed by removing exactly one stick from the Source.",
+        "Use one removed stick to change the Source number. Which labeled option is possible?",
+        "Choose the option reachable from the Source number after removing exactly one stick."
+      ],
+      "single": [
+        "Which labeled stick should be removed to make the equation true?",
+        "Remove exactly one labeled stick. Which label makes the equation true?",
+        "Select the labeled stick whose removal repairs the equation.",
+        "Which labeled matchstick can be removed so the equation becomes correct?",
+        "Choose the one labeled stick to remove so the equation is true."
+      ],
+      "max_square_count_after_additions": [
+        "You may add exactly {stick_count} matchsticks to empty grid edges. What is the maximum number of complete unit squares that can be present?",
+        "Add exactly {stick_count} matchsticks to empty edge positions. What is the largest possible number of complete unit squares?",
+        "Using exactly {stick_count} added matchsticks, what is the maximum count of complete unit squares in the lattice?",
+        "Place exactly {stick_count} more matchsticks on empty grid edges. How many complete unit squares can there be at most?",
+        "If exactly {stick_count} matchsticks are added to empty lattice edges, what is the greatest possible number of complete unit squares?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: {answer_hint}\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: {answer_hint}\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:equation_repair_stick_label_query": {
+      "object_description": "a false matchstick equation with labeled digit sticks",
+      "answer_hint": "Set answer to the single option label as a capital letter.",
+      "annotation_hint": "Set annotation to the selected stick segment in image pixels as [[x0, y0], [x1, y1]], using the centerline endpoints of that stick.",
+      "json_example": "{\"annotation\":[[240,180],[312,180]],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "task:max_square_count_after_additions_value_query": {
+      "object_description": "a matchstick square lattice with some empty grid edges",
+      "answer_hint": "Set answer to the maximum number of complete unit squares that can be present.",
+      "annotation_hint": "Set annotation to a bbox_set in image pixels, one bounding box [x0, y0, x1, y1] for each complete unit square counted in the final board.",
+      "json_example": "{\"annotation\":[[126,118,226,218],[226,118,326,218]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "task:matchstick_number_transform_query": {
+      "object_description": "a Source matchstick number and six labeled candidate numbers",
+      "answer_hint": "Set answer to the single option label as a capital letter.",
+      "annotation_hint": "Set annotation to a bbox_map in image pixels with keys source_number and selected_option. Each key maps to one bounding box [x0, y0, x1, y1].",
+      "json_example": "{\"annotation\":{\"source_number\":[58,58,1142,288],\"selected_option\":[440,332,760,550]},\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "stick_count": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {}
+}

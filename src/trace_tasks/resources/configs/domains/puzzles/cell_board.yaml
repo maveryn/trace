@@ -1,0 +1,87 @@
+generation:
+  shared:
+    rows_min: 5
+    rows_max: 8
+    cols_min: 5
+    cols_max: 8
+    palette_size_min: 3
+    palette_size_max: 6
+  task_overrides:
+    task_puzzles__cell_board__largest_component_size:
+      rows_min: 6
+      rows_max: 9
+      cols_min: 6
+      cols_max: 9
+      palette_size_min: 2
+      palette_size_max: 3
+      target_filler_min_color_distance: 65.0
+      target_filler_color_distance_space: lab
+      target_largest_component_size_min: 2
+      target_largest_component_size_max: 7
+    task_puzzles__cell_board__reachable_region_size:
+      rows_min: 6
+      rows_max: 8
+      cols_min: 6
+      cols_max: 8
+      answer_min: 1
+      answer_max: 6
+      distractor_open_min: 4
+      distractor_open_max: 10
+    task_puzzles__cell_board__shortest_path_length_value:
+      rows_min: 6
+      rows_max: 8
+      cols_min: 6
+      cols_max: 8
+      target_shortest_len_min: 4
+      target_shortest_len_max: 8
+    task_puzzles__cell_board__symmetry_violation_count:
+      rows_min: 3
+      rows_max: 5
+      cols_min: 3
+      cols_max: 5
+      target_violation_count_min: 1
+      target_violation_count_max: 5
+rendering:
+  shared:
+    short_side_px_min: 28
+    short_side_px_max: 56
+    aspect_ratio_min: 1.0
+    aspect_ratio_max: 1.25
+    outer_padding_fraction_min: 0.08
+    outer_padding_fraction_max: 0.12
+    placement_jitter_fraction_min: 0.02
+    placement_jitter_fraction_max: 0.06
+    balanced_cell_board_tile_style_sampling: true
+    cell_board_tile_style_weights:
+      classic_grid: 1.0
+      rounded_tiles: 1.0
+      inset_tiles: 1.0
+      lab_matrix: 1.0
+prompt:
+  shared:
+    bundle_id: puzzles_cell_board_v1
+    scene_key: cell_board
+    task_key: cell_board_topology_query
+visual:
+  noise:
+    apply_prob: 0.18
+    edit_count_range:
+      - 1
+      - 1
+    value_ranges:
+      blur:
+        radius:
+          - 0.12
+          - 0.32
+      downsample:
+        scale:
+          - 0.93
+          - 0.98
+      jpeg:
+        quality:
+          - 84
+          - 95
+      noise:
+        alpha:
+          - 0.01
+          - 0.035

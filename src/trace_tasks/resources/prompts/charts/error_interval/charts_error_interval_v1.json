@@ -1,0 +1,147 @@
+{
+  "bundle_id": "charts_error_interval_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "error_interval_scene": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "error_interval_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "contains_reference_count": [
+        "How many category intervals include reference value {reference_value}?",
+        "Count the intervals whose lower-to-upper span contains reference value {reference_value}.",
+        "Using the printed interval endpoints, how many categories include {reference_value}?",
+        "For reference value {reference_value}, how many interval whiskers contain that value?",
+        "How many displayed intervals cover the reference value {reference_value}?"
+      ],
+      "entirely_above_reference_count": [
+        "How many category intervals are entirely above reference value {reference_value}?",
+        "Count the intervals whose lower endpoint is greater than {reference_value}.",
+        "Using the printed endpoints, how many categories have intervals fully above {reference_value}?",
+        "For reference value {reference_value}, how many interval whiskers lie completely above it?",
+        "How many displayed intervals exclude {reference_value} on the high side?"
+      ],
+      "entirely_below_reference_count": [
+        "How many category intervals are entirely below reference value {reference_value}?",
+        "Count the intervals whose upper endpoint is less than {reference_value}.",
+        "Using the printed endpoints, how many categories have intervals fully below {reference_value}?",
+        "For reference value {reference_value}, how many interval whiskers lie completely below it?",
+        "How many displayed intervals exclude {reference_value} on the low side?"
+      ],
+      "widest_interval_label": [
+        "Which category has the {relation_phrase}?",
+        "Using upper minus lower endpoint, what category label has the {relation_phrase}?",
+        "Compare interval widths. Which category has the {relation_phrase}?",
+        "Find the category with the {relation_phrase}. What is its label?",
+        "What category label corresponds to the {relation_phrase}?"
+      ],
+      "narrowest_interval_label": [
+        "Which category has the {relation_phrase}?",
+        "Using upper minus lower endpoint, what category label has the {relation_phrase}?",
+        "Compare interval widths. Which category has the {relation_phrase}?",
+        "Find the category with the {relation_phrase}. What is its label?",
+        "What category label corresponds to the {relation_phrase}?"
+      ],
+      "second_widest_interval_label": [
+        "Which category has the {relation_phrase}?",
+        "Using upper minus lower endpoint, what category label has the {relation_phrase}?",
+        "Compare interval widths. Which category has the {relation_phrase}?",
+        "Find the category with the {relation_phrase}. What is its label?",
+        "What category label corresponds to the {relation_phrase}?"
+      ],
+      "second_narrowest_interval_label": [
+        "Which category has the {relation_phrase}?",
+        "Using upper minus lower endpoint, what category label has the {relation_phrase}?",
+        "Compare interval widths. Which category has the {relation_phrase}?",
+        "Find the category with the {relation_phrase}. What is its label?",
+        "What category label corresponds to the {relation_phrase}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:contains_reference_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of lower-to-upper interval segments, each segment written as [[x0,y0],[x1,y1]] for every interval that satisfies the condition",
+      "json_example": "{\"annotation\":[[[300,276],[470,276]],[[310,446],[520,446]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:entirely_above_reference_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of lower-to-upper interval segments, each segment written as [[x0,y0],[x1,y1]] for every interval that satisfies the condition",
+      "json_example": "{\"annotation\":[[[300,276],[470,276]],[[310,446],[520,446]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:entirely_below_reference_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of lower-to-upper interval segments, each segment written as [[x0,y0],[x1,y1]] for every interval that satisfies the condition",
+      "json_example": "{\"annotation\":[[[300,276],[470,276]],[[310,446],[520,446]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:widest_interval_label": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to the selected interval's lower-to-upper segment as [[x0,y0],[x1,y1]]",
+      "json_example": "{\"annotation\":[[310,268],[610,268]],\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:narrowest_interval_label": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to the selected interval's lower-to-upper segment as [[x0,y0],[x1,y1]]",
+      "json_example": "{\"annotation\":[[310,268],[610,268]],\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:second_widest_interval_label": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to the selected interval's lower-to-upper segment as [[x0,y0],[x1,y1]]",
+      "json_example": "{\"annotation\":[[310,268],[610,268]],\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:second_narrowest_interval_label": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to the selected interval's lower-to-upper segment as [[x0,y0],[x1,y1]]",
+      "json_example": "{\"annotation\":[[310,268],[610,268]],\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "reference_value": {
+      "type": "integer"
+    },
+    "relation_phrase": {
+      "type": "string"
+    }
+  }
+}

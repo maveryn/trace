@@ -1,0 +1,148 @@
+{
+  "bundle_id": "geometry_polar_graph_paper_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description": "a polar graph paper diagram with marked point markers",
+    "json_output_contract": "Return a JSON object with keys \"answer\" and \"annotation\".",
+    "json_output_contract_answer_only": "Return a JSON object with key \"answer\".",
+    "answer_hint_integer": "set \"answer\" to the requested integer value",
+    "annotation_hint_point_p": "set \"annotation\" to the pixel point [x,y] at point P",
+    "annotation_hint_points_pq": "set \"annotation\" to an object with exactly the keys \"P\" and \"Q\"; each value must be that labeled point's pixel point [x,y]",
+    "annotation_hint_matching_point_set": "set \"annotation\" to a JSON array of pixel points [x,y], one for each marked point counted in the answer"
+  },
+  "templates": {
+    "scene": {
+      "polar_graph_paper_scene": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The polar graph shows {object_description}."
+      ]
+    },
+    "task": {
+      "polar_graph_paper_readout_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "radius_readout_value": [
+        "What is the polar radius of point P?",
+        "Read the radius coordinate of point P.",
+        "Find the polar radius of point P.",
+        "What radius value is shown for point P?",
+        "Give the polar radius of point P."
+      ],
+      "angle_readout_value": [
+        "What is the polar angle of point P in degrees?",
+        "Read the angle coordinate of point P in degrees.",
+        "Find the polar angle of point P in degrees.",
+        "What angle value is shown for point P in degrees?",
+        "Give the polar angle of point P in degrees."
+      ],
+      "radius_difference_value": [
+        "What is the absolute difference between the polar radii of P and Q?",
+        "Find the difference between the radius coordinates of P and Q.",
+        "How far apart are P and Q in polar radius value?",
+        "Read both radius coordinates and give their absolute difference.",
+        "What is the positive difference between the polar radii of P and Q?"
+      ],
+      "angle_difference_value": [
+        "What is the smaller angle difference between OP and OQ in degrees?",
+        "Find the smaller angular difference between points P and Q in degrees.",
+        "Read both angle coordinates and give their smaller difference in degrees.",
+        "What is the smaller polar angle difference between P and Q?",
+        "Give the smaller angle from ray OP to ray OQ in degrees."
+      ],
+      "radius_value_point_count": [
+        "How many marked points have radius {target_value}?",
+        "Count the marked points whose polar radius is {target_value}.",
+        "How many plotted points are on the radius-{target_value} circle?",
+        "How many marked points lie on the ring labeled {target_value}?",
+        "Count the plotted markers with polar radius {target_value}."
+      ],
+      "angle_value_point_count": [
+        "How many marked points have angle {target_value} degrees?",
+        "Count the marked points on the {target_value} degree spoke.",
+        "How many plotted points are at polar angle {target_value} degrees?",
+        "How many marked points lie on the spoke labeled {target_value} degrees?",
+        "Count the plotted markers with polar angle {target_value} degrees."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"answer\" field: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:polar_graph_paper_scene": {
+      "object_description": "a polar graph paper diagram with marked point markers"
+    }
+  },
+  "dynamic_slots": {
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "target_value": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:polar_graph_paper_scene": [
+      "object_description"
+    ],
+    "query:radius_readout_value": [],
+    "query:angle_readout_value": [],
+    "query:radius_difference_value": [],
+    "query:angle_difference_value": [],
+    "query:radius_value_point_count": [
+      "target_value"
+    ],
+    "query:angle_value_point_count": [
+      "target_value"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

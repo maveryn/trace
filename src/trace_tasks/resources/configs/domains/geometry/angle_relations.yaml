@@ -1,0 +1,43 @@
+generation:
+  task_overrides:
+    task_geometry__angle_relations__parallel_algebraic_angle_value:
+      x_min: 6
+      x_max: 28
+      target_angle_min: 35
+      target_angle_max: 135
+      support_angle_min: 35
+      support_angle_max: 135
+      relations:
+        - corresponding_equal
+        - same_side_supplementary
+    task_geometry__angle_relations__parallel_transversal_triangle_angle_value:
+      lower_triangle_base_angle_min: 35
+      lower_triangle_base_angle_max: 75
+      lower_triangle_base_angle_step: 1
+      target_angle_min: 45
+      target_angle_max: 110
+rendering:
+  shared:
+    canvas_width: 720
+    canvas_height: 560
+    line_width: 4
+    line_width_min: 2
+    line_width_max: 5
+    label_font_size: 22
+    point_label_font_size: 18
+    label_stroke_width: 0
+    label_stroke_width_min: 0
+    label_stroke_width_max: 0
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+prompt:
+  shared:
+    bundle_id: geometry_angle_relations_v1
+    scene_key: angle_relation_scene
+    task_key: angle_relation_value_query

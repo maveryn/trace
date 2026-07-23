@@ -1,0 +1,143 @@
+{
+  "bundle_id": "games_snakes_ladders_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_snakes_ladders_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "snakes_ladders_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "move_outcome_value": [
+        "{movement_rule_text} {overshoot_rule_text} Using the shown die, what square does the token finish on?",
+        "{movement_rule_text} {overshoot_rule_text} Read the die in the side panel. What is the token's final square?",
+        "{movement_rule_text} {overshoot_rule_text} After one shown roll, which numbered square is reached?",
+        "{movement_rule_text} {overshoot_rule_text} Apply the visible die value. What is the final square number?",
+        "{movement_rule_text} {overshoot_rule_text} Move once using the shown die; what square is the token on afterward?"
+      ],
+      "ladder_count": [
+        "How many ladders are visible on the board?",
+        "Count the visible ladders. How many are there?",
+        "How many ladder starts are shown on the board?",
+        "How many upward ladders are visible?",
+        "Count all visible ladders on this board."
+      ],
+      "snake_count": [
+        "How many snakes are visible on the board?",
+        "Count the visible snakes. How many are there?",
+        "How many snake heads are shown on the board?",
+        "How many downward snakes are visible?",
+        "Count all visible snakes on this board."
+      ],
+      "remaining_to_finish_value": [
+        "How many squares remain from the token's square to the final square?",
+        "Subtract the token's square number from the final square number. What is the result?",
+        "How far is the token from the final square by square number?",
+        "How many numbered squares are left between the token's current square and the finish?",
+        "What is the final square number minus the token's square number?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_snakes_ladders_board": [
+      "object_description"
+    ],
+    "query:move_outcome_value": [
+      "movement_rule_text",
+      "overshoot_rule_text",
+      "die_value"
+    ],
+    "query:ladder_count": [],
+    "query:snake_count": [],
+    "query:remaining_to_finish_value": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "die_value": {
+      "type": "integer"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "movement_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "overshoot_rule_text": {
+      "type": "string"
+    },
+    "horizon_roll_count": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_standard_board": "a numbered Snakes and Ladders board with one token and visible snakes and ladders",
+    "movement_rule_text": "A move advances the token by the selected die value, then immediately follows a ladder upward or a snake downward if the landing square is the start of one. A ladder starts at its lower square and ends at the arrowhead on the higher square; a snake starts at its head and ends at its pointed tail on the lower square.",
+    "overshoot_rule_text": "If a die roll would move past the final square, the token stays on its current square for that roll.",
+    "annotation_hint_move_outcome_value": "set \"annotation\" to a JSON object mapping start_square and end_square to bounding boxes [x0, y0, x1, y1]",
+    "answer_hint_move_outcome_value": "set \"answer\" to the final square number after the shown die roll and any snake or ladder",
+    "annotation_hint_ladder_count": "set \"annotation\" to a JSON array of bounding boxes [x0,y0,x1,y1] around every counted ladder-start square",
+    "answer_hint_ladder_count": "set \"answer\" to the number of visible ladders",
+    "annotation_hint_snake_count": "set \"annotation\" to a JSON array of bounding boxes [x0,y0,x1,y1] around every counted snake-head square",
+    "answer_hint_snake_count": "set \"answer\" to the number of visible snakes",
+    "annotation_hint_remaining_to_finish_value": "set \"annotation\" to a JSON object mapping token_square and finish_square to bounding boxes [x0, y0, x1, y1]",
+    "answer_hint_remaining_to_finish_value": "set \"answer\" to the final square number minus the token's square number"
+  }
+}

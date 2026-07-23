@@ -1,0 +1,146 @@
+{
+  "bundle_id": "games_minecraft_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_block_world": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "minecraft_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "top_ore_stack_count": [
+        "How many visible stacks have {counted_resource_name} as the top cube?",
+        "Count the stacks whose top cube is {counted_resource_name}.",
+        "Report the number of cube stacks with {counted_resource_name} on top.",
+        "Among the visible stacks, how many show {counted_resource_name} as their top cube?",
+        "How many stacks have a top cube of {counted_resource_name}?"
+      ],
+      "resource_route_cost": [
+        "{minecraft_route_cost_rule_text} How many raised blocks are on the track?",
+        "Count the raised stone or dirt blocks sitting on the visible track.",
+        "{minecraft_route_cost_rule_text} How many raised blocks are on that track?",
+        "Along the visible track, how many stone or dirt blocks are raised?",
+        "How many raised stone or dirt blocks lie on the shown track?"
+      ],
+      "exact_height_count": [
+        "How many visible cube stacks are exactly {target_stack_height} cubes tall?",
+        "Count the visible stacks that are exactly {target_stack_height} cubes tall.",
+        "Report the number of cube stacks with height exactly {target_stack_height} cubes.",
+        "Among the visible stacks, how many are exactly {target_stack_height} cubes tall?",
+        "How many stacks have exactly {target_stack_height} cubes?"
+      ],
+      "at_least_height_count": [
+        "How many visible cube stacks are at least {target_stack_height} cubes tall?",
+        "Count the visible stacks that are at least {target_stack_height} cubes tall.",
+        "Report the number of cube stacks with height at least {target_stack_height} cubes.",
+        "Among the visible stacks, how many are at least {target_stack_height} cubes tall?",
+        "How many stacks have height at least {target_stack_height} cubes?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_block_world": [
+      "object_description"
+    ],
+    "query:top_ore_stack_count": [
+      "counted_resource_name"
+    ],
+    "query:resource_route_cost": [
+      "minecraft_route_cost_rule_text"
+    ],
+    "query:exact_height_count": [
+      "target_stack_height"
+    ],
+    "query:at_least_height_count": [
+      "target_stack_height"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "counted_resource_name": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "minecraft_route_cost_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "target_stack_height": {
+      "type": "string"
+    },
+    "target_resource_name": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_block_world": "a Minecraft-like isometric block world with cube terrain, visible cube stacks or raised blocks, and any marked track needed for the question",
+    "minecraft_route_cost_rule_text": "Each raised stone or dirt block sitting on the visible track counts 1; empty track cells and raised blocks away from the track count 0.",
+    "annotation_hint_top_ore_stack_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one around each visible stack whose top cube is the named ore",
+    "answer_hint_top_ore_stack_count": "set \"answer\" to the integer number of stacks whose top cube is the named ore",
+    "annotation_hint_resource_route_cost": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one around each raised stone or dirt block on the visible track; use an empty array if the count is 0",
+    "answer_hint_resource_route_cost": "set \"answer\" to the integer number of raised blocks on the track",
+    "annotation_hint_exact_height_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one around each visible stack that is exactly the named height",
+    "answer_hint_exact_height_count": "set \"answer\" to the integer number of stacks that are exactly the named height",
+    "annotation_hint_at_least_height_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one around each visible stack that is at least the named height",
+    "answer_hint_at_least_height_count": "set \"answer\" to the integer number of stacks that are at least the named height"
+  }
+}

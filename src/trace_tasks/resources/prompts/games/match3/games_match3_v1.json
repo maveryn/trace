@@ -1,0 +1,161 @@
+{
+  "bundle_id": "games_match3_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "match3_grid": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This board shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "match3_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "max_clear_swap_label": [
+        "{match3_rule_text} Which labeled swap arrow clears the most gems?",
+        "{match3_rule_text} Choose the arrow letter whose swap gives the largest immediate clear count.",
+        "{match3_rule_text} Among the labeled swap arrows, which one clears the maximum number of gems?",
+        "{match3_rule_text} Report the label of the swap arrow with the largest clear count.",
+        "{match3_rule_text} Which labeled adjacent swap removes the most gems immediately?"
+      ],
+      "swap_clear_count": [
+        "{match3_rule_text} If the marked swap is made, how many gems are in the straight matching runs that clear?",
+        "{match3_rule_text} Make the marked swap, then count only the gems in the straight matching runs that clear.",
+        "{match3_rule_text} After the marked swap, how many gems are part of a horizontal or vertical run that clears?",
+        "{match3_rule_text} Use the marked adjacent swap. How many gems clear from straight matching runs?",
+        "{match3_rule_text} What is the number of gems that clear after making the marked swap?"
+      ],
+      "grid_color_gem_count": [
+        "How many {target_color_label} gems are in the grid?",
+        "Count the {target_color_label} gems in the whole grid.",
+        "What is the total number of {target_color_label} gems on the board?",
+        "Find the number of {target_color_label} gems across the full grid.",
+        "How many gems in the grid are {target_color_label}?"
+      ],
+      "row_color_gem_count": [
+        "How many {target_color_label} gems are in row {row_index}?",
+        "Count the {target_color_label} gems in row {row_index}.",
+        "What is the number of {target_color_label} gems in row {row_index}?",
+        "Find the {target_color_label} gem count for row {row_index}.",
+        "How many row {row_index} gems are {target_color_label}?"
+      ],
+      "column_color_gem_count": [
+        "How many {target_color_label} gems are in column {col_index}?",
+        "Count the {target_color_label} gems in column {col_index}.",
+        "What is the number of {target_color_label} gems in column {col_index}?",
+        "Find the {target_color_label} gem count for column {col_index}.",
+        "How many column {col_index} gems are {target_color_label}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:match3_grid": [
+      "object_description"
+    ],
+    "query:max_clear_swap_label": [
+      "match3_rule_text"
+    ],
+    "query:swap_clear_count": [
+      "match3_rule_text"
+    ],
+    "query:grid_color_gem_count": [
+      "target_color_label"
+    ],
+    "query:row_color_gem_count": [
+      "target_color_label",
+      "row_index"
+    ],
+    "query:column_color_gem_count": [
+      "target_color_label",
+      "col_index"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "col_index": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "match3_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "row_index": {
+      "type": "string"
+    },
+    "target_color_label": {
+      "type": "label"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_match3_grid": "a match-3 jewel grid with row and column numbers, colored gems, and labeled adjacent-swap arrows",
+    "object_description_match3_count_grid": "a match-3 jewel grid with row and column numbers and colored gems",
+    "match3_rule_text": "Swap only the two adjacent gems connected by the marked arrow. After the swap, count gems only if they are part of a straight horizontal or vertical run of 3 or more matching gems. If no straight 3-or-more run is formed, the answer is 0. Do not apply falling, refill, special effects, or cascades.",
+    "annotation_hint_max_clear_swap_label": "set \"annotation\" to the [x,y] pixel point on the selected swap arrow",
+    "answer_hint_max_clear_swap_label": "set \"answer\" to only the selected swap-arrow letter",
+    "annotation_hint_swap_clear_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each gem that clears",
+    "answer_hint_swap_clear_count": "set \"answer\" to the exact number of gems that clear, or 0 if none clear",
+    "annotation_hint_grid_color_gem_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each matching gem",
+    "answer_hint_grid_color_gem_count": "set \"answer\" to the exact count as an integer",
+    "annotation_hint_row_color_gem_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each matching gem in the row",
+    "answer_hint_row_color_gem_count": "set \"answer\" to the exact count as an integer",
+    "annotation_hint_column_color_gem_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each matching gem in the column",
+    "answer_hint_column_color_gem_count": "set \"answer\" to the exact count as an integer"
+  }
+}

@@ -1,0 +1,118 @@
+generation:
+  shared:
+    scene_variant_weights:
+      classic: 1.0
+      minimal: 1.0
+      outline: 1.0
+    layout_mode_weights:
+      center_clean: 1.0
+      free_jitter_clean: 1.0
+      left_with_side_note: 1.0
+      right_with_side_note: 1.0
+      top_with_bottom_note: 1.0
+    title_mode_weights:
+      none: 1.5
+      generic: 1.25
+      full_month_year: 1.0
+    week_start_weights:
+      monday: 1.0
+      sunday: 1.0
+    marked_day_class_weights:
+      weekend: 1.0
+      weekday: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_layout_mode_sampling: true
+    balanced_title_mode_sampling: true
+    balanced_week_start_sampling: true
+    balanced_marked_day_class_sampling: true
+    weekend_weekday_indices:
+    - 5
+    - 6
+    date_occurrence_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    marked_weekend_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    marked_weekday_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    marked_weekday_distractor_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    marked_weekend_distractor_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    workday_offset_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    date_range_day_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    date_range_min_span_days: 4
+    date_range_max_span_days: 16
+    year_min: 2022
+    year_max: 2030
+rendering:
+  shared:
+    canvas_width: 860
+    canvas_height: 760
+    outer_margin_px: 34
+    title_height_px: 64
+    title_bottom_gap_px: 14
+    weekday_header_height_px: 34
+    weekday_grid_gap_px: 10
+    cell_gap_px: 8
+    panel_corner_radius_px: 18
+    panel_outline_width_px: 3
+    panel_outline_width_px_min: 2
+    panel_outline_width_px_max: 4
+    cell_corner_radius_px: 12
+    cell_outline_width_px: 2
+    cell_outline_width_px_min: 1
+    cell_outline_width_px_max: 3
+    title_font_size_px: 30
+    weekday_font_size_px: 16
+    date_font_size_px: 22
+    marker_inset_px: 10
+    marker_inset_px_min: 8
+    marker_inset_px_max: 12
+    marker_outline_width_px: 3
+    marker_outline_width_px_min: 2
+    marker_outline_width_px_max: 4
+    pages_context_profile: report_paragraph
+    pages_context_mode_weights:
+      clean: 0.24
+      minimal: 0.2
+      paragraph_box: 0.56
+    pages_context_text_max_elements: 7
+prompt:
+  shared:
+    bundle_id: pages_calendar_v1

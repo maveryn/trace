@@ -1,0 +1,86 @@
+generation:
+  shared:
+    source_count_min: 2
+    source_count_max: 3
+    middle_count_min: 2
+    middle_count_max: 3
+    target_count_min: 2
+    target_count_max: 3
+    path_count_min: 3
+    path_count_max: 4
+    max_paths_per_node_side: 3
+    source_target_route_count_min: 2
+    source_target_route_count_max: 2
+    link_value_min: 5
+    link_value_max: 35
+    source_target_answer_min: 10
+    source_target_answer_max: 90
+    path_difference_min: 2
+    path_difference_max: 25
+    node_side_total_answer_min: 10
+    node_side_total_answer_max: 90
+    node_side_total_connected_min: 2
+    node_side_total_connected_max: 3
+rendering:
+  shared:
+    canvas_width: 1328
+    canvas_height: 960
+    outer_margin_px: 36
+    panel_padding_px: 28
+    title_band_height_px: 62
+    node_width_px: 116
+    node_height_px: 60
+    node_border_width_px: 2
+    port_separation_px: 34
+    shared_pair_lane_gap_px: 72
+    min_flow_width_px: 6
+    max_flow_width_px: 18
+    value_label_font_size_px: 25
+    value_label_gap_px: 16
+    source_middle_label_t: 0.34
+    middle_target_label_t: 0.66
+    node_label_font_size_px: 30
+    title_font_size_px: 31
+    node_fill_rgb:
+    - 54
+    - 63
+    - 74
+    node_border_rgb:
+    - 30
+    - 38
+    - 46
+    node_text_rgb:
+    - 255
+    - 255
+    - 255
+    value_label_text_rgb:
+    - 28
+    - 34
+    - 42
+    flow_alpha: 138
+prompt:
+  shared:
+    bundle_id: charts_sankey_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.014

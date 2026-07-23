@@ -1,0 +1,81 @@
+{
+  "bundle_id": "three_d_street_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "street": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The image presents {object_description}.",
+        "The picture shows {object_description}.",
+        "The view shows {object_description}."
+      ]
+    },
+    "task": {
+      "street_intersection_nearest_query": ["", "", "", "", ""],
+      "street_same_road_arm_reference_query": ["", "", "", "", ""],
+      "street_lane_ahead_object_query": ["", "", "", "", ""]
+    },
+    "query": {
+      "closest_to_intersection": [
+        "Which option describes the street object closest to the center of the intersection?",
+        "Choose the option for the street object nearest the intersection center.",
+        "Using the ground positions, which option describes the object nearest to the middle of the intersection?",
+        "Which option describes the object closest to where the roads meet?",
+        "Among the candidate street objects, which option is closest to the intersection center?"
+      ],
+      "same_road_arm_as_reference": [
+        "Which option describes the street object on the same road arm as the red-boxed object?",
+        "Choose the option for the street object on the same road arm as the red-boxed object.",
+        "Which option describes the object placed along the same road arm as the red-boxed object?",
+        "Using the road arms, which option describes the object that shares the same road arm as the red-boxed object?",
+        "Among the candidate street objects, which option is on the same road arm as the red-boxed object?"
+      ],
+      "ahead_along_lane": [
+        "Using the red arrow as the travel direction, which option describes the street object directly ahead of the red-boxed object if it continues along its lane?",
+        "Which option describes the object directly ahead of the red-boxed object along the lane indicated by the red arrow?",
+        "Follow the red-boxed object's red direction arrow along its lane. Which option describes the street object directly ahead?",
+        "If the red-boxed object keeps moving in the red-arrow direction along its lane, which option describes the object directly ahead?",
+        "Among the candidate street objects, which option is ahead of the red-boxed object in the lane shown by the red arrow?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "object_description": "a perspective street intersection or T intersection with roads, sidewalks, crosswalk markings, street context, candidate street objects, and a text option panel below the scene",
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected street object in the scene",
+      "json_example": "{\"annotation\":[142,118,238,178],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:street_same_road_arm_reference_query": {
+      "object_description": "a perspective street intersection or T intersection with roads, sidewalks, crosswalk markings, street context, one red-boxed reference street object, candidate street objects, and a text option panel below the scene"
+    },
+    "task:street_lane_ahead_object_query": {
+      "object_description": "a perspective street intersection or T intersection with roads, sidewalks, crosswalk markings, street context, one red-boxed reference street object with a red travel-direction arrow, candidate street objects, and a text option panel below the scene"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:street": ["object_description"],
+    "output:answer_only": ["answer_hint", "json_example_answer_only"],
+    "output:answer_and_annotation": ["annotation_hint", "answer_hint", "json_example"]
+  }
+}

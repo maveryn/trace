@@ -1,0 +1,119 @@
+{
+  "provenance": {
+    "resources": {
+      "prompt_bundle_tree_hash": "sha256:a16ecabd39a907833647ee5960adf143a7e6472e220d998bc692cb5ee473b88d",
+      "resource_tree_hash": "sha256:9783a9c7a22ec943bcef6e0167703cd759ce0a90090a7ac5347c6796a8d4794b",
+      "task_catalog_hash": "sha256:2e5da42831a6d8ad9bc6bb1925fa5d398a3404f133040aeabd12e4931389712c"
+    },
+    "runtime": {
+      "dependencies": {
+        "CairoSVG": "2.9.0",
+        "Pillow": "12.2.0",
+        "PyYAML": "6.0.3",
+        "blake3": "1.0.9",
+        "networkx": "3.4.2",
+        "numpy": "2.2.6",
+        "rfc8785": "0.1.4",
+        "scipy": "1.15.3"
+      },
+      "machine": "x86_64",
+      "native_libraries": {
+        "libc": "glibc:2.39",
+        "libcairo": "1.18.4",
+        "pillow:freetype2": "2.14.3",
+        "pillow:jpg_2000": "2.5.4",
+        "pillow:libjpeg_turbo": "3.1.4.1",
+        "pillow:libtiff": "4.7.1",
+        "pillow:littlecms2": "2.18",
+        "pillow:raqm": "0.10.3",
+        "pillow:webp": "1.6.0",
+        "pillow:zlib": "1.3.1"
+      },
+      "platform": "Linux",
+      "python_implementation": "CPython",
+      "python_version": "3.12.11"
+    },
+    "source": {
+      "constraints_hash": "sha256:a728d775dedf723c030806289ffcf62833ab4bdbeca45bf860e9a717a69a0300",
+      "dirty": false,
+      "generator_tree_hash": "sha256:7dd961c720fb0d5f56543651c294bcdfa1f2663c464269de9e2bf2f7590186ff",
+      "repository": "maveryn/trace",
+      "revision": "3138b95b7c1e21e046673fe84eab7494ae3733dc",
+      "source_tree_hash": "sha256:227d3f32b286b2efc36e36c6536eb432e31792058f7a47c9a976a094e65991b6"
+    }
+  },
+  "recipe_digest": "sha256:5ff7179c5a3745d79060e3631bda9edb29757916cc9540875c9f4397abc84a9b",
+  "recipe_id": "trace-review-recipe-v1",
+  "request_count": 25000,
+  "requests_per_task": 25,
+  "schema_version": "trace-review-recipe-v1",
+  "shards": [
+    {
+      "domain": "charts",
+      "path": "requests/charts.jsonl",
+      "request_count": 4500,
+      "sha256": "sha256:dbf2155373b347e863ada3b16b058121640e9b41875e0471262d29af7c2fb1dc"
+    },
+    {
+      "domain": "games",
+      "path": "requests/games.jsonl",
+      "request_count": 4250,
+      "sha256": "sha256:4e2c5e4fb3a8302f15e2f405374bc0ea40439b9ebe9dc689d6ca19f42a64377b"
+    },
+    {
+      "domain": "geometry",
+      "path": "requests/geometry.jsonl",
+      "request_count": 4250,
+      "sha256": "sha256:66a8851f20690a9dacfff34201b6aacc913690fd69607d79f02b62141c9165b1"
+    },
+    {
+      "domain": "graph",
+      "path": "requests/graph.jsonl",
+      "request_count": 1500,
+      "sha256": "sha256:26e9837b951419158fc9ca37d98fde5adef3bebaa957150c965bbe5fc8b01c17"
+    },
+    {
+      "domain": "icons",
+      "path": "requests/icons.jsonl",
+      "request_count": 1250,
+      "sha256": "sha256:0bc4fcda2b9f66f1a7f0e8b58b6d1cb7585fab14837f0f4771452b6c65bdcafa"
+    },
+    {
+      "domain": "illustrations",
+      "path": "requests/illustrations.jsonl",
+      "request_count": 1500,
+      "sha256": "sha256:8cf17e49ad89ab4288da9aa340cf7d039498cf2835c1b1b0f20f61a60b149005"
+    },
+    {
+      "domain": "pages",
+      "path": "requests/pages.jsonl",
+      "request_count": 2000,
+      "sha256": "sha256:cad6a3d3a18b54cbcacd6329a83d913c2c09d847443efd78b5269c3b6a3ffed2"
+    },
+    {
+      "domain": "physics",
+      "path": "requests/physics.jsonl",
+      "request_count": 1250,
+      "sha256": "sha256:62d3f8547081dd95404923e7ef7f6962eddbc915cc26f080c0e9a36094fa1851"
+    },
+    {
+      "domain": "puzzles",
+      "path": "requests/puzzles.jsonl",
+      "request_count": 1500,
+      "sha256": "sha256:63faadb8b02442f5ea7346b362ab23576802ed4e127e6c95b0afc34f90b0826a"
+    },
+    {
+      "domain": "symbolic",
+      "path": "requests/symbolic.jsonl",
+      "request_count": 1500,
+      "sha256": "sha256:8af2e5f36301e0ca5be29c6300a0eaf912a23ec79b59526d04c703a277b8678c"
+    },
+    {
+      "domain": "three_d",
+      "path": "requests/three_d.jsonl",
+      "request_count": 1500,
+      "sha256": "sha256:434fb3d891c4546cfc949f1225796bc75a5ef69ad4def90b10d3f946e6ae91fd"
+    }
+  ],
+  "task_count": 1000
+}

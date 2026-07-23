@@ -1,0 +1,51 @@
+generation:
+  shared:
+    scene_variant_weights:
+      clean_card: 1.0
+      notebook_card: 1.0
+      exam_scan: 1.0
+    balanced_scene_variant_sampling: true
+    word_length_min: 3
+    word_length_max: 5
+    word_option_count: 4
+    word_option_shared_prefix_length_weights:
+      1: 1.0
+      2: 1.0
+      3: 0.5
+
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 680
+    code_symbol_dot_radius_px: 7
+    code_symbol_dash_width_px: 32
+    code_symbol_dash_height_px: 11
+    code_symbol_gap_px: 8
+    code_letter_gap_px: 36
+    option_symbol_dot_radius_px: 3
+    option_symbol_dash_width_px: 16
+    option_symbol_dash_height_px: 6
+    option_symbol_gap_px: 4
+    option_letter_gap_px: 16
+    source_card_height_px: 142
+    option_card_width_px: 400
+    option_card_height_px: 132
+    word_option_card_width_px: 240
+    word_option_card_height_px: 70
+    option_label_font_size_px: 28
+    source_word_font_size_px: 42
+    option_word_font_size_px: 30
+    card_corner_radius_px: 18
+    card_border_width_px: 2
+    marked_border_width_px: 5
+
+prompt:
+  shared:
+    bundle_id: symbolic_morse_code_v1
+    scene_key: morse_code
+
+visual:
+  background:
+    enabled: true
+  noise:
+    apply_prob: 0.20

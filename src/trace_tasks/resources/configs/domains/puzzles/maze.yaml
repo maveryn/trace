@@ -1,0 +1,196 @@
+generation:
+  shared:
+    maze_rows_min: 6
+    maze_rows_max: 8
+    maze_cols_min: 7
+    maze_cols_max: 10
+    exit_count_min: 4
+    exit_count_max: 6
+    nearest_exit_min_gap_edges: 2
+    balanced_sampling: true
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      classic_wall_maze: 1.0
+      paper_labyrinth_maze: 1.0
+      block_wall_maze: 1.0
+  task_overrides:
+    task_puzzles__maze__exit_reachability_label:
+      exit_count_min: 4
+      exit_count_max: 4
+    task_puzzles__maze__nearest_exit_label:
+      exit_count_min: 4
+      exit_count_max: 4
+      nearest_exit_min_gap_edges: 2
+rendering:
+  shared:
+    canvas_width: 1200
+    canvas_height: 900
+    scene_margin_left_px: 104
+    scene_margin_right_px: 104
+    scene_margin_top_px: 90
+    scene_margin_bottom_px: 90
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    wall_stroke_width_px: 6
+    wall_stroke_width_min_px: 4
+    wall_stroke_width_max_px: 9
+    outer_wall_stroke_width_px: 9
+    outer_wall_stroke_width_min_px: 8
+    outer_wall_stroke_width_max_px: 11
+    exit_marker_radius_px: 27
+    exit_marker_shape: circle
+    exit_marker_shape_options:
+    - circle
+    - square
+    - tab
+    exit_label_font_size_px: 28
+    start_font_size_px: 20
+    panel_fill_rgb:
+    - 248
+    - 249
+    - 252
+    panel_fill_rgb_options:
+    - - 248
+      - 249
+      - 252
+    - - 244
+      - 250
+      - 248
+    - - 252
+      - 248
+      - 240
+    - - 246
+      - 247
+      - 241
+    - - 242
+      - 248
+      - 252
+    floor_fill_rgb:
+    - 255
+    - 255
+    - 255
+    floor_fill_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 253
+      - 254
+      - 252
+    - - 255
+      - 253
+      - 248
+    - - 250
+      - 251
+      - 246
+    - - 248
+      - 252
+      - 253
+    wall_color_rgb:
+    - 51
+    - 60
+    - 74
+    wall_color_rgb_options:
+    - - 51
+      - 60
+      - 74
+    - - 55
+      - 83
+      - 85
+    - - 91
+      - 73
+      - 62
+    - - 64
+      - 74
+      - 58
+    - - 87
+      - 67
+      - 91
+    border_color_rgb:
+    - 96
+    - 105
+    - 118
+    border_color_rgb_options:
+    - - 96
+      - 105
+      - 118
+    - - 80
+      - 112
+      - 112
+    - - 120
+      - 101
+      - 85
+    - - 90
+      - 112
+      - 82
+    - - 116
+      - 91
+      - 119
+    text_color_rgb:
+    - 24
+    - 28
+    - 34
+    text_stroke_rgb:
+    - 255
+    - 255
+    - 255
+    start_fill_rgb:
+    - 206
+    - 236
+    - 218
+    start_outline_rgb:
+    - 42
+    - 115
+    - 82
+    exit_outline_rgb:
+    - 42
+    - 48
+    - 58
+    exit_palette:
+    - - 245
+      - 208
+      - 96
+    - - 111
+      - 178
+      - 219
+    - - 235
+      - 143
+      - 107
+    - - 145
+      - 205
+      - 143
+    - - 187
+      - 154
+      - 219
+    - - 231
+      - 167
+      - 196
+    - - 91
+      - 184
+      - 178
+    - - 202
+      - 146
+      - 83
+    subtle_grid_rgb:
+    - 229
+    - 232
+    - 238
+    subtle_grid_rgb_options:
+    - - 229
+      - 232
+      - 238
+    - - 224
+      - 232
+      - 229
+    - - 235
+      - 230
+      - 220
+    - - 222
+      - 230
+      - 236
+prompt:
+  shared:
+    bundle_id: puzzles_maze_v1
+    scene_key: maze
+visual:
+  noise:
+    apply_prob: 0.5

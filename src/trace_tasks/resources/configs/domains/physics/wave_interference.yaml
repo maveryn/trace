@@ -1,0 +1,76 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      clean_tank: 1.0
+      grid_tank: 1.0
+      lab_sheet: 1.0
+    phase_relation_weights:
+      in_phase: 1.0
+      opposite_phase: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_phase_relation_sampling: true
+  task_overrides:
+    task_physics__wave_interference__interference_point_choice:
+      option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+      balanced_option_letter_sampling: true
+    task_physics__wave_interference__path_difference_value:
+      balanced_target_answer_sampling: true
+      path_difference_step_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    board_left_px: 70
+    board_top_px: 50
+    board_width_px: 980
+    board_height_px: 620
+    half_wavelength_px: 50
+    ring_count: 10
+    grid_line_width_px: 1
+    source_radius_px: 24
+    candidate_radius_px: 15
+    point_radius_px: 18
+    wavefront_width_px: 2
+    guide_width_px: 4
+    label_font_size_px: 22
+    source_font_size_px: 21
+    candidate_font_size_px: 23
+    note_font_size_px: 20
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -22
+    layout_jitter_x_px_max: 26
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 20
+
+prompt:
+  shared:
+    bundle_id: physics_wave_interference_v1
+  task_overrides:
+    task_physics__wave_interference__interference_point_choice:
+      task_key: interference_point_choice_query
+    task_physics__wave_interference__path_difference_value:
+      task_key: path_difference_value_query

@@ -1,0 +1,191 @@
+{
+  "bundle_id": "illustrations_isometric_harbor_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "isometric_harbor_dock_canvas": [
+        "The image shows an isometric harbor with a shoreline, blue water tiles, a connected wooden main dock, dock posts, cargo objects, and small boats.",
+        "The scene shows a pixel-art isometric harbor where boats are moored beside a main dock that extends from land into the water.",
+        "The picture shows an isometric dockyard with shoreline tiles, water tiles, a wooden pier, dock objects, and boats tied along the dock.",
+        "The canvas contains an isometric harbor scene with a wooden dock connected to land and boats on either side.",
+        "This illustration shows a harbor drawn on isometric tiles, with a main dock running from the shore into the water and boats beside it."
+      ],
+      "isometric_harbor_open_water_canvas": [
+        "The image shows an isometric harbor with a shoreline, blue water tiles, a connected wooden main dock, and boats in open water.",
+        "The scene shows a pixel-art isometric harbor with land at the shore, a wooden dock, and boats floating in the water.",
+        "The picture shows an isometric harbor scene where boats are placed in open water near a shoreline and dock.",
+        "The canvas contains an isometric harbor with shoreline tiles, water tiles, a wooden pier, and boats floating on the water.",
+        "This illustration shows a tiled isometric harbor with a visible shore edge, a dock, and boats floating on the water."
+      ]
+    },
+    "task": {
+      "boat_side_count_task": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "boat_mooring_status_count_task": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "boat_heading_status_count_task": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "shoreline_nearest_boat_label_task": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "left_side_boat_count": [
+        "How many boats are docked on the image-left side of the main dock?",
+        "Count the boats moored along the image-left side of the main dock.",
+        "What is the number of boats touching the image-left side of the main dock?",
+        "How many boats are tied to the left side of the main dock in the image?",
+        "Count only the boats on the image-left side of the wooden main dock."
+      ],
+      "right_side_boat_count": [
+        "How many boats are docked on the image-right side of the main dock?",
+        "Count the boats moored along the image-right side of the main dock.",
+        "What is the number of boats touching the image-right side of the main dock?",
+        "How many boats are tied to the right side of the main dock in the image?",
+        "Count only the boats on the image-right side of the wooden main dock."
+      ],
+      "moored_boat_count": [
+        "How many boats are tied along the main dock?",
+        "Count the boats moored beside the wooden main dock.",
+        "What is the number of boats tied to the main dock?",
+        "How many boats are docked along the wooden pier?",
+        "Count only the boats attached to the main dock."
+      ],
+      "open_water_boat_count": [
+        "How many boats are in open water, not tied to the dock?",
+        "Count the boats floating away from the main dock.",
+        "What is the number of boats that are not attached to the dock?",
+        "How many boats are in the water away from the wooden pier?",
+        "Count only the boats in open water that are not tied along the main dock."
+      ],
+      "toward_shoreline_boat_count": [
+        "How many boats are facing toward the shoreline?",
+        "Count the boats whose bows point toward the shore.",
+        "What is the number of boats facing the land edge?",
+        "How many boats point toward the shoreline?",
+        "Count only the boats headed toward the shore."
+      ],
+      "away_from_shoreline_boat_count": [
+        "How many boats are facing away from the shoreline?",
+        "Count the boats whose bows point away from the shore.",
+        "What is the number of boats facing away from the land edge?",
+        "How many boats point away from the shoreline?",
+        "Count only the boats headed away from the shore."
+      ],
+      "shoreline_nearest_boat": [
+        "Which lettered boat is closest to the shoreline?",
+        "Choose the letter of the boat nearest to the shore.",
+        "Which labeled boat has the smallest distance to the shoreline?",
+        "Select the letter for the boat closest to the land edge.",
+        "Which boat label marks the open-water boat nearest the shore?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:isometric_harbor_dock_canvas": [],
+    "scene:isometric_harbor_open_water_canvas": [],
+    "query:left_side_boat_count": [],
+    "query:right_side_boat_count": [],
+    "query:moored_boat_count": [],
+    "query:open_water_boat_count": [],
+    "query:toward_shoreline_boat_count": [],
+    "query:away_from_shoreline_boat_count": [],
+    "query:shoreline_nearest_boat": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "target_side_label": {
+      "type": "string"
+    },
+    "target_status_label": {
+      "type": "string"
+    },
+    "target_heading_label": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "json_output_contract": "Return JSON with keys \"annotation\" and \"answer\".",
+    "json_output_contract_answer_only": "Return JSON with key \"answer\".",
+    "answer_hint_boat_side_count": "set \"answer\" to the number of boats docked on the {target_side_label} of the main dock",
+    "annotation_hint_boat_side_count": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes around each counted boat; use [] when the count is 0",
+    "json_example_boat_side_count": "{\"annotation\":[[236,420,282,470],[520,300,560,352]],\"answer\":2}",
+    "json_example_answer_only_boat_side_count": "{\"answer\":2}",
+    "answer_hint_boat_mooring_status_count": "set \"answer\" to the number of {target_status_label}",
+    "annotation_hint_boat_mooring_status_count": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes around each counted boat; use [] when the count is 0",
+    "json_example_boat_mooring_status_count": "{\"annotation\":[[188,408,252,452],[514,275,580,320]],\"answer\":2}",
+    "json_example_answer_only_boat_mooring_status_count": "{\"answer\":2}",
+    "answer_hint_boat_heading_status_count": "set \"answer\" to the number of boats facing {target_heading_label}",
+    "annotation_hint_boat_heading_status_count": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes around each counted boat",
+    "json_example_boat_heading_status_count": "{\"annotation\":[[188,408,252,452],[514,275,580,320]],\"answer\":2}",
+    "json_example_answer_only_boat_heading_status_count": "{\"answer\":2}",
+    "answer_hint_shoreline_nearest_boat_label": "set \"answer\" to the selected boat letter",
+    "annotation_hint_shoreline_nearest_boat_label": "set \"annotation\" to [x0, y0, x1, y1] pixel bounding box around the selected boat",
+    "json_example_shoreline_nearest_boat_label": "{\"annotation\":[188,408,252,452],\"answer\":\"C\"}",
+    "json_example_answer_only_shoreline_nearest_boat_label": "{\"answer\":\"C\"}"
+  }
+}

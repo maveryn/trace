@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace Task Implementation"
+  short_description: "Implement Trace tasks and shared helpers"
+  default_prompt: "Use $trace-task-implementation to implement this stable Trace task contract with focused tests and synchronized docs."

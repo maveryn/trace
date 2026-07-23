@@ -1,0 +1,65 @@
+generation:
+  shared:
+    scene_variant_weights:
+      rectangular_tank: 1.0
+      beaker_tank: 1.0
+      wide_tank: 1.0
+    object_shape_weights:
+      block: 1.0
+      rounded_block: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_object_shape_sampling: true
+    balanced_target_answer_sampling: true
+    submerged_fraction_support:
+    - 1/4
+    - 1/2
+    - 2/3
+    - 3/4
+    - 4/5
+    liquid_density_tenths_support:
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 18
+    - 20
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 720
+    panel_left_px: 54
+    panel_top_px: 52
+    panel_right_margin_px: 54
+    panel_bottom_margin_px: 58
+    tank_left_px: 172
+    tank_top_px: 160
+    tank_width_px: 700
+    tank_height_px: 410
+    waterline_y_px: 346
+    object_center_x_px: 520
+    object_width_px: 118
+    object_part_height_px: 44
+    label_font_size_px: 25
+    small_font_size_px: 20
+    title_font_size_px: 28
+    label_stroke_width_px: 2
+    marker_width_px: 4
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -18
+    layout_jitter_x_px_max: 18
+    layout_jitter_y_px_min: 0
+    layout_jitter_y_px_max: 24
+
+prompt:
+  shared:
+    bundle_id: physics_buoyancy_density_v1
+  task_overrides:
+    task_physics__buoyancy_density__object_density_value:
+      task_key: object_density_value_query

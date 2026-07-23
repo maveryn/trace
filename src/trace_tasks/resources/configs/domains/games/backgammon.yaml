@@ -1,0 +1,58 @@
+generation:
+  shared:
+    scene_variant_weights:
+      standard_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      navy: 1.0
+      parchment: 1.0
+      slate: 1.0
+      tournament: 1.0
+    active_player_weights:
+      black: 1.0
+      white: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_active_player_sampling: true
+    balanced_target_answer_sampling: true
+  task_overrides:
+    task_games__backgammon__destination_count:
+      legal_count_support: [1, 2, 3, 4, 5]
+      hit_count_support: [0, 1, 2, 3, 4, 5]
+      blocked_count_support: [0, 1, 2, 3, 4]
+    task_games__backgammon__point_state_count:
+      point_state_count_support: [0, 1, 2, 3, 4, 5, 6]
+      target_checker_color_weights:
+        black: 1.0
+        white: 1.0
+      target_stack_state_weights:
+        single: 1.0
+        two_or_more: 1.0
+      balanced_target_checker_color_sampling: true
+      balanced_target_stack_state_sampling: true
+    task_games__backgammon__pip_count_value:
+      pip_count_support: [1, 2, 3, 4, 5, 6, 7, 8]
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 720
+    board_width_px: 900
+    board_height_px: 560
+    board_margin_px: 50
+    board_border_width_px: 5
+    point_label_font_size_px: 24
+    header_font_size_px: 26
+    checker_radius_px: 21
+    die_size_px: 44
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 420
+    canvas_side_padding_px: 90
+    canvas_vertical_padding_px: 80
+prompt:
+  shared:
+    bundle_id: games_backgammon_v1
+    scene_key: visible_backgammon_board
+    task_key: backgammon_query

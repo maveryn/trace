@@ -1,0 +1,75 @@
+{
+  "bundle_id": "geometry_bearing_route_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "bearing_route_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "The labeled navigation diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "bearing_route_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "final_bearing_value": [
+        "The bearing labels on both route legs are absolute compass bearings measured clockwise from the same north direction, not turn angles. After locating F, which option gives the direct bearing from S to F?",
+        "Use each shown leg bearing as an absolute bearing from north, not as a relative turn. Which option gives the bearing that points directly from S to F?",
+        "Follow the shown route using the leg labels as compass bearings clockwise from the same north direction. Which option gives the direct bearing from the start point S to the finish point F?",
+        "The route leg bearings and the answer bearing all use the same north reference. Which option gives the direct bearing from S to F, measured clockwise from north?",
+        "Follow the route from S to F using absolute bearings from north for both legs. Which option gives the final direct bearing from S?"
+      ],
+      "endpoint_position_label": [
+        "Which labeled endpoint is reached by following the route instructions from S?",
+        "Follow the two bearing instructions from S. Which candidate endpoint label is reached?",
+        "Starting at the point marked S, which labeled point is the final position after the shown bearing route?",
+        "Using the route instruction panel from the start point S, choose the reached endpoint label.",
+        "Starting at S, which candidate label marks the endpoint of the bearing route?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:final_bearing_value": {
+      "object_description": "a compass-bearing route diagram from start point S to finish point F, where all route-leg bearing labels are absolute compass bearings measured clockwise from the same north direction",
+      "answer_hint": "set \"answer\" to the capital option letter shown in the image for the direct bearing of S to F",
+      "annotation_hint": "set \"annotation\" to a JSON object mapping the visible point-label keys \"S\" and \"F\" to their pixel points [x,y]",
+      "json_example": "{\"annotation\":{\"S\":[185,405],\"F\":[485,180]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:endpoint_position_label": {
+      "object_description": "a compass-bearing route instruction panel, a graph-paper candidate grid where each square is one step, the start point marked S, and labeled candidate endpoint points, with bearings measured clockwise from north",
+      "answer_hint": "set \"answer\" to the reached endpoint label as a capital letter",
+      "annotation_hint": "set \"annotation\" to a JSON object mapping the visible point-label keys \"S\" and the reached endpoint label to their pixel points [x,y]",
+      "json_example": "{\"annotation\":{\"S\":[235,260],\"R\":[306,196]},\"answer\":\"R\"}",
+      "json_example_answer_only": "{\"answer\":\"R\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

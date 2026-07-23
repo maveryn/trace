@@ -1,0 +1,84 @@
+generation:
+  task_overrides:
+    task_physics__piston_cylinder__boundary_work_value:
+      orientation_weights:
+        vertical_pair: 1.0
+        horizontal_pair: 1.0
+      balanced_orientation_sampling: true
+      balanced_target_answer_sampling: true
+      pressure_mpa_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      volume_l_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      min_volume_delta: 2
+      max_volume_delta: 6
+      boundary_work_answer_support:
+      - -36
+      - -30
+      - -24
+      - -20
+      - -18
+      - -16
+      - -15
+      - -12
+      - -10
+      - -9
+      - -8
+      - -6
+      - -5
+      - -4
+      - -3
+      - -2
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 8
+      - 9
+      - 10
+      - 12
+      - 15
+      - 16
+      - 18
+      - 20
+      - 24
+      - 30
+      - 36
+
+rendering:
+  shared:
+    canvas_width: 1160
+    canvas_height: 740
+    panel_left_px: 58
+    panel_top_px: 52
+    panel_right_margin_px: 58
+    panel_bottom_margin_px: 58
+    cylinder_width_px: 238
+    cylinder_height_px: 330
+    horizontal_cylinder_width_px: 342
+    horizontal_cylinder_height_px: 208
+    piston_thickness_px: 24
+    label_font_size_px: 26
+    state_font_size_px: 24
+    title_font_size_px: 30
+
+prompt:
+  shared:
+    bundle_id: physics_piston_cylinder_v1
+  task_overrides:
+    task_physics__piston_cylinder__boundary_work_value:
+      task_key: boundary_work_value_query

@@ -1,0 +1,92 @@
+{
+  "bundle_id": "three_d_surface_fixture_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "surface_fixture_repeated_element_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "surface_fixture_colored_element_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "surface_fixture_scoped_colored_element_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:surface_fixture": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "surface_fixture": [
+      "The image shows {object_description}.",
+      "The picture shows {object_description}.",
+      "This perspective view shows {object_description}.",
+      "The scene shows {object_description}.",
+      "Visible in the image is {object_description}."
+    ]
+  },
+  "query_templates": {
+    "element_type_count": [
+      "How many {target_element_plural} are visible?",
+      "Count the visible {target_element_plural}. How many are there?",
+      "What is the total number of {target_element_plural}?",
+      "How many {target_element_plural} are on the fixture?",
+      "How many {target_element_plural} can be seen?"
+    ],
+    "element_color_count": [
+      "How many {target_color_name} {target_element_plural} are on the fixture?",
+      "Count the {target_color_name} {target_element_plural}. How many are there?",
+      "What is the number of {target_color_name} {target_element_plural} on the surface?",
+      "Looking across the fixture, how many {target_element_plural} are {target_color_name}?",
+      "How many visible {target_element_plural} have the {target_color_name} color?"
+    ],
+    "scoped_element_color_count": [
+      "How many {target_color_name} {target_element_plural} are in {scope_phrase}?",
+      "Count the {target_color_name} {target_element_plural} in {scope_phrase}. How many are there?",
+      "In {scope_phrase}, what is the number of {target_color_name} {target_element_plural}?",
+      "Looking only at {scope_phrase}, how many {target_element_plural} are {target_color_name}?",
+      "How many {target_color_name} {target_element_plural} appear within {scope_phrase}?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

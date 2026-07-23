@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ domain.domain }} · Trace Review{% endblock %}
+{% block content %}
+<nav class="breadcrumbs"><a href="/">Tasks</a> / {{ domain.domain }}</nav>
+<h1>{{ domain.domain }}</h1>
+<div class="table-wrap"><table>
+  <thead><tr><th>Scene</th><th>Tasks</th><th>Materialized</th><th>Samples</th></tr></thead>
+  <tbody>{% for item in scenes %}<tr>
+    <td><a href="/domains/{{ domain.domain }}/scenes/{{ item.scene.scene_id }}">{{ item.scene.scene_id }}</a></td>
+    <td>{{ item.task_count }}</td><td>{{ item.materialized_count }}</td><td>{{ item.sample_count }}</td>
+  </tr>{% endfor %}</tbody>
+</table></div>
+{% endblock %}

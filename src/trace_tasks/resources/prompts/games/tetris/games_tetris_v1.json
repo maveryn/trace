@@ -1,0 +1,196 @@
+{
+  "bundle_id": "games_tetris_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "tetris_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This Tetris scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "tetris_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "max_clear_with_next_piece": [
+        "{next_piece_rule_text} {line_clear_rule_text} What is the maximum number of rows this next piece can clear?",
+        "{next_piece_rule_text} {line_clear_rule_text} Considering every rotation and horizontal position, how many rows can be cleared at most?",
+        "{next_piece_rule_text} {line_clear_rule_text} What is the largest possible line-clear count for the shown next piece?",
+        "{next_piece_rule_text} {line_clear_rule_text} What is the maximum row-clear count over all legal placements?",
+        "{next_piece_rule_text} {line_clear_rule_text} If the next piece is placed optimally, how many rows clear?"
+      ],
+      "active_piece_shape_label": [
+        "Which option names the falling piece shape?",
+        "Choose the option whose shape name matches the falling piece.",
+        "Which labeled option gives the tetromino shape of the falling piece?",
+        "Select the option with the correct falling-piece shape name.",
+        "Which option label matches the active falling piece shape?"
+      ],
+      "drop_result_label": [
+        "{fixed_drop_rule_text} {line_clear_rule_text} Which labeled board shows the final state?",
+        "{fixed_drop_rule_text} {line_clear_rule_text} Choose the result board after the falling piece locks.",
+        "{fixed_drop_rule_text} {line_clear_rule_text} Which option matches the board after this fixed drop resolves?",
+        "{fixed_drop_rule_text} {line_clear_rule_text} Which labeled board shows the final state?",
+        "{fixed_drop_rule_text} {line_clear_rule_text} Select the correct resulting board."
+      ],
+      "full_row_count": [
+        "How many rows are completely filled with blocks?",
+        "Count the rows with no empty cells.",
+        "How many board rows are full?",
+        "What is the number of completely filled rows?",
+        "How many rows have every cell filled?"
+      ],
+      "one_gap_row_count": [
+        "How many rows have exactly one empty cell?",
+        "Count the rows that are one cell away from full.",
+        "How many board rows have exactly one gap?",
+        "What is the number of rows with one empty cell?",
+        "How many rows are missing exactly one block?"
+      ],
+      "no_shift_collision_time": [
+        "For the falling piece in the START board, {shift_instruction}, then let it fall straight down. {collision_time_rule_text} How many timesteps occur before it collides?",
+        "Use the falling piece in the START board. First {shift_instruction}; then drop it vertically. {collision_time_rule_text} What is the timestep count before collision?",
+        "Starting from the shown falling piece, {shift_instruction}. {collision_time_rule_text} How many downward timesteps can it move before collision?",
+        "After the START piece is instructed to {shift_instruction}, it falls straight down. {collision_time_rule_text} How many timesteps happen before the collision?",
+        "For the shown falling piece, {shift_instruction} and then let it drop vertically. {collision_time_rule_text} What is the number of successful downward timesteps?"
+      ],
+      "left_shift_collision_time": [
+        "For the falling piece in the START board, {shift_instruction}, then let it fall straight down. {collision_time_rule_text} How many timesteps occur before it collides?",
+        "Use the falling piece in the START board. First {shift_instruction}; then drop it vertically. {collision_time_rule_text} What is the timestep count before collision?",
+        "Starting from the shown falling piece, {shift_instruction}. {collision_time_rule_text} How many downward timesteps can it move before collision?",
+        "After the START piece is instructed to {shift_instruction}, it falls straight down. {collision_time_rule_text} How many timesteps happen before the collision?",
+        "For the shown falling piece, {shift_instruction} and then let it drop vertically. {collision_time_rule_text} What is the number of successful downward timesteps?"
+      ],
+      "right_shift_collision_time": [
+        "For the falling piece in the START board, {shift_instruction}, then let it fall straight down. {collision_time_rule_text} How many timesteps occur before it collides?",
+        "Use the falling piece in the START board. First {shift_instruction}; then drop it vertically. {collision_time_rule_text} What is the timestep count before collision?",
+        "Starting from the shown falling piece, {shift_instruction}. {collision_time_rule_text} How many downward timesteps can it move before collision?",
+        "After the START piece is instructed to {shift_instruction}, it falls straight down. {collision_time_rule_text} How many timesteps happen before the collision?",
+        "For the shown falling piece, {shift_instruction} and then let it drop vertically. {collision_time_rule_text} What is the number of successful downward timesteps?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tetris_board": [
+      "object_description"
+    ],
+    "query:max_clear_with_next_piece": [
+      "next_piece_rule_text",
+      "line_clear_rule_text"
+    ],
+    "query:active_piece_shape_label": [],
+    "query:drop_result_label": [
+      "fixed_drop_rule_text",
+      "line_clear_rule_text"
+    ],
+    "query:full_row_count": [],
+    "query:no_shift_collision_time": [
+      "shift_instruction",
+      "collision_time_rule_text"
+    ],
+    "query:left_shift_collision_time": [
+      "shift_instruction",
+      "collision_time_rule_text"
+    ],
+    "query:right_shift_collision_time": [
+      "shift_instruction",
+      "collision_time_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "collision_time_rule_text": {
+      "type": "string"
+    },
+    "fixed_drop_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "line_clear_rule_text": {
+      "type": "string"
+    },
+    "next_piece_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "shift_instruction": {
+      "type": "string"
+    },
+    "tetris_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_tetris_board": "a Tetris board with colored locked blocks and tetromino pieces",
+    "tetris_rule_text": "A tetromino falls straight down until it rests on the stack or the bottom of the board.",
+    "next_piece_rule_text": "The NEXT piece may be rotated and moved sideways, then it falls straight down until it rests.",
+    "fixed_drop_rule_text": "In the START board, the falling piece drops straight down from its shown position without moving sideways or rotating.",
+    "collision_time_rule_text": "A timestep is one successful downward move by one row after the horizontal shift; do not count the failed collision move.",
+    "line_clear_rule_text": "After the piece locks, every completely filled row clears and all rows above fall down by the number of cleared rows.",
+    "annotation_hint_line_clear_count": "set \"annotation\" to an object mapping \"board\" and \"next_piece\" to their bounding boxes [x0, y0, x1, y1]",
+    "answer_hint_line_clear_count": "set \"answer\" to the maximum number of rows the NEXT piece can clear",
+    "annotation_hint_active_piece_shape_label": "set \"annotation\" to the bounding box [x0, y0, x1, y1] enclosing the falling piece on the board",
+    "answer_hint_active_piece_shape_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_drop_result_label": "set \"annotation\" to the selected result-board bounding box [x0, y0, x1, y1]",
+    "answer_hint_drop_result_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_row_occupancy_status_count": "set \"annotation\" to an array containing one whole-row bounding box [x0, y0, x1, y1] for each qualifying row",
+    "answer_hint_row_occupancy_status_count": "set \"answer\" to the number of qualifying rows",
+    "annotation_hint_drop_collision_time_value": "set \"annotation\" to an object mapping \"start_piece\" and \"stop_witness\" to arrays of cell bounding boxes [x0, y0, x1, y1]",
+    "answer_hint_drop_collision_time_value": "set \"answer\" to the number of successful downward timesteps"
+  }
+}

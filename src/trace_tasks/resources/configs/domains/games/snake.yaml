@@ -1,0 +1,76 @@
+generation:
+  shared:
+    scene_variant_weights:
+      square_grid: 1.0
+    style_variant_weights:
+      classic: 1.0
+      neon: 1.0
+      forest: 1.0
+      paper: 1.0
+      candy: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_size_sampling: true
+    balanced_body_length_sampling: true
+    balanced_planned_move_count_sampling: true
+    balanced_snake_length_count_sampling: true
+    balanced_safe_direction_count_sampling: true
+    balanced_obstacle_count_sampling: true
+    balanced_planned_move_outcome_sampling: true
+    board_size_support:
+    - 7
+    - 8
+    - 9
+    - 10
+    body_length_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    safe_direction_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    snake_length_count_support:
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    obstacle_count_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    planned_move_count_support:
+    - 3
+    - 4
+    - 5
+    planned_move_outcome_support:
+    - point
+    - game_over
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 900
+    panel_margin_px: 54
+    max_board_size_px: 720
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_border_width_px: 6
+    grid_line_width_px: 2
+    cell_padding_px: 8
+    food_radius_px: 28
+    eye_radius_px: 4
+prompt:
+  shared:
+    bundle_id: games_snake_v1
+    scene_key: visible_snake_grid
+    task_key: snake_grid_query

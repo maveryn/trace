@@ -1,0 +1,146 @@
+{
+  "bundle_id": "charts_dumbbell_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "dumbbell_pairwise_chart": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "dumbbell_pairwise_comparison_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "largest_gap_rank_row_label": [
+        "Rank rows by the absolute length of the gray connector between the two dots. Which row has the {rank_phrase} gap?",
+        "Sort the rows by absolute dot-to-dot gap, ignoring which color is larger. Which row has the {rank_phrase} gap?",
+        "Using the gray connector length between paired dots, which row label has the {rank_phrase} absolute gap?",
+        "Compare all absolute dot-pair gaps. Which row is {rank_phrase} by gap size?",
+        "What row label has the {rank_phrase} absolute separation between its two dots?"
+      ],
+      "smallest_gap_rank_row_label": [
+        "Rank rows by the absolute length of the gray connector between the two dots. Which row has the {rank_phrase} gap?",
+        "Sort the rows by absolute dot-to-dot gap, ignoring which color is larger. Which row has the {rank_phrase} gap?",
+        "Using the gray connector length between paired dots, which row label has the {rank_phrase} absolute gap?",
+        "Compare all absolute dot-pair gaps. Which row is {rank_phrase} by gap size?",
+        "What row label has the {rank_phrase} absolute separation between its two dots?"
+      ],
+      "series_a_greater_threshold_count": [
+        "How many rows have \"{winner_series}\" at least {threshold_value} units greater than \"{loser_series}\"?",
+        "Count the rows where \"{winner_series}\" is to the right of \"{loser_series}\" by at least {threshold_value} units.",
+        "Using the horizontal axis, how many row pairs show \"{winner_series}\" exceeding \"{loser_series}\" by {threshold_value} or more?",
+        "How many rows have \"{winner_series}\" greater than \"{loser_series}\" by at least {threshold_value}?",
+        "How many categories satisfy: \"{winner_series}\" minus \"{loser_series}\" is at least {threshold_value}?"
+      ],
+      "series_b_greater_threshold_count": [
+        "How many rows have \"{winner_series}\" at least {threshold_value} units greater than \"{loser_series}\"?",
+        "Count the rows where \"{winner_series}\" is to the right of \"{loser_series}\" by at least {threshold_value} units.",
+        "Using the horizontal axis, how many row pairs show \"{winner_series}\" exceeding \"{loser_series}\" by {threshold_value} or more?",
+        "How many rows have \"{winner_series}\" greater than \"{loser_series}\" by at least {threshold_value}?",
+        "How many categories satisfy: \"{winner_series}\" minus \"{loser_series}\" is at least {threshold_value}?"
+      ],
+      "absolute_gap_at_least_threshold_count": [
+        "How many rows have the two series separated by {gap_relation_phrase} {gap_threshold_value} units?",
+        "Count the row pairs whose absolute gap between the two dots is {gap_relation_phrase} {gap_threshold_value} units.",
+        "Using the shared horizontal axis, how many rows have a dot-to-dot separation {gap_relation_phrase} {gap_threshold_value}?",
+        "How many categories have the two series differing by {gap_relation_phrase} {gap_threshold_value} units?",
+        "How many dumbbell rows have an absolute difference {gap_relation_phrase} {gap_threshold_value}?"
+      ],
+      "absolute_gap_at_most_threshold_count": [
+        "How many rows have the two series separated by {gap_relation_phrase} {gap_threshold_value} units?",
+        "Count the row pairs whose absolute gap between the two dots is {gap_relation_phrase} {gap_threshold_value} units.",
+        "Using the shared horizontal axis, how many rows have a dot-to-dot separation {gap_relation_phrase} {gap_threshold_value}?",
+        "How many categories have the two series differing by {gap_relation_phrase} {gap_threshold_value} units?",
+        "How many dumbbell rows have an absolute difference {gap_relation_phrase} {gap_threshold_value}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:largest_gap_rank_row_label": {
+      "answer_hint": "set \"answer\" to the exact visible row label as a string",
+      "annotation_hint": "set \"annotation\" to one segment: two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two colored dot centers for the supporting row",
+      "json_example": "{\"annotation\":[[276,231],[1032,231]],\"answer\":\"Harbor\"}",
+      "json_example_answer_only": "{\"answer\":\"Harbor\"}"
+    },
+    "query:smallest_gap_rank_row_label": {
+      "answer_hint": "set \"answer\" to the exact visible row label as a string",
+      "annotation_hint": "set \"annotation\" to one segment: two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two colored dot centers for the supporting row",
+      "json_example": "{\"annotation\":[[276,231],[1032,231]],\"answer\":\"Harbor\"}",
+      "json_example_answer_only": "{\"answer\":\"Harbor\"}"
+    },
+    "query:series_a_greater_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two colored dot centers for one row that satisfies the condition; use [] if no rows match",
+      "json_example": "{\"annotation\":[[[276,231],[1032,231]],[[318,355],[1032,355]],[[284,541],[1032,541]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:series_b_greater_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two colored dot centers for one row that satisfies the condition; use [] if no rows match",
+      "json_example": "{\"annotation\":[[[276,231],[1032,231]],[[318,355],[1032,355]],[[284,541],[1032,541]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:absolute_gap_at_least_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two colored dot centers for one row that satisfies the condition; use [] if no rows match",
+      "json_example": "{\"annotation\":[[[276,231],[1032,231]],[[318,355],[1032,355]],[[284,541],[1032,541]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:absolute_gap_at_most_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two colored dot centers for one row that satisfies the condition; use [] if no rows match",
+      "json_example": "{\"annotation\":[[[276,231],[1032,231]],[[318,355],[1032,355]],[[284,541],[1032,541]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "rank_phrase": {
+      "type": "string"
+    },
+    "winner_series": {
+      "type": "string"
+    },
+    "loser_series": {
+      "type": "string"
+    },
+    "threshold_value": {
+      "type": "integer"
+    },
+    "gap_relation_phrase": {
+      "type": "string"
+    },
+    "gap_threshold_value": {
+      "type": "integer"
+    }
+  }
+}

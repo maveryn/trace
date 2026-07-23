@@ -1,0 +1,128 @@
+{
+  "bundle_id": "pages_form_section_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "structured_document_sections": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "section_expression_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "sum_two_amounts_in_section_value": [
+        "In the \"{section_label}\" section, what is \"{first_label}\" plus \"{second_label}\"? Use currency notation with exactly two digits after the decimal point.",
+        "Using only the \"{section_label}\" section, add \"{first_label}\" and \"{second_label}\". What amount results?",
+        "What is the sum of \"{first_label}\" and \"{second_label}\" in the \"{section_label}\" section?",
+        "Read the \"{section_label}\" section and compute \"{first_label}\" plus \"{second_label}\".",
+        "Find \"{first_label}\" and \"{second_label}\" in \"{section_label}\" and compute their total amount."
+      ],
+      "difference_two_amounts_in_section_value": [
+        "In the \"{section_label}\" section, what is \"{first_label}\" minus \"{second_label}\"? Use currency notation with exactly two digits after the decimal point.",
+        "Using only the \"{section_label}\" section, subtract \"{second_label}\" from \"{first_label}\". What amount results?",
+        "What is the difference \"{first_label}\" minus \"{second_label}\" in the \"{section_label}\" section?",
+        "Read the \"{section_label}\" section and compute \"{first_label}\" minus \"{second_label}\".",
+        "Find \"{first_label}\" and \"{second_label}\" in \"{section_label}\" and compute the resulting difference."
+      ],
+      "ranked_amount_field_label": [
+        "In the \"{section_label}\" section, which field label has the {rank_phrase} amount?",
+        "Using only the \"{section_label}\" section, find the field with the {rank_phrase} currency amount. What is its field label?",
+        "What field label corresponds to the {rank_phrase} amount in the \"{section_label}\" section?",
+        "Read the currency fields in \"{section_label}\" and identify the label for the {rank_phrase} amount.",
+        "Among the amounts in \"{section_label}\", which field label is attached to the {rank_phrase} amount?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:sum_two_amounts_in_section_value": {
+      "object_description": "a structured document with visible section headers and labeled currency fields",
+      "answer_hint": "set \"answer\" to the computed amount formatted as a currency string with exactly two digits after the decimal point",
+      "annotation_hint": "set \"annotation\" to an object mapping \"first_operand\" and \"second_operand\" to the referenced operand field boxes [x0, y0, x1, y1], including each field label and value",
+      "json_example": "{\"annotation\":{\"first_operand\":[120,248,420,306],\"second_operand\":[120,308,420,366]},\"answer\":\"$146.80\"}",
+      "json_example_answer_only": "{\"answer\":\"$146.80\"}"
+    },
+    "query:difference_two_amounts_in_section_value": {
+      "object_description": "a structured document with visible section headers and labeled currency fields",
+      "answer_hint": "set \"answer\" to the computed amount formatted as a currency string with exactly two digits after the decimal point",
+      "annotation_hint": "set \"annotation\" to an object mapping \"first_operand\" and \"second_operand\" to the referenced operand field boxes [x0, y0, x1, y1], including each field label and value",
+      "json_example": "{\"annotation\":{\"first_operand\":[120,248,420,306],\"second_operand\":[120,308,420,366]},\"answer\":\"$42.50\"}",
+      "json_example_answer_only": "{\"answer\":\"$42.50\"}"
+    },
+    "query:ranked_amount_field_label": {
+      "object_description": "a structured document with visible section headers and labeled currency fields",
+      "answer_hint": "set \"answer\" to the exact field label string",
+      "annotation_hint": "set \"annotation\" to the selected field row box [x0, y0, x1, y1], including its label and value",
+      "json_example": "{\"annotation\":[120,248,420,306],\"answer\":\"Service Fee\"}",
+      "json_example_answer_only": "{\"answer\":\"Service Fee\"}"
+    }
+  },
+  "dynamic_slots": {
+    "section_label": {"type": "string"},
+    "first_label": {"type": "string"},
+    "second_label": {"type": "string"},
+    "third_label": {"type": "string"},
+    "rank_phrase": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:structured_document_sections": [
+      "object_description"
+    ],
+    "query:sum_two_amounts_in_section_value": [
+      "section_label",
+      "first_label",
+      "second_label"
+    ],
+    "query:difference_two_amounts_in_section_value": [
+      "section_label",
+      "first_label",
+      "second_label"
+    ],
+    "query:ranked_amount_field_label": [
+      "section_label",
+      "rank_phrase"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

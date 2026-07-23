@@ -1,0 +1,125 @@
+{
+  "bundle_id": "pages_concept_map_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "concept_map_diagram": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The concept map shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "concept_map_lookup_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "branch_child_count": [
+        "How many child items are listed under the \"{branch_label}\" branch?",
+        "Count the child-item nodes connected to \"{branch_label}\".",
+        "What is the number of child items under \"{branch_label}\"?",
+        "Using the \"{branch_label}\" branch, how many child items are shown?",
+        "How many item nodes belong directly to \"{branch_label}\"?"
+      ],
+      "nth_child_label": [
+        "Reading child items under \"{branch_label}\" {reading_order}, what is the {rank_ordinal} child-item label?",
+        "Under \"{branch_label}\", which child item is {rank_ordinal} when ordered {reading_order}?",
+        "Use the child-item order under \"{branch_label}\" ({reading_order}). What label is {rank_ordinal}?",
+        "What is the label of the {rank_ordinal} child item under \"{branch_label}\" when ordered {reading_order}?",
+        "Order the child items under \"{branch_label}\" {reading_order}; what is the {rank_ordinal} label?"
+      ],
+      "marked_child_count": [
+        "How many child items under \"{branch_label}\" have the {marker_label} marker?",
+        "Count the child-item nodes in \"{branch_label}\" marked with a {marker_label}.",
+        "What is the number of {marker_label}-marked child items under \"{branch_label}\"?",
+        "Using only the \"{branch_label}\" branch, how many child items have the {marker_label} marker?",
+        "How many direct child items of \"{branch_label}\" carry the {marker_label} marker?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:branch_child_count": {
+      "object_description": "a central topic, labeled branches, visible child-item nodes, and connector lines",
+      "answer_hint": "set \"answer\" to the integer count of visible child-item nodes directly under the requested branch",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted child-item nodes",
+      "json_example": "{\"annotation\":[[240,180,370,216],[240,228,370,264]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:nth_child_label": {
+      "object_description": "a central topic, labeled branches, visible child-item nodes, and connector lines",
+      "answer_hint": "set \"answer\" to the exact visible child-item label requested by the question",
+      "annotation_hint": "set \"annotation\" to a [x0, y0, x1, y1] box in image pixel coordinates around the selected child-item node",
+      "json_example": "{\"annotation\":[280,210,420,248],\"answer\":\"New York\"}",
+      "json_example_answer_only": "{\"answer\":\"New York\"}"
+    },
+    "query:marked_child_count": {
+      "object_description": "a central topic, labeled branches, visible child-item nodes, small marker icons, and connector lines",
+      "answer_hint": "set \"answer\" to the integer count of visible child-item nodes under the requested branch that have the requested marker",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the counted marked child-item nodes",
+      "json_example": "{\"annotation\":[[240,180,370,216],[240,276,370,312],[240,324,370,360]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "branch_label": {"type": "string"},
+    "rank_ordinal": {"type": "string"},
+    "reading_order": {"type": "string"},
+    "marker_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:concept_map_diagram": [
+      "object_description"
+    ],
+    "query:branch_child_count": [
+      "branch_label"
+    ],
+    "query:nth_child_label": [
+      "branch_label",
+      "rank_ordinal",
+      "reading_order"
+    ],
+    "query:marked_child_count": [
+      "branch_label",
+      "marker_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

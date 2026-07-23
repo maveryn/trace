@@ -1,0 +1,88 @@
+{
+  "bundle_id": "geometry_analytical_intersection_property_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "intersection_panel_grid": [
+        "The image shows labeled coordinate-plane panels, each showing two plotted objects.",
+        "The diagram shows labeled coordinate-plane panels, each showing two plotted objects.",
+        "This diagram shows labeled coordinate-plane panels, each showing two plotted objects.",
+        "The figure shows labeled coordinate-plane panels, each showing two plotted objects.",
+        "The visual shows labeled coordinate-plane panels, each showing two plotted objects."
+      ]
+    },
+    "task": {
+      "intersection_panel_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "line_circle_tangent_label": [
+        "Which panel shows a line tangent to the circle?",
+        "Which labeled panel has the line touching the circle at exactly one point?",
+        "Find the panel where the line is tangent to the circle.",
+        "Which coordinate panel shows one line-circle tangent point?",
+        "Which labeled line and circle meet at exactly one point?"
+      ],
+      "line_circle_two_intersections_label": [
+        "Which panel shows a line crossing the circle at exactly two points?",
+        "Which labeled panel has the line intersecting the circle twice?",
+        "Find the panel where the line is a secant of the circle.",
+        "Which coordinate panel shows two line-circle intersection points?",
+        "Which labeled line and circle meet at exactly two points?"
+      ],
+      "circle_circle_two_intersections_label": [
+        "Which panel shows two circles intersecting at exactly two points?",
+        "Which labeled panel has the two circles crossing twice?",
+        "Find the panel where the two circles have two intersection points.",
+        "Which coordinate panel shows two circle-circle intersection points?",
+        "Which labeled pair of circles meets at exactly two points?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\".",
+      "answer_hint": "the selected panel label as a capital letter shown in the image",
+      "annotation_hint": "the selected panel bounding box [x0,y0,x1,y1] in pixels",
+      "json_example": "{\"annotation\":[40,40,310,320],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

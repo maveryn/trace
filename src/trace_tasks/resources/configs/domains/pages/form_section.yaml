@@ -1,0 +1,211 @@
+rendering:
+  shared:
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -24
+    layout_jitter_x_px_max: 24
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 18
+    layout_jitter_min_margin_px: 16
+    canvas_width: 1256
+    canvas_height: 1000
+    sheet_page_width_px: 960
+    sheet_page_height_px: 860
+    receipt_page_width_px: 520
+    receipt_page_height_px: 920
+    page_shadow_offset_px: 14
+    page_corner_radius_px: 20
+    field_corner_radius_px: 14
+    page_outline_width_px: 2
+    page_outline_width_px_min: 2
+    page_outline_width_px_max: 3
+    field_outline_width_px: 2
+    field_outline_width_px_min: 1
+    field_outline_width_px_max: 3
+    document_layout_mode_weights:
+      centered: 0.22
+      left_weighted: 0.22
+      right_weighted: 0.22
+      upper_left: 0.12
+      upper_right: 0.12
+      lower_left: 0.05
+      lower_right: 0.05
+    title_font_size_px: 42
+    section_font_size_px: 24
+    label_font_size_px: 22
+    value_font_size_px: 28
+    page_fill_rgb:
+    - 251
+    - 250
+    - 246
+    page_fill_rgb_options:
+    - - 251
+      - 250
+      - 246
+    - - 248
+      - 251
+      - 250
+    - - 252
+      - 249
+      - 241
+    - - 247
+      - 248
+      - 252
+    - - 249
+      - 247
+      - 252
+    page_outline_rgb:
+    - 120
+    - 126
+    - 138
+    page_outline_rgb_options:
+    - - 120
+      - 126
+      - 138
+    - - 95
+      - 112
+      - 118
+    - - 130
+      - 116
+      - 96
+    - - 105
+      - 111
+      - 132
+    - - 116
+      - 103
+      - 130
+    page_shadow_rgb:
+    - 221
+    - 224
+    - 230
+    page_shadow_rgb_options:
+    - - 221
+      - 224
+      - 230
+    - - 216
+      - 224
+      - 225
+    - - 225
+      - 220
+      - 213
+    field_fill_rgb:
+    - 255
+    - 255
+    - 255
+    field_outline_rgb:
+    - 202
+    - 207
+    - 214
+    field_outline_rgb_options:
+    - - 202
+      - 207
+      - 214
+    - - 194
+      - 211
+      - 209
+    - - 216
+      - 207
+      - 194
+    - - 198
+      - 202
+      - 218
+    - - 210
+      - 201
+      - 218
+    label_fill_rgb:
+    - 60
+    - 66
+    - 76
+    label_stroke_rgb:
+    - 255
+    - 255
+    - 255
+    value_fill_rgb:
+    - 24
+    - 29
+    - 35
+    divider_rgb:
+    - 214
+    - 217
+    - 224
+    divider_rgb_options:
+    - - 214
+      - 217
+      - 224
+    - - 207
+      - 220
+      - 219
+    - - 223
+      - 214
+      - 202
+visual:
+  background:
+    enabled: true
+    styles:
+      paper_light:
+        kind: solid
+        color:
+        - 241
+        - 241
+        - 238
+      paper_cool:
+        kind: solid
+        color:
+        - 239
+        - 242
+        - 243
+      paper_warm:
+        kind: solid
+        color:
+        - 244
+        - 241
+        - 233
+      paper_mint:
+        kind: solid
+        color:
+        - 237
+        - 244
+        - 241
+      paper_lavender:
+        kind: solid
+        color:
+        - 242
+        - 241
+        - 247
+    weights:
+      paper_light: 1.0
+      paper_cool: 1.0
+      paper_warm: 1.0
+      paper_mint: 1.0
+      paper_lavender: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.12
+        - 0.35
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 80.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.01
+        - 0.035
+generation:
+  shared:
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      form_sheet: 1.0
+      invoice_sheet: 1.0
+      receipt_sheet: 1.0
+prompt:
+  shared:
+    bundle_id: pages_form_section_v1

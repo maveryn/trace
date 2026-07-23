@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace Verification Review"
+  short_description: "Validate Trace changes and review artifacts"
+  default_prompt: "Use $trace-verification-review to test this Trace change and inspect its deterministic review-recipe outputs."

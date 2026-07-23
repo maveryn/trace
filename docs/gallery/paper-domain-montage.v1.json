@@ -1,0 +1,241 @@
+{
+  "brand_card": {
+    "column": 3,
+    "detail": "11 visual domains",
+    "lettered": false,
+    "mark_raster_path": "docs/assets/brand/trace-mark-light.png",
+    "mark_raster_sha256": "19fb18a6fc64881397629ae82c4ef8cda1b371ea09a12f5c26fac5bad02f4297",
+    "mark_svg_path": "docs/assets/brand/trace-mark.svg",
+    "mark_svg_sha256": "6b85fc0b735b70339d56301e8a0067e6d5bbf729161a8aaace217f96ed347da3",
+    "row": 2,
+    "subtitle": "Grounded visual reasoning",
+    "title": "Trace"
+  },
+  "generator": {
+    "path": "scripts/generate_paper_domain_montage.py",
+    "sha256": "a02183dabf8c6cb3899b06c5d12b6a6f28461bb8ffdc9bb5f5d2d31320e93571"
+  },
+  "layout": {
+    "panel_count": 11,
+    "rendered_cell_count": 12,
+    "rendered_row_counts": [
+      4,
+      4,
+      4
+    ],
+    "row_counts": [
+      4,
+      4,
+      3
+    ]
+  },
+  "montage": {
+    "height": 780,
+    "image_path": "docs/assets/paper-domain-montage/trace-paper-domain-montage.png",
+    "image_sha256": "a5b54fb5f0bac45deadffedf9873e35e973705e033e44a7cd565fdab10bc2748",
+    "width": 1512
+  },
+  "panels": [
+    {
+      "domain": "charts",
+      "height": 720,
+      "instance_seed": 6971963630053741,
+      "label": "Charts",
+      "order": 0,
+      "panel_label": "a",
+      "query_id": "largest_category_total_label",
+      "scene_id": "multiseries",
+      "source_data_sha256": "9e541ddfe6194e8973ea16457d2e8e36fd593e2a209df5b24f8ea2439fab8de1",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/charts.png",
+      "source_image_sha256": "c745587a933839e2925d0e091e0876ba624594066a573fc279d85831e6d94f0c",
+      "source_index": 0,
+      "task_id": "task_charts__multiseries__category_total_extremum_label",
+      "width": 1280
+    },
+    {
+      "domain": "games",
+      "height": 820,
+      "instance_seed": 2618255346746328,
+      "label": "Games",
+      "order": 1,
+      "panel_label": "b",
+      "query_id": "single",
+      "scene_id": "space_shooter",
+      "source_data_sha256": "722c72183b3d9b29972aa435a1427e35d2baa4ad3261b3fd0e4cb12ef0b3ac6f",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/games.png",
+      "source_image_sha256": "63fde69d84c704c212f2f438a3ad41dc489b2bc93ac1db3c3f17ba381815ef49",
+      "source_index": 0,
+      "task_id": "task_games__space_shooter__enemy_ship_count",
+      "width": 1060
+    },
+    {
+      "domain": "geometry",
+      "height": 560,
+      "instance_seed": 6685141427653421,
+      "label": "Geometry",
+      "order": 2,
+      "panel_label": "c",
+      "query_id": "single",
+      "scene_id": "angle_relations",
+      "source_data_sha256": "c3b12e974c3a3543e84f785061e9da09b35fa55dd8b94fff827a26fdd7df44fb",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/geometry.png",
+      "source_image_sha256": "1dc26906e16ee63df8b78347348cd47e766e40248a9272926c8af62cf98329b0",
+      "source_index": 0,
+      "task_id": "task_geometry__angle_relations__algebraic_angle_value",
+      "width": 720
+    },
+    {
+      "domain": "graph",
+      "height": 640,
+      "instance_seed": 2481365412104608,
+      "label": "Graphs",
+      "order": 3,
+      "panel_label": "d",
+      "query_id": "directed_shortest_path_length",
+      "scene_id": "node_link",
+      "source_data_sha256": "fb10fe9fe7dc784b7025a49ce16b8e28b2fc5e19b182d00d7726cc67916a6da5",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/graph.png",
+      "source_image_sha256": "c5aaa80bb5f3cd91d01b347908459482f8eb7f7e8727634ba5c26977da431251",
+      "source_index": 0,
+      "task_id": "task_graph__node_link__shortest_path_length",
+      "width": 864
+    },
+    {
+      "domain": "icons",
+      "height": 544,
+      "instance_seed": 8191844928700627,
+      "label": "Icons",
+      "order": 4,
+      "panel_label": "e",
+      "query_id": "single",
+      "scene_id": "icon_field",
+      "source_data_sha256": "d9ee0d8eee20037a8534516f682a5de0cdf72c9bbf40cc0c04f58f8e75b03210",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/icons.png",
+      "source_image_sha256": "d5c5bfb8d3a3a78dcff81e1119f1e887f6177ee61484a717c3c2fd08859ef441",
+      "source_index": 0,
+      "task_id": "task_icons__icon_field__most_frequent_type_count",
+      "width": 960
+    },
+    {
+      "domain": "illustrations",
+      "height": 800,
+      "instance_seed": 261162083042051,
+      "label": "Illustrations",
+      "order": 5,
+      "panel_label": "f",
+      "query_id": "single",
+      "scene_id": "park_playground",
+      "source_data_sha256": "59abc40bb38d6065aeb0adceb7ee93f6843dc69823732d2dc3f7dc828e5d1c09",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/illustrations.png",
+      "source_image_sha256": "c42eec98507f59adceb1bc3c7dc6ec7335a97b375e6e0874ab03b25778f71b7b",
+      "source_index": 0,
+      "task_id": "task_illustrations__park_playground__playground_equipment_count",
+      "width": 1200
+    },
+    {
+      "domain": "pages",
+      "height": 800,
+      "instance_seed": 3621091651242047,
+      "label": "Pages",
+      "order": 6,
+      "panel_label": "g",
+      "query_id": "single",
+      "scene_id": "record_table",
+      "source_data_sha256": "f24b689deda9fe25df892144af49f65378acf7b1e1c27f7fa3fc0a45d20f2507",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/pages.png",
+      "source_image_sha256": "d87de3758165fbf155a48331e80554a8e5e48fd077b577dc7f4edcad61a14354",
+      "source_index": 0,
+      "task_id": "task_pages__record_table__value_threshold_in_group_count",
+      "width": 1280
+    },
+    {
+      "domain": "physics",
+      "height": 760,
+      "instance_seed": 8791560635313457,
+      "label": "Physics",
+      "order": 7,
+      "panel_label": "h",
+      "query_id": "single",
+      "scene_id": "free_body_forces",
+      "source_data_sha256": "1520372de7b82f2d2906c9ded390b3b54e50ce9734555cf01e40fbd49c23813d",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/physics.png",
+      "source_image_sha256": "85f979e35f6958b51e8a778824daa429773dccc0c83da0ff65816ae5d23b1723",
+      "source_index": 0,
+      "task_id": "task_physics__free_body_forces__net_force_direction_choice",
+      "width": 1180
+    },
+    {
+      "domain": "puzzles",
+      "height": 920,
+      "instance_seed": 8979951069889835,
+      "label": "Puzzles",
+      "order": 8,
+      "panel_label": "i",
+      "query_id": "single",
+      "scene_id": "raven_matrix",
+      "source_data_sha256": "a6ee8053568831f93bca60caa872ee6516a66d2a7b992faf97fd0a32549e4f78",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/puzzles.png",
+      "source_image_sha256": "1979f2ce6e43ada5fd4dbea3f736863e29fd07b2915d12c6825b12c3b684e7e6",
+      "source_index": 0,
+      "task_id": "task_puzzles__raven_matrix__raven_count_progression_label",
+      "width": 1200
+    },
+    {
+      "domain": "symbolic",
+      "height": 760,
+      "instance_seed": 5401932260136482,
+      "label": "Symbolic",
+      "order": 9,
+      "panel_label": "j",
+      "query_id": "analog_reference_digital_options",
+      "scene_id": "clock",
+      "source_data_sha256": "2ae221be0ee613e217216ccf87fd35ab109b6d9b092d13df6a3fd186053cf447",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/symbolic.png",
+      "source_image_sha256": "cdf577e8d8c9f870c4c958aa3638837ea26991185b28aef5108df3642027f7e2",
+      "source_index": 0,
+      "task_id": "task_symbolic__clock__equivalent_time_label",
+      "width": 980
+    },
+    {
+      "domain": "three_d",
+      "height": 960,
+      "instance_seed": 948033558578505,
+      "label": "3D scenes",
+      "order": 10,
+      "panel_label": "k",
+      "query_id": "closer_to_camera_than_reference_count",
+      "scene_id": "object_scene",
+      "source_data_sha256": "07e12ddee020980e4460ee9eab63aea827cd7346cb39bcda9817d56fc6bca6aa",
+      "source_image_path": "docs/assets/paper-domain-montage/sources/three_d.png",
+      "source_image_sha256": "59e5c8a206c0932509134b16bdf750a33e7c73409b3eb04d7557ed6656bf77ee",
+      "source_index": 0,
+      "task_id": "task_three_d__object_scene__camera_depth_relation_count",
+      "width": 960
+    }
+  ],
+  "provenance": {
+    "composite_policy": "One example from each Trace domain, followed by the Trace mark.",
+    "paper_figure_name": "domain_montage.pdf",
+    "paper_figure_sha256": "62c6c14c1213772742d3ab10eda6a53b46773ca22e8a1164f0cfcfb1afc28bec",
+    "paper_source_repository_head": "64f903a52b47b5330f1ada1645d7868535075e72",
+    "pillow_version": "12.2.0",
+    "source_policy": "Committed PNG inputs for the README domain montage."
+  },
+  "readme_header": {
+    "mark": {
+      "asset_path": "docs/assets/brand/trace-mark.svg",
+      "asset_sha256": "6b85fc0b735b70339d56301e8a0067e6d5bbf729161a8aaace217f96ed347da3",
+      "display_height": 63,
+      "display_width": 63
+    },
+    "text": "Trace",
+    "wordmark": {
+      "asset_path": "docs/assets/brand/trace-wordmark.svg",
+      "asset_sha256": "f9c384df6b6f244d4a269be2461dcba8ff181160e42af7d7d75834903de77f5b",
+      "display_height": 64,
+      "display_width": 233
+    }
+  },
+  "schema_version": "trace_paper_domain_montage_v1",
+  "selection_id": "trace_paper_domain_montage_v1"
+}

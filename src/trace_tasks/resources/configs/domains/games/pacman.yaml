@@ -1,0 +1,84 @@
+generation:
+  shared:
+    scene_variant_weights:
+      compact_maze: 1.0
+      wide_maze: 1.0
+    style_variant_weights:
+      classic: 1.0
+      neon: 1.0
+      paper: 1.0
+      terminal: 1.0
+      pastel: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_row_count_sampling: true
+    balanced_col_count_sampling: true
+    row_count_support:
+    - 7
+    - 8
+    - 9
+    col_count_support:
+    - 9
+    - 11
+    - 13
+  task_overrides:
+    task_games__pacman__pellet_count_before_ghost:
+      balanced_target_answer_sampling: true
+      pellet_count_before_ghost_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    task_games__pacman__next_item_label:
+      balanced_target_label_sampling: true
+      balanced_item_count_sampling: true
+      next_item_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      item_count_support:
+      - 4
+      - 5
+      - 6
+    task_games__pacman__route_score_value:
+      route_score_on_route_pellet_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      route_score_on_route_bonus_count_support:
+      - 1
+      - 2
+      route_score_off_route_bonus_count_support:
+      - 1
+      - 2
+      - 3
+      route_score_bonus_value_support:
+      - 2
+      - 3
+      - 4
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 760
+    panel_margin_px: 38
+    maze_width_px: 840
+    maze_height_px: 620
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    wall_gap_px: 2
+    wall_outline_width_px: 1
+    pellet_radius_px: 13
+    item_radius_px: 19
+    ghost_radius_px: 18
+    route_width_px: 8
+    item_label_font_size_px: 23
+prompt:
+  shared:
+    bundle_id: games_pacman_v1
+    scene_key: visible_pacman_maze
+    task_key: pacman_maze_query

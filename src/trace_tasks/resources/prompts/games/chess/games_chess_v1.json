@@ -1,0 +1,215 @@
+{
+  "bundle_id": "games_chess_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_chess_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "chess_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_piece_destination_count": [
+        "{standard_rule_text} {marked_piece_rule_text} How many empty squares can the marked piece move to in one move?",
+        "{standard_rule_text} {marked_piece_rule_text} Count the empty destination squares the marked piece can move to in one move.",
+        "{standard_rule_text} {marked_piece_rule_text} Using normal chess movement, how many empty destination squares are available to that piece?",
+        "{standard_rule_text} {marked_piece_rule_text} Determine the number of empty one-move destination squares for the marked piece.",
+        "{standard_rule_text} {marked_piece_rule_text} How many empty legal movement destinations does the marked piece have?"
+      ],
+      "marked_piece_capture_count": [
+        "{standard_rule_text} {marked_piece_rule_text} How many opponent pieces can the marked piece capture in one move?",
+        "{standard_rule_text} {marked_piece_rule_text} Count the opponent pieces the marked piece can capture.",
+        "{standard_rule_text} {marked_piece_rule_text} Using normal chess movement, how many opponent pieces are capturable by that piece?",
+        "{standard_rule_text} {marked_piece_rule_text} Determine the number of opponent pieces the marked piece can capture.",
+        "{standard_rule_text} {marked_piece_rule_text} How many enemy pieces can the marked piece take in one move?"
+      ],
+      "player_capture_piece_count": [
+        "{standard_rule_text} How many {opponent_color_name} pieces can {player_color_name} capture in one move?",
+        "{standard_rule_text} Count the {opponent_color_name} pieces that are capturable by {player_color_name} in one move.",
+        "How many opponent pieces are currently capturable by {player_color_name}? {standard_rule_text}",
+        "{standard_rule_text} Determine how many {opponent_color_name} pieces can be captured by any {player_color_name} piece in one move.",
+        "{standard_rule_text} For {player_color_name}, count the opponent pieces that can be taken immediately."
+      ],
+      "king_square_attacker_count": [
+        "{standard_rule_text} {king_square_attacker_rule_text} How many opponent pieces are attacking the marked king?",
+        "{king_square_attacker_rule_text} Count the opponent pieces giving check to the marked king.",
+        "{standard_rule_text} {king_square_attacker_rule_text} Determine how many enemy pieces attack that king.",
+        "{king_square_attacker_rule_text} How many opponent pieces currently threaten the marked king?",
+        "{standard_rule_text} {king_square_attacker_rule_text} Count the pieces attacking the marked king."
+      ],
+      "white_piece_attacks_target_square_count": [
+        "{standard_rule_text} {target_square_rule_text} How many white pieces attack the target square?",
+        "{target_square_rule_text} How many white pieces attack that square?",
+        "{standard_rule_text} Determine how many white pieces attack the marked target square.",
+        "How many white pieces currently attack the red outlined target square?",
+        "{target_square_rule_text} Count the white pieces attacking that target square."
+      ],
+      "black_piece_attacks_target_square_count": [
+        "{standard_rule_text} {target_square_rule_text} How many black pieces attack the target square?",
+        "{target_square_rule_text} How many black pieces attack that square?",
+        "{standard_rule_text} Determine how many black pieces attack the marked target square.",
+        "How many black pieces currently attack the red outlined target square?",
+        "{target_square_rule_text} Count the black pieces attacking that target square."
+      ],
+      "king_escape_square_count": [
+        "{standard_rule_text} {king_escape_rule_text} How many safe squares can the marked king move to?",
+        "{king_escape_rule_text} Count the safe one-step destinations for the marked king.",
+        "{standard_rule_text} {king_escape_rule_text} Determine the number of legal escape squares for that king.",
+        "{king_escape_rule_text} How many destination squares can the marked king move to without being attacked?",
+        "{standard_rule_text} {king_escape_rule_text} Count the safe movement destinations for the marked king."
+      ],
+      "piece_kind_count": [
+        "How many {target_piece_kind_plural} are on the board?",
+        "Count the {target_piece_kind_plural} on the board.",
+        "How many {target_piece_kind_plural} are shown?",
+        "How many chess {target_piece_kind_plural} are on the board?",
+        "Count all {target_piece_kind_plural} shown on the board."
+      ],
+      "colored_piece_kind_count": [
+        "How many {target_color_name} {target_piece_kind_plural} are on the board?",
+        "Count the {target_color_name} {target_piece_kind_plural} on the board.",
+        "How many {target_color_name} {target_piece_kind_plural} are shown?",
+        "How many {target_color_name} chess {target_piece_kind_plural} are on the board?",
+        "Count all {target_color_name} {target_piece_kind_plural} shown on the board."
+      ],
+      "checkmate_move_label": [
+        "{standard_rule_text} {coordinate_rule_text} {checkmate_rule_text} {player_color_name} to move. Which labeled move checkmates {defender_color_name} immediately?",
+        "{coordinate_rule_text} {standard_rule_text} {player_color_name} moves now. Which option gives immediate checkmate against {defender_color_name}?",
+        "{standard_rule_text} {coordinate_rule_text} Choose the labeled move that checkmates {defender_color_name} in one move.",
+        "{coordinate_rule_text} {checkmate_rule_text} Which candidate move is an immediate checkmate for {player_color_name}?",
+        "{standard_rule_text} {player_color_name} to move. Using the coordinate labels, choose the option that checkmates {defender_color_name} now."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_chess_board": {
+      "object_description": "a partial chess board with white and black pieces"
+    },
+    "query:marked_piece_destination_count": {
+      "standard_rule_text": "Use normal chess piece movement for one move only. Do not use castling, en passant, or promotion. Friendly pieces block movement; opponent pieces are capture targets and are not empty destinations.",
+      "marked_piece_rule_text": "The red outlined square contains the marked piece.",
+      "answer_hint": "set \"answer\" to the count of empty destination squares for the marked piece",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space square boxes [x0, y0, x1, y1] for every empty destination square the marked piece can move to; use an empty array if none are available",
+      "json_example": "{\"annotation\":[[108,108,172,172],[268,108,332,172]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:marked_piece_capture_count": {
+      "standard_rule_text": "Use normal chess piece movement for one move only. Do not use castling, en passant, or promotion. Friendly pieces block movement; count only opponent-occupied squares the marked piece can capture.",
+      "marked_piece_rule_text": "The red outlined square contains the marked piece.",
+      "answer_hint": "set \"answer\" to the count of opponent pieces the marked piece can capture in one move",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space square boxes [x0, y0, x1, y1] for every capturable destination square occupied by an opponent piece; use an empty array if none are available",
+      "json_example": "{\"annotation\":[[108,108,172,172],[268,108,332,172]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:player_capture_piece_count": {
+      "standard_rule_text": "Use normal chess piece movement. Do not use castling, en passant, or promotion.",
+      "answer_hint": "set \"answer\" to the count of opponent pieces capturable in one move by the named side",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every capturable opponent piece; use an empty array if none are available",
+      "json_example": "{\"annotation\":[[116,116,164,164],[276,116,324,164]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:king_square_attacker_count": {
+      "standard_rule_text": "Use normal chess piece movement. Do not use castling, en passant, or promotion.",
+      "king_square_attacker_rule_text": "The red outlined square contains the marked king.",
+      "answer_hint": "set \"answer\" to the count of opponent pieces attacking the marked king",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every attacking opponent piece; use an empty array if none are attacking",
+      "json_example": "{\"annotation\":[[116,116,164,164],[276,116,324,164]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:white_piece_attacks_target_square_count": {
+      "standard_rule_text": "Use normal chess piece movement. Do not use castling, en passant, or promotion.",
+      "target_square_rule_text": "The red outlined square marks the target square.",
+      "answer_hint": "set \"answer\" to the count of white pieces attacking the marked target square",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every white attacking piece; use an empty array if none are attacking",
+      "json_example": "{\"annotation\":[[116,116,164,164],[276,116,324,164]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:black_piece_attacks_target_square_count": {
+      "standard_rule_text": "Use normal chess piece movement. Do not use castling, en passant, or promotion.",
+      "target_square_rule_text": "The red outlined square marks the target square.",
+      "answer_hint": "set \"answer\" to the count of black pieces attacking the marked target square",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every black attacking piece; use an empty array if none are attacking",
+      "json_example": "{\"annotation\":[[116,116,164,164],[276,116,324,164]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:king_escape_square_count": {
+      "standard_rule_text": "Use normal chess piece movement. Do not use castling, en passant, or promotion.",
+      "king_escape_rule_text": "The red outlined square contains the marked king. Count one-step king destinations that are empty or capturable and are not attacked after the king moves there.",
+      "answer_hint": "set \"answer\" to the count of safe one-step destination squares for the marked king",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space square boxes [x0, y0, x1, y1] for every safe destination square; use an empty array if there are none",
+      "json_example": "{\"annotation\":[[108,108,172,172],[268,108,332,172]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:piece_kind_count": {
+      "answer_hint": "set \"answer\" to the count of matching visible pieces",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every matching visible piece; use an empty array if none are shown",
+      "json_example": "{\"annotation\":[[116,116,164,164],[276,116,324,164]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:colored_piece_kind_count": {
+      "answer_hint": "set \"answer\" to the count of matching visible pieces",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every matching visible piece; use an empty array if none are shown",
+      "json_example": "{\"annotation\":[[116,116,164,164],[276,116,324,164]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:checkmate_move_label": {
+      "standard_rule_text": "Use normal chess piece movement. Do not use castling, en passant, or promotion.",
+      "coordinate_rule_text": "Board coordinates are shown on the margins, with files A-H left to right and ranks 1-8 bottom to top.",
+      "checkmate_rule_text": "A move checkmates when it attacks the opposing king and that side has no legal move to escape.",
+      "answer_hint": "set \"answer\" to the single selected option letter shown in the move-option panel",
+      "annotation_hint": "set \"annotation\" to a JSON object with keys \"from\", \"to\", and \"king\", each mapped to a pixel-space point [x, y] at the center of the selected move's source square, destination square, and opposing king square",
+      "json_example": "{\"annotation\":{\"from\":[140,140],\"to\":[220,140],\"king\":[300,140]},\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "player_color_name": {
+      "type": "string"
+    },
+    "opponent_color_name": {
+      "type": "string"
+    },
+    "defender_color_name": {
+      "type": "string"
+    },
+    "target_color_name": {
+      "type": "string"
+    },
+    "target_piece_kind": {
+      "type": "string"
+    },
+    "target_piece_kind_plural": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {}
+}

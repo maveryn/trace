@@ -1,0 +1,168 @@
+generation:
+  shared:
+    scene_variant_weights:
+      office_document: 1.0
+      creative_workspace: 1.0
+      developer_ide: 1.0
+      cad_workspace: 1.0
+      scientific_plotter: 1.0
+      os_file_manager: 1.0
+    style_variant_weights:
+      standard: 1.0
+      compact: 1.0
+      contrast: 1.0
+      cool: 1.0
+      warm: 1.0
+      sage: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    row_count_support:
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    section_count_support:
+    - 2
+    - 3
+    answer_count_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    section_name_pool:
+    - Inbox
+    - Assets
+    - Backlog
+    type_label_pool:
+    - Image
+    - Document
+    - Dataset
+    - Report
+    status_label_pool:
+    - Ready
+    - Warning
+    - Queued
+    - Blocked
+    action_label_pool:
+    - Sync
+    - Export
+    - Archive
+    - Review
+    size_threshold_support:
+    - 25
+    - 35
+    - 45
+    - 55
+    - 65
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 800
+    window_margin_px: 42
+    title_bar_height_px: 46
+    menu_bar_height_px: 34
+    corner_radius_px: 16
+    table_corner_radius_px: 10
+    row_height_px: 28
+    section_header_height_px: 25
+    table_header_height_px: 32
+    title_font_size_px: 24
+    title_font_size_px_min: 23
+    title_font_size_px_max: 25
+    body_font_size_px: 17
+    body_font_size_px_min: 16
+    body_font_size_px_max: 18
+    small_font_size_px: 13
+    small_font_size_px_min: 12
+    small_font_size_px_max: 14
+prompt:
+  shared:
+    bundle_id: pages_record_table_v1
+visual:
+  background:
+    enabled: true
+    styles:
+      solid_light:
+        kind: solid
+        color:
+        - 247
+        - 248
+        - 250
+      cool_light:
+        kind: solid
+        color:
+        - 244
+        - 248
+        - 250
+      warm_light:
+        kind: solid
+        color:
+        - 250
+        - 248
+        - 243
+      mint_light:
+        kind: solid
+        color:
+        - 244
+        - 250
+        - 247
+      lavender_light:
+        kind: solid
+        color:
+        - 248
+        - 247
+        - 252
+      paper_light:
+        kind: solid
+        color:
+        - 250
+        - 249
+        - 245
+      bluegray_light:
+        kind: solid
+        color:
+        - 245
+        - 247
+        - 251
+      rose_light:
+        kind: solid
+        color:
+        - 251
+        - 246
+        - 249
+    weights:
+      solid_light: 1.0
+      cool_light: 1.0
+      warm_light: 1.0
+      mint_light: 1.0
+      lavender_light: 1.0
+      paper_light: 1.0
+      bluegray_light: 1.0
+      rose_light: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.12
+        - 0.35
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 80.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.01
+        - 0.04

@@ -1,0 +1,133 @@
+{
+  "bundle_id": "geometry_trapezoid_extension_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "trapezoid_extension_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "extension_from_parallelogram_area_query": [
+        "What is the length of BE?",
+        "Find BE.",
+        "Determine the length of BE.",
+        "What is the missing extension length BE?",
+        "Find the length of the dashed extension BE."
+      ],
+      "extension_from_parallelogram_perimeter_query": [
+        "What is the length of BE?",
+        "Find BE.",
+        "Determine the length of BE.",
+        "What is the missing extension length BE?",
+        "Find the length of the dashed extension BE."
+      ],
+      "trapezoid_area_from_parallelogram_perimeter_query": [
+        "The completed parallelogram is ADCE. What is the area of the original trapezoid?",
+        "The completed parallelogram is ADCE. Find the area of the original trapezoid.",
+        "The completed parallelogram is ADCE. Determine the area of the trapezoid.",
+        "Use the completed parallelogram ADCE. What is the trapezoid's area?",
+        "Use the completed parallelogram ADCE. Find the area of the solid trapezoid."
+      ],
+      "trapezoid_area_from_extension_and_height_query": [
+        "What is the area of the original trapezoid?",
+        "Find the area of the original trapezoid.",
+        "Determine the area of the trapezoid.",
+        "What is the trapezoid's area?",
+        "Find the area of the solid trapezoid."
+      ],
+      "trapezoid_area_from_parallelogram_area_query": [
+        "What is the area of the original trapezoid?",
+        "Find the area of the original trapezoid.",
+        "Determine the area of the trapezoid.",
+        "What is the trapezoid's area?",
+        "Find the area of the solid trapezoid."
+      ]
+    },
+    "query": {
+      "single": [
+        "Use the visible measurements in the diagram.",
+        "Use the labels shown on the diagram.",
+        "Use the marked value and measurements in the figure.",
+        "Use the given diagram labels.",
+        "Use the visible geometric measurements."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_instruction}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:trapezoid_extension_scene": {
+      "object_description": "a trapezoid extended into a parallelogram with visible measurements and one marked target value"
+    },
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "task:extension_from_parallelogram_area_query": {
+      "answer_hint": "set \"answer\" to the extension length as a number rounded to one decimal place"
+    },
+    "task:extension_from_parallelogram_perimeter_query": {
+      "answer_hint": "set \"answer\" to the extension length as a number rounded to one decimal place"
+    },
+    "task:trapezoid_area_from_parallelogram_perimeter_query": {
+      "answer_hint": "set \"answer\" to the trapezoid area as a number rounded to one decimal place"
+    },
+    "task:trapezoid_area_from_extension_and_height_query": {
+      "answer_hint": "set \"answer\" to the trapezoid area as a number rounded to one decimal place"
+    },
+    "task:trapezoid_area_from_parallelogram_area_query": {
+      "answer_hint": "set \"answer\" to the trapezoid area as a number rounded to one decimal place"
+    }
+  },
+  "dynamic_slots": {
+    "annotation_instruction": {
+      "type": "string"
+    },
+    "annotation_key_list": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:trapezoid_extension_scene": [
+      "object_description"
+    ],
+    "query:single": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_instruction",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

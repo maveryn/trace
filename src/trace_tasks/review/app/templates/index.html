@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Tasks · Trace Review{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div><h1>Task review</h1><p>Public taxonomy and locally materialized review artifacts.</p></div>
+  <div class="metrics"><strong>{{ index.materialized_task_count }}</strong> / {{ index.tasks|length }} tasks · <strong>{{ index.sample_count }}</strong> samples · <strong>{{ calibration_count }}</strong> calibration reports</div>
+</section>
+{% if index.errors %}<section class="notice error"><h2>Index warnings</h2><ul>{% for error in index.errors %}<li>{{ error }}</li>{% endfor %}</ul></section>{% endif %}
+{% if calibration_errors %}<section class="notice error"><h2>Calibration report warnings</h2><ul>{% for error in calibration_errors %}<li>{{ error }}</li>{% endfor %}</ul></section>{% endif %}
+<div class="card-grid">
+{% for item in domains %}
+  <a class="card" href="/domains/{{ item.domain }}">
+    <h2>{{ item.domain }}</h2>
+    <p>{{ item.scene_count }} scenes · {{ item.task_count }} tasks</p>
+    <p>{{ item.materialized_count }} materialized · {{ item.sample_count }} samples</p>
+  </a>
+{% endfor %}
+</div>
+{% endblock %}

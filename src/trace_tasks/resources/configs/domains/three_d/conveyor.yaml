@@ -1,0 +1,108 @@
+generation:
+  shared:
+    scene_variant_weights:
+      warehouse_line: 1.0
+      factory_line: 1.0
+      parcel_line: 1.0
+    balanced_scene_variant_sampling: true
+    target_count_min: 1
+    target_count_max: 8
+    object_dimension_scale: 0.66
+    min_rendered_bbox_side_px: 24.0
+  task_overrides:
+    task_three_d__conveyor__belt_total_object_count:
+      target_count_min: 1
+      target_count_max: 8
+    task_three_d__conveyor__scoped_belt_object_type_count:
+      target_count_min: 0
+      target_count_max: 5
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__scoped_belt_color_count:
+      target_count_min: 0
+      target_count_max: 5
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__scoped_color_type_count:
+      target_count_min: 0
+      target_count_max: 5
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__lane_object_type_count_arithmetic_value:
+      target_count_min: 0
+      target_count_max: 6
+      sum_answer_min: 1
+      sum_answer_max: 12
+      difference_answer_min: 1
+      difference_answer_max: 5
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__object_type_ordered_adjacent_pair_count:
+      target_count_min: 0
+      target_count_max: 4
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__color_ordered_adjacent_pair_count:
+      target_count_min: 0
+      target_count_max: 4
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__object_type_transfer_total_count:
+      answer_value_min: 2
+      answer_value_max: 12
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__color_transfer_total_count:
+      answer_value_min: 2
+      answer_value_max: 12
+      object_dimension_scale: 0.74
+    task_three_d__conveyor__between_object_type_anchors_count:
+      target_count_min: 1
+      target_count_max: 5
+      object_dimension_scale: 0.74
+
+rendering:
+  shared:
+    scene_margin_left_px: 52
+    scene_margin_right_px: 52
+    scene_margin_top_px: 52
+    scene_margin_bottom_px: 52
+    room_extent: 2.6
+    room_height: 2.8
+    grid_step: 0.0
+    marker_radius_px: 22
+    label_font_size_px: 24
+    line_width_px: 2
+    full_bleed_floor: true
+    full_bleed_floor_extent_multiplier: 3.2
+    enable_conveyor_belt_styles: true
+
+prompt:
+  shared:
+    bundle_id: three_d_conveyor_v1
+    scene_key: conveyor
+    task_key: conveyor_count_query
+  task_overrides:
+    task_three_d__conveyor__belt_total_object_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__scoped_belt_object_type_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__scoped_belt_color_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__scoped_color_type_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__lane_object_type_count_arithmetic_value:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__object_type_ordered_adjacent_pair_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__color_ordered_adjacent_pair_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__object_type_transfer_total_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__color_transfer_total_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query
+    task_three_d__conveyor__between_object_type_anchors_count:
+      scene_key: conveyor
+      task_key: conveyor_count_query

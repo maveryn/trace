@@ -1,0 +1,350 @@
+{
+  "bundle_id": "geometry_composite_shape_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "composite_shape_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "This figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "composite_shape_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "similar_triangles_side_length": [
+        "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+        "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+        "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+        "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?",
+        "Segment \"DE\" is parallel to segment \"BC\". What is the length of segment \"EC\"?"
+      ],
+      "parallel_section_cross_length": [
+        "What is the length of segment \"DE\"?",
+        "What is the length of segment \"DE\"?",
+        "What is the length of segment \"DE\"?",
+        "What is the length of segment \"DE\"?",
+        "What is the length of segment \"DE\"?"
+      ],
+      "parallel_section_base_length": [
+        "What is the length of segment \"BC\"?",
+        "What is the length of segment \"BC\"?",
+        "What is the length of segment \"BC\"?",
+        "What is the length of segment \"BC\"?",
+        "What is the length of segment \"BC\"?"
+      ],
+      "chained_rectangle_diagonal_length": [
+        "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+        "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+        "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+        "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?",
+        "In the split rectangle, use diagonal \"DE\" first to infer the height. What is the length of diagonal \"DB\"?"
+      ],
+      "rectangle_triangle_shared_height_length": [
+        "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+        "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+        "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+        "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\".",
+        "The rectangle and right triangle share segment \"BD\". Use diagonal \"AD\" first, then find the length of segment \"CD\"."
+      ],
+      "angle_bisector_split_length": [
+        "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the length of segment \"DC\"?"
+      ],
+      "angle_bisector_base_length": [
+        "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?",
+        "Segment \"AD\" bisects angle \"BAC\". What is the full length of segment \"BC\"?"
+      ],
+      "centroid_vertex_segment_length": [
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the length of segment \"AG\"?"
+      ],
+      "centroid_whole_median_length": [
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?",
+        "Point \"G\" is the centroid, and \"D\" is the midpoint of segment \"BC\". What is the full length of median \"AD\"?"
+      ],
+      "rectangle_triangle_cutout_area": [
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?"
+      ],
+      "l_profile_area": [
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?",
+        "What is the area of the shaded region?"
+      ],
+      "house_outline_perimeter": [
+        "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+        "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+        "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+        "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?",
+        "What is the perimeter of the outer boundary of pentagon \"ABCDE\"?"
+      ],
+      "tabbed_rectilinear_perimeter": [
+        "What is the perimeter of the outer boundary of the shaded figure? Add each visible side label once.",
+        "Add each labeled boundary piece once to find the perimeter of the shaded rectilinear figure.",
+        "Using each visible side label once, what is the perimeter of the outer boundary?",
+        "Compute the perimeter of the shaded figure by summing the labeled outside edges once each.",
+        "Determine the perimeter of the outer boundary using each side label shown."
+      ],
+      "cap_area": [
+        "What is the area of the entire shaded region?",
+        "Compute the area covered by the shaded curvilinear figure.",
+        "Find the shaded area shown in the diagram.",
+        "Using the shown dimensions, what is the area of the shaded figure?",
+        "Determine the total shaded area of the figure."
+      ],
+      "cutout_area": [
+        "What is the area of the shaded region?",
+        "Compute the area covered by the shaded curvilinear figure.",
+        "Find the shaded area shown in the diagram.",
+        "Using the shown dimensions, what is the area of the shaded figure?",
+        "Determine the total shaded area of the figure."
+      ],
+      "rectangle_quarter_sector_cutout_area": [
+        "What is the area of the shaded region?",
+        "Compute the area covered by the shaded curvilinear figure.",
+        "Find the shaded area shown in the diagram.",
+        "Using the shown dimensions, what is the area of the shaded figure?",
+        "Determine the total shaded area of the figure."
+      ],
+      "cap_perimeter": [
+        "What is the perimeter of the highlighted boundary? Add each visible side label and the labeled semicircle arc once.",
+        "Compute the perimeter of the highlighted outside boundary by adding each labeled side piece and the semicircle arc once.",
+        "Find the perimeter of the shaded figure, including each labeled straight segment and the labeled semicircle arc.",
+        "Using each shown side label and the semicircle arc label once, what is the perimeter of the highlighted boundary?",
+        "Determine the perimeter of the highlighted boundary from the visible side labels and semicircle arc label; use each listed piece once."
+      ],
+      "cutout_perimeter": [
+        "What is the perimeter of the highlighted boundary? Add each visible side label and the labeled semicircle arc once.",
+        "Compute the perimeter of the highlighted outside and semicircle cutout boundary by adding each labeled boundary piece once.",
+        "Find the perimeter of the shaded figure, including each labeled straight segment and the labeled semicircle cutout arc.",
+        "Using each shown side label and the semicircle arc label once, what is the perimeter of the highlighted boundary?",
+        "Determine the perimeter of the highlighted boundary from the visible side labels and semicircle arc label; use each listed piece once."
+      ],
+      "rectangle_quarter_sector_cutout_perimeter": [
+        "What is the perimeter of the highlighted boundary? Use the visible side labels and the labeled quarter-circle arc length.",
+        "Compute the perimeter of the highlighted outside and quarter-circle cutout boundary by adding the labeled boundary pieces.",
+        "Find the perimeter of the shaded figure, including the labeled quarter-circle arc.",
+        "Using the shown side labels and quarter-circle arc label, what is the perimeter of the highlighted boundary?",
+        "Determine the perimeter of the highlighted boundary from the visible side labels and quarter-circle arc label."
+      ],
+      "cap_from_total_area": [
+        "The total shaded area is {total_area}. What is the missing rectangle width marked with a question mark?",
+        "Given total area {total_area}, find the unknown rectangle width in the rectangle-plus-semicircle shape.",
+        "The composite region has area {total_area}. What is the width labeled with the question mark?",
+        "Using the shown height and radius, compute the missing rectangle width when the total area is {total_area}.",
+        "Find the unknown width of the rectangle with the semicircular cap if the total area is {total_area}."
+      ],
+      "cutout_from_total_area": [
+        "The total shaded area is {total_area}. What is the missing rectangle width marked with a question mark?",
+        "Given total area {total_area}, find the unknown rectangle width in the rectangle-minus-semicircle shape.",
+        "The remaining shaded region has area {total_area}. What is the width labeled with the question mark?",
+        "Using the shown height and radius, compute the missing rectangle width when the shaded area is {total_area}.",
+        "Find the unknown width of the rectangle with the semicircular notch if the shaded area is {total_area}."
+      ],
+      "from_arc_length": [
+        "The curved arc length is {arc_length}. What is the central angle marked with the question mark?",
+        "Using the shown radius and arc length {arc_length}, find the missing sector angle.",
+        "The sector has arc length {arc_length}. What is the degree measure of the marked central angle?",
+        "Find the central angle of the sector from the shown radius and arc length {arc_length}.",
+        "Determine the angle marked with the question mark when the sector arc length is {arc_length}."
+      ],
+      "from_sector_area": [
+        "The sector area is {sector_area}. What is the central angle marked with the question mark?",
+        "Using the shown radius and sector area {sector_area}, find the missing sector angle.",
+        "The sector has area {sector_area}. What is the degree measure of the marked central angle?",
+        "Find the central angle of the sector from the shown radius and area {sector_area}.",
+        "Determine the angle marked with the question mark when the sector area is {sector_area}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: set \"annotation\" to a JSON object with exactly these visible point-label keys: {annotation_keys}; each value must be that labeled point's pixel coordinate [x,y].\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: use exactly these visible point-label keys: {annotation_keys}; each value must be that labeled point's pixel coordinate [x,y].\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: set \"annotation\" to a point map for exactly these labels: {annotation_keys}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation field: use exactly these visible point labels as keys: {annotation_keys}; each value is [x,y].\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: point map with exactly these visible point-label keys: {annotation_keys}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:angle_bisector_base_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:angle_bisector_split_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:cap_area": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:cap_from_total_area": {
+      "object_description": "a labeled shaded composite shape with one side marked by a question mark and enough labels to compute it",
+      "answer_hint": "set \"answer\" to the missing side length rounded to one decimal place"
+    },
+    "query:cap_perimeter": {
+      "object_description": "a labeled shaded composite shape with straight sides, a highlighted circular boundary, and measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:centroid_vertex_segment_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:centroid_whole_median_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:chained_rectangle_diagonal_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:cutout_area": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:cutout_from_total_area": {
+      "object_description": "a labeled shaded composite shape with one side marked by a question mark and enough labels to compute it",
+      "answer_hint": "set \"answer\" to the missing side length rounded to one decimal place"
+    },
+    "query:cutout_perimeter": {
+      "object_description": "a labeled shaded composite shape with straight sides, a highlighted circular boundary, and measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:from_arc_length": {
+      "object_description": "a circular sector with a marked central angle and formula labels",
+      "answer_hint": "set \"answer\" to the angle measure in degrees rounded to one decimal place"
+    },
+    "query:from_sector_area": {
+      "object_description": "a circular sector with a marked central angle and formula labels",
+      "answer_hint": "set \"answer\" to the angle measure in degrees rounded to one decimal place"
+    },
+    "query:house_outline_perimeter": {
+      "object_description": "a labeled straight-edged composite shape with measurement labels",
+      "answer_hint": "set \"answer\" to the requested value as an integer"
+    },
+    "query:l_profile_area": {
+      "object_description": "a labeled straight-edged composite shape with measurement labels",
+      "answer_hint": "set \"answer\" to the requested value as an integer"
+    },
+    "query:parallel_section_base_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:parallel_section_cross_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:rectangle_quarter_sector_cutout_area": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:rectangle_quarter_sector_cutout_perimeter": {
+      "object_description": "a labeled shaded composite shape with straight sides, a highlighted circular boundary, and measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:rectangle_triangle_cutout_area": {
+      "object_description": "a labeled straight-edged composite shape with measurement labels",
+      "answer_hint": "set \"answer\" to the requested value as an integer"
+    },
+    "query:rectangle_triangle_shared_height_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:similar_triangles_side_length": {
+      "object_description": "a labeled shaded composite shape with straight and curved boundaries plus measurement labels",
+      "answer_hint": "set \"answer\" to the requested value rounded to one decimal place"
+    },
+    "query:tabbed_rectilinear_perimeter": {
+      "object_description": "a labeled straight-edged composite shape with measurement labels",
+      "answer_hint": "set \"answer\" to the requested value as an integer"
+    }
+  },
+  "dynamic_slots": {
+    "annotation_keys": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "total_area": {
+      "type": "string"
+    },
+    "arc_length": {
+      "type": "string"
+    },
+    "sector_area": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:composite_shape_scene": [
+      "object_description"
+    ],
+    "query:cap_area": [],
+    "query:cutout_area": [],
+    "query:rectangle_quarter_sector_cutout_area": [],
+    "query:cap_perimeter": [],
+    "query:cutout_perimeter": [],
+    "query:rectangle_quarter_sector_cutout_perimeter": [],
+    "query:cap_from_total_area": [
+      "total_area"
+    ],
+    "query:cutout_from_total_area": [
+      "total_area"
+    ],
+    "query:from_arc_length": [
+      "arc_length"
+    ],
+    "query:from_sector_area": [
+      "sector_area"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_keys",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

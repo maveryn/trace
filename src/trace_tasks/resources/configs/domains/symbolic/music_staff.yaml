@@ -1,0 +1,106 @@
+generation:
+  shared:
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      engraved_sheet: 1.0
+      exam_scan: 1.0
+      notebook_staff: 1.0
+  task_overrides:
+    task_symbolic__music_staff__transposed_pitch_pair_count:
+      balanced_target_answer_sampling: true
+      target_answer_min: 0
+      target_answer_max: 4
+    task_symbolic__music_staff__scale_validation_count:
+      balanced_target_answer_sampling: true
+      target_answer_min: 0
+      target_answer_max: 4
+    task_symbolic__music_staff__chord_inversion_label:
+      balanced_chord_inversion_sampling: true
+      chord_inversion_weights:
+        root position: 1.0
+        first inversion: 1.0
+        second inversion: 1.0
+        third inversion: 1.0
+    task_symbolic__music_staff__meter_type_count:
+      balanced_target_answer_sampling: true
+      target_answer_min: 0
+      target_answer_max: 4
+
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 480
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    panel_padding_px: 34
+    panel_corner_radius_px: 18
+    panel_border_width_px: 2
+    staff_gap_px: 15
+    staff_width_px: 760
+    staff_spacing_px: 142
+    slot_gap_px: 52
+    title_font_size_px: 25
+    label_font_size_px: 21
+    small_font_size_px: 16
+    notehead_width_px: 21
+    notehead_height_px: 14
+    stem_height_px: 48
+    option_card_width_px: 254
+    option_card_height_px: 70
+    option_gap_px: 12
+
+prompt:
+  shared:
+    bundle_id: symbolic_music_staff_v1
+    scene_key: music_staff
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer" in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for the final answer.
+  task_overrides:
+    task_symbolic__music_staff__note_name_label:
+      task_key: music_note_name_label
+    task_symbolic__music_staff__interval_name_label:
+      task_key: music_interval_name_label
+    task_symbolic__music_staff__transposed_pitch_pair_count:
+      task_key: music_transposed_pitch_pair_count
+    task_symbolic__music_staff__key_signature_label:
+      task_key: music_key_signature_label
+    task_symbolic__music_staff__scale_validation_count:
+      task_key: music_scale_validation_count
+    task_symbolic__music_staff__scale_degree_function_label:
+      task_key: music_scale_degree_function_label
+    task_symbolic__music_staff__chord_quality_label:
+      task_key: music_chord_quality_label
+    task_symbolic__music_staff__chord_inversion_label:
+      task_key: music_chord_inversion_label
+    task_symbolic__music_staff__roman_numeral_label:
+      task_key: music_roman_numeral_label
+    task_symbolic__music_staff__duration_equivalence_label:
+      task_key: music_duration_equivalence_label
+    task_symbolic__music_staff__meter_type_count:
+      task_key: music_meter_type_count
+    task_symbolic__music_staff__articulation_symbol_label:
+      task_key: music_articulation_symbol_label
+
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.22
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.004
+        - 0.018

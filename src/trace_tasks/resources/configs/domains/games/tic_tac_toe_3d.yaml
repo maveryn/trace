@@ -1,0 +1,83 @@
+generation:
+  shared:
+    layout_variant_weights:
+      vertical_perspective_stack: 1.0
+    style_variant_weights:
+      classic_grid: 1.0
+      paper_board: 1.0
+      arcade_blue: 1.0
+      mint_table: 1.0
+      charcoal_lines: 1.0
+    target_layer_weights:
+      top: 1.0
+      middle: 1.0
+      bottom: 1.0
+    balanced_layout_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_target_layer_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_option_count_sampling: true
+    balanced_answer_option_sampling: true
+    layer_piece_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    option_count_support:
+    - 4
+  task_overrides:
+    task_games__tic_tac_toe_3d__layer_piece_count:
+      target_player_weights:
+        X: 1.0
+        O: 1.0
+      balanced_target_player_sampling: true
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 900
+    canvas_min_width_px: 580
+    canvas_min_height_px: 720
+    canvas_side_padding_px: 72
+    panel_margin_px: 38
+    panel_inner_padding_px: 36
+    cell_size_px: 104
+    cell_gap_px: 0
+    layer_gap_px: 52
+    skew_x_px: 40
+    skew_y_px: 20
+    mark_size_px: 66
+    option_font_size_px: 22
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    dynamic_canvas_size_enabled: true
+prompt:
+  shared:
+    bundle_id: games_tic_tac_toe_3d_v1
+    scene_key: tic_tac_toe_3d_board
+    task_key: tic_tac_toe_3d_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

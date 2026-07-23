@@ -1,0 +1,88 @@
+visual:
+  background:
+    enabled: true
+    styles:
+      solid_light:
+        kind: solid
+        color:
+        - 248
+        - 248
+        - 248
+      solid_cool:
+        kind: solid
+        color:
+        - 243
+        - 246
+        - 252
+      solid_warm:
+        kind: solid
+        color:
+        - 250
+        - 247
+        - 242
+      solid_mint:
+        kind: solid
+        color:
+        - 244
+        - 249
+        - 246
+      solid_lavender:
+        kind: solid
+        color:
+        - 248
+        - 246
+        - 253
+    weights:
+      solid_light: 1.0
+      solid_cool: 1.0
+      solid_warm: 1.0
+      solid_mint: 1.0
+      solid_lavender: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.1
+        - 0.3
+      downsample:
+        scale:
+        - 0.94
+        - 0.98
+      jpeg:
+        quality:
+        - 86.0
+        - 95.0
+      noise:
+        alpha:
+        - 0.008
+        - 0.025
+rendering:
+  shared:
+    theme_tone_weights:
+      standard: 1.0
+      soft: 1.0
+      crisp: 1.0
+    panel_style_variant_weights:
+      default: 1.0
+      cool: 1.0
+      warm: 1.0
+      mint: 1.0
+      paper: 1.0
+    content_jitter_max_px: 18
+    context_text_probability: 0.35
+    context_text_max_elements: 2
+    context_block_probability: 0.18
+    context_block_max_elements: 1
+    context_block_position_weights:
+      top: 1.0
+      bottom: 1.0
+      left: 1.0
+      right: 1.0
+    context_block_clutter_level_weights:
+      low: 1.2
+      medium: 1.0
+      high: 0.6

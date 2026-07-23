@@ -1,0 +1,2 @@
+"""Indoor-room illustration tasks."""
+

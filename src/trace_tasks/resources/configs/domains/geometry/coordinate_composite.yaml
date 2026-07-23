@@ -1,0 +1,16 @@
+rendering:
+  shared:
+    coordinate_composite_canvas_size_min: 660
+    coordinate_composite_canvas_size_max: 740
+    coordinate_composite_graph_cells_min: 18
+    coordinate_composite_graph_cells_max: 20
+    coordinate_composite_line_width_min: 3
+    coordinate_composite_line_width_max: 5
+    line_width: 4
+    line_width_min: 3
+    line_width_max: 5
+prompt:
+  shared:
+    bundle_id: geometry_coordinate_composite_v0
+    scene_key: coordinate_composite_scene
+    task_key: coordinate_composite_query

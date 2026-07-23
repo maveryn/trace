@@ -1,0 +1,159 @@
+{
+  "bundle_id": "pages_calendar_event_grid_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "calendar_event_grid": [
+        "The image shows {object_description}.",
+        "The page contains {object_description}.",
+        "The calendar shows {object_description}.",
+        "The canvas contains {object_description}.",
+        "This page shows {object_description}."
+      ]
+    },
+    "task": {
+      "calendar_event_grid_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "weekday_event_count": [
+        "How many event chips are shown in the {weekday_label} column headed \"{weekday_header_label}\"?",
+        "Count all event chips under the \"{weekday_header_label}\" weekday header for {weekday_label}.",
+        "Across the month, how many event chips appear in the {weekday_label} column headed \"{weekday_header_label}\"?",
+        "In the calendar grid, how many event chips are listed under the \"{weekday_header_label}\" header?",
+        "Looking down the \"{weekday_header_label}\" column for {weekday_label}, how many event chips are present?"
+      ],
+      "category_slot_day_count": [
+        "How many dates have \"{category_label}\" in the \"{slot_label}\" slot?",
+        "Count the dates whose \"{slot_label}\" slot shows \"{category_label}\".",
+        "In the \"{slot_label}\" event slot, how many dates show the category label \"{category_label}\"?",
+        "How many date cells contain \"{category_label}\" in their \"{slot_label}\" slot?",
+        "Count every date where the \"{slot_label}\" slot is labeled \"{category_label}\"."
+      ],
+      "date_filled_slot_count": [
+        "How many event slots on date {date_number} contain an event chip?",
+        "Count the filled event slots on date {date_number}.",
+        "On date {date_number}, how many of the Top, Mid, and Bottom slots contain event chips?",
+        "For date {date_number}, count the event slots that are filled.",
+        "Find date {date_number}. How many event chips are shown in its slots?"
+      ],
+      "date_for_category_slot_label": [
+        "Which date has \"{category_label}\" in the \"{slot_label}\" slot?",
+        "Find the date whose \"{slot_label}\" slot shows \"{category_label}\". What date number is it?",
+        "What date number contains \"{category_label}\" in the \"{slot_label}\" event slot?",
+        "Identify the date where the \"{slot_label}\" slot is labeled \"{category_label}\".",
+        "Look for \"{category_label}\" in the \"{slot_label}\" slot. Which date is it on?"
+      ],
+      "busiest_date_label": [
+        "Which date has the most event chips?",
+        "Find the date cell with the largest number of event chips. What date number is it?",
+        "What date number has more event chips than any other date?",
+        "Across the calendar grid, which date contains the most event chips?",
+        "Identify the busiest date by event-chip count. What date number is it?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:weekday_event_count": {
+      "object_description": "one month calendar where date cells contain short category chips in Top, Mid, and Bottom event slots",
+      "answer_hint": "set \"answer\" to the integer number of event chips in the requested weekday column",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around every event chip in the requested weekday column",
+      "json_example": "{\"annotation\":[[268,286,376,304],[268,310,376,328]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:category_slot_day_count": {
+      "object_description": "one month calendar where date cells contain short category chips in Top, Mid, and Bottom event slots",
+      "answer_hint": "set \"answer\" to the integer number of dates whose requested slot has the requested category label",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the matching event chips",
+      "json_example": "{\"annotation\":[[268,286,376,304],[392,382,500,400]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:date_filled_slot_count": {
+      "object_description": "one month calendar where date cells contain short category chips in Top, Mid, and Bottom event slots",
+      "answer_hint": "set \"answer\" to the integer number of filled event slots on the requested date",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the event chips on the requested date, or [] if no slots are filled",
+      "json_example": "{\"annotation\":[[268,286,376,304],[268,310,376,328]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:date_for_category_slot_label": {
+      "object_description": "one month calendar where date cells contain short category chips in Top, Mid, and Bottom event slots",
+      "answer_hint": "set \"answer\" to the integer date number whose requested slot contains the requested category label",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the matching event chip in image pixel coordinates",
+      "json_example": "{\"annotation\":[268,286,376,304],\"answer\":12}",
+      "json_example_answer_only": "{\"answer\":12}"
+    },
+    "query:busiest_date_label": {
+      "object_description": "one month calendar where date cells contain short category chips in Top, Mid, and Bottom event slots",
+      "answer_hint": "set \"answer\" to the integer date number with the most event chips",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around every event chip on that date",
+      "json_example": "{\"annotation\":[[268,286,376,304],[268,310,376,328],[268,334,376,352]],\"answer\":12}",
+      "json_example_answer_only": "{\"answer\":12}"
+    }
+  },
+  "dynamic_slots": {
+    "date_number": {"type": "integer"},
+    "slot_label": {"type": "string"},
+    "category_label": {"type": "string"},
+    "weekday_label": {"type": "string"},
+    "weekday_header_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:calendar_event_grid": [
+      "object_description"
+    ],
+    "query:weekday_event_count": [
+      "weekday_label",
+      "weekday_header_label"
+    ],
+    "query:category_slot_day_count": [
+      "category_label",
+      "slot_label"
+    ],
+    "query:date_filled_slot_count": [
+      "date_number"
+    ],
+    "query:date_for_category_slot_label": [
+      "category_label",
+      "slot_label"
+    ],
+    "query:busiest_date_label": [
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

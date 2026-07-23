@@ -1,0 +1,108 @@
+{
+  "bundle_id": "puzzles_sheet_transform_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "sheet_transform": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This sheet-transform puzzle shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "fold_projection_result_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "fold_cut_result_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "overlay_union_result_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "fold_projection_result_label": [
+        "After the shown fold is made, which labeled option shows the visible mark pattern?",
+        "Fold the paper along the dashed line in the arrow direction. Which result option matches the folded sheet?",
+        "Which option shows the mark pattern after applying the indicated fold?",
+        "Mentally fold the sheet as shown. Which labeled result is correct?",
+        "Use the fold direction in the diagram. Which result option shows the final folded pattern?"
+      ],
+      "fold_cut_result_label": [
+        "Which option shows the unfolded paper after the indicated fold or folds and cut?",
+        "Select the unfolded-result option for the fold-and-cut puzzle.",
+        "Choose the option that matches the paper after the indicated folding, cutting, and unfolding.",
+        "Which labeled option is the correct unfolded result?",
+        "Identify the final hole pattern after the shown fold-and-cut process."
+      ],
+      "overlay_union_result_label": [
+        "If the two source sheets are placed on top of each other, which result option shows every marked cell that would be visible?",
+        "Combine the marks from the two aligned source sheets. Which labeled result option matches the combined sheet?",
+        "Overlay the two source sheets in the same grid position. Which option shows the union of their marked cells?",
+        "Which result option contains exactly the cells marked on either source sheet?",
+        "Mentally stack the two transparent sheets. Which labeled option shows the resulting set of marks?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:fold_projection_result_label_query": {
+      "answer_instruction": "the selected folded-result option letter as a string",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected folded-result option panel.",
+      "json_example": "{\"annotation\":[206,388,324,613],\"answer\":\"A\"}",
+      "json_example_answer_only": "{\"answer\":\"A\"}"
+    },
+    "task:fold_cut_result_label_query": {
+      "answer_instruction": "the selected unfolded-result option letter as a string",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected unfolded-result option panel.",
+      "json_example": "{\"annotation\":[134,420,312,598],\"answer\":\"A\"}",
+      "json_example_answer_only": "{\"answer\":\"A\"}"
+    },
+    "task:overlay_union_result_label_query": {
+      "answer_instruction": "the selected overlay-result option letter as a string",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected result option panel.",
+      "json_example": "{\"annotation\":[521,384,679,542],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:sheet_transform": [
+      "object_description"
+    ]
+  }
+}

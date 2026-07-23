@@ -1,0 +1,95 @@
+generation:
+  task_overrides:
+    task_three_d__room__wall_object_camera_distance_label:
+      scene_variant_weights:
+        living_room: 1.0
+        office_room: 1.0
+        studio_room: 1.0
+      candidate_count_min: 6
+      candidate_count_max: 6
+      context_wall_count_min: 0
+      context_wall_count_max: 0
+      floor_context_count_min: 6
+      floor_context_count_max: 6
+      balanced_scene_variant_sampling: true
+    task_three_d__room__wall_object_same_wall_reference_label:
+      scene_variant_weights:
+        living_room: 1.0
+        office_room: 1.0
+        studio_room: 1.0
+      candidate_count_min: 6
+      candidate_count_max: 6
+      context_wall_count_min: 0
+      context_wall_count_max: 0
+      floor_context_count_min: 6
+      floor_context_count_max: 6
+      balanced_scene_variant_sampling: true
+    task_three_d__room__wall_object_side_relation_label:
+      scene_variant_weights:
+        living_room: 1.0
+        office_room: 1.0
+        studio_room: 1.0
+      candidate_count_min: 6
+      candidate_count_max: 6
+      context_wall_count_min: 0
+      context_wall_count_max: 0
+      floor_context_count_min: 6
+      floor_context_count_max: 6
+      balanced_scene_variant_sampling: true
+rendering:
+  shared:
+    canvas_preset_weights:
+      landscape: 1.0
+      portrait: 0.0
+      square: 1.0
+  task_overrides:
+    task_three_d__room__wall_object_camera_distance_label:
+      canvas_width: 1180
+      canvas_height: 900
+      scene_margin_left_px: 52
+      scene_margin_right_px: 52
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 48
+      room_extent: 3.35
+      room_height: 3.1
+      grid_step: 0.8
+      marker_radius_px: 20
+      label_font_size_px: 24
+      line_width_px: 2
+    task_three_d__room__wall_object_same_wall_reference_label:
+      canvas_width: 1180
+      canvas_height: 900
+      scene_margin_left_px: 52
+      scene_margin_right_px: 52
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 48
+      room_extent: 3.35
+      room_height: 3.1
+      grid_step: 0.8
+      marker_radius_px: 20
+      label_font_size_px: 24
+      line_width_px: 2
+    task_three_d__room__wall_object_side_relation_label:
+      canvas_width: 1180
+      canvas_height: 900
+      scene_margin_left_px: 52
+      scene_margin_right_px: 52
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 48
+      room_extent: 3.35
+      room_height: 3.1
+      grid_step: 0.8
+      marker_radius_px: 20
+      label_font_size_px: 24
+      line_width_px: 2
+prompt:
+  shared:
+    bundle_id: three_d_room_v1
+    scene_key: room
+  task_overrides:
+    task_three_d__room__wall_object_camera_distance_label:
+      task_key: wall_object_camera_distance_query
+    task_three_d__room__wall_object_same_wall_reference_label:
+      task_key: wall_object_same_wall_reference_query
+    task_three_d__room__wall_object_side_relation_label:
+      task_key: wall_object_side_relation_query

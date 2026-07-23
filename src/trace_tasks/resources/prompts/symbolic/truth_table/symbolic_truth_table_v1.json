@@ -1,0 +1,107 @@
+{
+  "bundle_id": "symbolic_truth_table_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "truth_table": [
+        "A truth table shows {object_description}. Values use 1 for true and 0 for false. The operators are ! for NOT, & for AND, | for OR, and ^ for XOR.",
+        "This truth-table panel shows {object_description}. In the table, 1 means true and 0 means false. Operators: ! NOT, & AND, | OR, ^ XOR.",
+        "The Boolean truth table presents {object_description}. Read each row with 1 as true and 0 as false; !, &, |, and ^ denote NOT, AND, OR, and XOR.",
+        "A Boolean truth-table display contains {object_description}. Table entries are 0 or 1, with !, &, |, and ^ used for the logical operators.",
+        "The panel shows {object_description} in truth-table form. A value of 1 is true, a value of 0 is false, and the headers use !, &, |, and ^."
+      ]
+    },
+    "task": {
+      "satisfying_row_count": [
+        "Evaluate expression P for each row. How many rows make P true?",
+        "Using the shown A, B, C rows and expression P, how many rows satisfy P?",
+        "What is the number of truth-table rows where expression P evaluates to 1?",
+        "For how many input rows is expression P true?",
+        "Count all rows satisfying expression P."
+      ],
+      "truth_pattern_label": [
+        "Which option gives the output pattern for expression P from top row to bottom row?",
+        "Read the rows from top to bottom. Which option matches the truth pattern for P?",
+        "Which labeled pattern is produced by expression P across the table rows?",
+        "Select the option whose eight values match expression P in row order.",
+        "What option shows the correct top-to-bottom output pattern for P?"
+      ],
+      "expression_from_rows_label": [
+        "Which candidate expression produces the shown P column?",
+        "Select the expression label whose truth values match column P.",
+        "Which labeled expression matches the completed output column P?",
+        "Read column P from top to bottom. Which candidate expression generates it?",
+        "Choose the expression option that agrees with every shown P value."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:truth_table": [
+      "object_description"
+    ],
+    "task:satisfying_row_count": [],
+    "task:truth_pattern_label": [],
+    "task:expression_from_rows_label": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_satisfying_row_count_clean_table": "a clean three-variable table with input columns A, B, C and a blank output column headed by expression P",
+    "object_description_satisfying_row_count_notebook_table": "a notebook-style three-variable table with input columns A, B, C and a blank output column headed by expression P",
+    "object_description_satisfying_row_count_exam_scan": "an exam-scan-style three-variable table with input columns A, B, C and a blank output column headed by expression P",
+    "object_description_truth_pattern_label_clean_table": "a clean input table, a target expression P, and six labeled output-pattern options",
+    "object_description_truth_pattern_label_notebook_table": "a notebook-style input table, a target expression P, and six labeled output-pattern options",
+    "object_description_truth_pattern_label_exam_scan": "an exam-scan-style input table, a target expression P, and six labeled output-pattern options",
+    "object_description_expression_from_rows_label_clean_table": "a clean input table with a completed output column P and four labeled expression options",
+    "object_description_expression_from_rows_label_notebook_table": "a notebook-style input table with a completed output column P and four labeled expression options",
+    "object_description_expression_from_rows_label_exam_scan": "an exam-scan-style input table with a completed output column P and four labeled expression options",
+    "annotation_hint_satisfying_row_count": "set \"annotation\" to an array of pixel-space bounding boxes [x0,y0,x1,y1], one around each full table row that makes expression P true",
+    "answer_hint_satisfying_row_count": "set \"answer\" to the integer count of rows where expression P evaluates to 1",
+    "json_example_satisfying_row_count": "{\"annotation\":[[327,174,793,226],[327,278,793,330],[327,382,793,434]],\"answer\":3}",
+    "json_example_answer_only_satisfying_row_count": "{\"answer\":3}",
+    "annotation_hint_truth_pattern_label": "set \"annotation\" to the pixel-space bounding box [x0,y0,x1,y1] around the selected pattern option card",
+    "answer_hint_truth_pattern_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_truth_pattern_label": "{\"annotation\":[[750,220,1032,324]],\"answer\":\"B\"}",
+    "json_example_answer_only_truth_pattern_label": "{\"answer\":\"B\"}",
+    "annotation_hint_expression_from_rows_label": "set \"annotation\" to the pixel-space bounding box [x0,y0,x1,y1] around the selected candidate expression card",
+    "answer_hint_expression_from_rows_label": "set \"answer\" to the single capital-letter candidate label W, X, Y, or Z",
+    "json_example_expression_from_rows_label": "{\"annotation\":[[560,348,1042,424]],\"answer\":\"Y\"}",
+    "json_example_answer_only_expression_from_rows_label": "{\"answer\":\"Y\"}",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+  }
+}

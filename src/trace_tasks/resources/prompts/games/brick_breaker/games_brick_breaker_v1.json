@@ -1,0 +1,92 @@
+{
+  "bundle_id": "games_brick_breaker_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_brick_breaker_playfield": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "brick_breaker_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "next_hit_label": [
+        "{brick_breaker_motion_rule_text} Which labeled brick will the ball hit first?",
+        "{brick_breaker_motion_rule_text} What is the label of the first brick on that line?",
+        "{brick_breaker_motion_rule_text} Extend that direction and identify the labeled brick reached before any other brick.",
+        "{brick_breaker_motion_rule_text} Which labeled brick is hit first?",
+        "{brick_breaker_motion_rule_text} Report the label on the first brick the ball would reach if that direction continues."
+      ],
+      "paddle_catch_label": [
+        "{brick_breaker_motion_rule_text} Which labeled bottom catch lane should the paddle cover?",
+        "{brick_breaker_motion_rule_text} Which catch-lane label does it reach if extended to the bottom?",
+        "{brick_breaker_motion_rule_text} If the ball keeps moving that way, what bottom lane label should catch it?",
+        "{brick_breaker_motion_rule_text} Which labeled bottom lane should the paddle be in?",
+        "{brick_breaker_motion_rule_text} Report the label of the bottom catch lane where the ball arrives."
+      ],
+      "hit_row_remaining_count": [
+        "{brick_breaker_motion_rule_text} After the ball hits that brick, how many bricks are left in the same row?",
+        "{brick_breaker_motion_rule_text} After removing the brick hit by that line, how many bricks remain in that brick's row?",
+        "{brick_breaker_motion_rule_text} Count the bricks left in the hit brick's row after the hit brick is removed.",
+        "{brick_breaker_motion_rule_text} After that hit removes one brick, how many bricks remain in that same row?",
+        "{brick_breaker_motion_rule_text} Report the number of bricks still present in the row of the brick that gets hit."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_brick_breaker_playfield": {
+      "object_description": "a brick-breaker playfield with labeled bricks at the top, a short ball-direction cue, and labeled catch lanes at the bottom"
+    },
+    "query:next_hit_label": {
+      "brick_breaker_motion_rule_text": "The short dashed arrow shows the ball's current straight direction.",
+      "answer_hint": "set \"answer\" to the selected brick label as a string",
+      "annotation_hint": "set \"annotation\" to one pixel-space point [x, y] at the center of the brick hit first after extrapolating the ball direction",
+      "json_example": "{\"annotation\":[476,207],\"answer\":\"H\"}",
+      "json_example_answer_only": "{\"answer\":\"H\"}"
+    },
+    "query:paddle_catch_label": {
+      "brick_breaker_motion_rule_text": "The short dashed arrow shows the ball's current straight direction.",
+      "answer_hint": "set \"answer\" to the selected bottom lane label as a string",
+      "annotation_hint": "set \"annotation\" to one pixel-space point [x, y] at the center of the selected bottom catch lane pad",
+      "json_example": "{\"annotation\":[295,403],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:hit_row_remaining_count": {
+      "brick_breaker_motion_rule_text": "The short dashed arrow shows the ball's current straight direction.",
+      "answer_hint": "set \"answer\" to the number of bricks left in that row after the hit brick is removed",
+      "annotation_hint": "set \"annotation\" to an array of pixel-space brick boxes [x0, y0, x1, y1] for the bricks left in the same row after the hit brick is removed",
+      "json_example": "{\"annotation\":[[135,258,205,298],[245,258,315,298],[355,258,425,298],[465,258,535,298]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

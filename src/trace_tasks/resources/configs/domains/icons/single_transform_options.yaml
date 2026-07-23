@@ -1,0 +1,229 @@
+generation:
+  shared:
+    object_count_min: 4
+    object_count_max: 9
+    target_count_min: 0
+    target_count_max: 4
+    distractor_count_min: 1
+    distractor_count_max: 9
+    balanced_sampling: true
+  task_overrides:
+    task_icons__single_transform_options__geometric_transform_result_label:
+      pool_manifest: non_symmetry.txt
+      object_count_min: 6
+      object_count_max: 6
+      transform_check_size_px: 96
+    task_icons__single_transform_options__inverse_geometric_transform_source_label:
+      pool_manifest: non_symmetry.txt
+      object_count_min: 4
+      object_count_max: 4
+      transform_check_size_px: 96
+rendering:
+  shared:
+    canvas_width: 1104
+    canvas_height: 640
+    reference_panel_width_px: 296
+    panel_gap_px: 24
+    outer_margin_px: 24
+    panel_padding_px: 20
+    panel_corner_radius_px: 18
+    scene_icon_size_min_px: 40
+    scene_icon_size_max_px: 96
+    reference_icon_size_px: 110
+    panel_title_font_size_px: 24
+    background_color_rgb:
+    - 247
+    - 248
+    - 251
+    background_color_rgb_options:
+    - - 247
+      - 248
+      - 251
+    - - 243
+      - 246
+      - 252
+    - - 250
+      - 247
+      - 242
+    - - 244
+      - 249
+      - 246
+    - - 248
+      - 246
+      - 253
+    panel_fill_rgb:
+    - 255
+    - 255
+    - 255
+    panel_fill_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 253
+      - 254
+      - 255
+    - - 255
+      - 254
+      - 250
+    - - 250
+      - 253
+      - 250
+    panel_border_rgb:
+    - 205
+    - 212
+    - 224
+    panel_border_rgb_options:
+    - - 205
+      - 212
+      - 224
+    - - 198
+      - 209
+      - 222
+    - - 218
+      - 208
+      - 197
+    - - 198
+      - 218
+      - 211
+    header_text_rgb:
+    - 70
+    - 78
+    - 96
+    header_text_rgb_options:
+    - - 70
+      - 78
+      - 96
+    - - 63
+      - 84
+      - 112
+    - - 86
+      - 73
+      - 94
+    - - 68
+      - 91
+      - 79
+    cell_border_rgb:
+    - 218
+    - 223
+    - 233
+    cell_border_rgb_options:
+    - - 218
+      - 223
+      - 233
+    - - 208
+      - 218
+      - 232
+    - - 226
+      - 216
+      - 205
+    - - 207
+      - 225
+      - 217
+    cell_label_color_rgb:
+    - 52
+    - 60
+    - 77
+    cell_label_color_rgb_options:
+    - - 52
+      - 60
+      - 77
+    - - 48
+      - 68
+      - 93
+    - - 77
+      - 61
+      - 81
+    - - 53
+      - 77
+      - 67
+    arrow_color_rgb:
+    - 84
+    - 96
+    - 118
+    arrow_color_rgb_options:
+    - - 84
+      - 96
+      - 118
+    - - 65
+      - 112
+      - 135
+    - - 103
+      - 88
+      - 128
+    - - 102
+      - 112
+      - 82
+    cell_padding_px: 10
+    pair_arrow_stroke_px: 4
+    cell_label_font_size_px: 22
+    palette_size_min: 1
+    palette_size_max: 1
+    color_channel_min: 24
+    color_channel_max: 220
+    min_color_distance: 40.0
+    color_distance_space: lab
+    icon_noise_edit_types:
+    - blur
+    - downsample
+    - jpeg
+    - noise
+    icon_noise_edit_count_range:
+    - 0
+    - 2
+    icon_noise_value_ranges:
+      blur:
+        radius:
+        - 0.2
+        - 0.6
+      downsample:
+        scale:
+        - 0.85
+        - 0.95
+      jpeg:
+        quality:
+        - 70
+        - 90
+      noise:
+        alpha:
+        - 0.03
+        - 0.08
+  task_overrides:
+    task_icons__single_transform_options__geometric_transform_result_label:
+      canvas_width: 1104
+      canvas_height: 640
+      reference_panel_width_px: 296
+      scene_icon_size_min_px: 96
+      scene_icon_size_max_px: 112
+      reference_icon_size_px: 112
+      reference_content_padding_px: 18
+      scene_content_side_padding_px: 14
+      scene_content_bottom_padding_px: 14
+      scene_content_top_offset_px: 42
+      operation_cue_font_size_px: 21
+      palette_size_min: 1
+      palette_size_max: 1
+      min_color_distance: 42.0
+    task_icons__single_transform_options__inverse_geometric_transform_source_label:
+      canvas_width: 1104
+      canvas_height: 640
+      reference_panel_width_px: 296
+      scene_icon_size_min_px: 96
+      scene_icon_size_max_px: 112
+      reference_icon_size_px: 112
+      reference_content_padding_px: 18
+      scene_content_side_padding_px: 14
+      scene_content_bottom_padding_px: 14
+      scene_content_top_offset_px: 42
+      operation_cue_font_size_px: 21
+      palette_size_min: 1
+      palette_size_max: 1
+      min_color_distance: 42.0
+prompt:
+  shared:
+    bundle_id: icons_single_transform_options_v1
+    scene_key: single_transform_options_transformation
+    task_key: transformation_query
+  task_overrides:
+    task_icons__single_transform_options__inverse_geometric_transform_source_label:
+      scene_key: single_transform_options_inverse_transformation
+      task_key: transformation_query

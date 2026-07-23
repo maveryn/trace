@@ -1,0 +1,54 @@
+generation:
+  task_overrides:
+    task_puzzles__star_battle__valid_cell_anywhere_label:
+      grid_size_min: 6
+      grid_size_max: 9
+      option_count_min: 5
+      option_count_max: 8
+      visible_star_fraction_min: 0.3
+      visible_star_fraction_max: 0.55
+      scene_variant_weights:
+        star_battle_classic: 1.0
+        star_battle_pastel: 1.0
+        star_battle_blueprint: 1.0
+    task_puzzles__star_battle__remaining_valid_cell_count:
+      grid_size_min: 6
+      grid_size_max: 9
+      target_count_min: 1
+      target_count_max: 6
+      visible_star_fraction_min: 0.15
+      visible_star_fraction_max: 0.35
+      scene_variant_weights:
+        star_battle_classic: 1.0
+        star_battle_pastel: 1.0
+        star_battle_blueprint: 1.0
+visual:
+  noise:
+    apply_prob: 0.15
+rendering:
+  task_overrides:
+    task_puzzles__star_battle__valid_cell_anywhere_label: &star_battle_rendering
+      canvas_width: 1080
+      canvas_height: 900
+      cell_size_px: 64
+      unit_size_scale_min: 0.5
+      unit_size_scale_max: 1.0
+      panel_padding_px: 28
+      panel_corner_radius_px: 18
+      grid_line_width_px: 2
+      heavy_line_width_px: 4
+      clue_size_px: 54
+      candidate_font_size_px: 28
+      clue_font_size_px: 24
+      text_color_rgb: [28, 32, 38]
+      text_stroke_rgb: [255, 255, 255]
+    task_puzzles__star_battle__remaining_valid_cell_count: *star_battle_rendering
+prompt:
+  shared:
+    bundle_id: puzzles_star_battle_v1
+    scene_key: star_battle
+  task_overrides:
+    task_puzzles__star_battle__valid_cell_anywhere_label:
+      task_key: star_battle_valid_cell_query
+    task_puzzles__star_battle__remaining_valid_cell_count:
+      task_key: star_battle_remaining_count_query

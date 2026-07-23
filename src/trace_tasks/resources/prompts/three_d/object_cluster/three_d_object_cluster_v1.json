@@ -1,0 +1,186 @@
+{
+  "bundle_id": "three_d_object_cluster_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "object_cluster": [
+        "The image shows {object_description}.",
+        "The picture shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The image contains {object_description}.",
+        "The visible scene contains {object_description}."
+      ]
+    },
+    "task": {
+      "object_cluster_total_count_query": ["", "", "", "", ""],
+      "object_cluster_instance_count_query": ["", "", "", "", ""],
+      "object_cluster_multi_attribute_count_query": ["", "", "", "", ""],
+      "object_cluster_color_count_query": ["", "", "", "", ""],
+      "object_cluster_counterfactual_count_query": ["", "", "", "", ""],
+      "object_cluster_multi_attribute_or_count_query": ["", "", "", "", ""],
+      "object_cluster_multi_attribute_xor_count_query": ["", "", "", "", ""],
+      "object_cluster_multi_attribute_exclusion_count_query": ["", "", "", "", ""],
+      "object_cluster_count_arithmetic_query": ["", "", "", "", ""]
+    },
+    "query": {
+      "total_object_count": [
+        "How many objects are in the scene?",
+        "Count every object shown. How many are there?",
+        "What is the total number of visible objects?",
+        "How many objects are present?",
+        "How many small objects are visible?"
+      ],
+      "type_count": [
+        "How many {target_object_plural} are in the cluster?",
+        "Count the {target_object_plural} in the cluster. How many are there?",
+        "What is the total number of {target_object_plural} visible in the cluster?",
+        "How many {target_object_plural} are present in the cluster?",
+        "How many clustered objects are {target_object_plural}?"
+      ],
+      "type_and_color_count": [
+        "How many {target_property_phrase} are in the cluster?",
+        "Count the {target_property_phrase} in the cluster. How many are there?",
+        "What is the total number of visible {target_property_phrase} in the cluster?",
+        "How many {target_property_phrase} are present in the cluster?",
+        "How many visible objects are {target_property_phrase}?"
+      ],
+      "color_count": [
+        "How many {target_color_name} objects are in the cluster?",
+        "Count the {target_color_name} objects in the cluster. How many are there?",
+        "What is the total number of visible {target_color_name} objects in the cluster?",
+        "How many clustered objects are {target_color_name}?",
+        "How many small objects are {target_color_name}?"
+      ],
+      "attribute_count_after_edits": [
+        "Start with the objects shown. Apply these edits:\n{edit_steps_text}\nHow many {target_property_phrase} are there afterward?",
+        "Use the visible cluster as the starting set. Apply these edits:\n{edit_steps_text}\nWhat is the final count of {target_property_phrase}?",
+        "Begin with the objects in the image. Apply these edits:\n{edit_steps_text}\nAfter the edits, how many {target_property_phrase} are there?",
+        "Apply these edits to the visible cluster:\n{edit_steps_text}\nHow many {target_property_phrase} are there afterward?",
+        "From the starting cluster, apply these edits:\n{edit_steps_text}\nWhat is the count of {target_property_phrase} after the edits?"
+      ],
+      "type_or_color_count": [
+        "How many objects are {target_object_plural} or {target_color_name} objects? Count each object once.",
+        "Count every clustered object that is a {target_object_name} or is {target_color_name}. How many are there?",
+        "What is the number of objects matching either condition: {target_object_plural} or {target_color_name} objects?",
+        "How many objects are {target_object_plural} or {target_color_name} objects? Count overlaps once.",
+        "How many clustered objects satisfy at least one condition: it is a {target_object_name}, or it is {target_color_name}?"
+      ],
+      "type_xor_color_count": [
+        "How many objects are exactly one of these: {target_object_plural} or {target_color_name} objects?",
+        "Count every clustered object that is a {target_object_name} or is {target_color_name}, but not both. How many are there?",
+        "What is the number of objects matching exactly one condition: {target_object_plural} or {target_color_name} objects?",
+        "How many objects are {target_object_plural} or {target_color_name} objects, excluding objects that are both?",
+        "How many clustered objects satisfy exactly one condition: it is a {target_object_name}, or it is {target_color_name}?"
+      ],
+      "type_and_not_color_count": [
+        "How many {target_object_plural} in the cluster are not {target_color_name}?",
+        "Count the clustered {target_object_plural} that are any color except {target_color_name}. How many are there?",
+        "What is the number of visible {target_object_plural} in the cluster that are not {target_color_name}?",
+        "How many {target_object_plural} are not {target_color_name}?",
+        "How many clustered objects are {target_object_plural} and not {target_color_name}?"
+      ],
+      "color_and_not_type_count": [
+        "How many {target_color_name} objects in the cluster are not {target_object_plural}?",
+        "Count the {target_color_name} clustered objects that are not {target_object_plural}. How many are there?",
+        "What is the number of visible {target_color_name} objects whose type is not {target_object_name}?",
+        "How many {target_color_name} objects are not {target_object_plural}?",
+        "How many clustered objects are {target_color_name} and not {target_object_plural}?"
+      ],
+      "two_type_total_count": [
+        "How many {left_operand_phrase} and {right_operand_phrase} are there in total?",
+        "What is the total count of {left_operand_phrase} and {right_operand_phrase}?",
+        "Count the {left_operand_phrase} and {right_operand_phrase}. What is the total?",
+        "Add the number of {left_operand_phrase} and {right_operand_phrase}. What is the total?",
+        "How many objects are in these two groups: {left_operand_phrase} and {right_operand_phrase}?"
+      ],
+      "two_type_difference_count": [
+        "What is the absolute difference between the number of {left_operand_phrase} and {right_operand_phrase}?",
+        "What is the difference between the counts of {left_operand_phrase} and {right_operand_phrase}?",
+        "Count the {left_operand_phrase} and {right_operand_phrase}. What is the count difference?",
+        "After subtracting the smaller count from the larger count for {left_operand_phrase} and {right_operand_phrase}, what is the difference?",
+        "What is the absolute count difference for {left_operand_phrase} and {right_operand_phrase}?"
+      ],
+      "two_color_total_count": [
+        "How many {left_operand_phrase} and {right_operand_phrase} are there in total?",
+        "What is the total count of {left_operand_phrase} and {right_operand_phrase}?",
+        "Count the {left_operand_phrase} and {right_operand_phrase}. What is the total?",
+        "Add the number of {left_operand_phrase} and {right_operand_phrase}. What is the total?",
+        "How many objects are in these two groups: {left_operand_phrase} and {right_operand_phrase}?"
+      ],
+            "two_color_difference_count": [
+                "What is the absolute difference between the number of {left_operand_phrase} and {right_operand_phrase}?",
+                "What is the difference between the counts of {left_operand_phrase} and {right_operand_phrase}?",
+                "Count the {left_operand_phrase} and {right_operand_phrase}. What is the count difference?",
+                "After subtracting the smaller count from the larger count for {left_operand_phrase} and {right_operand_phrase}, what is the difference?",
+                "What is the absolute count difference for {left_operand_phrase} and {right_operand_phrase}?"
+            ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "object_description": "many small 3D objects arranged on a plain surface",
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted object",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370],[704,520,756,580]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "task:object_cluster_count_arithmetic_query": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"left_operand\" and \"right_operand\"; each value is an array of [x0, y0, x1, y1] pixel boxes around the objects in that operand group",
+      "json_example": "{\"annotation\":{\"left_operand\":[[120,450,174,494],[390,320,450,370]],\"right_operand\":[[704,520,756,580]]},\"answer\":1}"
+    },
+    "task:object_cluster_counterfactual_count_query": {
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each starting visible object matching the queried property before the edits",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370],[704,520,756,580]],\"answer\":5}"
+    }
+  },
+  "dynamic_slots": {
+    "target_shape_type": {"type": "string"},
+    "target_object_name": {"type": "string"},
+    "target_object_plural": {"type": "string"},
+    "target_object_union_phrase": {"type": "string"},
+    "target_color_name": {"type": "string"},
+    "target_color_names": {"type": "string"},
+    "target_property_phrase": {"type": "string"},
+    "target_property_singular": {"type": "string"},
+    "edit_steps_text": {"type": "string"},
+    "edit_step_count": {"type": "string"},
+    "initial_target_count": {"type": "string"},
+    "final_target_count": {"type": "string"},
+    "left_operand_phrase": {"type": "string"},
+    "right_operand_phrase": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:object_cluster": ["object_description"],
+    "output:answer_only": ["answer_hint", "json_example_answer_only"],
+    "output:answer_and_annotation": ["annotation_hint", "answer_hint", "json_example"],
+    "query:type_count": ["target_object_plural"],
+    "query:type_and_color_count": ["target_property_phrase"],
+    "query:color_count": ["target_color_name"],
+    "query:attribute_count_after_edits": ["edit_steps_text", "target_property_phrase"],
+    "query:type_or_color_count": ["target_object_plural", "target_object_name", "target_color_name"],
+    "query:type_xor_color_count": ["target_object_plural", "target_object_name", "target_color_name"],
+    "query:type_and_not_color_count": ["target_object_plural", "target_color_name"],
+    "query:color_and_not_type_count": ["target_color_name", "target_object_plural", "target_object_name"],
+    "query:two_type_total_count": ["left_operand_phrase", "right_operand_phrase"],
+    "query:two_type_difference_count": ["left_operand_phrase", "right_operand_phrase"],
+    "query:two_color_total_count": ["left_operand_phrase", "right_operand_phrase"],
+    "query:two_color_difference_count": ["left_operand_phrase", "right_operand_phrase"]
+  }
+}

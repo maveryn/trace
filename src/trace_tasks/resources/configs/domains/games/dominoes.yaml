@@ -1,0 +1,72 @@
+generation:
+  shared:
+    scene_variant_weights:
+      single_row: 1.0
+      two_row: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      ivory: 1.0
+      charcoal_tile: 1.0
+      wood_tile: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+  task_overrides:
+    task_games__dominoes__double_count:
+      balanced_target_answer_sampling: true
+      balanced_candidate_count_sampling: true
+      double_target_answer_support: [0, 1, 2, 3, 4, 5]
+      single_row_candidate_count_support: [7, 8, 9]
+      two_row_candidate_count_support: [10, 11, 12]
+    task_games__dominoes__higher_sum_than_reference_count:
+      balanced_target_answer_sampling: true
+      balanced_candidate_count_sampling: true
+      higher_sum_target_answer_support: [0, 1, 2, 3, 4, 5]
+      single_row_candidate_count_support: [7, 8, 9]
+      two_row_candidate_count_support: [10, 11, 12]
+    task_games__dominoes__matching_end_count:
+      balanced_target_answer_sampling: true
+      balanced_candidate_count_sampling: true
+      matching_end_target_answer_support: [0, 1, 2, 3, 4, 5]
+      single_row_candidate_count_support: [7, 8, 9]
+      two_row_candidate_count_support: [10, 11, 12]
+    task_games__dominoes__longest_chain_length_value:
+      balanced_target_answer_sampling: true
+      balanced_candidate_count_sampling: true
+      longest_chain_length_answer_support: [1, 2, 3, 4, 5]
+      single_row_candidate_count_support: [7]
+      two_row_candidate_count_support: [7]
+    task_games__dominoes__invalid_join_label:
+      balanced_target_answer_sampling: true
+      invalid_join_label_support: [A, B, C, D, E, F]
+    task_games__dominoes__sum_to_target_count:
+      balanced_target_answer_sampling: true
+      balanced_candidate_count_sampling: true
+      sum_to_target_answer_support: [0, 1, 2, 3, 4]
+      single_row_candidate_count_support: [7, 8, 9]
+      two_row_candidate_count_support: [10, 11, 12]
+      sum_target_total_support: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    panel_margin_px: 56
+    chain_top_px: 104
+    tile_width_px: 138
+    tile_height_px: 76
+    chain_gap_px: 6
+    candidate_gap_px: 18
+    row_gap_px: 34
+    tile_corner_radius_px: 12
+    pip_radius_px: 5
+    divider_width_px: 4
+    reference_tag_font_size_px: 16
+    reference_tag_gap_px: 14
+    section_label_font_size_px: 18
+    section_separator_width_px: 2
+prompt:
+  shared:
+    bundle_id: games_dominoes_v1
+    scene_key: visible_domino_chain
+    task_key: domino_chain_query

@@ -1,0 +1,15 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 580
+    line_width: 3
+    label_font_size: 22
+    small_label_font_size: 18
+    tiny_label_font_size: 15
+    readout_font_family: roboto
+prompt:
+  shared:
+    bundle_id: geometry_survey_traverse_v1
+    scene_key: survey_traverse_scene

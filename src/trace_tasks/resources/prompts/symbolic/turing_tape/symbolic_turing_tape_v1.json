@@ -1,0 +1,130 @@
+{
+  "bundle_id": "symbolic_turing_tape_v1",
+  "schema_version": "v1",
+  "required_slots_by_key": {
+    "scene:turing_tape": [
+      "object_description"
+    ],
+    "task:turing_written_symbol_count_query": [],
+    "task:turing_final_head_position_value_query": [],
+    "query:written_symbol_count": [
+      "query_instruction",
+      "query_symbol",
+      "steps"
+    ],
+    "query:final_head_position_value": [
+      "query_instruction",
+      "steps"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "templates": {
+    "scene": {
+      "turing_tape": [
+        "The tape-machine diagram shows {object_description}.",
+        "The automaton panel shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The symbolic machine panel shows {object_description}."
+      ]
+    },
+    "task": {
+      "turing_written_symbol_count_query": [
+        "Use the visible starting tape, head marker, state label, and transition table.",
+        "Follow the displayed machine rules exactly.",
+        "Treat the transition table as the complete rule set for the shown tape machine.",
+        "Simulate the shown tape machine using the visible starting configuration.",
+        "Use the diagrammed tape machine and transition table to answer."
+      ],
+      "turing_final_head_position_value_query": [
+        "Use the visible starting tape, head marker, state label, and transition table.",
+        "Follow the displayed machine rules exactly.",
+        "Treat the transition table as the complete rule set for the shown tape machine.",
+        "Simulate the shown tape machine using the visible starting configuration.",
+        "Use the diagrammed tape machine and transition table to answer."
+      ]
+    },
+    "query": {
+      "written_symbol_count": [
+        "{query_instruction} After exactly {steps} steps, how many tape cells contain symbol {query_symbol}?",
+        "{query_instruction} Simulate exactly {steps} steps. What is the count of tape cells showing {query_symbol} afterward?",
+        "{query_instruction} Follow the tape machine for {steps} steps and count cells containing symbol {query_symbol}.",
+        "{query_instruction} After running {steps} transitions, how many cells on the tape show symbol {query_symbol}?",
+        "{query_instruction} Use the table for {steps} steps. Report the number of tape cells with symbol {query_symbol}."
+      ],
+      "final_head_position_value": [
+        "{query_instruction} After exactly {steps} steps, what is the tape cell number under the head?",
+        "{query_instruction} Simulate exactly {steps} steps. Which numbered tape cell is the head over afterward?",
+        "{query_instruction} Follow the tape machine for {steps} steps and report the final head cell number.",
+        "{query_instruction} After running {steps} transitions, what numbered tape cell does the head point to?",
+        "{query_instruction} Use the table for {steps} steps. Report the 1-based cell number under the final head position."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "query_instruction": {
+      "type": "string"
+    },
+    "query_symbol": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "integer"
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+      "answer_hint": "set \"answer\" to the integer count"
+    },
+    "query:written_symbol_count": {
+      "answer_hint": "set \"answer\" to the integer count",
+      "annotation_hint": "set \"annotation\" to an object with keys \"machine_panel\" and \"transition_table\", each mapped to a bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"machine_panel\":[248,96,792,238],\"transition_table\":[316,282,724,536]},\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:final_head_position_value": {
+      "answer_hint": "set \"answer\" to the 1-based integer tape cell number",
+      "annotation_hint": "set \"annotation\" to an object with keys \"machine_panel\" and \"transition_table\", each mapped to a bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"machine_panel\":[248,96,792,238],\"transition_table\":[316,282,724,536]},\"answer\":5}",
+      "json_example_answer_only": "{\"answer\":5}"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_clean_grid": "a tape-machine automaton with a starting tape, head marker, state label, step count, symbol alphabet, and transition table",
+    "object_description_lab_panel": "a lab-style tape-machine automaton with a starting tape, head marker, state label, step count, symbol alphabet, and transition table",
+    "object_description_notebook_grid": "a notebook-style tape-machine automaton with a starting tape, head marker, state label, step count, symbol alphabet, and transition table",
+    "query_instruction_written_symbol_count": "At each step, find the row with the current state and the symbol under the head, write the new symbol, move the head L or R, and switch to the next state.",
+    "query_instruction_final_head_position_value": "At each step, find the row with the current state and the symbol under the head, write the new symbol, move the head L or R, and switch to the next state."
+  }
+}

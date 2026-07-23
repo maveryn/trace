@@ -1,0 +1,103 @@
+{
+  "bundle_id": "charts_sankey_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "sankey": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "sankey_path_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "source_to_target_total_flow": [
+        "For every two-step route from \"{source_label}\" to \"{target_label}\", take the smaller value on that route's two bands. What is the sum of those route values?",
+        "Across all routes from \"{source_label}\" through a middle node to \"{target_label}\", sum the smaller band value from each route.",
+        "Find each directed route from \"{source_label}\" to \"{target_label}\". For each route, use the lower of its two band values, then add them.",
+        "What is the total usable flow from \"{source_label}\" to \"{target_label}\" if each two-band route contributes its smaller printed value?",
+        "Using all paths from \"{source_label}\" to \"{target_label}\", add the bottleneck value of each path."
+      ],
+      "path_bottleneck_value": [
+        "Along the route \"{source_label}\" -> \"{middle_label}\" -> \"{target_label}\", what is the bottleneck flow, meaning the smaller of the two band values?",
+        "For the path \"{source_label}\" -> \"{middle_label}\" -> \"{target_label}\", what is the lower printed value on its two bands?",
+        "What is the smaller band value on the route \"{source_label}\" -> \"{middle_label}\" -> \"{target_label}\"?",
+        "Follow \"{source_label}\" through \"{middle_label}\" to \"{target_label}\". What is the minimum of the two shown flow values?",
+        "On the two-band path \"{source_label}\" -> \"{middle_label}\" -> \"{target_label}\", what is the bottleneck integer?"
+      ],
+      "source_outgoing_total_flow": [
+        "What is the total flow leaving source node \"{source_label}\"?",
+        "Add the values on all bands that start at source node \"{source_label}\". What is the total?",
+        "For source node \"{source_label}\", sum every outgoing band value.",
+        "Using the bands from \"{source_label}\" to the middle column, what total flow leaves that source?",
+        "What is the sum of all printed values on bands leaving \"{source_label}\"?"
+      ],
+      "target_incoming_total_flow": [
+        "What is the total flow entering target node \"{target_label}\"?",
+        "Add the values on all bands that end at target node \"{target_label}\". What is the total?",
+        "For target node \"{target_label}\", sum every incoming band value.",
+        "Using the bands from the middle column into \"{target_label}\", what total flow enters that target?",
+        "What is the sum of all printed values on bands entering \"{target_label}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:source_to_target_total_flow": {
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at all selected route bottleneck value labels used in the sum",
+      "json_example": "{\"annotation\":[[390,197],[800,299]],\"answer\":27}",
+      "json_example_answer_only": "{\"answer\":27}"
+    },
+    "query:path_bottleneck_value": {
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the printed value label for the bottleneck band",
+      "json_example": "{\"annotation\":[390,235],\"answer\":12}",
+      "json_example_answer_only": "{\"answer\":12}"
+    },
+    "query:source_outgoing_total_flow": {
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at every printed outgoing flow-value label used in the sum",
+      "json_example": "{\"annotation\":[[390,197],[384,309]],\"answer\":31}",
+      "json_example_answer_only": "{\"answer\":31}"
+    },
+    "query:target_incoming_total_flow": {
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at every printed incoming flow-value label used in the sum",
+      "json_example": "{\"annotation\":[[800,203],[800,299]],\"answer\":34}",
+      "json_example_answer_only": "{\"answer\":34}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "source_label": {"type": "string"},
+    "middle_label": {"type": "string"},
+    "target_label": {"type": "string"}
+  }
+}

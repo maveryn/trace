@@ -1,0 +1,67 @@
+{
+  "bundle_id": "physics_lens_optics_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "lens_optics_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "lens_image_property_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "Which option describes the image formed by the converging lens?",
+        "Use the object's position relative to F and 2F. Which option gives the image property?",
+        "For this converging lens, which option matches the image produced by the object arrow?",
+        "Choose the option that describes whether the image is real or virtual, upright or inverted, and larger, smaller, or the same size.",
+        "From the lens diagram, select the option with the correct image property."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:lens_optics_diagram": {
+      "object_description": "a converging thin-lens diagram with a principal axis, F and 2F focal marks, one object arrow, and visible image-property option cards"
+    },
+    "query:single": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"lens\", \"object_arrow\", and \"focal_marks\"; each value is a pixel bounding box [x0,y0,x1,y1] around that visible diagram element",
+      "answer_hint": "set \"answer\" to the selected option letter as a string",
+      "json_example": "{\"annotation\":{\"lens\":[392,210,468,530],\"object_arrow\":[120,230,190,380],\"focal_marks\":[180,395,680,430]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:lens_optics_diagram": [
+      "object_description"
+    ]
+  }
+}

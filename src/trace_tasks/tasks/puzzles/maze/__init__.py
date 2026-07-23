@@ -1,0 +1,1 @@
+"""Maze puzzle scene package."""

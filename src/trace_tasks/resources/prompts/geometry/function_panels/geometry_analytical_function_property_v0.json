@@ -1,0 +1,162 @@
+{
+  "bundle_id": "geometry_analytical_function_property_v0",
+  "schema_version": "v0",
+  "allow_empty_task_templates": true,
+  "task_templates": {
+    "analytical_function_property_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:analytical_function_property_grid": [
+      "object_description"
+    ],
+    "query:domain_match_label": [
+      "target_domain"
+    ],
+    "query:range_match_label": [
+      "target_range"
+    ],
+    "query:y_axis_symmetry_label": [],
+    "query:x_axis_symmetry_label": [],
+    "query:origin_symmetry_label": [],
+    "query:monotonic_interval_increasing_label": [
+      "target_interval"
+    ],
+    "query:monotonic_interval_decreasing_label": [
+      "target_interval"
+    ],
+    "query:sign_interval_positive_label": [
+      "target_interval"
+    ],
+    "query:sign_interval_negative_label": [
+      "target_interval"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "analytical_function_property_grid": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "function_status_label": [
+      "Which labeled relation is a function?",
+      "Which panel shows exactly one y-value for every x-value in its domain?",
+      "Which labeled graph represents y as a function of x?",
+      "Which labeled relation assigns a single output y to each input x?",
+      "Which relation never pairs the same x-value with two different y-values?"
+    ],
+    "one_to_one_status_label": [
+      "Which labeled relation represents a one-to-one function?",
+      "Which panel shows a function with no repeated y-values?",
+      "Which labeled graph is one-to-one?",
+      "Which panel shows a function where each y-value occurs at most once?",
+      "Which labeled relation maps different x-values to different y-values?"
+    ],
+    "domain_match_label": [
+      "Which labeled relation has domain {target_domain}?",
+      "Which panel shows a relation whose domain is {target_domain}?",
+      "Find the labeled graph with x-values spanning {target_domain}.",
+      "Which relation uses exactly the domain {target_domain}?",
+      "Which panel has domain {target_domain}?"
+    ],
+    "range_match_label": [
+      "Which labeled relation has range {target_range}?",
+      "Which panel shows a relation whose range is {target_range}?",
+      "Find the labeled graph with y-values spanning {target_range}.",
+      "Which relation uses exactly the range {target_range}?",
+      "Which panel has range {target_range}?"
+    ],
+    "y_axis_symmetry_label": [
+      "Which labeled graph is symmetric about the y-axis?",
+      "Which panel shows a relation with mirror symmetry across the y-axis?",
+      "Find the relation that stays unchanged when reflected across the y-axis.",
+      "Which labeled relation has y-axis symmetry?",
+      "Which panel contains a graph symmetric across the vertical axis?"
+    ],
+    "x_axis_symmetry_label": [
+      "Which labeled graph is symmetric about the x-axis?",
+      "Which panel shows a relation with mirror symmetry across the x-axis?",
+      "Find the relation that stays unchanged when reflected across the x-axis.",
+      "Which labeled relation has x-axis symmetry?",
+      "Which panel contains a graph symmetric across the horizontal axis?"
+    ],
+    "origin_symmetry_label": [
+      "Which labeled graph is symmetric about the origin?",
+      "Which panel shows a relation unchanged by a 180-degree rotation about the origin?",
+      "Find the relation with origin symmetry.",
+      "Which labeled relation has rotational symmetry about the origin?",
+      "Which panel contains a graph symmetric through the origin?"
+    ],
+    "monotonic_interval_increasing_label": [
+      "Which labeled graph is increasing on {target_interval}?",
+      "Which panel shows a graph that increases across {target_interval}?",
+      "Find the labeled graph that rises from left to right on {target_interval}.",
+      "Which relation is increasing throughout the interval {target_interval}?",
+      "Which panel contains a graph with y-values increasing as x moves through {target_interval}?"
+    ],
+    "monotonic_interval_decreasing_label": [
+      "Which labeled graph is decreasing on {target_interval}?",
+      "Which panel shows a graph that decreases across {target_interval}?",
+      "Find the labeled graph that falls from left to right on {target_interval}.",
+      "Which relation is decreasing throughout the interval {target_interval}?",
+      "Which panel contains a graph with y-values decreasing as x moves through {target_interval}?"
+    ],
+    "sign_interval_positive_label": [
+      "Which labeled graph stays above the x-axis on {target_interval}?",
+      "Which panel shows a graph with positive y-values throughout {target_interval}?",
+      "Find the graph that is positive on the interval {target_interval}.",
+      "Which relation remains above y = 0 for all x in {target_interval}?",
+      "Which panel contains a graph whose y-values are positive across {target_interval}?"
+    ],
+    "sign_interval_negative_label": [
+      "Which labeled graph stays below the x-axis on {target_interval}?",
+      "Which panel shows a graph with negative y-values throughout {target_interval}?",
+      "Find the graph that is negative on the interval {target_interval}.",
+      "Which relation remains below y = 0 for all x in {target_interval}?",
+      "Which panel contains a graph whose y-values are negative across {target_interval}?"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description": "labeled coordinate-plane panels, each showing one relation",
+    "annotation_hint_selected_panel_bbox": "set \"annotation\" to a JSON array containing the selected panel bounding box as [x0,y0,x1,y1] in pixels",
+    "answer_hint_option_letter": "set \"answer\" to the single selected panel label as a capital letter shown in the image",
+    "json_example": "{\"annotation\":[[40,40,310,320]],\"answer\":\"B\"}",
+    "json_example_answer_only": "{\"answer\":\"B\"}"
+  }
+}

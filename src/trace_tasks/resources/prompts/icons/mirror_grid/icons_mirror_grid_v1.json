@@ -1,0 +1,113 @@
+{
+  "bundle_id": "icons_mirror_grid_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "reference_mirror_grid": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ],
+      "missing_mirror_grid": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "mirror_symmetry_match_label": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ],
+      "missing_mirror_cell_label": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:reference_mirror_grid": [
+      "object_description"
+    ],
+    "scene:missing_mirror_grid": [
+      "object_description"
+    ],
+    "task:mirror_symmetry_match_label": [
+      "question_text"
+    ],
+    "task:missing_mirror_cell_label": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:reference_mirror_grid": {
+      "object_description": "a Reference cell beside labeled option cells containing icons"
+    },
+    "scene:missing_mirror_grid": {
+      "object_description": "a mirror-symmetry icon grid with one question-mark cell and labeled option icons"
+    },
+    "task:mirror_symmetry_match_label": {
+      "question_text": "Which labeled option cell has the same mirror symmetry as the Reference cell?",
+      "annotation_hint": "set \"annotation\" to a JSON object with keys \"reference_cell\" and \"matching_option_cell\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+      "answer_hint": "set \"answer\" to the matching option letter",
+      "json_example": "{\"annotation\":{\"reference_cell\":[44,190,268,414],\"matching_option_cell\":[590,120,790,320]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:missing_mirror_cell_label": {
+      "question_text": "Which labeled option should replace the question mark to complete the mirror symmetry?",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates for the correct option cell",
+      "answer_hint": "set \"answer\" to the correct option letter",
+      "json_example": "{\"annotation\":[600,120,760,280],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description": "a Reference cell beside labeled option cells containing icons",
+    "question_text": "Which labeled option cell has the same mirror symmetry as the Reference cell?",
+    "annotation_hint": "set \"annotation\" to a JSON object with keys \"reference_cell\" and \"matching_option_cell\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+    "answer_hint": "set \"answer\" to the matching option letter",
+    "json_example": "{\"annotation\":{\"reference_cell\":[44,190,268,414],\"matching_option_cell\":[590,120,790,320]},\"answer\":\"C\"}",
+    "json_example_answer_only": "{\"answer\":\"C\"}"
+  }
+}

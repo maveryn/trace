@@ -1,0 +1,59 @@
+generation:
+  shared:
+    sunburst_parent_count_min: 4
+    sunburst_parent_count_max: 4
+    sunburst_subgroup_count_min: 2
+    sunburst_subgroup_count_max: 3
+    sunburst_leaf_count_min: 2
+    sunburst_leaf_count_max: 2
+    sunburst_leaf_value_min: 5
+    sunburst_leaf_value_max: 45
+    sunburst_leaf_value_step: 5
+    sunburst_leaf_label_max_chars: 7
+    sunburst_subgroup_label_max_chars: 8
+    sunburst_parent_label_max_chars: 10
+    sunburst_condition_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+rendering:
+  shared:
+    canvas_width: 1224
+    canvas_height: 1032
+    center_y_px: 536
+    center_x_jitter_px_min: -18
+    center_x_jitter_px_max: 18
+    center_y_jitter_px_min: -10
+    center_y_jitter_px_max: 10
+    inner_radius_px: 94
+    parent_outer_radius_px: 210
+    subgroup_outer_radius_px: 334
+    leaf_outer_radius_px: 456
+    parent_font_size_px: 18
+    subgroup_font_size_px: 16
+    leaf_font_size_px: 15
+    value_font_size_px: 17
+    label_stroke_width_px: 0
+    chart_context_profile: dense_clean_minimal
+    chart_font_family_weights:
+      roboto: 1.0
+      source_sans_3: 1.0
+      nunito_sans: 1.0
+      fira_sans: 1.0
+      barlow: 1.0
+      karla: 1.0
+      cabin: 1.0
+    panel_fill_rgb_options:
+    - - 252
+      - 253
+      - 250
+    - - 250
+      - 252
+      - 255
+    - - 255
+      - 252
+      - 248
+prompt:
+  shared:
+    bundle_id: charts_sunburst_v1

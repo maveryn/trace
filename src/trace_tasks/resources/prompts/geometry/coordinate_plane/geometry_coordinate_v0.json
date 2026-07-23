@@ -1,0 +1,105 @@
+{
+  "bundle_id": "geometry_coordinate_v0",
+  "schema_version": "v0",
+  "code_prompt_defaults": {
+    "object_description_segment_set": "reference segment AB and six other unlabeled segments",
+    "object_description_line_points": "labeled points A and B plus unlabeled dot points",
+    "object_description_quadrant_points": "one X-marked reference point and unlabeled dot points",
+    "object_description_polygon_lattice": "one polygon drawn on graph paper",
+    "annotation_hint_segment_endpoints": "set \"annotation\" to an array of segments, where each segment is [[x0,y0],[x1,y1]] for one non-AB segment satisfying the question",
+    "annotation_hint_collinear_pixel_point_set": "set \"annotation\" to an array of every pixel point [x,y] for the dot points that lie on the same line as A and B",
+    "annotation_hint_quadrant_pixel_point_set": "set \"annotation\" to an array of every pixel point [x,y] that lies in the same quadrant as the marked point",
+    "annotation_hint_pixel_point_set": "set \"annotation\" to an array containing every pixel point [x,y] for each integer lattice point that lies strictly inside the polygon",
+    "answer_hint_integer": "set \"answer\" to the integer count requested by the question",
+    "json_example_segment_count": "{\"annotation\":[[[120,120],[180,120]],[[240,180],[300,180]]],\"answer\":2}",
+    "json_example_segment_count_answer_only": "{\"answer\":2}"
+  },
+  "task_templates": {
+    "coordinate_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:coordinate_graph_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "coordinate_graph_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "parallel_count": [
+      "How many other segments are parallel to segment AB?",
+      "Count the other segments that are parallel to segment AB.",
+      "Use segment AB as the reference. How many other segments are parallel to it?",
+      "How many other segments have the same slope as segment AB?",
+      "Count the segments, excluding AB itself, that are parallel to segment AB."
+    ],
+    "perpendicular_count": [
+      "How many other segments are perpendicular to segment AB?",
+      "Count the other segments that are perpendicular to segment AB.",
+      "Use segment AB as the reference. How many other segments are perpendicular to it?",
+      "How many other segments form a right angle with segment AB?",
+      "Count the segments, excluding AB itself, that are perpendicular to segment AB."
+    ],
+    "collinear_count": [
+      "How many dot points lie on the same line as points A and B?",
+      "Count the dot points that are collinear with points A and B.",
+      "Using A and B as the reference line, how many dot points lie on that same line?",
+      "How many dot points lie on the line through A and B?",
+      "Count the dot points, excluding A and B themselves, that lie on the same line as A and B."
+    ],
+    "same_quadrant_count": [
+      "How many dot points lie in the same quadrant as the X-marked point?",
+      "Count the dot points that are in the same quadrant as the marked X point.",
+      "How many dot points lie in the same quadrant as the X-marked point?",
+      "Ignoring the marked X point itself, how many dot points lie in its quadrant?",
+      "Count the dot points that share a quadrant with the X-marked point."
+    ],
+    "point_in_shape_count": [
+      "How many integer lattice points lie strictly inside the shown polygon?",
+      "Count the integer graph-paper points that are strictly inside the polygon.",
+      "How many integer lattice points are strictly inside the polygon?",
+      "Count the integer lattice points that lie inside the polygon, not on its boundary.",
+      "How many integer graph-paper points lie in the interior of the polygon?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

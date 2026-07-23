@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use Trace, please cite the accompanying paper."
+title: "Trace: A Taxonomy-Guided Environment for Multidomain Visual Reasoning"
+type: software
+authors:
+  - given-names: Md Tanvirul
+    family-names: Alam
+preferred-citation:
+  type: article
+  title: "Trace: A Taxonomy-Guided Environment for Multidomain Visual Reasoning"
+  authors:
+    - given-names: Md Tanvirul
+      family-names: Alam
+  year: 2026
+  url: "https://arxiv.org/abs/2607.19790"
+repository-code: "https://github.com/maveryn/trace"
+url: "https://maveryn.github.io/trace/"
+license: Apache-2.0
+keywords:
+  - visual reasoning
+  - synthetic data
+  - reinforcement learning with verifiable rewards
+  - multimodal models

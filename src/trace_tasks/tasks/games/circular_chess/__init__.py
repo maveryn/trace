@@ -1,0 +1,1 @@
+"""Circular Chess games tasks."""

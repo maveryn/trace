@@ -1,0 +1,165 @@
+{
+  "bundle_id": "graph_metro_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "metro_route_map": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "metro_route_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "metro_transfer_station_count": [
+        "How many stations are served by two or more colored routes?",
+        "Count the transfer stations, where a transfer station belongs to at least two routes.",
+        "What is the number of stations shared by two or more colored routes?",
+        "How many labeled stations are transfer stations?",
+        "Count stations that appear on multiple colored routes."
+      ],
+      "metro_route_transfer_station_count": [
+        "On the {route_name} route, how many stations are served by two or more colored routes?",
+        "Count the transfer stations on the {route_name} route.",
+        "How many stations on the {route_name} route are shared with another colored route?",
+        "What is the number of {route_name} route stations that are transfer stations?",
+        "Following the {route_name} route, count stations where at least one other colored route also stops."
+      ],
+      "metro_route_single_route_station_count": [
+        "On the {route_name} route, how many stations are served only by that route?",
+        "Count the non-transfer stations on the {route_name} route.",
+        "How many stations on the {route_name} route do not belong to any other colored route?",
+        "What is the number of {route_name} route stations served by exactly one colored route?",
+        "Following the {route_name} route, count stations where no other colored route also stops."
+      ],
+      "metro_exact_distance_count": [
+        "How many stations have shortest metro-route distance exactly {query_distance} route segments from station {query_label}?",
+        "Count stations exactly {query_distance} route segments away from {query_label}.",
+        "What is the number of stations at route distance {query_distance} from {query_label}?",
+        "Following route segments, how many stations are exactly {query_distance} steps from {query_label}?",
+        "Count the stations whose shortest route from {query_label} uses exactly {query_distance} segments."
+      ],
+      "metro_shortest_path_length": [
+        "The metro map has a unique shortest station path from station {source_label} to station {goal_label}. How many route segments are in that path?",
+        "Following route segments, how many segments are in the unique shortest path from {source_label} to {goal_label}?",
+        "What is the shortest-path length in route segments from station {source_label} to station {goal_label}?",
+        "Find the unique shortest station path from {source_label} to {goal_label}. How many route segments does it contain?",
+        "How many route segments lie on the unique shortest metro path from station {source_label} to station {goal_label}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:metro_route_map": [
+      "object_description"
+    ],
+    "query:metro_exact_distance_count": [
+      "query_label",
+      "query_distance"
+    ],
+    "query:metro_shortest_path_length": [
+      "source_label",
+      "goal_label"
+    ],
+    "query:metro_route_transfer_station_count": [
+      "route_name"
+    ],
+    "query:metro_route_single_route_station_count": [
+      "route_name"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "goal_label": {
+      "type": "label"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "query_distance": {
+      "type": "integer"
+    },
+    "query_label": {
+      "type": "label"
+    },
+    "route_name": {
+      "type": "string"
+    },
+    "source_label": {
+      "type": "label"
+    },
+    "via_label": {
+      "type": "label"
+    }
+  },
+  "code_prompt_defaults": {
+    "scene_key": "metro_route_map",
+    "task_key": "metro_route_query",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+    "object_description": "a labeled metro route map with colored routes and stations",
+    "answer_hint": "set \"answer\" to the requested count or length as an integer",
+    "json_example": "{\"annotation\":[[180,220],[310,180]],\"answer\":2}",
+    "json_example_shortest_path_length": "{\"annotation\":[[180,220],[310,180]],\"answer\":2}",
+    "json_example_answer_only": "{\"answer\":2}",
+    "annotation_hint_transfer_station_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of all transfer stations",
+    "annotation_hint_route_transfer_station_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of all transfer stations on the {route_name} route; use an empty array when there are none",
+    "annotation_hint_route_single_route_station_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of all stations served only by the {route_name} route",
+    "annotation_hint_exact_distance_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of all stations whose shortest metro-route distance from {query_label} is exactly {query_distance} route segments",
+    "annotation_hint_shortest_path_length": "set \"annotation\" to an ordered array of [x,y] pixel points at station centers along the unique shortest path from {source_label} to {goal_label}, excluding {source_label} and including {goal_label}"
+  }
+}

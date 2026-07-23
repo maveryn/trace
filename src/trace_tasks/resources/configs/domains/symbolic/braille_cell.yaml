@@ -1,0 +1,54 @@
+generation:
+  shared:
+    scene_variant_weights:
+      clean_card: 1.0
+      notebook_card: 1.0
+      exam_scan: 1.0
+    balanced_scene_variant_sampling: true
+    option_count: 6
+    reference_raised_dot_count_min: 1
+    reference_raised_dot_count_max: 6
+    word_length_min: 3
+    word_length_max: 5
+    word_option_count: 4
+    word_option_shared_prefix_length_weights:
+      1: 1.0
+      2: 1.0
+      3: 0.5
+
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 680
+    cell_width_px: 132
+    cell_height_px: 184
+    dot_radius_px: 13
+    empty_dot_radius_px: 10
+    cell_corner_radius_px: 18
+    cell_border_width_px: 2
+    marked_border_width_px: 5
+    option_label_font_size_px: 28
+    title_font_size_px: 24
+    word_source_cell_width_px: 68
+    word_source_cell_height_px: 98
+    word_source_dot_radius_px: 7
+    word_source_empty_dot_radius_px: 5
+    word_option_cell_width_px: 34
+    word_option_cell_height_px: 52
+    word_option_dot_radius_px: 4
+    word_option_empty_dot_radius_px: 3
+    word_option_card_width_px: 280
+    word_option_card_height_px: 154
+    word_option_word_font_size_px: 30
+    word_source_word_font_size_px: 42
+
+prompt:
+  shared:
+    bundle_id: symbolic_braille_cell_v1
+    scene_key: braille_cell
+
+visual:
+  background:
+    enabled: true
+  noise:
+    apply_prob: 0.20

@@ -1,0 +1,125 @@
+generation:
+  shared:
+    grid_size_variant_weights:
+      5x5: 1.0
+      6x6: 1.0
+      7x7: 1.0
+    gap_size_variant_weights:
+      2x2: 1.0
+    scene_variant_weights:
+      water_pipe: 1.0
+      circuit_trace: 1.0
+      industrial_conduit: 1.0
+    path_length_min: 8
+    path_length_max: 16
+    candidate_count_min: 4
+    candidate_count_max: 4
+    branch_count_min: 0
+    branch_count_max: 0
+    branch_length_min: 0
+    branch_length_max: 0
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 720
+    scene_margin_px: 48
+    panel_padding_px: 18
+    panel_corner_radius_px: 22
+    panel_border_width_px: 3
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    cell_gap_px: 3
+    cell_size_min_px: 24
+    cell_size_max_px: 34
+    cell_border_width_px: 2
+    pipe_width_px: 10
+    source_dest_font_size_px: 15
+    tile_label_font_size_px: 16
+    panel_fill_rgb:
+    - 248
+    - 250
+    - 252
+    panel_fill_rgb_options:
+    - - 248
+      - 250
+      - 252
+    - - 244
+      - 250
+      - 248
+    - - 252
+      - 248
+      - 240
+    cell_fill_rgb:
+    - 255
+    - 255
+    - 255
+    grid_line_rgb:
+    - 196
+    - 203
+    - 215
+    pipe_rgb:
+    - 57
+    - 143
+    - 205
+    pipe_rgb_options:
+    - - 57
+      - 143
+      - 205
+    - - 71
+      - 165
+      - 181
+    - - 190
+      - 119
+      - 74
+    pipe_shadow_rgb:
+    - 224
+    - 232
+    - 242
+    source_fill_rgb:
+    - 203
+    - 238
+    - 224
+    source_outline_rgb:
+    - 41
+    - 120
+    - 83
+    dest_fill_rgb:
+    - 251
+    - 229
+    - 177
+    dest_outline_rgb:
+    - 164
+    - 107
+    - 28
+    label_fill_rgb:
+    - 35
+    - 42
+    - 54
+    label_text_rgb:
+    - 255
+    - 255
+    - 255
+    text_stroke_rgb:
+    - 255
+    - 255
+    - 255
+  task_overrides:
+    task_puzzles__pipe_flow__misrotated_tile_label:
+      unit_size_scale: 1.0
+      cell_gap_px: 5
+      cell_size_min_px: 60
+      cell_size_max_px: 68
+      pipe_width_px: 20
+      tile_label_font_size_px: 22
+prompt:
+  shared:
+    bundle_id: puzzles_pipe_flow_v1
+    scene_key: pipe_flow
+  task_overrides:
+    task_puzzles__pipe_flow__pipe_flow_repair_tile_label:
+      task_key: pipe_flow_repair_tile_label_query
+    task_puzzles__pipe_flow__misrotated_tile_label:
+      task_key: pipe_flow_misrotated_tile_label_query
+visual:
+  noise:
+    apply_prob: 0.15

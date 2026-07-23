@@ -1,0 +1,127 @@
+generation:
+  shared:
+    style_variant_weights:
+      classic_bright: 1.0
+      ivory_board: 1.0
+      slate_table: 1.0
+      soft_plastic: 1.0
+      arcade_gloss: 1.0
+    query_color_weights:
+      red: 1.0
+      green: 1.0
+      blue: 1.0
+      yellow: 1.0
+    target_color_weights:
+      red: 1.0
+      green: 1.0
+      blue: 1.0
+      yellow: 1.0
+    balanced_style_variant_sampling: true
+    balanced_query_color_sampling: true
+    balanced_target_color_sampling: true
+  task_overrides:
+    task_games__ludo_board__winning_roll_value:
+      winning_roll_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      balanced_winning_roll_sampling: true
+    task_games__ludo_board__capture_roll_option_label:
+      answer_option_label_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+      capture_distance_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      capture_option_count_support:
+      - 4
+      - 6
+      balanced_answer_option_label_sampling: true
+      balanced_capture_option_count_sampling: true
+      balanced_capture_distance_sampling: true
+    task_games__ludo_board__move_result_option_label:
+      answer_option_label_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+      move_roll_total_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      move_result_option_count_support:
+      - 4
+      - 5
+      - 6
+      balanced_answer_option_label_sampling: true
+      balanced_move_result_option_count_sampling: true
+      balanced_move_roll_total_sampling: true
+rendering:
+  shared:
+    canvas_width: 920
+    canvas_height: 980
+    canvas_side_padding_px: 180
+    canvas_vertical_padding_px: 210
+    board_padding_px: 24
+    cell_size_min_px: 36
+    cell_size_max_px: 48
+    grid_width_px: 2
+    token_radius_fraction: 0.36
+    flow_arrow_enabled: true
+    flow_arrow_width_px: 2
+    option_card_width_px: 112
+    option_card_height_px: 54
+    option_card_gap_px: 10
+prompt:
+  shared:
+    bundle_id: games_ludo_board_v1
+    scene_key: ludo_board
+    task_key: ludo_board_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

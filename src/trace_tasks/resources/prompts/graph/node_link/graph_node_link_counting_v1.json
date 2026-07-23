@@ -1,0 +1,292 @@
+{
+  "bundle_id": "graph_node_link_counting_v1",
+  "schema_version": "v0",
+  "task_templates": {
+    "degree_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "named_node_degree_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "node_color_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "edge_color_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "edge_text_label_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "cross_color_edge_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "isolated_node_count_after_node_removal_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "node_count_after_degree_filter_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "articulation_point_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "bridge_count_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:single_graph_counting": [
+      "object_description"
+    ],
+    "query:degree_count": [
+      "query_degree"
+    ],
+    "query:in_degree_count": [
+      "query_degree"
+    ],
+    "query:out_degree_count": [
+      "query_degree"
+    ],
+    "query:named_node_degree_value": [
+      "query_label"
+    ],
+    "query:named_node_in_degree_value": [
+      "query_label"
+    ],
+    "query:named_node_out_degree_value": [
+      "query_label"
+    ],
+    "query:named_node_total_degree_value": [
+      "query_label"
+    ],
+    "query:node_color_count": [
+      "target_color_label"
+    ],
+    "query:edge_color_count": [
+      "target_color_label"
+    ],
+    "query:edge_text_label_count": [
+      "target_edge_label"
+    ],
+    "query:cross_color_edge_count": [
+      "source_color_label",
+      "target_color_label"
+    ],
+    "query:directed_cross_color_edge_count": [
+      "source_color_label",
+      "target_color_label"
+    ],
+    "query:isolated_node_count_after_node_removal": [
+      "query_label"
+    ],
+    "query:undirected_degree_one_filter_remaining_count": [],
+    "query:directed_in_degree_one_filter_remaining_count": [],
+    "query:directed_out_degree_one_filter_remaining_count": [],
+    "query:articulation_point_count": [],
+    "query:bridge_count": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "single_graph_counting": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "degree_count": [
+      "How many nodes have degree {query_degree}?",
+      "Count the nodes with degree {query_degree}.",
+      "What is the number of nodes whose degree is {query_degree}?",
+      "How many labeled nodes are connected to exactly {query_degree} other nodes?",
+      "Find all nodes with degree {query_degree}. How many are there?"
+    ],
+    "in_degree_count": [
+      "How many nodes have in-degree {query_degree}?",
+      "Count the nodes with exactly {query_degree} incoming arrows.",
+      "What is the number of nodes whose in-degree is {query_degree}?",
+      "How many labeled nodes receive {query_degree} directed edges?",
+      "Find all nodes with in-degree {query_degree}. How many are there?"
+    ],
+    "out_degree_count": [
+      "How many nodes have out-degree {query_degree}?",
+      "Count the nodes with exactly {query_degree} outgoing arrows.",
+      "What is the number of nodes whose out-degree is {query_degree}?",
+      "How many labeled nodes send out {query_degree} directed edges?",
+      "Find all nodes with out-degree {query_degree}. How many are there?"
+    ],
+    "named_node_degree_value": [
+      "What is the degree of node {query_label}?",
+      "How many edges touch node {query_label}?",
+      "How many other nodes is node {query_label} connected to?",
+      "Count the edges incident to node {query_label}. What is its degree?",
+      "Find the degree of node {query_label}."
+    ],
+    "named_node_in_degree_value": [
+      "What is the in-degree of node {query_label}?",
+      "How many arrows point into node {query_label}?",
+      "Count the incoming directed edges for node {query_label}.",
+      "How many directed edges end at node {query_label}?",
+      "Find the in-degree of node {query_label}."
+    ],
+    "named_node_out_degree_value": [
+      "What is the out-degree of node {query_label}?",
+      "How many arrows leave node {query_label}?",
+      "Count the outgoing directed edges from node {query_label}.",
+      "How many directed edges start at node {query_label}?",
+      "Find the out-degree of node {query_label}."
+    ],
+    "named_node_total_degree_value": [
+      "What is the total degree of node {query_label}?",
+      "How many directed edges touch node {query_label}, counting both incoming and outgoing edges?",
+      "Count all arrows incident to node {query_label}. What is its total degree?",
+      "How many directed edges either enter or leave node {query_label}?",
+      "Find the total number of incoming plus outgoing edges for node {query_label}."
+    ],
+    "node_color_count": [
+      "How many nodes are colored {target_color_label}?",
+      "Count the nodes filled with {target_color_label}.",
+      "What is the number of labeled nodes whose node color is {target_color_label}?",
+      "Find every {target_color_label} node. How many are there?",
+      "How many node glyphs use the color {target_color_label}?"
+    ],
+    "edge_color_count": [
+      "How many edges are colored {target_color_label}?",
+      "Count the edges drawn in {target_color_label}.",
+      "What is the number of graph edges whose edge color is {target_color_label}?",
+      "Find every {target_color_label} edge. How many are there?",
+      "How many edge segments use the color {target_color_label}?"
+    ],
+    "edge_text_label_count": [
+      "How many visible edge labels read \"{target_edge_label}\"?",
+      "Count the edge-label boxes that show \"{target_edge_label}\".",
+      "What is the number of edge labels with text \"{target_edge_label}\"?",
+      "Find every edge label that reads \"{target_edge_label}\". How many are there?",
+      "How many edge text labels are exactly \"{target_edge_label}\"?"
+    ],
+    "cross_color_edge_count": [
+      "How many edges connect a {source_color_label} node to a {target_color_label} node?",
+      "Count the edges whose endpoint nodes are colored {source_color_label} and {target_color_label}.",
+      "What is the number of graph edges with one endpoint colored {source_color_label} and the other colored {target_color_label}?",
+      "Find every edge between a {source_color_label} node and a {target_color_label} node. How many are there?",
+      "How many edge segments join nodes colored {source_color_label} and {target_color_label}?"
+    ],
+    "directed_cross_color_edge_count": [
+      "How many arrows go from a {source_color_label} node to a {target_color_label} node?",
+      "Count the directed edges that start at a {source_color_label} node and end at a {target_color_label} node.",
+      "What is the number of arrows whose source node is {source_color_label} and whose target node is {target_color_label}?",
+      "Find every arrow from a {source_color_label} node to a {target_color_label} node. How many are there?",
+      "How many directed edge segments point from {source_color_label} nodes to {target_color_label} nodes?"
+    ],
+    "isolated_node_count_after_node_removal": [
+      "If node {query_label} were removed, how many remaining nodes would be isolated?",
+      "After removing node {query_label}, how many nodes would have no connections left?",
+      "Imagine deleting node {query_label} and every edge touching it. How many remaining nodes would be isolated?",
+      "Remove node {query_label} from the graph. How many remaining nodes would have zero incident edges?",
+      "If node {query_label} and all of its incident edges disappeared, how many other nodes would be isolated?"
+    ],
+    "undirected_degree_one_filter_remaining_count": [
+      "If every node with degree 1 were removed, how many nodes would remain?",
+      "Remove all nodes connected to exactly one other node. How many nodes are left?",
+      "After filtering out the degree-1 nodes, how many labeled nodes remain?",
+      "Exclude every node whose degree is 1. What is the number of remaining nodes?",
+      "How many nodes would stay in the graph after deleting all nodes with exactly one connection?"
+    ],
+    "directed_in_degree_one_filter_remaining_count": [
+      "If every node with in-degree 1 were removed, how many nodes would remain?",
+      "Remove all nodes with exactly one incoming arrow. How many nodes are left?",
+      "After filtering out the nodes whose in-degree is 1, how many labeled nodes remain?",
+      "Exclude every node that receives exactly one directed edge. What is the number of remaining nodes?",
+      "How many nodes would stay in the directed graph after deleting all nodes with exactly one incoming arrow?"
+    ],
+    "directed_out_degree_one_filter_remaining_count": [
+      "If every node with out-degree 1 were removed, how many nodes would remain?",
+      "Remove all nodes with exactly one outgoing arrow. How many nodes are left?",
+      "After filtering out the nodes whose out-degree is 1, how many labeled nodes remain?",
+      "Exclude every node that sends exactly one directed edge. What is the number of remaining nodes?",
+      "How many nodes would stay in the directed graph after deleting all nodes with exactly one outgoing arrow?"
+    ],
+    "articulation_point_count": [
+      "How many nodes are articulation points?",
+      "Count the articulation-point nodes.",
+      "How many nodes would disconnect part of the graph if removed?",
+      "What is the number of articulation points in the graph?",
+      "Find every articulation point. How many are there?"
+    ],
+    "bridge_count": [
+      "How many edges are bridges?",
+      "Count the bridge edges.",
+      "How many edges would disconnect part of the graph if removed?",
+      "What is the number of bridges in the graph?",
+      "Find every bridge edge. How many are there?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

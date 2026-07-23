@@ -1,0 +1,217 @@
+{
+  "bundle_id": "games_ultimate_tictactoe_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "ultimate_tictactoe_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This game board shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "ultimate_tictactoe_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "x_won_board_count": [
+        "{status_rule_text} How many small boards has X won?",
+        "{status_rule_text} Count the small boards won by X.",
+        "{status_rule_text} What is the number of small boards where X has a three-in-a-row?",
+        "{status_rule_text} Determine how many small boards are won by X.",
+        "{status_rule_text} How many small boards are won by X?"
+      ],
+      "o_won_board_count": [
+        "{status_rule_text} How many small boards has O won?",
+        "{status_rule_text} Count the small boards won by O.",
+        "{status_rule_text} What is the number of small boards where O has a three-in-a-row?",
+        "{status_rule_text} Determine how many small boards are won by O.",
+        "{status_rule_text} How many small boards are won by O?"
+      ],
+      "neither_won_board_count": [
+        "{status_rule_text} How many small boards has neither player won?",
+        "{status_rule_text} Count the small boards that neither X nor O has won.",
+        "{status_rule_text} What is the number of small boards with no winner?",
+        "{status_rule_text} Determine how many small boards are not won by either player.",
+        "{status_rule_text} How many small boards have no X or O win?"
+      ],
+      "drawn_board_count": [
+        "{status_rule_text} How many small boards are drawn?",
+        "{status_rule_text} Count the full small boards with no winner.",
+        "{status_rule_text} What is the number of drawn small boards?",
+        "{status_rule_text} Determine how many small boards are full and unwon.",
+        "{status_rule_text} How many small boards are full and unwon?"
+      ],
+      "x_winning_move_label": [
+        "{tactic_rule_text} Which labeled empty cell lets X win the highlighted small board?",
+        "{tactic_rule_text} Choose the option letter for X's winning move in the highlighted small board.",
+        "{tactic_rule_text} Which empty-cell label completes a three-in-a-row for X?",
+        "{tactic_rule_text} Which labeled cell should X play to win the highlighted small board?",
+        "{tactic_rule_text} Which option is the immediate winning move for X?"
+      ],
+      "o_winning_move_label": [
+        "{tactic_rule_text} Which labeled empty cell lets O win the highlighted small board?",
+        "{tactic_rule_text} Choose the option letter for O's winning move in the highlighted small board.",
+        "{tactic_rule_text} Which empty-cell label completes a three-in-a-row for O?",
+        "{tactic_rule_text} Which labeled cell should O play to win the highlighted small board?",
+        "{tactic_rule_text} Which option is the immediate winning move for O?"
+      ],
+      "x_blocking_move_label": [
+        "{tactic_rule_text} Which labeled empty cell should X play to block O's immediate win?",
+        "{tactic_rule_text} Choose the option letter where X blocks O's threat in the highlighted small board.",
+        "{tactic_rule_text} Which empty-cell label stops O from completing three in a row?",
+        "{tactic_rule_text} Which labeled cell should X play to block O?",
+        "{tactic_rule_text} Which option is X's immediate blocking move?"
+      ],
+      "o_blocking_move_label": [
+        "{tactic_rule_text} Which labeled empty cell should O play to block X's immediate win?",
+        "{tactic_rule_text} Choose the option letter where O blocks X's threat in the highlighted small board.",
+        "{tactic_rule_text} Which empty-cell label stops X from completing three in a row?",
+        "{tactic_rule_text} Which labeled cell should O play to block X?",
+        "{tactic_rule_text} Which option is O's immediate blocking move?"
+      ],
+      "x_immediate_win_board_count": [
+        "{macro_threat_rule_text} How many small boards let X win in one move?",
+        "{macro_threat_rule_text} Count the small boards where X has an immediate winning move.",
+        "{macro_threat_rule_text} What is the number of open small boards where X can complete three in a row?",
+        "{macro_threat_rule_text} Determine how many small boards have a one-move win for X.",
+        "{macro_threat_rule_text} How many open small boards contain an immediate X win?"
+      ],
+      "o_immediate_win_board_count": [
+        "{macro_threat_rule_text} How many small boards let O win in one move?",
+        "{macro_threat_rule_text} Count the small boards where O has an immediate winning move.",
+        "{macro_threat_rule_text} What is the number of open small boards where O can complete three in a row?",
+        "{macro_threat_rule_text} Determine how many small boards have a one-move win for O.",
+        "{macro_threat_rule_text} How many open small boards contain an immediate O win?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:ultimate_tictactoe_board": [
+      "object_description"
+    ],
+    "query:x_won_board_count": [
+      "status_rule_text"
+    ],
+    "query:o_won_board_count": [
+      "status_rule_text"
+    ],
+    "query:neither_won_board_count": [
+      "status_rule_text"
+    ],
+    "query:drawn_board_count": [
+      "status_rule_text"
+    ],
+    "query:x_winning_move_label": [
+      "tactic_rule_text"
+    ],
+    "query:o_winning_move_label": [
+      "tactic_rule_text"
+    ],
+    "query:x_blocking_move_label": [
+      "tactic_rule_text"
+    ],
+    "query:o_blocking_move_label": [
+      "tactic_rule_text"
+    ],
+    "query:x_immediate_win_board_count": [
+      "macro_threat_rule_text"
+    ],
+    "query:o_immediate_win_board_count": [
+      "macro_threat_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "macro_threat_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "status_rule_text": {
+      "type": "string"
+    },
+    "tactic_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_ultimate_tictactoe_board": "an Ultimate Tic-Tac-Toe board made of nine small Tic-Tac-Toe boards",
+    "ultimate_tictactoe_status_rule_text": "A small board is won by X or O when that player has three marks in a row inside that small board. A drawn small board is full and has no winner.",
+    "ultimate_tictactoe_tactic_rule_text": "Use only the highlighted small board. A winning move places the requested mark to make three in a row; a blocking move places a mark on the only cell that stops the opponent's immediate three-in-a-row threat.",
+    "ultimate_tictactoe_macro_threat_rule_text": "Count only open small boards where the requested player can win in one move. Already won or drawn small boards do not count.",
+    "annotation_hint_x_won_board_count": "set \"annotation\" to an array containing the [x0, y0, x1, y1] boxes of all small boards won by X",
+    "answer_hint_x_won_board_count": "set \"answer\" to the number of small boards won by X",
+    "annotation_hint_o_won_board_count": "set \"annotation\" to an array containing the [x0, y0, x1, y1] boxes of all small boards won by O",
+    "answer_hint_o_won_board_count": "set \"answer\" to the number of small boards won by O",
+    "annotation_hint_neither_won_board_count": "set \"annotation\" to an array containing the [x0, y0, x1, y1] boxes of all small boards that neither player has won",
+    "answer_hint_neither_won_board_count": "set \"answer\" to the number of small boards that neither player has won",
+    "annotation_hint_drawn_board_count": "set \"annotation\" to an array containing the [x0, y0, x1, y1] boxes of all drawn small boards",
+    "answer_hint_drawn_board_count": "set \"answer\" to the number of drawn small boards",
+        "annotation_hint_x_winning_move_label": "set \"annotation\" to the [x0, y0, x1, y1] box of the selected empty-cell option",
+    "answer_hint_x_winning_move_label": "set \"answer\" to only the selected option letter",
+        "annotation_hint_o_winning_move_label": "set \"annotation\" to the [x0, y0, x1, y1] box of the selected empty-cell option",
+    "answer_hint_o_winning_move_label": "set \"answer\" to only the selected option letter",
+        "annotation_hint_x_blocking_move_label": "set \"annotation\" to the [x0, y0, x1, y1] box of the selected empty-cell option",
+    "answer_hint_x_blocking_move_label": "set \"answer\" to only the selected option letter",
+        "annotation_hint_o_blocking_move_label": "set \"annotation\" to the [x0, y0, x1, y1] box of the selected empty-cell option",
+    "answer_hint_o_blocking_move_label": "set \"answer\" to only the selected option letter",
+    "annotation_hint_x_immediate_win_board_count": "set \"annotation\" to an array containing the [x0, y0, x1, y1] boxes of every open small board where X can win in one move",
+    "answer_hint_x_immediate_win_board_count": "set \"answer\" to the number of open small boards where X can win in one move",
+    "annotation_hint_o_immediate_win_board_count": "set \"annotation\" to an array containing the [x0, y0, x1, y1] boxes of every open small board where O can win in one move",
+    "answer_hint_o_immediate_win_board_count": "set \"answer\" to the number of open small boards where O can win in one move"
+  }
+}

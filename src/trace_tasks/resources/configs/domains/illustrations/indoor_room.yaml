@@ -1,0 +1,349 @@
+generation:
+  shared:
+    balanced_sampling: true
+  task_overrides:
+    task_illustrations__indoor_room__surface_object_count:
+      object_count_min: 10
+      object_count_max: 16
+      target_count_min: 1
+      target_count_max: 5
+      surface_type_support:
+        - table
+        - shelf
+        - counter
+      indoor_object_type_support:
+        - apple
+        - backpack
+        - egg
+        - soccer_ball
+        - rugby_ball
+        - spoon
+        - plate
+        - book
+        - camera
+        - remote
+        - pencil
+        - ruler
+        - clock
+        - gift
+        - vase
+        - bowl
+        - candle
+        - lightbulb
+        - mug
+        - teapot
+        - bottle
+        - key
+        - scissors
+        - lamp
+        - potted_plant
+        - flower
+        - mushroom
+    task_illustrations__indoor_room__furniture_side_count:
+      object_count_min: 8
+      object_count_max: 14
+      target_count_min: 1
+      target_count_max: 6
+      furniture_type_support:
+        - table
+      relation_support:
+        - left
+        - right
+      indoor_object_type_support:
+        - apple
+        - backpack
+        - egg
+        - soccer_ball
+        - rugby_ball
+        - spoon
+        - plate
+        - book
+        - camera
+        - remote
+        - pencil
+        - ruler
+        - clock
+        - gift
+        - vase
+        - bowl
+        - candle
+        - lightbulb
+        - mug
+        - teapot
+        - bottle
+        - key
+        - scissors
+        - lamp
+        - potted_plant
+        - flower
+        - mushroom
+    task_illustrations__indoor_room__rotated_tile_label:
+      source_object_count_min: 12
+      source_object_count_max: 18
+      rotation_degrees_support:
+        - 90
+        - 270
+      min_tile_detail_score: 150
+      min_rotation_delta: 7
+      indoor_object_type_support:
+        - apple
+        - backpack
+        - egg
+        - soccer_ball
+        - rugby_ball
+        - spoon
+        - plate
+        - book
+        - camera
+        - remote
+        - pencil
+        - ruler
+        - clock
+        - gift
+        - vase
+        - bowl
+        - candle
+        - lightbulb
+        - mug
+        - teapot
+        - bottle
+        - key
+        - scissors
+        - lamp
+        - potted_plant
+        - flower
+        - mushroom
+    task_illustrations__indoor_room__missing_patch_label:
+      source_object_count_min: 12
+      source_object_count_max: 18
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 34
+      indoor_object_type_support:
+        - apple
+        - backpack
+        - egg
+        - soccer_ball
+        - rugby_ball
+        - spoon
+        - plate
+        - book
+        - camera
+        - remote
+        - pencil
+        - ruler
+        - clock
+        - gift
+        - vase
+        - bowl
+        - candle
+        - lightbulb
+        - mug
+        - teapot
+        - bottle
+        - key
+        - scissors
+        - lamp
+        - potted_plant
+        - flower
+        - mushroom
+    task_illustrations__indoor_room__swapped_tile_pair_label:
+      source_object_count_min: 12
+      source_object_count_max: 18
+      min_tile_detail_score: 130
+      min_pair_difference: 7
+      indoor_object_type_support:
+        - apple
+        - backpack
+        - egg
+        - soccer_ball
+        - rugby_ball
+        - spoon
+        - plate
+        - book
+        - camera
+        - remote
+        - pencil
+        - ruler
+        - clock
+        - gift
+        - vase
+        - bowl
+        - candle
+        - lightbulb
+        - mug
+        - teapot
+        - bottle
+        - key
+        - scissors
+        - lamp
+        - potted_plant
+        - flower
+        - mushroom
+
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 840
+    outer_margin_px: 42
+    object_size_min_px: 74
+    object_size_max_px: 128
+    object_min_gap_px: 8
+    max_overlap_fraction: 0.02
+    placement_max_attempts: 180
+    render_scale: 2
+    indoor_canvas_width: 1280
+    indoor_canvas_height: 840
+    indoor_object_size_min_px: 52
+    indoor_object_size_max_px: 86
+    indoor_render_scale: 2
+    style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+    art_style_support:
+      - flat_vector
+      - outlined_cartoon
+      - paper_cutout
+      - soft_shadow
+      - watercolor_wash
+    art_style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+      watercolor_wash: 1.0
+    background_weights:
+      studio: 1.0
+      meadow: 1.0
+      sky_ground: 1.0
+      tabletop: 1.0
+      paper: 1.0
+      shelf: 1.0
+  task_overrides:
+    task_illustrations__indoor_room__surface_object_count:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__indoor_room__furniture_side_count:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__indoor_room__rotated_tile_label:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__indoor_room__missing_patch_label:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__indoor_room__swapped_tile_pair_label:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+
+prompt:
+  task_overrides:
+    task_illustrations__indoor_room__surface_object_count:
+      bundle_id: illustrations_indoor_room_v0
+      scene_key: indoor_room_canvas
+      task_key: object_type_on_surface_count_task
+      answer_hint_object_type_on_surface: set "answer" to the count of {object_name} objects on the {surface_name} as an integer
+      annotation_hint_object_type_on_surface: set "annotation" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {object_name} object on the {surface_name}
+      json_example_object_type_on_surface: '{"annotation":[[462,347,522,407],[596,344,660,404]],"answer":2}'
+      json_example_answer_only_object_type_on_surface: '{"answer":2}'
+    task_illustrations__indoor_room__furniture_side_count:
+      bundle_id: illustrations_indoor_room_v0
+      scene_key: indoor_room_canvas
+      task_key: furniture_side_count_task
+      answer_hint_furniture_side: set "answer" to the count of {object_name} objects {relation_word} the {furniture_name} as an integer
+      annotation_hint_furniture_side: set "annotation" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {object_name} object {relation_word} the {furniture_name}
+      json_example_furniture_side: '{"annotation":[[147,461,207,521],[254,504,314,564],[331,431,391,491]],"answer":3}'
+      json_example_answer_only_furniture_side: '{"answer":3}'
+    task_illustrations__indoor_room__rotated_tile_label:
+      bundle_id: illustrations_indoor_room_v0
+      scene_key: indoor_room_canvas
+      task_key: rotated_tile_label_task
+      answer_hint_rotated_tile: set "answer" to the letter of the rotated tile
+      annotation_hint_rotated_tile: set "annotation" to one [x0, y0, x1,
+        y1] box around the rotated tile in image pixel coordinates
+      json_example_rotated_tile: '{"annotation":[350,42,670,362],"answer":"B"}'
+      json_example_answer_only_rotated_tile: '{"answer":"B"}'
+    task_illustrations__indoor_room__missing_patch_label:
+      bundle_id: illustrations_indoor_room_v0
+      scene_key: indoor_room_canvas
+      task_key: missing_patch_label_task
+      answer_hint_missing_patch: set "answer" to the selected option letter as a string
+      annotation_hint_missing_patch: set "annotation" to a JSON object with keys "missing_region" and "selected_option", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates
+      json_example_missing_patch: '{"annotation":{"missing_region":[214,128,374,252],"selected_option":[562,676,722,800]},"answer":"C"}'
+      json_example_answer_only_missing_patch: '{"answer":"C"}'
+    task_illustrations__indoor_room__swapped_tile_pair_label:
+      bundle_id: illustrations_indoor_room_v0
+      scene_key: indoor_room_canvas
+      task_key: swapped_tile_pair_label_task
+      answer_hint_swapped_tile_pair: set "answer" to the selected option letter
+      annotation_hint_swapped_tile_pair: set "annotation" to a JSON array containing two [x0, y0, x1, y1] boxes around the two swapped numbered cells
+      json_example_swapped_tile_pair: '{"annotation":[[0,0,400,266],[800,532,1200,798]],"answer":"C"}'
+      json_example_answer_only_swapped_tile_pair: '{"answer":"C"}'

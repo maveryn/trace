@@ -1,0 +1,188 @@
+generation:
+  shared:
+    option_label_support:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    option_count: 6
+  task_overrides:
+    task_symbolic__dice__single_attribute_probability:
+      single_dice_count_min: 6
+      single_dice_count_max: 12
+      dice_color_pool_size: 5
+      single_favorable_count_min: 2
+      single_favorable_count_max: 14
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+    task_symbolic__dice__single_threshold_probability:
+      single_dice_count_min: 6
+      single_dice_count_max: 12
+      dice_color_pool_size: 5
+      single_favorable_count_min: 2
+      single_favorable_count_max: 14
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+    task_symbolic__dice__pair_sum_probability:
+      pair_dice_count_min: 3
+      pair_dice_count_max: 5
+      dice_color_pool_size: 5
+      pair_favorable_count_min: 2
+      pair_favorable_count_max: 32
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+    task_symbolic__dice__pair_sum_threshold_probability:
+      pair_dice_count_min: 3
+      pair_dice_count_max: 5
+      dice_color_pool_size: 5
+      pair_favorable_count_min: 2
+      pair_favorable_count_max: 32
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+    task_symbolic__dice__pair_difference_probability:
+      pair_dice_count_min: 3
+      pair_dice_count_max: 5
+      dice_color_pool_size: 5
+      pair_favorable_count_min: 2
+      pair_favorable_count_max: 32
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+    task_symbolic__dice__pair_attribute_combo_probability:
+      pair_dice_count_min: 3
+      pair_dice_count_max: 5
+      dice_color_pool_size: 5
+      pair_favorable_count_min: 2
+      pair_favorable_count_max: 32
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+    task_symbolic__dice__dice_conditional_event_value:
+      conditional_dice_count_min: 8
+      conditional_dice_count_max: 12
+      dice_color_pool_size: 4
+      conditional_denominator_count_min: 4
+      conditional_denominator_count_max: 6
+      conditional_favorable_count_min: 2
+      conditional_favorable_count_max: 3
+      balanced_scene_variant_sampling: true
+      balanced_dice_visual_style_sampling: true
+      scene_variant_weights:
+        dice_tray_clean: 1.0
+        dice_tray_felt: 1.0
+        dice_tray_notebook: 1.0
+      dice_visual_style_weights:
+        classic_rounded: 1.0
+        flat_print: 1.0
+        beveled_tokens: 1.0
+        inked_pips: 1.0
+        soft_shadow: 1.0
+visual:
+  noise:
+    apply_prob: 0.15
+rendering:
+  shared:
+    canvas_width: 1100
+    canvas_height: 780
+    single_tray_bbox_px:
+    - 145
+    - 112
+    - 955
+    - 650
+    pair_left_tray_bbox_px:
+    - 68
+    - 142
+    - 522
+    - 628
+    pair_right_tray_bbox_px:
+    - 578
+    - 142
+    - 1032
+    - 628
+    die_size_px: 72
+    die_gap_px: 18
+    tray_corner_radius_px: 24
+    tray_outline_width_px: 3
+    die_corner_radius_px: 14
+    die_outline_width_px: 3
+    pip_radius_px: 6
+    title_font_size_px: 28
+prompt:
+  shared:
+    bundle_id: symbolic_dice_probability_v1
+    scene_key: dice
+  task_overrides:
+    task_symbolic__dice__single_attribute_probability:
+      task_key: single_dice_probability_query
+    task_symbolic__dice__single_threshold_probability:
+      task_key: single_dice_probability_query
+    task_symbolic__dice__pair_sum_probability:
+      task_key: pair_dice_probability_query
+    task_symbolic__dice__pair_sum_threshold_probability:
+      task_key: pair_dice_probability_query
+    task_symbolic__dice__pair_difference_probability:
+      task_key: pair_dice_probability_query
+    task_symbolic__dice__pair_attribute_combo_probability:
+      task_key: pair_dice_probability_query
+    task_symbolic__dice__dice_conditional_event_value:
+      task_key: conditional_dice_probability_query

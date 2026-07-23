@@ -1,0 +1,99 @@
+generation:
+  task_overrides:
+    task_symbolic__spinner__single_attribute_probability:
+      single_sector_count_min: 6
+      single_sector_count_max: 10
+      single_color_pool_size: 5
+      option_count: 6
+      option_label_support: [A, B, C, D, E, F]
+      number_min: 1
+      number_max: 12
+      single_favorable_count_min: 2
+      single_favorable_count_max: 8
+      balanced_scene_variant_sampling: true
+      scene_variant_weights:
+        spinner_clean: 1.0
+        spinner_card: 1.0
+        spinner_notebook: 1.0
+    task_symbolic__spinner__multi_attribute_and_probability:
+      single_sector_count_min: 6
+      single_sector_count_max: 10
+      single_color_pool_size: 5
+      option_count: 6
+      option_label_support: [A, B, C, D, E, F]
+      number_min: 1
+      number_max: 12
+      single_favorable_count_min: 2
+      single_favorable_count_max: 8
+      balanced_scene_variant_sampling: true
+      scene_variant_weights:
+        spinner_clean: 1.0
+        spinner_card: 1.0
+        spinner_notebook: 1.0
+    task_symbolic__spinner__multi_attribute_or_probability:
+      single_sector_count_min: 6
+      single_sector_count_max: 10
+      single_color_pool_size: 5
+      option_count: 6
+      option_label_support: [A, B, C, D, E, F]
+      number_min: 1
+      number_max: 12
+      single_favorable_count_min: 2
+      single_favorable_count_max: 8
+      balanced_scene_variant_sampling: true
+      scene_variant_weights:
+        spinner_clean: 1.0
+        spinner_card: 1.0
+        spinner_notebook: 1.0
+    task_symbolic__spinner__pair_color_event_probability:
+      pair_sector_count_min: 3
+      pair_sector_count_max: 5
+      pair_color_pool_size: 4
+      option_count: 6
+      option_label_support: [A, B, C, D, E, F]
+      number_min: 1
+      number_max: 12
+      pair_favorable_count_min: 1
+      pair_favorable_count_max: 24
+      balanced_scene_variant_sampling: true
+      scene_variant_weights:
+        spinner_clean: 1.0
+        spinner_card: 1.0
+        spinner_notebook: 1.0
+visual:
+  noise:
+    apply_prob: 0.15
+rendering:
+  shared:
+    canvas_width: 1100
+    canvas_height: 780
+    single_center_x_px: 550
+    single_center_y_px: 360
+    single_radius_px: 235
+    pair_left_center_x_px: 350
+    pair_right_center_x_px: 750
+    pair_center_y_px: 360
+    pair_radius_px: 180
+    panel_padding_px: 34
+    panel_corner_radius_px: 22
+    sector_outline_width_px: 3
+    pointer_width_px: 5
+    hub_radius_px: 18
+    badge_width_px: 54
+    badge_height_px: 46
+    number_font_size_px: 21
+    title_font_size_px: 28
+    subtitle_font_size_px: 17
+prompt:
+  shared:
+    bundle_id: symbolic_spinner_v1
+    scene_key: spinner
+  task_overrides:
+    task_symbolic__spinner__single_attribute_probability:
+      task_key: single_probability_query
+    task_symbolic__spinner__multi_attribute_and_probability:
+      task_key: single_probability_query
+    task_symbolic__spinner__multi_attribute_or_probability:
+      task_key: single_probability_query
+    task_symbolic__spinner__pair_color_event_probability:
+      task_key: pair_probability_query

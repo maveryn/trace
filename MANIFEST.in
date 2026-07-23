@@ -1,0 +1,19 @@
+include LICENSE
+include NOTICE
+include THIRD_PARTY_NOTICES.md
+include README.md
+include AGENTS.md
+include CONTRIBUTING.md
+include mkdocs.yml
+include CITATION.cff
+include constraints/compat-py314.txt
+include constraints/release.txt
+graft .agents
+graft docs
+graft examples
+graft scripts
+recursive-include src/trace_tasks/configs *.json
+graft src/trace_tasks/resources
+graft src/trace_tasks/review/app/templates
+graft src/trace_tasks/review/app/static
+global-exclude __pycache__ *.py[cod]

@@ -1,0 +1,171 @@
+{
+  "bundle_id": "geometry_split_triangle_patterns_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "target_angle_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "angle_bisector_variable_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "side_length_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:split_triangle_angle_chase_scene": [
+      "object_description"
+    ],
+    "scene:triangle_relations_angle_bisector_scene": [
+      "object_description"
+    ],
+    "scene:split_triangle_trig_chain_scene": [
+      "object_description"
+    ],
+    "query:single_cevian_triangle_angle_sum": [
+      "target_name"
+    ],
+    "query:shared_vertex_split_angle_sum": [
+      "target_name"
+    ],
+    "query:two_step_adjacent_triangle_angle_sum": [
+      "target_name"
+    ],
+    "query:split_segment_ratio_variable": [
+      "variable_name"
+    ],
+    "query:adjacent_side_ratio_variable": [
+      "variable_name"
+    ],
+    "query:shared_altitude_two_angles_side": [
+      "target_name"
+    ],
+    "query:shared_altitude_side_then_hypotenuse": [
+      "target_name"
+    ],
+    "query:isosceles_altitude_trig_side": [
+      "target_name"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "split_triangle_angle_chase_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ],
+    "triangle_relations_angle_bisector_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ],
+    "split_triangle_trig_chain_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The image shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "This figure shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "single_cevian_triangle_angle_sum": [
+      "Find {target_name}.",
+      "Find the measure of {target_name}.",
+      "What is {target_name}?",
+      "Determine {target_name}.",
+      "Solve for {target_name}."
+    ],
+    "shared_vertex_split_angle_sum": [
+      "Find {target_name}.",
+      "Find the measure of {target_name}.",
+      "What is {target_name}?",
+      "Determine {target_name}.",
+      "Solve for {target_name}."
+    ],
+    "two_step_adjacent_triangle_angle_sum": [
+      "Find {target_name}.",
+      "Find the measure of {target_name}.",
+      "What is {target_name}?",
+      "Determine {target_name}.",
+      "Solve for {target_name}."
+    ],
+    "split_segment_ratio_variable": [
+      "Find {variable_name}.",
+      "Find the value of {variable_name}.",
+      "What is {variable_name}?",
+      "Determine {variable_name}.",
+      "Solve for {variable_name}."
+    ],
+    "adjacent_side_ratio_variable": [
+      "Find {variable_name}.",
+      "Find the value of {variable_name}.",
+      "What is {variable_name}?",
+      "Determine {variable_name}.",
+      "Solve for {variable_name}."
+    ],
+    "shared_altitude_two_angles_side": [
+      "Find {target_name}.",
+      "Find the length of {target_name}.",
+      "What is {target_name}?",
+      "Determine {target_name}.",
+      "Solve for {target_name}."
+    ],
+    "shared_altitude_side_then_hypotenuse": [
+      "Find {target_name}.",
+      "Find the length of {target_name}.",
+      "What is {target_name}?",
+      "Determine {target_name}.",
+      "Solve for {target_name}."
+    ],
+    "isosceles_altitude_trig_side": [
+      "Find {target_name}.",
+      "Find the length of {target_name}.",
+      "What is {target_name}?",
+      "Determine {target_name}.",
+      "Solve for {target_name}."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

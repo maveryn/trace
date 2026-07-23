@@ -1,0 +1,51 @@
+generation:
+  shared:
+    scene_variant_weights:
+      putting_course: 1.0
+    style_variant_weights:
+      classic: 1.0
+      desert: 1.0
+      neon: 1.0
+      garden: 1.0
+      blueprint: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_obstacle_count_sampling: true
+    obstacle_count_support:
+    - 4
+    - 6
+  task_overrides:
+    task_games__minigolf__first_obstacle_label:
+      balanced_target_obstacle_label_sampling: true
+    task_games__minigolf__shot_path_label:
+      balanced_path_option_count_sampling: true
+      balanced_target_path_sampling: true
+      path_option_count_support:
+      - 4
+      - 5
+      - 6
+      target_path_index_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 740
+    panel_margin_px: 34
+    course_width_px: 820
+    course_height_px: 640
+    course_border_width_px: 7
+    ball_radius_px: 18
+    hole_radius_px: 20
+    obstacle_radius_px: 34
+    path_width_px: 6
+    label_font_size_px: 24
+prompt:
+  shared:
+    bundle_id: games_minigolf_v1
+    scene_key: visible_minigolf_course
+    task_key: minigolf_course_query

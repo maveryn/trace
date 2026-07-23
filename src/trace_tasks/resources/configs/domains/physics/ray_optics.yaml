@@ -1,0 +1,108 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+  task_overrides:
+    task_physics__ray_optics__ray_bounce_count:
+      scene_variant_weights:
+        quad_mirror: 0.0
+        five_mirror: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_target_answer_sampling: true
+      bounce_count_support_quad_mirror:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      bounce_count_support_five_mirror:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      target_count_min: 4
+      target_count_max: 5
+    task_physics__ray_optics__ray_target_hit_count:
+      scene_variant_weights:
+        single_mirror: 1.0
+        double_mirror: 1.0
+        triple_mirror: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_target_answer_sampling: true
+      bounce_count_support_single_mirror:
+      - 0
+      - 1
+      bounce_count_support_double_mirror:
+      - 0
+      - 1
+      - 2
+      bounce_count_support_triple_mirror:
+      - 0
+      - 1
+      - 2
+      - 3
+      target_hit_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      target_count_min: 4
+      target_count_max: 5
+rendering:
+  shared:
+    canvas_width: 920
+    canvas_height: 650
+    board_left_px: 168
+    board_top_px: 69
+    board_cols: 8
+    board_rows: 8
+    cell_size_px: 64
+    board_grid_width_px: 1
+    board_grid_width_px_min: 1
+    board_grid_width_px_max: 2
+    board_outline_width_px: 3
+    board_outline_width_px_min: 2
+    board_outline_width_px_max: 4
+    mirror_width_px: 7
+    mirror_width_px_min: 6
+    mirror_width_px_max: 8
+    mirror_padding_px: 6
+    ray_width_px: 6
+    ray_width_px_min: 5
+    ray_width_px_max: 7
+    ray_head_length_px: 16
+    ray_head_width_px: 16
+    target_radius_px: 18
+    source_radius_px: 14
+    bounce_radius_px: 8
+    target_font_size_px: 18
+    source_font_size_px: 16
+    label_stroke_width_px: 3
+    label_stroke_width_px_min: 2
+    label_stroke_width_px_max: 4
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 8
+    layout_jitter_x_px_min: -18
+    layout_jitter_x_px_max: 18
+    layout_jitter_y_px_min: -14
+    layout_jitter_y_px_max: 14
+prompt:
+  shared:
+    bundle_id: physics_ray_optics_v1
+  task_overrides:
+    task_physics__ray_optics__ray_bounce_count:
+      task_key: ray_bounce_count
+    task_physics__ray_optics__ray_target_hit_count:
+      task_key: ray_target_hit_count

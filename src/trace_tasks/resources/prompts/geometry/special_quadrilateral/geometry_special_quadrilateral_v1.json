@@ -1,0 +1,175 @@
+{
+  "bundle_id": "geometry_special_quadrilateral_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "special_quadrilateral_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "algebraic_angle_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "segment_length_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "parallelogram_opposite_angle_expression": [
+        "Use the algebraic angle expressions in the parallelogram. What is the measure of \"{target_name}\"?",
+        "In the parallelogram, use the opposite-angle relationship and visible expressions. What is the measure of \"{target_name}\"?",
+        "Solve the visible parallelogram angle expressions. What is the measure of \"{target_name}\"?",
+        "Based on the marked opposite angles in the parallelogram, what is the measure of \"{target_name}\"?",
+        "Use the parallelogram theorem shown by the angle expressions. What is the measure of \"{target_name}\"?"
+      ],
+      "parallelogram_consecutive_angle_expression": [
+        "Use the consecutive-angle expressions in the parallelogram. What is the measure of \"{target_name}\"?",
+        "In the parallelogram, use the supplementary consecutive angles. What is the measure of \"{target_name}\"?",
+        "Solve the visible consecutive-angle expressions. What is the measure of \"{target_name}\"?",
+        "Based on the marked adjacent angles in the parallelogram, what is the measure of \"{target_name}\"?",
+        "Use the parallelogram consecutive-angle theorem. What is the measure of \"{target_name}\"?"
+      ],
+      "rhombus_diagonal_half_angle_expression": [
+        "Use the algebraic half-angle labels cut by the rhombus diagonal. What is the measure of \"{target_name}\"?",
+        "In the rhombus, use the diagonal angle-bisector relationship and visible expressions. What is the measure of \"{target_name}\"?",
+        "Solve the marked rhombus half-angle expressions. What is the measure of \"{target_name}\"?",
+        "Based on the diagonal splitting the rhombus vertex angle, what is the measure of \"{target_name}\"?",
+        "Use the rhombus diagonal bisector theorem. What is the measure of \"{target_name}\"?"
+      ],
+      "kite_opposite_angle_expression": [
+        "Use the algebraic angle expressions in the kite. What is the measure of \"{target_name}\"?",
+        "In the kite, use the equal opposite non-vertex angles and visible expressions. What is the measure of \"{target_name}\"?",
+        "Solve the marked kite angle expressions. What is the measure of \"{target_name}\"?",
+        "Based on the visible kite angle labels, what is the measure of \"{target_name}\"?",
+        "Use the kite angle relationship shown by the expressions. What is the measure of \"{target_name}\"?"
+      ],
+      "parallelogram_opposite_side_expression": [
+        "Use the algebraic side labels in the parallelogram. What is the length of \"{target_name}\"?",
+        "In the parallelogram, use the opposite-side relationship and visible expressions. What is the length of \"{target_name}\"?",
+        "Solve the visible parallelogram side expressions. What is the length of \"{target_name}\"?",
+        "Based on the marked opposite sides in the parallelogram, what is the length of \"{target_name}\"?",
+        "Use the parallelogram side theorem shown by the expressions. What is the length of \"{target_name}\"?"
+      ],
+      "rhombus_all_sides_expression": [
+        "Use the algebraic side labels in the rhombus. What is the length of \"{target_name}\"?",
+        "In the rhombus, use the equal-side relationship and visible expressions. What is the length of \"{target_name}\"?",
+        "Solve the visible rhombus side expressions. What is the length of \"{target_name}\"?",
+        "Based on the marked equal sides in the rhombus, what is the length of \"{target_name}\"?",
+        "Use the rhombus side theorem shown by the expressions. What is the length of \"{target_name}\"?"
+      ],
+      "kite_adjacent_equal_side_expression": [
+        "Use the algebraic side labels in the kite. What is the length of \"{target_name}\"?",
+        "In the kite, use the adjacent equal-side relationship and visible expressions. What is the length of \"{target_name}\"?",
+        "Solve the visible kite side expressions. What is the length of \"{target_name}\"?",
+        "Based on the marked adjacent equal sides in the kite, what is the length of \"{target_name}\"?",
+        "Use the kite side theorem shown by the expressions. What is the length of \"{target_name}\"?"
+      ],
+      "parallelogram_diagonal_bisection_expression": [
+        "Use the algebraic diagonal segment labels in the parallelogram. What is the length of \"{target_name}\"?",
+        "In the parallelogram, use the diagonal-bisection relationship and visible expressions. What is the length of \"{target_name}\"?",
+        "Solve the visible parallelogram diagonal segment expressions. What is the length of \"{target_name}\"?",
+        "Based on the marked diagonal halves in the parallelogram, what is the length of \"{target_name}\"?",
+        "Use the parallelogram diagonal theorem shown by the expressions. What is the length of \"{target_name}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:special_quadrilateral_scene": {
+      "object_description": "a quadrilateral with construction marks and measurement labels"
+    },
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "task:algebraic_angle_value_query": {
+      "answer_hint": "set \"answer\" to the angle measure as an integer number of degrees"
+    },
+    "task:segment_length_value_query": {
+      "answer_hint": "set \"answer\" to the segment length as an integer"
+    }
+  },
+  "dynamic_slots": {
+    "target_name": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:special_quadrilateral_scene": [
+      "object_description"
+    ],
+    "query:parallelogram_opposite_angle_expression": [
+      "target_name"
+    ],
+    "query:parallelogram_consecutive_angle_expression": [
+      "target_name"
+    ],
+    "query:rhombus_diagonal_half_angle_expression": [
+      "target_name"
+    ],
+    "query:kite_opposite_angle_expression": [
+      "target_name"
+    ],
+    "query:parallelogram_opposite_side_expression": [
+      "target_name"
+    ],
+    "query:rhombus_all_sides_expression": [
+      "target_name"
+    ],
+    "query:kite_adjacent_equal_side_expression": [
+      "target_name"
+    ],
+    "query:parallelogram_diagonal_bisection_expression": [
+      "target_name"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

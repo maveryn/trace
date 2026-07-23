@@ -1,0 +1,128 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      paired_springs: 1.0
+      staggered_springs: 1.0
+      textured_spring: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_target_answer_sampling: true
+    scale_factor_support:
+    - 1
+    - 2
+    - 3
+    extension_difference_scale_factor_support:
+    - 2
+    weight_value_min: 1
+    weight_value_max: 12
+    extension_value_max: 14
+  task_overrides:
+    task_physics__spring__spring_missing_value:
+      missing_weight_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      missing_extension_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+    task_physics__spring__spring_extension_difference:
+      extension_difference_support:
+      - 2
+      - 4
+      - 8
+      - 10
+      - 12
+
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 660
+    card_width_px: 304
+    card_height_px: 470
+    card_left_px: 86
+    card_top_px: 108
+    card_gap_px: 108
+    stagger_offset_y_px: 28
+    card_corner_radius_px: 24
+    card_outline_width_px: 4
+    card_outline_width_px_min: 3
+    card_outline_width_px_max: 5
+    support_width_px: 164
+    support_height_px: 16
+    support_corner_radius_px: 8
+    anchor_y_gap_px: 22
+    hanger_line_width_px: 4
+    hanger_line_width_px_min: 3
+    hanger_line_width_px_max: 5
+    ruler_top_gap_px: 18
+    ruler_right_gap_px: 42
+    ruler_value_max: 14
+    ruler_unit_px: 25
+    ruler_width_px: 4
+    ruler_width_px_min: 3
+    ruler_width_px_max: 5
+    ruler_tick_long_px: 20
+    ruler_tick_short_px: 12
+    ruler_font_size_px: 19
+    spring_neutral_units: 2
+    spring_line_width_px: 5
+    spring_line_width_px_min: 4
+    spring_line_width_px_max: 6
+    spring_half_width_px: 16
+    spring_turn_count: 8
+    weight_box_width_px: 78
+    weight_box_height_px: 54
+    weight_font_size_px: 28
+    marker_height_px: 22
+    marker_width_px: 52
+    missing_tag_width_px: 52
+    missing_tag_height_px: 34
+    missing_tag_top_gap_px: 22
+    label_stroke_width_px: 3
+    label_stroke_width_px_min: 2
+    label_stroke_width_px_max: 4
+    texture_line_width_px: 2
+    texture_line_width_px_min: 1
+    texture_line_width_px_max: 3
+    texture_spacing_px: 18
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 14
+    layout_jitter_x_px_min: -20
+    layout_jitter_x_px_max: 20
+    layout_jitter_y_px_min: -14
+    layout_jitter_y_px_max: 12
+
+prompt:
+  shared:
+    bundle_id: physics_spring_v1
+  task_overrides:
+    task_physics__spring__spring_missing_value:
+      task_key: spring_missing_value_query
+    task_physics__spring__spring_extension_difference:
+      task_key: spring_extension_difference_query

@@ -1,0 +1,197 @@
+{
+  "bundle_id": "symbolic_logic_gate_circuit_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "logic_gate_circuit": [
+        "A Boolean logic-gate panel shows {object_description}.",
+        "The circuit-notation panel shows {object_description}.",
+        "This logic-gate diagram shows {object_description}.",
+        "The visual panel contains {object_description}.",
+        "A circuit worksheet presents {object_description}."
+      ]
+    },
+    "task": {
+      "logic_gate_output_value_label": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "logic_gate_satisfying_assignment_label": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "logic_gate_gate_type_count": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "logic_gate_internal_output_count": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "output_one_label": [
+        "Which circuit option has final OUT value 1?",
+        "Select the circuit whose final OUT node evaluates to 1.",
+        "Which displayed circuit produces output 1?",
+        "Evaluate each circuit. Which option's final OUT value is 1?",
+        "Which circuit panel produces a final output of 1?"
+      ],
+      "output_zero_label": [
+        "Which circuit option has final OUT value 0?",
+        "Select the circuit whose final OUT node evaluates to 0.",
+        "Which displayed circuit produces output 0?",
+        "Evaluate each circuit. Which option's final OUT value is 0?",
+        "Which circuit panel produces a final output of 0?"
+      ],
+      "assignment_outputs_one_label": [
+        "Which option assignment makes the source circuit output 1?",
+        "Select the assignment option that produces final OUT value 1.",
+        "Using the shown x, y, and z values, which option makes the circuit evaluate to 1?",
+        "Which labeled assignment sets the source circuit's final OUT value to 1?",
+        "Find the option row whose input values make OUT equal 1."
+      ],
+      "assignment_outputs_zero_label": [
+        "Which option assignment makes the source circuit output 0?",
+        "Select the assignment option that produces final OUT value 0.",
+        "Using the shown x, y, and z values, which option makes the circuit evaluate to 0?",
+        "Which labeled assignment sets the source circuit's final OUT value to 0?",
+        "Find the option row whose input values make OUT equal 0."
+      ],
+      "gate_type_count": [
+        "How many {target_gate_type} gate symbols are in the circuit?",
+        "Count the {target_gate_type} gate symbols.",
+        "How many visible gates use the {target_gate_type} symbol?",
+        "In the circuit, how many gate symbols represent {target_gate_type}?",
+        "Count every {target_gate_type} gate shown in the circuit."
+      ],
+      "internal_output_one_count": [
+        "Using the input values shown, how many gates output 1?",
+        "Evaluate each gate. How many gate symbols have output value 1?",
+        "How many intermediate gates produce 1?",
+        "With the shown input values, count the gates whose output is 1.",
+        "How many visible gates evaluate to 1?"
+      ],
+      "internal_output_zero_count": [
+        "Using the input values shown, how many gates output 0?",
+        "Evaluate each gate. How many gate symbols have output value 0?",
+        "How many intermediate gates produce 0?",
+        "With the shown input values, count the gates whose output is 0.",
+        "How many visible gates evaluate to 0?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "target_gate_type": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:logic_gate_circuit": [
+      "object_description"
+    ],
+    "query:output_one_label": [],
+    "query:output_zero_label": [],
+    "query:assignment_outputs_one_label": [],
+    "query:assignment_outputs_zero_label": [],
+    "query:gate_type_count": [
+      "target_gate_type"
+    ],
+    "query:internal_output_one_count": [],
+    "query:internal_output_zero_count": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_clean_worksheet": "a clean worksheet-style Boolean logic-gate circuit diagram with labeled inputs, standard gate symbols, wires, and final OUT nodes",
+    "object_description_notebook_problem": "a notebook-style Boolean logic-gate circuit diagram with labeled inputs, standard gate symbols, wires, and final OUT nodes",
+    "object_description_exam_scan": "an exam-scan-style Boolean logic-gate circuit diagram with labeled inputs, standard gate symbols, wires, and final OUT nodes",
+    "annotation_hint_output_one_label": "set \"annotation\" to the pixel-space bounding box [x0, y0, x1, y1] of the selected circuit panel whose final OUT value is 1",
+    "answer_hint_output_one_label": "set \"answer\" to the single capital-letter circuit option label",
+    "json_example_output_one_label": "{\"annotation\":[48,50,573,394],\"answer\":\"C\"}",
+    "json_example_answer_only_output_one_label": "{\"answer\":\"C\"}",
+    "annotation_hint_output_zero_label": "set \"annotation\" to the pixel-space bounding box [x0, y0, x1, y1] of the selected circuit panel whose final OUT value is 0",
+    "answer_hint_output_zero_label": "set \"answer\" to the single capital-letter circuit option label",
+    "json_example_output_zero_label": "{\"annotation\":[607,426,1132,770],\"answer\":\"D\"}",
+    "json_example_answer_only_output_zero_label": "{\"answer\":\"D\"}",
+    "annotation_hint_assignment_outputs_one_label": "set \"annotation\" to an object with keys \"source_circuit\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_assignment_outputs_one_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_assignment_outputs_one_label": "{\"annotation\":{\"source_circuit\":[48,120,730,690],\"selected_option\":[793,302,1132,358]},\"answer\":\"D\"}",
+    "json_example_answer_only_assignment_outputs_one_label": "{\"answer\":\"D\"}",
+    "annotation_hint_assignment_outputs_zero_label": "set \"annotation\" to an object with keys \"source_circuit\" and \"selected_option\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_assignment_outputs_zero_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_assignment_outputs_zero_label": "{\"annotation\":{\"source_circuit\":[48,120,730,690],\"selected_option\":[793,386,1132,470]},\"answer\":\"B\"}",
+    "json_example_answer_only_assignment_outputs_zero_label": "{\"answer\":\"B\"}",
+    "annotation_hint_gate_type_count": "set \"annotation\" to a JSON array of pixel-space gate-symbol bounding boxes [x0, y0, x1, y1], one for each counted gate; use [] if no gate matches",
+    "answer_hint_gate_type_count": "set \"answer\" to the integer number of matching gates",
+    "json_example_gate_type_count": "{\"annotation\":[[320,210,392,256],[560,380,632,426]],\"answer\":2}",
+    "json_example_answer_only_gate_type_count": "{\"answer\":2}",
+    "annotation_hint_internal_output_one_count": "set \"annotation\" to a JSON array of pixel-space gate bounding boxes [x0, y0, x1, y1], one for each gate whose computed output is 1; use [] if no gate matches",
+    "answer_hint_internal_output_one_count": "set \"answer\" to the integer number of gates whose computed output is 1",
+    "json_example_internal_output_one_count": "{\"annotation\":[[320,210,392,256],[560,380,632,426]],\"answer\":2}",
+    "json_example_answer_only_internal_output_one_count": "{\"answer\":2}",
+    "annotation_hint_internal_output_zero_count": "set \"annotation\" to a JSON array of pixel-space gate bounding boxes [x0, y0, x1, y1], one for each gate whose computed output is 0; use [] if no gate matches",
+    "answer_hint_internal_output_zero_count": "set \"answer\" to the integer number of gates whose computed output is 0",
+    "json_example_internal_output_zero_count": "{\"annotation\":[[410,250,482,296]],\"answer\":1}",
+    "json_example_answer_only_internal_output_zero_count": "{\"answer\":1}"
+  }
+}

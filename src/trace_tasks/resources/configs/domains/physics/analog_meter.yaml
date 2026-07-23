@@ -1,0 +1,61 @@
+generation:
+  shared:
+    meter_profile_weights:
+      ammeter_a: 1.0
+      ammeter_ma: 1.0
+      voltmeter_v: 1.0
+    balanced_meter_profile_sampling: true
+    balanced_target_answer_sampling: true
+    ammeter_a_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    ammeter_ma_answer_support:
+    - 10
+    - 20
+    - 30
+    - 40
+    - 50
+    - 60
+    - 70
+    - 80
+    - 90
+    voltmeter_v_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 720
+    panel_left_px: 64
+    panel_top_px: 54
+    panel_right_margin_px: 64
+    panel_bottom_margin_px: 56
+    meter_center_x_px: 560
+    meter_center_y_px: 472
+    scale_radius_px: 270
+    needle_radius_px: 222
+    face_radius_px: 318
+
+prompt:
+  shared:
+    bundle_id: physics_analog_meter_v1
+  task_overrides:
+    task_physics__analog_meter__meter_readout_value:
+      task_key: analog_meter_readout_query

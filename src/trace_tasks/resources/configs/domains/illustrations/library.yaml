@@ -1,0 +1,215 @@
+generation:
+  shared:
+    balanced_sampling: true
+    section_count_min: 4
+    section_count_max: 6
+    section_key_support:
+      - history
+      - science
+      - art
+      - travel
+      - fiction
+      - nature
+      - music
+      - math
+    color_name_support:
+      - red
+      - blue
+      - green
+      - orange
+      - purple
+      - cyan
+      - magenta
+  task_overrides:
+    task_illustrations__library__books_in_section_count:
+      target_count_min: 3
+      target_count_max: 8
+      section_book_count_min: 5
+      section_book_count_max: 12
+    task_illustrations__library__filtered_book_in_section_count:
+      target_count_min: 1
+      target_count_max: 6
+      section_book_count_min: 7
+      section_book_count_max: 14
+    task_illustrations__library__rotated_tile_label:
+      section_count_min: 4
+      section_count_max: 6
+      section_book_count_min: 8
+      section_book_count_max: 14
+      rotation_degrees_support:
+        - 90
+        - 270
+      min_tile_detail_score: 160
+      min_rotation_delta: 7
+    task_illustrations__library__swapped_tile_pair_label:
+      section_count_min: 4
+      section_count_max: 6
+      section_book_count_min: 8
+      section_book_count_max: 14
+      min_tile_detail_score: 130
+      min_pair_difference: 7
+    task_illustrations__library__missing_patch_label:
+      section_count_min: 4
+      section_count_max: 6
+      section_book_count_min: 8
+      section_book_count_max: 14
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 34
+
+rendering:
+  shared:
+    library_canvas_width: 1280
+    library_canvas_height: 900
+    library_render_scale: 2
+    library_setting_weights:
+      reading_room: 1.0
+      archive_room: 1.0
+      childrens_corner: 1.0
+    style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+    art_style_support:
+      - flat_vector
+      - outlined_cartoon
+      - paper_cutout
+      - soft_shadow
+      - watercolor_wash
+    art_style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+      watercolor_wash: 1.0
+  task_overrides:
+    task_illustrations__library__books_in_section_count:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__library__filtered_book_in_section_count:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__library__rotated_tile_label:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__library__swapped_tile_pair_label:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+    task_illustrations__library__missing_patch_label:
+      art_style_support:
+        - flat_vector
+        - outlined_cartoon
+        - paper_cutout
+        - soft_shadow
+        - ink_sketch
+        - watercolor_wash
+      art_style_weights:
+        flat_vector: 1.0
+        outlined_cartoon: 1.0
+        paper_cutout: 1.0
+        soft_shadow: 1.0
+        ink_sketch: 1.0
+        watercolor_wash: 1.0
+
+prompt:
+  task_overrides:
+    task_illustrations__library__books_in_section_count:
+      bundle_id: illustrations_library_v0
+      scene_key: library_canvas
+      task_key: books_in_section_count_task
+      answer_hint_books_in_section: set "answer" to the count of books in the {section_name} section as an integer
+      annotation_hint_books_in_section: set "annotation" to a JSON array of [x, y] center points in image pixel coordinates for every counted book in the {section_name} section
+      json_example_books_in_section: '{"annotation":[[101,222],[124,225],[148,217],[188,212]],"answer":4}'
+      json_example_answer_only_books_in_section: '{"answer":4}'
+    task_illustrations__library__filtered_book_in_section_count:
+      bundle_id: illustrations_library_v0
+      scene_key: library_canvas
+      task_key: filtered_book_in_section_count_task
+      answer_hint_book_color: set "answer" to the count of {color_label} books in the {section_name} section as an integer
+      annotation_hint_book_color: set "annotation" to a JSON array of [x, y] center points in image pixel coordinates for every counted {color_label} book in the {section_name} section
+      json_example_book_color: '{"annotation":[[253,220],[297,222],[361,216]],"answer":3}'
+      json_example_answer_only_book_color: '{"answer":3}'
+      answer_hint_book_orientation: set "answer" to the count of {orientation_name} books in the {section_name} section as an integer
+      annotation_hint_book_orientation: set "annotation" to a JSON array of [x, y] center points in image pixel coordinates for every counted {orientation_name} book in the {section_name} section
+      json_example_book_orientation: '{"annotation":[[491,224],[535,218],[637,214]],"answer":3}'
+      json_example_answer_only_book_orientation: '{"answer":3}'
+    task_illustrations__library__rotated_tile_label:
+      bundle_id: illustrations_library_v0
+      scene_key: library_canvas
+      task_key: rotated_tile_label_task
+      answer_hint_rotated_tile: set "answer" to the letter of the rotated tile
+      annotation_hint_rotated_tile: set "annotation" to one [x0, y0, x1,
+        y1] box around the rotated tile in image pixel coordinates
+      json_example_rotated_tile: '{"annotation":[350,42,670,362],"answer":"B"}'
+      json_example_answer_only_rotated_tile: '{"answer":"B"}'
+    task_illustrations__library__swapped_tile_pair_label:
+      bundle_id: illustrations_library_v0
+      scene_key: library_canvas
+      task_key: swapped_tile_pair_label_task
+      answer_hint_swapped_tile_pair: set "answer" to the option letter naming the two swapped cells
+      annotation_hint_swapped_tile_pair: set "annotation" to a JSON array containing exactly two [x0, y0, x1, y1] boxes around the swapped cells in image pixel coordinates
+      json_example_swapped_tile_pair: '{"annotation":[[0,0,400,266],[800,532,1200,798]],"answer":"C"}'
+      json_example_answer_only_swapped_tile_pair: '{"answer":"C"}'
+    task_illustrations__library__missing_patch_label:
+      bundle_id: illustrations_library_v0
+      scene_key: library_canvas
+      task_key: missing_patch_label_task
+      answer_hint_missing_patch: set "answer" to the selected option letter as a string
+      annotation_hint_missing_patch: set "annotation" to a JSON object with keys "missing_region" and "selected_option", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates
+      json_example_missing_patch: '{"annotation":{"missing_region":[214,128,374,252],"selected_option":[562,676,722,800]},"answer":"C"}'
+      json_example_answer_only_missing_patch: '{"answer":"C"}'

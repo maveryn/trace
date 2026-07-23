@@ -1,0 +1,1 @@
+"""Chess-board games tasks."""

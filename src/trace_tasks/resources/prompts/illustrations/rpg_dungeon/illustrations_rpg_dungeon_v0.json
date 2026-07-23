@@ -1,0 +1,132 @@
+{
+  "bundle_id": "illustrations_rpg_dungeon_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "rpg_dungeon_reachable_chest_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rpg_dungeon_monster_chamber_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rpg_dungeon_safe_reachable_chest_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rpg_dungeon_missing_patch_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:rpg_dungeon_canvas": [],
+    "scene:rpg_dungeon_monster_canvas": [],
+    "scene:rpg_dungeon_hazard_canvas": [],
+    "scene:rpg_dungeon_patch_canvas": [],
+    "query:reachable_chest_count": [],
+    "query:monster_chamber_count": [],
+    "query:safe_reachable_chest_count": [],
+    "query:missing_patch_label": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "rpg_dungeon_canvas": [
+      "The image shows a top-down pixel RPG dungeon with stone chambers, corridors, a player, treasure chests, and boulders blocking some paths.",
+      "The scene shows a top-down RPG-style dungeon map with walkable floor, boulder-blocked passages, a player, and treasure chests.",
+      "The picture shows a pixel-art dungeon from above, including corridors, chambers, blockers, and treasure chests.",
+      "The canvas contains a top-down dungeon layout with a player, visible chests, and some corridor paths blocked by boulders.",
+      "This illustration shows an RPG dungeon map from above with walkable passages and boulder-blocked passages."
+    ],
+    "rpg_dungeon_monster_canvas": [
+      "The image shows a top-down pixel RPG dungeon with stone chambers, corridors, a player, treasure chests, and small monsters in some chambers.",
+      "The scene shows a top-down RPG-style dungeon map with walkable floor, treasure chambers, chests, and small visible monsters.",
+      "The picture shows a pixel-art dungeon from above, including corridors, chambers, treasure chests, and small monsters.",
+      "The canvas contains a top-down dungeon layout with a player, visible treasure chests, and small monsters inside some chambers.",
+      "This illustration shows an RPG dungeon map from above with connected chambers, chests, and small monsters."
+    ],
+    "rpg_dungeon_hazard_canvas": [
+      "The image shows a top-down pixel RPG dungeon with stone chambers, corridors, a player, treasure chests, boulders blocking some paths, and small monsters in some chambers.",
+      "The scene shows a top-down RPG-style dungeon map with walkable floor, blocked passages, treasure chests, and monsters inside some chambers.",
+      "The picture shows a pixel-art dungeon from above, including corridors, chambers, boulder blockers, treasure chests, and small monsters.",
+      "The canvas contains a top-down dungeon layout with a player, visible chests, monsters in some chambers, and some corridor paths blocked by boulders.",
+      "This illustration shows an RPG dungeon map from above with walkable passages, boulder-blocked passages, treasure chests, and monsters."
+    ],
+    "rpg_dungeon_patch_canvas": [
+      "The image shows a top-down pixel RPG dungeon with one region removed and lettered patch options below it.",
+      "The scene shows an RPG-style dungeon map from above with a missing rectangular patch and several lettered candidate patches.",
+      "The picture shows a top-down pixel-art dungeon where one area has been blanked out and patch options are shown underneath.",
+      "The canvas contains a dungeon source panel with a missing region plus lettered patch choices.",
+      "This illustration shows a top-down dungeon layout with one missing patch and candidate replacements."
+    ]
+  },
+  "query_templates": {
+    "reachable_chest_count": [
+      "Starting from the player, how many treasure chests can be reached by walking only through open floor and corridors?",
+      "Count the treasure chests reachable from the player without crossing boulders. What is the count?",
+      "From the player's position, how many chests are connected by unblocked floor paths?",
+      "Follow paths through the open dungeon floor from the player. How many treasure chests can be reached?",
+      "How many treasure chests can the player reach without passing through a corridor blocked by a boulder?"
+    ],
+    "monster_chamber_count": [
+      "How many treasure chambers contain a monster?",
+      "Count the treasure chambers that have a monster inside. What is the count?",
+      "How many chamber areas with treasure chests also contain a monster?",
+      "Looking across the treasure chambers, how many contain a visible monster?",
+      "What is the number of treasure chambers that include a monster?"
+    ],
+    "safe_reachable_chest_count": [
+      "Starting from the player, how many treasure chests can be reached without crossing boulders, excluding any chest in a chamber that contains a monster?",
+      "Count the treasure chests reachable from the player without crossing boulders, but do not count chests in monster chambers. What is the count?",
+      "From the player's position, how many reachable treasure chests are in chambers without monsters?",
+      "Follow only unblocked dungeon paths from the player. How many reachable chests are not inside monster chambers?",
+      "How many treasure chests can the player reach without passing through boulder-blocked paths, after excluding chests in chambers with monsters?"
+    ],
+    "missing_patch_label": [
+      "Which lettered patch option restores the missing region in the dungeon image?",
+      "Choose the letter of the patch that fits the blank region in the top dungeon panel.",
+      "Which option matches the removed part of the dungeon scene?",
+      "Select the lettered patch that completes the missing area of the dungeon map.",
+      "What is the letter of the patch option that belongs in the blank region?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

@@ -1,0 +1,217 @@
+{
+  "bundle_id": "pages_mixed_infographic_page_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "mixed_infographic_page": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "mixed_infographic_lookup_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "module_field_value_label": [
+        "In module \"{module_title}\", order items by \"{selector_field_label}\" from {rank_order_phrase}. What value is shown under \"{answer_field_label}\" for the {rank_ordinal} item?",
+        "Find module \"{module_title}\". Rank its items by \"{selector_field_label}\" from {rank_order_phrase}; read \"{answer_field_label}\" for the {rank_ordinal} item.",
+        "Within \"{module_title}\", use \"{selector_field_label}\" to identify the {rank_ordinal} item in {rank_order_phrase} order. What is its \"{answer_field_label}\" value?",
+        "Using \"{selector_field_label}\" in module \"{module_title}\", find the {rank_ordinal} item when ordered {rank_order_phrase}. What value appears in \"{answer_field_label}\"?",
+        "Read the \"{answer_field_label}\" value for the item ranked {rank_ordinal} by \"{selector_field_label}\" from {rank_order_phrase} in module \"{module_title}\"."
+      ],
+      "module_field_ranked_item_label": [
+        "In module \"{module_title}\", order field \"{field_label}\" from {rank_order_phrase}. Which item is {rank_ordinal}?",
+        "Find module \"{module_title}\". For field \"{field_label}\", what item label is {rank_ordinal} when ordered {rank_order_phrase}?",
+        "Within \"{module_title}\", rank the visible \"{field_label}\" values from {rank_order_phrase}. What item label is {rank_ordinal}?",
+        "Using the \"{field_label}\" field in module \"{module_title}\", which item ranks {rank_ordinal} in {rank_order_phrase} order?",
+        "What item label in module \"{module_title}\" is {rank_ordinal} in {rank_order_phrase} order for \"{field_label}\"?"
+      ],
+      "page_field_extremum_module_label": [
+        "Across the page, which module has the {rank_direction} visible value for field \"{field_label}\"?",
+        "Scan all modules that show field \"{field_label}\". What module title contains the {rank_direction} value?",
+        "For the shared field \"{field_label}\", which module has the {rank_direction} value across the page?",
+        "Using all visible modules with field \"{field_label}\", which module title has the {rank_direction} value?",
+        "When the \"{field_label}\" values are ordered {rank_order_phrase} across modules, which module title is first?"
+      ],
+      "module_two_field_condition_item_label": [
+        "In module \"{module_title}\", which item has \"{numeric_field_label}\" {condition_phrase} {threshold_value} and \"{category_field_label}\" equal to \"{category_value}\"?",
+        "Find module \"{module_title}\". What item label matches both \"{numeric_field_label}\" {condition_phrase} {threshold_value} and \"{category_field_label}\" = \"{category_value}\"?",
+        "Within \"{module_title}\", read the item whose \"{numeric_field_label}\" is {condition_phrase} {threshold_value} and whose \"{category_field_label}\" is \"{category_value}\".",
+        "Using module \"{module_title}\", which item satisfies \"{numeric_field_label}\" {condition_phrase} {threshold_value} with \"{category_field_label}\" \"{category_value}\"?",
+        "What item label in module \"{module_title}\" matches the two conditions: \"{numeric_field_label}\" {condition_phrase} {threshold_value} and \"{category_field_label}\" = \"{category_value}\"?"
+      ],
+      "module_condition_item_count": [
+        "In module \"{module_title}\", how many items have \"{field_label}\" {condition_phrase} {threshold_value}?",
+        "Find module \"{module_title}\". Count the items whose \"{field_label}\" value is {condition_phrase} {threshold_value}.",
+        "Within \"{module_title}\", what is the number of items with \"{field_label}\" {condition_phrase} {threshold_value}?",
+        "Using field \"{field_label}\" in module \"{module_title}\", count the items {condition_phrase} {threshold_value}.",
+        "How many item values in module \"{module_title}\" are {condition_phrase} {threshold_value} for \"{field_label}\"?"
+      ],
+      "module_field_total_value": [
+        "In module \"{module_title}\", what is the total of all visible \"{field_label}\" values?",
+        "Find module \"{module_title}\". Add every item value under field \"{field_label}\".",
+        "Within \"{module_title}\", what sum do you get from the \"{field_label}\" values?",
+        "Using the \"{field_label}\" field in module \"{module_title}\", compute the total across all items.",
+        "What is the combined value for field \"{field_label}\" in module \"{module_title}\"?"
+      ],
+      "two_module_field_total_comparison_module_label": [
+        "Compare modules \"{module_a_title}\" and \"{module_b_title}\". Which module has the larger total for field \"{field_label}\"?",
+        "For field \"{field_label}\", add the visible values in \"{module_a_title}\" and in \"{module_b_title}\". Which module title has the larger total?",
+        "Between \"{module_a_title}\" and \"{module_b_title}\", which module has the greater sum of \"{field_label}\" values?",
+        "Using the \"{field_label}\" field, total the listed values in modules \"{module_a_title}\" and \"{module_b_title}\". Which module is larger?",
+        "Which of \"{module_a_title}\" or \"{module_b_title}\" has the higher total when all visible \"{field_label}\" values are summed?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only.",
+      "object_description": "a dense mixed infographic page with titled modules, item labels, field labels, printed values, and native context text"
+    },
+    "query:module_field_value_label": {
+      "answer_hint": "set \"answer\" to the exact visible value string",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel bounding box around the answer value cell",
+      "json_example": "{\"annotation\":[5,6,7,8],\"answer\":\"42k\"}",
+      "json_example_answer_only": "{\"answer\":\"42k\"}"
+    },
+    "query:module_field_ranked_item_label": {
+      "answer_hint": "set \"answer\" to the exact visible item label at the requested rank",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel bounding box around the visible item row, card, or container holding the answer item label",
+      "json_example": "{\"annotation\":[3,4,5,6],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}"
+    },
+    "query:page_field_extremum_module_label": {
+      "answer_hint": "set \"answer\" to the exact visible module title",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel bounding box around the winning module panel",
+      "json_example": "{\"annotation\":[2,3,4,5],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}"
+    },
+    "query:module_two_field_condition_item_label": {
+      "answer_hint": "set \"answer\" to the exact visible item label satisfying both conditions",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel bounding box around the visible item row, card, or container holding the answer item label",
+      "json_example": "{\"annotation\":[3,4,5,6],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}"
+    },
+    "query:module_condition_item_count": {
+      "answer_hint": "set \"answer\" to the integer count of matching items",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel bounding boxes around every matching value cell",
+      "json_example": "{\"annotation\":[[5,6,7,8],[6,7,8,9]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:module_field_total_value": {
+      "answer_hint": "set \"answer\" to the requested integer total",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel bounding boxes around every value cell included in the sum",
+      "json_example": "{\"annotation\":[[5,6,7,8],[6,7,8,9],[7,8,9,10]],\"answer\":126}",
+      "json_example_answer_only": "{\"answer\":126}"
+    },
+    "query:two_module_field_total_comparison_module_label": {
+      "answer_hint": "set \"answer\" to the exact visible module title with the larger total",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel bounding box around the winning module panel",
+      "json_example": "{\"annotation\":[2,3,4,5],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}"
+    }
+  },
+  "dynamic_slots": {
+    "module_title": {"type": "string"},
+    "module_position_phrase": {"type": "string"},
+    "item_label": {"type": "string"},
+    "field_label": {"type": "string"},
+    "selector_field_label": {"type": "string"},
+    "answer_field_label": {"type": "string"},
+    "rank_direction": {"type": "string"},
+    "rank_order_phrase": {"type": "string"},
+    "rank_ordinal": {"type": "string"},
+    "numeric_field_label": {"type": "string"},
+    "condition_phrase": {"type": "string"},
+    "threshold_value": {"type": "string"},
+    "category_field_label": {"type": "string"},
+    "category_value": {"type": "string"},
+    "module_a_title": {"type": "string"},
+    "module_b_title": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:mixed_infographic_page": [
+      "object_description"
+    ],
+    "query:module_field_value_label": [
+      "module_title",
+      "selector_field_label",
+      "rank_ordinal",
+      "rank_order_phrase",
+      "answer_field_label"
+    ],
+    "query:module_field_ranked_item_label": [
+      "module_title",
+      "field_label",
+      "rank_ordinal",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:page_field_extremum_module_label": [
+      "field_label",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:module_two_field_condition_item_label": [
+      "module_title",
+      "numeric_field_label",
+      "condition_phrase",
+      "threshold_value",
+      "category_field_label",
+      "category_value"
+    ],
+    "query:module_condition_item_count": [
+      "module_title",
+      "field_label",
+      "condition_phrase",
+      "threshold_value"
+    ],
+    "query:module_field_total_value": [
+      "module_title",
+      "field_label"
+    ],
+    "query:two_module_field_total_comparison_module_label": [
+      "module_a_title",
+      "module_b_title",
+      "field_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

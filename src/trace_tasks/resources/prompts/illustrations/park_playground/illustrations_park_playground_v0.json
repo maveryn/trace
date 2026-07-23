@@ -1,0 +1,146 @@
+{
+  "bundle_id": "illustrations_park_playground_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "person_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "playground_equipment_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "jigsaw_arrangement_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "missing_patch_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rotated_tile_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "swapped_tile_pair_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:park_playground_canvas": [
+    ],
+    "query:person_count": [
+    ],
+    "query:playground_equipment_count": [
+      "equipment_name"
+    ],
+    "query:jigsaw_arrangement_label": [
+    ],
+    "query:plain_patch_label": [
+    ],
+    "query:rotated_tile_label": [
+    ],
+    "query:swapped_tile_pair_label": [
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "park_playground_canvas": [
+      "The image shows an illustrated park playground.",
+      "The scene shows a park playground illustration.",
+      "The picture shows a synthetic park playground.",
+      "The canvas contains an illustrated playground park.",
+      "This is a park playground scene."
+    ]
+  },
+  "query_templates": {
+    "person_count": [
+      "How many people are shown?",
+      "Count all visible people in the park playground.",
+      "What is the total number of people?",
+      "How many people can be seen in the scene?",
+      "Find every visible person. What is the count?"
+    ],
+    "playground_equipment_count": [
+      "How many {equipment_name} are shown?",
+      "Count the {equipment_name} in the playground.",
+      "What is the number of {equipment_name}?",
+      "How many playground {equipment_name} can be seen?",
+      "Find every {equipment_name}. What is the count?"
+    ],
+    "jigsaw_arrangement_label": [
+      "Which option shows the park playground image with the tiles arranged correctly?",
+      "Select the option where the park playground tiles are in the correct arrangement.",
+      "Which lettered option reconstructs the park playground scene correctly?",
+      "Find the option whose tiles form the correct park playground image.",
+      "Which option places the park playground tiles in the original row-major arrangement?"
+    ],
+    "plain_patch_label": [
+      "Which option restores the missing region of the park playground image?",
+      "Select the option that fills the missing patch exactly.",
+      "Which lettered patch belongs in the blank region?",
+      "Find the option that completes the missing part of the park scene.",
+      "Which option matches the removed region of the park playground?"
+    ],
+    "rotated_tile_label": [
+      "Which lettered tile has been rotated?",
+      "Select the tile that is rotated relative to the rest of the park image.",
+      "Which tile is turned the wrong way?",
+      "Find the rotated tile in the park playground grid.",
+      "Which letter marks the tile with the incorrect orientation?"
+    ],
+    "swapped_tile_pair_label": [
+      "The image is divided into 9 numbered cells. Exactly two cells have been swapped. Which option gives the two swapped cell numbers?",
+      "Exactly two numbered cells in the park playground grid were swapped. Select the option naming those two cells.",
+      "Which lettered option identifies the two numbered cells that changed places?",
+      "Find the pair of numbered cells that were swapped in the park playground image.",
+      "Choose the option that names the two grid cells whose patches were exchanged."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

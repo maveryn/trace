@@ -1,0 +1,102 @@
+{
+  "bundle_id": "puzzles_balance_scale_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "balance_scale": [
+        "The image shows {object_description}.",
+        "This balance-scale puzzle shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "balance_scale_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "missing_object_weight_value": [
+        "Each scale is balanced. What integer value belongs in the question-mark box for the query object?",
+        "Use the three balanced scales to determine the value of the object shown in the query row.",
+        "The pans on all three scales balance. What is the integer value of the query object?",
+        "Solve the balance-scale equations and report the value that replaces the question mark.",
+        "Use the three unknown objects and numbered weights on the balanced scales to find the query object's value."
+      ],
+      "equivalent_object_count_value": [
+        "Each scale is balanced. How many copies of the repeated object equal one source object?",
+        "Use the three balanced scales to determine the count in the question-mark box.",
+        "The query row asks how many repeated objects balance one source object. What integer count replaces the question mark?",
+        "Solve the balance-scale equations and report the number of repeated objects equal to the source object.",
+        "Use the object weights implied by the balanced pans to find the missing equivalent-object count."
+      ],
+      "weight_order_label": [
+        "The lower pan is heavier and a level scale means equal weight. Use the three comparison scales to choose the option that orders the objects from lightest to heaviest.",
+        "The lower pan is heavier and a level scale means equal weight. Which bottom option shows the correct lightest-to-heaviest order? Use equals signs for equal weights.",
+        "The lower pan is heavier and a level scale means equal weight. Read the three scales and select the option that gives the object-weight order from lightest to heaviest.",
+        "The lower pan is heavier and a level scale means equal weight. Which option shows the correct order?",
+        "The lower pan is heavier and a level scale means equal weight. Infer the full weight order of the three objects. Which option label matches?"
+      ],
+      "query_side_relation_label": [
+        "Each reference scale is balanced. For the query comparison, choose whether the left side is heavier, the right side is heavier, the two sides balance, or the relation cannot be determined.",
+        "Use only the three balanced reference scales. Which option correctly describes the query comparison: left heavier, right heavier, balanced, or cannot determine?",
+        "Read the three balanced scales, then answer which relation must hold for the query row.",
+        "The reference scales are balanced. For the query row, select the option that follows from the references; choose Cannot determine if more than one relation is possible.",
+        "Use the balanced scales to decide the query comparison. Which option label corresponds to left heavier, right heavier, balanced, or Cannot determine?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: {answer_hint}\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: {answer_hint}\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:balance_scale": {
+      "object_description": "three pan-scale comparison panels with three labeled unknown objects, numbered weights, and a query row"
+    },
+    "query:missing_object_weight_value": {
+      "answer_hint": "set \"answer\" to the integer value of the query object",
+      "annotation_hint": "set \"annotation\" to the image-pixel bounding box [x0, y0, x1, y1] around the question-mark value box",
+      "json_example": "{\"annotation\":[630,646,696,712],\"answer\":8}",
+      "json_example_answer_only": "{\"answer\":8}"
+    },
+    "query:equivalent_object_count_value": {
+      "answer_hint": "set \"answer\" to the integer count in the question-mark box",
+      "annotation_hint": "set \"annotation\" to the image-pixel bounding box [x0, y0, x1, y1] around the question-mark count box",
+      "json_example": "{\"annotation\":[570,648,628,708],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:weight_order_label": {
+      "answer_hint": "set \"answer\" to the matching option label, one of \"A\", \"B\", \"C\", or \"D\"",
+      "annotation_hint": "set \"annotation\" to the image-pixel bounding box [x0, y0, x1, y1] around the selected option",
+      "json_example": "{\"annotation\":[720,650,920,710],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:query_side_relation_label": {
+      "answer_hint": "set \"answer\" to the matching option label, one of \"A\", \"B\", \"C\", or \"D\"",
+      "annotation_hint": "set \"annotation\" to the image-pixel bounding box [x0, y0, x1, y1] around the selected option",
+      "json_example": "{\"annotation\":[720,650,920,710],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

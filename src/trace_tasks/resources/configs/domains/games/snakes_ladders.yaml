@@ -1,0 +1,123 @@
+generation:
+  shared:
+    scene_variant_weights:
+      standard_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      paper: 1.0
+      neon: 1.0
+      pastel: 1.0
+      wood: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_side_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_die_value_sampling: true
+    board_side_support:
+    - 5
+    - 6
+    - 7
+    die_value_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    move_outcome_jump_probability: 0.3
+    move_outcome_support:
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    special_square_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    remaining_to_finish_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 760
+    board_left_px: 48
+    board_top_px: 56
+    board_size_px: 660
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    side_panel_width_px: 200
+    cell_gap_px: 4
+    cell_radius_px: 6
+    number_font_size_px: 48
+    token_radius_px: 19
+    die_size_px: 88
+    jump_width_px: 6
+prompt:
+  shared:
+    bundle_id: games_snakes_ladders_v1
+    scene_key: visible_snakes_ladders_board
+    task_key: snakes_ladders_query

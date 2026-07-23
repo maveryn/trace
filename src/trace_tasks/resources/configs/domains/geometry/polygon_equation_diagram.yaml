@@ -1,0 +1,39 @@
+generation:
+  shared:
+    angle_min: 38
+    angle_max: 152
+rendering:
+  shared:
+    canvas_width: 840
+    canvas_height: 620
+    line_width: 3
+    label_font_size: 22
+    small_label_font_size: 18
+    label_stroke_width: 0
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 54
+      min_scale_after_fit: 0.82
+      max_attempts: 6
+prompt:
+  shared:
+    bundle_id: geometry_polygon_equation_diagram_v1
+    scene_key: polygon_equation_diagram_scene
+  task_overrides:
+    task_geometry__polygon_equation_diagram__equal_side_variable_value:
+      task_key: equal_side_variable_value
+    task_geometry__polygon_equation_diagram__equal_side_length_value:
+      task_key: equal_side_length_value
+    task_geometry__polygon_equation_diagram__equal_angle_variable_value:
+      task_key: equal_angle_variable_value
+    task_geometry__polygon_equation_diagram__equal_angle_measure_value:
+      task_key: equal_angle_measure_value
+    task_geometry__polygon_equation_diagram__interior_angle_sum_variable_value:
+      task_key: interior_angle_sum_variable_value
+    task_geometry__polygon_equation_diagram__interior_angle_sum_angle_value:
+      task_key: interior_angle_sum_angle_value
+    task_geometry__polygon_equation_diagram__side_expression_perimeter_value:
+      task_key: side_expression_perimeter_value

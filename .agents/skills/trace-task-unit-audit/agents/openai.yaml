@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace Task-Unit Audit"
+  short_description: "Audit Trace task and query boundaries"
+  default_prompt: "Use $trace-task-unit-audit to decide whether these Trace task and query units should be kept, split, merged, renamed, or retired."

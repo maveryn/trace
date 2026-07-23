@@ -1,0 +1,1 @@
+"""Sudoku puzzle tasks."""

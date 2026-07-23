@@ -1,0 +1,2 @@
+Natural Earth vector and raster map data is public domain.
+Source terms: https://www.naturalearthdata.com/about/terms-of-use/

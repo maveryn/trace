@@ -1,0 +1,64 @@
+generation:
+  shared:
+    label_variant_weights:
+      letters: 1.0
+      numbers: 1.0
+      named: 2.0
+    balanced_label_variant_sampling: true
+    label_max_chars: 5
+  task_overrides:
+    task_graph__adjacency__directed_pair_reciprocity_count:
+      node_count_min: 5
+      node_count_max: 7
+      target_count_min: 0
+      target_count_max: 6
+    task_graph__adjacency__directed_strong_component_count:
+      scene_variant_weights:
+        adjacency_list_panel: 1.0
+        adjacency_matrix_panel: 1.0
+      balanced_scene_variant_sampling: true
+      node_count_min: 6
+      node_count_max: 9
+      component_count_min: 2
+      component_count_max: 6
+      extra_edge_count_min: 1
+      extra_edge_count_max: 3
+    task_graph__adjacency__mst_weight:
+      node_count_min: 4
+      node_count_max: 5
+      extra_edge_count_min: 1
+      extra_edge_count_max: 3
+      edge_weight_min: 1
+      edge_weight_max: 12
+    task_graph__adjacency__traversal_kth_label:
+      node_count_min: 5
+      node_count_max: 8
+      traversal_position_min: 2
+      traversal_position_max: 8
+      extra_edge_count_min: 1
+      extra_edge_count_max: 4
+    task_graph__adjacency__undirected_component_count:
+      scene_variant_weights:
+        adjacency_list_panel: 1.0
+        adjacency_matrix_panel: 1.0
+      balanced_scene_variant_sampling: true
+      node_count_min: 6
+      node_count_max: 9
+      component_count_min: 2
+      component_count_max: 6
+      extra_edge_count_min: 1
+      extra_edge_count_max: 3
+
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 640
+    label_font_size_px: 19
+    context_text_probability: 0.35
+  task_overrides:
+    task_graph__adjacency__traversal_kth_label:
+      label_font_size_px: 20
+
+prompt:
+  shared:
+    bundle_id: graph_adjacency_v1

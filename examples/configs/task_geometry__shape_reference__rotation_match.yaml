@@ -1,0 +1,14 @@
+output_root: ./out
+
+dataset_name: example_geometry_shape_reference_rotation_match
+instance_version: v0
+image_format: png
+strict_repro: true
+max_attempts_per_instance: 80
+sampling_seed: 0
+tasks:
+  - task_id: task_geometry__shape_reference__rotation_match
+    count: 6
+    params:
+      scene_variant: triangle
+      query_id: single

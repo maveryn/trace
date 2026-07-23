@@ -1,0 +1,133 @@
+{
+  "bundle_id": "symbolic_life_automaton_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "life_automaton": [
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The automaton panel shows {object_description}.",
+        "The grid diagram shows {object_description}.",
+        "The Life automaton diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "life_future_grid_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "life_one_step_cell_state_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "one_step_future_grid": [
+        "{query_instruction} Starting from the grid marked START, which option shows the grid after one update?",
+        "{query_instruction} Starting from the grid marked START, choose the option that matches the next grid.",
+        "{query_instruction} Starting from the grid marked START, after one update, which option is correct?",
+        "{query_instruction} Starting from the grid marked START, select the option showing the one-step future grid.",
+        "{query_instruction} Starting from the grid marked START, which labeled option gives the grid after the next update?"
+      ],
+      "two_step_future_grid": [
+        "{query_instruction} Starting from the grid marked START, which option shows the grid after two updates?",
+        "{query_instruction} Starting from the grid marked START, choose the option that matches the grid after two updates.",
+        "{query_instruction} Starting from the grid marked START, after two updates, which option is correct?",
+        "{query_instruction} Starting from the grid marked START, select the option showing the two-step future grid.",
+        "{query_instruction} Starting from the grid marked START, which labeled option gives the grid after two updates?"
+      ],
+      "one_step_alive_cell_count": [
+        "{query_instruction} Starting from the grid marked START, after one update, how many cells will be alive?",
+        "{query_instruction} Starting from the grid marked START, count the cells that will be alive after one update.",
+        "{query_instruction} After one update from the START grid, how many cells are alive?",
+        "{query_instruction} Apply one update to the grid marked START. How many cells become or remain alive?",
+        "{query_instruction} Using the grid marked START as the source grid, how many cells are alive in the next grid?"
+      ],
+      "one_step_dead_cell_count": [
+        "{query_instruction} Starting from the grid marked START, after one update, how many cells will be empty?",
+        "{query_instruction} Starting from the grid marked START, count the cells that will be empty after one update.",
+        "{query_instruction} After one update from the START grid, how many cells are empty?",
+        "{query_instruction} Apply one update to the grid marked START. How many cells become or remain empty?",
+        "{query_instruction} Using the grid marked START as the source grid, how many cells are empty in the next grid?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "query_instruction": {"type": "string"},
+    "steps": {"type": "integer"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:life_automaton": [
+      "object_description"
+    ],
+    "query:one_step_future_grid": [
+      "query_instruction"
+    ],
+    "query:two_step_future_grid": [
+      "query_instruction"
+    ],
+    "query:one_step_alive_cell_count": [
+      "query_instruction"
+    ],
+    "query:one_step_dead_cell_count": [
+      "query_instruction"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_clean_grid": "a cellular-automaton source grid marked START where dark cells are alive and light cells are empty, with labeled future-grid options below",
+    "object_description_lab_panel": "a lab-style cellular-automaton source grid marked START where dark cells are alive and light cells are empty, with labeled future-grid options below",
+    "object_description_notebook_grid": "a notebook-style cellular-automaton source grid marked START where dark cells are alive and light cells are empty, with labeled future-grid options below",
+    "object_description_one_step_cell_state_count_clean_grid": "a cellular-automaton source grid marked START where dark cells are alive and light cells are empty",
+    "object_description_one_step_cell_state_count_lab_panel": "a lab-style cellular-automaton source grid marked START where dark cells are alive and light cells are empty",
+    "object_description_one_step_cell_state_count_notebook_grid": "a notebook-style cellular-automaton source grid marked START where dark cells are alive and light cells are empty",
+    "annotation_hint_life_future_grid_label": "set \"annotation\" to an object/dictionary with keys \"source_grid\" and \"selected_option\", each mapped to that pixel bounding box [x0, y0, x1, y1]",
+    "answer_hint_life_future_grid_label": "set \"answer\" to the single selected option letter",
+    "json_example_life_future_grid_label": "{\"annotation\":{\"source_grid\":[322,104,718,500],\"selected_option\":[624,552,774,706]},\"answer\":\"D\"}",
+    "json_example_answer_only_life_future_grid_label": "{\"answer\":\"D\"}",
+    "annotation_hint_one_step_cell_state_count": "set \"annotation\" to an array of pixel-space bounding boxes [x0, y0, x1, y1], one for each visible source-grid cell that has the requested state after one update; use an empty array if there are none",
+    "answer_hint_one_step_cell_state_count": "set \"answer\" to the integer count",
+    "json_example_one_step_cell_state_count": "{\"annotation\":[[322,104,376,158],[380,104,434,158],[322,162,376,216]],\"answer\":3}",
+    "json_example_answer_only_one_step_cell_state_count": "{\"answer\":3}"
+  }
+}

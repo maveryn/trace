@@ -1,0 +1,56 @@
+generation:
+  task_overrides:
+    task_physics__shadow_cause__light_source_label:
+      correct_option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+      shadow_direction_weights:
+        east: 1.0
+        northeast: 1.0
+        north: 1.0
+        northwest: 1.0
+        west: 1.0
+        southwest: 1.0
+        south: 1.0
+        southeast: 1.0
+      object_shape_weights:
+        block: 1.0
+        cylinder: 1.0
+        sphere: 1.0
+      balanced_correct_option_letter_sampling: true
+      balanced_shadow_direction_sampling: true
+      balanced_object_shape_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 760
+    floor_left_px: 48
+    floor_top_px: 50
+    floor_right_margin_px: 48
+    floor_bottom_margin_px: 48
+    object_center_x_px: 560
+    object_base_y_px: 430
+    lamp_radius_x_px: 355
+    lamp_radius_y_px: 238
+    lamp_bulb_radius_px: 19
+    lamp_label_font_size_px: 29
+    label_stroke_width_px: 2
+    title_font_size_px: 25
+    shadow_length_px: 178
+    shadow_length_px_min: 158
+    shadow_length_px_max: 204
+    shadow_base_width_px: 38
+    shadow_tip_width_px: 78
+    object_size_px: 88
+
+prompt:
+  shared:
+    bundle_id: physics_shadow_cause_v1
+  task_overrides:
+    task_physics__shadow_cause__light_source_label:
+      task_key: shadow_cause_query

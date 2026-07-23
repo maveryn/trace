@@ -1,0 +1,91 @@
+{
+  "bundle_id": "pages_cycle_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "cycle_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "offset_stage_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "offset_stage_label": [
+        "Following the arrows around the cycle, what stage is {step_count} {step_noun} {query_relationship} \"{query_stage_label}\"?",
+        "Use the arrows and count {step_count} {step_noun} {query_relationship} \"{query_stage_label}\". What stage do you reach?",
+        "Starting from \"{query_stage_label}\", move {step_count} {step_noun} {query_relationship} along the arrows. Which stage is reached?",
+        "Count {step_count} {step_noun} {query_relationship} \"{query_stage_label}\" around the cycle. What is the destination stage?",
+        "Trace the cycle arrows from \"{query_stage_label}\" for {step_count} {step_noun} {query_relationship}. Which stage label is the result?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:offset_stage_label": {
+      "object_description": "a directed cycle with labeled stages connected by arrows",
+      "answer_hint": "set \"answer\" to the exact visible stage label reached after following the prompt",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates around the correct stage box",
+      "json_example": "{\"annotation\":[747,242,869,300],\"answer\":\"Mina\"}",
+      "json_example_answer_only": "{\"answer\":\"Mina\"}"
+    }
+  },
+  "dynamic_slots": {
+    "step_count": {"type": "integer"},
+    "step_noun": {"type": "string"},
+    "query_relationship": {"type": "string"},
+    "query_stage_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:cycle_diagram": [
+      "object_description"
+    ],
+    "query:offset_stage_label": [
+      "step_count",
+      "step_noun",
+      "query_relationship",
+      "query_stage_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "bundle_id": "geometry_pythagorean_tree_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "pythagorean_tree_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "This figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "missing_square_area_value": [
+        "Use the attached-square relationship for the right triangle.",
+        "Use the right triangle and its attached squares.",
+        "Use the visible square-area labels.",
+        "Use the attached squares on the sides of the right triangle.",
+        "Use the Pythagorean relationship between the attached square areas."
+      ]
+    },
+    "query": {
+      "hypotenuse_square_area": [
+        "What is the missing area of the square on the hypotenuse?",
+        "What area belongs in the square on the hypotenuse?",
+        "Find the missing hypotenuse-square area.",
+        "Determine the area of the square on the hypotenuse marked as missing.",
+        "What is the area of the missing square on the hypotenuse?"
+      ],
+      "leg_square_area": [
+        "What is the missing area of the marked leg square?",
+        "What area belongs in the marked leg square?",
+        "Find the missing leg-square area.",
+        "Determine the area of the leg square marked as missing.",
+        "What is the area of the missing square on the leg?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:pythagorean_tree_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:pythagorean_tree_scene": {
+      "object_description": "a right triangle with a square attached to each side, two square area labels, and one square marked with a missing area"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\"."
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  }
+}

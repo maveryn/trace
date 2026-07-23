@@ -1,0 +1,125 @@
+{
+  "bundle_id": "pages_record_table_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "record_table": [
+        "The image shows {object_description}.",
+        "The screen shows {object_description}.",
+        "This screen shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "record_table_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "selected_rows_with_status_count": [
+        "How many selected rows have status \"{status_label}\"?",
+        "Count the selected record rows whose status is \"{status_label}\".",
+        "What is the number of rows that are selected and have status \"{status_label}\"?",
+        "How many checked rows show status \"{status_label}\"?",
+        "Determine how many rows are both selected and marked with status \"{status_label}\"."
+      ],
+      "enabled_action_for_type_count": [
+        "How many rows with Type \"{type_label}\" have the \"{action_label}\" action enabled?",
+        "Count the rows where Type is \"{type_label}\" and the \"{action_label}\" action is enabled.",
+        "What is the number of \"{type_label}\" rows with an enabled \"{action_label}\" action?",
+        "How many rows have Type \"{type_label}\" and an active \"{action_label}\" button?",
+        "Determine how many record rows are Type \"{type_label}\" with \"{action_label}\" enabled."
+      ],
+      "value_threshold_in_group_count": [
+        "In the \"{section_name}\" section, how many rows have Size at least {size_threshold_mb} MB?",
+        "Looking only at \"{section_name}\", count the rows with Size greater than or equal to {size_threshold_mb} MB.",
+        "Within the \"{section_name}\" section, what is the number of rows whose Size is at least {size_threshold_mb} MB?",
+        "How many rows in \"{section_name}\" have Size >= {size_threshold_mb} MB?",
+        "For the \"{section_name}\" section, determine how many rows meet or exceed {size_threshold_mb} MB."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:selected_rows_with_status_count": {
+      "object_description": "a sectioned record table in a desktop application",
+      "answer_hint": "set \"answer\" to the integer count of selected rows with the requested status",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around every counted row",
+      "json_example": "{\"annotation\":[[72,236,1208,264],[72,292,1208,320],[72,404,1208,432]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:enabled_action_for_type_count": {
+      "object_description": "a sectioned record table in a desktop application",
+      "answer_hint": "set \"answer\" to the integer count of rows with the requested type and enabled action",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around every counted row",
+      "json_example": "{\"annotation\":[[72,236,1208,264],[72,292,1208,320],[72,404,1208,432]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:value_threshold_in_group_count": {
+      "object_description": "a sectioned record table in a desktop application",
+      "answer_hint": "set \"answer\" to the integer count of rows in the requested section whose Size is at least the threshold",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around every counted row",
+      "json_example": "{\"annotation\":[[72,236,1208,264],[72,292,1208,320],[72,404,1208,432]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "status_label": {"type": "string"},
+    "type_label": {"type": "string"},
+    "action_label": {"type": "string"},
+    "section_name": {"type": "string"},
+    "size_threshold_mb": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:record_table": [
+      "object_description"
+    ],
+    "query:selected_rows_with_status_count": [
+      "status_label"
+    ],
+    "query:enabled_action_for_type_count": [
+      "type_label",
+      "action_label"
+    ],
+    "query:value_threshold_in_group_count": [
+      "section_name",
+      "size_threshold_mb"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

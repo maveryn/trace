@@ -1,0 +1,158 @@
+{
+  "bundle_id": "charts_multiseries_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "multiseries_chart": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "multiseries_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "ranked_directional_change": [
+        "Which category label has the {ranked_largest} {change_direction} from \"{left_series}\" to \"{right_series}\"?",
+        "Find the category where {change_expression} for \"{left_series}\" and \"{right_series}\" is the {ranked_largest}.",
+        "Across the labeled categories, which one shows the {ranked_greatest} {change_direction} from \"{left_series}\" to \"{right_series}\"?",
+        "Compare \"{left_series}\" and \"{right_series}\" for each category. Which category has the {ranked_largest} {change_action}?",
+        "Determine the category label with the {ranked_largest} {change_direction} when moving from \"{left_series}\" to \"{right_series}\"."
+      ],
+      "ranked_absolute_gap": [
+        "Which category label has the {ranked_extremum} absolute gap between \"{left_series}\" and \"{right_series}\"?",
+        "Find the category where the absolute difference between \"{left_series}\" and \"{right_series}\" is the {ranked_extremum}.",
+        "Across the labeled categories, which one shows the {ranked_extremum} gap between \"{left_series}\" and \"{right_series}\"?",
+        "Compare \"{left_series}\" and \"{right_series}\" for each category. Which category has the {ranked_extremum} requested distance between their values?",
+        "Determine the category label with the {ranked_extremum} absolute difference between \"{left_series}\" and \"{right_series}\"."
+      ],
+      "ranked_series_share": [
+        "Which category label has the {ranked_extremum} percentage share for \"{target_series}\" out of that category's total across all series?",
+        "For each category, divide \"{target_series}\" by the total of all series in that category. Which category has the {ranked_extremum} share?",
+        "Across the labeled categories, which one has the {ranked_extremum} requested share of \"{target_series}\" within its category total?",
+        "Use every series in each category to compute the category total. Which category has the {ranked_extremum} \"{target_series}\" share?",
+        "Determine the category label with the {ranked_extremum} percentage contribution from \"{target_series}\"."
+      ],
+      "ranked_pair_ratio": [
+        "Which category label has the {ranked_extremum} ratio of \"{numerator_series}\" to \"{denominator_series}\"?",
+        "For each category, divide \"{numerator_series}\" by \"{denominator_series}\". Which category has the {ranked_extremum} ratio?",
+        "Across the labeled categories, which one has the {ranked_extremum} requested ratio \"{numerator_series}\" over \"{denominator_series}\"?",
+        "Use the legend to read \"{numerator_series}\" and \"{denominator_series}\" for each category. Which category has the {ranked_extremum} ratio?",
+        "Determine the category label with the {ranked_extremum} percentage ratio of \"{numerator_series}\" to \"{denominator_series}\"."
+      ],
+      "category_total_extremum_label": [
+        "Which category label has the {ranked_extremum} total across all series?",
+        "For each category, add all series values. Which category has the {ranked_extremum} total?",
+        "Across the labeled categories, which one has the {ranked_extremum} sum over all series?",
+        "Use every series in each category to compute category totals. Which category label is the {ranked_extremum}?",
+        "Determine the category label with the {ranked_extremum} total value across the legend series."
+      ],
+      "series_rank_at_category_label": [
+        "At category \"{target_category}\", which series has the {ranked_extremum} value?",
+        "Use the marks at \"{target_category}\" only. Which series has the {ranked_extremum} value there?",
+        "Within the category labeled \"{target_category}\", which legend series is the {ranked_extremum}?",
+        "Compare all series values at \"{target_category}\". What series label has the {ranked_extremum} value there?",
+        "For the single category \"{target_category}\", determine the series with the {ranked_extremum} value."
+      ],
+      "pair_equality_label": [
+        "Which category label has equal values for \"{left_series}\" and \"{right_series}\"?",
+        "Find the category where \"{left_series}\" and \"{right_series}\" have the same value.",
+        "Across the labeled categories, which one shows matching values for \"{left_series}\" and \"{right_series}\"?",
+        "Use the legend to compare \"{left_series}\" and \"{right_series}\". Which category has equal values for them?",
+        "Determine the category label where the values of \"{left_series}\" and \"{right_series}\" are equal."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:ranked_directional_change": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for the answer category's two queried series marks",
+      "json_example": "{\"annotation\":{\"K4M8:Orly\":[260,320],\"K4M8:Vega\":[260,180]},\"answer\":\"K4M8\"}",
+      "json_example_answer_only": "{\"answer\":\"K4M8\"}"
+    },
+    "query:ranked_absolute_gap": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for the answer category's two queried series marks",
+      "json_example": "{\"annotation\":{\"M7P2:Orly\":[260,340],\"M7P2:Vega\":[260,160]},\"answer\":\"M7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"M7P2\"}"
+    },
+    "query:ranked_series_share": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for every series mark in the answer category",
+      "json_example": "{\"annotation\":{\"K4M8:Orly\":[300,240],\"K4M8:Vega\":[300,320],\"K4M8:Tana\":[300,400]},\"answer\":\"K4M8\"}",
+      "json_example_answer_only": "{\"answer\":\"K4M8\"}"
+    },
+    "query:ranked_pair_ratio": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for the answer category's numerator and denominator series marks",
+      "json_example": "{\"annotation\":{\"M7P2:Orly\":[300,180],\"M7P2:Vega\":[300,300]},\"answer\":\"M7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"M7P2\"}"
+    },
+    "query:category_total_extremum_label": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for every series mark in the answer category",
+      "json_example": "{\"annotation\":{\"K4M8:Orly\":[300,220],\"K4M8:Vega\":[300,310],\"K4M8:Tana\":[300,390]},\"answer\":\"K4M8\"}",
+      "json_example_answer_only": "{\"answer\":\"K4M8\"}"
+    },
+    "query:pair_equality_label": {
+      "answer_hint": "set \"answer\" to the requested category label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for the two equal-valued queried series marks in the answer category",
+      "json_example": "{\"annotation\":{\"M7P2:Orly\":[260,240],\"M7P2:Vega\":[260,240]},\"answer\":\"M7P2\"}",
+      "json_example_answer_only": "{\"answer\":\"M7P2\"}"
+    },
+    "query:series_rank_at_category_label": {
+      "answer_hint": "set \"answer\" to the requested visible series label as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping each \"<category>:<series>\" mark key to an [x,y] pixel point for every series mark at the queried category",
+      "json_example": "{\"annotation\":{\"K4M8:Orly\":[300,240],\"K4M8:Vega\":[300,320],\"K4M8:Tana\":[300,400]},\"answer\":\"Vega\"}",
+      "json_example_answer_only": "{\"answer\":\"Vega\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "left_series": {"type": "string"},
+    "right_series": {"type": "string"},
+    "target_series": {"type": "string"},
+    "target_category": {"type": "string"},
+    "numerator_series": {"type": "string"},
+    "denominator_series": {"type": "string"},
+    "comparison_phrase": {"type": "string"},
+    "rank": {"type": "integer"},
+    "ranked_largest": {"type": "string"},
+    "ranked_greatest": {"type": "string"},
+    "ranked_extremum": {"type": "string"},
+    "extremum_direction": {"type": "string"},
+    "change_direction": {"type": "string"},
+    "change_expression": {"type": "string"},
+    "change_action": {"type": "string"},
+    "change_measure": {"type": "string"},
+    "change_measure_prompt": {"type": "string"},
+    "ratio_measure": {"type": "string"},
+    "ratio_measure_prompt": {"type": "string"}
+  }
+}

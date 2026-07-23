@@ -1,0 +1,93 @@
+{
+  "bundle_id": "puzzles_tents_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description_tents_classic": "a Tents puzzle grid with row and column clues, trees, visible tents, and labeled cells or tents",
+    "object_description_tents_card": "a Tents puzzle grid with row and column clues, trees, visible tents, and labeled cells or tents",
+    "object_description_tents_blueprint": "a Tents puzzle grid with row and column clues, trees, visible tents, and labeled cells or tents"
+  },
+  "templates": {
+    "scene": {
+      "tents_grid": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "missing_tent_cell_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "violating_tent_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "missing_tent_cell_label": [
+        "Each tree needs one tent in an orthogonally adjacent cell, and tents cannot touch any other tent, even diagonally. Which labeled cell can hold the missing tent for the marked tree?",
+        "Use the row and column clues, the visible tents, and the no-touch rule. Which candidate label is the legal tent cell for the marked tree?",
+        "A tent for the marked tree must be directly above, below, left, or right of that tree, and it cannot touch another tent. Which labeled candidate cell works?",
+        "Find the only labeled candidate cell where the marked tree's missing tent can be placed while satisfying the clues and no-touch rule.",
+        "Which labeled cell is the legal missing tent position for the marked tree?"
+      ],
+      "violating_tent_label": [
+        "Each tent should be orthogonally adjacent to at least one tree. Which labeled tent violates that rule?",
+        "A tent must be directly above, below, left, or right of a tree. Which labeled tent is not next to any tree?",
+        "Inspect the labeled tents. Which label marks the tent that has no orthogonally adjacent tree?",
+        "Which labeled tent breaks the Tents rule requiring a neighboring tree?",
+        "Find the labeled tent that is not orthogonally adjacent to any tree."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:missing_tent_cell_label": {
+      "answer_instruction": "the label of the only candidate cell where the marked tree's missing tent can be placed",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] for the selected candidate cell.",
+      "json_example": "{\"annotation\":[512,386,574,448],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:violating_tent_label": {
+      "answer_instruction": "the label of the tent that is not orthogonally adjacent to any tree",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] for the selected labeled tent cell.",
+      "json_example": "{\"annotation\":[356,226,416,286],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tents_grid": [
+      "object_description"
+    ]
+  }
+}

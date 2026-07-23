@@ -1,0 +1,162 @@
+{
+  "bundle_id": "puzzles_voxel_cube_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description": "an isometric voxel-cube structure with orthographic projection panels when needed"
+  },
+  "templates": {
+    "scene": {
+      "voxel_cube": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This visual shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "cube_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cube_structure_change_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cube_visible_projection_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cube_projection_match_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "cube_count": [
+        "How many unit cubes are in the shown voxel structure?",
+        "Count all unit cubes in the isometric voxel structure.",
+        "How many small cubes make up the structure?",
+        "Find the total number of unit cubes in the structure.",
+        "Using the visible stack heights, how many unit cubes are present?"
+      ],
+      "missing_to_complete_cuboid_count": [
+        "How many unit cubes must be added to the changed structure to make the complete reference cuboid?",
+        "Compare the two structures. How many cubes are missing from the changed structure?",
+        "How many cubes need to be added to the changed structure so it matches the reference cuboid?",
+        "The reference shows the complete cuboid. How many cubes are absent from the changed version?",
+        "Count the cubes that must be inserted into the changed structure to complete the reference cuboid."
+      ],
+      "removed_cube_count": [
+        "How many unit cubes were removed from the reference structure to get the changed structure?",
+        "Compare the structures. How many cubes are present in the reference but absent in the changed version?",
+        "Count the cubes removed between the reference and changed voxel structures.",
+        "How many cubes disappeared from the reference structure?",
+        "Find the number of unit cubes missing from the changed structure relative to the reference."
+      ],
+      "visible_projection_count": [
+        "In the {view_direction} orthographic view, how many projection-grid cells should be filled?",
+        "Looking from the {view_direction} direction, count the filled cells in the orthographic projection.",
+        "How many cells are occupied in the {view_direction} view projection?",
+        "Use the stack to fill the {view_direction} view grid. How many cells would be filled?",
+        "For the {view_direction} projection, count the grid cells covered by at least one cube."
+      ],
+      "projection_match_label": [
+        "Which labeled option matches the {view_direction} orthographic projection of the voxel structure?",
+        "Choose the option that shows the correct {view_direction} view projection.",
+        "Which projection option is the {view_direction} view of the structure?",
+        "Look at the structure from the {view_direction} direction. Which labeled grid is correct?",
+        "Select the labeled option matching the structure's {view_direction} projection."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:cube_count": {
+      "answer_instruction": "the total unit-cube count as an integer",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the voxel structure.",
+      "json_example": "{\"annotation\":[310,170,590,520],\"answer\":9}",
+      "json_example_answer_only": "{\"answer\":9}"
+    },
+    "query:missing_to_complete_cuboid_count": {
+      "answer_instruction": "the number of cubes that must be added as an integer",
+      "annotation_hint": "Set annotation to a JSON array of image-pixel bounding boxes [x0,y0,x1,y1], one around each compared structure.",
+      "json_example": "{\"annotation\":[[120,210,420,560],[520,225,820,560]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:removed_cube_count": {
+      "answer_instruction": "the number of removed cubes as an integer",
+      "annotation_hint": "Set annotation to a JSON array of image-pixel bounding boxes [x0,y0,x1,y1], one around each compared structure.",
+      "json_example": "{\"annotation\":[[120,210,420,560],[520,225,820,560]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:visible_projection_count": {
+      "answer_instruction": "the filled projection-cell count as an integer",
+      "annotation_hint": "Set annotation to a JSON array of image-pixel bounding boxes [x0,y0,x1,y1], one for each projection-grid cell that should be filled.",
+      "json_example": "{\"annotation\":[[620,250,662,292],[662,250,704,292],[620,292,662,334]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:projection_match_label": {
+      "answer_instruction": "the label of the matching projection option",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected projection option panel.",
+      "json_example": "{\"annotation\":[690,420,860,580],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "answer_schema": {
+      "type": "string"
+    },
+    "change_type": {
+      "type": "string"
+    },
+    "view_direction": {
+      "type": "string"
+    },
+    "option_count": {
+      "type": "integer"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:voxel_cube": [
+      "object_description"
+    ],
+    "query:visible_projection_count": [
+      "view_direction"
+    ],
+    "query:projection_match_label": [
+      "view_direction"
+    ]
+  }
+}

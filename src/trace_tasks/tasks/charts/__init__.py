@@ -1,0 +1,2 @@
+"""Charts task domain."""
+

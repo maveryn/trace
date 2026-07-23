@@ -1,0 +1,55 @@
+generation:
+  shared:
+    total_cell_count_min: 6
+    total_cell_count_max: 10
+    piece_cell_count_min: 2
+    piece_cell_count_max: 6
+    shape_bbox_max_dim: 5
+    split_attempts: 600
+    distractor_attempts: 2400
+    scene_variants:
+    - clean_table
+    - workbench_card
+    - outline_panel
+  task_overrides:
+    task_puzzles__polyomino_assembly__decomposition_pair_label: {}
+    task_puzzles__polyomino_assembly__composition_result_label: {}
+    task_puzzles__polyomino_assembly__hole_fill_piece_label: {}
+visual:
+  noise:
+    apply_prob: 0.0
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 760
+    scene_margin_left_px: 48
+    scene_margin_right_px: 48
+    scene_margin_top_px: 42
+    scene_margin_bottom_px: 42
+    cell_size_px: 34
+    cell_gap_px: 3
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.05
+    panel_padding_px: 22
+    top_panel_height_px: 226
+    top_to_options_gap_px: 42
+    option_panel_width_px: 324
+    option_panel_height_px: 190
+    option_gap_px: 28
+    option_row_gap_px: 24
+    panel_corner_radius_px: 18
+    cell_corner_radius_px: 7
+    border_width_px: 3
+    option_label_font_size_px: 30
+    source_gap_px: 34
+prompt:
+  shared:
+    bundle_id: puzzles_polyomino_assembly_v1
+    scene_key: polyomino_assembly
+  task_overrides:
+    task_puzzles__polyomino_assembly__decomposition_pair_label:
+      task_key: decomposition_pair_label_query
+    task_puzzles__polyomino_assembly__composition_result_label:
+      task_key: composition_result_label_query
+    task_puzzles__polyomino_assembly__hole_fill_piece_label:
+      task_key: hole_fill_piece_label_query

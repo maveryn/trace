@@ -1,0 +1,187 @@
+generation:
+  shared:
+    balanced_sampling: true
+  task_overrides:
+    task_illustrations__pixel_village__missing_patch_label:
+      query_id_support:
+        - single
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 36
+    task_illustrations__pixel_village__object_type_count:
+      query_id_support:
+        - single
+      target_object_support:
+        - building
+        - person
+        - tree
+        - lamp_post
+        - well
+        - pond
+      target_answer_count_max: 8
+    task_illustrations__pixel_village__person_path_count:
+      query_id_support:
+        - single
+      path_person_count_min: 2
+      path_person_count_max: 6
+    task_illustrations__pixel_village__rotated_tile_label:
+      query_id_support:
+        - single
+      min_tile_detail_score: 120
+      min_rotation_delta: 7
+      rotation_degrees_support:
+        - 90
+        - 270
+    task_illustrations__pixel_village__swapped_tile_pair_label:
+      query_id_support:
+        - single
+      min_tile_detail_score: 150
+      min_pair_difference: 8
+    task_illustrations__pixel_village__territory_object_count:
+      query_id_support:
+        - single
+      territory_object_support:
+        - cemetery_grave_marker
+        - orchard_tree
+      target_answer_count_max: 8
+    task_illustrations__pixel_village__river_side_object_count:
+      query_id_support:
+        - single
+      river_side_target_object_support:
+        - building
+        - person
+        - tree
+      river_side_support:
+        - left
+        - right
+        - above
+        - below
+      target_count_support:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+      target_answer_count_max: 8
+
+rendering:
+  shared:
+    pixel_village_tile_px: 48
+  task_overrides:
+    task_illustrations__pixel_village__missing_patch_label:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: force
+      pixel_village_orchard_mode: force
+      pixel_village_windmill_mode: force
+      pixel_village_river_mode: force
+      pixel_village_river_orientation: auto
+      pixel_village_river_placement: balanced
+    task_illustrations__pixel_village__object_type_count:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: auto
+      pixel_village_orchard_mode: auto
+      pixel_village_windmill_mode: auto
+      annotation_padding_px: 0.0
+    task_illustrations__pixel_village__person_path_count:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: auto
+      pixel_village_orchard_mode: auto
+      pixel_village_windmill_mode: auto
+      background_person_path_clearance: 1
+      annotation_padding_px: 0.0
+    task_illustrations__pixel_village__rotated_tile_label:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: force
+      pixel_village_orchard_mode: force
+      pixel_village_windmill_mode: force
+      pixel_village_river_mode: force
+      pixel_village_river_orientation: auto
+      pixel_village_river_placement: balanced
+    task_illustrations__pixel_village__swapped_tile_pair_label:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: force
+      pixel_village_orchard_mode: force
+      pixel_village_windmill_mode: force
+      pixel_village_river_mode: force
+      pixel_village_river_orientation: auto
+      pixel_village_river_placement: balanced
+    task_illustrations__pixel_village__territory_object_count:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: auto
+      pixel_village_orchard_mode: auto
+      pixel_village_windmill_mode: auto
+      annotation_padding_px: 0.0
+    task_illustrations__pixel_village__river_side_object_count:
+      pixel_village_theme_mode: auto
+      pixel_village_cemetery_mode: auto
+      pixel_village_orchard_mode: auto
+      pixel_village_windmill_mode: auto
+      pixel_village_river_mode: force
+      pixel_village_river_orientation: auto
+      pixel_village_river_placement: balanced
+      annotation_padding_px: 0.0
+
+prompt:
+  task_overrides:
+    task_illustrations__pixel_village__missing_patch_label:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_missing_patch_label_task
+      answer_hint_missing_patch: set "answer" to the selected option letter
+      annotation_hint_missing_patch: set "annotation" to a JSON object with "missing_region" and "selected_option" keys, each mapped to a [x0, y0, x1, y1] pixel box
+      json_example_missing_patch: '{"annotation":{"missing_region":[152,188,356,330],"selected_option":[708,612,912,754]},"answer":"C"}'
+      json_example_answer_only_missing_patch: '{"answer":"C"}'
+    task_illustrations__pixel_village__object_type_count:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_object_type_count_task
+      answer_hint_pixel_village_object_type: set "answer" to the count of visible {target_plural} as an integer
+      annotation_hint_pixel_village_object_type: set "annotation" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {target_unit}
+      json_example_pixel_village_object_type: '{"annotation":[[160,240,224,304],[416,208,480,272],[672,368,736,432]],"answer":3}'
+      json_example_answer_only_pixel_village_object_type: '{"answer":3}'
+    task_illustrations__pixel_village__person_path_count:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_person_path_count_task
+      answer_hint_pixel_village_person_path: set "answer" to the count of people on the paths as an integer
+      annotation_hint_pixel_village_person_path: set "annotation" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted person on a path
+      json_example_pixel_village_person_path: '{"annotation":[[288,320,352,384],[448,256,512,320],[576,384,640,448]],"answer":3}'
+      json_example_answer_only_pixel_village_person_path: '{"answer":3}'
+    task_illustrations__pixel_village__rotated_tile_label:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_rotated_tile_label_task
+      answer_hint_rotated_tile: set "answer" to the selected tile letter
+      annotation_hint_rotated_tile: set "annotation" to the [x0, y0, x1, y1] box around the rotated tile in pixel coordinates
+      json_example_rotated_tile: '{"annotation":[438,168,758,488],"answer":"B"}'
+      json_example_answer_only_rotated_tile: '{"answer":"B"}'
+    task_illustrations__pixel_village__swapped_tile_pair_label:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_swapped_tile_pair_label_task
+      answer_hint_swapped_tile_pair: set "answer" to the selected option letter
+      annotation_hint_swapped_tile_pair: set "annotation" to a JSON array containing two [x0, y0, x1, y1] boxes around the two swapped numbered cells
+      json_example_swapped_tile_pair: '{"annotation":[[0,0,400,280],[800,560,1200,840]],"answer":"C"}'
+      json_example_answer_only_swapped_tile_pair: '{"answer":"C"}'
+    task_illustrations__pixel_village__territory_object_count:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_territory_object_count_task
+      answer_hint_pixel_village_territory_object: set "answer" to the count of {target_plural} in the {territory_name} as an integer
+      annotation_hint_pixel_village_territory_object: set "annotation" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {target_unit} in the {territory_name}
+      json_example_pixel_village_territory_object: '{"annotation":[[112,208,176,272],[176,208,240,272],[240,208,304,272]],"answer":3}'
+      json_example_answer_only_pixel_village_territory_object: '{"answer":3}'
+    task_illustrations__pixel_village__river_side_object_count:
+      bundle_id: illustrations_pixel_village_v0
+      scene_key: pixel_village_canvas
+      task_key: pixel_village_river_side_object_count_task
+      answer_hint_pixel_village_river_side_object: set "answer" to the count of visible {target_plural} {river_relation} the river as an integer
+      annotation_hint_pixel_village_river_side_object: set "annotation" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted {target_unit} {river_relation} the river
+      json_example_pixel_village_river_side_object: '{"annotation":[[160,240,224,304],[416,208,480,272],[672,368,736,432]],"answer":3}'
+      json_example_answer_only_pixel_village_river_side_object: '{"answer":3}'

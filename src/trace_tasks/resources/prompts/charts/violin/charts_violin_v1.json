@@ -1,0 +1,87 @@
+{
+  "bundle_id": "charts_violin_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "violin_distribution": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "violin_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "highest_mode": [
+        "Which label has the highest density peak on the vertical axis?",
+        "Find the violin plot whose widest peak occurs at the highest value.",
+        "Which label's main density peak is highest on the value axis?",
+        "Identify the label with the uppermost density peak.",
+        "Which violin has its main thickest part at the highest value?"
+      ],
+      "lowest_mode": [
+        "Which label has the lowest density peak on the vertical axis?",
+        "Find the violin plot whose widest peak occurs at the lowest value.",
+        "Which label's main density peak is lowest on the value axis?",
+        "Identify the label with the lowermost density peak.",
+        "Which violin has its main thickest part at the lowest value?"
+      ],
+      "bimodal_label": [
+        "Which label has two clear density peaks?",
+        "Find the violin plot with two separated thick regions.",
+        "Which label shows a bimodal shape with two visible lobes?",
+        "Identify the violin plot that has two distinct density peaks.",
+        "Which label's distribution has two clear bulges?"
+      ],
+      "widest_support": [
+        "Which label spans the largest vertical value range from bottom to top?",
+        "Find the violin plot with the widest support range.",
+        "Which label covers the greatest vertical distance between its lower and upper ends?",
+        "Identify the violin plot whose shape stretches across the largest value range.",
+        "Which label has the largest bottom-to-top range?"
+      ],
+      "narrowest_support": [
+        "Which label spans the smallest vertical value range from bottom to top?",
+        "Find the violin plot with the narrowest support range.",
+        "Which label covers the least vertical distance between its lower and upper ends?",
+        "Identify the violin plot whose shape stretches across the smallest value range.",
+        "Which label has the smallest bottom-to-top range?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  }
+}

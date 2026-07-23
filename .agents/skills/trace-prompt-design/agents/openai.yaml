@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace Prompt Design"
+  short_description: "Design external Trace prompt bundles safely"
+  default_prompt: "Use $trace-prompt-design to design or revise this Trace prompt bundle and its contract-valid examples."

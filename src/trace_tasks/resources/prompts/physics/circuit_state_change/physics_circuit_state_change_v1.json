@@ -1,0 +1,106 @@
+{
+  "bundle_id": "physics_circuit_state_change_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "circuit_state_change_diagram": [
+        "The image shows {object_description}.",
+        "The circuit diagram shows {object_description}.",
+        "This circuit diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "bulb_brightness_change_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "brightens_after_switch_change": [
+        "After the red-boxed switch action occurs, which labeled bulb becomes brighter?",
+        "Which bulb becomes brighter after the shown switch action?",
+        "Compare the circuit before and after the red-boxed switch action. Which labeled bulb brightens?",
+        "Using the bulb resistances and topology, which bulb becomes brighter after the switch action?",
+        "Select the label of the bulb that brightens after the shown switch action."
+      ],
+      "dims_after_switch_change": [
+        "After the red-boxed switch action occurs, which labeled bulb becomes dimmer?",
+        "Which bulb becomes dimmer after the shown switch action?",
+        "Compare the circuit before and after the red-boxed switch action. Which labeled bulb dims?",
+        "Using the bulb resistances and topology, which bulb becomes dimmer after the switch action?",
+        "Select the label of the bulb that dims after the shown switch action."
+      ],
+      "turns_on_after_switch_change": [
+        "After the red-boxed switch action occurs, which labeled bulb turns on?",
+        "Which bulb turns on after the shown switch action?",
+        "Compare the circuit before and after the red-boxed switch action. Which labeled bulb turns on?",
+        "Using the bulb resistances and topology, which bulb is off before the switch action and on afterward?",
+        "Select the label of the bulb that turns on after the shown switch action."
+      ],
+      "turns_off_after_switch_change": [
+        "After the red-boxed switch action occurs, which labeled bulb turns off?",
+        "Which bulb turns off after the shown switch action?",
+        "Compare the circuit before and after the red-boxed switch action. Which labeled bulb turns off?",
+        "Using the bulb resistances and topology, which bulb is on before the switch action and off afterward?",
+        "Select the label of the bulb that turns off after the shown switch action."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:circuit_state_change_diagram": {
+      "object_description": "a visible ideal-battery circuit with five labeled bulbs, resistance labels, and one red-boxed switch action cue"
+    },
+    "query:brightens_after_switch_change": {
+      "annotation_hint": "set \"annotation\" to an object mapping \"changed_switch\" and each visible bulb label B1 through B5 to one [x0,y0,x1,y1] pixel box around the switch action cue and each bulb symbol with its resistance label",
+      "answer_hint": "set \"answer\" to the label of the bulb that becomes brighter after the switch action as a string, for example \"B2\"",
+      "json_example": "{\"annotation\":{\"changed_switch\":[40,40,120,95],\"B1\":[130,40,210,120],\"B2\":[220,40,300,120],\"B3\":[310,40,390,120],\"B4\":[400,40,480,120],\"B5\":[490,40,570,120]},\"answer\":\"B2\"}",
+      "json_example_answer_only": "{\"answer\":\"B2\"}"
+    },
+    "query:dims_after_switch_change": {
+      "annotation_hint": "set \"annotation\" to an object mapping \"changed_switch\" and each visible bulb label B1 through B5 to one [x0,y0,x1,y1] pixel box around the switch action cue and each bulb symbol with its resistance label",
+      "answer_hint": "set \"answer\" to the label of the bulb that becomes dimmer after the switch action as a string, for example \"B2\"",
+      "json_example": "{\"annotation\":{\"changed_switch\":[40,40,120,95],\"B1\":[130,40,210,120],\"B2\":[220,40,300,120],\"B3\":[310,40,390,120],\"B4\":[400,40,480,120],\"B5\":[490,40,570,120]},\"answer\":\"B2\"}",
+      "json_example_answer_only": "{\"answer\":\"B2\"}"
+    },
+    "query:turns_on_after_switch_change": {
+      "annotation_hint": "set \"annotation\" to an object mapping \"changed_switch\" and each visible bulb label B1 through B5 to one [x0,y0,x1,y1] pixel box around the switch action cue and each bulb symbol with its resistance label",
+      "answer_hint": "set \"answer\" to the label of the bulb that turns on after the switch action as a string, for example \"B2\"",
+      "json_example": "{\"annotation\":{\"changed_switch\":[40,40,120,95],\"B1\":[130,40,210,120],\"B2\":[220,40,300,120],\"B3\":[310,40,390,120],\"B4\":[400,40,480,120],\"B5\":[490,40,570,120]},\"answer\":\"B2\"}",
+      "json_example_answer_only": "{\"answer\":\"B2\"}"
+    },
+    "query:turns_off_after_switch_change": {
+      "annotation_hint": "set \"annotation\" to an object mapping \"changed_switch\" and each visible bulb label B1 through B5 to one [x0,y0,x1,y1] pixel box around the switch action cue and each bulb symbol with its resistance label",
+      "answer_hint": "set \"answer\" to the label of the bulb that turns off after the switch action as a string, for example \"B2\"",
+      "json_example": "{\"annotation\":{\"changed_switch\":[40,40,120,95],\"B1\":[130,40,210,120],\"B2\":[220,40,300,120],\"B3\":[310,40,390,120],\"B4\":[400,40,480,120],\"B5\":[490,40,570,120]},\"answer\":\"B2\"}",
+      "json_example_answer_only": "{\"answer\":\"B2\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:circuit_state_change_diagram": [
+      "object_description"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+generation:
+  task_overrides:
+    task_three_d__warehouse__robot_forward_path_label:
+      scene_variant_weights:
+        storage_aisle: 1.0
+        loading_zone: 1.0
+        packing_floor: 1.0
+      robot_heading_weights:
+        east: 1.0
+        north: 1.0
+        west: 1.0
+        south: 1.0
+      candidate_count_min: 4
+      candidate_count_max: 4
+      context_object_count_min: 11
+      context_object_count_max: 11
+      balanced_scene_variant_sampling: true
+      balanced_robot_heading_sampling: true
+    task_three_d__warehouse__nearest_candidate_to_reference_label:
+      scene_variant_weights:
+        storage_aisle: 1.0
+        loading_zone: 1.0
+        packing_floor: 1.0
+      aisle_heading_weights:
+        east: 1.0
+        north: 1.0
+        west: 1.0
+        south: 1.0
+      candidate_count_min: 4
+      candidate_count_max: 4
+      context_object_count_min: 10
+      context_object_count_max: 10
+      balanced_scene_variant_sampling: true
+      balanced_aisle_heading_sampling: true
+rendering:
+  shared:
+    canvas_preset_weights:
+      landscape: 1.0
+      portrait: 0.0
+      square: 1.0
+  task_overrides:
+    task_three_d__warehouse__robot_forward_path_label:
+      canvas_width: 1180
+      canvas_height: 920
+      scene_margin_left_px: 48
+      scene_margin_right_px: 48
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 52
+      room_extent: 4.6
+      grid_step: 0.72
+      marker_radius_px: 20
+      label_font_size_px: 25
+      line_width_px: 2
+      path_rgb:
+      - 236
+      - 195
+      - 72
+    task_three_d__warehouse__nearest_candidate_to_reference_label:
+      canvas_width: 1180
+      canvas_height: 920
+      scene_margin_left_px: 48
+      scene_margin_right_px: 48
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 52
+      room_extent: 4.6
+      grid_step: 0.72
+      marker_radius_px: 20
+      label_font_size_px: 25
+      line_width_px: 2
+      path_rgb:
+      - 236
+      - 195
+      - 72
+prompt:
+  shared:
+    bundle_id: three_d_warehouse_v1
+    scene_key: warehouse
+  task_overrides:
+    task_three_d__warehouse__robot_forward_path_label:
+      task_key: warehouse_robot_forward_path_query
+    task_three_d__warehouse__nearest_candidate_to_reference_label:
+      task_key: warehouse_robot_nearest_object_query

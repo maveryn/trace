@@ -1,0 +1,77 @@
+{
+  "bundle_id": "charts_hexbin_density_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "hexbin_density_scene": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "hexbin_density_threshold_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "above_threshold_bin_count": [
+        "How many visible hex bins have density level {density_threshold_phrase} {density_threshold_level}?",
+        "Count the visible hex bins whose density level is {density_threshold_phrase} {density_threshold_level}.",
+        "Using the legend, how many visible hex bins are density level {density_threshold_phrase} {density_threshold_level}?",
+        "What is the number of visible hex bins with density level {density_threshold_phrase} {density_threshold_level}?",
+        "Compare each visible hex bin to level {density_threshold_level}. How many are {density_threshold_phrase} that level?"
+      ],
+      "below_threshold_bin_count": [
+        "How many visible hex bins have density level {density_threshold_phrase} {density_threshold_level}?",
+        "Count the visible hex bins whose density level is {density_threshold_phrase} {density_threshold_level}.",
+        "Using the legend, how many visible hex bins are density level {density_threshold_phrase} {density_threshold_level}?",
+        "What is the number of visible hex bins with density level {density_threshold_phrase} {density_threshold_level}?",
+        "Compare each visible hex bin to level {density_threshold_level}. How many are {density_threshold_phrase} that level?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:above_threshold_bin_count": {
+      "answer_hint": "set \"answer\" to the requested count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the center of every visible hex bin matching the density-level threshold",
+      "json_example": "{\"annotation\":[[234,204],[324,264]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:below_threshold_bin_count": {
+      "answer_hint": "set \"answer\" to the requested count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the center of every visible hex bin matching the density-level threshold",
+      "json_example": "{\"annotation\":[[234,204],[324,264]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "density_threshold_phrase": {"type": "string"},
+    "density_threshold_operator": {"type": "string"},
+    "density_threshold_level": {"type": "string"}
+  }
+}

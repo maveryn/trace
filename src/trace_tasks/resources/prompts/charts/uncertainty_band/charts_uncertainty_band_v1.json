@@ -1,0 +1,127 @@
+{
+  "bundle_id": "charts_uncertainty_band_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "uncertainty_band_scene": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "uncertainty_band_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "band_overlap_count": [
+        "At how many x-axis labels do the shaded bands for \"{series_a_label}\" and \"{series_b_label}\" overlap?",
+        "Count the visible x-axis positions where the shaded band for \"{series_a_label}\" overlaps the shaded band for \"{series_b_label}\".",
+        "For how many labeled x positions do the two shaded uncertainty bands overlap?",
+        "Using the upper and lower band boundaries, how many x-axis labels have overlap between \"{series_a_label}\" and \"{series_b_label}\"?",
+        "How many labeled x positions show the two shaded bands sharing some vertical range?"
+      ],
+      "widest_band_x_label": [
+        "For series \"{target_series_label}\", which x-axis label has the {rank_phrase} shaded band, measured as upper bound minus lower bound?",
+        "Look only at series \"{target_series_label}\". What x-axis label has the {rank_phrase} uncertainty band?",
+        "Using band width from lower boundary to upper boundary, which x-axis label is {rank_phrase} for \"{target_series_label}\"?",
+        "Find the x-axis label where series \"{target_series_label}\" has its {rank_phrase} shaded range.",
+        "For \"{target_series_label}\", what visible x-axis label corresponds to the {rank_phrase} band width?"
+      ],
+      "narrowest_band_x_label": [
+        "For series \"{target_series_label}\", which x-axis label has the {rank_phrase} shaded band, measured as upper bound minus lower bound?",
+        "Look only at series \"{target_series_label}\". What x-axis label has the {rank_phrase} uncertainty band?",
+        "Using band width from lower boundary to upper boundary, which x-axis label is {rank_phrase} for \"{target_series_label}\"?",
+        "Find the x-axis label where series \"{target_series_label}\" has its {rank_phrase} shaded range.",
+        "For \"{target_series_label}\", what visible x-axis label corresponds to the {rank_phrase} band width?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "rank_phrase": {
+      "type": "string"
+    },
+    "series_a_label": {
+      "type": "string"
+    },
+    "series_b_label": {
+      "type": "string"
+    },
+    "target_series_label": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:uncertainty_band_scene": [
+      "object_description"
+    ],
+    "query:band_overlap_count": [
+      "series_a_label",
+      "series_b_label"
+    ],
+    "query:widest_band_x_label": [
+      "target_series_label",
+      "rank_phrase"
+    ],
+    "query:narrowest_band_x_label": [
+      "target_series_label",
+      "rank_phrase"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

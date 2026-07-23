@@ -1,0 +1,137 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+  task_overrides:
+    task_physics__pv_diagram__pv_work_value:
+      scene_variant_weights:
+        clean_grid: 1.0
+        paper_grid: 1.0
+        bold_grid: 1.0
+      work_mode_weights:
+        single_process: 1.0
+        rectangular_cycle: 0.0
+      balanced_scene_variant_sampling: true
+      balanced_work_mode_sampling: true
+      balanced_target_answer_sampling: true
+      pressure_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      volume_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      min_volume_delta: 2
+      max_volume_delta: 6
+      work_answer_support:
+      - -24
+      - -20
+      - -18
+      - -16
+      - -15
+      - -12
+      - -10
+      - -9
+      - -8
+      - -6
+      - -4
+      - 4
+      - 6
+      - 8
+      - 9
+      - 10
+      - 12
+      - 15
+      - 16
+      - 18
+      - 20
+      - 24
+    task_physics__pv_diagram__pv_process_sign_choice:
+      scene_variant_weights:
+        clean_grid: 1.0
+        paper_grid: 1.0
+        bold_grid: 1.0
+      target_sign_weights:
+        positive: 1.0
+        negative: 1.0
+        zero: 1.0
+      correct_option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+        G: 1.0
+        H: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_target_sign_sampling: true
+      balanced_correct_option_letter_sampling: true
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    plot_left_px: 118
+    plot_top_px: 78
+    plot_width_px: 760
+    plot_height_px: 560
+    mini_plot_left_px: 58
+    mini_plot_top_px: 88
+    mini_cell_width_px: 262
+    mini_cell_height_px: 196
+    mini_cell_gap_x_px: 18
+    mini_cell_gap_y_px: 32
+    axis_width_px: 5
+    axis_width_px_min: 4
+    axis_width_px_max: 6
+    grid_line_width_px: 1
+    bold_grid_line_width_px: 2
+    process_line_width_px: 9
+    process_line_width_px_min: 8
+    process_line_width_px_max: 10
+    cycle_line_width_px: 8
+    cycle_line_width_px_min: 7
+    cycle_line_width_px_max: 9
+    arrow_head_length_px: 24
+    arrow_head_width_px: 22
+    label_font_size_px: 24
+    tick_font_size_px: 18
+    state_font_size_px: 25
+    option_font_size_px: 26
+    note_font_size_px: 21
+    label_stroke_width_px: 2
+    pressure_max_kpa: 10
+    volume_max_l: 12
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 8
+    layout_jitter_x_px_min: -18
+    layout_jitter_x_px_max: 12
+    layout_jitter_y_px_min: -14
+    layout_jitter_y_px_max: 10
+prompt:
+  shared:
+    bundle_id: physics_pv_diagram_v1
+  task_overrides:
+    task_physics__pv_diagram__pv_work_value:
+      task_key: pv_work_value
+    task_physics__pv_diagram__pv_process_sign_choice:
+      task_key: pv_process_sign_choice

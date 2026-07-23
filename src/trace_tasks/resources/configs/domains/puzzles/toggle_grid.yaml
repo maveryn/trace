@@ -1,0 +1,44 @@
+generation:
+  shared:
+    scene_variant_weights:
+      toggle_clean: 1.0
+      toggle_notebook: 1.0
+      toggle_console: 1.0
+  task_overrides:
+    task_puzzles__toggle_grid__toggle_result_label:
+      grid_rows_min: 4
+      grid_rows_max: 5
+      grid_cols_min: 4
+      grid_cols_max: 5
+      result_press_count_min: 1
+      result_press_count_max: 1
+      option_count: 4
+    task_puzzles__toggle_grid__toggle_repair_switch_label:
+      grid_rows_min: 4
+      grid_rows_max: 5
+      grid_cols_min: 4
+      grid_cols_max: 5
+      option_count: 4
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 760
+    main_cell_size_px: 72
+    mini_cell_size_px: 28
+    panel_title_font_size_px: 22
+    option_font_size_px: 22
+
+prompt:
+  shared:
+    bundle_id: puzzles_toggle_grid_v1
+    scene_key: toggle_grid
+  task_overrides:
+    task_puzzles__toggle_grid__toggle_result_label:
+      task_key: toggle_result_label_query
+    task_puzzles__toggle_grid__toggle_repair_switch_label:
+      task_key: toggle_repair_switch_label_query
+
+visual:
+  noise:
+    apply_prob: 0.15

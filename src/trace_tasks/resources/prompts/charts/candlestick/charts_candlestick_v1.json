@@ -1,0 +1,173 @@
+{
+  "bundle_id": "charts_candlestick_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "candlestick": [
+        "The image shows a candlestick OHLC chart with labeled periods. Each candle has printed O, H, L, and C values for open, high, low, and close.",
+        "The figure shows a candlestick OHLC chart with labeled periods. Each candle has printed O, H, L, and C values for open, high, low, and close.",
+        "The visual shows a candlestick OHLC chart with labeled periods. Each candle has printed O, H, L, and C values for open, high, low, and close.",
+        "The chart shows a candlestick OHLC chart with labeled periods. Each candle has printed O, H, L, and C values for open, high, low, and close.",
+        "The panel shows a candlestick OHLC chart with labeled periods. Each candle has printed O, H, L, and C values for open, high, low, and close."
+      ]
+    },
+    "task": {
+      "candlestick_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "largest_wick_range_label": [
+        "Which period has the {extremum_phrase} {range_kind_phrase}?",
+        "Using the printed high and low values, what period label has the {extremum_phrase} {range_kind_phrase}?",
+        "Find the candle with the {extremum_phrase} {range_kind_phrase}. What is its period label?",
+        "Compare high minus low for all candles. Which label has the {extremum_phrase} range?",
+        "What period label corresponds to the {extremum_phrase} {range_kind_phrase}?"
+      ],
+      "smallest_wick_range_label": [
+        "Which period has the {extremum_phrase} {range_kind_phrase}?",
+        "Using the printed high and low values, what period label has the {extremum_phrase} {range_kind_phrase}?",
+        "Find the candle with the {extremum_phrase} {range_kind_phrase}. What is its period label?",
+        "Compare high minus low for all candles. Which label has the {extremum_phrase} range?",
+        "What period label corresponds to the {extremum_phrase} {range_kind_phrase}?"
+      ],
+      "largest_body_range_label": [
+        "Which period has the {extremum_phrase} {range_kind_phrase}?",
+        "Using the printed open and close values, what period label has the {extremum_phrase} {range_kind_phrase}?",
+        "Find the candle with the {extremum_phrase} {range_kind_phrase}. What is its period label?",
+        "Compare the absolute close-open body sizes for all candles. Which label has the {extremum_phrase} body size?",
+        "What period label corresponds to the {extremum_phrase} {range_kind_phrase}?"
+      ],
+      "smallest_body_range_label": [
+        "Which period has the {extremum_phrase} {range_kind_phrase}?",
+        "Using the printed open and close values, what period label has the {extremum_phrase} {range_kind_phrase}?",
+        "Find the candle with the {extremum_phrase} {range_kind_phrase}. What is its period label?",
+        "Compare the absolute close-open body sizes for all candles. Which label has the {extremum_phrase} body size?",
+        "What period label corresponds to the {extremum_phrase} {range_kind_phrase}?"
+      ],
+      "close_after_body_increase_value": [
+        "For period {target_label}, keep the open value fixed and preserve the candle direction. If the open-close body size were {change_past_phrase} by {change_value} units, what close value would result?",
+        "Keep period {target_label}'s open value unchanged and keep its up/down direction. After its open-close body size is {change_past_phrase} by {change_value} units, what is the close value?",
+        "Using period {target_label}, keep the open value fixed and {change_verb} only the open-close body size by {change_value} units while preserving direction. What is the new close?",
+        "If candle {target_label} kept the same open value and direction, but its open-close body size were {change_past_phrase} by {change_value} units, what close value should it have?",
+        "For candle {target_label}, leave the open value fixed, preserve direction, and {change_verb} the open-close body size by {change_value} units. What is the resulting close value?"
+      ],
+      "close_after_body_decrease_value": [
+        "For period {target_label}, keep the open value fixed and preserve the candle direction. If the open-close body size were {change_past_phrase} by {change_value} units, what close value would result?",
+        "Keep period {target_label}'s open value unchanged and keep its up/down direction. After its open-close body size is {change_past_phrase} by {change_value} units, what is the close value?",
+        "Using period {target_label}, keep the open value fixed and {change_verb} only the open-close body size by {change_value} units while preserving direction. What is the new close?",
+        "If candle {target_label} kept the same open value and direction, but its open-close body size were {change_past_phrase} by {change_value} units, what close value should it have?",
+        "For candle {target_label}, leave the open value fixed, preserve direction, and {change_verb} the open-close body size by {change_value} units. What is the resulting close value?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:largest_wick_range_label": {
+      "answer_hint": "set \"answer\" to the exact period label as a string",
+      "annotation_hint": "set \"annotation\" to one segment: two [x, y] pixel points formatted [[x0, y0], [x1, y1]], running along the answer candle's high-low wick line",
+      "json_example": "{\"annotation\":[[542,210],[542,342]],\"answer\":\"K4\"}",
+      "json_example_answer_only": "{\"answer\":\"K4\"}"
+    },
+    "query:smallest_wick_range_label": {
+      "answer_hint": "set \"answer\" to the exact period label as a string",
+      "annotation_hint": "set \"annotation\" to one segment: two [x, y] pixel points formatted [[x0, y0], [x1, y1]], running along the answer candle's high-low wick line",
+      "json_example": "{\"annotation\":[[542,210],[542,342]],\"answer\":\"K4\"}",
+      "json_example_answer_only": "{\"answer\":\"K4\"}"
+    },
+    "query:largest_body_range_label": {
+      "answer_hint": "set \"answer\" to the exact period label as a string",
+      "annotation_hint": "set \"annotation\" to one segment: two [x, y] pixel points formatted [[x0, y0], [x1, y1]], running vertically through the answer candle's open-close body",
+      "json_example": "{\"annotation\":[[542,238],[542,314]],\"answer\":\"K4\"}",
+      "json_example_answer_only": "{\"answer\":\"K4\"}"
+    },
+    "query:smallest_body_range_label": {
+      "answer_hint": "set \"answer\" to the exact period label as a string",
+      "annotation_hint": "set \"annotation\" to one segment: two [x, y] pixel points formatted [[x0, y0], [x1, y1]], running vertically through the answer candle's open-close body",
+      "json_example": "{\"annotation\":[[542,238],[542,314]],\"answer\":\"K4\"}",
+      "json_example_answer_only": "{\"answer\":\"K4\"}"
+    },
+    "query:close_after_body_increase_value": {
+      "answer_hint": "set \"answer\" to the requested integer value",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the target candle body",
+      "json_example": "{\"annotation\":[262,280],\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    },
+    "query:close_after_body_decrease_value": {
+      "answer_hint": "set \"answer\" to the requested integer value",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the target candle body",
+      "json_example": "{\"annotation\":[262,280],\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    }
+  },
+  "dynamic_slots": {
+    "change_past_phrase": {
+      "type": "string"
+    },
+    "change_value": {
+      "type": "string"
+    },
+    "change_verb": {
+      "type": "string"
+    },
+    "extremum_phrase": {
+      "type": "string"
+    },
+    "range_kind_phrase": {
+      "type": "string"
+    },
+    "target_label": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:largest_wick_range_label": [
+      "range_kind_phrase",
+      "extremum_phrase"
+    ],
+    "query:smallest_wick_range_label": [
+      "range_kind_phrase",
+      "extremum_phrase"
+    ],
+    "query:largest_body_range_label": [
+      "range_kind_phrase",
+      "extremum_phrase"
+    ],
+    "query:smallest_body_range_label": [
+      "range_kind_phrase",
+      "extremum_phrase"
+    ],
+    "query:close_after_body_increase_value": [
+      "target_label",
+      "change_verb",
+      "change_past_phrase",
+      "change_value"
+    ],
+    "query:close_after_body_decrease_value": [
+      "target_label",
+      "change_verb",
+      "change_past_phrase",
+      "change_value"
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "bundle_id": "games_battleship_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_battleship_grid": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "battleship_grid_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "sunk_ship_count": [
+        "{battleship_rule_text} How many ships are sunk?",
+        "{battleship_rule_text} Count the ships whose entire shape is covered by red hit markers.",
+        "{battleship_rule_text} How many fleet ships have every cell hit?",
+        "{battleship_rule_text} Determine the number of sunk ships on the board.",
+        "{battleship_rule_text} Count only the fully hit ships."
+      ],
+      "partial_ship_count": [
+        "{battleship_rule_text} How many ships are partially hit but not sunk?",
+        "{battleship_rule_text} Count ships with at least one red hit marker and at least one unhit cell.",
+        "{battleship_rule_text} How many fleet ships are damaged but still not sunk?",
+        "{battleship_rule_text} Determine the number of ships that have some, but not all, cells hit.",
+        "{battleship_rule_text} Count only the not-yet-sunk ships that already have a red hit marker."
+      ],
+      "named_ship_hit_cell_count": [
+        "{battleship_rule_text} How many cells of {target_ship_name} have red hit markers?",
+        "{battleship_rule_text} Count the red-hit cells on {target_ship_name}.",
+        "{battleship_rule_text} How many cells are hit on {target_ship_name}?",
+        "{battleship_rule_text} Determine the number of red hit markers on {target_ship_name}.",
+        "{battleship_rule_text} Count only the hit cells belonging to {target_ship_name}."
+      ],
+      "named_ship_unhit_cell_count": [
+        "{battleship_rule_text} How many cells of {target_ship_name} do not have red hit markers?",
+        "{battleship_rule_text} Count the unhit cells on {target_ship_name}.",
+        "{battleship_rule_text} How many cells are still unhit on {target_ship_name}?",
+        "{battleship_rule_text} Determine the number of cells without red hit markers on {target_ship_name}.",
+        "{battleship_rule_text} Count only the unhit cells belonging to {target_ship_name}."
+      ],
+      "last_ship_cell_label": [
+        "{battleship_rule_text} All ships are sunk except one ship with exactly one unhit cell. Which labeled cell is that unhit cell?",
+        "{battleship_rule_text} Exactly one ship is not sunk, and it is missing one cell. Choose the label of the missing cell.",
+        "{battleship_rule_text} The grid has one remaining ship with one unhit cell. Which option label marks that cell?",
+        "{battleship_rule_text} Use the fleet shapes and the hit/miss markers to find the only unhit cell of the not-yet-sunk ship. Which label marks it?",
+        "{battleship_rule_text} One fleet ship still has exactly one cell without a red hit marker. Select the labeled cell for that position."
+      ],
+      "remaining_ship_shape_label": [
+        "{battleship_rule_text} Out of these five ships, one has not been hit yet. Which answer choice is it?",
+        "{battleship_rule_text} Four ships are sunk, and one fleet ship has no red hit markers. Which labeled choice is the unhit ship?",
+        "{battleship_rule_text} One of the five fleet shapes has not been hit yet. Choose its answer label.",
+        "{battleship_rule_text} Among the five answer choices, which ship shape has no red hit markers on the grid?",
+        "{battleship_rule_text} Four fleet ships are fully hit. Select the labeled choice for the ship that has not been hit."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_battleship_grid": {
+      "object_description": "a Battleship tracking grid with hit markers, miss markers, and a side panel"
+    },
+    "query:sunk_ship_count": {
+      "battleship_rule_text": "Each fleet ship is placed exactly once on the board. A ship is sunk only when every cell of that ship has a red hit marker.",
+      "annotation_hint": "set \"annotation\" to a JSON object mapping each sunk ship's displayed fleet-shape name to a list of pixel-space cell boxes [x0, y0, x1, y1] for every red hit-marker cell on that ship; use an empty object if no ship is sunk",
+      "answer_hint": "set \"answer\" to the number of ships whose every cell has a red hit marker",
+      "json_example": "{\"annotation\":{\"Line 5\":[[195,205,225,235],[225,205,255,235]],\"Line 3\":[[195,325,225,355]]},\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:partial_ship_count": {
+      "battleship_rule_text": "Each fleet ship is placed exactly once on the board. A ship is sunk only when every cell of that ship has a red hit marker.",
+      "annotation_hint": "set \"annotation\" to a JSON object mapping each partially hit ship's displayed fleet-shape name to a list of pixel-space cell boxes [x0, y0, x1, y1] for every red hit-marker cell on that ship; use an empty object if no ship is partially hit",
+      "answer_hint": "set \"answer\" to the number of ships that have at least one red hit marker but are not sunk",
+      "json_example": "{\"annotation\":{\"Line 4\":[[195,265,225,295],[225,265,255,295]],\"L 3\":[[195,475,225,505]]},\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:named_ship_hit_cell_count": {
+      "battleship_rule_text": "Each fleet ship is placed exactly once on the board. A ship is sunk only when every cell of that ship has a red hit marker.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space cell boxes [x0, y0, x1, y1] for the red hit-marker cells on the named ship; use an empty array if none of that ship's cells are hit",
+      "answer_hint": "set \"answer\" to the number of cells on the named ship that have red hit markers",
+      "json_example": "{\"annotation\":[[195,205,225,235],[225,205,255,235],[255,205,285,235]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:named_ship_unhit_cell_count": {
+      "battleship_rule_text": "Each fleet ship is placed exactly once on the board. A ship is sunk only when every cell of that ship has a red hit marker.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space cell boxes [x0, y0, x1, y1] for the named ship's intact cells; use an empty array if every cell of that ship is hit",
+      "answer_hint": "set \"answer\" to the number of cells on the named ship that do not have red hit markers",
+      "json_example": "{\"annotation\":[[285,205,315,235],[315,205,345,235]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:last_ship_cell_label": {
+      "battleship_rule_text": "Each fleet ship is placed exactly once on the board. A ship is sunk only when every cell of that ship has a red hit marker.",
+      "annotation_hint": "set \"annotation\" to one pixel-space point [x, y] at the center of the selected labeled cell",
+      "answer_hint": "set \"answer\" to the single selected option label shown on the board",
+      "json_example": "{\"annotation\":[315,405],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "query:remaining_ship_shape_label": {
+      "battleship_rule_text": "Each fleet ship is placed exactly once on the board. A ship is sunk only when every cell of that ship has a red hit marker. Exactly one ship is untouched and every other ship is sunk.",
+      "annotation_hint": "set \"annotation\" to the pixel-space box [x0, y0, x1, y1] around the selected answer choice",
+      "answer_hint": "set \"answer\" to the single selected answer-choice label",
+      "json_example": "{\"annotation\":[780,340,1030,405],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "target_ship_name": {
+      "type": "string",
+      "scope": "query:named_ship_hit_cell_count query:named_ship_unhit_cell_count",
+      "description": "Displayed fleet-shape name for the generated named-ship question."
+    }
+  },
+  "required_slots_by_key": {
+    "query:named_ship_hit_cell_count": [
+      "target_ship_name"
+    ],
+    "query:named_ship_unhit_cell_count": [
+      "target_ship_name"
+    ]
+  }
+}

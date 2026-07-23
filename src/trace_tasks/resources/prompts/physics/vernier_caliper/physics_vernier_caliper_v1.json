@@ -1,0 +1,61 @@
+{
+  "bundle_id": "physics_vernier_caliper_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "vernier_caliper_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The image contains {object_description}."
+      ]
+    },
+    "task": {
+      "vernier_caliper_readout_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "Read the caliper using the main-scale reading at the vernier zero plus the aligned vernier tick. Which option letter gives the measured length?",
+        "Use the main millimeter scale and the aligned vernier tick to read the caliper. Which visible option has that length?",
+        "The vernier resolution is 0.1 mm. Which option letter matches the caliper measurement?",
+        "Read the main scale at the vernier zero, then add the matching vernier tick value. Which option letter gives the length?",
+        "Which option letter shows the measurement indicated by the Vernier caliper?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:vernier_caliper_diagram": {
+      "object_description": "a Vernier caliper measuring an object, with a main scale in millimeters, a sliding vernier scale, and a 0.1 mm vernier resolution"
+    },
+    "query:single": {
+      "answer_hint": "set \"answer\" to the selected option letter",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] bounding box around the selected option cell",
+      "json_example": "{\"annotation\":[720,565,1050,607],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "allow_empty_task_templates": true
+}

@@ -1,0 +1,87 @@
+generation:
+  task_overrides:
+    task_puzzles__matchstick__equation_repair_stick_label:
+      option_count_min: 4
+      option_count_max: 6
+      scene_variant_weights:
+        wooden_matches: 1.0
+        colored_rods: 1.0
+        chalk_sticks: 1.0
+        neon_rods: 1.0
+        metal_rods: 1.0
+    task_puzzles__matchstick__matchstick_number_transform_label:
+      option_count_min: 6
+      option_count_max: 6
+      scene_variant_weights:
+        wooden_matches: 1.0
+        colored_rods: 1.0
+        chalk_sticks: 1.0
+        neon_rods: 1.0
+        metal_rods: 1.0
+    task_puzzles__matchstick__max_square_count_after_additions_value:
+      row_count_min: 3
+      row_count_max: 3
+      col_count_min: 3
+      col_count_max: 3
+      add_count_min: 1
+      add_count_max: 2
+      answer_count_min: 1
+      answer_count_max: 6
+      square_completion_sample_attempts: 1600
+      scene_variant_weights:
+        wooden_matches: 1.0
+        colored_rods: 1.0
+        chalk_sticks: 1.0
+        neon_rods: 1.0
+        metal_rods: 1.0
+visual:
+  noise:
+    apply_prob: 0.15
+rendering:
+  task_overrides:
+    task_puzzles__matchstick__equation_repair_stick_label:
+      canvas_width: 960
+      canvas_height: 560
+      margin_px: 42
+      source_panel_height_px: 360
+      option_panel_width_px: 260
+      option_panel_height_px: 190
+      option_gap_px: 24
+      panel_corner_radius_px: 20
+      panel_border_width_px: 3
+      stick_width_px: 13
+      option_label_font_size_px: 25
+      caption_font_size_px: 20
+      source_caption_font_size_px: 23
+    task_puzzles__matchstick__matchstick_number_transform_label:
+      canvas_width: 1200
+      canvas_height: 900
+      margin_px: 58
+      source_panel_height_px: 230
+      option_panel_width_px: 320
+      option_panel_height_px: 218
+      option_gap_px: 28
+      panel_corner_radius_px: 20
+      panel_border_width_px: 3
+      stick_width_px: 13
+      option_label_font_size_px: 26
+      caption_font_size_px: 21
+      source_caption_font_size_px: 24
+    task_puzzles__matchstick__max_square_count_after_additions_value:
+      canvas_width: 760
+      canvas_height: 620
+      margin_px: 40
+      source_panel_height_px: 230
+      option_panel_width_px: 260
+      option_panel_height_px: 180
+      option_gap_px: 22
+      panel_corner_radius_px: 18
+      panel_border_width_px: 3
+      stick_width_px: 13
+      option_label_font_size_px: 25
+      caption_font_size_px: 20
+      source_caption_font_size_px: 23
+prompt:
+  shared:
+    bundle_id: puzzles_matchstick_v1
+    scene_key: matchstick

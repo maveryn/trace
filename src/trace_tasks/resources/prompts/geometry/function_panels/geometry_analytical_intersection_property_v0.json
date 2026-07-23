@@ -1,0 +1,85 @@
+{
+  "bundle_id": "geometry_analytical_intersection_property_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "analytical_intersection_property_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:analytical_intersection_property_grid": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "analytical_intersection_property_grid": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "line_circle_tangent_label": [
+      "Which panel shows a line tangent to the circle?",
+      "Which labeled panel has the line touching the circle at exactly one point?",
+      "Find the panel where the line is tangent to the circle.",
+      "Which coordinate panel shows one line-circle tangent point?",
+      "Which labeled line and circle meet at exactly one point?"
+    ],
+    "line_circle_two_intersections_label": [
+      "Which panel shows a line crossing the circle at exactly two points?",
+      "Which labeled panel has the line intersecting the circle twice?",
+      "Find the panel where the line is a secant of the circle.",
+      "Which coordinate panel shows two line-circle intersection points?",
+      "Which labeled line and circle meet at exactly two points?"
+    ],
+    "circle_circle_two_intersections_label": [
+      "Which panel shows two circles intersecting at exactly two points?",
+      "Which labeled panel has the two circles crossing twice?",
+      "Find the panel where the two circles have two intersection points.",
+      "Which coordinate panel shows two circle-circle intersection points?",
+      "Which labeled pair of circles meets at exactly two points?"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description": "labeled coordinate-plane panels, each showing two plotted objects",
+    "annotation_hint_selected_panel_and_intersections": "set \"annotation\" to a JSON array of pixel boxes [x0,y0,x1,y1] covering the selected panel and the visible intersection point box or boxes",
+    "answer_hint_option_letter": "set \"answer\" to the single selected panel label as a capital letter shown in the image",
+    "json_example": "{\"annotation\":[[40,40,310,320],[156,168,170,182]],\"answer\":\"B\"}",
+    "json_example_answer_only": "{\"answer\":\"B\"}"
+  },
+  "allow_empty_task_templates": true
+}

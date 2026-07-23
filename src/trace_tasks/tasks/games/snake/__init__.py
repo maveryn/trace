@@ -1,0 +1,1 @@
+"""Snake-grid games tasks."""

@@ -1,0 +1,169 @@
+{
+  "bundle_id": "graph_node_link_order_v1",
+  "schema_version": "v0",
+  "task_templates": {
+    "topological_endpoint_node_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "adjacency_traversal_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "binary_tree_traversal_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:single_graph_order": [
+      "object_description"
+    ],
+    "scene:adjacency_representation_order": [
+      "object_description"
+    ],
+    "scene:binary_tree_order": [
+      "object_description"
+    ],
+    "query:first_in_topological_order_label": [],
+    "query:last_in_topological_order_label": [],
+    "query:bfs_kth_visit_label": [
+      "source_label",
+      "traversal_position"
+    ],
+    "query:dfs_kth_visit_label": [
+      "source_label",
+      "traversal_position"
+    ],
+    "query:preorder_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:inorder_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:postorder_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:level_order_kth_node_label": [
+      "traversal_position"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "single_graph_order": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ],
+    "adjacency_representation_order": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ],
+    "binary_tree_order": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "first_in_topological_order_label": [
+      "Which node is first in the unique topological order?",
+      "In the unique topological order, what is the first node label?",
+      "Using the graph's unique topological order, which node comes first?",
+      "What node label appears at the start of the unique topological order?",
+      "Find the first node in the unique topological ordering. What is its label?"
+    ],
+    "last_in_topological_order_label": [
+      "Which node is last in the unique topological order?",
+      "In the unique topological order, what is the last node label?",
+      "Using the graph's unique topological order, which node comes last?",
+      "What node label appears at the end of the unique topological order?",
+      "Find the final node in the unique topological ordering. What is its label?"
+    ],
+    "bfs_kth_visit_label": [
+      "Starting from row {source_label}, run breadth-first search using each row's neighbors from left to right. What label is visited at position {traversal_position}, counting from 1?",
+      "Use BFS from row {source_label}, reading neighbor lists left to right. Which label is visit number {traversal_position}?",
+      "Beginning at row {source_label}, visit nodes by breadth-first search with neighbors in the displayed order. What label appears at position {traversal_position}?",
+      "Run breadth-first traversal from row {source_label}. With ties broken by the left-to-right neighbor order, what label is visit number {traversal_position}?",
+      "From row {source_label}, perform BFS according to the shown adjacency-list order. What node label is reached at visit position {traversal_position}?"
+    ],
+    "dfs_kth_visit_label": [
+      "Starting from row {source_label}, run depth-first search using each row's neighbors from left to right. What label is visited at position {traversal_position}, counting from 1?",
+      "Use recursive DFS from row {source_label}, reading neighbor lists left to right. Which label is visit number {traversal_position}?",
+      "Beginning at row {source_label}, visit nodes by depth-first search with neighbors in the displayed order. What label appears at position {traversal_position}?",
+      "Run depth-first traversal from row {source_label}. With ties broken by the left-to-right neighbor order, what label is visit number {traversal_position}?",
+      "From row {source_label}, perform DFS according to the shown adjacency-list order. What node label is reached at visit position {traversal_position}?"
+    ],
+    "preorder_kth_node_label": [
+      "What is the label at position {traversal_position} in preorder traversal, counting from 1?",
+      "In preorder traversal, which node label is at position {traversal_position}?",
+      "Traverse root, then left subtree, then right subtree. What label is at position {traversal_position}?",
+      "Using preorder order, what label is visited at position {traversal_position}?",
+      "Counting preorder visits from 1, what label appears at position {traversal_position}?"
+    ],
+    "inorder_kth_node_label": [
+      "What is the label at position {traversal_position} in inorder traversal, counting from 1?",
+      "In inorder traversal, which node label is at position {traversal_position}?",
+      "Traverse left subtree, then root, then right subtree. What label is at position {traversal_position}?",
+      "Using inorder order, what label is visited at position {traversal_position}?",
+      "Counting inorder visits from 1, what label appears at position {traversal_position}?"
+    ],
+    "postorder_kth_node_label": [
+      "What is the label at position {traversal_position} in postorder traversal, counting from 1?",
+      "In postorder traversal, which node label is at position {traversal_position}?",
+      "Traverse left subtree, then right subtree, then root. What label is at position {traversal_position}?",
+      "Using postorder order, what label is visited at position {traversal_position}?",
+      "Counting postorder visits from 1, what label appears at position {traversal_position}?"
+    ],
+    "level_order_kth_node_label": [
+      "What is the label at position {traversal_position} in level-order traversal, counting from 1?",
+      "In level-order traversal, which node label is at position {traversal_position}?",
+      "Traverse the tree level by level from top to bottom and left to right. What label is at position {traversal_position}?",
+      "Using level-order order, what label is visited at position {traversal_position}?",
+      "Counting level-order visits from 1, what label appears at position {traversal_position}?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

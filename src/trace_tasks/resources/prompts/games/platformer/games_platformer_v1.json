@@ -1,0 +1,134 @@
+{
+  "bundle_id": "games_platformer_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_platformer_level": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "platformer_level_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "jump_landing_label": [
+        "{platformer_short_arc_rule_text} Which labeled platform will the character land on?",
+        "Extrapolate the dashed jump arc from the character. {platformer_short_arc_rule_text} What is the label of the landing platform?",
+        "{platformer_short_arc_rule_text} Report the label on the platform reached by the jump.",
+        "The character follows the dashed arc direction. Which labeled platform is reached?",
+        "{platformer_short_arc_rule_text} Identify the labeled platform where the jump ends."
+      ],
+      "collectible_count": [
+        "{platformer_full_arc_rule_text} How many coins lie on that arc?",
+        "Follow the dashed jump arc. {platformer_full_arc_rule_text} Count the coins on the arc.",
+        "{platformer_full_arc_rule_text} Report the number of coins that the character would collect.",
+        "The character follows the dashed arc. How many coins are on the path?",
+        "{platformer_full_arc_rule_text} Count only the coins lying on the dashed arc."
+      ],
+      "jump_collectible_score_value": [
+        "{platformer_full_arc_rule_text} {platformer_score_rule_text} What is the total score from collectibles centered on the dashed arc?",
+        "Follow the dashed jump arc. {platformer_score_rule_text} Add only collectibles whose centers lie on that arc.",
+        "{platformer_score_rule_text} Report the total score from dashed-arc collectibles, ignoring all off-arc items.",
+        "{platformer_full_arc_rule_text} {platformer_score_rule_text} Count only collectibles centered on the dashed arc and compute their total score.",
+        "{platformer_score_rule_text} The character follows the dashed arc. What score is collected from collectibles on that path?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_platformer_level": [
+      "object_description"
+    ],
+    "query:jump_landing_label": [
+      "platformer_short_arc_rule_text"
+    ],
+    "query:collectible_count": [
+      "platformer_full_arc_rule_text"
+    ],
+    "query:jump_collectible_score_value": [
+      "platformer_full_arc_rule_text",
+      "platformer_score_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "platformer_full_arc_rule_text": {
+      "type": "string"
+    },
+    "platformer_score_rule_text": {
+      "type": "string"
+    },
+    "platformer_short_arc_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_side_scroller": "a side-scroller platformer level with a player character, platforms, hazards, coins, bonus items, and a dashed jump arc",
+    "platformer_short_arc_rule_text": "The dashed arc shows the first part of the jump; extend the same smooth arc forward.",
+    "platformer_full_arc_rule_text": "The dashed arc shows the jump path to follow.",
+    "platformer_score_rule_text": "Coins score 1; bonus items score their printed value. Count only collectibles whose centers lie on the dashed arc. Ignore hazards and all collectibles away from the dashed arc.",
+    "annotation_hint_jump_landing_label": "set \"annotation\" to one bounding box [x0, y0, x1, y1] around the labeled platform where the jump lands",
+    "answer_hint_jump_landing_label": "set \"answer\" to the selected platform label as a string",
+    "annotation_hint_collectible_count": "set \"annotation\" to [x, y] pixel points at the centers of each coin lying on the dashed jump arc",
+    "answer_hint_collectible_count": "set \"answer\" to the number of coins lying on the dashed jump arc as an integer",
+    "annotation_hint_jump_collectible_score_value": "set \"annotation\" to [x, y] pixel points at the centers of each coin or printed-value bonus item included in the dashed-arc score",
+    "answer_hint_jump_collectible_score_value": "set \"answer\" to the integer total score from collectibles centered on the dashed jump arc"
+  }
+}

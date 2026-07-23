@@ -1,0 +1,185 @@
+{
+  "bundle_id": "charts_bar_3d_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "bar_3d": [
+        "The image shows one perspective 3D bar chart with category labels on the front axis, colored series labels in the legend, and integer value labels on the bars.",
+        "The figure shows one perspective 3D bar chart with category labels on the front axis, colored series labels in the legend, and integer value labels on the bars.",
+        "The visual shows one perspective 3D bar chart with category labels on the front axis, colored series labels in the legend, and integer value labels on the bars.",
+        "The chart shows one perspective 3D bar chart with category labels on the front axis, colored series labels in the legend, and integer value labels on the bars.",
+        "The panel shows one perspective 3D bar chart with category labels on the front axis, colored series labels in the legend, and integer value labels on the bars."
+      ]
+    },
+    "task": {
+      "bar_3d_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "series_total_value": [
+        "What is the total value for series {series_label} across all displayed categories?",
+        "Add every bar for series {series_label}; what total do you get?",
+        "Using the legend to find {series_label}, compute its total across all front-axis categories.",
+        "Across all category labels, what is the sum of the bars for series {series_label}?",
+        "What is the displayed category-wide total for series {series_label}?"
+      ],
+      "category_total_value": [
+        "What is the total value across all series for category {category_label}?",
+        "Add every series bar at category {category_label}; what total do you get?",
+        "For category {category_label}, compute the sum over all colored series.",
+        "At front-axis category {category_label}, what is the total of all bars?",
+        "What is the displayed series-wide total for category {category_label}?"
+      ],
+      "series_interval_total_value": [
+        "For series {series_label}, what is the total from category {start_category_label} through {end_category_label}, inclusive?",
+        "Using front-axis order, add series {series_label} from {start_category_label} to {end_category_label}; what is the total?",
+        "What is the inclusive interval total for series {series_label} between {start_category_label} and {end_category_label}?",
+        "Find series {series_label} and sum its bars from {start_category_label} through {end_category_label}.",
+        "Across the displayed category interval {start_category_label} to {end_category_label}, what total belongs to series {series_label}?"
+      ],
+      "series_total_gap_value": [
+        "What is the absolute difference between the total for series {series_label_a} and the total for series {series_label_b}?",
+        "Add each displayed category for {series_label_a} and {series_label_b}; what is the absolute gap between the two totals?",
+        "Across all categories, how far apart are the totals for {series_label_a} and {series_label_b}?",
+        "Compute the total for {series_label_a}, compute the total for {series_label_b}, then give their absolute difference.",
+        "What total-value gap separates series {series_label_a} and {series_label_b}?"
+      ],
+      "category_total_gap_value": [
+        "What is the absolute difference between the total for category {category_label_a} and the total for category {category_label_b}?",
+        "Add all series at {category_label_a} and at {category_label_b}; what is the absolute gap between those totals?",
+        "Across the two categories {category_label_a} and {category_label_b}, how far apart are their series totals?",
+        "Compute the total at {category_label_a}, compute the total at {category_label_b}, then give their absolute difference.",
+        "What total-value gap separates categories {category_label_a} and {category_label_b}?"
+      ],
+      "category_extremum_gap_value": [
+        "Within category {category_label}, what is the difference between its highest and lowest series bar values?",
+        "For category {category_label}, find the highest and lowest series bars; what is their value gap?",
+        "At category {category_label}, subtract the lowest series value from the highest series value.",
+        "What is the highest-minus-lowest series value within category {category_label}?",
+        "Looking only at category {category_label}, what is the highest-minus-lowest bar value?"
+      ],
+      "series_threshold_count": [
+        "For series {series_label}, how many displayed categories have values {comparison_phrase} {threshold}?",
+        "Looking across categories for series {series_label}, count the bars with values {comparison_phrase} {threshold}.",
+        "How many category bars in series {series_label} are {comparison_phrase} {threshold}?",
+        "Using the legend to find {series_label}, count how many of its bars are {comparison_phrase} {threshold}.",
+        "Across the front-axis categories, how many bars for {series_label} have value {comparison_phrase} {threshold}?"
+      ],
+      "category_threshold_count": [
+        "For category {category_label}, how many series have values {comparison_phrase} {threshold}?",
+        "Looking across series at category {category_label}, count the bars with values {comparison_phrase} {threshold}.",
+        "How many colored series bars in category {category_label} are {comparison_phrase} {threshold}?",
+        "At front-axis category {category_label}, how many series values are {comparison_phrase} {threshold}?",
+        "Within category {category_label}, count the series bars whose values are {comparison_phrase} {threshold}."
+      ],
+      "pairwise_comparison_count": [
+        "In how many categories is series {series_label_a} greater than series {series_label_b}?",
+        "Compare {series_label_a} and {series_label_b} category by category; in how many categories is {series_label_a} larger?",
+        "Across the front-axis categories, count where {series_label_a} has a higher bar than {series_label_b}.",
+        "How many category positions show {series_label_a} above {series_label_b}?",
+        "For the pair {series_label_a} and {series_label_b}, how many displayed categories have the first series higher than the second?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:series_total_value": {
+      "answer_hint": "set \"answer\" to the requested integer total",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points, one at the top-center point on each relevant bar included in the requested series total",
+      "json_example": "{\"annotation\":[[210,360],[320,330],[430,300]],\"answer\":72}",
+      "json_example_answer_only": "{\"answer\":72}"
+    },
+    "query:category_total_value": {
+      "answer_hint": "set \"answer\" to the requested integer total",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points, one at the top-center point on each relevant bar included in the requested category total",
+      "json_example": "{\"annotation\":[[210,360],[250,330],[290,300]],\"answer\":72}",
+      "json_example_answer_only": "{\"answer\":72}"
+    },
+    "query:series_interval_total_value": {
+      "answer_hint": "set \"answer\" to the requested integer total",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points, one at the top-center point on each relevant bar included in the requested interval total",
+      "json_example": "{\"annotation\":[[210,360],[320,330],[430,300]],\"answer\":72}",
+      "json_example_answer_only": "{\"answer\":72}"
+    },
+    "query:series_total_gap_value": {
+      "answer_hint": "set \"answer\" to the requested nonnegative integer difference",
+      "annotation_hint": "set \"annotation\" to an object mapping each compared series label to the [x, y] top-center points on that series' bars across the displayed categories",
+      "json_example": "{\"annotation\":{\"Bambari\":[[210,360],[320,330],[430,300]],\"Lascano\":[[250,340],[360,310],[470,280]]},\"answer\":18}",
+      "json_example_answer_only": "{\"answer\":18}"
+    },
+    "query:category_total_gap_value": {
+      "answer_hint": "set \"answer\" to the requested nonnegative integer difference",
+      "annotation_hint": "set \"annotation\" to an object mapping each compared category label to the [x, y] top-center points on all series bars in that category",
+      "json_example": "{\"annotation\":{\"Banc\":[[210,360],[250,330],[290,300]],\"Obic\":[[430,260],[470,240],[510,220]]},\"answer\":18}",
+      "json_example_answer_only": "{\"answer\":18}"
+    },
+    "query:category_extremum_gap_value": {
+      "answer_hint": "set \"answer\" to the requested nonnegative integer difference",
+      "annotation_hint": "set \"annotation\" to an object with keys \"highest\" and \"lowest\", each mapped to the [x, y] top-center point on the corresponding bar in the requested category",
+      "json_example": "{\"annotation\":{\"highest\":[250,330],\"lowest\":[210,360]},\"answer\":18}",
+      "json_example_answer_only": "{\"answer\":18}"
+    },
+    "query:series_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points, one at the top-center point on each bar that satisfies the stated condition",
+      "json_example": "{\"annotation\":[[210,360],[320,330],[430,300]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:category_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points, one at the top-center point on each bar that satisfies the stated condition",
+      "json_example": "{\"annotation\":[[210,360],[250,330],[290,300]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:pairwise_comparison_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the top-center point on the first series bar and the top-center point on the second series bar for one counted category; use [] if no categories match",
+      "json_example": "{\"annotation\":[[[210,360],[210,260]],[[320,330],[320,240]],[[430,300],[430,220]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "category_label": {"type": "string"},
+    "category_label_a": {"type": "string"},
+    "category_label_b": {"type": "string"},
+    "comparison_phrase": {"type": "string"},
+    "end_category_label": {"type": "string"},
+    "series_label": {"type": "string"},
+    "series_label_a": {"type": "string"},
+    "series_label_b": {"type": "string"},
+    "start_category_label": {"type": "string"},
+    "threshold": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "query:series_total_value": ["series_label"],
+    "query:category_total_value": ["category_label"],
+    "query:series_interval_total_value": ["series_label", "start_category_label", "end_category_label"],
+    "query:series_total_gap_value": ["series_label_a", "series_label_b"],
+    "query:category_total_gap_value": ["category_label_a", "category_label_b"],
+    "query:category_extremum_gap_value": ["category_label"],
+    "query:series_threshold_count": ["series_label", "comparison_phrase", "threshold"],
+    "query:category_threshold_count": ["category_label", "comparison_phrase", "threshold"],
+    "query:pairwise_comparison_count": ["series_label_a", "series_label_b"]
+  }
+}

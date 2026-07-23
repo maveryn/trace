@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Trace Review{% endblock %}</title>
+  <link rel="stylesheet" href="{{ request.url_for('static', path='app.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Trace Review</a>
+    <nav>
+      <a href="/">Tasks</a>
+      <a href="/issues">Issues</a>
+      <a href="/assets/illustrations">Illustration assets</a>
+      <a href="/assets/three_d">3D assets</a>
+    </nav>
+    <form method="post" action="/reload"><button class="subtle" type="submit">Reload</button></form>
+    <form method="post" action="/logout"><button class="subtle" type="submit">Log out</button></form>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

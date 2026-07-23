@@ -1,0 +1,30 @@
+{
+  "bundle_id": "dummy_query_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "q1_task": [
+      "Dummy q1 template 1.",
+      "Dummy q1 template 2.",
+      "Dummy q1 template 3.",
+      "Dummy q1 template 4.",
+      "Dummy q1 template 5."
+    ],
+    "q2_task": [
+      "Dummy q2 template 1.",
+      "Dummy q2 template 2.",
+      "Dummy q2 template 3.",
+      "Dummy q2 template 4.",
+      "Dummy q2 template 5."
+    ]
+  },
+  "required_slots_by_key": {},
+  "scene_templates": {
+    "query_task": [
+      "Dummy query task prompt variant 1.",
+      "Dummy query task prompt variant 2.",
+      "Dummy query task prompt variant 3.",
+      "Dummy query task prompt variant 4.",
+      "Dummy query task prompt variant 5."
+    ]
+  }
+}

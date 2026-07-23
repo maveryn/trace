@@ -1,0 +1,154 @@
+{
+  "bundle_id": "charts_sunburst_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "composition_sunburst_hierarchy": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "sunburst_hierarchy_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "parent_total_from_leaves_value": [
+        "For parent category \"{parent_label}\", sum all outer leaf values under it. What is the total?",
+        "Under parent category \"{parent_label}\", add every printed outer leaf value. What total do they make?",
+        "Use the outer leaves belonging to parent category \"{parent_label}\". What is their combined value?",
+        "What is the sum of the printed outer leaf values under parent category \"{parent_label}\"?",
+        "For \"{parent_label}\", compute the total from all of its outer leaf values."
+      ],
+      "highest_parent_total_label": [
+        "Using the printed outer leaf values, which parent category has the highest total?",
+        "Sum the outer leaf values for each parent category. Which parent category has the largest total?",
+        "Compare parent-category totals from their outer leaf values. Which parent category is highest?",
+        "Which parent category has the greatest sum of printed outer leaf values?",
+        "After adding the outer leaf values within each parent category, which parent category is largest?"
+      ],
+      "lowest_parent_total_label": [
+        "Using the printed outer leaf values, which parent category has the lowest total?",
+        "Sum the outer leaf values for each parent category. Which parent category has the smallest total?",
+        "Compare parent-category totals from their outer leaf values. Which parent category is lowest?",
+        "Which parent category has the least sum of printed outer leaf values?",
+        "After adding the outer leaf values within each parent category, which parent category is smallest?"
+      ],
+      "above_threshold_leaf_count_under_parent": [
+        "Under parent category \"{parent_label}\", how many outer leaves have values above {threshold_value}?",
+        "Count the outer leaves under \"{parent_label}\" whose printed values are above {threshold_value}.",
+        "For parent category \"{parent_label}\", how many printed outer leaf values are above {threshold_value}?",
+        "Within \"{parent_label}\", count the outer leaf values that are above {threshold_value}.",
+        "How many outer leaves belonging to \"{parent_label}\" have printed values above {threshold_value}?"
+      ],
+      "below_threshold_leaf_count_under_parent": [
+        "Under parent category \"{parent_label}\", how many outer leaves have values below {threshold_value}?",
+        "Count the outer leaves under \"{parent_label}\" whose printed values are below {threshold_value}.",
+        "For parent category \"{parent_label}\", how many printed outer leaf values are below {threshold_value}?",
+        "Within \"{parent_label}\", count the outer leaf values that are below {threshold_value}.",
+        "How many outer leaves belonging to \"{parent_label}\" have printed values below {threshold_value}?"
+      ],
+      "leaf_range_count_under_parent": [
+        "Under parent category \"{parent_label}\", how many outer leaves have values from {lower_value} through {upper_value}, inclusive?",
+        "Count the outer leaves under \"{parent_label}\" whose printed values are between {lower_value} and {upper_value}, inclusive.",
+        "For parent category \"{parent_label}\", how many printed outer leaf values fall in the inclusive range {lower_value} to {upper_value}?",
+        "Within \"{parent_label}\", count the outer leaf values from {lower_value} through {upper_value}.",
+        "How many outer leaves belonging to \"{parent_label}\" have printed values in [{lower_value}, {upper_value}]?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "lower_value": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "parent_label": {
+      "type": "string"
+    },
+    "threshold_value": {
+      "type": "string"
+    },
+    "upper_value": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:composition_sunburst_hierarchy": [
+      "object_description"
+    ],
+    "query:parent_total_from_leaves_value": [
+      "parent_label"
+    ],
+    "query:highest_parent_total_label": [],
+    "query:lowest_parent_total_label": [],
+    "query:above_threshold_leaf_count_under_parent": [
+      "parent_label",
+      "threshold_value"
+    ],
+    "query:below_threshold_leaf_count_under_parent": [
+      "parent_label",
+      "threshold_value"
+    ],
+    "query:leaf_range_count_under_parent": [
+      "parent_label",
+      "lower_value",
+      "upper_value"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+generation:
+  shared:
+    balanced_target_answer_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 720
+
+prompt:
+  shared:
+    bundle_id: physics_graduated_cylinder_v1
+  task_overrides:
+    task_physics__graduated_cylinder__volume_readout_value:
+      task_key: volume_readout_value_query
+    task_physics__graduated_cylinder__displacement_volume_value:
+      task_key: displacement_volume_value_query

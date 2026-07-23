@@ -1,0 +1,142 @@
+site_name: Trace
+site_description: A taxonomy-guided environment for multidomain visual reasoning
+site_author: Md Tanvirul Alam
+site_url: https://maveryn.github.io/trace/
+repo_name: maveryn/trace
+repo_url: https://github.com/maveryn/trace
+edit_uri: edit/main/docs/
+docs_dir: docs
+strict: true
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  logo: assets/brand/trace-mark.svg
+  favicon: assets/brand/trace-mark.svg
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.prune
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+not_in_nav: |
+  /tasks/*/*/*.md
+
+exclude_docs: |
+  /overrides/**
+  /review/recipes/**
+
+nav:
+  - Home: README.md
+  - Research:
+      - Artifacts and Results: research/README.md
+      - Reproducing Results: research/REPRODUCING_RESULTS.md
+  - Get Started:
+      - Quickstart: QUICKSTART.md
+      - Data Format: DATA_FORMAT.md
+      - Verifiers: VERIFIERS.md
+  - Concepts:
+      - Contract Overview: contracts/README.md
+      - System Architecture: contracts/SYSTEM_ARCHITECTURE.md
+      - Blueprint: contracts/BLUEPRINT.md
+      - Taxonomy: contracts/TAXONOMY.md
+      - Source Layout: contracts/SOURCE_LAYOUT.md
+      - Prompt System: contracts/PROMPT_SYSTEM.md
+      - Annotation and Reward: contracts/ANNOTATION_AND_REWARD_CONTRACTS.md
+      - Program Schemas: contracts/PROGRAM_SCHEMA_CATALOG.md
+      - Task Unit Policy: contracts/TASK_UNIT_POLICY.md
+      - Validation Error Codes: contracts/VALIDATION_ERROR_CODES.md
+      - Domains:
+          - Overview: domains/README.md
+          - Charts: domains/charts.md
+          - Games: domains/games.md
+          - Geometry: domains/geometry.md
+          - Graphs: domains/graph.md
+          - Icons: domains/icons.md
+          - Illustrations: domains/illustrations.md
+          - Pages: domains/pages.md
+          - Physics: domains/physics.md
+          - Puzzles: domains/puzzles.md
+          - Symbolic: domains/symbolic.md
+          - 3D: domains/three_d.md
+  - Task Catalog:
+      - Catalog: TASK_CATALOG.md
+      - Active Inventory: ACTIVE_TASK_INVENTORY.md
+      - Task Documentation: tasks/README.md
+      - Task Documentation Template: tasks/TASK_DOC_TEMPLATE.md
+      - Domain Catalogs:
+          - Charts: task_catalog/charts.md
+          - Games: task_catalog/games.md
+          - Geometry: task_catalog/geometry.md
+          - Graphs: task_catalog/graph.md
+          - Icons: task_catalog/icons.md
+          - Illustrations: task_catalog/illustrations.md
+          - Pages: task_catalog/pages.md
+          - Physics: task_catalog/physics.md
+          - Puzzles: task_catalog/puzzles.md
+          - Symbolic: task_catalog/symbolic.md
+          - 3D: task_catalog/three_d.md
+  - Resources:
+      - Overview: resources/README.md
+      - Assets and Licenses: ASSETS.md
+      - Brand Assets: assets/brand/README.md
+      - Shared Context Text: resources/SHARED_CONTEXT_TEXT_ASSETS.md
+      - Shared Fonts: resources/SHARED_FONT_ASSETS.md
+      - Shared Labels: resources/SHARED_LABEL_ASSETS.md
+      - Gallery: gallery/README.md
+  - Workflows:
+      - Overview: workflows/README.md
+      - Task Authoring: workflows/TASK_AUTHORING.md
+      - Build Validation: workflows/BUILD_VALIDATION.md
+      - Code Review: workflows/CODE_REVIEW_GUIDELINES.md
+      - Documentation and Skills: workflows/DOCS_AND_SKILLS_MAINTENANCE.md
+      - Documentation Structure: workflows/DOC_STRUCTURE.md
+      - RLVR Release Scope: workflows/RLVR_RELEASE_SCOPE.md
+      - Codex Skills: workflows/CODEX_SKILLS.md
+      - Task Review Application: workflows/TASK_REVIEW_WEB_APP.md
+      - Endpoint Calibration: workflows/CALIBRATION_GUIDE.md
+  - Development:
+      - Development Guide: DEVELOPMENT.md
+      - Contributor Review:
+          - Overview: review/README.md
+          - Review Recipe: review/REVIEW_RECIPE.md
+          - Domain Quality: review/DOMAIN_QUALITY_REVIEW.md
+          - Prompts: review/PROMPT_REVIEW.md
+          - Renderers: review/RENDERER_REVIEW.md
+          - Annotations: review/ANNOTATION_REVIEW.md
+          - Reusable Assets: review/REUSABLE_ASSET_REVIEW.md

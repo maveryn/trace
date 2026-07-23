@@ -1,0 +1,1 @@
+"""Bubble-shooter games tasks."""

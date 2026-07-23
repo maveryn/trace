@@ -1,0 +1,83 @@
+{
+  "bundle_id": "graph_flow_network_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "capacity_network": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "flow_network_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "max_flow_value": [
+        "Using the capacities on the directed edges, what is the maximum flow from source S to sink T?",
+        "What is the largest total flow that can be sent from S to T without exceeding any edge capacity?",
+        "Find the max-flow value from source S to sink T in this capacity network.",
+        "Respecting the arrow capacities, how much flow can be sent from S to T at most?",
+        "What maximum S-to-T flow value does the directed capacity network allow?"
+      ],
+      "minimum_cut_edge_count": [
+        "For the source S to sink T flow network, how many directed edges are in the unique minimum cut?",
+        "How many edges cross the unique minimum S-T cut in this capacity network?",
+        "Find the unique minimum cut separating S from T. How many directed edges are in that cut?",
+        "What is the number of directed edges in the minimum-capacity cut from S to T?",
+        "Count the directed edges whose capacities make up the unique minimum S-T cut. How many are there?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:max_flow_value": {
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel point at a node center of one directed edge in a minimum S-T cut supporting the max-flow value",
+      "answer_hint": "set \"answer\" to the maximum flow value as an integer",
+      "json_example": "{\"annotation\":[[[170,280],[330,210]],[[170,280],[330,350]]],\"answer\":5}",
+      "json_example_answer_only": "{\"answer\":5}"
+    },
+    "query:minimum_cut_edge_count": {
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel point at a node center of one directed edge in the unique minimum S-T cut",
+      "answer_hint": "set \"answer\" to the number of directed edges in the unique minimum S-T cut as an integer",
+      "json_example": "{\"annotation\":[[[170,280],[330,210]],[[170,280],[330,350]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string",
+      "scope": "scene:capacity_network",
+      "description": "Generated description of the rendered flow-network diagram."
+    }
+  },
+  "required_slots_by_key": {
+    "scene:capacity_network": [
+      "object_description"
+    ]
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "bundle_id": "symbolic_dice_probability_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "dice": [
+        "The probability panel shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The dice tray diagram shows {object_description}.",
+        "The puzzle diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "single_dice_probability_query": [
+        "Use the shown dice tray to compute the requested probability, then choose the matching A-F option.",
+        "Answer the probability question using only the visible dice in the tray, then select the matching A-F option.",
+        "Treat each shown die in the tray as equally likely and choose the matching A-F probability option.",
+        "Compute the requested probability from the visible top faces, then select the matching option below the tray.",
+        "Use the visible dice colors and top values to determine which A-F probability option is correct."
+      ],
+      "pair_dice_probability_query": [
+        "Use the two dice trays to compute the requested probability, then choose the matching A-F option.",
+        "Treat one die from Tray A and one die from Tray B as independent uniform selections, then select the matching A-F option.",
+        "Compute the probability from the visible top faces in both trays and choose the matching option below them.",
+        "Use Tray A and Tray B as the two independent sources, then select the correct A-F probability option.",
+        "Answer using the product space formed by one visible die from each tray, then choose the matching A-F option."
+      ],
+      "conditional_dice_probability_query": [
+        "Use the shown dice tray to compute the requested conditional probability, then choose the matching A-F option.",
+        "Condition on the stated visible property, compute the tray probability, and select the matching A-F option.",
+        "Use only the visible dice matching the given condition as the conditional sample space, then choose the matching option.",
+        "Compute the conditional probability from the visible colors and top values, then select the correct A-F option.",
+        "Answer the conditional probability question using the tray and the visible A-F options."
+      ]
+    },
+    "query": {
+      "pair_sum_at_least_probability": [
+        "Select one die uniformly from each tray. What is the probability that {event_description}?",
+        "Choose uniformly from Tray A and independently from Tray B. What is the probability that {event_description}?",
+        "For independent uniform selections from Tray A and Tray B, what is the probability that {event_description}?",
+        "If one die is chosen from each tray with equal chance among dice in that tray, what is the probability that {event_description}?",
+        "What probability corresponds to the event that {event_description} after selecting one die from each tray?"
+      ],
+      "pair_sum_at_most_probability": [
+        "Select one die uniformly from each tray. What is the probability that {event_description}?",
+        "Choose uniformly from Tray A and independently from Tray B. What is the probability that {event_description}?",
+        "For independent uniform selections from Tray A and Tray B, what is the probability that {event_description}?",
+        "If one die is chosen from each tray with equal chance among dice in that tray, what is the probability that {event_description}?",
+        "What probability corresponds to the event that {event_description} after selecting one die from each tray?"
+      ],
+      "conditional_color_given_value_property_probability": [
+        "One die is selected uniformly at random from the shown dice. Given that {given_description}, what is the probability that it {event_description}?",
+        "Choose one shown die uniformly at random. Conditional on the fact that {given_description}, what is the probability that it {event_description}?",
+        "For a uniformly selected die from the tray, suppose {given_description}. What is the probability that the selected die {event_description}?",
+        "Given the selected die satisfies this condition: {given_description}. What is the probability it also satisfies this condition: {event_description}?",
+        "After selecting one shown die uniformly at random, condition on {given_description}. What is the probability that it {event_description}?"
+      ],
+      "single_value_at_least_probability": [
+        "One die is selected uniformly at random from the shown dice. What is the probability that the selected die {event_description}?",
+        "If one die is chosen uniformly from the dice in the tray, what is the probability that it {event_description}?",
+        "Choose one shown die at random with equal chance for each die. What is the probability that it {event_description}?",
+        "For a uniformly selected die from this tray, what is the probability that the die {event_description}?",
+        "What probability corresponds to selecting one shown die whose visible top face {event_description}?"
+      ],
+      "single_value_at_most_probability": [
+        "One die is selected uniformly at random from the shown dice. What is the probability that the selected die {event_description}?",
+        "If one die is chosen uniformly from the dice in the tray, what is the probability that it {event_description}?",
+        "Choose one shown die at random with equal chance for each die. What is the probability that it {event_description}?",
+        "For a uniformly selected die from this tray, what is the probability that the die {event_description}?",
+        "What probability corresponds to selecting one shown die whose visible top face {event_description}?"
+      ],
+      "conditional_value_property_given_color_probability": [
+        "One die is selected uniformly at random from the shown dice. Given that {given_description}, what is the probability that it {event_description}?",
+        "Choose one shown die uniformly at random. Conditional on the fact that {given_description}, what is the probability that it {event_description}?",
+        "For a uniformly selected die from the tray, suppose {given_description}. What is the probability that the selected die {event_description}?",
+        "Given the selected die satisfies this condition: {given_description}. What is the probability it also satisfies this condition: {event_description}?",
+        "After selecting one shown die uniformly at random, condition on {given_description}. What is the probability that it {event_description}?"
+      ],
+      "pair_parity_combo_probability": [
+        "Select one die uniformly from each tray. What is the probability that {event_description}?",
+        "Choose uniformly from Tray A and independently from Tray B. What is the probability that {event_description}?",
+        "For independent uniform selections from Tray A and Tray B, what is the probability that {event_description}?",
+        "If one die is chosen from each tray with equal chance among dice in that tray, what is the probability that {event_description}?",
+        "What probability corresponds to the event that {event_description} after selecting one die from each tray?"
+      ],
+      "pair_color_value_combo_probability": [
+        "Select one die uniformly from each tray. What is the probability that {event_description}?",
+        "Choose uniformly from Tray A and independently from Tray B. What is the probability that {event_description}?",
+        "For independent uniform selections from Tray A and Tray B, what is the probability that {event_description}?",
+        "If one die is chosen from each tray with equal chance among dice in that tray, what is the probability that {event_description}?",
+        "What probability corresponds to the event that {event_description} after selecting one die from each tray?"
+      ],
+      "pair_sum_probability": [
+        "Select one die uniformly from each tray. What is the probability that {event_description}?",
+        "Choose uniformly from Tray A and independently from Tray B. What is the probability that {event_description}?",
+        "For independent uniform selections from Tray A and Tray B, what is the probability that {event_description}?",
+        "If one die is chosen from each tray with equal chance among dice in that tray, what is the probability that {event_description}?",
+        "What probability corresponds to the event that {event_description} after selecting one die from each tray?"
+      ],
+      "single_parity_probability": [
+        "One die is selected uniformly at random from the shown dice. What is the probability that the selected die {event_description}?",
+        "If one die is chosen uniformly from the dice in the tray, what is the probability that it {event_description}?",
+        "Choose one shown die at random with equal chance for each die. What is the probability that it {event_description}?",
+        "For a uniformly selected die from this tray, what is the probability that the die {event_description}?",
+        "What probability corresponds to selecting one shown die whose visible top face {event_description}?"
+      ],
+      "single_color_or_value_probability": [
+        "One die is selected uniformly at random from the shown dice. What is the probability that the selected die {event_description}?",
+        "If one die is chosen uniformly from the dice in the tray, what is the probability that it {event_description}?",
+        "Choose one shown die at random with equal chance for each die. What is the probability that it {event_description}?",
+        "For a uniformly selected die from this tray, what is the probability that the die {event_description}?",
+        "What probability corresponds to selecting one shown die that {event_description}?"
+      ],
+      "pair_difference_probability": [
+        "Select one die uniformly from each tray. What is the probability that {event_description}?",
+        "Choose uniformly from Tray A and independently from Tray B. What is the probability that {event_description}?",
+        "For independent uniform selections from Tray A and Tray B, what is the probability that {event_description}?",
+        "If one die is chosen from each tray with equal chance among dice in that tray, what is the probability that {event_description}?",
+        "What probability corresponds to the event that {event_description} after selecting one die from each tray?"
+      ],
+      "conditional_color_given_value_set_probability": [
+        "One die is selected uniformly at random from the shown dice. Given that {given_description}, what is the probability that it {event_description}?",
+        "Choose one shown die uniformly at random. Conditional on the fact that {given_description}, what is the probability that it {event_description}?",
+        "For a uniformly selected die from the tray, suppose {given_description}. What is the probability that the selected die {event_description}?",
+        "Given the selected die satisfies this condition: {given_description}. What is the probability it also satisfies this condition: {event_description}?",
+        "After selecting one shown die uniformly at random, condition on {given_description}. What is the probability that it {event_description}?"
+      ],
+      "single_color_and_value_probability": [
+        "One die is selected uniformly at random from the shown dice. What is the probability that the selected die {event_description}?",
+        "If one die is chosen uniformly from the dice in the tray, what is the probability that it {event_description}?",
+        "Choose one shown die at random with equal chance for each die. What is the probability that it {event_description}?",
+        "For a uniformly selected die from this tray, what is the probability that the die {event_description}?",
+        "What probability corresponds to selecting one shown die that {event_description}?"
+      ],
+      "single_value_set_probability": [
+        "One die is selected uniformly at random from the shown dice. What is the probability that the selected die {event_description}?",
+        "If one die is chosen uniformly from the dice in the tray, what is the probability that it {event_description}?",
+        "Choose one shown die at random with equal chance for each die. What is the probability that it {event_description}?",
+        "For a uniformly selected die from this tray, what is the probability that the die {event_description}?",
+        "What probability corresponds to selecting one shown die whose visible top face {event_description}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "event_description": {
+      "type": "string"
+    },
+    "given_description": {
+      "type": "string"
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+      "answer_hint": "set \"answer\" to the letter of the correct visible probability option (A-F)"
+    },
+    "query:conditional_color_given_value_property_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:conditional_color_given_value_set_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:conditional_value_property_given_color_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pair_color_value_combo_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"tray_a\" and \"tray_b\", each mapped to that tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"tray_a\":[68,142,522,628],\"tray_b\":[578,142,1032,628]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pair_difference_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"tray_a\" and \"tray_b\", each mapped to that tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"tray_a\":[68,142,522,628],\"tray_b\":[578,142,1032,628]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pair_parity_combo_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"tray_a\" and \"tray_b\", each mapped to that tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"tray_a\":[68,142,522,628],\"tray_b\":[578,142,1032,628]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pair_sum_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"tray_a\" and \"tray_b\", each mapped to that tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"tray_a\":[68,142,522,628],\"tray_b\":[578,142,1032,628]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pair_sum_at_least_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"tray_a\" and \"tray_b\", each mapped to that tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"tray_a\":[68,142,522,628],\"tray_b\":[578,142,1032,628]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pair_sum_at_most_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"tray_a\" and \"tray_b\", each mapped to that tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"tray_a\":[68,142,522,628],\"tray_b\":[578,142,1032,628]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_color_and_value_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_color_or_value_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_parity_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_value_at_least_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_value_at_most_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_value_set_probability": {
+      "annotation_hint": "set \"annotation\" to the full dice tray bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[145,112,955,650],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:dice": [
+      "object_description"
+    ],
+    "query:pair_sum_at_least_probability": [
+      "event_description"
+    ],
+    "query:pair_sum_at_most_probability": [
+      "event_description"
+    ],
+    "query:conditional_color_given_value_property_probability": [
+      "given_description",
+      "event_description"
+    ],
+    "query:single_value_at_least_probability": [
+      "event_description"
+    ],
+    "query:single_value_at_most_probability": [
+      "event_description"
+    ],
+    "query:conditional_value_property_given_color_probability": [
+      "given_description",
+      "event_description"
+    ],
+    "query:pair_parity_combo_probability": [
+      "event_description"
+    ],
+    "query:pair_color_value_combo_probability": [
+      "event_description"
+    ],
+    "query:pair_sum_probability": [
+      "event_description"
+    ],
+    "query:single_parity_probability": [
+      "event_description"
+    ],
+    "query:single_color_or_value_probability": [
+      "event_description"
+    ],
+    "query:pair_difference_probability": [
+      "event_description"
+    ],
+    "query:conditional_color_given_value_set_probability": [
+      "given_description",
+      "event_description"
+    ],
+    "query:single_color_and_value_probability": [
+      "event_description"
+    ],
+    "query:single_value_set_probability": [
+      "event_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_single_dice_probability_query_dice_tray_clean": "one tray of colored dice. Each die shows a visible top value",
+    "object_description_single_dice_probability_query_dice_tray_felt": "one felt-style tray of colored dice. Each die shows a visible top value",
+    "object_description_single_dice_probability_query_dice_tray_notebook": "one notebook-style tray of colored dice. Each die shows a visible top value",
+    "object_description_pair_dice_probability_query_dice_tray_clean": "two dice trays labeled Tray A and Tray B. Each die shows a visible top value",
+    "object_description_pair_dice_probability_query_dice_tray_felt": "two felt-style dice trays labeled Tray A and Tray B. Each die shows a visible top value",
+    "object_description_pair_dice_probability_query_dice_tray_notebook": "two notebook-style dice trays labeled Tray A and Tray B. Each die shows a visible top value",
+    "object_description_conditional_dice_probability_query_dice_tray_clean": "one tray of colored dice. Each die shows a visible top value",
+    "object_description_conditional_dice_probability_query_dice_tray_felt": "one felt-style tray of colored dice. Each die shows a visible top value",
+    "object_description_conditional_dice_probability_query_dice_tray_notebook": "one notebook-style tray of colored dice. Each die shows a visible top value"
+  }
+}

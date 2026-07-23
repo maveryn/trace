@@ -1,0 +1,337 @@
+{
+  "bundle_id": "graph_binary_tree_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "binary_tree_counting": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}."
+      ],
+      "binary_tree_relation": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}."
+      ],
+      "binary_tree_order": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}."
+      ],
+      "search_tree_operation": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "binary_tree_node_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "binary_tree_node_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "binary_tree_traversal_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "search_tree_operation_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "leaf_node_count": [
+        "How many leaf nodes are there?",
+        "Count the nodes with no children. How many are there?",
+        "What is the number of leaf nodes?",
+        "How many nodes have neither a left child nor a right child?",
+        "Find all childless nodes in the tree. How many are there?"
+      ],
+      "internal_node_count": [
+        "How many internal nodes are there?",
+        "Count the nodes that have at least one child. How many are there?",
+        "What is the number of non-leaf nodes?",
+        "How many nodes have a left child, a right child, or both?",
+        "Find all nodes with children in the tree. How many are there?"
+      ],
+      "single_child_node_count": [
+        "How many nodes have exactly one child?",
+        "Count the nodes with one child. How many are there?",
+        "What is the number of nodes that have only a left child or only a right child?",
+        "How many nodes have one child rather than zero or two?",
+        "Find every node with exactly one child. How many are there?"
+      ],
+      "two_child_node_count": [
+        "How many nodes have both a left child and a right child?",
+        "Count the nodes with two children. How many are there?",
+        "What is the number of nodes that have both children?",
+        "How many nodes branch to both a left and right child?",
+        "Find every node with two children. How many are there?"
+      ],
+      "depth_level_node_count": [
+        "How many nodes are at depth {target_depth}, where the root is depth 0?",
+        "Count the nodes at depth {target_depth}, counting the root level as depth 0.",
+        "What is the number of nodes on depth level {target_depth}?",
+        "Starting with the root at depth 0, how many nodes are at depth {target_depth}?",
+        "Find every node whose depth is {target_depth}. How many are there?"
+      ],
+      "parent_label": [
+        "What is the label of the parent of node {query_label}?",
+        "Which node is the parent of {query_label}?",
+        "Find node {query_label}'s parent. What label does that parent have?",
+        "What label is on the node directly above {query_label}?",
+        "Which label belongs to the parent node of {query_label}?"
+      ],
+      "left_child_label": [
+        "What is the label of the left child of node {query_label}?",
+        "Which node is the left child of {query_label}?",
+        "Find node {query_label}'s left child. What label does it have?",
+        "What label is on the child below-left of {query_label}?",
+        "Which label belongs to the left child of {query_label}?"
+      ],
+      "right_child_label": [
+        "What is the label of the right child of node {query_label}?",
+        "Which node is the right child of {query_label}?",
+        "Find node {query_label}'s right child. What label does it have?",
+        "What label is on the child below-right of {query_label}?",
+        "Which label belongs to the right child of {query_label}?"
+      ],
+      "sibling_label": [
+        "What is the label of the sibling of node {query_label}?",
+        "Which node shares the same parent as {query_label}?",
+        "Find node {query_label}'s sibling. What label does that sibling have?",
+        "What label is on the other child of {query_label}'s parent?",
+        "Which label belongs to the sibling node of {query_label}?"
+      ],
+      "lowest_common_ancestor_label": [
+        "What is the label of the lowest common ancestor of nodes {query_label_a} and {query_label_b}?",
+        "Find the lowest shared ancestor of {query_label_a} and {query_label_b}. What label does it have?",
+        "Which node is the lowest common ancestor of {query_label_a} and {query_label_b}?",
+        "For nodes {query_label_a} and {query_label_b}, what label is on their deepest shared ancestor?",
+        "Trace upward from {query_label_a} and {query_label_b}. What is the label of their lowest common ancestor?"
+      ],
+      "preorder_kth_node_label": [
+        "What is the label at position {traversal_position} in preorder traversal, counting from 1?",
+        "In preorder traversal, which node label is at position {traversal_position}?",
+        "Traverse root, then left subtree, then right subtree. What label is at position {traversal_position}?",
+        "Using preorder order, what label is visited at position {traversal_position}?",
+        "Counting preorder visits from 1, what label appears at position {traversal_position}?"
+      ],
+      "inorder_kth_node_label": [
+        "What is the label at position {traversal_position} in inorder traversal, counting from 1?",
+        "In inorder traversal, which node label is at position {traversal_position}?",
+        "Traverse left subtree, then root, then right subtree. What label is at position {traversal_position}?",
+        "Using inorder order, what label is visited at position {traversal_position}?",
+        "Counting inorder visits from 1, what label appears at position {traversal_position}?"
+      ],
+      "postorder_kth_node_label": [
+        "What is the label at position {traversal_position} in postorder traversal, counting from 1?",
+        "In postorder traversal, which node label is at position {traversal_position}?",
+        "Traverse left subtree, then right subtree, then root. What label is at position {traversal_position}?",
+        "Using postorder order, what label is visited at position {traversal_position}?",
+        "Counting postorder visits from 1, what label appears at position {traversal_position}?"
+      ],
+      "level_order_kth_node_label": [
+        "What is the label at position {traversal_position} in level-order traversal, counting from 1?",
+        "In level-order traversal, which node label is at position {traversal_position}?",
+        "Traverse the tree level by level from top to bottom and left to right. What label is at position {traversal_position}?",
+        "Using level-order order, what label is visited at position {traversal_position}?",
+        "Counting level-order visits from 1, what label appears at position {traversal_position}?"
+      ],
+      "bst_search_terminal_label": [
+        "Searching for key {target_key}, what is the label of the final visited node?",
+        "Follow the binary-search-tree search path for key {target_key}. Which node label is reached last?",
+        "If you search this BST for {target_key}, what label is on the terminal node of the search path?",
+        "Using the BST ordering rule, search for {target_key}. What node label ends the search?",
+        "What is the final node label on the search path for key {target_key}?"
+      ],
+      "bst_insert_parent_label": [
+        "If key {target_key} were inserted into this binary search tree, what existing node would be its parent?",
+        "Follow the BST insertion path for key {target_key}. Which existing node label would become the parent?",
+        "Where would key {target_key} attach? Give the label of the existing parent node.",
+        "Using the BST ordering rule, insert {target_key}. What label is on the parent node where it would attach?",
+        "What existing node label is the parent for a new key {target_key}?"
+      ],
+      "heap_property_violation_label": [
+        "Exactly one child has a smaller key than its parent. What is that child node's label?",
+        "Find the min-heap violation. Which child node label is smaller than its parent key?",
+        "Which child node violates the min-heap rule by being smaller than its parent?",
+        "The tree is intended to be a min-heap except for one parent-child violation. What is the violating child label?",
+        "What label is on the child node that breaks the min-heap parent-before-child order?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:binary_tree_counting": [
+      "object_description"
+    ],
+    "scene:binary_tree_relation": [
+      "object_description"
+    ],
+    "scene:binary_tree_order": [
+      "object_description"
+    ],
+    "scene:search_tree_operation": [
+      "object_description"
+    ],
+    "query:depth_level_node_count": [
+      "target_depth"
+    ],
+    "query:parent_label": [
+      "query_label"
+    ],
+    "query:left_child_label": [
+      "query_label"
+    ],
+    "query:right_child_label": [
+      "query_label"
+    ],
+    "query:sibling_label": [
+      "query_label"
+    ],
+    "query:lowest_common_ancestor_label": [
+      "query_label_a",
+      "query_label_b"
+    ],
+    "query:preorder_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:inorder_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:postorder_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:level_order_kth_node_label": [
+      "traversal_position"
+    ],
+    "query:bst_search_terminal_label": [
+      "target_key"
+    ],
+    "query:bst_insert_parent_label": [
+      "target_key"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "query_label": {
+      "type": "label"
+    },
+    "query_label_a": {
+      "type": "label"
+    },
+    "query_label_b": {
+      "type": "label"
+    },
+    "target_depth": {
+      "type": "integer"
+    },
+    "target_key": {
+      "type": "integer"
+    },
+    "traversal_position": {
+      "type": "integer"
+    }
+  },
+  "code_prompt_defaults": {
+    "scene_key": "binary_tree_relation",
+    "task_key": "binary_tree_node_label_query",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+    "object_description": "a labeled binary tree with the root at the top and left/right children shown by position",
+    "object_description_bst": "a numeric-key binary search tree",
+    "object_description_heap": "a numeric-key binary tree intended to be a min-heap",
+    "answer_hint_count": "set \"answer\" to the requested count as an integer",
+    "answer_hint_node_label": "set \"answer\" to the answer node label as a string exactly as shown",
+    "answer_hint_numeric_key_label": "set \"answer\" to the answer node key as a string exactly as shown",
+    "annotation_hint_leaf_node_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of every leaf node; use [] when the answer is zero",
+    "annotation_hint_internal_node_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of every internal node, meaning every non-leaf node; use [] when the answer is zero",
+    "annotation_hint_single_child_node_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of every node with exactly one child; use [] when the answer is zero",
+    "annotation_hint_two_child_node_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of every node with both left and right children; use [] when the answer is zero",
+    "annotation_hint_depth_level_node_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of every node at depth {target_depth}; use [] when the answer is zero",
+    "annotation_hint_parent_label": "set \"annotation\" to a JSON object with keys \"child\" and \"parent\"; each value is a [x,y] pixel point at that node center",
+    "annotation_hint_left_child_label": "set \"annotation\" to a JSON object with keys \"parent\" and \"left_child\"; each value is a [x,y] pixel point at that node center",
+    "annotation_hint_right_child_label": "set \"annotation\" to a JSON object with keys \"parent\" and \"right_child\"; each value is a [x,y] pixel point at that node center",
+    "annotation_hint_sibling_label": "set \"annotation\" to a JSON object with keys \"node\" and \"sibling\"; each value is a [x,y] pixel point at that node center",
+    "annotation_hint_lowest_common_ancestor_label": "set \"annotation\" to a JSON object with keys \"node_a\", \"node_b\", and \"lowest_common_ancestor\"; each value is a [x,y] pixel point at that node center",
+    "annotation_hint_preorder_kth_node_label": "set \"annotation\" to an ordered JSON array of [x,y] pixel points at node centers for the preorder traversal nodes from the first visited node through the answer node",
+    "annotation_hint_inorder_kth_node_label": "set \"annotation\" to an ordered JSON array of [x,y] pixel points at node centers for the inorder traversal nodes from the first visited node through the answer node",
+    "annotation_hint_postorder_kth_node_label": "set \"annotation\" to an ordered JSON array of [x,y] pixel points at node centers for the postorder traversal nodes from the first visited node through the answer node",
+    "annotation_hint_level_order_kth_node_label": "set \"annotation\" to an ordered JSON array of [x,y] pixel points at node centers for the level-order traversal nodes from the first visited node through the answer node",
+    "annotation_hint_bst_search_terminal_label": "set \"annotation\" to an ordered JSON array of [x,y] pixel points at node centers for the visited binary-search path from the root through the answer node",
+    "annotation_hint_bst_insert_parent_label": "set \"annotation\" to an ordered JSON array of [x,y] pixel points at node centers for the visited insertion path from the root through the parent node where the new key would attach",
+    "annotation_hint_heap_property_violation_label": "set \"annotation\" to a JSON object with keys \"parent\" and \"child\"; each value is a [x,y] pixel point at that node center",
+    "annotation_hint": "set \"annotation\" to the minimal node-center point witnesses required by the question"
+  }
+}

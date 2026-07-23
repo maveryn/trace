@@ -1,0 +1,119 @@
+{
+  "bundle_id": "games_irregular_link_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "irregular_link_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The board shows {object_description}."
+      ]
+    },
+    "task": {
+      "irregular_link_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_piece_destination_count": [
+        "{movement_rule_text} How many empty points can the X-marked piece move to now?",
+        "{movement_rule_text} Count the empty points that are directly linked to the X-marked piece.",
+        "{movement_rule_text} What is the number of one-step legal moves for the X-marked piece?",
+        "{movement_rule_text} Count only empty points joined to the X-marked piece by one drawn link.",
+        "{movement_rule_text} How many adjacent empty points are reachable by one drawn link from the X-marked piece?"
+      ],
+      "capture_move_count": [
+        "{capture_rule_text} How many legal capture landing points does the X-marked piece have?",
+        "{capture_rule_text} Count the empty landing points for legal capture jumps by the X-marked piece.",
+        "{capture_rule_text} What is the number of straight jump-over capture moves for the X-marked piece?",
+        "{capture_rule_text} Count only empty landing points reached by jumping over one occupied adjacent point.",
+        "{capture_rule_text} How many empty landing points can the X-marked piece reach by one capture jump?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:irregular_link_board": [
+      "object_description"
+    ],
+    "query:marked_piece_destination_count": [
+      "movement_rule_text"
+    ],
+    "query:capture_move_count": [
+      "capture_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "capture_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "movement_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_sparse_links": "a point-and-link movement board with many missing links and several pieces",
+    "object_description_mixed_links": "a point-and-link movement board with some missing links and several pieces",
+    "object_description_dense_links": "a point-and-link movement board with dense drawn links and several pieces",
+    "movement_rule_text": "A one-step move must follow one drawn link from the X-marked piece to an adjacent empty point; occupied adjacent points and missing links do not count.",
+    "capture_rule_text": "A capture move must jump in a straight line over one occupied adjacent point and land on the empty point immediately beyond it; both links in that straight line must be drawn.",
+    "annotation_hint_marked_piece_destination_count": "set \"annotation\" to [x, y] pixel points at the centers of every empty point the X-marked piece can legally move to; use an empty array if there are none",
+    "answer_hint_marked_piece_destination_count": "set \"answer\" to the number of legal destinations for the X-marked piece",
+    "annotation_hint_capture_move_count": "set \"annotation\" to [x, y] pixel points at the centers of every empty point where the X-marked piece can move to capture; use an empty array if there are none",
+    "answer_hint_capture_move_count": "set \"answer\" to the number of legal capture moves for the X-marked piece"
+  }
+}

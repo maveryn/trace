@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ scene.scene_id }} · Trace Review{% endblock %}
+{% block content %}
+<nav class="breadcrumbs"><a href="/">Tasks</a> / <a href="/domains/{{ scene.domain }}">{{ scene.domain }}</a> / {{ scene.scene_id }}</nav>
+<h1>{{ scene.scene_id }}</h1>
+<div class="table-wrap"><table>
+  <thead><tr><th>Task</th><th>Status</th><th>Queries</th><th>Samples</th></tr></thead>
+  <tbody>{% for task in tasks %}<tr>
+    <td><a href="/domains/{{ task.domain }}/scenes/{{ task.scene_id }}/tasks/{{ task.task_id }}">{{ task.task_id }}</a></td>
+    <td>{% if task.materialized %}<span class="badge pass">materialized</span>{% else %}<span class="badge missing">not materialized</span>{% endif %}</td>
+    <td>{{ task.query_counts|length }}</td><td>{{ task.sample_count }}</td>
+  </tr>{% endfor %}</tbody>
+</table></div>
+{% endblock %}

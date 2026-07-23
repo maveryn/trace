@@ -1,0 +1,150 @@
+{
+  "bundle_id": "charts_parallel_coords_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "parallel_coords_chart": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "parallel_coords_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "above_on_both_axes": [
+        "How many profile segments are above {threshold} on both adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "Count the profiles with values greater than {threshold} on both adjacent axes \"{axis_i}\" and \"{axis_j}\".",
+        "Using highlighted adjacent axes \"{axis_i}\" and \"{axis_j}\", how many profiles are above {threshold} on both axes?",
+        "How many profiles satisfy: \"{axis_i}\" > {threshold} and \"{axis_j}\" > {threshold}?",
+        "How many labeled profiles sit above {threshold} on each of the adjacent axes \"{axis_i}\" and \"{axis_j}\"?"
+      ],
+      "below_on_both_axes": [
+        "How many profile segments are below {threshold} on both adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "Count the profiles with values less than {threshold} on both adjacent axes \"{axis_i}\" and \"{axis_j}\".",
+        "Using highlighted adjacent axes \"{axis_i}\" and \"{axis_j}\", how many profiles are below {threshold} on both axes?",
+        "How many profiles satisfy: \"{axis_i}\" < {threshold} and \"{axis_j}\" < {threshold}?",
+        "How many labeled profiles sit below {threshold} on each of the adjacent axes \"{axis_i}\" and \"{axis_j}\"?"
+      ],
+      "above_on_one_below_on_other": [
+        "How many profile segments are above {threshold} on \"{axis_i}\" and below {threshold} on adjacent axis \"{axis_j}\"?",
+        "Count the profiles with \"{axis_i}\" greater than {threshold} and adjacent axis \"{axis_j}\" less than {threshold}.",
+        "Using highlighted adjacent axes \"{axis_i}\" and \"{axis_j}\", how many profiles are above {threshold} on \"{axis_i}\" but below {threshold} on \"{axis_j}\"?",
+        "How many profiles satisfy: \"{axis_i}\" > {threshold} and \"{axis_j}\" < {threshold}?",
+        "How many labeled profiles cross from above {threshold} on \"{axis_i}\" to below {threshold} on adjacent axis \"{axis_j}\"?"
+      ],
+      "largest_increase_between_axes": [
+        "Which profile has the largest increase from \"{axis_i}\" to adjacent axis \"{axis_j}\"?",
+        "Compare each line segment from \"{axis_i}\" to \"{axis_j}\". Which profile increases the most?",
+        "Which labeled profile rises by the greatest amount between adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "From \"{axis_i}\" to adjacent axis \"{axis_j}\", which profile shows the largest positive change?",
+        "Which profile line segment has the greatest upward change from \"{axis_i}\" to \"{axis_j}\"?"
+      ],
+      "largest_decrease_between_axes": [
+        "Which profile has the largest decrease from \"{axis_i}\" to adjacent axis \"{axis_j}\"?",
+        "Compare each line segment from \"{axis_i}\" to \"{axis_j}\". Which profile decreases the most?",
+        "Which labeled profile falls by the greatest amount between adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "From \"{axis_i}\" to adjacent axis \"{axis_j}\", which profile shows the largest negative change?",
+        "Which profile line segment has the greatest downward change from \"{axis_i}\" to \"{axis_j}\"?"
+      ],
+      "largest_absolute_change_between_axes": [
+        "Which profile has the largest absolute change between adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "Ignoring direction, which profile changes the most between adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "Which labeled profile has the greatest value difference between adjacent axes \"{axis_i}\" and \"{axis_j}\"?",
+        "Compare the size of each profile segment change between \"{axis_i}\" and \"{axis_j}\". Which is largest?",
+        "Which profile line segment has the largest separation between its values on \"{axis_i}\" and \"{axis_j}\"?"
+      ],
+      "all_crossings_between_adjacent_axes": [
+        "How many pairwise line crossings occur between \"{axis_i}\" and \"{axis_j}\"?",
+        "Between the adjacent axes \"{axis_i}\" and \"{axis_j}\", how many pairs of profile lines cross?",
+        "Count the line-crossing pairs between \"{axis_i}\" and \"{axis_j}\".",
+        "How many profile-line intersections are formed between \"{axis_i}\" and \"{axis_j}\"?",
+        "Looking only between \"{axis_i}\" and \"{axis_j}\", how many pairs reverse order?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:above_on_both_axes": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of line segments, one segment for each counted profile between the two named axes; each segment is [[x0,y0],[x1,y1]] in pixel coordinates",
+      "json_example": "{\"annotation\":[[[260,210],[430,250]],[[260,390],[430,330]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:below_on_both_axes": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of line segments, one segment for each counted profile between the two named axes; each segment is [[x0,y0],[x1,y1]] in pixel coordinates",
+      "json_example": "{\"annotation\":[[[260,210],[430,250]],[[260,390],[430,330]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:above_on_one_below_on_other": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of line segments, one segment for each counted profile between the two named axes; each segment is [[x0,y0],[x1,y1]] in pixel coordinates",
+      "json_example": "{\"annotation\":[[[260,210],[430,250]],[[260,390],[430,330]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:largest_increase_between_axes": {
+      "answer_hint": "set \"answer\" to the exact visible profile label as a string",
+      "annotation_hint": "set \"annotation\" to the answer profile segment between the two named axes as [[x0,y0],[x1,y1]] in pixel coordinates",
+      "json_example": "{\"annotation\":[[260,340],[430,180]],\"answer\":\"K7\"}",
+      "json_example_answer_only": "{\"answer\":\"K7\"}"
+    },
+    "query:largest_decrease_between_axes": {
+      "answer_hint": "set \"answer\" to the exact visible profile label as a string",
+      "annotation_hint": "set \"annotation\" to the answer profile segment between the two named axes as [[x0,y0],[x1,y1]] in pixel coordinates",
+      "json_example": "{\"annotation\":[[260,340],[430,180]],\"answer\":\"K7\"}",
+      "json_example_answer_only": "{\"answer\":\"K7\"}"
+    },
+    "query:largest_absolute_change_between_axes": {
+      "answer_hint": "set \"answer\" to the exact visible profile label as a string",
+      "annotation_hint": "set \"annotation\" to the answer profile segment between the two named axes as [[x0,y0],[x1,y1]] in pixel coordinates",
+      "json_example": "{\"annotation\":[[260,340],[430,180]],\"answer\":\"K7\"}",
+      "json_example_answer_only": "{\"answer\":\"K7\"}"
+    },
+    "query:all_crossings_between_adjacent_axes": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points, one point at each counted line crossing between the two named axes",
+      "json_example": "{\"annotation\":[[310,260],[420,340]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "axis_i": {
+      "type": "string"
+    },
+    "axis_j": {
+      "type": "string"
+    },
+    "threshold": {
+      "type": "integer"
+    }
+  }
+}

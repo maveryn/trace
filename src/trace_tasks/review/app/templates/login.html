@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Trace Review</title>
+  <link rel="stylesheet" href="{{ request.url_for('static', path='app.css') }}">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <h1>Trace Review</h1>
+    <p>Enter the token supplied by the review-app operator.</p>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form method="post" action="/login">
+      <input type="hidden" name="next" value="{{ next_path }}">
+      <label>Token <input type="password" name="token" required autocomplete="current-password"></label>
+      <button type="submit">Log in</button>
+    </form>
+  </main>
+</body>
+</html>

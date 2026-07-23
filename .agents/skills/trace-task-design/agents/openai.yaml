@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace Task Design"
+  short_description: "Design Trace task contracts before coding"
+  default_prompt: "Use $trace-task-design to define this Trace task's program, answer, annotation, sampling, and documentation contract."

@@ -1,0 +1,70 @@
+generation:
+  shared:
+    scene_variant_weights:
+      clean_table: 1.0
+      notebook_table: 1.0
+      exam_scan: 1.0
+    balanced_scene_variant_sampling: true
+    option_label_support:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+  task_overrides:
+    task_symbolic__truth_table__satisfying_row_count:
+      target_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+    task_symbolic__truth_table__expression_from_rows_label:
+      expression_option_label_support:
+      - W
+      - X
+      - Y
+      - Z
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 780
+    table_left_px: 88
+    table_top_px: 102
+    row_label_width_px: 58
+    variable_cell_width_px: 66
+    output_cell_width_px: 210
+    compact_output_cell_width_px: 82
+    row_height_px: 52
+    header_height_px: 72
+    card_corner_radius_px: 14
+    card_border_width_px: 2
+    grid_line_width_px: 2
+    expression_font_size_px: 24
+    header_font_size_px: 22
+    cell_font_size_px: 24
+    option_label_font_size_px: 25
+    pattern_font_size_px: 28
+    title_font_size_px: 22
+
+prompt:
+  shared:
+    bundle_id: symbolic_truth_table_v1
+    scene_key: truth_table
+  task_overrides:
+    task_symbolic__truth_table__satisfying_row_count:
+      task_key: satisfying_row_count
+    task_symbolic__truth_table__truth_pattern_label:
+      task_key: truth_pattern_label
+    task_symbolic__truth_table__expression_from_rows_label:
+      task_key: expression_from_rows_label
+
+visual:
+  background:
+    enabled: true
+  noise:
+    apply_prob: 0.16

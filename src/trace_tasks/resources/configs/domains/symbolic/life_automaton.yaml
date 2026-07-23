@@ -1,0 +1,122 @@
+generation:
+  task_overrides:
+    task_symbolic__life_automaton__life_future_grid_label:
+      balanced_scene_variant_sampling: true
+      balanced_life_board_style_sampling: true
+      balanced_life_cell_palette_sampling: true
+      life_grid_size_min: 3
+      life_grid_size_max: 5
+      life_rows_min: 3
+      life_rows_max: 5
+      life_cols_min: 3
+      life_cols_max: 5
+      live_density: 0.36
+      grid_option_count: 4
+      scene_variant_weights:
+        clean_grid: 1.0
+        lab_panel: 1.0
+        notebook_grid: 1.0
+      life_board_style_weights:
+        classic_grid: 1.0
+        rounded_tiles: 1.0
+        inset_tiles: 1.0
+        lab_matrix: 1.0
+        notebook_cells: 1.0
+        terminal_cells: 1.0
+      life_cell_palette_weights:
+        mono_ink: 1.0
+        blueprint_cells: 1.0
+        forest_cells: 1.0
+        plum_cells: 1.0
+        sepia_cells: 1.0
+        teal_cells: 1.0
+        burgundy_cells: 1.0
+        carbon_cells: 1.0
+    task_symbolic__life_automaton__one_step_cell_state_count:
+      balanced_scene_variant_sampling: true
+      balanced_life_board_style_sampling: true
+      balanced_life_cell_palette_sampling: true
+      life_grid_size_min: 3
+      life_grid_size_max: 3
+      life_rows_min: 3
+      life_rows_max: 3
+      life_cols_min: 3
+      life_cols_max: 3
+      live_density: 0.45
+      scene_variant_weights:
+        clean_grid: 1.0
+        lab_panel: 1.0
+        notebook_grid: 1.0
+      life_board_style_weights:
+        classic_grid: 1.0
+        rounded_tiles: 1.0
+        inset_tiles: 1.0
+        lab_matrix: 1.0
+        notebook_cells: 1.0
+        terminal_cells: 1.0
+      life_cell_palette_weights:
+        mono_ink: 1.0
+        blueprint_cells: 1.0
+        forest_cells: 1.0
+        plum_cells: 1.0
+        sepia_cells: 1.0
+        teal_cells: 1.0
+        burgundy_cells: 1.0
+        carbon_cells: 1.0
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 880
+    cell_size_px: 54
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    grid_gap_px: 2
+    panel_padding_px: 28
+    panel_corner_radius_px: 22
+    panel_border_width_px: 3
+    grid_line_width_px: 2
+    option_card_width_px: 150
+    option_card_height_px: 116
+    option_gap_px: 18
+    option_grid_cell_px: 14
+    label_font_size_px: 22
+    small_font_size_px: 16
+    arrow_width_px: 6
+
+prompt:
+  shared:
+    bundle_id: symbolic_life_automaton_v1
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer" in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for the final answer.
+  task_overrides:
+    task_symbolic__life_automaton__life_future_grid_label:
+      scene_key: life_automaton
+      task_key: life_future_grid_query
+      query_instruction_one_step_future_grid: Use the rule that an alive cell survives with exactly 2 or 3 alive neighbors, an empty cell becomes alive with exactly 3 alive neighbors, and all other cells are empty in the next grid.
+      query_instruction_two_step_future_grid: Apply the same alive-neighbor rule for two updates in sequence.
+    task_symbolic__life_automaton__one_step_cell_state_count:
+      scene_key: life_automaton
+      task_key: life_one_step_cell_state_count_query
+      query_instruction_one_step_alive_cell_count: Use the rule that an alive cell survives with exactly 2 or 3 alive neighbors, an empty cell becomes alive with exactly 3 alive neighbors, and all other cells are empty in the next grid.
+      query_instruction_one_step_dead_cell_count: Use the rule that an alive cell survives with exactly 2 or 3 alive neighbors, an empty cell becomes alive with exactly 3 alive neighbors, and all other cells are empty in the next grid.
+
+visual:
+  background:
+    enabled: true
+    styles:
+      life_automaton_plain:
+        kind: solid
+        color: [248, 250, 252]
+      life_automaton_cool:
+        kind: solid
+        color: [244, 248, 251]
+      life_automaton_warm:
+        kind: solid
+        color: [250, 248, 244]
+    weights:
+      life_automaton_plain: 1.0
+      life_automaton_cool: 1.0
+      life_automaton_warm: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range: [1, 2]

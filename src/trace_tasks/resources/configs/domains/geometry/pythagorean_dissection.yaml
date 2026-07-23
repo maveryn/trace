@@ -1,0 +1,23 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    canvas_width: 760
+    canvas_height: 560
+    label_font_size: 22
+    small_label_font_size: 18
+    label_stroke_width: 0
+    label_stroke_width_min: 0
+    label_stroke_width_max: 0
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+prompt:
+  shared:
+    bundle_id: geometry_pythagorean_dissection_v1
+    scene_key: pythagorean_dissection_scene

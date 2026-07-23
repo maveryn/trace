@@ -1,0 +1,162 @@
+{
+  "bundle_id": "games_connect_four_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_connect_four_board": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The scene contains {object_description}."
+      ]
+    },
+    "task": {
+      "connect_four_move_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "winning_move_count": [
+        "It is {current_player_name}'s turn. {legal_drop_rule_text} {winning_rule_text} How many legal drop columns let {current_player_name} win immediately?",
+        "It is {current_player_name}'s turn. {legal_drop_rule_text} {winning_rule_text} Count the legal drop columns that would win at once for {current_player_name}.",
+        "It is {current_player_name}'s turn. {legal_drop_rule_text} {winning_rule_text} What is the number of immediate-winning legal drop columns for {current_player_name}?",
+        "It is {current_player_name}'s turn. {legal_drop_rule_text} {winning_rule_text} How many columns give {current_player_name} an immediate win on this move?",
+        "It is {current_player_name}'s turn. {legal_drop_rule_text} {winning_rule_text} Determine how many legal drop columns would complete a win immediately for {current_player_name}."
+      ],
+      "winning_move_column_label": [
+        "It is {current_player_name}'s turn. Use the column labels shown below the board. {legal_drop_rule_text} {winning_rule_text} Which column lets {current_player_name} win immediately?",
+        "It is {current_player_name}'s turn. Use the labels under the columns. {legal_drop_rule_text} {winning_rule_text} Which labeled column gives {current_player_name} an immediate win?",
+        "It is {current_player_name}'s turn. Read the column labels below the board. {legal_drop_rule_text} {winning_rule_text} Select the column where {current_player_name} can win on this move.",
+        "It is {current_player_name}'s turn. The columns are labeled below the board. {legal_drop_rule_text} {winning_rule_text} Which column should {current_player_name} drop in to win immediately?",
+        "It is {current_player_name}'s turn. Use the visible column labels. {legal_drop_rule_text} {winning_rule_text} Which labeled column completes an immediate win for {current_player_name}?"
+      ],
+      "blocking_move_column_label": [
+        "It is {current_player_name}'s turn. Use the column labels shown below the board. {legal_drop_rule_text} {winning_rule_text} {opponent_player_name} has one immediate winning drop. Which column should {current_player_name} play to block it?",
+        "It is {current_player_name}'s turn. Use the labels under the columns. {legal_drop_rule_text} {winning_rule_text} Which labeled column blocks {opponent_player_name}'s immediate win?",
+        "It is {current_player_name}'s turn. Read the column labels below the board. {legal_drop_rule_text} {winning_rule_text} Select the column where {current_player_name} must drop to stop {opponent_player_name} from winning next.",
+        "It is {current_player_name}'s turn. The columns are labeled below the board. {legal_drop_rule_text} {winning_rule_text} Which column blocks the only immediate win for {opponent_player_name}?",
+        "It is {current_player_name}'s turn. Use the visible column labels. {legal_drop_rule_text} {winning_rule_text} Choose the labeled column that prevents {opponent_player_name}'s next-move win."
+      ],
+      "column_disc_profile_label": [
+        "Use the column labels shown below the board. Which column has red-disc count {target_red_count} and yellow-disc count {target_yellow_count}?",
+        "Read the labels under the columns. Which labeled column has red-disc count {target_red_count} and yellow-disc count {target_yellow_count}?",
+        "Using the visible column labels, select the column whose red-disc count is {target_red_count} and yellow-disc count is {target_yellow_count}.",
+        "Which labeled column has red count {target_red_count} and yellow count {target_yellow_count}?",
+        "Choose the column label for the column with red-disc count {target_red_count} and yellow-disc count {target_yellow_count}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_connect_four_board": [
+      "object_description"
+    ],
+    "query:winning_move_count": [
+      "current_player_name",
+      "legal_drop_rule_text",
+      "winning_rule_text"
+    ],
+    "query:winning_move_column_label": [
+      "current_player_name",
+      "legal_drop_rule_text",
+      "winning_rule_text"
+    ],
+    "query:blocking_move_column_label": [
+      "current_player_name",
+      "opponent_player_name",
+      "legal_drop_rule_text",
+      "winning_rule_text"
+    ],
+    "query:column_disc_profile_label": [
+      "target_red_count",
+      "target_yellow_count"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "current_player_name": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "legal_drop_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "opponent_player_name": {
+      "type": "string"
+    },
+    "target_red_count": {
+      "type": "integer"
+    },
+    "target_yellow_count": {
+      "type": "integer"
+    },
+    "winning_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_midgame_board": "a Connect Four board in a midgame position with red and yellow discs",
+    "object_description_crowded_board": "a Connect Four board in a crowded late-game position with red and yellow discs",
+    "legal_drop_rule_text": "A legal drop chooses one non-full column and lands in its lowest empty square.",
+    "winning_rule_text": "A horizontal, vertical, or diagonal line of four matching discs wins.",
+    "annotation_hint_winning_move_count": "set \"annotation\" to a JSON array of pixel-space cell boxes [x0, y0, x1, y1] for every immediate-winning landing square",
+    "annotation_hint_winning_move_column_label": "set \"annotation\" to one point [x, y] at the center of the landing square in the selected winning column",
+    "annotation_hint_blocking_move_column_label": "set \"annotation\" to one point [x, y] at the center of the landing square in the selected blocking column",
+    "annotation_hint_column_disc_profile_label": "set \"annotation\" to a JSON array of pixel-space cell boxes [x0, y0, x1, y1] for the occupied cells in the selected column",
+    "answer_hint_winning_move_count": "set \"answer\" to the number of legal drop columns that win immediately",
+    "answer_hint_winning_move_column_label": "set \"answer\" to the selected column label as a capital letter shown below the board",
+    "answer_hint_blocking_move_column_label": "set \"answer\" to the selected column label as a capital letter shown below the board",
+    "answer_hint_column_disc_profile_label": "set \"answer\" to the selected column label as a capital letter shown below the board"
+  }
+}

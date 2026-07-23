@@ -1,0 +1,180 @@
+{
+  "asset_version": "labels_v0",
+  "generated_by": "scripts/build_label_assets.py",
+  "source_policy": "Shared label/name manifests are normalized from permissively licensed, public-domain, or project-local synthetic sources. Task modules should load these manifests and apply task-local length/style filters.",
+  "sources": {
+    "ssa_baby_names": {
+      "description": "U.S. Social Security card application baby-name counts.",
+      "source_url": "https://www.ssa.gov/oact/babynames/names.zip",
+      "metadata_url": "https://catalog.data.gov/dataset/baby-names-from-social-security-card-applications-national-data",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "local_license": "licenses/CC0-1.0.txt"
+    },
+    "census_surnames_2010": {
+      "description": "Frequently occurring surnames from the 2010 U.S. Census.",
+      "source_url": "https://www2.census.gov/topics/genealogy/2010surnames/names.zip",
+      "metadata_url": "https://www.census.gov/data/developers/data-sets/surnames/2010.html",
+      "license": "U.S. government public domain",
+      "license_url": "https://www.law.cornell.edu/uscode/text/17/105",
+      "local_license": "licenses/US-GOV-PUBLIC-DOMAIN.txt"
+    },
+    "natural_earth": {
+      "description": "Natural Earth country and populated-place names.",
+      "source_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places.geojson",
+      "metadata_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "license": "public domain",
+      "license_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "local_license": "licenses/NATURAL-EARTH-PUBLIC-DOMAIN.txt"
+    },
+    "sec_company_tickers": {
+      "description": "SEC company ticker exchange file; Trace uses tickers and generic terms extracted from company names.",
+      "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "metadata_url": "https://www.sec.gov/file/company-tickers-exchange",
+      "license": "U.S. government public domain / factual identifiers",
+      "license_url": "https://www.law.cornell.edu/uscode/text/17/105",
+      "local_license": "licenses/US-GOV-PUBLIC-DOMAIN.txt"
+    },
+    "bls_occupations_oews": {
+      "description": "BLS OEWS occupation titles.",
+      "source_url": "https://download.bls.gov/pub/time.series/oe/oe.occupation",
+      "metadata_url": "https://www.bls.gov/oes/tables.htm",
+      "license": "U.S. government public domain",
+      "license_url": "https://www.bls.gov/bls/linksite.htm",
+      "local_license": "licenses/US-GOV-PUBLIC-DOMAIN.txt"
+    },
+    "bls_industries_qcew": {
+      "description": "BLS QCEW NAICS industry titles.",
+      "source_url": "https://www.bls.gov/cew/classifications/industry/industry-titles.csv",
+      "metadata_url": "https://www.bls.gov/cew/classifications/industry/industry-titles.htm",
+      "license": "U.S. government public domain",
+      "license_url": "https://www.bls.gov/bls/linksite.htm",
+      "local_license": "licenses/US-GOV-PUBLIC-DOMAIN.txt"
+    },
+    "trace_synthetic_categories": {
+      "description": "Project-local synthetic category labels authored for Trace task generation.",
+      "source_url": "",
+      "metadata_url": "",
+      "license": "Trace synthetic label assets",
+      "license_url": "",
+      "local_license": "licenses/trace-synthetic.txt"
+    }
+  },
+  "manifests": {
+    "people/first_names_ssa.txt": {
+      "sources": [
+        "ssa_baby_names"
+      ],
+      "count": 105966,
+      "description": "Given names sorted by aggregate SSA frequency descending."
+    },
+    "people/surnames_census_2010.txt": {
+      "sources": [
+        "census_surnames_2010"
+      ],
+      "count": 162254,
+      "description": "Surnames in Census rank order."
+    },
+    "places/countries_natural_earth.txt": {
+      "sources": [
+        "natural_earth"
+      ],
+      "count": 175,
+      "description": "Country/region display names from the bundled Natural Earth admin-0 map asset."
+    },
+    "places/cities_natural_earth.txt": {
+      "sources": [
+        "natural_earth"
+      ],
+      "count": 6422,
+      "description": "Populated-place names sorted by Natural Earth population rank."
+    },
+    "organizations/company_tickers_sec.txt": {
+      "sources": [
+        "sec_company_tickers"
+      ],
+      "count": 9836,
+      "description": "Alphabetic exchange ticker labels from the SEC static file."
+    },
+    "organizations/company_terms_sec.txt": {
+      "sources": [
+        "sec_company_tickers"
+      ],
+      "count": 1206,
+      "description": "Common generic organization terms extracted from SEC company names after suffix removal."
+    },
+    "categories/abstract_group_labels.txt": {
+      "sources": [
+        "trace_synthetic_categories"
+      ],
+      "count": 40,
+      "description": "Synthetic short neutral category labels for charts, maps, legends, and compact panels."
+    },
+    "categories/priority_labels.txt": {
+      "sources": [
+        "trace_synthetic_categories"
+      ],
+      "count": 20,
+      "description": "Synthetic priority and risk category labels for categorical legends."
+    },
+    "categories/product_labels.txt": {
+      "sources": [
+        "trace_synthetic_categories"
+      ],
+      "count": 40,
+      "description": "Synthetic product or service category labels for chart categories and page labels."
+    },
+    "categories/status_labels.txt": {
+      "sources": [
+        "trace_synthetic_categories"
+      ],
+      "count": 21,
+      "description": "Synthetic workflow status category labels for categorical legends and document/page tasks."
+    },
+    "panel_titles/technical_topics.txt": {
+      "sources": [
+        "trace_synthetic_categories"
+      ],
+      "count": 280,
+      "description": "Synthetic technical and scientific topic labels for chart panel titles and subplot labels."
+    },
+    "occupations/occupations_bls_oews.txt": {
+      "sources": [
+        "bls_occupations_oews"
+      ],
+      "count": 1102,
+      "description": "Occupation titles from BLS Occupational Employment and Wage Statistics."
+    },
+    "industries/industries_bls_qcew.txt": {
+      "sources": [
+        "bls_industries_qcew"
+      ],
+      "count": 1828,
+      "description": "Industry titles from BLS QCEW NAICS classification data."
+    },
+    "mixed/proper_labels.txt": {
+      "sources": [
+        "ssa_baby_names",
+        "census_surnames_2010",
+        "natural_earth",
+        "sec_company_tickers",
+        "bls_occupations_oews",
+        "bls_industries_qcew"
+      ],
+      "count": 259408,
+      "description": "Broad proper-label pool spanning people, places, organization terms, occupations, and industry titles."
+    },
+    "mixed/compact_labels.txt": {
+      "sources": [
+        "ssa_baby_names",
+        "census_surnames_2010",
+        "natural_earth",
+        "sec_company_tickers",
+        "bls_occupations_oews",
+        "bls_industries_qcew"
+      ],
+      "count": 256338,
+      "description": "Compact alphabetic labels suitable for tighter render surfaces before task-local filtering."
+    }
+  }
+}

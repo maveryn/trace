@@ -1,0 +1,145 @@
+{
+  "bundle_id": "charts_scatter_readout_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "scatter_readout": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "scatter_series_readout_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "series_highest_x_label": [
+        "For series \"{series_label}\", what x-axis label corresponds to its {extremum_phrase} y-axis value? {unanswerable_instruction}",
+        "Find the point where series \"{series_label}\" has its {extremum_phrase} y-axis value. What is the x-axis label? {unanswerable_instruction}",
+        "In series \"{series_label}\", which x-axis label has the {extremum_phrase} y-axis value? {unanswerable_instruction}",
+        "Use the legend to locate series \"{series_label}\". What x-axis label is at its {extremum_phrase} value? {unanswerable_instruction}",
+        "What x-axis label marks the {extremum_phrase} point for series \"{series_label}\"? {unanswerable_instruction}"
+      ],
+      "series_lowest_x_label": [
+        "For series \"{series_label}\", what x-axis label corresponds to its {extremum_phrase} y-axis value? {unanswerable_instruction}",
+        "Find the point where series \"{series_label}\" has its {extremum_phrase} y-axis value. What is the x-axis label? {unanswerable_instruction}",
+        "In series \"{series_label}\", which x-axis label has the {extremum_phrase} y-axis value? {unanswerable_instruction}",
+        "Use the legend to locate series \"{series_label}\". What x-axis label is at its {extremum_phrase} value? {unanswerable_instruction}",
+        "What x-axis label marks the {extremum_phrase} point for series \"{series_label}\"? {unanswerable_instruction}"
+      ],
+      "series_pair_value_gap_at_x": [
+        "At x-axis label \"{target_x_label}\", what is the absolute difference between series \"{series_label}\" and series \"{comparison_series_label}\"?",
+        "Use the legend to compare series \"{series_label}\" and \"{comparison_series_label}\" at \"{target_x_label}\". What is the absolute difference between their y-axis values?",
+        "For x-axis label \"{target_x_label}\", subtract the smaller y-axis value from the larger one for series \"{series_label}\" and \"{comparison_series_label}\". What is the result?",
+        "At \"{target_x_label}\", what gap separates the y-axis values of series \"{series_label}\" and \"{comparison_series_label}\"?",
+        "Read both series \"{series_label}\" and \"{comparison_series_label}\" at x-axis label \"{target_x_label}\". What is their absolute y-value gap?"
+      ],
+      "series_value_at_x_value": [
+        "For series \"{series_label}\" at x-axis label \"{target_x_label}\", what y-axis value is shown?",
+        "Use the legend to locate series \"{series_label}\". What value does it show at \"{target_x_label}\"?",
+        "At x-axis label \"{target_x_label}\", read the y-axis value for series \"{series_label}\". What is it?",
+        "What printed y-axis value belongs to series \"{series_label}\" at \"{target_x_label}\"?",
+        "Find series \"{series_label}\" at x-axis label \"{target_x_label}\". What is the displayed value?"
+      ],
+      "series_y_anchor_other_series_value": [
+        "In series \"{series_label}\", find the point with y-axis value {target_y_value}. At that same x-axis label, what y-axis value does series \"{comparison_series_label}\" have?",
+        "Use series \"{series_label}\" to locate y-axis value {target_y_value}, then use the same x-axis label in series \"{comparison_series_label}\". What y-axis value is shown there?",
+        "Find the x-axis label where series \"{series_label}\" has y-axis value {target_y_value}. What is the y-axis value of series \"{comparison_series_label}\" at that x-axis label?",
+        "Series \"{series_label}\" includes a point labeled {target_y_value}. At the same x-axis position, what value is printed for series \"{comparison_series_label}\"?",
+        "Anchor on y-axis value {target_y_value} in series \"{series_label}\". What value does series \"{comparison_series_label}\" have at that matching x-axis label?"
+      ],
+      "x_highest_series_label": [
+        "At x-axis label \"{target_x_label}\", which series has the {extremum_phrase} y-axis value?",
+        "Use the legend and the points at \"{target_x_label}\". Which series is {extremum_phrase} there?",
+        "For x-axis label \"{target_x_label}\", what series label corresponds to the {extremum_phrase} value?",
+        "Compare all series at \"{target_x_label}\". Which visible series has the {extremum_phrase} y-axis value?",
+        "Which series reaches the {extremum_phrase} value at x-axis label \"{target_x_label}\"?"
+      ],
+      "x_lowest_series_label": [
+        "At x-axis label \"{target_x_label}\", which series has the {extremum_phrase} y-axis value?",
+        "Use the legend and the points at \"{target_x_label}\". Which series is {extremum_phrase} there?",
+        "For x-axis label \"{target_x_label}\", what series label corresponds to the {extremum_phrase} value?",
+        "Compare all series at \"{target_x_label}\". Which visible series has the {extremum_phrase} y-axis value?",
+        "Which series reaches the {extremum_phrase} value at x-axis label \"{target_x_label}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:series_highest_x_label": {
+      "answer_hint": "set \"answer\" to the requested x-axis label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected scatter mark; if the answer is \"unanswerable\", use an empty object",
+      "json_example": "{\"annotation\":[420,250],\"answer\":\"2016\"}",
+      "json_example_answer_only": "{\"answer\":\"2016\"}"
+    },
+    "query:series_lowest_x_label": {
+      "answer_hint": "set \"answer\" to the requested x-axis label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected scatter mark; if the answer is \"unanswerable\", use an empty object",
+      "json_example": "{\"annotation\":[420,250],\"answer\":\"2016\"}",
+      "json_example_answer_only": "{\"answer\":\"2016\"}"
+    },
+    "query:series_pair_value_gap_at_x": {
+      "answer_hint": "set \"answer\" to the requested absolute difference as an integer",
+      "annotation_hint": "set \"annotation\" to one segment [[x0,y0],[x1,y1]] connecting the centers of the two compared scatter marks",
+      "json_example": "{\"annotation\":[[420,250],[420,310]],\"answer\":24}",
+      "json_example_answer_only": "{\"answer\":24}"
+    },
+    "query:series_value_at_x_value": {
+      "answer_hint": "set \"answer\" to the requested y-axis value as an integer",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected scatter mark",
+      "json_example": "{\"annotation\":[420,250],\"answer\":63}",
+      "json_example_answer_only": "{\"answer\":63}"
+    },
+    "query:series_y_anchor_other_series_value": {
+      "answer_hint": "set \"answer\" to the requested y-axis value as an integer",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the comparison-series scatter mark that gives the answer",
+      "json_example": "{\"annotation\":[520,310],\"answer\":63}",
+      "json_example_answer_only": "{\"answer\":63}"
+    },
+    "query:x_highest_series_label": {
+      "answer_hint": "set \"answer\" to the exact visible series label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the answer series scatter mark",
+      "json_example": "{\"annotation\":[520,310],\"answer\":\"Orchid\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+    },
+    "query:x_lowest_series_label": {
+      "answer_hint": "set \"answer\" to the exact visible series label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the answer series scatter mark",
+      "json_example": "{\"annotation\":[520,310],\"answer\":\"Orchid\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "series_label": {"type": "string"},
+    "comparison_series_label": {"type": "string"},
+    "extremum_phrase": {"type": "string"},
+    "target_y_value": {"type": "string"},
+    "target_x_label": {"type": "string"},
+    "unanswerable_instruction": {"type": "string"}
+  }
+}

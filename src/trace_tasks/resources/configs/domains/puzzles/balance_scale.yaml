@@ -1,0 +1,54 @@
+generation:
+  shared:
+    scale_panel_count_min: 3
+    scale_panel_count_max: 3
+    numeric_weight_max: 80
+    object_weight_support_max: 24
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      balance_sheet: 1.0
+      balance_card: 1.0
+      balance_outline: 1.0
+  task_overrides:
+    task_puzzles__balance_scale__missing_object_weight_value:
+      answer_min: 1
+      answer_max: 20
+    task_puzzles__balance_scale__equivalent_object_count_value:
+      answer_min: 2
+      answer_max: 8
+      repeated_object_weight_max: 10
+    task_puzzles__balance_scale__weight_order_label:
+      option_count: 4
+    task_puzzles__balance_scale__query_side_relation_label:
+      option_count: 4
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 840
+    scene_margin_left_px: 54
+    scene_margin_right_px: 54
+    scene_margin_top_px: 48
+    scene_margin_bottom_px: 48
+    panel_padding_px: 26
+    panel_corner_radius_px: 20
+    panel_border_width_px: 3
+    scale_panel_gap_px: 20
+    query_row_height_px: 130
+    beam_width_px: 620
+    pan_width_px: 360
+    pan_height_px: 118
+    token_size_px: 76
+    token_gap_px: 8
+    line_width_px: 3
+    value_font_size_px: 28
+    label_font_size_px: 28
+    query_font_size_px: 38
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+prompt:
+  shared:
+    bundle_id: puzzles_balance_scale_v1
+    scene_key: balance_scale
+visual:
+  noise:
+    apply_prob: 0.15

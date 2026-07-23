@@ -1,0 +1,96 @@
+generation:
+  shared:
+    row_count_min: 8
+    row_count_max: 14
+    value_min: 8
+    value_max: 96
+    gap_min: 4
+    gap_max: 58
+    side_threshold_min: 28
+    side_threshold_max: 78
+    side_threshold_step: 5
+    combined_threshold_min: 70
+    combined_threshold_max: 150
+    combined_threshold_step: 10
+    threshold_count_min: 2
+    threshold_count_max: 9
+    age_band_width_options:
+    - 5
+    - 10
+    age_start_options:
+    - 0
+    - 5
+    - 10
+    series_label_pairs:
+    - - Female
+      - Male
+    - - Group A
+      - Group B
+    - - Urban
+      - Rural
+    - - North
+      - South
+    - - Baseline
+      - Scenario
+    - - Left cohort
+      - Right cohort
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 900
+    plot_margin_left_px: 138
+    plot_margin_right_px: 64
+    plot_margin_top_px: 88
+    plot_margin_bottom_px: 110
+    title_band_height_px: 70
+    legend_gap_px: 28
+    axis_line_width_px_min: 2
+    axis_line_width_px_max: 3
+    grid_line_width_px_min: 1
+    grid_line_width_px_max: 2
+    bar_outline_width_px_min: 1
+    bar_outline_width_px_max: 2
+    bar_gap_px_min: 4
+    bar_gap_px_max: 8
+    title_font_size_px: 30
+    label_font_size_px: 18
+    tick_font_size_px: 15
+    legend_font_size_px: 18
+    value_font_size_px: 14
+    chart_context_profile: report_paragraph
+    axis_max: 100
+    tick_step: 20
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -14
+    layout_jitter_x_px_max: 14
+    layout_jitter_y_px_min: -10
+    layout_jitter_y_px_max: 10
+    layout_jitter_min_margin_px: 24
+    title_options:
+    - Population Pyramid
+    - Age Profile Comparison
+    - Cohort Balance Chart
+    - Mirrored Age Distribution
+    - Demographic Profile
+    series_palette_rgb:
+    - - 45
+      - 112
+      - 190
+    - - 215
+      - 96
+      - 72
+    - - 54
+      - 148
+      - 122
+    - - 132
+      - 91
+      - 186
+    - - 194
+      - 136
+      - 42
+    - - 36
+      - 134
+      - 164
+prompt:
+  shared:
+    bundle_id: charts_population_pyramid_v1

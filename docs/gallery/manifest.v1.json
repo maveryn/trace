@@ -1,0 +1,1208 @@
+{
+  "examples": [
+    {
+      "annotation_type": "point_set",
+      "answer_type": "string",
+      "caption": "Mixed-chart dashboard",
+      "domain": "charts",
+      "height": 900,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/charts-dashboard-category_total_extremum_label.png",
+      "image_sha256": "69248c48cb6a87fa324ece77423e6f3693792e651ad0368dd25d6a27d7158d65",
+      "max_attempts": 100,
+      "objective_contract": "category_total_extremum_label",
+      "order": 0,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "c0b8d01d7c8d088d8144d8f8d0b0cc5e45d8079c3c86dd1eb955a7f448c03f38",
+        "prompt_bundle_id": "charts_dashboard_v1",
+        "prompt_bundle_path": "charts/dashboard/charts_dashboard_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 0,
+          "query": 2,
+          "scene": 1,
+          "task": 3
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "largest_category_total_label",
+          "scene": "dashboard_mixed_chart",
+          "task": "dashboard_cross_panel_query"
+        }
+      },
+      "scene_id": "dashboard",
+      "seed": 3201,
+      "source_height": 1000,
+      "source_width": 1260,
+      "task_document_path": "docs/tasks/charts/dashboard/task_charts__dashboard__category_total_extremum_label.md",
+      "task_document_sha256": "f7676cb0b284e32489801aed8c76445c1a2ab41b516fe58ea0b4d5cbf61dcd10",
+      "task_id": "task_charts__dashboard__category_total_extremum_label",
+      "task_source_path": "src/trace_tasks/tasks/charts/dashboard/category_total_extremum_label.py",
+      "task_source_sha256": "52e0a059c56b1f084fccac289b105211a65fdfb6da15001f59548cd1168dff7a",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1134
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "string",
+      "caption": "Radial Sankey routing",
+      "domain": "charts",
+      "height": 867,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/charts-radial_sankey-dominant_endpoint_label.png",
+      "image_sha256": "16c56257ebe1cc670b9132d148801bcff9e8a53d0187ba9b2dca840cd7d2d7e5",
+      "max_attempts": 100,
+      "objective_contract": "dominant_endpoint_label",
+      "order": 1,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "8c8c7932f5587003b911f3c4220025089c06770dda2ec69a58598be8306b8efe",
+        "prompt_bundle_id": "charts_radial_sankey_v1",
+        "prompt_bundle_path": "charts/radial_sankey/charts_radial_sankey_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 1,
+          "query": 3,
+          "scene": 2,
+          "task": 3
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "largest_target_for_source",
+          "scene": "radial_sankey",
+          "task": "radial_sankey_query"
+        }
+      },
+      "scene_id": "radial_sankey",
+      "seed": 3202,
+      "source_height": 960,
+      "source_width": 1328,
+      "task_document_path": "docs/tasks/charts/radial_sankey/task_charts__radial_sankey__dominant_endpoint_label.md",
+      "task_document_sha256": "651953de2afb744e28edd091b82ea648cbb9ddc0e26617672d52dd1858d4d2d3",
+      "task_id": "task_charts__radial_sankey__dominant_endpoint_label",
+      "task_source_path": "src/trace_tasks/tasks/charts/radial_sankey/dominant_endpoint_label.py",
+      "task_source_sha256": "d25402f9a16cb03492ecbcb3ccbaafb1f7c7d1eed2cbe1b9a59544e3a24e2c28",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1200
+    },
+    {
+      "annotation_type": "bbox_set",
+      "answer_type": "integer",
+      "caption": "Chess-board counting",
+      "domain": "games",
+      "height": 900,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/games-chess-colored_piece_kind_count.png",
+      "image_sha256": "6347d05574eaa7924454c09d13bd5f9ff1ef216376f6b2c0b507e44de6a837ef",
+      "max_attempts": 100,
+      "objective_contract": "colored_piece_kind_count",
+      "order": 2,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "4ddb92a1c0eba4780a3b414bbc22296402bfd60ec04ad7e2f18bdc8a71a838c3",
+        "prompt_bundle_id": "games_chess_v1",
+        "prompt_bundle_path": "games/chess/games_chess_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 0,
+          "query": 2,
+          "scene": 4,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "colored_piece_kind_count",
+          "scene": "visible_chess_board",
+          "task": "chess_board_query"
+        }
+      },
+      "scene_id": "chess",
+      "seed": 3301,
+      "source_height": 920,
+      "source_width": 980,
+      "task_document_path": "docs/tasks/games/chess/task_games__chess__colored_piece_kind_count.md",
+      "task_document_sha256": "7bfcd73020117a8adc0531d1970472c0a299d6e5e2e05233eb8983020befac05",
+      "task_id": "task_games__chess__colored_piece_kind_count",
+      "task_source_path": "src/trace_tasks/tasks/games/chess/colored_piece_kind_count.py",
+      "task_source_sha256": "fc93d058aca1f05f73d58c4889a6e6471aeba547885a32647a2d2a98a832628a",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 959
+    },
+    {
+      "annotation_type": "point_set",
+      "answer_type": "integer",
+      "caption": "Arcade route reasoning",
+      "domain": "games",
+      "height": 506,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/games-pacman-route_score_value.png",
+      "image_sha256": "eecc1dd8a38d85ea8cc60f36bbffa99046eac9920a2bd692b770975efd8d9499",
+      "max_attempts": 100,
+      "objective_contract": "route_score_value",
+      "order": 3,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "0ab24510298f8dbf99481b06b452b99ffaba761b83f26aff5545cd5171f1ab63",
+        "prompt_bundle_id": "games_pacman_v1",
+        "prompt_bundle_path": "games/pacman/games_pacman_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 1,
+          "query": 4,
+          "scene": 2,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "route_score_value",
+          "scene": "visible_pacman_maze",
+          "task": "pacman_maze_query"
+        }
+      },
+      "scene_id": "pacman",
+      "seed": 3302,
+      "source_height": 506,
+      "source_width": 661,
+      "task_document_path": "docs/tasks/games/pacman/task_games__pacman__route_score_value.md",
+      "task_document_sha256": "2819823c6d8e8ad1156b1d120d512225cc3f4f80de58f066e092f150664e4105",
+      "task_id": "task_games__pacman__route_score_value",
+      "task_source_path": "src/trace_tasks/tasks/games/pacman/route_score_value.py",
+      "task_source_sha256": "d3f2ac413853d03771d902e267e2f4ee6e92e38ad266cbce124e4303f1f9bbac",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 661
+    },
+    {
+      "annotation_type": "point_set",
+      "answer_type": "integer",
+      "caption": "Coordinate geometry",
+      "domain": "geometry",
+      "height": 768,
+      "hero": false,
+      "image_id": "img_0",
+      "image_path": "docs/assets/gallery/geometry-graph_paper-polygon_area_value.png",
+      "image_sha256": "15c3ecd713ae68e25168caf60e3faa0518ae8314ae197bb4aef41a8ce885baa3",
+      "max_attempts": 100,
+      "objective_contract": "polygon_area_value",
+      "order": 4,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "c04454ea427c3332400c13abf5ad3f84925e05eac8909fbead83070acaef4e93",
+        "prompt_bundle_id": "geometry_graph_paper_v1",
+        "prompt_bundle_path": "geometry/graph_paper/geometry_graph_paper_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 4,
+          "query": 1,
+          "scene": 4,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "polygon_area_value",
+          "scene": "graph_paper_scene",
+          "task": "graph_paper_task"
+        }
+      },
+      "scene_id": "graph_paper",
+      "seed": 3401,
+      "source_height": 768,
+      "source_width": 768,
+      "task_document_path": "docs/tasks/geometry/graph_paper/task_geometry__graph_paper__polygon_area_value.md",
+      "task_document_sha256": "47de4b54cfe4a3c25ae974eb99f3f65cd3a8e80c70584c417227a9b5a23ad229",
+      "task_id": "task_geometry__graph_paper__polygon_area_value",
+      "task_source_path": "src/trace_tasks/tasks/geometry/graph_paper/polygon_area_value.py",
+      "task_source_sha256": "2a3592737dff97ee052a5077a3a75da812f51524172353452a3183092742006c",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 768
+    },
+    {
+      "annotation_type": "bbox_map",
+      "answer_type": "number",
+      "caption": "Solid of revolution",
+      "domain": "geometry",
+      "height": 580,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/geometry-solid_revolution-revolution_double_cone_volume_value.png",
+      "image_sha256": "912b7921bc0cd154daf20f3fa351addc8fb6f5e1b10f26fa7337280a07de1cff",
+      "max_attempts": 100,
+      "objective_contract": "revolution_double_cone_volume_value",
+      "order": 5,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "80bf137ebf4b1c030f14ade65b5d46c245ed71307a9e14a2f634850da750abf9",
+        "prompt_bundle_id": "geometry_solid_revolution_v1",
+        "prompt_bundle_path": "geometry/solid_revolution/geometry_solid_revolution_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 0,
+          "query": 1,
+          "scene": 3,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "single",
+          "scene": "solid_revolution_scene",
+          "task": "solid_revolution_value_query"
+        }
+      },
+      "scene_id": "solid_revolution",
+      "seed": 3402,
+      "source_height": 580,
+      "source_width": 820,
+      "task_document_path": "docs/tasks/geometry/solid_revolution/task_geometry__solid_revolution__revolution_double_cone_volume_value.md",
+      "task_document_sha256": "7059fa5b91bf41dfd67103b06dd18e719f9e898c5349ad548e9dd6b4e3452ad8",
+      "task_id": "task_geometry__solid_revolution__revolution_double_cone_volume_value",
+      "task_source_path": "src/trace_tasks/tasks/geometry/solid_revolution/revolution_double_cone_volume_value.py",
+      "task_source_sha256": "4d16fd2f073f460d33597bc37938d5d8cc4e7887295b0cc042843395f4261cda",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 820
+    },
+    {
+      "annotation_type": "point_sequence",
+      "answer_type": "integer",
+      "caption": "Node-link shortest path",
+      "domain": "graph",
+      "height": 640,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/graph-node_link-shortest_path_length.png",
+      "image_sha256": "168201911364173e8eb04384bda534c7d5971355fe7d916f64e90928af90630d",
+      "max_attempts": 100,
+      "objective_contract": "shortest_path_length",
+      "order": 6,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "e915eb8f250417086553a49e1c3d47d43a4446b1399e296197ec8061008423ad",
+        "prompt_bundle_id": "graph_node_link_path_v1",
+        "prompt_bundle_path": "graph/node_link/graph_node_link_path_v1.json",
+        "prompt_schema_version": "v0",
+        "schema_version": "v0",
+        "selected_indices": {
+          "output": 2,
+          "query": 1,
+          "scene": 0,
+          "task": 0
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "shortest_path_length",
+          "scene": "single_graph_path",
+          "task": "shortest_path_length_query"
+        }
+      },
+      "scene_id": "node_link",
+      "seed": 3501,
+      "source_height": 640,
+      "source_width": 864,
+      "task_document_path": "docs/tasks/graph/node_link/task_graph__node_link__shortest_path_length.md",
+      "task_document_sha256": "8a0115759df0707123b23b130b288638354adbb9a2866bc6eeddc07741db1b7f",
+      "task_id": "task_graph__node_link__shortest_path_length",
+      "task_source_path": "src/trace_tasks/tasks/graph/node_link/shortest_path_length.py",
+      "task_source_sha256": "3383a65c16eaa5042fbd6486dd127210d7f7b4d4ff7218b2a4201db3c1647f68",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 864
+    },
+    {
+      "annotation_type": "point_sequence",
+      "answer_type": "integer",
+      "caption": "Metro network reasoning",
+      "domain": "graph",
+      "height": 640,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/graph-metro-shortest_path_length.png",
+      "image_sha256": "f4d8627608d452fc1c92f5f9d7368c823389a907e857c74c7737eaa0d659e702",
+      "max_attempts": 100,
+      "objective_contract": "shortest_path_length",
+      "order": 7,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "5b4da5c30c3d5f53b2dbc6eee8ec8b7ccd33069ac132f1d4fb1b16c98a24d9b9",
+        "prompt_bundle_id": "graph_metro_v1",
+        "prompt_bundle_path": "graph/metro/graph_metro_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 4,
+          "query": 0,
+          "scene": 3,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "metro_shortest_path_length",
+          "scene": "metro_route_map",
+          "task": "metro_route_query"
+        }
+      },
+      "scene_id": "metro",
+      "seed": 3502,
+      "source_height": 640,
+      "source_width": 864,
+      "task_document_path": "docs/tasks/graph/metro/task_graph__metro__shortest_path_length.md",
+      "task_document_sha256": "ba06d83a4f1dca965b3a93f6f6ef7a8296322b9f8b4e1d3f1d574aac7226bc54",
+      "task_id": "task_graph__metro__shortest_path_length",
+      "task_source_path": "src/trace_tasks/tasks/graph/metro/shortest_path_length.py",
+      "task_source_sha256": "d96d7d64b23ab51e860238069a2877af964642e02e04ee274be777c9e9bd3002",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 864
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "option_letter",
+      "caption": "Mirror-grid completion",
+      "domain": "icons",
+      "height": 640,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/icons-mirror_grid-missing_mirror_cell_label.png",
+      "image_sha256": "84741e68f72f19f96838e9688b324299c7d1a76a14248e66ef29f739417f00a3",
+      "max_attempts": 100,
+      "objective_contract": "missing_mirror_cell_label",
+      "order": 8,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "b48788c55cef71a641aed526993584515784885291e0f87bc4e69941053aa562",
+        "prompt_bundle_id": "icons_mirror_grid_v1",
+        "prompt_bundle_path": "icons/mirror_grid/icons_mirror_grid_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 1,
+          "query": null,
+          "scene": 2,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": null,
+          "scene": "missing_mirror_grid",
+          "task": "missing_mirror_cell_label"
+        }
+      },
+      "scene_id": "mirror_grid",
+      "seed": 3601,
+      "source_height": 640,
+      "source_width": 1104,
+      "task_document_path": "docs/tasks/icons/mirror_grid/task_icons__mirror_grid__missing_mirror_cell_label.md",
+      "task_document_sha256": "a59854e8ce2c4073ca74f85f2028b37dac64dfca8f734ba9ed58ebaa40f8de4f",
+      "task_id": "task_icons__mirror_grid__missing_mirror_cell_label",
+      "task_source_path": "src/trace_tasks/tasks/icons/mirror_grid/missing_mirror_cell_label.py",
+      "task_source_sha256": "e862e30e380eedd069448617fdd3aa86ccdbdf82204227f128a4a6292dea27d2",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1104
+    },
+    {
+      "annotation_type": "bbox_map",
+      "answer_type": "option_letter",
+      "caption": "Wallpaper pattern matching",
+      "domain": "icons",
+      "height": 900,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/icons-wallpaper_panels-same_pattern_as_reference_label.png",
+      "image_sha256": "81247b5af99479b810db7482cb00c2945426940b809b42319be38858ef2aa0d0",
+      "max_attempts": 100,
+      "objective_contract": "same_pattern_as_reference_label",
+      "order": 9,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "c4bc6100c466d15bf5f0a074ead0dfede4441383e2a3c4db2b5bed7c0b82b067",
+        "prompt_bundle_id": "icons_wallpaper_panels_v1",
+        "prompt_bundle_path": "icons/wallpaper_panels/icons_wallpaper_panels_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 0,
+          "query": null,
+          "scene": 1,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": null,
+          "scene": "wallpaper_reference_match_scene",
+          "task": "same_pattern_as_reference_label"
+        }
+      },
+      "scene_id": "wallpaper_panels",
+      "seed": 3602,
+      "source_height": 960,
+      "source_width": 1104,
+      "task_document_path": "docs/tasks/icons/wallpaper_panels/task_icons__wallpaper_panels__same_pattern_as_reference_label.md",
+      "task_document_sha256": "c92a7f8fe6015d7811142980ecae3a6b29846c8d3973a192682e86018b9cc004",
+      "task_id": "task_icons__wallpaper_panels__same_pattern_as_reference_label",
+      "task_source_path": "src/trace_tasks/tasks/icons/wallpaper_panels/same_pattern_as_reference_label.py",
+      "task_source_sha256": "0bd28ea6947b26b4515ec1d42495357e214e1a8c55e74ce63f52ca4e0447cf1f",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1035
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "option_letter",
+      "caption": "Isometric terrain reasoning",
+      "domain": "illustrations",
+      "height": 900,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/illustrations-isometric_farmstead-terrain_elevation_extremum_label.png",
+      "image_sha256": "8cfbeefd8e0ce7835df81cad71d032403ae56a0f4eccbffda226da2dea8b4d0a",
+      "max_attempts": 100,
+      "objective_contract": "terrain_elevation_extremum_label",
+      "order": 10,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "1793d1419da2cddb5b0c5b31818282198efac9c334e992a6ab159dd3f670f5c7",
+        "prompt_bundle_id": "illustrations_isometric_farmstead_v0",
+        "prompt_bundle_path": "illustrations/isometric_farmstead/illustrations_isometric_farmstead_v0.json",
+        "prompt_schema_version": "v0",
+        "schema_version": "v0",
+        "selected_indices": {
+          "output": 0,
+          "query": 2,
+          "scene": 3,
+          "task": 4
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "highest_terrain_tile",
+          "scene": "isometric_farmstead_elevation_canvas",
+          "task": "terrain_elevation_extremum_label_task"
+        }
+      },
+      "scene_id": "isometric_farmstead",
+      "seed": 3701,
+      "source_height": 960,
+      "source_width": 960,
+      "task_document_path": "docs/tasks/illustrations/isometric_farmstead/task_illustrations__isometric_farmstead__terrain_elevation_extremum_label.md",
+      "task_document_sha256": "93a8ae3ecf9bbb83177f329eb6570f9244a70cf5697149728892c2a3da1e4892",
+      "task_id": "task_illustrations__isometric_farmstead__terrain_elevation_extremum_label",
+      "task_source_path": "src/trace_tasks/tasks/illustrations/isometric_farmstead/terrain_elevation_extremum_label.py",
+      "task_source_sha256": "92da244b6157f63a64a44caf1d3dc1cd7a5494b5802a7db2c6c85fd2af1defc1",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 900
+    },
+    {
+      "annotation_type": "bbox_set",
+      "answer_type": "integer",
+      "caption": "Pixel-art spatial counting",
+      "domain": "illustrations",
+      "height": 800,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/illustrations-pixel_village-territory_object_count.png",
+      "image_sha256": "2d710a3af830e548645d0a4de2869d41a433051a791b84f58f0076d973ccd36e",
+      "max_attempts": 100,
+      "objective_contract": "territory_object_count",
+      "order": 11,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "6cb4c05845a7cc68b86a2bc50fa8e78f25421ce118a2e31fda72a28550a523c4",
+        "prompt_bundle_id": "illustrations_pixel_village_v0",
+        "prompt_bundle_path": "illustrations/pixel_village/illustrations_pixel_village_v0.json",
+        "prompt_schema_version": "v0",
+        "schema_version": "v0",
+        "selected_indices": {
+          "output": 0,
+          "query": 2,
+          "scene": 3,
+          "task": 4
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "territory_object_count",
+          "scene": "pixel_village_canvas",
+          "task": "pixel_village_territory_object_count_task"
+        }
+      },
+      "scene_id": "pixel_village",
+      "seed": 3702,
+      "source_height": 864,
+      "source_width": 1296,
+      "task_document_path": "docs/tasks/illustrations/pixel_village/task_illustrations__pixel_village__territory_object_count.md",
+      "task_document_sha256": "cbb9d46507911432cc26a847e83eab8a9f3178a85a07e5ae209529f93a4a6acb",
+      "task_id": "task_illustrations__pixel_village__territory_object_count",
+      "task_source_path": "src/trace_tasks/tasks/illustrations/pixel_village/territory_object_count.py",
+      "task_source_sha256": "6d8327f9c88223555377fd2c3ea607f5c335e5cc694a0487e26694542f19e159",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1200
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "string",
+      "caption": "Chemical equation balancing",
+      "domain": "symbolic",
+      "height": 794,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/symbolic-chemical_equation-balanced_option_label.png",
+      "image_sha256": "080b1851c14b6d7069c0c53693ba7d00f083eec9c3af39d7764ddc34b5e8e538",
+      "max_attempts": 100,
+      "objective_contract": "balanced_option_label",
+      "order": 12,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "0ecd5b29b9d70fb430450ae7ef545fc5deb303348ce69704b6b3dcf6867b8bc8",
+        "prompt_bundle_id": "symbolic_chemical_equation_v1",
+        "prompt_bundle_path": "symbolic/chemical_equation/symbolic_chemical_equation_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 2,
+          "query": null,
+          "scene": 0,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": null,
+          "scene": "chemical_equation",
+          "task": "balanced_option_label"
+        }
+      },
+      "scene_id": "chemical_equation",
+      "seed": 3801,
+      "source_height": 820,
+      "source_width": 1240,
+      "task_document_path": "docs/tasks/symbolic/chemical_equation/task_symbolic__chemical_equation__balanced_option_label.md",
+      "task_document_sha256": "62b0a55d27185ec12cbf586278fa984a6bc7605c3626b710bcdacd32133ca473",
+      "task_id": "task_symbolic__chemical_equation__balanced_option_label",
+      "task_source_path": "src/trace_tasks/tasks/symbolic/chemical_equation/balanced_option_label.py",
+      "task_source_sha256": "53a46efb2b60ac49e9bfc9db9e41e379522a7664573ad3c5ebc863ea8ea9c9ff",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1200
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "option_letter",
+      "caption": "Analog clock readout",
+      "domain": "symbolic",
+      "height": 860,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/symbolic-clock-full_time_readout.png",
+      "image_sha256": "e2663f7b9c9375bfa44a5228abf4fa7d86c1ca6c99948eeec34465c684cdb4e7",
+      "max_attempts": 100,
+      "objective_contract": "full_time_readout",
+      "order": 13,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "01a24f12499e97a663e2379e57725d52730917e4a3378df28b19837be6204ef2",
+        "prompt_bundle_id": "symbolic_clock_v1",
+        "prompt_bundle_path": "symbolic/clock/symbolic_clock_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 0,
+          "query": 3,
+          "scene": 0,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "full_time_readout",
+          "scene": "clock",
+          "task": "clock_full_time_readout_query"
+        }
+      },
+      "scene_id": "clock",
+      "seed": 3802,
+      "source_height": 860,
+      "source_width": 640,
+      "task_document_path": "docs/tasks/symbolic/clock/task_symbolic__clock__full_time_readout.md",
+      "task_document_sha256": "6372e521870ae9a1bcb2df60202685f8ebcec1bbe27803d3e52d0cadbc30436e",
+      "task_id": "task_symbolic__clock__full_time_readout",
+      "task_source_path": "src/trace_tasks/tasks/symbolic/clock/full_time_readout.py",
+      "task_source_sha256": "0fea9894f4a515c45530e8f24b4ac57130c6e70f5a24626ccd0395ae0331ba38",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 640
+    },
+    {
+      "annotation_type": "bbox_sequence",
+      "answer_type": "string",
+      "caption": "Map direction following",
+      "domain": "pages",
+      "height": 844,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/pages-map-destination_after_directions_label.png",
+      "image_sha256": "443ecbbfcc97e98aa03150bb5c8574bb5161849b1a4d329f141a231432fe2fe1",
+      "max_attempts": 100,
+      "objective_contract": "destination_after_directions_label",
+      "order": 14,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "d497c48ad81144063d2311a97b07c0d6221584d9d95ce23fe5d2b8be6d9a4c83",
+        "prompt_bundle_id": "pages_map_v1",
+        "prompt_bundle_path": "pages/map/pages_map_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 2,
+          "query": 0,
+          "scene": 1,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "destination_after_directions",
+          "scene": "printed_map",
+          "task": "map_navigation_query"
+        }
+      },
+      "scene_id": "map",
+      "seed": 3901,
+      "source_height": 900,
+      "source_width": 1280,
+      "task_document_path": "docs/tasks/pages/map/task_pages__map__destination_after_directions_label.md",
+      "task_document_sha256": "c09a00fdc1299eea0110b095d6496bc6d2ac4711f8c0ba2ecc890df0a8a240eb",
+      "task_id": "task_pages__map__destination_after_directions_label",
+      "task_source_path": "src/trace_tasks/tasks/pages/map/destination_after_directions_label.py",
+      "task_source_sha256": "25f02ed834ecb0e403e32ee4a2ce3a02aad8f0b2e3ebd53dd28ab166e8f2d0e8",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1200
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "string",
+      "caption": "Timeline relations",
+      "domain": "pages",
+      "height": 700,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/pages-timeline-relative_position_event_label.png",
+      "image_sha256": "bb5efa092097b6f93a7e715d712de8f25b62f8cb7419b132831101d2992ad890",
+      "max_attempts": 100,
+      "objective_contract": "relative_position_event_label",
+      "order": 15,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "79cd6b0bab8e73b809e7c5b45a2256a9b49b566dee905251aa59492054a4333b",
+        "prompt_bundle_id": "pages_timeline_v1",
+        "prompt_bundle_path": "pages/timeline/pages_timeline_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 2,
+          "query": 3,
+          "scene": 0,
+          "task": 0
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "event_before_dated_event_label",
+          "scene": "milestone_timeline",
+          "task": "timeline_milestone_query"
+        }
+      },
+      "scene_id": "timeline",
+      "seed": 3902,
+      "source_height": 700,
+      "source_width": 1120,
+      "task_document_path": "docs/tasks/pages/timeline/task_pages__timeline__relative_position_event_label.md",
+      "task_document_sha256": "b67898355e8529baef1fe66439a8fa2b68da6fb38fd0f9e9506c3111d018da4e",
+      "task_id": "task_pages__timeline__relative_position_event_label",
+      "task_source_path": "src/trace_tasks/tasks/pages/timeline/relative_position_event_label.py",
+      "task_source_sha256": "dc73d7c1897640e30d258c36f1be16981c37f42917c8ec0406586985fbf86448",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1120
+    },
+    {
+      "annotation_type": "point_set",
+      "answer_type": "integer",
+      "caption": "Ray-optics reasoning",
+      "domain": "physics",
+      "height": 650,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/physics-ray_optics-ray_bounce_count.png",
+      "image_sha256": "91a6ee7b7bb160b5093d939d7f97d6971a2151de8671eca546d19dc2f3edbc26",
+      "max_attempts": 100,
+      "objective_contract": "ray_bounce_count",
+      "order": 16,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "76c3fe6cff6667e78e886c3b346a7a32abf5117cb45c51659b10ee7e54e58e2e",
+        "prompt_bundle_id": "physics_ray_optics_v1",
+        "prompt_bundle_path": "physics/ray_optics/physics_ray_optics_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 1,
+          "query": 1,
+          "scene": 1,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "bounce_count",
+          "scene": "mirror_ray_diagram",
+          "task": "ray_bounce_count"
+        }
+      },
+      "scene_id": "ray_optics",
+      "seed": 4001,
+      "source_height": 650,
+      "source_width": 920,
+      "task_document_path": "docs/tasks/physics/ray_optics/task_physics__ray_optics__ray_bounce_count.md",
+      "task_document_sha256": "1533317656978f829b688f05eff5a337804b9b50eadc5386eb5c547bd78dee3c",
+      "task_id": "task_physics__ray_optics__ray_bounce_count",
+      "task_source_path": "src/trace_tasks/tasks/physics/ray_optics/ray_bounce_count.py",
+      "task_source_sha256": "d1d2aee644c470be1b4e9d4b4be905247e9fd2706a6dd5c28e5983fa1546d019",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 920
+    },
+    {
+      "annotation_type": "bbox_map",
+      "answer_type": "string",
+      "caption": "Circuit state change",
+      "domain": "physics",
+      "height": 675,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/physics-circuit_state_change-bulb_brightness_change_label.png",
+      "image_sha256": "5c9bd97f7c7e7ad11d215c7272c34cfb52165a3391c3213b2fff8316063a45f2",
+      "max_attempts": 100,
+      "objective_contract": "bulb_brightness_change_label",
+      "order": 17,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "2cb76a0096b8589f76ffea22db0f5c83611d0140c1e48a00dedc8fe220600309",
+        "prompt_bundle_id": "physics_circuit_state_change_v1",
+        "prompt_bundle_path": "physics/circuit_state_change/physics_circuit_state_change_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 3,
+          "query": 2,
+          "scene": 0,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "turns_on_after_switch_change",
+          "scene": "circuit_state_change_diagram",
+          "task": "bulb_brightness_change_query"
+        }
+      },
+      "scene_id": "circuit_state_change",
+      "seed": 4002,
+      "source_height": 720,
+      "source_width": 1280,
+      "task_document_path": "docs/tasks/physics/circuit_state_change/task_physics__circuit_state_change__bulb_brightness_change_label.md",
+      "task_document_sha256": "309291593971cfc4b91d57782e3d0aba5b0225a9171cbf5cd5210ba80d53c537",
+      "task_id": "task_physics__circuit_state_change__bulb_brightness_change_label",
+      "task_source_path": "src/trace_tasks/tasks/physics/circuit_state_change/bulb_brightness_change_label.py",
+      "task_source_sha256": "f184e328188c169581365647ef7372fc0224946246df8afa63c56108b6484f75",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1200
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "integer",
+      "caption": "Sudoku deduction",
+      "domain": "puzzles",
+      "height": 757,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/puzzles-sudoku-marked_cell_value.png",
+      "image_sha256": "ae7105ea8d1c32eb09cf0e9ab307b1ffe3df943b9390d742a47f68242b3e1b47",
+      "max_attempts": 100,
+      "objective_contract": "marked_cell_value",
+      "order": 18,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "137f3895e4bee56dfb342b0328c2b8ec88c06ff011372c0c30fae6613b2370f6",
+        "prompt_bundle_id": "puzzles_sudoku_v1",
+        "prompt_bundle_path": "puzzles/sudoku/puzzles_sudoku_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 4,
+          "query": 4,
+          "scene": 4,
+          "task": 2
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "marked_cell_value",
+          "scene": "visible_sudoku_grid",
+          "task": "sudoku_grid_query"
+        }
+      },
+      "scene_id": "sudoku",
+      "seed": 4101,
+      "source_height": 757,
+      "source_width": 757,
+      "task_document_path": "docs/tasks/puzzles/sudoku/task_puzzles__sudoku__marked_cell_value.md",
+      "task_document_sha256": "4fcb52a87d538cc3623a2952ea2a99062bf8704df64cf8f2a84633f3ec6068d7",
+      "task_id": "task_puzzles__sudoku__marked_cell_value",
+      "task_source_path": "src/trace_tasks/tasks/puzzles/sudoku/marked_cell_value.py",
+      "task_source_sha256": "0356f35a7d5f0f74a5aa60c2045fe1c6e8dafb3450bc5ee07940c4e7b994ec40",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 757
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "option_letter",
+      "caption": "Polyomino composition",
+      "domain": "puzzles",
+      "height": 760,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/puzzles-polyomino_assembly-composition_result_label.png",
+      "image_sha256": "1f63e7219d972ad152df550d41d59c4a996d414ef44192bd526904d6131301af",
+      "max_attempts": 100,
+      "objective_contract": "composition_result_label",
+      "order": 19,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "5f7384d683a55526b4b6cf5f17b8faa2585df8ecdbdf7d4d108ddb5c9b70c233",
+        "prompt_bundle_id": "puzzles_polyomino_assembly_v1",
+        "prompt_bundle_path": "puzzles/polyomino_assembly/puzzles_polyomino_assembly_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 4,
+          "query": 0,
+          "scene": 4,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "composition_result_label",
+          "scene": "polyomino_assembly",
+          "task": "composition_result_label_query"
+        }
+      },
+      "scene_id": "polyomino_assembly",
+      "seed": 4102,
+      "source_height": 760,
+      "source_width": 820,
+      "task_document_path": "docs/tasks/puzzles/polyomino_assembly/task_puzzles__polyomino_assembly__composition_result_label.md",
+      "task_document_sha256": "fb60bea9d142c713a6ca49a2465e86c87a81eb7c135a668f9b13139cae9d2897",
+      "task_id": "task_puzzles__polyomino_assembly__composition_result_label",
+      "task_source_path": "src/trace_tasks/tasks/puzzles/polyomino_assembly/composition_result_label.py",
+      "task_source_sha256": "af4a03ef574b482ea15ab335be4a885c48f3f8042d865cde0158b29998df26ee",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 820
+    },
+    {
+      "annotation_type": "bbox",
+      "answer_type": "option_letter",
+      "caption": "Room-camera geometry",
+      "domain": "three_d",
+      "height": 900,
+      "hero": false,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/three_d-room-wall_object_camera_distance_label.png",
+      "image_sha256": "eedbe5370e01d680eb304c3496de190055181802c83a37366885620a1fd06aee",
+      "max_attempts": 100,
+      "objective_contract": "wall_object_camera_distance_label",
+      "order": 20,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "aa72b2cfc1a7b157537f1b2317d3a9ac5190c079dbb4d6fc01c76c74a2dddaa3",
+        "prompt_bundle_id": "three_d_room_v1",
+        "prompt_bundle_path": "three_d/room/three_d_room_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 1,
+          "query": 4,
+          "scene": 2,
+          "task": 0
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "closest_to_camera",
+          "scene": "room",
+          "task": "wall_object_camera_distance_query"
+        }
+      },
+      "scene_id": "room",
+      "seed": 4201,
+      "source_height": 1128,
+      "source_width": 960,
+      "task_document_path": "docs/tasks/three_d/room/task_three_d__room__wall_object_camera_distance_label.md",
+      "task_document_sha256": "7aa117d275f609e6adee1231bcfca5328218a27c7d8e648a10a2336e4ae19a1c",
+      "task_id": "task_three_d__room__wall_object_camera_distance_label",
+      "task_source_path": "src/trace_tasks/tasks/three_d/room/wall_object_camera_distance_label.py",
+      "task_source_sha256": "bd1c691239b627b295473a3c0fb433b71158be2d17fdd986f83e9e686af7e2a7",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 766
+    },
+    {
+      "annotation_type": "bbox_set",
+      "answer_type": "integer",
+      "caption": "3D carousel relations",
+      "domain": "three_d",
+      "height": 800,
+      "hero": true,
+      "image_id": "img0",
+      "image_path": "docs/assets/gallery/three_d-carousel-between_object_type_anchors_count.png",
+      "image_sha256": "0818d2d12e428659925b9e622fc93414bfdf32ab8348486e16566948fe63edad",
+      "max_attempts": 100,
+      "objective_contract": "between_object_type_anchors_count",
+      "order": 21,
+      "params": {},
+      "prompt": {
+        "prompt_bundle_hash": "babe25a48960ab8b6fbff058a5719324161f024e99710fbdb90fc9a7aad0e908",
+        "prompt_bundle_id": "three_d_carousel_v1",
+        "prompt_bundle_path": "three_d/carousel/three_d_carousel_v1.json",
+        "prompt_schema_version": "v1",
+        "schema_version": "v1",
+        "selected_indices": {
+          "output": 3,
+          "query": 4,
+          "scene": 3,
+          "task": 1
+        },
+        "selected_keys": {
+          "output": "answer_and_annotation",
+          "query": "between_object_anchors_count",
+          "scene": "carousel",
+          "task": "carousel_count_query"
+        }
+      },
+      "scene_id": "carousel",
+      "seed": 4202,
+      "source_height": 800,
+      "source_width": 1200,
+      "task_document_path": "docs/tasks/three_d/carousel/task_three_d__carousel__between_object_type_anchors_count.md",
+      "task_document_sha256": "6b2f46767c00ca4c8c9c1f3838d715b8f73d6d484de65d72ba3e3021bdbbb179",
+      "task_id": "task_three_d__carousel__between_object_type_anchors_count",
+      "task_source_path": "src/trace_tasks/tasks/three_d/carousel/between_object_type_anchors_count.py",
+      "task_source_sha256": "e2f9f078a4bac94609274c54401dde2fe607f828a005aeaf5b5436bd9b1a3bf6",
+      "task_versions": {
+        "domain_capability_version": "v0",
+        "dsl_spec_version": "v0",
+        "operator_bundle_version": "v0",
+        "renderer_version": "v0",
+        "template_version": "v0"
+      },
+      "width": 1200
+    }
+  ],
+  "generator": {
+    "path": "scripts/generate_release_gallery.py",
+    "sha256": "cb813e1674e40c6bcdba1bbb476bd19eaa8f30f423228273081bb6542abe957b",
+    "version": "v1"
+  },
+  "hero": {
+    "columns": 4,
+    "height": 780,
+    "image_path": "docs/assets/gallery/trace-hero-montage.png",
+    "image_sha256": "e3f8fea814e54bf084757d6dd9d79f449e6a419f41259fe61b29d7502a06aae2",
+    "task_ids": [
+      "task_charts__radial_sankey__dominant_endpoint_label",
+      "task_games__pacman__route_score_value",
+      "task_geometry__solid_revolution__revolution_double_cone_volume_value",
+      "task_graph__metro__shortest_path_length",
+      "task_icons__mirror_grid__missing_mirror_cell_label",
+      "task_illustrations__pixel_village__territory_object_count",
+      "task_symbolic__chemical_equation__balanced_option_label",
+      "task_pages__map__destination_after_directions_label",
+      "task_physics__circuit_state_change__bulb_brightness_change_label",
+      "task_puzzles__polyomino_assembly__composition_result_label",
+      "task_three_d__carousel__between_object_type_anchors_count"
+    ],
+    "width": 1512
+  },
+  "image_policy": {
+    "format": "PNG",
+    "max_height": 900,
+    "max_width": 1200,
+    "resampling": "Pillow.Image.Resampling.LANCZOS"
+  },
+  "provenance": {
+    "catalog_path": "docs/task_catalog/catalog.v1.json",
+    "catalog_sha256": "2a95577a1e6c10856e1f1978fcb732025b032a39fafec69e187509bdbd24dbb5",
+    "public_generation_source_root": "src/trace_tasks",
+    "public_generation_source_sha256": "bac4d996c0ad83e30eec23f1c1f08a1e86a0dc2fa43e32ec49222d0d7b9e800c",
+    "revision_semantics": "Exact release inputs are identified by content hashes; no pre-generation git revision is represented as containing these generated artifacts."
+  },
+  "runtime": {
+    "native_libraries": {
+      "cairo": "1.18.0",
+      "pillow_features": {
+        "avif": "1.4.1",
+        "freetype2": "2.14.0",
+        "fribidi": "1.0.16",
+        "harfbuzz": "13.2.1",
+        "jpg_2000": "2.5.4",
+        "libjpeg_turbo": "3.1.4.1",
+        "libtiff": "4.7.1",
+        "littlecms2": "2.18",
+        "raqm": "0.10.3",
+        "webp": "1.6.0",
+        "zlib": "1.3.1",
+        "zlib_ng": "2.3.3"
+      }
+    },
+    "packages": {
+      "cairocffi": "1.7.1",
+      "cairosvg": "2.9.0",
+      "cffi": "2.1.0",
+      "cssselect2": "0.9.0",
+      "defusedxml": "0.7.1",
+      "networkx": "3.4.2",
+      "numpy": "2.2.6",
+      "pillow": "12.2.0",
+      "pycparser": "3.0",
+      "pyyaml": "6.0.3",
+      "scipy": "1.15.3",
+      "tinycss2": "1.5.1",
+      "webencodings": "0.5.1"
+    },
+    "python": {
+      "implementation": "CPython",
+      "version": "3.12.11"
+    }
+  },
+  "schema_version": "trace_release_gallery_v1",
+  "summary": {
+    "domain_count": 11,
+    "example_count": 22,
+    "examples_per_domain": 2
+  }
+}

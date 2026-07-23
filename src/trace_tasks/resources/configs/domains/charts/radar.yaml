@@ -1,0 +1,109 @@
+generation:
+  shared:
+    metric_count_min: 5
+    metric_count_max: 7
+    axis_metric_count_min: 5
+    axis_metric_count_max: 5
+    panel_count_min: 5
+    panel_count_max: 8
+    axis_panel_count_min: 8
+    axis_panel_count_max: 8
+    value_min: 1
+    value_max: 10
+    threshold_min: 4
+    threshold_max: 7
+    target_count_min: 1
+    target_count_max: 6
+    panel_label_variant_weights:
+      subplot_letters: 1.0
+      named_compact: 0.75
+      technical_topics: 0.75
+      condition_labels: 0.5
+      temporal_sequence: 0.25
+    min_condition_metric_count_min: 2
+    min_condition_metric_count_max: 4
+rendering:
+  shared:
+    canvas_width: 1424
+    canvas_height: 888
+    outer_margin_px: 34
+    title_band_height_px: 76
+    panel_gap_px: 22
+    panel_padding_px: 15
+    panel_corner_radius_px: 8
+    panel_border_width_px: 2
+    ring_count: 5
+    grid_line_width_px: 1
+    profile_line_width_px: 4
+    point_radius_px: 6
+    point_outline_width_px: 2
+    title_font_size_px: 27
+    subtitle_font_size_px: 16
+    panel_title_font_size_px: 18
+    metric_font_size_px: 14
+    tick_font_size_px: 12
+    tick_label_spoke_gap_px: 10
+    legend_font_size_px: 16
+    query_spoke_rgb:
+    - 70
+    - 91
+    - 118
+    query_spoke_width_px: 3
+    query_metric_label_rgb:
+    - 26
+    - 54
+    - 93
+    grid_rgb_options:
+    - - 207
+      - 214
+      - 225
+    - - 198
+      - 213
+      - 224
+    - - 218
+      - 209
+      - 196
+    - - 202
+      - 218
+      - 210
+    spoke_rgb_options:
+    - - 186
+      - 196
+      - 210
+    - - 178
+      - 194
+      - 206
+    - - 198
+      - 188
+      - 176
+    - - 184
+      - 202
+      - 194
+    profile_palette_rgb:
+    - - 41
+      - 108
+      - 179
+    - - 205
+      - 82
+      - 74
+    - - 55
+      - 148
+      - 104
+    - - 139
+      - 92
+      - 186
+    - - 214
+      - 139
+      - 44
+    - - 54
+      - 148
+      - 168
+    - - 185
+      - 73
+      - 134
+    - - 102
+      - 119
+      - 145
+prompt:
+  shared:
+    bundle_id: charts_radar_v1

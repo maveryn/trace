@@ -1,0 +1,142 @@
+{
+  "bundle_id": "geometry_rectangular_solid_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "cuboid_volume_missing_dimension_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "cuboid_surface_area_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "cube_edge_from_frame_length_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "open_box_net_dimension_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:rectangular_solid_scene": [
+      "object_description"
+    ],
+    "query:missing_length_from_volume": [],
+    "query:missing_width_from_volume": [],
+    "query:missing_height_from_volume": [],
+    "query:surface_area_from_dimensions": [],
+    "query:cube_edge_from_total_frame": [],
+    "query:cube_edge_from_partial_frame": [],
+    "query:open_box_dimension_from_corner_cut": [],
+    "query:open_box_volume_from_net": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"answer\" field: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "rectangular_solid_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The image shows {object_description}.",
+      "The labeled diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "missing_length_from_volume": [
+      "The length dimension L is marked with ?. What is L?",
+      "Using the volume and the known dimensions, find the missing length L.",
+      "What is the value of the cuboid length L?",
+      "The cuboid's length is unknown. What integer value should replace ??",
+      "Determine the missing length L from the labeled cuboid."
+    ],
+    "missing_width_from_volume": [
+      "The width dimension W is marked with ?. What is W?",
+      "Using the volume and the known dimensions, find the missing width W.",
+      "What is the value of the cuboid width W?",
+      "The cuboid's width is unknown. What integer value should replace ??",
+      "Determine the missing width W from the labeled cuboid."
+    ],
+    "missing_height_from_volume": [
+      "The height dimension H is marked with ?. What is H?",
+      "Using the volume and the known dimensions, find the missing height H.",
+      "What is the value of the cuboid height H?",
+      "The cuboid's height is unknown. What integer value should replace ??",
+      "Determine the missing height H from the labeled cuboid."
+    ],
+    "surface_area_from_dimensions": [
+      "What is the total surface area of the cuboid?",
+      "Using the labeled dimensions, compute the cuboid's total surface area.",
+      "Find the total surface area of the rectangular solid.",
+      "The surface area readout is marked with ?. What is its value?",
+      "Determine the cuboid surface area from L, W, and H."
+    ],
+    "cube_edge_from_total_frame": [
+      "The total frame length of the cube is shown. What is the cube edge length?",
+      "Using the cube's total wire-frame length, find the edge length.",
+      "What integer value should replace ? on the marked edge?",
+      "The full cube frame has the shown length. What is the edge length?",
+      "Determine the cube edge length from the total frame length."
+    ],
+    "cube_edge_from_partial_frame": [
+      "The highlighted part of the cube frame has the shown length. What is the cube edge length?",
+      "Using only the highlighted frame length, find the edge length.",
+      "What integer value should replace ? on the marked edge?",
+      "The highlighted cube-frame edges have the shown total length. What is the edge length?",
+      "Determine the cube edge length from the highlighted frame length."
+    ],
+    "open_box_dimension_from_corner_cut": [
+      "The square corner cutouts are removed and the sides fold up to form an open-top box. What resulting base dimension is marked with ??",
+      "After the equal corner squares are cut away and the flaps fold up, what is the marked base dimension?",
+      "The net folds into an open-top box. What integer value should replace ? on the base panel?",
+      "Using the sheet dimensions and cut size, find the marked resulting base dimension.",
+      "What is the marked base dimension of the open-top box formed from this net?"
+    ],
+    "open_box_volume_from_net": [
+      "The square corner cutouts are removed and the sides fold up to form an open-top box. What is the box volume?",
+      "After the equal corner squares are cut away and the flaps fold up, find the open-top box volume.",
+      "The net folds into an open-top box. What integer value should replace the volume readout?",
+      "Using the sheet dimensions and cut size, compute the resulting open-box volume.",
+      "What is the volume of the open-top box formed from this net?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

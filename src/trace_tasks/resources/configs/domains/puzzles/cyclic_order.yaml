@@ -1,0 +1,117 @@
+generation:
+  shared:
+    option_count_min: 4
+    option_count_max: 4
+    bead_count_min: 4
+    bead_count_max: 5
+    min_color_distance: 50.0
+    color_distance_space: lab
+    balanced_token_render_style_sampling: true
+    balanced_scene_variant_sampling: true
+    balanced_loop_path_style_sampling: true
+    balanced_answer_option_label_sampling: true
+    token_render_style_weights:
+      colored_beads: 1.0
+      shape_tokens: 1.0
+      colored_shape_tokens: 1.0
+      outline_shape_tokens: 1.0
+      symbol_badges: 1.0
+    scene_variant_weights:
+      necklace_board: 1.0
+      charm_card_grid: 1.0
+      route_loop_diagram: 1.0
+      token_ring_outline: 1.0
+    loop_path_style_weights:
+      ellipse: 1.0
+      rounded_rect: 1.0
+      polygon_loop: 1.0
+      wavy_loop: 1.0
+      beaded_string: 1.0
+    answer_option_label_weights:
+      A: 1.0
+      B: 1.0
+      C: 1.0
+      D: 1.0
+
+rendering:
+  shared:
+    canvas_width: 1200
+    canvas_height: 920
+    scene_margin_left_px: 64
+    scene_margin_right_px: 64
+    scene_margin_top_px: 56
+    scene_margin_bottom_px: 56
+    reference_panel_height_px: 238
+    reference_panel_padding_px: 24
+    reference_loop_width_px: 356
+    reference_loop_height_px: 170
+    reference_label_font_size_px: 28
+    reference_to_options_gap_px: 54
+    option_image_width_px: 230
+    option_image_height_px: 180
+    option_gap_px: 28
+    option_row_gap_px: 38
+    option_label_gap_px: 16
+    option_label_font_size_px: 34
+    panel_corner_radius_px: 28
+    border_width_px: 3
+    border_width_px_min: 2
+    border_width_px_max: 4
+    loop_stroke_width_px: 5
+    loop_stroke_width_px_min: 4
+    loop_stroke_width_px_max: 6
+    bead_size_px: 45
+    shape_bead_inset_px: 2
+    panel_fill_rgb:
+      - 248
+      - 249
+      - 252
+    panel_fill_rgb_options:
+      - [248, 249, 252]
+      - [244, 250, 248]
+      - [252, 248, 240]
+    instruction_fill_rgb:
+      - 240
+      - 244
+      - 250
+    border_color_rgb:
+      - 86
+      - 94
+      - 108
+    border_color_rgb_options:
+      - [86, 94, 108]
+      - [78, 105, 107]
+      - [113, 97, 82]
+    loop_color_rgb:
+      - 78
+      - 87
+      - 102
+    loop_color_rgb_options:
+      - [78, 87, 102]
+      - [73, 105, 105]
+      - [112, 93, 82]
+    text_color_rgb:
+      - 28
+      - 32
+      - 38
+    text_stroke_rgb:
+      - 255
+      - 255
+      - 255
+    shape_fill_rgb:
+      - 73
+      - 110
+      - 186
+    shape_fill_rgb_options:
+      - [73, 110, 186]
+      - [54, 121, 112]
+      - [146, 91, 69]
+
+prompt:
+  shared:
+    bundle_id: puzzles_cyclic_order_v1
+    scene_key: cyclic_order
+
+visual:
+  noise:
+    apply_prob: 0.15

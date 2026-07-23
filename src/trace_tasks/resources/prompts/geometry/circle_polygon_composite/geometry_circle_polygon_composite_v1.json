@@ -1,0 +1,119 @@
+{
+  "bundle_id": "geometry_circle_polygon_composite_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "circle_polygon_composite_scene": [
+        "The diagram shows a circle-polygon geometry construction.",
+        "The figure shows a circle-polygon geometry construction.",
+        "This geometry diagram shows a circle-polygon construction.",
+        "The image shows a circle-polygon geometry construction.",
+        "The labeled diagram shows a circle-polygon construction."
+      ]
+    },
+    "task": {
+      "tangential_quadrilateral_side_length_value_query": [
+        "{object_description}",
+        "{object_description}",
+        "{object_description}",
+        "{object_description}",
+        "{object_description}"
+      ],
+      "tangent_angle_value_query": [
+        "{angle_object_description}",
+        "{angle_object_description}",
+        "{angle_object_description}",
+        "{angle_object_description}",
+        "{angle_object_description}"
+      ]
+    },
+    "query": {
+      "missing_side_from_tangent_quadrilateral": [
+        "Three side lengths are labeled: {visible_sides}. What is the missing side length {target_side}?",
+        "Using the tangential quadrilateral, find the missing side length {target_side}.",
+        "The quadrilateral's sides are tangent to the circle. What is the length of side {target_side}?",
+        "Use the three labeled side lengths to determine side {target_side}.",
+        "In the tangential quadrilateral, what is the value of {target_side}?"
+      ],
+      "tangent_angle_from_radius_perpendicular": [
+        "A tangent touches the {round_shape} at T. What is the angle marked ?",
+        "Use the tangent-radius construction to find angle ?.",
+        "The radius to T is perpendicular to the tangent line. What is the angle marked ?",
+        "Determine the angle marked ?.",
+        "Find angle ? using the tangent angle."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Return a JSON object with an \"answer\" field only.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Return only a JSON object containing \"answer\".\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Respond with JSON only.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Return a JSON object.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use JSON only.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Return a JSON object with \"annotation\" and \"answer\" fields.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Return only JSON with \"annotation\" and \"answer\".\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Respond with JSON only.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Return a JSON object.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use JSON only.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:tangential_quadrilateral_side_length_value_query": {
+      "object_description": "It includes a convex quadrilateral whose four sides are tangent to an incircle, labeled vertices, tangency points, three visible side-length labels, and one side marked ?.",
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these keys: \"A\", \"B\", \"C\", and \"D\"; each value must be the pixel point [x,y] at that labeled vertex",
+      "answer_hint": "set \"answer\" to the missing side length as an integer"
+    },
+    "task:tangent_angle_value_query": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these visible point-label keys: \"A\", \"B\", \"C\", \"D\", \"O\", and \"T\"; each value must be that labeled construction point's pixel point [x,y]",
+      "answer_hint": "set \"answer\" to the target angle in degrees as an integer"
+    }
+  },
+  "dynamic_slots": {
+    "angle_object_description": {
+      "type": "string"
+    },
+    "round_shape": {
+      "type": "string"
+    },
+    "target_side": {
+      "type": "string"
+    },
+    "visible_sides": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "task:tangential_quadrilateral_side_length_value_query": [
+      "object_description"
+    ],
+    "task:tangent_angle_value_query": [
+      "angle_object_description"
+    ],
+    "query:missing_side_from_tangent_quadrilateral": [
+      "target_side",
+      "visible_sides"
+    ],
+    "query:tangent_angle_from_radius_perpendicular": [
+      "round_shape"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

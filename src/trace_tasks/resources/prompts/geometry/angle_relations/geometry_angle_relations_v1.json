@@ -1,0 +1,132 @@
+{
+  "bundle_id": "geometry_angle_relations_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "angle_relation_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "angle_relation_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "algebraic_angle_value": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "parallel_algebraic_angle_value": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "parallel_transversal_triangle_angle_value": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "triangle_exterior_angle": [
+        "What is the measure of angle \"ABC\"?",
+        "What is the measure of angle \"ABC\"?",
+        "What is the measure of angle \"ABC\"?",
+        "What is the measure of angle \"ABC\"?",
+        "What is the measure of angle \"ABC\"?"
+      ],
+      "parallel_supplement_angle": [
+        "What is the measure of angle \"CFE\"?",
+        "What is the measure of angle \"CFE\"?",
+        "What is the measure of angle \"CFE\"?",
+        "What is the measure of angle \"CFE\"?",
+        "What is the measure of angle \"CFE\"?"
+      ],
+      "target_angle_value": [
+        "Use the displayed angle expressions. What is the measure of angle \"ABC\"?",
+        "Use the displayed angle expressions. Find the measure of angle \"ABC\".",
+        "Use the displayed angle expressions. Determine the measure of angle \"ABC\".",
+        "Use the displayed angle expressions. What is angle \"ABC\"?",
+        "Use the displayed angle expressions. Solve for the measure of angle \"ABC\"."
+      ],
+      "parallel_target_angle_value": [
+        "Use the displayed angle expressions to solve for x. What is the measure of angle \"FRQ\"?",
+        "Use the displayed angle expressions to solve for x. Find the measure of angle \"FRQ\".",
+        "Use the displayed angle expressions to solve for x. Determine the measure of angle \"FRQ\".",
+        "Use the displayed angle expressions to solve for x. What is angle \"FRQ\"?",
+        "Use the displayed angle expressions to solve for x. Solve for the measure of angle \"FRQ\"."
+      ],
+      "parallel_transversal_triangle_angle_value": [
+        "Use the displayed lower-triangle angles and the parallel lines. What is the measure of angle \"PQR\"?",
+        "Use the displayed lower-triangle angles and the parallel lines. Find the measure of angle \"PQR\".",
+        "Use the displayed lower-triangle angles and the parallel lines. Determine the measure of angle \"PQR\".",
+        "Use the displayed lower-triangle angles and the parallel lines. What is angle \"PQR\"?",
+        "Use the displayed lower-triangle angles and the parallel lines. Solve for the measure of angle \"PQR\"."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:angle_relation_scene": {
+      "object_description": "labeled angle relations"
+    },
+    "global": {
+      "answer_hint": "set \"answer\" to the requested value as an integer",
+      "annotation_hint": "set \"annotation\" to a JSON object whose keys name the relevant angles and whose values are pixel points [x,y] at the angle vertex",
+      "json_example": "{\"annotation\":{\"ABC\":[120,180],\"BAC\":[178,204],\"BCD\":[236,228]},\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    },
+    "query:triangle_exterior_angle": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly the keys \"ABC\", \"BAC\", and \"BCD\"; each value is the pixel point [x,y] at that angle's vertex",
+      "json_example": "{\"annotation\":{\"ABC\":[120,180],\"BAC\":[178,204],\"BCD\":[236,228]},\"answer\":42}"
+    },
+    "query:parallel_supplement_angle": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly the keys \"CFE\" and \"AEF\"; each value is the pixel point [x,y] at that angle's vertex",
+      "json_example": "{\"annotation\":{\"CFE\":[236,228],\"AEF\":[120,180]},\"answer\":48}"
+    },
+    "task:algebraic_angle_value": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly the keys \"A\", \"B\", \"C\", and \"D\"; each value is the pixel point [x,y] at that labeled point",
+      "json_example": "{\"annotation\":{\"A\":[120,180],\"B\":[178,204],\"C\":[236,228],\"D\":[300,228]},\"answer\":42}"
+    },
+    "task:parallel_algebraic_angle_value": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly the keys \"BPQ\", \"DQP\", and \"FRQ\"; each value is the pixel point [x,y] at that angle's vertex",
+      "json_example": "{\"annotation\":{\"BPQ\":[190,150],\"DQP\":[250,285],\"FRQ\":[310,420]},\"answer\":42}"
+    },
+    "task:parallel_transversal_triangle_angle_value": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly the keys \"P\", \"Q\", \"R\", \"S\", and \"T\"; each value is the pixel point [x,y] at that labeled point",
+      "json_example": "{\"annotation\":{\"P\":[190,140],\"Q\":[250,280],\"R\":[310,140],\"S\":[160,420],\"T\":[340,420]},\"answer\":55}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

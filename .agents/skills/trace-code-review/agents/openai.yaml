@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace Code Review"
+  short_description: "Review Trace changes against public contracts"
+  default_prompt: "Use $trace-code-review to review this Trace change and report contract, test, and documentation findings."

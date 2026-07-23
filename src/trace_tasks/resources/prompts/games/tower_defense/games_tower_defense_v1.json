@@ -1,0 +1,132 @@
+{
+  "bundle_id": "games_tower_defense_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "tower_defense_map": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "tower_defense_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "covered_path_segment_count": [
+        "{coverage_rule_text} How many path enemies are covered?",
+        "{coverage_rule_text} Count the path enemies covered by one or more towers.",
+        "{coverage_rule_text} What is the number of covered path enemies?",
+        "{coverage_rule_text} Report how many path enemies lie inside at least one tower range ring.",
+        "{coverage_rule_text} Count only the path enemies covered by at least one tower."
+      ],
+      "best_tower_position_label": [
+        "{coverage_rule_text} Which candidate tower position covers the most path enemies?",
+        "{coverage_rule_text} Choose the candidate tower position that covers the most path enemies.",
+        "{coverage_rule_text} Which labeled candidate tower covers the largest number of path enemies?",
+        "{coverage_rule_text} Select the candidate position whose range ring contains the most path enemies.",
+        "{coverage_rule_text} Which candidate tower would cover the most enemies on the path?"
+      ],
+      "nearest_exit_enemy_label": [
+        "{coverage_rule_text} Which labeled enemy is closest to the exit along the path?",
+        "{coverage_rule_text} Choose the labeled enemy nearest to the exit by path order.",
+        "{coverage_rule_text} Which enemy label is farthest along the path toward the exit?",
+        "{coverage_rule_text} Select the labeled enemy that would leave the map first.",
+        "{coverage_rule_text} Which labeled path enemy is closest to the exit marker?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tower_defense_map": [
+      "object_description"
+    ],
+    "query:covered_path_segment_count": [
+      "coverage_rule_text"
+    ],
+    "query:best_tower_position_label": [
+      "coverage_rule_text"
+    ],
+    "query:nearest_exit_enemy_label": [
+      "coverage_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "coverage_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_winding_path_covered_path_segment_count": "a tower-defense map with a winding path, circular tower range rings, and small enemy markers on the path",
+    "object_description_switchback_path_covered_path_segment_count": "a tower-defense map with a switchback path, circular tower range rings, and small enemy markers on the path",
+    "coverage_rule_text_covered_path_segment_count": "A path enemy is covered when its center is inside at least one visible tower range ring.",
+    "annotation_hint_covered_path_segment_count": "set \"annotation\" to [x, y] pixel points at the centers of every covered path enemy",
+    "answer_hint_covered_path_segment_count": "set \"answer\" to the number of path enemies covered by at least one tower range ring",
+    "object_description_winding_path_best_tower_position_label": "a tower-defense map with a winding path, small enemy markers on the path, and four labeled candidate tower positions A through D",
+    "object_description_switchback_path_best_tower_position_label": "a tower-defense map with a switchback path, small enemy markers on the path, and four labeled candidate tower positions A through D",
+    "coverage_rule_text_best_tower_position_label": "A candidate covers a path enemy when that enemy's center is inside the candidate's visible range ring.",
+    "annotation_hint_best_tower_position_label": "set \"annotation\" to the [x, y] pixel point at the center of the chosen candidate tower",
+    "answer_hint_best_tower_position_label": "set \"answer\" to the chosen candidate label, one of A, B, C, or D",
+    "object_description_winding_path_nearest_exit_enemy_label": "a tower-defense map with a winding path, small enemy markers, six labeled path enemies A through F, and an exit marker",
+    "object_description_switchback_path_nearest_exit_enemy_label": "a tower-defense map with a switchback path, small enemy markers, six labeled path enemies A through F, and an exit marker",
+    "coverage_rule_text_nearest_exit_enemy_label": "Follow the drawn path toward the exit marker; compare path order, not straight-line distance.",
+    "annotation_hint_nearest_exit_enemy_label": "set \"annotation\" to the [x, y] pixel point at the center of the selected labeled enemy",
+    "answer_hint_nearest_exit_enemy_label": "set \"answer\" to the selected enemy label, one of A, B, C, D, E, or F"
+  }
+}

@@ -1,0 +1,61 @@
+generation:
+  shared:
+    scene_variant_weights:
+      classic_pedigree: 1.0
+      row_guided_pedigree: 1.0
+      paper_pedigree: 1.0
+    node_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+  task_overrides:
+    task_graph__pedigree_chart__relationship_label:
+      person_count_min: 8
+      person_count_max: 16
+      relationship_label_weights:
+        parent: 1.0
+        child: 1.0
+        sibling: 1.0
+        partner: 1.0
+        grandparent: 1.0
+        grandchild: 1.0
+    task_graph__pedigree_chart__relatedness_coefficient_label:
+      person_count_min: 8
+      person_count_max: 16
+      relatedness_label_weights:
+        "0": 1.0
+        "1/8": 1.0
+        "1/4": 1.0
+        "3/8": 1.0
+        "1/2": 1.0
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 700
+    outer_margin_px: 28
+    panel_padding_px: 24
+    panel_corner_radius_px: 18
+    panel_title_font_size_px: 24
+    node_shape_variant: circle
+    edge_routing_variant: straight
+    node_radius_min_px: 18
+    node_radius_max_px: 22
+    edge_width_px: 3
+    arrow_length_px: 12
+    arrow_width_px: 7
+    node_border_width_px: 3
+    label_font_size_px: 18
+    context_text_probability: 0.28
+    context_text_max_elements: 2
+    context_block_probability: 0.12
+    context_block_max_elements: 1
+prompt:
+  shared:
+    bundle_id: graph_pedigree_chart_v1

@@ -1,0 +1,243 @@
+prompt:
+  shared:
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer" in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for the final answer.
+
+rendering:
+  shared:
+    canvas_presets:
+      landscape:
+        canvas_width: 1200
+        canvas_height: 800
+      portrait:
+        canvas_width: 800
+        canvas_height: 1200
+      square:
+        canvas_width: 960
+        canvas_height: 960
+    canvas_preset_weights:
+      landscape: 1.0
+      portrait: 1.0
+      square: 1.0
+    max_final_pixels: 1280000
+    conveyor_belt_styles:
+      styles:
+        galvanized_steel:
+          fill_rgb: [196, 211, 222]
+          fill_alt_rgb: [205, 219, 229]
+          fill_secondary_rgb: [188, 204, 216]
+          outline_rgb: [75, 91, 108]
+          outline_secondary_rgb: [87, 103, 121]
+          rail_rgb: [112, 126, 139]
+          arrow_rgb: [132, 145, 157]
+          shadow_rgb: [94, 104, 114]
+        dark_rubber:
+          fill_rgb: [112, 119, 125]
+          fill_alt_rgb: [124, 132, 138]
+          fill_secondary_rgb: [103, 111, 118]
+          outline_rgb: [48, 55, 62]
+          outline_secondary_rgb: [58, 66, 74]
+          rail_rgb: [92, 100, 108]
+          arrow_rgb: [172, 180, 186]
+          shadow_rgb: [70, 78, 86]
+        airport_silver:
+          fill_rgb: [211, 219, 224]
+          fill_alt_rgb: [221, 228, 232]
+          fill_secondary_rgb: [201, 211, 218]
+          outline_rgb: [89, 102, 113]
+          outline_secondary_rgb: [101, 114, 125]
+          rail_rgb: [134, 145, 154]
+          arrow_rgb: [143, 154, 164]
+          shadow_rgb: [104, 112, 121]
+        blue_gray_belt:
+          fill_rgb: [169, 190, 205]
+          fill_alt_rgb: [181, 202, 216]
+          fill_secondary_rgb: [158, 179, 195]
+          outline_rgb: [66, 84, 100]
+          outline_secondary_rgb: [76, 94, 111]
+          rail_rgb: [101, 119, 135]
+          arrow_rgb: [120, 136, 150]
+          shadow_rgb: [84, 97, 108]
+        muted_teal:
+          fill_rgb: [164, 194, 193]
+          fill_alt_rgb: [176, 205, 204]
+          fill_secondary_rgb: [153, 183, 183]
+          outline_rgb: [62, 92, 94]
+          outline_secondary_rgb: [75, 104, 106]
+          rail_rgb: [98, 126, 127]
+          arrow_rgb: [118, 143, 144]
+          shadow_rgb: [80, 100, 102]
+        graphite:
+          fill_rgb: [132, 141, 149]
+          fill_alt_rgb: [145, 154, 162]
+          fill_secondary_rgb: [121, 130, 139]
+          outline_rgb: [55, 63, 72]
+          outline_secondary_rgb: [66, 74, 84]
+          rail_rgb: [103, 112, 121]
+          arrow_rgb: [168, 176, 184]
+          shadow_rgb: [76, 84, 93]
+        olive_gray:
+          fill_rgb: [174, 188, 170]
+          fill_alt_rgb: [186, 199, 181]
+          fill_secondary_rgb: [162, 177, 159]
+          outline_rgb: [76, 92, 73]
+          outline_secondary_rgb: [89, 105, 86]
+          rail_rgb: [112, 127, 108]
+          arrow_rgb: [135, 147, 130]
+          shadow_rgb: [85, 96, 84]
+        tan_industrial:
+          fill_rgb: [195, 183, 158]
+          fill_alt_rgb: [207, 196, 171]
+          fill_secondary_rgb: [183, 172, 149]
+          outline_rgb: [97, 84, 66]
+          outline_secondary_rgb: [110, 97, 78]
+          rail_rgb: [136, 124, 101]
+          arrow_rgb: [151, 139, 117]
+          shadow_rgb: [104, 94, 79]
+        pale_metal:
+          fill_rgb: [220, 226, 226]
+          fill_alt_rgb: [230, 235, 235]
+          fill_secondary_rgb: [210, 218, 219]
+          outline_rgb: [94, 105, 107]
+          outline_secondary_rgb: [106, 117, 119]
+          rail_rgb: [143, 153, 154]
+          arrow_rgb: [151, 160, 161]
+          shadow_rgb: [111, 119, 120]
+        slate_rail:
+          fill_rgb: [181, 194, 204]
+          fill_alt_rgb: [193, 206, 215]
+          fill_secondary_rgb: [170, 184, 195]
+          outline_rgb: [63, 78, 92]
+          outline_secondary_rgb: [75, 90, 105]
+          rail_rgb: [82, 97, 112]
+          arrow_rgb: [127, 141, 154]
+          shadow_rgb: [83, 96, 107]
+      weights:
+        galvanized_steel: 1.0
+        dark_rubber: 1.0
+        airport_silver: 1.0
+        blue_gray_belt: 1.0
+        muted_teal: 1.0
+        graphite: 1.0
+        olive_gray: 1.0
+        tan_industrial: 1.0
+        pale_metal: 1.0
+        slate_rail: 1.0
+
+visual:
+  background:
+    enabled: true
+    styles:
+      concrete:
+        kind: solid
+        color: [238, 241, 240]
+      cool_concrete:
+        kind: solid
+        color: [235, 241, 244]
+      warm_concrete:
+        kind: solid
+        color: [241, 238, 229]
+      warehouse_gray:
+        kind: solid
+        color: [226, 231, 229]
+      pale_sand:
+        kind: solid
+        color: [242, 238, 224]
+      green_gray:
+        kind: solid
+        color: [229, 235, 228]
+      blue_gray:
+        kind: solid
+        color: [229, 236, 241]
+      clay_gray:
+        kind: solid
+        color: [235, 229, 222]
+      off_white:
+        kind: solid
+        color: [246, 247, 244]
+      industrial_dim:
+        kind: solid
+        color: [216, 222, 225]
+      limestone:
+        kind: solid
+        color: [240, 241, 235]
+      silver_mist:
+        kind: solid
+        color: [234, 238, 240]
+      porcelain_gray:
+        kind: solid
+        color: [243, 245, 246]
+      dusted_plaster:
+        kind: solid
+        color: [239, 235, 228]
+      light_sage:
+        kind: solid
+        color: [232, 238, 231]
+      mist_blue:
+        kind: solid
+        color: [232, 239, 244]
+      sandstone:
+        kind: solid
+        color: [241, 236, 221]
+      soft_taupe:
+        kind: solid
+        color: [235, 232, 226]
+      lab_tile:
+        kind: solid
+        color: [245, 247, 247]
+      pale_zinc:
+        kind: solid
+        color: [230, 234, 233]
+      charcoal_concrete:
+        kind: solid
+        color: [43, 50, 60]
+      deep_warehouse:
+        kind: solid
+        color: [34, 39, 43]
+      midnight_steel:
+        kind: solid
+        color: [25, 33, 48]
+      dark_sage_floor:
+        kind: solid
+        color: [25, 39, 35]
+      graphite_plaster:
+        kind: solid
+        color: [39, 38, 42]
+    weights:
+      concrete: 1.0
+      cool_concrete: 1.0
+      warm_concrete: 1.0
+      warehouse_gray: 1.0
+      pale_sand: 1.0
+      green_gray: 1.0
+      blue_gray: 1.0
+      clay_gray: 1.0
+      off_white: 1.0
+      industrial_dim: 1.0
+      limestone: 1.0
+      silver_mist: 1.0
+      porcelain_gray: 1.0
+      dusted_plaster: 1.0
+      light_sage: 1.0
+      mist_blue: 1.0
+      sandstone: 1.0
+      soft_taupe: 1.0
+      lab_tile: 1.0
+      pale_zinc: 1.0
+      charcoal_concrete: 1.0
+      deep_warehouse: 1.0
+      midnight_steel: 1.0
+      dark_sage_floor: 1.0
+      graphite_plaster: 1.0
+  noise:
+    apply_prob: 0.35
+    edit_count_range: [1, 1]
+    value_ranges:
+      blur:
+        radius: [0.1, 0.26]
+      downsample:
+        scale: [0.94, 0.985]
+      jpeg:
+        quality: [86.0, 95.0]
+      noise:
+        alpha: [0.006, 0.024]

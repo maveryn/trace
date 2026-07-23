@@ -1,0 +1,94 @@
+{
+  "bundle_id": "puzzles_nonogram_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "nonogram": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This nonogram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "line_completion_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_solution_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "line_completion_label": [
+        "Which labeled strip correctly completes {line_label}?",
+        "Use the marked row clue and visible cells in {line_label}. Which labeled strip is correct?",
+        "Select the row-strip option that satisfies the marked clue and matches the visible cells in {line_label}.",
+        "Which option should replace the unknown cells in {line_label}?",
+        "Choose the labeled strip that completes {line_label} without violating its clue."
+      ],
+      "candidate_solution_label": [
+        "Which candidate grid satisfies all visible row and column clues?",
+        "Select the filled-grid option that matches every row clue and every column clue.",
+        "Choose the candidate solution consistent with all nonogram clues.",
+        "Which labeled filled grid is the valid nonogram solution for these clues?",
+        "Use both clue rails to identify the correct candidate grid."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:line_completion_label_query": {
+      "answer_instruction": "the selected strip option letter as a string",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected strip option panel.",
+      "json_example": "{\"annotation\":[462,650,608,776],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:candidate_solution_label_query": {
+      "answer_instruction": "the selected candidate-grid option letter as a string",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] around the selected candidate grid option panel.",
+      "json_example": "{\"annotation\":[622,650,768,776],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "line_label": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:nonogram": [
+      "object_description"
+    ],
+    "query:line_completion_label": [
+      "line_label"
+    ]
+  }
+}

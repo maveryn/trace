@@ -1,0 +1,75 @@
+{
+  "bundle_id": "geometry_cuboid_orthographic_views_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "cuboid_orthographic_views_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "cuboid_orthographic_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "What is the cuboid's total surface area?",
+        "Find the total surface area of the cuboid.",
+        "Determine the cuboid surface area.",
+        "What total surface area is represented by these views?",
+        "Find the surface area represented by the orthographic views."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:cuboid_orthographic_views_scene": {
+      "object_description": "front, right, and top orthographic rectangular views of one cuboid, each labeled with that view's perimeter",
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these keys: \"top_view\", \"front_view\", and \"right_view\"; each value must be the pixel bounding box [x0,y0,x1,y1] around the full visible rectangular view",
+      "json_example": "{\"annotation\":{\"top_view\":[226,66,350,222],\"front_view\":[226,308,350,496],\"right_view\":[570,308,726,496]},\"answer\":148}",
+      "json_example_answer_only": "{\"answer\":148}",
+      "answer_hint": "set \"answer\" to the cuboid total surface area as an integer"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:cuboid_orthographic_views_scene": [
+      "object_description"
+    ],
+    "query:single": [],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

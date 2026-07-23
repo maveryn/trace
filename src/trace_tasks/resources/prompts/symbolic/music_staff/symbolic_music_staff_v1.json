@@ -1,0 +1,215 @@
+{
+  "bundle_id": "symbolic_music_staff_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "music_staff": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This music-notation item shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The sheet-music panel shows {object_description}."
+      ]
+    },
+    "task": {
+      "music_note_name_label": ["", "", "", "", ""],
+      "music_interval_name_label": ["", "", "", "", ""],
+      "music_transposed_pitch_pair_count": ["", "", "", "", ""],
+      "music_key_signature_label": ["", "", "", "", ""],
+      "music_scale_validation_count": ["", "", "", "", ""],
+      "music_scale_degree_function_label": ["", "", "", "", ""],
+      "music_chord_quality_label": ["", "", "", "", ""],
+      "music_chord_inversion_label": ["", "", "", "", ""],
+      "music_roman_numeral_label": ["", "", "", "", ""],
+      "music_duration_equivalence_label": ["", "", "", "", ""],
+      "music_meter_type_count": ["", "", "", "", ""],
+      "music_articulation_symbol_label": ["", "", "", "", ""]
+    },
+    "query": {
+      "note_name_label": [
+        "Which option gives the note name of the note marked {target_marker}?",
+        "Select the option that names the note marked {target_marker}.",
+        "Which visible option gives the pitch name shown by note {target_marker}?",
+        "Read the marked staff note {target_marker}. Which option is its note name?",
+        "Choose the option that identifies note {target_marker} by pitch name."
+      ],
+      "interval_name_label": [
+        "Which option names interval {target_marker}?",
+        "Which option gives the interval formed by the two notes in range {target_marker}?",
+        "Select the option that identifies numbered interval {target_marker}.",
+        "Read note-pair range {target_marker} and choose the matching interval name.",
+        "Which visible option describes note-pair range {target_marker}?"
+      ],
+      "transposed_pitch_pair_count": [
+        "How many of the four marked note pairs show the second note transposed up by a {interval_name}?",
+        "Count the numbered note pairs where the second note is a {interval_name} above the first.",
+        "Among the four shown note-pair ranges, how many correctly move up by a {interval_name}?",
+        "How many marked pairs show the requested upward {interval_name} transposition?",
+        "Find the count of note pairs whose second note is the correct {interval_name} above the first."
+      ],
+      "key_signature_label": [
+        "Which option gives the key represented by the visible key signature?",
+        "Select the option naming the major key shown by the key signature.",
+        "Which visible option gives the major key indicated by the key signature?",
+        "Read the key signature and choose the matching key name.",
+        "Choose the option for the key shown by the accidentals at the start of the staff."
+      ],
+      "scale_validation_count": [
+        "How many of the four shown fragments correctly fit {target_key}?",
+        "Count the scale fragments that are correctly written for {target_key}.",
+        "Among the four marked fragments, how many match {target_key}?",
+        "How many shown scale fragments fit the key {target_key}?",
+        "Find the count of fragment ranges that correctly follow {target_key}."
+      ],
+      "scale_degree_function_label": [
+        "In {target_key}, which option gives the scale-degree function of note {target_marker}?",
+        "Select the option naming the scale-degree function of note {target_marker} in {target_key}.",
+        "Using the key {target_key}, choose the option that identifies the function of note {target_marker}.",
+        "Which option gives the scale-degree name of note {target_marker} in {target_key}?",
+        "Read note {target_marker} relative to {target_key}. Which option gives its scale-degree function?"
+      ],
+      "chord_quality_label": [
+        "Which option gives the quality of chord {target_marker}?",
+        "Select the option naming the chord quality of numbered chord {target_marker}.",
+        "Choose the option that identifies the quality of chord {target_marker}.",
+        "Which visible option gives the chord-quality name for chord {target_marker}?",
+        "Read chord {target_marker} and choose its quality."
+      ],
+      "roman_numeral_label": [
+        "In {target_key}, which option gives the roman numeral for chord {target_marker}?",
+        "Select the option naming the roman numeral of chord {target_marker} in {target_key}.",
+        "Using the key {target_key}, choose the option with the roman numeral for chord {target_marker}.",
+        "Which visible option describes the marked chord in {target_key}?",
+        "Read chord {target_marker} relative to {target_key} and choose its roman numeral."
+      ],
+      "chord_inversion_label": [
+        "Which option gives the inversion of chord {target_marker}?",
+        "Select the option naming the inversion of chord {target_marker}.",
+        "Choose the option that identifies the inversion shown by chord {target_marker}.",
+        "Which visible option describes the inversion of chord {target_marker}?",
+        "Read chord {target_marker} and choose its inversion."
+      ],
+      "duration_equivalence_label": [
+        "Which option names the duration of numbered note {target_marker}?",
+        "Select the option giving the duration name for note {target_marker}.",
+        "Which labeled option names the note value of note {target_marker}?",
+        "Read numbered note {target_marker}. Which option gives its duration name?",
+        "Choose the duration name for numbered note {target_marker}."
+      ],
+      "meter_type_count": [
+        "How many of the four shown measures are in {target_meter_type} meter?",
+        "Count the measures whose visible time signature is {target_meter_type} meter.",
+        "Among the four displayed measures, how many use {target_meter_type} meter?",
+        "Find the number of shown measures in {target_meter_type} meter.",
+        "How many measure boxes match {target_meter_type} meter?"
+      ],
+      "articulation_symbol_label": [
+        "Which option names articulation symbol {target_marker}?",
+        "Select the option naming the numbered symbol {target_marker}.",
+        "Choose the option that identifies articulation mark {target_marker}.",
+        "Which visible option names symbol {target_marker}?",
+        "Read mark {target_marker} and choose its name."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"},
+    "target_key": {"type": "string"},
+    "target_marker": {"type": "string"},
+    "interval_name": {"type": "string"},
+    "target_meter_type": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:music_staff": ["object_description"],
+    "query:note_name_label": ["target_marker"],
+    "query:interval_name_label": ["target_marker"],
+    "query:transposed_pitch_pair_count": ["interval_name"],
+    "query:key_signature_label": [],
+    "query:scale_validation_count": ["target_key"],
+    "query:scale_degree_function_label": ["target_key", "target_marker"],
+    "query:chord_quality_label": ["target_marker"],
+    "query:roman_numeral_label": ["target_key", "target_marker"],
+    "query:chord_inversion_label": ["target_marker"],
+    "query:duration_equivalence_label": ["target_marker"],
+    "query:meter_type_count": ["target_meter_type"],
+    "query:articulation_symbol_label": ["target_marker"],
+    "output:answer_only": ["json_output_contract_answer_only", "answer_hint", "json_example_answer_only"],
+    "output:answer_and_annotation": ["json_output_contract", "annotation_hint", "answer_hint", "json_example"]
+  },
+  "code_prompt_defaults": {
+    "object_description_engraved_sheet": "a clean engraved-style sheet-music staff panel with marked notation items",
+    "object_description_exam_scan": "an exam-scan-style sheet-music staff panel with marked notation items",
+    "object_description_notebook_staff": "a notebook-style sheet-music staff panel with marked notation items",
+    "annotation_hint_note_name_label": "set \"annotation\" to the pixel-space bounding box [x0, y0, x1, y1] for the marked note",
+    "answer_hint_note_name_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_note_name_label": "{\"annotation\":[270,188,315,252],\"answer\":\"C\"}",
+    "json_example_answer_only_note_name_label": "{\"answer\":\"C\"}",
+    "annotation_hint_interval_name_label": "set \"annotation\" to the pixel-space bounding box [x0, y0, x1, y1] for the marked interval region",
+    "answer_hint_interval_name_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_interval_name_label": "{\"annotation\":[242,154,383,253],\"answer\":\"D\"}",
+    "json_example_answer_only_interval_name_label": "{\"answer\":\"D\"}",
+    "annotation_hint_transposed_pitch_pair_count": "set \"annotation\" to an array containing every counted transposition-pair range pixel-space bounding box [x0, y0, x1, y1]; use an empty array when no shown pairs match the requested transposition",
+    "answer_hint_transposed_pitch_pair_count": "set \"answer\" to the integer count of note pairs that match the requested upward interval",
+    "json_example_transposed_pitch_pair_count": "{\"annotation\":[[240,160,330,245],[420,160,510,245]],\"answer\":2}",
+    "json_example_answer_only_transposed_pitch_pair_count": "{\"answer\":2}",
+    "annotation_hint_key_signature_label": "set \"annotation\" to the key-signature pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_key_signature_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_key_signature_label": "{\"annotation\":[190,178,250,222],\"answer\":\"B\"}",
+    "json_example_answer_only_key_signature_label": "{\"answer\":\"B\"}",
+    "annotation_hint_scale_validation_count": "set \"annotation\" to an array containing every counted scale-fragment range pixel-space bounding box [x0, y0, x1, y1]; use an empty array when no shown fragments correctly fit the requested key",
+    "answer_hint_scale_validation_count": "set \"answer\" to the integer count of scale fragments that correctly fit the requested key",
+    "json_example_scale_validation_count": "{\"annotation\":[[240,160,330,245],[420,160,510,245]],\"answer\":2}",
+    "json_example_answer_only_scale_validation_count": "{\"answer\":2}",
+    "annotation_hint_scale_degree_function_label": "set \"annotation\" to an object with keys \"key_signature\" and \"target_note\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_scale_degree_function_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_scale_degree_function_label": "{\"annotation\":{\"key_signature\":[190,178,250,222],\"target_note\":[330,188,374,250]},\"answer\":\"E\"}",
+    "json_example_answer_only_scale_degree_function_label": "{\"answer\":\"E\"}",
+    "annotation_hint_chord_quality_label": "set \"annotation\" to the target numbered chord pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_chord_quality_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_chord_quality_label": "{\"annotation\":[300,145,354,248],\"answer\":\"A\"}",
+    "json_example_answer_only_chord_quality_label": "{\"answer\":\"A\"}",
+    "annotation_hint_roman_numeral_label": "set \"annotation\" to an object with keys \"key_signature\" and \"target_chord\", each mapped to a pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_roman_numeral_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_roman_numeral_label": "{\"annotation\":{\"key_signature\":[190,178,250,222],\"target_chord\":[300,145,354,248]},\"answer\":\"F\"}",
+    "json_example_answer_only_roman_numeral_label": "{\"answer\":\"F\"}",
+    "annotation_hint_chord_inversion_label": "set \"annotation\" to the target numbered chord pixel-space bounding box [x0, y0, x1, y1]",
+    "answer_hint_chord_inversion_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_chord_inversion_label": "{\"annotation\":[300,145,354,248],\"answer\":\"B\"}",
+    "json_example_answer_only_chord_inversion_label": "{\"answer\":\"B\"}",
+    "annotation_hint_duration_equivalence_label": "set \"annotation\" to the pixel-space bounding box [x0, y0, x1, y1] around the target numbered note",
+    "answer_hint_duration_equivalence_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_duration_equivalence_label": "{\"annotation\":[280,188,324,250],\"answer\":\"C\"}",
+    "json_example_answer_only_duration_equivalence_label": "{\"answer\":\"C\"}",
+    "annotation_hint_meter_type_count": "set \"annotation\" to an array containing every counted measure pixel-space bounding box [x0, y0, x1, y1]; use an empty array when no shown measures have the requested meter type",
+    "answer_hint_meter_type_count": "set \"answer\" to the integer count of measures with the requested meter type",
+    "json_example_meter_type_count": "{\"annotation\":[[240,160,330,245],[420,160,510,245]],\"answer\":2}",
+    "json_example_answer_only_meter_type_count": "{\"answer\":2}",
+    "annotation_hint_articulation_symbol_label": "set \"annotation\" to the pixel-space point [x, y] at the center of the target articulation symbol",
+    "answer_hint_articulation_symbol_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_articulation_symbol_label": "{\"annotation\":[302,149],\"answer\":\"A\"}",
+    "json_example_answer_only_articulation_symbol_label": "{\"answer\":\"A\"}"
+  }
+}

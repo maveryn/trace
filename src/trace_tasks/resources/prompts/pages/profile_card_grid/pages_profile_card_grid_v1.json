@@ -1,0 +1,222 @@
+{
+  "bundle_id": "pages_profile_card_grid_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "profile_card_grid": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "profile_attribute_lookup_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "filtered_highest_profile_label": [
+        "Among profiles with {filter_field_label} = \"{filter_field_value}\", which profile has the highest {field_label} value?",
+        "Filter to cards where {filter_field_label} is \"{filter_field_value}\". Which profile has the largest {field_label}?",
+        "Within the {filter_field_label} \"{filter_field_value}\" group, what profile name has the maximum {field_label} value?",
+        "Considering only profiles with {filter_field_label}: \"{filter_field_value}\", which profile ranks highest by {field_label}?",
+        "Which visible profile in the {filter_field_label} = \"{filter_field_value}\" group has the greatest {field_label}?"
+      ],
+      "filtered_lowest_profile_label": [
+        "Among profiles with {filter_field_label} = \"{filter_field_value}\", which profile has the lowest {field_label} value?",
+        "Filter to cards where {filter_field_label} is \"{filter_field_value}\". Which profile has the smallest {field_label}?",
+        "Within the {filter_field_label} \"{filter_field_value}\" group, what profile name has the minimum {field_label} value?",
+        "Considering only profiles with {filter_field_label}: \"{filter_field_value}\", which profile ranks lowest by {field_label}?",
+        "Which visible profile in the {filter_field_label} = \"{filter_field_value}\" group has the least {field_label}?"
+      ],
+      "filtered_nth_highest_profile_label": [
+        "Among profiles with {filter_field_label} = \"{filter_field_value}\", which profile has the {rank_ordinal} highest {field_label} value?",
+        "Filter to cards where {filter_field_label} is \"{filter_field_value}\" and sort by {field_label} from highest to lowest. Which profile is {rank_ordinal}?",
+        "Within the {filter_field_label} \"{filter_field_value}\" group, what profile name is {rank_ordinal} by descending {field_label}?",
+        "Considering only profiles with {filter_field_label}: \"{filter_field_value}\", which profile is {rank_ordinal} when ordered by highest {field_label}?",
+        "Find the {rank_ordinal} largest {field_label} value among profiles with {filter_field_label} = \"{filter_field_value}\". What profile name is on that card?"
+      ],
+      "filtered_nth_lowest_profile_label": [
+        "Among profiles with {filter_field_label} = \"{filter_field_value}\", which profile has the {rank_ordinal} lowest {field_label} value?",
+        "Filter to cards where {filter_field_label} is \"{filter_field_value}\" and sort by {field_label} from lowest to highest. Which profile is {rank_ordinal}?",
+        "Within the {filter_field_label} \"{filter_field_value}\" group, what profile name is {rank_ordinal} by ascending {field_label}?",
+        "Considering only profiles with {filter_field_label}: \"{filter_field_value}\", which profile is {rank_ordinal} when ordered by lowest {field_label}?",
+        "Find the {rank_ordinal} smallest {field_label} value among profiles with {filter_field_label} = \"{filter_field_value}\". What profile name is on that card?"
+      ],
+      "highest_field_profile_label": [
+        "Which profile has the highest {field_label} value?",
+        "Find the card with the largest {field_label} value. What profile name is shown?",
+        "What profile name corresponds to the maximum {field_label} value?",
+        "Among all visible cards, which profile has the greatest {field_label}?",
+        "Which visible profile ranks highest by {field_label}?"
+      ],
+      "lowest_field_profile_label": [
+        "Which profile has the lowest {field_label} value?",
+        "Find the card with the smallest {field_label} value. What profile name is shown?",
+        "What profile name corresponds to the minimum {field_label} value?",
+        "Among all visible cards, which profile has the least {field_label}?",
+        "Which visible profile ranks lowest by {field_label}?"
+      ],
+      "nth_highest_field_profile_label": [
+        "Which profile has the {rank_ordinal} highest {field_label} value?",
+        "Sort the profiles by {field_label} from highest to lowest. Which profile is {rank_ordinal}?",
+        "After ranking by descending {field_label}, what profile name is in {rank_ordinal} place?",
+        "Which visible profile is {rank_ordinal} when ordered by highest {field_label}?",
+        "Find the {rank_ordinal} largest {field_label} value. What profile name is on that card?"
+      ],
+      "nth_lowest_field_profile_label": [
+        "Which profile has the {rank_ordinal} lowest {field_label} value?",
+        "Sort the profiles by {field_label} from lowest to highest. Which profile is {rank_ordinal}?",
+        "After ranking by ascending {field_label}, what profile name is in {rank_ordinal} place?",
+        "Which visible profile is {rank_ordinal} when ordered by lowest {field_label}?",
+        "Find the {rank_ordinal} smallest {field_label} value. What profile name is on that card?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:profile_card_grid": {
+      "object_description": "a grid of profile cards, each with a visible profile name and labeled fields"
+    },
+    "query:filtered_highest_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:filtered_lowest_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:filtered_nth_highest_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:filtered_nth_lowest_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:highest_field_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:lowest_field_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:nth_highest_field_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    },
+    "query:nth_lowest_field_profile_label": {
+      "answer_hint": "set \"answer\" to the exact visible profile name",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] box around the selected profile card in image pixel coordinates",
+      "json_example": "{\"annotation\":[72,142,324,332],\"answer\":\"Aster\"}",
+      "json_example_answer_only": "{\"answer\":\"Aster\"}"
+    }
+  },
+  "dynamic_slots": {
+    "filter_field_label": {
+      "type": "string"
+    },
+    "filter_field_value": {
+      "type": "string"
+    },
+    "field_label": {
+      "type": "string"
+    },
+    "rank_ordinal": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:profile_card_grid": [
+      "object_description"
+    ],
+    "query:filtered_highest_profile_label": [
+      "filter_field_label",
+      "filter_field_value",
+      "field_label"
+    ],
+    "query:filtered_lowest_profile_label": [
+      "filter_field_label",
+      "filter_field_value",
+      "field_label"
+    ],
+    "query:filtered_nth_highest_profile_label": [
+      "filter_field_label",
+      "filter_field_value",
+      "field_label",
+      "rank_ordinal"
+    ],
+    "query:filtered_nth_lowest_profile_label": [
+      "filter_field_label",
+      "filter_field_value",
+      "field_label",
+      "rank_ordinal"
+    ],
+    "query:highest_field_profile_label": [
+      "field_label"
+    ],
+    "query:lowest_field_profile_label": [
+      "field_label"
+    ],
+    "query:nth_highest_field_profile_label": [
+      "field_label",
+      "rank_ordinal"
+    ],
+    "query:nth_lowest_field_profile_label": [
+      "field_label",
+      "rank_ordinal"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

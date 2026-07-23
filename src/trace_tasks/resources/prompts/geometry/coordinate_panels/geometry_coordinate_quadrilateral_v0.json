@@ -1,0 +1,169 @@
+{
+  "bundle_id": "geometry_coordinate_quadrilateral_v0",
+  "schema_version": "v0",
+  "allow_empty_task_templates": true,
+  "task_templates": {
+    "coordinate_quadrilateral_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "coordinate_segment_relation_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "coordinate_point_set_transform_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:coordinate_panels_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "coordinate_panels_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The coordinate panel grid shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "square_shape_match_label": [
+      "Which panel shows four points that are vertices of a square?",
+      "Choose the panel whose four points form a square.",
+      "Which labeled panel contains four vertices of a square?",
+      "Find the panel where the four plotted points make a square.",
+      "Which panel's four points form a square?"
+    ],
+    "rectangle_shape_match_label": [
+      "Which panel shows four points that are vertices of a rectangle?",
+      "Choose the panel whose four points form a rectangle.",
+      "Which labeled panel contains four vertices of a rectangle?",
+      "Find the panel where the four plotted points make a rectangle.",
+      "Which panel's four points form a rectangle?"
+    ],
+    "rhombus_shape_match_label": [
+      "Which panel shows four points that are vertices of a rhombus?",
+      "Choose the panel whose four points form a rhombus.",
+      "Which labeled panel contains four vertices of a rhombus?",
+      "Find the panel where the four plotted points make a rhombus.",
+      "Which panel's four points form a rhombus?"
+    ],
+    "parallelogram_shape_match_label": [
+      "Which panel shows four points that are vertices of a parallelogram?",
+      "Choose the panel whose four points form a parallelogram.",
+      "Which labeled panel contains four vertices of a parallelogram?",
+      "Find the panel where the four plotted points make a parallelogram.",
+      "Which panel's four points form a parallelogram?"
+    ],
+    "parallel_segments_match_label": [
+      "Which panel shows two parallel line segments?",
+      "Choose the panel where the two colored segments are parallel.",
+      "Which labeled panel contains a parallel pair of segments?",
+      "Find the panel whose two line segments are parallel.",
+      "Which panel has two segments with the same direction?"
+    ],
+    "perpendicular_segments_match_label": [
+      "Which panel shows two perpendicular line segments?",
+      "Choose the panel where the two colored segments are perpendicular.",
+      "Which labeled panel contains a perpendicular pair of segments?",
+      "Find the panel whose two line segments meet at right angles if extended.",
+      "Which panel has two segments with perpendicular directions?"
+    ],
+    "equal_length_segments_match_label": [
+      "Which panel shows two line segments with equal length?",
+      "Choose the panel where the two colored segments are the same length.",
+      "Which labeled panel contains an equal-length pair of segments?",
+      "Find the panel whose two line segments have equal length.",
+      "Which panel has two segments of matching length?"
+    ],
+    "translation_match_label": [
+      "Which panel shows the candidate point set as a translation of the source point set?",
+      "Choose the panel where the candidate points are a translated copy of the source points.",
+      "Which labeled panel contains a source point set and its translated candidate point set?",
+      "Find the panel where the candidate set is made by translating the source set.",
+      "Which panel shows a translation from the source points to the candidate points?"
+    ],
+    "reflection_x_match_label": [
+      "Which panel shows the candidate point set as a reflection of the source point set across the x-axis?",
+      "Choose the panel where the candidate points reflect the source points across the x-axis.",
+      "Which labeled panel contains a source point set and its x-axis reflection?",
+      "Find the panel where the candidate set is made by reflecting the source set across the x-axis.",
+      "Which panel shows reflection across the x-axis from source points to candidate points?"
+    ],
+    "reflection_y_match_label": [
+      "Which panel shows the candidate point set as a reflection of the source point set across the y-axis?",
+      "Choose the panel where the candidate points reflect the source points across the y-axis.",
+      "Which labeled panel contains a source point set and its y-axis reflection?",
+      "Find the panel where the candidate set is made by reflecting the source set across the y-axis.",
+      "Which panel shows reflection across the y-axis from source points to candidate points?"
+    ],
+    "rotation_180_match_label": [
+      "Which panel shows the candidate point set as a 180-degree rotation of the source point set about the origin?",
+      "Choose the panel where the candidate points are the source points rotated 180 degrees about the origin.",
+      "Which labeled panel contains a source point set and its 180-degree rotation about the origin?",
+      "Find the panel where the candidate set is made by rotating the source set 180 degrees about the origin.",
+      "Which panel shows a 180-degree rotation from source points to candidate points?"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:coordinate_panels_scene": {
+      "object_description": "labeled coordinate panels, each containing four unlabeled points",
+      "object_description_segment_relation": "labeled coordinate panels, each containing two colored line segments",
+      "object_description_point_set_transform": "labeled coordinate panels, each containing a source point set and a candidate point set"
+    },
+    "answer_or_annotation:answer_only": {
+      "answer_hint_option_letter": "set \"answer\" to the selected panel label as a capital letter",
+      "json_example_answer_only": "{\"answer\":\"B\"}",
+      "answer_hint": "set \"answer\" to the selected panel label as a capital letter"
+    },
+    "answer_or_annotation:answer_and_annotation": {
+      "annotation_hint_selected_panel_point_set": "set \"annotation\" to an array of the four pixel points [x,y] plotted inside the selected panel",
+      "annotation_hint_selected_panel_segment_set": "set \"annotation\" to an array of the two selected-panel pixel segments, each segment as [[x0,y0],[x1,y1]]",
+      "annotation_hint_selected_panel_transform_point_set": "set \"annotation\" to an array of the source and candidate pixel points [x,y] plotted inside the selected panel",
+      "answer_hint_option_letter": "set \"answer\" to the selected panel label as a capital letter",
+      "json_example": "{\"annotation\":[[420,116],[485,116],[485,181],[420,181]],\"answer\":\"B\"}",
+      "answer_hint": "set \"answer\" to the selected panel label as a capital letter",
+      "annotation_hint": "set \"annotation\" to an array of the four pixel points [x,y] plotted inside the selected panel"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "bundle_id": "icons_icon_field_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "single_scene_counting": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "type_frequency_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "singleton_type_count": [
+        "How many Scene icons have a type that appears exactly once?",
+        "How many icons in the Scene panel have a type that appears exactly once?",
+        "Count the Scene icons whose type appears exactly once.",
+        "How many Scene icons are the only icon of their type?",
+        "What is the number of Scene icons with a type that appears exactly once?"
+      ],
+      "most_frequent_type_count": [
+        "How many Scene icons belong to the most frequent type?",
+        "How many icons in the Scene panel are of the most frequent type?",
+        "Count the Scene icons whose type is the unique most frequent type.",
+        "What is the number of Scene icons in the unique most frequent type?",
+        "How many Scene icons share the type that appears most often?"
+      ],
+      "most_frequent_type_label": [
+        "Which marked icon type appears most often in the image?",
+        "Which marked icon type is shown the most times?",
+        "Choose the marked icon type that appears most frequently.",
+        "Which marked type has the largest number of icons?",
+        "Which marked icon type occurs most often?"
+      ],
+      "least_frequent_type_label": [
+        "Which marked icon type appears least often in the image?",
+        "Which marked icon type is shown the fewest times?",
+        "Choose the marked icon type that appears least frequently.",
+        "Which marked type has the smallest number of icons?",
+        "Which marked icon type occurs least often?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "json_example": "{\"annotation\":[[116,128,176,188],[639,307,699,367]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "scene:single_scene_counting": {
+      "object_description": "one panel of assorted icons"
+    },
+    "query:singleton_type_count": {
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted icon"
+    },
+    "query:most_frequent_type_count": {
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted icon of the unique most frequent type"
+    },
+    "query:most_frequent_type_label": {
+      "answer_hint": "set \"answer\" to the option letter on the marked icon type that appears most often",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every icon of the selected marked type, including the marked representative",
+      "json_example": "{\"annotation\":[[116,128,176,188],[639,307,699,367]],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:least_frequent_type_label": {
+      "answer_hint": "set \"answer\" to the option letter on the marked icon type that appears least often",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every icon of the selected marked type, including the marked representative",
+      "json_example": "{\"annotation\":[[116,128,176,188],[639,307,699,367]],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:single_scene_counting": [
+      "object_description"
+    ],
+    "query:singleton_type_count": [
+      "annotation_hint"
+    ],
+    "query:most_frequent_type_count": [
+      "annotation_hint"
+    ],
+    "query:most_frequent_type_label": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example",
+      "json_example_answer_only"
+    ],
+    "query:least_frequent_type_label": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example",
+      "json_example_answer_only"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

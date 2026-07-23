@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Issues · Trace Review{% endblock %}
+{% block content %}<section class="page-heading"><div><h1>Issue threads</h1><p>Local contributor findings and follow-up discussion.</p></div><nav><a href="/issues">all</a> · <a href="/issues?status=open">open</a> · <a href="/issues?status=resolved">resolved</a></nav></section>
+{% if issues %}<div class="table-wrap"><table><thead><tr><th>Status</th><th>Issue</th><th>Context</th><th>Category</th><th>Updated</th></tr></thead><tbody>{% for issue in issues %}<tr><td><span class="badge {{ issue.status }}">{{ issue.status }}</span></td><td><a href="/issues/{{ issue.id }}">{{ issue.title }}</a><br><small>{{ issue.severity }}</small></td><td>{{ issue.task_id }}{% if issue.sample_uid %}<br><small>sample {{ issue.sample_uid }}</small>{% endif %}</td><td>{{ issue.category }}</td><td>{{ issue.updated_at }}</td></tr>{% endfor %}</tbody></table></div>{% else %}<p>No matching issues.</p>{% endif %}
+{% endblock %}

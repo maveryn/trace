@@ -1,0 +1,128 @@
+{
+  "bundle_id": "physics_motion_graph_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "motion_graph_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The image contains {object_description}."
+      ]
+    },
+    "task": {
+      "motion_graph_average_speed_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "motion_graph_speed_change_state_choice_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "motion_graph_interval_displacement_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "average_speed_value": [
+        "What is the average speed over the marked interval of the distance-time graph?",
+        "What integer average speed is shown over the marked interval?",
+        "Read the distance change and time interval on the d-t graph. What is the average speed?",
+        "For the highlighted interval, compute the integer average speed in m/s.",
+        "Using the marked distance-time segment, what average speed is shown?"
+      ],
+      "speed_change_state_choice": [
+        "On the marked interval of the velocity-time graph, which option describes how the object's speed changes?",
+        "Which option gives the speed-change state over the marked velocity-time interval?",
+        "Which candidate state matches the marked interval on the v-t graph?",
+        "For the highlighted interval, choose the option that describes whether the object speeds up, slows down, or keeps constant speed.",
+        "Read the marked velocity-time segment. Which option describes the speed state?"
+      ],
+      "constant_velocity_interval_displacement": [
+        "What is the displacement during the marked time interval?",
+        "Use the velocity-time graph. What integer displacement is shown over the highlighted interval?",
+        "Read the constant velocity segment and the marked time interval. What displacement does it represent?",
+        "For the marked interval on the v-t graph, what displacement is covered?",
+        "Using the visible velocity and interval width, determine the displacement over the marked interval."
+      ],
+      "constant_acceleration_interval_displacement": [
+        "What is the displacement during the marked time interval?",
+        "Use the velocity-time graph. What integer displacement is shown over the highlighted interval?",
+        "Read the sloped velocity segment and the marked time interval. What displacement does it represent?",
+        "For the marked interval on the v-t graph, what displacement is covered?",
+        "Using the visible endpoint velocities and interval width, determine the displacement over the marked interval."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:motion_graph_diagram": {
+      "object_description": "a kinematics graph with labeled axes, a piecewise-linear curve, and one marked time interval"
+    },
+    "query:average_speed_value": {
+      "answer_hint": "set \"answer\" to the integer average speed in m/s",
+      "annotation_hint": "set \"annotation\" to the marked distance-time graph segment as [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point"
+    },
+    "query:speed_change_state_choice": {
+      "answer_hint": "set \"answer\" to the option letter for the speed-change state shown by the marked velocity-time graph interval",
+      "annotation_hint": "set \"annotation\" to the marked velocity-time graph segment as [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point"
+    },
+    "query:constant_velocity_interval_displacement": {
+      "answer_hint": "set \"answer\" to the integer displacement over the marked interval",
+      "annotation_hint": "set \"annotation\" to the marked velocity-time graph segment as [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point"
+    },
+    "query:constant_acceleration_interval_displacement": {
+      "answer_hint": "set \"answer\" to the integer displacement over the marked interval",
+      "annotation_hint": "set \"annotation\" to the marked velocity-time graph segment as [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point"
+    }
+  },
+  "dynamic_slots": {
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:motion_graph_diagram": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

@@ -1,0 +1,139 @@
+{
+  "bundle_id": "games_ludo_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "ludo_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The board shows {object_description}.",
+        "This board shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "ludo_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "winning_roll_value": [
+        "{exact_finish_rule_text} Count from the {query_color} token along that lane. What die roll lands it on finish?",
+        "{exact_finish_rule_text} Along the {query_color} home lane, which die roll moves the token exactly to finish?",
+        "{exact_finish_rule_text} How many spaces remain for the {query_color} token to reach finish?",
+        "{exact_finish_rule_text} Count the spaces from the {query_color} token to the final {query_color} home-lane cell. What die roll is needed?",
+        "{exact_finish_rule_text} What exact die roll moves the {query_color} token to its finish cell?"
+      ],
+      "capture_roll_option_label": [
+        "{capture_option_rule_text} Which roll option lets the {query_color} token land on the {target_color} token?",
+        "{capture_option_rule_text} Select the option that moves the {query_color} token onto the {target_color} token.",
+        "{capture_option_rule_text} Which displayed roll option captures the {target_color} token with the {query_color} token?",
+        "{capture_option_rule_text} Which option label lands the {query_color} token on the {target_color} token?",
+        "{capture_option_rule_text} Which option reaches the {target_color} token from the {query_color} token?"
+      ],
+      "move_result_option_label": [
+        "{move_sequence_rule_text} Which board letter marks where the {query_color} token ends?",
+        "{move_sequence_rule_text} Move the {query_color} token by that sequence. Which destination letter does it reach?",
+        "{move_sequence_rule_text} Which board letter is reached by the {query_color} token?",
+        "{move_sequence_rule_text} Which labeled destination cell is the final position for the {query_color} token?",
+        "{move_sequence_rule_text} After applying the shown sequence to the {query_color} token, which board letter is reached?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:ludo_board": [
+      "object_description"
+    ],
+    "query:winning_roll_value": [
+      "exact_finish_rule_text"
+    ],
+    "query:capture_roll_option_label": [
+      "capture_option_rule_text"
+    ],
+    "query:move_result_option_label": [
+      "move_sequence_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "capture_option_rule_text": {
+      "type": "string"
+    },
+    "exact_finish_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "move_sequence_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "query_color": {
+      "type": "string"
+    },
+    "target_color": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description": "a Ludo-style cross board with one visible token for each player color, colored home lanes leading toward the center, and arrows showing movement direction",
+    "exact_finish_rule_text": "Finish is the final colored cell at the end of a token's home lane near the center. Count spaces only along that same colored home lane; the token must land exactly on finish.",
+    "capture_option_rule_text": "Move clockwise along the track. A \"6 then k\" option means move 6 spaces, then k more spaces.",
+    "move_sequence_rule_text": "Use the dice sequence shown below the board and move clockwise along the track.",
+    "annotation_hint_winning_roll_value": "set \"annotation\" to one pixel point [x,y] at the token center",
+    "answer_hint_winning_roll_value": "set \"answer\" to the integer die roll equal to the remaining spaces",
+    "annotation_hint_capture_roll_option_label": "set \"annotation\" to an object with keys \"mover_token\" and \"target_token\", each mapped to a point as [x,y] in pixels",
+    "answer_hint_capture_roll_option_label": "set \"answer\" to the selected shown option letter",
+    "annotation_hint_move_result_option_label": "set \"annotation\" to an object with keys \"moving_token\" and \"destination_cell\", each mapped to a point as [x,y] in pixels",
+    "answer_hint_move_result_option_label": "set \"answer\" to the selected shown destination label"
+  }
+}

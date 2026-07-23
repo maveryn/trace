@@ -1,0 +1,98 @@
+{
+  "bundle_id": "illustrations_construction_site_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "construction_site_scene": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}.",
+        "The canvas contains {object_description}.",
+        "This illustration shows {object_description}."
+      ]
+    },
+    "task": {
+      "construction_site_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "question_text": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:construction_site_scene": [
+      "object_description"
+    ],
+    "task:construction_site_query": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "json_output_contract": "Return a JSON object with \"answer\" and \"annotation\".",
+    "json_output_contract_answer_only": "Return a JSON object with \"answer\" only.",
+    "object_description": "a construction site with {worker_count} workers, labeled work zones, materials, and equipment",
+    "object_description_missing_patch": "a construction-site source panel with one missing region and lettered patch options",
+    "object_description_rotated_tile": "a construction-site image divided into lettered tiles",
+    "question_text_hard_hat_color_worker_count": "How many workers are wearing {color_label} hard hats? If none are there, answer 0.",
+    "question_text_vest_color_worker_count": "How many workers are wearing {color_label} safety vests? If none are there, answer 0.",
+    "question_text_vehicle_in_zone_count": "How many construction vehicles are in the {zone_name}? If none are there, answer 0.",
+    "question_text_plain_patch_label": "Which option exactly fills the missing region?",
+    "question_text_irregular_cutout_patch_label": "Which option matches the missing region?",
+    "question_text_rotated_tile_label": "One of the lettered tiles is rotated relative to the rest of the construction-site image. Which tile is it?",
+    "answer_hint_worker_safety_gear": "set \"answer\" to the count of {match_phrase} as an integer, using 0 if none match",
+    "annotation_hint_worker_safety_gear": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted worker; use [] if none match",
+    "json_example_worker_safety_gear": "{\"annotation\":[[584,386,640,492],[676,460,732,566]],\"answer\":2}",
+    "json_example_answer_only_worker_safety_gear": "{\"answer\":0}",
+    "answer_hint_equipment_in_zone": "set \"answer\" to the count of construction vehicles in the {zone_name} as an integer, using 0 if none match",
+    "annotation_hint_equipment_in_zone": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around each counted construction vehicle in the {zone_name}; use [] if none match",
+    "json_example_equipment_in_zone": "{\"annotation\":[[326,432,458,540],[474,449,614,557]],\"answer\":2}",
+    "json_example_answer_only_equipment_in_zone": "{\"answer\":0}",
+    "answer_hint_missing_patch": "set \"answer\" to the selected option letter as a string",
+    "annotation_hint_missing_patch": "set \"annotation\" to a JSON object with keys \"missing_region\" and \"selected_option\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+    "json_example_missing_patch": "{\"annotation\":{\"missing_region\":[214,128,374,252],\"selected_option\":[562,676,722,800]},\"answer\":\"C\"}",
+    "json_example_answer_only_missing_patch": "{\"answer\":\"C\"}",
+    "answer_hint_rotated_tile": "set \"answer\" to the letter of the rotated tile",
+    "annotation_hint_rotated_tile": "set \"annotation\" to one [x0, y0, x1, y1] box around the rotated tile in image pixel coordinates",
+    "json_example_rotated_tile": "{\"annotation\":[350,42,670,362],\"answer\":\"B\"}",
+    "json_example_answer_only_rotated_tile": "{\"answer\":\"B\"}"
+  }
+}
