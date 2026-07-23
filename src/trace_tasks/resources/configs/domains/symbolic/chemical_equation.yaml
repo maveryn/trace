@@ -1,0 +1,79 @@
+generation:
+  shared:
+    scene_variant_weights:
+      clean_lab: 1.0
+      worksheet: 1.0
+      notebook_scan: 1.0
+    balanced_scene_variant_sampling: true
+    coefficient_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  task_overrides:
+    task_symbolic__chemical_equation__balanced_option_label:
+      option_label_support:
+      - A
+      - B
+      - C
+      - D
+
+rendering:
+  shared:
+    canvas_width: 1240
+    canvas_height: 820
+    panel_left_px: 68
+    panel_top_px: 72
+    panel_width_px: 1104
+    panel_height_px: 676
+    coefficient_box_width_px: 48
+    coefficient_box_height_px: 56
+    molecule_card_width_px: 160
+    molecule_card_height_px: 214
+    term_gap_px: 8
+    operator_gap_px: 48
+    card_corner_radius_px: 12
+    card_border_width_px: 2
+    coefficient_font_size_px: 28
+    atom_font_size_px: 15
+    option_label_font_size_px: 26
+    option_text_font_size_px: 27
+    operator_font_size_px: 30
+    atom_chip_diameter_px: 33
+
+prompt:
+  shared:
+    bundle_id: symbolic_chemical_equation_v1
+    scene_key: chemical_equation
+  task_overrides:
+    task_symbolic__chemical_equation__missing_coefficient_value:
+      task_key: missing_coefficient_value
+    task_symbolic__chemical_equation__balanced_option_label:
+      task_key: balanced_option_label
+
+visual:
+  background:
+    enabled: true
+  noise:
+    apply_prob: 0.12
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.04
+        - 0.16
+      downsample:
+        scale:
+        - 0.97
+        - 0.99
+      jpeg:
+        quality:
+        - 90.0
+        - 97.0
+      noise:
+        alpha:
+        - 0.003
+        - 0.012

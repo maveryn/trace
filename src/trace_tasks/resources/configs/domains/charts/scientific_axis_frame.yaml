@@ -1,0 +1,63 @@
+generation:
+  shared:
+    axis_frame_tick_count_min: 4
+    axis_frame_tick_count_max: 8
+    axis_frame_tick_step_min: 2
+    axis_frame_tick_step_max: 12
+    axis_frame_start_min: -24
+    axis_frame_start_max: 24
+rendering:
+  shared:
+    axis_frame_canvas_width: 1120
+    axis_frame_canvas_height: 760
+    axis_frame_margin_left_px: 108
+    axis_frame_margin_right_px: 68
+    axis_frame_margin_top_px: 90
+    axis_frame_margin_bottom_px: 112
+    axis_frame_axis_label_font_size_px: 17
+    axis_frame_tick_font_size_px: 16
+    axis_frame_axis_line_width_px_min: 1
+    axis_frame_axis_line_width_px_max: 2
+    axis_frame_grid_line_width_px_min: 1
+    axis_frame_grid_line_width_px_max: 2
+    axis_frame_line_width_px_min: 2
+    axis_frame_line_width_px_max: 4
+    axis_frame_point_radius_px_min: 3
+    axis_frame_point_radius_px_max: 5
+    chart_context_profile: report_paragraph
+    chart_context_mode_weights:
+      clean: 0.3
+      minimal: 0.4
+      paragraph_box: 0.3
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -14
+    layout_jitter_x_px_max: 14
+    layout_jitter_y_px_min: -10
+    layout_jitter_y_px_max: 10
+    layout_jitter_min_margin_px: 26
+prompt:
+  shared:
+    bundle_id: charts_scientific_axis_frame_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.014

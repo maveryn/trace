@@ -1,0 +1,112 @@
+{
+  "bundle_id": "geometry_survey_traverse_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "bearing_angle_value_query": [
+      "What is the marked bearing in degrees clockwise from north?",
+      "Find the bearing marked ?.",
+      "What is the missing bearing angle?",
+      "Give the marked bearing as degrees clockwise from north.",
+      "What bearing value belongs at the ? mark?"
+    ],
+    "station_elevation_value_query": [
+      "What elevation is marked ?",
+      "Find the missing station elevation.",
+      "What is the target station elevation?",
+      "What elevation value belongs at the ? mark?",
+      "Compute the marked station elevation."
+    ],
+    "traverse_area_value_query": [
+      "What area is marked ?",
+      "Find the survey traverse area.",
+      "What is the enclosed area?",
+      "What area value belongs at the ? mark?",
+      "Compute the marked traverse area."
+    ]
+  },
+  "query_templates": {
+    "bearing_from_back_bearing": [
+      "Use the shown back bearing between the two stations.",
+      "The field note gives the reverse bearing; find the forward bearing.",
+      "Use the bearing in the opposite direction to determine the marked bearing.",
+      "The marked bearing is the opposite-direction bearing for the same station line.",
+      "Read the reverse station-line bearing and compute the requested bearing."
+    ],
+    "closed_traverse_missing_bearing": [
+      "Use the shown incoming bearing and turn angle at the station.",
+      "The marked bearing follows from the visible traverse turn.",
+      "Use the station turn note to compute the outgoing bearing.",
+      "Find the outgoing bearing after the shown turn at the middle station.",
+      "Use the traverse note and north reference to determine the missing bearing."
+    ],
+    "leveling_station_elevation": [
+      "Use the benchmark, backsight, and foresight readings.",
+      "Apply the leveling field note.",
+      "Use the reference elevation and staff readings.",
+      "Compute height of instrument, then target elevation.",
+      "Use the level line and field note."
+    ],
+    "slope_distance_elevation_change": [
+      "Use the start elevation, distance, and rise or fall rate.",
+      "Apply the slope field note.",
+      "Use the station-line distance and change per 20 units.",
+      "Compute total elevation change, then target elevation.",
+      "Use the station profile and field note."
+    ],
+    "coordinate_traverse_area": [
+      "Use the coordinate field note and plotted polygon.",
+      "Compute the coordinate traverse area.",
+      "Apply polygon area to the station coordinates.",
+      "Use the coordinate table and traverse sketch.",
+      "Find the station polygon area."
+    ],
+    "offset_trapezoid_area": [
+      "Use the chainage and offset field note with the offset sketch.",
+      "Compute the offset traverse area by summing adjacent trapezoids.",
+      "Use the baseline chainages and perpendicular offsets to find the area.",
+      "Apply the trapezoidal area calculation to the offset field note.",
+      "Find the area between the baseline and the shown offset line."
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:survey_traverse_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "survey_traverse_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "This technical diagram shows {object_description}.",
+      "The image shows {object_description}.",
+      "The survey sketch shows {object_description}."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+generation:
+  shared:
+    answer_min: 1
+    answer_max: 24
+    digit_answer_min: 0
+    digit_answer_max: 9
+    wall_answer_min: 2
+    wall_answer_max: 24
+    visible_value_min: 1
+    visible_value_max: 18
+    balanced_answer_sampling: true
+    balanced_digit_answer_sampling: true
+    balanced_wall_answer_sampling: true
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      constraint_sheet: 1.0
+      constraint_card: 1.0
+      constraint_outline: 1.0
+rendering:
+  shared:
+    canvas_width: 720
+    canvas_height: 500
+    panel_padding_px: 22
+    panel_corner_radius_px: 22
+    panel_border_width_px: 3
+    node_radius_px: 34
+    cell_width_px: 76
+    cell_height_px: 64
+    line_width_px: 4
+    value_font_size_px: 30
+    note_font_size_px: 22
+    symbol_font_size_px: 27
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+  task_overrides:
+    task_puzzles__arithmetic_panel__vertical_arithmetic_hidden_digit_value:
+      canvas_width: 560
+      canvas_height: 380
+prompt:
+  shared:
+    bundle_id: puzzles_arithmetic_panel_v1
+    scene_key: arithmetic_panel
+    task_key: arithmetic_value_query
+visual:
+  noise:
+    apply_prob: 0.12

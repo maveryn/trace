@@ -1,0 +1,26 @@
+generation:
+  task_overrides:
+    task_geometry__bearing_route__final_bearing_value: {}
+    task_geometry__bearing_route__endpoint_position_label:
+      option_count_weights:
+        '4': 1.0
+        '6': 1.0
+rendering:
+  task_overrides:
+    task_geometry__bearing_route__final_bearing_value:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 23
+      small_label_font_size: 18
+      tiny_label_font_size: 14
+    task_geometry__bearing_route__endpoint_position_label:
+      canvas_width: 820
+      canvas_height: 580
+      label_font_size: 23
+      small_label_font_size: 18
+      tiny_label_font_size: 14
+prompt:
+  shared:
+    bundle_id: geometry_bearing_route_v1
+    scene_key: bearing_route_scene
+    task_key: bearing_route_query

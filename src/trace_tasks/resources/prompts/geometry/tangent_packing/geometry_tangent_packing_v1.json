@@ -1,0 +1,143 @@
+{
+  "bundle_id": "geometry_tangent_packing_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "tangent_packing_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "circle_in_square_gap_area_query": [
+        "What is the shaded area?",
+        "Find the shaded area.",
+        "Determine the area of the shaded region.",
+        "What is the area of the shaded region?",
+        "Find the shaded region's area."
+      ],
+      "circle_in_square_radius_from_gap_area_query": [
+        "What is the radius of the circle?",
+        "Find the circle radius.",
+        "Determine the radius of the circle.",
+        "What is r?",
+        "Find r."
+      ],
+      "square_in_circle_gap_area_query": [
+        "What is the shaded area?",
+        "Find the shaded area.",
+        "Determine the area of the shaded region.",
+        "What is the area of the shaded region?",
+        "Find the shaded region's area."
+      ],
+      "square_in_circle_side_from_gap_area_query": [
+        "What is the side length of the inscribed square?",
+        "Find the side length of the square.",
+        "Determine the inscribed square's side length.",
+        "What is the square side length?",
+        "Find the length of one side of the square."
+      ],
+      "two_circles_in_rectangle_gap_area_query": [
+        "What is the shaded area?",
+        "Find the shaded area.",
+        "Determine the area of the shaded region.",
+        "What is the area of the shaded region?",
+        "Find the shaded region's area."
+      ],
+      "two_circles_in_rectangle_radius_from_gap_area_query": [
+        "What is the radius of each circle?",
+        "Find the radius of one circle.",
+        "Determine the radius of the equal circles.",
+        "What is r?",
+        "Find r for each circle."
+      ]
+    },
+    "query": {
+      "single": [
+        "Use the visible measurements in the diagram.",
+        "Use the labels shown on the diagram.",
+        "Use the marked value and measurements in the figure.",
+        "Use the given diagram labels.",
+        "Use the visible geometric measurements."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_instruction}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_instruction}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "task:circle_in_square_gap_area_query": {
+      "answer_hint": "set \"answer\" to the shaded area as a number rounded to one decimal place"
+    },
+    "task:circle_in_square_radius_from_gap_area_query": {
+      "answer_hint": "set \"answer\" to the circle radius as a number rounded to one decimal place"
+    },
+    "task:square_in_circle_gap_area_query": {
+      "answer_hint": "set \"answer\" to the shaded area as a number rounded to one decimal place"
+    },
+    "task:square_in_circle_side_from_gap_area_query": {
+      "answer_hint": "set \"answer\" to the square side length as a number rounded to one decimal place"
+    },
+    "task:two_circles_in_rectangle_gap_area_query": {
+      "answer_hint": "set \"answer\" to the shaded area as a number rounded to one decimal place"
+    },
+    "task:two_circles_in_rectangle_radius_from_gap_area_query": {
+      "answer_hint": "set \"answer\" to the circle radius as a number rounded to one decimal place"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "annotation_instruction": {
+      "type": "string"
+    },
+    "annotation_key_list": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tangent_packing_scene": [
+      "object_description"
+    ],
+    "query:single": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_instruction",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

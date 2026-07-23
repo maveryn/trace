@@ -1,0 +1,81 @@
+generation:
+  shared:
+    pool_manifest: all_icons.txt
+  task_overrides:
+    task_icons__icon_grid__distinct_type_count:
+      object_count_min: 6
+      object_count_max: 12
+      target_count_min: 1
+      target_count_max: 5
+    task_icons__icon_grid__distinct_color_count:
+      object_count_min: 6
+      object_count_max: 12
+      target_count_min: 1
+      target_count_max: 5
+rendering:
+  shared:
+    canvas_width: 860
+    canvas_height: 660
+    outer_margin_px: 24
+    panel_padding_px: 22
+    panel_corner_radius_px: 18
+    panel_title_font_size_px: 24
+    scene_icon_size_min_px: 56
+    scene_icon_size_max_px: 86
+    grid_cell_max_size_px: 112
+    grid_cell_padding_px: 10
+    grid_line_width_px: 2
+    grid_border_width_px: 3
+    grid_line_rgb:
+    - 170
+    - 182
+    - 202
+    cell_fill_rgb:
+    - 255
+    - 255
+    - 255
+    alternate_cell_fill_rgb:
+    - 248
+    - 250
+    - 253
+    rotation_candidates_degrees:
+    - 0
+    - 90
+    - 180
+    - 270
+    palette_size_min: 8
+    palette_size_max: 12
+    color_channel_min: 24
+    color_channel_max: 220
+    min_color_distance: 40.0
+    color_distance_space: lab
+    icon_noise_edit_types:
+    - blur
+    - downsample
+    - jpeg
+    - noise
+    icon_noise_edit_count_range:
+    - 0
+    - 2
+    icon_noise_value_ranges:
+      blur:
+        radius:
+        - 0.2
+        - 0.6
+      downsample:
+        scale:
+        - 0.85
+        - 0.95
+      jpeg:
+        quality:
+        - 70
+        - 90
+      noise:
+        alpha:
+        - 0.03
+        - 0.08
+prompt:
+  shared:
+    bundle_id: icons_icon_grid_v1
+    scene_key: visible_icon_grid
+    task_key: category_count_query

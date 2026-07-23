@@ -1,0 +1,114 @@
+generation:
+  shared:
+    balanced_sampling: true
+    color_name_support:
+      - yellow
+      - orange
+      - red
+      - blue
+      - green
+      - purple
+    tool_type_support:
+      - hammer
+      - shovel
+      - wrench
+    material_type_support:
+      - brick_stack
+      - pipe_bundle
+      - lumber_stack
+      - cement_bag_stack
+    equipment_type_support:
+      - excavator
+      - dump_truck
+      - cement_mixer
+      - forklift
+    zone_support:
+      - excavation_zone
+      - loading_zone
+      - roadwork_zone
+  task_overrides:
+    task_illustrations__construction_site__worker_attribute_count:
+      worker_count_min: 9
+      worker_count_max: 15
+      target_count_min: 0
+      target_count_max: 5
+      material_count_min: 5
+      material_count_max: 8
+      equipment_count_min: 3
+      equipment_count_max: 5
+      query_id_support:
+        - hard_hat_color_worker_count
+        - vest_color_worker_count
+    task_illustrations__construction_site__equipment_zone_count:
+      equipment_count_min: 5
+      equipment_count_max: 9
+      target_count_min: 0
+      target_count_max: 4
+      worker_count_min: 3
+      worker_count_max: 6
+      material_count_min: 5
+      material_count_max: 8
+      query_id_support:
+        - vehicle_in_zone_count
+    task_illustrations__construction_site__missing_patch_label:
+      source_worker_count_min: 10
+      source_worker_count_max: 16
+      source_material_count_min: 6
+      source_material_count_max: 10
+      source_equipment_count_min: 4
+      source_equipment_count_max: 7
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 36
+    task_illustrations__construction_site__rotated_tile_label:
+      source_worker_count_min: 10
+      source_worker_count_max: 16
+      source_material_count_min: 6
+      source_material_count_max: 10
+      source_equipment_count_min: 4
+      source_equipment_count_max: 7
+      rotation_degrees_support:
+        - 90
+        - 270
+      min_tile_detail_score: 160
+      min_rotation_delta: 7
+
+rendering:
+  shared:
+    construction_canvas_width: 1280
+    construction_canvas_height: 900
+    construction_render_scale: 2
+    construction_setting_weights:
+      urban_build: 1.0
+      roadwork: 1.0
+      foundation_yard: 1.0
+      scaffold_site: 1.0
+    style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+    art_style_support:
+      - flat_vector
+      - outlined_cartoon
+      - paper_cutout
+      - soft_shadow
+      - watercolor_wash
+    art_style_weights:
+      flat_vector: 1.0
+      outlined_cartoon: 1.0
+      paper_cutout: 1.0
+      soft_shadow: 1.0
+      watercolor_wash: 1.0
+
+prompt:
+  shared:
+    bundle_id: illustrations_construction_site_v1
+    scene_key: construction_site_scene
+    task_key: construction_site_query

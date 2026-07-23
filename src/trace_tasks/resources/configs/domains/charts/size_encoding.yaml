@@ -1,0 +1,86 @@
+generation:
+  shared:
+    item_count_min: 16
+    item_count_max: 24
+    total_item_count_min: 16
+    total_item_count_max: 24
+    panel_count_min: 2
+    panel_count_max: 4
+    panel_item_count_min: 5
+    panel_item_count_max: 7
+    category_count_min: 3
+    category_count_max: 5
+    value_min: 12
+    value_max: 99
+    winner_gap_min: 16
+    filtered_item_winner_gap_min: 24
+    filtered_item_winner_gap_max: 36
+    filtered_item_outside_extreme_min: 2
+    global_item_winner_gap_min: 24
+    global_item_winner_gap_max: 36
+    panel_category_item_winner_gap_min: 24
+    panel_category_item_winner_gap_max: 36
+    relative_size_reference_gap_min: 20
+    relative_size_answer_count_min: 1
+    relative_size_answer_count_max: 5
+    panel_label_variant_weights:
+      named_compact: 1.0
+      technical_topics: 1.0
+      condition_labels: 0.75
+      temporal_sequence: 0.5
+      report_topics: 0.5
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      rect_word_cloud: 1.0
+      circle_word_cloud: 1.0
+      packed_bubble_cloud: 1.0
+      small_multiple_bubble_cloud: 1.0
+rendering:
+  shared:
+    canvas_width: 1320
+    canvas_height: 900
+    chart_context_profile: report_paragraph
+    chart_context_mode_weights:
+      clean: 0.3
+      minimal: 0.4
+      paragraph_box: 0.3
+    outer_margin_px: 44
+    title_band_height_px: 74
+    legend_height_px: 58
+    panel_gap_px: 28
+    panel_padding_px: 18
+    panel_border_width_px: 2
+    panel_corner_radius_px: 10
+    title_font_size_px: 28
+    subtitle_font_size_px: 18
+    legend_font_size_px: 20
+    panel_title_font_size_px: 22
+    min_word_font_size_px: 22
+    max_word_font_size_px: 64
+    bubble_label_font_size_px: 24
+    bubble_label_min_font_size_px: 11
+    item_stroke_width_px: 2
+    word_text_stroke_width_px: 1
+    bubble_label_stroke_width_px: 2
+    category_palette_rgb:
+    - - 34
+      - 92
+      - 170
+    - - 180
+      - 73
+      - 38
+    - - 38
+      - 126
+      - 70
+    - - 125
+      - 73
+      - 165
+    - - 176
+      - 126
+      - 18
+    - - 31
+      - 132
+      - 145
+prompt:
+  shared:
+    bundle_id: charts_size_encoding_v1

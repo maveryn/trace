@@ -1,0 +1,96 @@
+{
+  "bundle_id": "charts_annotated_series_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "annotated_series_line": [
+        "The image shows a labeled line chart with one visible annotation.",
+        "The figure shows a labeled line chart with one visible annotation.",
+        "The visual shows a labeled line chart with one visible annotation.",
+        "The image contains a labeled line chart with one visible annotation.",
+        "The chart is a labeled line chart with one visible annotation."
+      ],
+      "annotated_series_bar": [
+        "The image shows a labeled bar chart with one visible annotation.",
+        "The figure shows a labeled bar chart with one visible annotation.",
+        "The visual shows a labeled bar chart with one visible annotation.",
+        "The image contains a labeled bar chart with one visible annotation.",
+        "The chart is a labeled bar chart with one visible annotation."
+      ],
+      "annotated_series_area": [
+        "The image shows a labeled area chart with one visible annotation.",
+        "The figure shows a labeled area chart with one visible annotation.",
+        "The visual shows a labeled area chart with one visible annotation.",
+        "The image contains a labeled area chart with one visible annotation.",
+        "The chart is a labeled area chart with one visible annotation."
+      ],
+      "annotated_series_dot_plot": [
+        "The image shows a labeled dot plot with one visible annotation.",
+        "The figure shows a labeled dot plot with one visible annotation.",
+        "The visual shows a labeled dot plot with one visible annotation.",
+        "The image contains a labeled dot plot with one visible annotation.",
+        "The chart is a labeled dot plot with one visible annotation."
+      ],
+      "annotated_series_lollipop": [
+        "The image shows a labeled lollipop chart with one visible annotation.",
+        "The figure shows a labeled lollipop chart with one visible annotation.",
+        "The visual shows a labeled lollipop chart with one visible annotation.",
+        "The image contains a labeled lollipop chart with one visible annotation.",
+        "The chart is a labeled lollipop chart with one visible annotation."
+      ]
+    },
+    "task": {
+      "annotated_series_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "callout_endpoint_change_value": [
+        "The callout points to one mark. What is the absolute change between that mark and {endpoint_label}?",
+        "Use the mark indicated by the callout and the mark labeled {endpoint_label}. What is their absolute value difference?",
+        "Read the value at the callout mark and at {endpoint_label}; what is the absolute change?",
+        "Compare the callout mark with {endpoint_label}. What is the nonnegative difference between their values?",
+        "Using the callout-selected mark and endpoint label {endpoint_label}, compute the absolute change in value."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:callout_endpoint_change_value": {
+      "answer_hint": "set \"answer\" to the requested absolute change as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping \"callout_mark\" and \"endpoint_mark\" to [x, y] pixel points at the centers of those two marks",
+      "json_example": "{\"annotation\":{\"callout_mark\":[412,220],\"endpoint_mark\":[656,344]},\"answer\":24}",
+      "json_example_answer_only": "{\"answer\":24}"
+    }
+  },
+  "dynamic_slots": {
+    "endpoint_label": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:callout_endpoint_change_value": [
+      "endpoint_label"
+    ]
+  }
+}

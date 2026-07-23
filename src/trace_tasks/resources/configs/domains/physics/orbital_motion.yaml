@@ -1,0 +1,18 @@
+generation:
+  task_overrides:
+    task_physics__orbital_motion__focus_location_label: {}
+    task_physics__orbital_motion__orbital_speed_extremum_label: {}
+
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 720
+
+prompt:
+  shared:
+    bundle_id: physics_orbital_motion_v1
+  task_overrides:
+    task_physics__orbital_motion__focus_location_label:
+      task_key: orbital_motion_focus_location_label_query
+    task_physics__orbital_motion__orbital_speed_extremum_label:
+      task_key: orbital_motion_speed_extremum_label_query

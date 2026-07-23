@@ -1,0 +1,23 @@
+{
+  "bundle_id": "dummy_weights_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "default_task": [
+      "Dummy weighted query template 1.",
+      "Dummy weighted query template 2.",
+      "Dummy weighted query template 3.",
+      "Dummy weighted query template 4.",
+      "Dummy weighted query template 5."
+    ]
+  },
+  "required_slots_by_key": {},
+  "scene_templates": {
+    "weighted_task": [
+      "Dummy weighted task prompt variant 1.",
+      "Dummy weighted task prompt variant 2.",
+      "Dummy weighted task prompt variant 3.",
+      "Dummy weighted task prompt variant 4.",
+      "Dummy weighted task prompt variant 5."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+rendering:
+  shared:
+    graph_cells_min: 6
+    graph_cells_max: 20
+    line_width: 4
+    line_width_min: 2
+    line_width_max: 5
+    label_offset_px: 14
+    label_font_size_min: 14
+    label_font_size_max: 32
+    label_stroke_width: 1
+    label_stroke_width_min: 1
+    label_stroke_width_max: 1
+    canvas_width: 760
+    canvas_height: 560
+    label_font_size: 22
+    small_label_font_size: 18
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+prompt:
+  shared:
+    bundle_id: geometry_area_partition_v1
+    scene_key: area_partition_scene
+    task_key: area_partition_value_query

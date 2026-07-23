@@ -1,0 +1,160 @@
+{
+  "bundle_id": "games_rhythm_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_rhythm_lanes": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "rhythm_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "lane_note_count": [
+        "In lane {selected_lane_label}, how many note objects are there?",
+        "Look only at lane {selected_lane_label}. {note_object_rule_text} Count the visible note objects.",
+        "For lane {selected_lane_label}, report the number of note objects.",
+        "{note_object_rule_text} How many note objects are in lane {selected_lane_label}?",
+        "Count all visible note objects in lane {selected_lane_label}."
+      ],
+      "lane_note_score_value": [
+        "Only lane {selected_lane_label} matters. For each note object in that lane, add the number shown for its color in the side POINTS palette. A tall note counts once. What is the total score?",
+        "Look only at lane {selected_lane_label}. Each note object scores the number printed for its color in the side POINTS palette. A tall note counts once. What is the total score?",
+        "Use the side POINTS palette. Add the color value for each note object in lane {selected_lane_label}; a tall note still counts once. What total do you get?",
+        "Only consider lane {selected_lane_label}. For each visible note object in that lane, use the side POINTS palette value for the note's color. A tall note counts once. What is the sum?",
+        "What is the total score for lane {selected_lane_label}? Add the side POINTS palette value for each note object in that lane. A tall note counts once."
+      ],
+      "most_notes_lane_label": [
+        "Which lane number has the most note objects?",
+        "Across all lanes, count visible note objects. Which lane number has the largest count?",
+        "{note_object_rule_text} Report the lane number with the most note objects.",
+        "Which lane contains the highest number of visible note objects?",
+        "Identify the lane number with the most note objects."
+      ],
+      "earliest_hit_lane_label": [
+        "{rhythm_motion_rule_text} Which lane number has the note that reaches the hit line earliest within {beat_window} beats?",
+        "Across all lanes, find the note closest to the hit line within {beat_window} beats. What lane number is it in?",
+        "{rhythm_motion_rule_text} Report the lane number of the first note to arrive at the hit line.",
+        "Which lane contains the note whose bottom edge is closest to the hit line, considering only the next {beat_window} beats?",
+        "{rhythm_motion_rule_text} Identify the lane number with the earliest arriving note."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_rhythm_lanes": [
+      "object_description"
+    ],
+    "query:lane_note_count": [
+      "note_object_rule_text",
+      "selected_lane_label"
+    ],
+    "query:lane_note_score_value": [
+      "score_palette_rule_text",
+      "selected_lane_label"
+    ],
+    "query:most_notes_lane_label": [
+      "note_object_rule_text"
+    ],
+    "query:earliest_hit_lane_label": [
+      "rhythm_motion_rule_text",
+      "beat_window"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "beat_window": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "note_object_rule_text": {
+      "type": "string"
+    },
+    "rhythm_motion_rule_text": {
+      "type": "string"
+    },
+    "score_palette_rule_text": {
+      "type": "string"
+    },
+    "score_values_by_color": {
+      "type": "string"
+    },
+    "selected_lane_label": {
+      "type": "label"
+    },
+    "target_color": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_falling_notes": "a rhythm-game lane grid with colored falling notes, lane numbers, and a bottom hit line",
+    "rhythm_motion_rule_text": "Notes fall one row per beat. The bottom line is the hit line. A long vertical note counts as one note.",
+    "note_object_rule_text": "A long vertical note counts as one note object.",
+    "score_palette_rule_text": "Use the side POINTS palette: each note scores the number shown for its color, and a tall note counts once.",
+    "annotation_hint_lane_note_count": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around all note objects in the specified lane",
+    "answer_hint_lane_note_count": "set \"answer\" to the integer count",
+    "annotation_hint_lane_note_score_value": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around every note object in the specified lane that is included in the score",
+    "answer_hint_lane_note_score_value": "set \"answer\" to the total integer score",
+    "annotation_hint_most_notes_lane_label": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around all note objects in the lane with the most note objects",
+    "answer_hint_most_notes_lane_label": "set \"answer\" to the winning lane number as an integer",
+    "annotation_hint_earliest_hit_lane_label": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the note that reaches the hit line earliest",
+    "answer_hint_earliest_hit_lane_label": "set \"answer\" to the winning lane number as an integer"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "bundle_id": "illustrations_isometric_farmstead_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "terrain_elevation_extremum_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "terrain_level_object_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "farmer_same_level_tile_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "highest_terrain_tile_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:isometric_farmstead_elevation_canvas": [],
+    "scene:isometric_farmstead_object_count_canvas": [],
+    "scene:isometric_farmstead_farmer_reference_canvas": [],
+    "scene:isometric_farmstead_tile_count_canvas": [],
+    "query:highest_terrain_tile": [],
+    "query:lowest_terrain_tile": [],
+    "query:highest_terrain_object_count": [
+      "object_label"
+    ],
+    "query:lowest_terrain_object_count": [
+      "object_label"
+    ],
+    "query:farmer_same_level_tile": [],
+    "query:highest_terrain_tile_count": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "isometric_farmstead_elevation_canvas": [
+      "The image shows an isometric farmstead made of raised terrain tiles with visible side faces, farm animals or trees, and several lettered ground tiles.",
+      "The scene shows a pixel-art isometric farm with varied terrain levels, connected farm patches, farm animals or trees, and lettered ground tiles.",
+      "The picture shows an isometric farmstead where terrain tiles sit at different elevations and some ground tiles are labeled with letters.",
+      "The canvas contains an isometric farm scene with multiple terrain heights, farm context objects, and lettered candidate ground tiles.",
+      "This illustration shows a farmstead drawn on isometric tiles, with raised ground levels, connected farm areas, and lettered terrain tiles."
+    ],
+    "isometric_farmstead_object_count_canvas": [
+      "The image shows an isometric farmstead made of raised terrain tiles with visible side faces, farm animals, and trees.",
+      "The scene shows a pixel-art isometric farm with varied terrain levels, connected farm patches, farm animals, and trees.",
+      "The picture shows an isometric farmstead where terrain tiles sit at different elevations with farm animals and trees placed on the ground.",
+      "The canvas contains an isometric farm scene with multiple terrain heights, connected farm areas, farm animals, and trees.",
+      "This illustration shows a farmstead drawn on isometric tiles, with raised ground levels and farm context objects."
+    ],
+    "isometric_farmstead_farmer_reference_canvas": [
+      "The image shows an isometric farmstead made of raised terrain tiles, one unlettered farmer, and several lettered ground tiles.",
+      "The scene shows a pixel-art isometric farm with varied terrain levels, an unlettered farmer reference, and lettered candidate ground tiles.",
+      "The picture shows an isometric farmstead where terrain tiles sit at different elevations and one farmer stands on a ground tile.",
+      "The canvas contains an isometric farm scene with multiple terrain heights, a farmer reference object, and lettered terrain tiles.",
+      "This illustration shows a farmstead drawn on isometric tiles, with a farmer and lettered candidate ground tiles."
+    ],
+    "isometric_farmstead_tile_count_canvas": [
+      "The image shows an isometric farmstead made of visible terrain tiles at different elevation levels.",
+      "The scene shows a pixel-art isometric farm with a clean highest terrace and lower surrounding terrain.",
+      "The picture shows an isometric farmstead where terrain tiles form raised layers with visible tile borders.",
+      "The canvas contains an isometric farm scene with multiple terrain heights and a clearly visible highest layer.",
+      "This illustration shows a farmstead drawn on isometric tiles, including one highest elevated top layer."
+    ]
+  },
+  "query_templates": {
+    "highest_terrain_tile": [
+      "Which lettered ground tile is on the highest terrain level?",
+      "Choose the letter of the terrain tile that sits highest above the lower farm ground.",
+      "Among the lettered ground tiles, which one is at the highest elevation?",
+      "Which candidate letter marks the highest terrain tile?",
+      "Select the lettered farm tile with the greatest ground elevation."
+    ],
+    "lowest_terrain_tile": [
+      "Which lettered ground tile is on the lowest terrain level?",
+      "Choose the letter of the terrain tile that sits lowest in the farm scene.",
+      "Among the lettered ground tiles, which one is at the lowest elevation?",
+      "Which candidate letter marks the lowest terrain tile?",
+      "Select the lettered farm tile with the smallest ground elevation."
+    ],
+    "highest_terrain_object_count": [
+      "How many {object_label} are on the highest terrain level?",
+      "Count the {object_label} placed on the highest terrace.",
+      "What is the number of {object_label} on the highest ground level?",
+      "How many {object_label} sit on the highest elevated terrain?",
+      "Count only the {object_label} whose base is on the highest terrain level."
+    ],
+    "lowest_terrain_object_count": [
+      "How many {object_label} are on the lowest terrain level?",
+      "Count the {object_label} placed on the lowest farm ground.",
+      "What is the number of {object_label} on the lowest ground level?",
+      "How many {object_label} sit on the lowest terrain?",
+      "Count only the {object_label} whose base is on the lowest terrain level."
+    ],
+    "farmer_same_level_tile": [
+      "Which lettered ground tile is at the same terrain level as the farmer?",
+      "Choose the letter of the ground tile that sits at the farmer's elevation level.",
+      "Which candidate terrain tile is on the same raised level as the farmer?",
+      "Among the lettered ground tiles, which one matches the farmer's terrain elevation?",
+      "Select the lettered farm tile whose ground level matches the farmer's tile."
+    ],
+    "highest_terrain_tile_count": [
+      "How many visible terrain tiles are on the highest elevation layer?",
+      "Count the top-surface terrain tiles that make up the highest terrace.",
+      "What is the number of visible ground tiles on the highest raised layer?",
+      "How many tile tops belong to the highest terrain level?",
+      "Count only the visible top-surface tiles on the highest elevated farm layer."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

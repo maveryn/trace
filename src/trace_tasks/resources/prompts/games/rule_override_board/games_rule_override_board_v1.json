@@ -1,0 +1,145 @@
+{
+  "bundle_id": "games_rule_override_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "rule_override_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This visual shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The board display shows {object_description}."
+      ]
+    },
+    "task": {
+      "rule_override_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "line_override_win_count": [
+        "Rule: {rule_text} How many mini-boards are wins for {target_player}?",
+        "Using this rule: {rule_text} Count the mini-boards where {target_player} wins.",
+        "How many boards does {target_player} win? Rule: {rule_text}",
+        "For player {target_player}, count wins using the stated rule: {rule_text}",
+        "How many labeled boards are wins for {target_player}? Rule: {rule_text}"
+      ],
+      "line_override_loss_count": [
+        "Rule: {rule_text} How many mini-boards are losses for {target_player}?",
+        "Using this rule: {rule_text} Count the mini-boards where {target_player} loses.",
+        "How many boards does {target_player} lose? Rule: {rule_text}",
+        "For player {target_player}, count losses using the stated rule: {rule_text}",
+        "How many labeled boards are losses for {target_player}? Rule: {rule_text}"
+      ],
+      "piece_override_win_count": [
+        "Rule: {rule_text} How many mini-boards are wins for {target_player}?",
+        "Using this rule: {rule_text} Count the mini-boards where {target_player} wins.",
+        "How many boards does {target_player} win? Rule: {rule_text}",
+        "For player {target_player}, count wins using the stated rule: {rule_text}",
+        "How many labeled boards are wins for {target_player}? Rule: {rule_text}"
+      ],
+      "piece_override_loss_count": [
+        "Rule: {rule_text} How many mini-boards are losses for {target_player}?",
+        "Using this rule: {rule_text} Count the mini-boards where {target_player} loses.",
+        "How many boards does {target_player} lose? Rule: {rule_text}",
+        "For player {target_player}, count losses using the stated rule: {rule_text}",
+        "How many labeled boards are losses for {target_player}? Rule: {rule_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:rule_override_board": [
+      "object_description"
+    ],
+    "query:line_override_win_count": [
+      "target_player",
+      "rule_text"
+    ],
+    "query:line_override_loss_count": [
+      "target_player",
+      "rule_text"
+    ],
+    "query:piece_override_win_count": [
+      "target_player",
+      "rule_text"
+    ],
+    "query:piece_override_loss_count": [
+      "target_player",
+      "rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "rule_text": {
+      "type": "string"
+    },
+    "target_player": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_rule_override_board": "several small labeled game boards",
+    "line_rule_text": "For the target player, making a full row, column, or diagonal loses; otherwise that player wins.",
+    "piece_rule_text": "For the target player, having fewer pieces than the other player wins; having more pieces loses.",
+    "annotation_hint_line_override_win_count": "set \"annotation\" to bounding boxes [x0,y0,x1,y1] around every counted mini-board where the target player wins under the stated rule; use [] if none",
+    "answer_hint_line_override_win_count": "set \"answer\" to the integer number of target-player wins",
+    "annotation_hint_line_override_loss_count": "set \"annotation\" to bounding boxes [x0,y0,x1,y1] around every counted mini-board where the target player loses under the stated rule; use [] if none",
+    "answer_hint_line_override_loss_count": "set \"answer\" to the integer number of target-player losses",
+    "annotation_hint_piece_override_win_count": "set \"annotation\" to bounding boxes [x0,y0,x1,y1] around every counted mini-board where the target player wins under the stated rule; use [] if none",
+    "answer_hint_piece_override_win_count": "set \"answer\" to the integer number of target-player wins",
+    "annotation_hint_piece_override_loss_count": "set \"annotation\" to bounding boxes [x0,y0,x1,y1] around every counted mini-board where the target player loses under the stated rule; use [] if none",
+    "answer_hint_piece_override_loss_count": "set \"answer\" to the integer number of target-player losses"
+  }
+}

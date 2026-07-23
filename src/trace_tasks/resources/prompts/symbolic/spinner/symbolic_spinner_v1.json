@@ -1,0 +1,193 @@
+{
+  "bundle_id": "symbolic_spinner_v1",
+  "schema_version": "v1",
+  "required_slots_by_key": {
+    "scene:spinner": [
+      "object_description"
+    ],
+    "task:single_probability_query": [],
+    "task:pair_probability_query": [],
+    "query:single_color_probability": [
+      "event_description"
+    ],
+    "query:single_shape_probability": [
+      "event_description"
+    ],
+    "query:single_color_and_shape_probability": [
+      "event_description"
+    ],
+    "query:single_color_or_shape_probability": [
+      "event_description"
+    ],
+    "query:pair_both_target_color_probability": [
+      "event_description"
+    ],
+    "query:pair_at_least_one_target_color_probability": [
+      "event_description"
+    ],
+    "query:pair_same_color_probability": [
+      "event_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "templates": {
+    "scene": {
+      "spinner": [
+        "The probability panel shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The spinner diagram shows {object_description}.",
+        "The probability diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "single_probability_query": [
+        "Treat each sector as equally likely for one spin, compute the probability, then choose the matching visible A-F fraction option.",
+        "Use the equal sectors to compute the requested one-spin probability, then answer with the matching option letter.",
+        "Answer from the visible sector colors and shape markers by choosing the matching A-F fraction option.",
+        "Compute the requested probability from the shown equal-sector spinner and select the visible option with that fraction.",
+        "Use one random spin of the spinner for the probability question, then choose the matching visible A-F option."
+      ],
+      "pair_probability_query": [
+        "Treat one spin of Spinner A and one spin of Spinner B as independent, compute the probability, then choose the matching visible A-F fraction option.",
+        "Use the product space formed by one equal-likelihood sector from each spinner, then answer with the matching option letter.",
+        "Compute the requested probability from the two visible spinners and select the visible option with that fraction.",
+        "Answer using one independent spin of each shown spinner, then choose the matching visible A-F option.",
+        "Use Spinner A and Spinner B as the two independent sources for the event, and answer with the matching option letter."
+      ]
+    },
+    "query": {
+      "single_color_probability": [
+        "What is the probability that one spin lands on a sector that is {event_description}?",
+        "For one spin, what is the probability of landing on a sector that is {event_description}?",
+        "Find the probability that the pointer lands on a sector that is {event_description}.",
+        "What probability corresponds to landing on a sector that is {event_description}?",
+        "For a random spin, what is the probability that the selected sector is {event_description}?"
+      ],
+      "single_shape_probability": [
+        "What is the probability that one spin lands on a sector that is {event_description}?",
+        "For one spin, what is the probability of landing on a sector that is {event_description}?",
+        "Find the probability that the pointer lands on a sector that is {event_description}.",
+        "What probability corresponds to landing on a sector that is {event_description}?",
+        "For a random spin, what is the probability that the selected sector is {event_description}?"
+      ],
+      "single_color_and_shape_probability": [
+        "What is the probability that one spin lands on a sector that is {event_description}?",
+        "For one spin, what is the probability of landing on a sector that is {event_description}?",
+        "Find the probability that the pointer lands on a sector that is {event_description}.",
+        "What probability corresponds to landing on a sector that is {event_description}?",
+        "For a random spin, what is the probability that the selected sector is {event_description}?"
+      ],
+      "single_color_or_shape_probability": [
+        "What is the probability that one spin lands on a sector that is {event_description}?",
+        "For one spin, what is the probability of landing on a sector that is {event_description}?",
+        "Find the probability that the pointer lands on a sector that is {event_description}.",
+        "What probability corresponds to landing on a sector that is {event_description}?",
+        "For a random spin, what is the probability that the selected sector is {event_description}?"
+      ],
+      "pair_both_target_color_probability": [
+        "If each spinner is spun once, what is the probability that {event_description}?",
+        "For one spin of Spinner A and one spin of Spinner B, what is the probability that {event_description}?",
+        "Find the probability that {event_description} after spinning both spinners once.",
+        "What probability corresponds to the event that {event_description}?",
+        "With one independent spin on each spinner, what is the probability that {event_description}?"
+      ],
+      "pair_at_least_one_target_color_probability": [
+        "If each spinner is spun once, what is the probability that {event_description}?",
+        "For one spin of Spinner A and one spin of Spinner B, what is the probability that {event_description}?",
+        "Find the probability that {event_description} after spinning both spinners once.",
+        "What probability corresponds to the event that {event_description}?",
+        "With one independent spin on each spinner, what is the probability that {event_description}?"
+      ],
+      "pair_same_color_probability": [
+        "If each spinner is spun once, what is the probability that {event_description}?",
+        "For one spin of Spinner A and one spin of Spinner B, what is the probability that {event_description}?",
+        "Find the probability that {event_description} after spinning both spinners once.",
+        "What probability corresponds to the event that {event_description}?",
+        "With one independent spin on each spinner, what is the probability that {event_description}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "event_description": {
+      "type": "string"
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+      "answer_hint": "set \"answer\" to the letter of the visible option (A, B, C, D, E, or F) whose fraction matches the probability",
+      "object_description_single_probability_query_spinner_clean": "one equal-sector spinner. Each sector has a color and a shape marker",
+      "object_description_single_probability_query_spinner_card": "one card-style equal-sector spinner. Each sector has a color and a shape marker",
+      "object_description_single_probability_query_spinner_notebook": "one notebook-style equal-sector spinner. Each sector has a color and a shape marker",
+      "object_description_pair_probability_query_spinner_clean": "two independent equal-sector spinners labeled Spinner A and Spinner B. Each sector has a color",
+      "object_description_pair_probability_query_spinner_card": "two independent card-style equal-sector spinners labeled Spinner A and Spinner B. Each sector has a color",
+      "object_description_pair_probability_query_spinner_notebook": "two independent notebook-style equal-sector spinners labeled Spinner A and Spinner B. Each sector has a color"
+    },
+    "query:single_color_probability": {
+      "annotation_hint": "set \"annotation\" to the full spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[281,47,819,629],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:single_shape_probability": {
+      "annotation_hint": "set \"annotation\" to the full spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[281,47,819,629],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "query:single_color_and_shape_probability": {
+      "annotation_hint": "set \"annotation\" to the full spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[281,47,819,629],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:single_color_or_shape_probability": {
+      "annotation_hint": "set \"annotation\" to the full spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":[281,47,819,629],\"answer\":\"F\"}",
+      "json_example_answer_only": "{\"answer\":\"F\"}"
+    },
+    "query:pair_both_target_color_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"spinner_a\" and \"spinner_b\", each mapped to that spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"spinner_a\":[136,102,564,574],\"spinner_b\":[536,102,964,574]},\"answer\":\"A\"}",
+      "json_example_answer_only": "{\"answer\":\"A\"}"
+    },
+    "query:pair_at_least_one_target_color_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"spinner_a\" and \"spinner_b\", each mapped to that spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"spinner_a\":[136,102,564,574],\"spinner_b\":[536,102,964,574]},\"answer\":\"E\"}",
+      "json_example_answer_only": "{\"answer\":\"E\"}"
+    },
+    "query:pair_same_color_probability": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"spinner_a\" and \"spinner_b\", each mapped to that spinner panel bounding box [x0, y0, x1, y1]",
+      "json_example": "{\"annotation\":{\"spinner_a\":[136,102,564,574],\"spinner_b\":[536,102,964,574]},\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  }
+}

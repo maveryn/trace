@@ -1,0 +1,102 @@
+{
+  "bundle_id": "icons_named_grid_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "single_scene_counting": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "counting_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "question_text": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:single_scene_counting": [
+      "object_description"
+    ],
+    "task:counting_query": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description": "a numbered grid with one icon in each cell",
+    "question_text_row_shape_count": "How many \"{target_shape_name}\" icons are in row {line_number}?",
+    "question_text_column_shape_count": "How many \"{target_shape_name}\" icons are in column {line_number}?",
+    "scoped_annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted \"{target_shape_name}\" icon in {line_kind} {line_number}",
+    "scoped_answer_hint": "set \"answer\" to the count as an integer",
+    "scoped_json_example": "{\"annotation\":[[176,168,236,228],[384,168,444,228],[592,168,652,228]],\"answer\":3}",
+    "scoped_json_example_answer_only": "{\"answer\":3}",
+    "question_text_row_most_shape_number": "Which row has the most \"{target_shape_name}\" icons?",
+    "question_text_row_fewest_shape_number": "Which row has the fewest \"{target_shape_name}\" icons?",
+    "question_text_column_most_shape_number": "Which column has the most \"{target_shape_name}\" icons?",
+    "question_text_column_fewest_shape_number": "Which column has the fewest \"{target_shape_name}\" icons?",
+    "extreme_annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for the \"{target_shape_name}\" icons in the selected {line_kind}",
+    "extreme_answer_hint": "set \"answer\" to the selected {line_kind} number as an integer",
+    "extreme_json_example": "{\"annotation\":[[176,168,236,228],[384,168,444,228],[592,168,652,228]],\"answer\":3}",
+    "extreme_json_example_answer_only": "{\"answer\":3}",
+    "question_text_row_at_least_shape_count": "How many rows contain at least {threshold} \"{target_shape_name}\" icons?",
+    "question_text_column_at_least_shape_count": "How many columns contain at least {threshold} \"{target_shape_name}\" icons?",
+    "question_text_row_exactly_shape_count": "How many rows contain exactly {threshold} \"{target_shape_name}\" icons?",
+    "question_text_column_exactly_shape_count": "How many columns contain exactly {threshold} \"{target_shape_name}\" icons?",
+    "question_text_row_no_shape_count": "How many rows contain no \"{target_shape_name}\" icons?",
+    "question_text_column_no_shape_count": "How many columns contain no \"{target_shape_name}\" icons?",
+    "group_annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every qualifying {line_kind} region",
+    "group_answer_hint": "set \"answer\" to the number of qualifying {line_kind_plural} as an integer",
+    "group_json_example": "{\"annotation\":[[96,168,620,228],[96,336,620,396]],\"answer\":2}",
+    "group_json_example_answer_only": "{\"answer\":2}",
+    "question_text_row_unordered_adjacent_pair_count": "In row {line_number}, how many adjacent two-cell pairs contain one \"{first_shape_name}\" icon and one \"{second_shape_name}\" icon? Count overlapping adjacent pairs separately.",
+    "question_text_column_unordered_adjacent_pair_count": "In column {line_number}, how many adjacent two-cell pairs contain one \"{first_shape_name}\" icon and one \"{second_shape_name}\" icon? Count overlapping adjacent pairs separately.",
+    "adjacency_annotation_hint": "set \"annotation\" to a JSON array of line segments [[x0, y0], [x1, y1]], one segment between the centers of each counted adjacent pair in {line_kind} {line_number}",
+    "adjacency_answer_hint": "set \"answer\" to the adjacent-pair count as an integer",
+    "adjacency_json_example": "{\"annotation\":[[[176,168],[280,168]],[[280,168],[384,168]]],\"answer\":2}",
+    "adjacency_json_example_answer_only": "{\"answer\":2}"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "bundle_id": "geometry_circle_pair_tangents_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "circle_pair_tangents_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "external_tangent_segment_length_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "tangent_segment_length_from_center_distance": [
+        "What is the length of tangent segment AB?",
+        "Find the length of the common tangent segment AB.",
+        "Using the labeled radii and center distance, determine AB.",
+        "The segment from A to B is marked with ?. What is its length?",
+        "What is the value of the tangent length AB?"
+      ],
+      "center_distance_from_tangent_segment_length": [
+        "What is the distance CD between the two circle centers?",
+        "Find the center-to-center distance CD.",
+        "Using the labeled radii and tangent segment, determine CD.",
+        "The segment from C to D is marked with ?. What is its length?",
+        "What is the value of the center distance CD?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Return a JSON object with an \"answer\" field only.\nAnswer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Return only a JSON object containing \"answer\".\nRequired answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Respond with JSON only.\nFormat for the \"answer\" field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Return a JSON object.\nAnswer field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}",
+        "Use JSON only.\nFinal answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Return a JSON object with \"annotation\" and \"answer\" fields.\nAnnotation format: set \"annotation\" to a JSON object with exactly these role keys: {annotation_keys}; each value must be the pixel point [x,y] at that visible center or tangent point.\nAnswer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Return only JSON with \"annotation\" and \"answer\".\nAnnotation format: set \"annotation\" to a JSON object with exactly these role keys: {annotation_keys}; each value must be the pixel point [x,y] at that visible center or tangent point.\nRequired answer format: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Respond with JSON only.\nAnnotation format: set \"annotation\" to a JSON object with exactly these role keys: {annotation_keys}; each value must be the pixel point [x,y] at that visible center or tangent point.\nFormat for the \"answer\" field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Return a JSON object.\nAnnotation format: set \"annotation\" to a JSON object with exactly these role keys: {annotation_keys}; each value must be the pixel point [x,y] at that visible center or tangent point.\nAnswer field: set \"answer\" to the requested segment length as an integer.\nExample JSON:\n{json_example}",
+        "Use JSON only.\nFinal answer format: set \"answer\" to the requested segment length as an integer.\nAnnotation format: set \"annotation\" to a JSON object with exactly these role keys: {annotation_keys}; each value must be the pixel point [x,y] at that visible center or tangent point.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:circle_pair_tangents_scene": {
+      "object_description": "two separated non-concentric circles with centers C and D, a common tangent touching them at A and B, radii to the tangent points, and an auxiliary right triangle CED whose leg ED shows the radius difference"
+    }
+  },
+  "dynamic_slots": {
+    "annotation_keys": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:circle_pair_tangents_scene": [
+      "object_description"
+    ],
+    "query:tangent_segment_length_from_center_distance": [],
+    "query:center_distance_from_tangent_segment_length": [],
+    "output:answer_only": [
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_keys",
+      "json_example"
+    ]
+  }
+}

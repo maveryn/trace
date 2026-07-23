@@ -1,0 +1,168 @@
+generation:
+  shared:
+    category_count_min: 5
+    category_count_max: 8
+    series_count_min: 4
+    series_count_max: 6
+    time_count_min: 5
+    time_count_max: 7
+    panel_count_min: 4
+    panel_count_max: 6
+    panel_label_variant_weights:
+      named_compact: 1.0
+      technical_topics: 1.0
+      condition_labels: 0.75
+      temporal_sequence: 0.25
+      report_topics: 0.5
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 860
+    plot_margin_left_px: 132
+    plot_margin_right_px: 118
+    plot_margin_top_px: 98
+    plot_margin_bottom_px: 132
+    panel_gap_px: 30
+    point_radius_px_min: 6
+    point_radius_px_max: 9
+    line_width_px_min: 3
+    line_width_px_max: 5
+    axis_line_width_px_min: 2
+    axis_line_width_px_max: 3
+    grid_line_width_px_min: 1
+    grid_line_width_px_max: 2
+    tick_font_size_px: 18
+    label_font_size_px: 24
+    title_font_size_px: 30
+    panel_title_font_size_px: 20
+    plot_fill_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 252
+      - 254
+      - 255
+    - - 255
+      - 253
+      - 248
+    - - 250
+      - 252
+      - 250
+    panel_fill_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 252
+      - 254
+      - 255
+    - - 255
+      - 253
+      - 248
+    - - 250
+      - 252
+      - 250
+    panel_border_rgb_options:
+    - - 156
+      - 168
+      - 184
+    - - 150
+      - 166
+      - 184
+    - - 170
+      - 160
+      - 146
+    - - 148
+      - 170
+      - 160
+    axis_color_rgb_options:
+    - - 32
+      - 38
+      - 48
+    - - 44
+      - 46
+      - 42
+    - - 34
+      - 46
+      - 58
+    grid_color_rgb_options:
+    - - 180
+      - 190
+      - 204
+    - - 172
+      - 188
+      - 194
+    - - 194
+      - 184
+      - 168
+    text_color_rgb_options:
+    - - 38
+      - 41
+      - 48
+    - - 42
+      - 47
+      - 58
+    - - 48
+      - 44
+      - 38
+    text_stroke_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 252
+      - 254
+      - 255
+    - - 255
+      - 253
+      - 248
+    surface_low_rgb_options:
+    - - 71
+      - 135
+      - 206
+    - - 73
+      - 158
+      - 132
+    - - 123
+      - 108
+      - 205
+    - - 214
+      - 127
+      - 58
+    surface_high_rgb_options:
+    - - 218
+      - 71
+      - 61
+    - - 214
+      - 78
+      - 127
+    - - 228
+      - 142
+      - 39
+    - - 48
+      - 124
+      - 196
+    surface_edge_rgb_options:
+    - - 82
+      - 91
+      - 76
+    - - 70
+      - 94
+      - 88
+    - - 90
+      - 80
+      - 108
+    - - 104
+      - 84
+      - 64
+    marker_outline_rgb_options:
+    - - 31
+      - 38
+      - 49
+    - - 42
+      - 45
+      - 42
+    - - 34
+      - 44
+      - 54
+prompt:
+  shared:
+    bundle_id: charts_surface_3d_v1

@@ -1,0 +1,1 @@
+"""Chess variant games tasks."""

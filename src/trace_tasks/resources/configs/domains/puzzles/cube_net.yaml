@@ -1,0 +1,42 @@
+generation:
+  shared:
+    option_count: 4
+    scene_variant_weights:
+      clean_net: 1.0
+      paper_model: 1.0
+      game_mat: 1.0
+
+rendering:
+  shared:
+    canvas_width: 1100
+    face_relation_canvas_height: 760
+    equivalent_net_canvas_height: 860
+    net_cell_size_px: 86
+    line_width_px: 3
+    title_font_size_px: 22
+    face_font_size_px: 31
+    option_font_size_px: 28
+
+prompt:
+  shared:
+    bundle_id: puzzles_cube_net_v1
+    scene_key: cube_net
+
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_types:
+      - blur
+      - downsample
+      - jpeg
+      - noise
+    edit_count_range: [1, 1]
+    value_ranges:
+      blur:
+        radius: [0.08, 0.24]
+      downsample:
+        scale: [0.94, 0.98]
+      jpeg:
+        quality: [86.0, 95.0]
+      noise:
+        alpha: [0.006, 0.022]

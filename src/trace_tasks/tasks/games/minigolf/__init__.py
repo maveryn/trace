@@ -1,0 +1,1 @@
+"""Mini-golf games tasks."""

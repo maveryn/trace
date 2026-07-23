@@ -1,0 +1,109 @@
+generation:
+  shared:
+    cluster_count_min: 4
+    cluster_count_max: 7
+    points_per_cluster_min: 8
+    points_per_cluster_max: 12
+    trend_target_abs_slope_min: 1.2
+    trend_target_abs_slope_max: 1.7
+    trend_slope_margin_min: 0.35
+    trend_slope_margin_max: 0.85
+    trend_same_direction_abs_slope_floor: 0.18
+    trend_opposite_abs_slope_min: 0.25
+    trend_opposite_abs_slope_max: 1.05
+    trend_answer_x_jitter: 0.4
+    trend_answer_y_jitter: 0.48
+    trend_answer_y_jitter_scale: 0.14
+    trend_distractor_x_jitter: 0.58
+    trend_distractor_y_jitter: 0.66
+    trend_distractor_y_jitter_scale: 0.18
+    centroid_option_answer_radius_min: 1.2
+    centroid_option_answer_radius_max: 2.8
+    centroid_option_distractor_radius_min: 8.0
+    centroid_option_distractor_radius_max: 17.0
+    centroid_option_distance_margin_min: 4.0
+    centroid_option_count_support:
+    - 4
+    - 6
+    area_rank_product_min: 34.0
+    area_rank_product_max: 42.0
+    area_rank_adjacent_gap_min: 0.24
+    area_rank_adjacent_gap_max: 0.34
+    area_rank_max_min_ratio: 5.5
+    area_rank_aspect_ratio_min: 0.72
+    area_rank_aspect_ratio_max: 1.38
+    area_rank_angle_min_degrees: -38.0
+    area_rank_angle_max_degrees: 38.0
+    x_value_min: 0
+    x_value_max: 100
+    y_value_min: 0
+    y_value_max: 100
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 820
+    plot_margin_left_px: 110
+    plot_margin_right_px: 260
+    plot_margin_top_px: 72
+    plot_margin_bottom_px: 112
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 2
+    grid_line_width_px: 1
+    tick_length_px: 8
+    point_radius_px_min: 5
+    point_radius_px_max: 8
+    tick_font_size_px: 17
+    legend_font_size_px: 22
+    title_font_size_px: 26
+    cluster_hull_padding_px: 14
+    cluster_palette_rgb:
+    - - 38
+      - 101
+      - 176
+    - - 218
+      - 91
+      - 75
+    - - 56
+      - 150
+      - 96
+    - - 142
+      - 92
+      - 188
+    - - 218
+      - 145
+      - 46
+    - - 78
+      - 159
+      - 191
+    - - 188
+      - 87
+      - 132
+    - - 109
+      - 125
+      - 55
+prompt:
+  shared:
+    bundle_id: charts_scatter_cluster_v1
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.014

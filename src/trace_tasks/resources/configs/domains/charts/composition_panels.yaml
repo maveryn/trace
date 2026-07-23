@@ -1,0 +1,52 @@
+generation:
+  shared:
+    panel_count_min: 4
+    panel_count_max: 9
+    segment_count_min: 5
+    segment_count_max: 7
+    total_values:
+    - 1000
+    - 1200
+    - 1400
+    - 1600
+    - 1800
+    - 2000
+    - 2400
+    - 3000
+    top_k_values:
+    - 2
+    - 3
+    condition_threshold_values:
+    - 32
+    - 35
+    - 38
+    panel_label_variant_weights:
+      temporal_sequence: 0.6
+      named_compact: 1.0
+      report_topics: 0.75
+      technical_topics: 1.0
+      condition_labels: 0.5
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      composition_pie_panels: 1.0
+      composition_donut_panels: 1.0
+rendering:
+  shared:
+    canvas_width: 1384
+    canvas_height: 888
+    chart_context_profile: dense_clean_minimal
+    chart_context_mode_weights:
+      clean: 0.7
+      minimal: 0.3
+    plot_margin_left_px: 54
+    plot_margin_right_px: 54
+    plot_margin_top_px: 38
+    plot_margin_bottom_px: 110
+    title_font_size_px: 24
+    subtitle_font_size_px: 17
+    slice_font_size_px: 17
+    small_slice_font_size_px: 14
+    legend_font_size_px: 18
+prompt:
+  shared:
+    bundle_id: charts_composition_panels_v1

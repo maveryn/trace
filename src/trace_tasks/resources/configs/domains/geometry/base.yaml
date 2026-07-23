@@ -1,0 +1,246 @@
+rendering:
+  shared:
+    canvas_size_min: 512
+    canvas_size_max: 768
+    graph_cells_min: 12
+    graph_cells_max: 24
+    shape_color_mode: rgb_constrained
+    shape_include_white_anchor: true
+    shape_include_black_anchor: false
+    shape_line_channel_min: 12
+    shape_line_channel_max: 172
+    shape_label_stroke_min_distance: 36.0
+    shape_line_gray_min: 10
+    shape_line_gray_max: 28
+    shape_label_gray_min: 14
+    shape_label_gray_max: 36
+    shape_label_stroke_gray_min: 248
+    shape_label_stroke_gray_max: 255
+visual:
+  background:
+    enabled: true
+    styles:
+      graph_paper:
+        kind: grid
+        base_color:
+        - 254
+        - 254
+        - 253
+        line_color:
+        - 222
+        - 228
+        - 236
+        spacing: 24
+        outer_margin_px: 16
+        line_width: 1
+        major_every: 0
+        major_line_color:
+        - 202
+        - 210
+        - 222
+        major_line_width: 1
+        axis_enabled: true
+        axis_color:
+        - 112
+        - 124
+        - 144
+        axis_line_width: 2
+        axis_arrows_enabled: true
+        axis_arrow_size: 10
+        center_point_enabled: true
+        center_point_color:
+        - 96
+        - 108
+        - 128
+        center_point_radius: 2
+        color_variation_enabled: true
+        base_color_jitter:
+        - -2
+        - 1
+        line_color_jitter:
+        - -8
+        - 6
+        major_line_darken_range:
+        - 8
+        - 18
+        axis_darken_range:
+        - 34
+        - 54
+        center_point_darken_extra_range:
+        - 8
+        - 16
+        origin_label_darken_extra_range:
+        - 6
+        - 14
+        axis_scale_labels_enabled: true
+        axis_scale_label_max_abs: 0
+        origin_label_enabled: false
+        origin_label_text: '0'
+        origin_label_color:
+        - 88
+        - 98
+        - 116
+        supersample_scale: 1
+        scene_supersample_scale: 3
+        style_variants:
+          drafting_white:
+            base_color:
+            - 254
+            - 254
+            - 253
+            line_color:
+            - 222
+            - 228
+            - 236
+            major_line_color:
+            - 202
+            - 210
+            - 222
+            axis_color:
+            - 112
+            - 124
+            - 144
+            center_point_color:
+            - 96
+            - 108
+            - 128
+            origin_label_color:
+            - 88
+            - 98
+            - 116
+          cool_blue:
+            base_color:
+            - 248
+            - 251
+            - 255
+            line_color:
+            - 214
+            - 224
+            - 238
+            major_line_color:
+            - 194
+            - 207
+            - 224
+            axis_color:
+            - 96
+            - 114
+            - 142
+            center_point_color:
+            - 82
+            - 100
+            - 128
+            origin_label_color:
+            - 78
+            - 92
+            - 118
+          warm_paper:
+            base_color:
+            - 255
+            - 252
+            - 246
+            line_color:
+            - 228
+            - 222
+            - 210
+            major_line_color:
+            - 208
+            - 202
+            - 190
+            axis_color:
+            - 126
+            - 116
+            - 98
+            center_point_color:
+            - 108
+            - 98
+            - 82
+            origin_label_color:
+            - 96
+            - 88
+            - 74
+          mint_paper:
+            base_color:
+            - 249
+            - 254
+            - 251
+            line_color:
+            - 214
+            - 230
+            - 220
+            major_line_color:
+            - 194
+            - 212
+            - 202
+            axis_color:
+            - 92
+            - 124
+            - 108
+            center_point_color:
+            - 78
+            - 108
+            - 94
+            origin_label_color:
+            - 70
+            - 96
+            - 84
+          gray_drafting:
+            base_color:
+            - 250
+            - 251
+            - 252
+            line_color:
+            - 220
+            - 224
+            - 229
+            major_line_color:
+            - 200
+            - 205
+            - 212
+            axis_color:
+            - 104
+            - 112
+            - 124
+            center_point_color:
+            - 90
+            - 98
+            - 110
+            origin_label_color:
+            - 82
+            - 90
+            - 102
+        style_variant_weights:
+          drafting_white: 1.0
+          cool_blue: 1.0
+          warm_paper: 1.0
+          mint_paper: 1.0
+          gray_drafting: 1.0
+    weights:
+      graph_paper: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.92
+        - 0.97
+      jpeg:
+        quality:
+        - 82
+        - 94
+      noise:
+        alpha:
+        - 0.01
+        - 0.04
+prompt:
+  shared:
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+      in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for
+      the final answer.

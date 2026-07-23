@@ -1,0 +1,124 @@
+{
+  "bundle_id": "puzzles_star_battle_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "star_battle": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This puzzle diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "star_battle_valid_cell_query": [
+        "Use these Star Battle rules: each row, column, and colored region must contain exactly one star; stars cannot touch, even diagonally.",
+        "In Star Battle, every row, column, and colored region needs exactly one star, and no two stars may touch, even diagonally.",
+        "A legal Star Battle placement keeps exactly one star in each row, column, and colored region, with no touching stars, including diagonally.",
+        "Apply the Star Battle rules: one star per row, column, and colored region; stars cannot touch by edge or corner.",
+        "Use the visible stars and the Star Battle rules: one star in each row, column, and colored region, and no two stars touching."
+      ],
+      "star_battle_remaining_count_query": [
+        "Use these Star Battle rules: each row, column, and colored region must contain exactly one star; stars cannot touch, even diagonally.",
+        "In Star Battle, every row, column, and colored region needs exactly one star, and no two stars may touch, even diagonally.",
+        "A legal Star Battle placement keeps exactly one star in each row, column, and colored region, with no touching stars, including diagonally.",
+        "Apply the Star Battle rules: one star per row, column, and colored region; stars cannot touch by edge or corner.",
+        "Use the visible stars and the Star Battle rules: one star in each row, column, and colored region, and no two stars touching."
+      ]
+    },
+    "query": {
+      "valid_cell_anywhere_label": [
+        "Which labeled candidate cell can still hold a star?",
+        "Choose the labeled cell where another star can be placed.",
+        "Which candidate label marks a legal remaining star cell?",
+        "A star can be added to exactly one labeled candidate cell. Which label is it?",
+        "Which labeled cell is a valid place for another star?"
+      ],
+      "remaining_valid_cells_in_marked_row_count": [
+        "The highlighted row is row {row_index} from the top. How many empty cells in that row could legally hold a new star?",
+        "Count the empty cells where another star can still legally be placed in the highlighted row, row {row_index} from the top.",
+        "Row {row_index} from the top is highlighted. How many cells in that row are empty and still valid for a star?",
+        "In the highlighted row, row {row_index} from the top, how many empty cells are valid places for a new star?",
+        "In the highlighted row, row {row_index} from the top, how many empty cells would satisfy all Star Battle rules?"
+      ],
+      "remaining_valid_cells_in_marked_column_count": [
+        "The highlighted column is column {column_index} from the left. How many empty cells in that column could legally hold a new star?",
+        "Count the empty cells where another star can still legally be placed in the highlighted column, column {column_index} from the left.",
+        "Column {column_index} from the left is highlighted. How many cells in that column are empty and still valid for a star?",
+        "In the highlighted column, column {column_index} from the left, how many empty cells are valid places for a new star?",
+        "In the highlighted column, column {column_index} from the left, how many empty cells would satisfy all Star Battle rules?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: {answer_hint}\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: {answer_hint}\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: {answer_hint}\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: {answer_hint}\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:star_battle_valid_cell_query": {
+      "object_description": "a partially filled Star Battle grid with colored regions, visible stars, and labeled candidate cells"
+    },
+    "task:star_battle_remaining_count_query": {
+      "object_description": "a partially filled Star Battle grid with colored regions, visible stars, and one highlighted row or column"
+    },
+    "query:valid_cell_anywhere_label": {
+      "answer_hint": "the legal candidate letter",
+      "annotation_hint": "[x0,y0,x1,y1], the image-pixel bbox of the selected candidate cell",
+      "json_example": "{\"annotation\":[402,276,466,340],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:remaining_valid_cells_in_marked_row_count": {
+      "answer_hint": "the number of empty cells in the highlighted row where a new star could legally be placed",
+      "annotation_hint": "a JSON array of image-pixel bboxes [x0,y0,x1,y1], one for each empty cell in the highlighted row where a new star could legally be placed",
+      "json_example": "{\"annotation\":[[402,276,466,340],[530,276,594,340]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:remaining_valid_cells_in_marked_column_count": {
+      "answer_hint": "the number of empty cells in the highlighted column where a new star could legally be placed",
+      "annotation_hint": "a JSON array of image-pixel bboxes [x0,y0,x1,y1], one for each empty cell in the highlighted column where a new star could legally be placed",
+      "json_example": "{\"annotation\":[[402,276,466,340],[402,468,466,532]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "row_index": {
+      "type": "integer"
+    },
+    "column_index": {
+      "type": "integer"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:star_battle": [
+      "object_description"
+    ],
+    "query:remaining_valid_cells_in_marked_row_count": [
+      "row_index"
+    ],
+    "query:remaining_valid_cells_in_marked_column_count": [
+      "column_index"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

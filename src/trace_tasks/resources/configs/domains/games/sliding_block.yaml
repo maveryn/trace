@@ -1,0 +1,70 @@
+generation:
+  shared:
+    board_rows_min: 6
+    board_rows_max: 8
+    board_cols_min: 6
+    board_cols_max: 8
+    blocker_count_min: 0
+    blocker_count_max: 5
+    non_target_block_count_min: 6
+    non_target_block_count_max: 10
+    move_result_option_count_support:
+      - 4
+    move_result_move_count_min: 1
+    move_result_move_count_max: 2
+    move_result_slide_distance_max: 3
+    balanced_scene_variant_sampling: true
+    balanced_exit_side_sampling: true
+    scene_variant_weights:
+      wooden_tray: 1.0
+      cool_grid: 1.0
+      paper_board: 1.0
+    exit_side_weights:
+      right: 1.0
+      left: 1.0
+      top: 1.0
+      bottom: 1.0
+  task_overrides:
+    task_games__sliding_block__movable_block_count:
+      movable_block_count_min: 4
+      movable_block_count_max: 9
+      movable_block_count_generation_attempts: 512
+    task_games__sliding_block__block_orientation_count:
+      block_orientation_count_min: 1
+      block_orientation_count_max: 6
+      block_orientation_count_generation_attempts: 512
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 780
+    board_size_px: 560
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    panel_padding_px: 30
+    panel_corner_radius_px: 28
+    block_corner_radius_px: 16
+    board_border_width_px: 5
+    grid_width_px: 2
+    block_gap_px: 7
+    target_outline_width_px: 6
+    label_font_size_px: 30
+    target_label_font_size_px: 34
+    arrow_width_px: 8
+    arrow_head_length_px: 28
+    arrow_head_width_px: 28
+    text_color_rgb:
+      - 28
+      - 32
+      - 38
+    text_stroke_rgb:
+      - 255
+      - 255
+      - 255
+prompt:
+  shared:
+    bundle_id: games_sliding_block_v1
+    scene_key: sliding_block
+    task_key: sliding_block_query
+visual:
+  noise:
+    apply_prob: 0.5

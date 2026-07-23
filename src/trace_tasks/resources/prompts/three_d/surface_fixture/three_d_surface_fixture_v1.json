@@ -1,0 +1,186 @@
+{
+  "bundle_id": "three_d_surface_fixture_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "surface_fixture": [
+        "The image shows {object_description}.",
+        "The picture shows {object_description}.",
+        "This perspective view shows {object_description}.",
+        "The scene shows {object_description}.",
+        "Visible in the image is {object_description}."
+      ]
+    },
+    "task": {
+      "surface_fixture_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "element_type_count": [
+        "How many {target_element_plural} are visible?",
+        "Count the visible {target_element_plural}. How many are there?",
+        "What is the total number of {target_element_plural}?",
+        "How many {target_element_plural} are on the {fixture_display_name}?",
+        "How many {target_element_plural} can be seen?"
+      ],
+      "highest_element_count_panel": [
+        "Which labeled panel has the highest number of visible {target_element_plural}?",
+        "Choose the panel label with the most visible {target_element_plural}.",
+        "Among the four labeled panels, which one contains the greatest number of {target_element_plural}?",
+        "Which option panel shows the most {target_element_plural}?",
+        "What letter labels the panel with the highest count of visible {target_element_plural}?"
+      ],
+      "lowest_element_count_panel": [
+        "Which labeled panel has the lowest number of visible {target_element_plural}?",
+        "Choose the panel label with the fewest visible {target_element_plural}.",
+        "Among the four labeled panels, which one contains the smallest number of {target_element_plural}?",
+        "Which option panel shows the fewest {target_element_plural}?",
+        "What letter labels the panel with the lowest count of visible {target_element_plural}?"
+      ],
+      "element_color_count": [
+        "How many {target_color_label} {target_element_plural} are on the fixture?",
+        "Count the {target_color_label} {target_element_plural}. How many are there?",
+        "What is the number of {target_color_label} {target_element_plural} on the surface?",
+        "Looking across the fixture, how many {target_element_plural} are {target_color_label}?",
+        "How many visible {target_element_plural} have color {target_color_label}?"
+      ],
+      "color_count_after_operations": [
+        "Suppose these changes happen: {operation_phrase}. How many {target_color_label} {target_element_plural} are there after all changes?",
+        "Start with the visible fixture, then apply these changes: {operation_phrase}. What is the final number of {target_color_label} {target_element_plural}?",
+        "After the following changes, how many {target_color_label} {target_element_plural} are there: {operation_phrase}?",
+        "Using the visible fixture as the starting state, apply {operation_phrase}. What is the resulting count of {target_color_label} {target_element_plural}?",
+        "If these changes are made to the fixture, {operation_phrase}, how many {target_color_label} {target_element_plural} are there in total?"
+      ],
+      "recolor_board_match": [
+        "Apply this recolor to the original board: {recolor_phrase}. Which labeled candidate board shows the result?",
+        "On the original board, suppose {recolor_phrase}. Which candidate board is correct?",
+        "Starting from the original board, recolor so that {recolor_phrase}. Which option matches?",
+        "If {recolor_phrase} on the original board, which labeled board shows the result?",
+        "Use the original board as the starting state and apply this recolor: {recolor_phrase}. Which candidate board matches?"
+      ],
+      "scoped_element_color_count": [
+        "How many {target_color_label} {target_element_plural} are in {scope_phrase}?",
+        "Count the {target_color_label} {target_element_plural} in {scope_phrase}. How many are there?",
+        "In {scope_phrase}, what is the number of {target_color_label} {target_element_plural}?",
+        "Looking only at {scope_phrase}, how many {target_element_plural} are {target_color_label}?",
+        "How many {target_color_label} {target_element_plural} appear within {scope_phrase}?"
+      ],
+      "most_frequent_color_option": [
+        "Which labeled option names the color that appears most often among the visible {target_element_plural}?",
+        "Choose the option label that names the color used by the most visible {target_element_plural}.",
+        "Which text option names the color with the highest count on the fixture?",
+        "Among the labeled text options, which one names the color that appears the most on the fixture?",
+        "What letter labels the option naming the color that appears most often on the fixture?"
+      ],
+      "absent_color_option": [
+        "Which labeled option names a color that does not appear on the fixture?",
+        "Choose the option label that names the color absent from the visible {target_element_plural}.",
+        "Which text option names a color with zero visible {target_element_plural} on the fixture?",
+        "Among the labeled text options, which one names a color that is not present on the fixture?",
+        "What letter labels the option naming the color that does not appear on the fixture?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:element_type_count": {
+      "answer_hint": "set \"answer\" to the number of counted surface elements",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted surface element",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370],[704,520,756,580]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:highest_element_count_panel": {
+      "answer_hint": "set \"answer\" to the selected panel label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the selected panel",
+      "json_example": "{\"annotation\":[80,90,520,410],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:lowest_element_count_panel": {
+      "answer_hint": "set \"answer\" to the selected panel label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the selected panel",
+      "json_example": "{\"annotation\":[80,90,520,410],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:element_color_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted colored surface element",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:color_count_after_operations": {
+      "answer_hint": "set \"answer\" to the final count as an integer after applying the listed changes",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each original visible target-color element used as the starting count; do not mark hypothetical added elements",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":5}",
+      "json_example_answer_only": "{\"answer\":5}"
+    },
+    "query:recolor_board_match": {
+      "answer_hint": "set \"answer\" to the selected candidate board label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the selected candidate board",
+      "json_example": "{\"annotation\":[640,470,1050,720],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:scoped_element_color_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted colored surface element in the requested row or column",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:most_frequent_color_option": {
+      "answer_hint": "set \"answer\" to the selected option label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the selected text option card",
+      "json_example": "{\"annotation\":[620,710,890,790],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "query:absent_color_option": {
+      "answer_hint": "set \"answer\" to the selected option label as a single capital letter",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the selected text option card",
+      "json_example": "{\"annotation\":[620,710,890,790],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "target_element_name": {"type": "string"},
+    "target_element_plural": {"type": "string"},
+    "target_color_label": {"type": "string"},
+    "operation_phrase": {"type": "string"},
+    "recolor_phrase": {"type": "string"},
+    "source_color_label": {"type": "string"},
+    "destination_color_label": {"type": "string"},
+    "scope_phrase": {"type": "string"},
+    "fixture_display_name": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:surface_fixture": ["object_description"],
+    "query:element_type_count": ["target_element_plural", "target_element_name", "fixture_display_name"],
+    "query:highest_element_count_panel": ["target_element_plural"],
+    "query:lowest_element_count_panel": ["target_element_plural"],
+    "query:element_color_count": ["target_color_label", "target_element_plural"],
+    "query:color_count_after_operations": ["operation_phrase", "target_color_label", "target_element_plural"],
+    "query:recolor_board_match": ["recolor_phrase"],
+    "query:scoped_element_color_count": ["target_color_label", "target_element_plural", "scope_phrase"],
+    "query:most_frequent_color_option": ["target_element_plural"],
+    "query:absent_color_option": ["target_element_plural"]
+  }
+}

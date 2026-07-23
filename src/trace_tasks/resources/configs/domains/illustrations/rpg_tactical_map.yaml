@@ -1,0 +1,132 @@
+generation:
+  shared:
+    balanced_sampling: true
+  task_overrides:
+    task_illustrations__rpg_tactical_map__movement_reachable_tile_label:
+      query_id_support:
+        - single
+      movement_budget_support:
+        - 4
+        - 5
+        - 6
+      candidate_count: 4
+    task_illustrations__rpg_tactical_map__movement_sequence_endpoint_label:
+      query_id_support:
+        - single
+      sequence_length_support:
+        - 4
+        - 5
+        - 6
+      candidate_count: 4
+    task_illustrations__rpg_tactical_map__movement_reachable_tile_count:
+      query_id_support:
+        - single
+      movement_budget_support:
+        - 2
+        - 3
+      min_answer_count: 2
+      max_answer_count: 8
+    task_illustrations__rpg_tactical_map__terrain_type_tile_count:
+      query_id_support:
+        - single
+      target_terrain_support:
+        - forest
+        - mountain
+        - water
+      min_answer_count: 1
+      max_answer_count: 8
+    task_illustrations__rpg_tactical_map__movement_cost_value:
+      query_id_support:
+        - single
+      min_movement_cost: 3
+      max_movement_cost: 6
+    task_illustrations__rpg_tactical_map__counterfactual_terrain_conversion_cost_value:
+      query_id_support:
+        - single
+      min_counterfactual_cost: 2
+      max_counterfactual_cost: 6
+    task_illustrations__rpg_tactical_map__water_barrier_unreachable_tile_label:
+      query_id_support:
+        - single
+      candidate_count: 4
+
+rendering:
+  shared:
+    rpg_tactical_map_tile_px: 80
+    canvas_profile_support:
+      - landscape
+      - square
+      - portrait
+
+prompt:
+  task_overrides:
+    task_illustrations__rpg_tactical_map__movement_reachable_tile_label:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_canvas
+      task_key: movement_reachable_tile_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_movement_reachable_tile_label: set "answer" to the letter of the reachable tile
+      annotation_hint_movement_reachable_tile_label: set "annotation" to one [x0, y0, x1, y1] pixel bounding box around the selected tile
+      json_example_movement_reachable_tile_label: '{"annotation":[320,160,400,240],"answer":"C"}'
+      json_example_answer_only_movement_reachable_tile_label: '{"answer":"C"}'
+    task_illustrations__rpg_tactical_map__movement_sequence_endpoint_label:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_canvas
+      task_key: movement_sequence_endpoint_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_movement_sequence_endpoint_label: set "answer" to the letter of the tile where the blue unit ends
+      annotation_hint_movement_sequence_endpoint_label: set "annotation" to one [x0, y0, x1, y1] pixel bounding box around the selected ending tile
+      json_example_movement_sequence_endpoint_label: '{"annotation":[320,160,400,240],"answer":"C"}'
+      json_example_answer_only_movement_sequence_endpoint_label: '{"answer":"C"}'
+    task_illustrations__rpg_tactical_map__movement_reachable_tile_count:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_unlettered_canvas
+      task_key: movement_reachable_tile_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_movement_reachable_tile_count: set "answer" to the number of reachable tiles, excluding the blue unit's starting tile
+      annotation_hint_movement_reachable_tile_count: set "annotation" to a list of [x0, y0, x1, y1] pixel bounding boxes around each counted reachable tile
+      json_example_movement_reachable_tile_count: '{"annotation":[[240,160,320,240],[320,160,400,240],[240,240,320,320]],"answer":3}'
+      json_example_answer_only_movement_reachable_tile_count: '{"answer":3}'
+    task_illustrations__rpg_tactical_map__terrain_type_tile_count:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_unlettered_canvas
+      task_key: terrain_type_tile_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_terrain_type_tile_count: set "answer" to the number of visible tiles of the requested terrain type
+      annotation_hint_terrain_type_tile_count: set "annotation" to a list of [x0, y0, x1, y1] pixel bounding boxes around each counted tile of the requested terrain type
+      json_example_terrain_type_tile_count: '{"annotation":[[80,160,160,240],[160,160,240,240],[160,240,240,320]],"answer":3}'
+      json_example_answer_only_terrain_type_tile_count: '{"answer":3}'
+    task_illustrations__rpg_tactical_map__movement_cost_value:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_marked_destination_canvas
+      task_key: movement_cost_value_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_movement_cost_value: set "answer" to the fewest number of movement points needed to reach the marked target tile
+      annotation_hint_movement_cost_value: set "annotation" to an object with keys "player_cell" and "target_cell", each mapping to one [x0, y0, x1, y1] pixel bounding box around that tile
+      json_example_movement_cost_value: '{"annotation":{"player_cell":[160,320,240,400],"target_cell":[320,320,400,400]},"answer":7}'
+      json_example_answer_only_movement_cost_value: '{"answer":7}'
+    task_illustrations__rpg_tactical_map__counterfactual_terrain_conversion_cost_value:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_marked_destination_canvas
+      task_key: counterfactual_terrain_conversion_cost_value_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_counterfactual_terrain_conversion_cost_value: set "answer" to the fewest number of movement points needed after the best single terrain-to-road conversion
+      annotation_hint_counterfactual_terrain_conversion_cost_value: set "annotation" to an object with keys "player_cell", "target_cell", and "changed_cell", each mapping to one [x0, y0, x1, y1] pixel bounding box around that tile
+      json_example_counterfactual_terrain_conversion_cost_value: '{"annotation":{"player_cell":[160,320,240,400],"target_cell":[320,320,400,400],"changed_cell":[240,320,320,400]},"answer":5}'
+      json_example_answer_only_counterfactual_terrain_conversion_cost_value: '{"answer":5}'
+    task_illustrations__rpg_tactical_map__water_barrier_unreachable_tile_label:
+      bundle_id: illustrations_rpg_tactical_map_v0
+      scene_key: rpg_tactical_map_water_barrier_canvas
+      task_key: water_barrier_unreachable_tile_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_water_barrier_unreachable_tile_label: set "answer" to the letter of the unreachable tile
+      annotation_hint_water_barrier_unreachable_tile_label: set "annotation" to one [x0, y0, x1, y1] pixel bounding box around the selected unreachable tile
+      json_example_water_barrier_unreachable_tile_label: '{"annotation":[480,160,560,240],"answer":"D"}'
+      json_example_answer_only_water_barrier_unreachable_tile_label: '{"answer":"D"}'

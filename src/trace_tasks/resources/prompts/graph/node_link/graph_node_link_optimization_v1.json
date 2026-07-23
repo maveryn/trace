@@ -1,0 +1,65 @@
+{
+  "bundle_id": "graph_node_link_optimization_v1",
+  "schema_version": "v0",
+  "task_templates": {
+    "minimum_spanning_tree_weight_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:single_graph_optimization": [
+      "object_description"
+    ],
+    "query:minimum_spanning_tree_weight": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "single_graph_optimization": [
+      "The image shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "minimum_spanning_tree_weight": [
+      "A spanning tree connects every node without cycles. The graph has one spanning tree with the smallest total edge weight. What is that total weight?",
+      "A spanning tree uses edges to connect all nodes and has no cycles. Among those trees, the minimum-weight one is unique. What is the sum of its edge weights?",
+      "Choose edges that connect every node without forming a cycle, with the smallest possible total edge weight. What total weight do those edges have?",
+      "Among all no-cycle edge sets that connect every node, one has the smallest total edge weight. What is that total weight?",
+      "Using the edge weights, find the unique lowest-total set of edges that connects all nodes without cycles. What is its total weight?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

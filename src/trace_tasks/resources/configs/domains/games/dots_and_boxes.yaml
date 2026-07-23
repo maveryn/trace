@@ -1,0 +1,81 @@
+generation:
+  shared:
+    box_rows_support:
+    - 3
+    - 4
+    box_cols_support:
+    - 3
+    - 4
+    scene_variant_weights:
+      single_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      notebook: 1.0
+      slate: 1.0
+      wood_panel: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_board_shape_sampling: true
+  task_overrides:
+    task_games__dots_and_boxes__completable_box_label:
+      balanced_target_answer_sampling: true
+      option_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+    task_games__dots_and_boxes__owned_box_count:
+      balanced_target_answer_sampling: true
+      target_owner_weights:
+        A: 1.0
+        B: 1.0
+      balanced_target_owner_sampling: true
+      owned_box_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+    task_games__dots_and_boxes__three_sided_box_count:
+      balanced_target_answer_sampling: true
+      three_sided_box_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 820
+    board_width_px: 880
+    board_height_px: 640
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_corner_radius_px: 24
+    panel_margin_px: 56
+    title_font_size_px: 34
+    title_band_height_px: 62
+    board_padding_px: 62
+    dot_radius_px: 7
+    dash_length_px: 30
+    dash_gap_px: 18
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 620
+    canvas_min_height_px: 520
+    canvas_side_padding_px: 150
+    canvas_vertical_padding_px: 110
+prompt:
+  shared:
+    bundle_id: games_dots_and_boxes_v1
+    scene_key: visible_dots_and_boxes_board
+    task_key: dots_and_boxes_query

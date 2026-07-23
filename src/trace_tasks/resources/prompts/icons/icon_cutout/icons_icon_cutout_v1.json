@@ -1,0 +1,77 @@
+{
+  "bundle_id": "icons_icon_cutout_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "icon_cutout_relation": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "icon_cutout_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "question_text": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:icon_cutout_relation": [
+      "object_description"
+    ],
+    "task:icon_cutout_query": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description": "a partial icon fragment beside six labeled full-icon options",
+    "question_text_partial_icon_match_label": "Which labeled full icon does the partial fragment come from?",
+    "annotation_hint": "set \"annotation\" to a JSON object with keys \"source_fragment\" and \"selected_option\", each mapped to a [x0, y0, x1, y1] box in image pixel coordinates",
+    "answer_hint": "set \"answer\" to the selected option letter as a string",
+    "json_example": "{\"annotation\":{\"source_fragment\":[84,168,248,332],\"selected_option\":[492,112,662,282]},\"answer\":\"C\"}",
+    "json_example_answer_only": "{\"answer\":\"C\"}"
+  }
+}

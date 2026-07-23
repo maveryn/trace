@@ -1,0 +1,108 @@
+{
+  "bundle_id": "pages_paired_forms_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "paired_forms_reconciliation": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "paired_forms_reconciliation_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "total_amount_delta": [
+        "For every item whose received quantity differs from the ordered quantity, multiply the absolute quantity difference by the purchase-order unit value, then add those products. What is the total amount delta?",
+        "Match rows by item code. For each mismatched quantity, multiply the absolute quantity difference by the purchase-order unit value and add the products.",
+        "Using only mismatched item-code rows, compute the sum of absolute quantity differences times unit values.",
+        "Compare ordered and received quantities row by row, multiply each absolute mismatch by unit value, and add the results.",
+        "What integer total do you get by summing unit-value-weighted quantity mismatches?"
+      ],
+      "shortfall_minus_overage_value": [
+        "For every item whose received quantity differs from the ordered quantity, compute ordered minus received, multiply that signed difference by the purchase-order unit value, then add the products.",
+        "Match rows by item code. Compute ordered minus received for each mismatch, multiply by unit value, and add the signed products.",
+        "Using only mismatched item-code rows, compute ordered minus received for each mismatch, multiply by unit value, and add the signed results.",
+        "Compare ordered and received quantities row by row, weight each ordered-minus-received signed difference by unit value, and add the results.",
+        "What integer value results from summing purchase-order unit value times ordered-minus-received quantity for every mismatched row?"
+      ],
+      "sum_absolute_quantity_differences": [
+        "For every item whose received quantity differs from the ordered quantity, compute the absolute quantity difference, then add those differences.",
+        "Match rows by item code and sum the absolute ordered-versus-received quantity differences.",
+        "Using only mismatched item-code rows, what is the sum of absolute quantity differences?",
+        "Compare ordered and received quantities row by row, take absolute differences for mismatches, and add them.",
+        "What integer total do you get by adding all absolute quantity mismatches?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:total_amount_delta": {
+      "object_description": "two side-by-side business forms, a purchase order and a receiving slip, with matching item codes and visible quantities",
+      "answer_hint": "set \"answer\" to the computed integer total amount delta",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for the full receiving-slip rows whose received quantity differs from the matching purchase-order quantity"
+    },
+    "query:shortfall_minus_overage_value": {
+      "object_description": "two side-by-side business forms, a purchase order and a receiving slip, with matching item codes and visible quantities",
+      "answer_hint": "set \"answer\" to the computed integer shortfall-minus-overage value",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for the full receiving-slip rows whose received quantity differs from the matching purchase-order quantity"
+    },
+    "query:sum_absolute_quantity_differences": {
+      "object_description": "two side-by-side business forms, a purchase order and a receiving slip, with matching item codes and visible quantities",
+      "answer_hint": "set \"answer\" to the computed integer sum of absolute quantity differences",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for the full receiving-slip rows whose received quantity differs from the matching purchase-order quantity"
+    }
+  },
+  "dynamic_slots": {
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:paired_forms_reconciliation": [
+      "object_description"
+    ],
+    "query:total_amount_delta": [],
+    "query:shortfall_minus_overage_value": [],
+    "query:sum_absolute_quantity_differences": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

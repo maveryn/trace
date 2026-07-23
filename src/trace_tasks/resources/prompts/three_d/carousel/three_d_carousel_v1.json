@@ -1,0 +1,220 @@
+{
+  "bundle_id": "three_d_carousel_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "carousel": [
+        "The image shows a 3D airport-style conveyor carousel with an inner and an outer elliptical belt.",
+        "The scene shows small 3D objects riding on two concentric elliptical conveyor belts.",
+        "A 3D conveyor carousel is shown with objects on the inner and outer belts.",
+        "The picture shows a baggage-style conveyor carousel with small objects on two oval belts.",
+        "The visual shows small objects arranged on concentric inner and outer conveyor belts."
+      ]
+    },
+    "task": {
+      "carousel_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "object_type_belt_count": [
+        "How many {target_object_plural} are on the {belt_label} belt?",
+        "Count the {target_object_plural} on the {belt_label} belt. How many are there?",
+        "Looking only at the {belt_label} belt, how many {target_object_plural} are visible?",
+        "On the {belt_label} conveyor belt, how many {target_object_plural} are there?",
+        "What is the number of {target_object_plural} on the {belt_label} belt?"
+      ],
+      "color_belt_count": [
+        "How many {target_color_label} objects are on the {belt_label} belt?",
+        "Count the {target_color_label} objects on the {belt_label} belt. How many are there?",
+        "Looking only at the {belt_label} belt, how many objects are {target_color_label}?",
+        "On the {belt_label} conveyor belt, how many {target_color_label} objects are there?",
+        "What is the number of {target_color_label} objects on the {belt_label} belt?"
+      ],
+      "color_type_belt_count": [
+        "How many {target_color_label} {target_object_plural} are on the {belt_label} belt?",
+        "Count the {target_color_label} {target_object_plural} on the {belt_label} belt. How many are there?",
+        "Looking only at the {belt_label} belt, how many {target_color_label} {target_object_plural} are visible?",
+        "On the {belt_label} conveyor belt, how many {target_color_label} {target_object_plural} are there?",
+        "What is the number of {target_color_label} {target_object_plural} on the {belt_label} belt?"
+      ],
+      "belt_total_count": [
+        "How many objects are on the {belt_label} belt?",
+        "Count all objects on the {belt_label} belt. How many are there?",
+        "Looking only at the {belt_label} belt, how many objects are visible?",
+        "On the {belt_label} conveyor belt, how many objects are there?",
+        "What is the total number of objects on the {belt_label} belt?"
+      ],
+      "object_count_sum": [
+        "What is the sum of the number of {target_object_plural} on the {first_belt_label} belt and the number of {target_object_plural} on the {second_belt_label} belt?",
+        "Add the count of {target_object_plural} on the {first_belt_label} belt to the count of {target_object_plural} on the {second_belt_label} belt. What is the sum?",
+        "Count the {target_object_plural} on the {first_belt_label} belt and on the {second_belt_label} belt, then add the two counts. What is the result?",
+        "How many {target_object_plural} are there in total on the {first_belt_label} and {second_belt_label} belts?",
+        "Find the total count of {target_object_plural} across the {first_belt_label} belt and the {second_belt_label} belt."
+      ],
+      "object_count_difference": [
+        "What is the difference between the number of {target_object_plural} on the {first_belt_label} belt and the number on the {second_belt_label} belt?",
+        "Count the {target_object_plural} on the {first_belt_label} belt and on the {second_belt_label} belt. What is the absolute difference?",
+        "Subtract the smaller {target_object_plural} count from the larger one for the {first_belt_label} and {second_belt_label} belts. What is the difference?",
+        "What is the absolute difference between the {target_object_plural} counts on the {first_belt_label} and {second_belt_label} belts?",
+        "Find the absolute difference in {target_object_plural} counts between the {first_belt_label} belt and the {second_belt_label} belt."
+      ],
+      "color_ordered_pair_count": [
+        "On the {belt_label} belt, how many neighboring {first_target_color_label} objects are immediately followed by {second_target_color_label} objects?",
+        "Following the order of the {belt_label} belt, count each {first_target_color_label} object immediately followed by a {second_target_color_label} object. How many pairs are there?",
+        "How many adjacent ordered pairs on the {belt_label} belt go from a {first_target_color_label} object to a {second_target_color_label} object?",
+        "Count the neighboring pairs on the {belt_label} belt where {first_target_color_label} comes immediately before {second_target_color_label}.",
+        "On the {belt_label} carousel belt, what is the count of adjacent {first_target_color_label} then {second_target_color_label} object pairs?"
+      ],
+      "object_ordered_pair_count": [
+        "On the {belt_label} belt, how many neighboring {first_target_object_plural} are immediately followed by {second_target_object_plural}?",
+        "Following the order of the {belt_label} belt, count each {first_target_object_plural} immediately followed by {second_target_object_plural}. How many pairs are there?",
+        "How many adjacent ordered pairs on the {belt_label} belt go from {first_target_object_plural} to {second_target_object_plural}?",
+        "Count the neighboring pairs on the {belt_label} belt where {first_target_object_plural} come immediately before {second_target_object_plural}.",
+        "On the {belt_label} carousel belt, what is the count of adjacent {first_target_object_plural} then {second_target_object_plural} pairs?"
+      ],
+      "between_object_anchors_count": [
+        "On the {belt_label} belt, following the belt arrows from marked object {start_anchor_label} to marked object {end_anchor_label}, how many objects are between them?",
+        "Follow the {belt_label} belt direction from the marked {start_anchor_object_name} {start_anchor_label} to the marked {end_anchor_object_name} {end_anchor_label}. How many objects are strictly between them?",
+        "Looking only at the {belt_label} belt, count the objects after marked object {start_anchor_label} and before marked object {end_anchor_label} in the arrow direction. How many are there?",
+        "On the {belt_label} carousel belt, how many objects lie between marked object {start_anchor_label} and marked object {end_anchor_label} when moving with the arrows?",
+        "Starting at marked object {start_anchor_label} on the {belt_label} belt and following the arrows to marked object {end_anchor_label}, how many objects are between the two marks?"
+      ],
+      "color_transfer_total_count": [
+        "Suppose all {target_color_label} objects on the {source_belt_label} belt are moved to the {destination_belt_label} belt. How many objects would be on the {destination_belt_label} belt?",
+        "If every {target_color_label} object from the {source_belt_label} belt moved onto the {destination_belt_label} belt, what would the total object count on the {destination_belt_label} belt be?",
+        "Move all {target_color_label} objects from the {source_belt_label} belt to the {destination_belt_label} belt. How many objects are then on the {destination_belt_label} belt?",
+        "After transferring the {target_color_label} objects on the {source_belt_label} belt to the {destination_belt_label} belt, how many objects would the {destination_belt_label} belt have?",
+        "What is the new total on the {destination_belt_label} belt if all {target_color_label} objects from the {source_belt_label} belt are moved there?"
+      ],
+      "object_transfer_total_count": [
+        "Suppose all {target_object_plural} on the {source_belt_label} belt are moved to the {destination_belt_label} belt. How many objects would be on the {destination_belt_label} belt?",
+        "If every {target_object_plural} from the {source_belt_label} belt moved onto the {destination_belt_label} belt, what would the total object count on the {destination_belt_label} belt be?",
+        "Move all {target_object_plural} from the {source_belt_label} belt to the {destination_belt_label} belt. How many objects are then on the {destination_belt_label} belt?",
+        "After transferring the {target_object_plural} on the {source_belt_label} belt to the {destination_belt_label} belt, how many objects would the {destination_belt_label} belt have?",
+        "What is the new total on the {destination_belt_label} belt if all {target_object_plural} from the {source_belt_label} belt are moved there?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:object_type_belt_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted object on the requested belt",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:color_belt_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted colored object on the requested belt",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:color_type_belt_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted object matching both the requested color and object type on the requested belt",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:belt_total_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted object on the requested belt",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:object_count_sum": {
+      "answer_hint": "set \"answer\" to the computed count as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"inner_objects\" and \"outer_objects\"; each value is an array of [x0, y0, x1, y1] boxes around the counted objects of the requested type for that belt",
+      "json_example": "{\"annotation\":{\"inner_objects\":[[120,450,174,494]],\"outer_objects\":[[390,320,450,370]]},\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:object_count_difference": {
+      "answer_hint": "set \"answer\" to the computed count as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"inner_objects\" and \"outer_objects\"; each value is an array of [x0, y0, x1, y1] boxes around the counted objects of the requested type for that belt",
+      "json_example": "{\"annotation\":{\"inner_objects\":[[120,450,174,494]],\"outer_objects\":[[390,320,450,370]]},\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:color_ordered_pair_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one pixel-space segment [[x0, y0], [x1, y1]] per counted adjacent ordered pair, where each endpoint is an [x, y] pixel point at an object center; the segment starts at the first object and ends at the second object",
+      "json_example": "{\"annotation\":[[[120,450],[174,494]],[[390,320],[450,370]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:object_ordered_pair_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one pixel-space segment [[x0, y0], [x1, y1]] per counted adjacent ordered pair, where each endpoint is an [x, y] pixel point at an object center; the segment starts at the first object and ends at the second object",
+      "json_example": "{\"annotation\":[[[120,450],[174,494]],[[390,320],[450,370]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:between_object_anchors_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array containing one [x0, y0, x1, y1] pixel box around each counted object between the marked anchors; do not include the marked anchor objects",
+      "json_example": "{\"annotation\":[[120,450,174,494],[390,320,450,370]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:color_transfer_total_count": {
+      "answer_hint": "set \"answer\" to the resulting count as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"source_moved_objects\" and \"destination_existing_objects\"; each value is an array of [x0, y0, x1, y1] boxes around the corresponding objects before the move",
+      "json_example": "{\"annotation\":{\"source_moved_objects\":[[120,450,174,494]],\"destination_existing_objects\":[[390,320,450,370],[470,320,520,370]]},\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:object_transfer_total_count": {
+      "answer_hint": "set \"answer\" to the resulting count as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"source_moved_objects\" and \"destination_existing_objects\"; each value is an array of [x0, y0, x1, y1] boxes around the corresponding objects before the move",
+      "json_example": "{\"annotation\":{\"source_moved_objects\":[[120,450,174,494]],\"destination_existing_objects\":[[390,320,450,370],[470,320,520,370]]},\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "belt_label": {"type": "string"},
+    "target_object_plural": {"type": "string"},
+    "target_color_label": {"type": "string"},
+    "first_target_color_label": {"type": "string"},
+    "second_target_color_label": {"type": "string"},
+    "first_target_object_plural": {"type": "string"},
+    "second_target_object_plural": {"type": "string"},
+    "start_anchor_label": {"type": "string"},
+    "end_anchor_label": {"type": "string"},
+    "start_anchor_object_name": {"type": "string"},
+    "end_anchor_object_name": {"type": "string"},
+    "source_belt_label": {"type": "string"},
+    "destination_belt_label": {"type": "string"},
+    "first_belt_label": {"type": "string"},
+    "second_belt_label": {"type": "string"},
+    "first_annotation_key": {"type": "string"},
+    "second_annotation_key": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "query:object_type_belt_count": ["belt_label", "target_object_plural"],
+    "query:color_belt_count": ["belt_label", "target_color_label"],
+    "query:color_type_belt_count": ["belt_label", "target_color_label", "target_object_plural"],
+    "query:belt_total_count": ["belt_label"],
+    "query:object_count_sum": ["target_object_plural", "first_belt_label", "second_belt_label", "first_annotation_key", "second_annotation_key", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"],
+    "query:object_count_difference": ["target_object_plural", "first_belt_label", "second_belt_label", "first_annotation_key", "second_annotation_key", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"],
+    "query:color_ordered_pair_count": ["belt_label", "first_target_color_label", "second_target_color_label", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"],
+    "query:object_ordered_pair_count": ["belt_label", "first_target_object_plural", "second_target_object_plural", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"],
+    "query:between_object_anchors_count": ["belt_label", "start_anchor_label", "end_anchor_label", "start_anchor_object_name", "end_anchor_object_name", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"],
+    "query:color_transfer_total_count": ["source_belt_label", "destination_belt_label", "target_color_label", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"],
+    "query:object_transfer_total_count": ["source_belt_label", "destination_belt_label", "target_object_plural", "answer_hint", "annotation_hint", "json_example", "json_example_answer_only"]
+  }
+}

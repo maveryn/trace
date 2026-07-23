@@ -1,0 +1,193 @@
+{
+  "bundle_id": "geometry_regular_polygon_decomposition_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "regular_polygon_decomposition_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "This figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "marked_piece_area_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "wedge_area_from_side_apothem_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "central_angle_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "perimeter_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "side_length_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_wedges_area_from_total": [
+        "Count the equal center wedges in the whole polygon and the shaded wedges. Using the total polygon area, what is the area of \"{target_name}\"?",
+        "Use the equal wedge decomposition: count all center wedges, then count the shaded wedges. What is the area of \"{target_name}\"?",
+        "The total polygon area is labeled and one or more adjacent wedges are shaded. What is the area of \"{target_name}\"?",
+        "Based on the equal center wedges and the shaded wedge count, what is the area of \"{target_name}\"?",
+        "Find the area of \"{target_name}\" from the visible equal-wedge decomposition and total polygon area."
+      ],
+      "wedge_area_from_side_and_apothem": [
+        "Use the labeled side length and apothem of the shaded wedge. What is the area of \"{target_name}\"?",
+        "The shaded wedge has its base and apothem labeled. What is the area of \"{target_name}\"?",
+        "Find the triangular wedge area from the visible side and apothem labels. What is the area of \"{target_name}\"?",
+        "Based on the side length and apothem, what is the area of \"{target_name}\"?",
+        "Use the marked regular-polygon wedge. What is the area of \"{target_name}\"?"
+      ],
+      "marked_wedges_central_angle": [
+        "Count the equal center wedges in the whole polygon and the shaded wedge or wedges between OA and OB. What is the measure of angle {target_name} in degrees?",
+        "Use the equal center wedges of the regular polygon: count all wedges, then count the shaded wedge or wedges forming angle {target_name}. What is its measure in degrees?",
+        "The marked central angle {target_name} spans the shaded wedge or wedges. What is its measure in degrees?",
+        "Based on the regular-polygon decomposition and the shaded wedge count, find the degree measure of angle {target_name}.",
+        "What is the measure of the marked central angle {target_name} formed by the shaded wedge or wedges?"
+      ],
+      "perimeter_from_total_area_and_apothem": [
+        "Use the labeled total area and apothem of the regular polygon. What is the total perimeter of \"{target_name}\"?",
+        "The total area and apothem are labeled. What is the total perimeter of \"{target_name}\"?",
+        "Find the total perimeter of \"{target_name}\" from the visible area and apothem labels.",
+        "Based on the labeled area and apothem, what is the total perimeter of \"{target_name}\"?",
+        "What is the total perimeter of \"{target_name}\"?"
+      ],
+      "side_length_from_perimeter": [
+        "Use the labeled perimeter of the regular polygon. What is the length of \"{target_name}\"?",
+        "The regular polygon perimeter is labeled. What is the length of \"{target_name}\"?",
+        "Find the side length of \"{target_name}\" from the visible perimeter label.",
+        "Based on the labeled perimeter, what is the length of \"{target_name}\"?",
+        "What is the length of \"{target_name}\"?"
+      ],
+      "side_length_from_total_area_and_apothem": [
+        "Use the labeled total area and apothem of the regular polygon. What is the length of \"{target_name}\"?",
+        "The total area and apothem are labeled. What is the length of \"{target_name}\"?",
+        "Find the side length of \"{target_name}\" from the visible area and apothem labels.",
+        "Based on the labeled total area and apothem, what is the length of \"{target_name}\"?",
+        "What is the length of \"{target_name}\"?"
+      ],
+      "side_length_from_wedge_area_and_apothem": [
+        "Use the labeled shaded wedge area and apothem. What is the length of \"{target_name}\"?",
+        "The shaded wedge area and apothem are labeled. What is the length of \"{target_name}\"?",
+        "Find the side length of \"{target_name}\" from the visible wedge-area and apothem labels.",
+        "Based on the shaded wedge and apothem, what is the length of \"{target_name}\"?",
+        "What is the length of \"{target_name}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:regular_polygon_decomposition_scene": [
+      "object_description"
+    ],
+    "query:marked_wedges_area_from_total": [
+      "target_name"
+    ],
+    "query:wedge_area_from_side_and_apothem": [
+      "target_name"
+    ],
+    "query:marked_wedges_central_angle": [
+      "target_name"
+    ],
+    "query:perimeter_from_total_area_and_apothem": [
+      "target_name"
+    ],
+    "query:side_length_from_perimeter": [
+      "target_name"
+    ],
+    "query:side_length_from_total_area_and_apothem": [
+      "target_name"
+    ],
+    "query:side_length_from_wedge_area_and_apothem": [
+      "target_name"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:regular_polygon_decomposition_scene": {
+      "object_description": "a regular polygon partitioned into equal center wedges with visible labels and measurements"
+    },
+    "global": {
+      "annotation_hint": "set \"annotation\" to a JSON object whose keys are the visible point labels shown in the example; each value must be the pixel point [x,y] at that labeled point",
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "task:marked_piece_area_value_query": {
+      "answer_hint": "set \"answer\" to the requested area as a number rounded to one decimal place"
+    },
+    "task:wedge_area_from_side_apothem_value_query": {
+      "answer_hint": "set \"answer\" to the requested area as a number rounded to one decimal place"
+    },
+    "task:central_angle_value_query": {
+      "answer_hint": "set \"answer\" to the requested angle in degrees as an integer"
+    },
+    "task:perimeter_value_query": {
+      "answer_hint": "set \"answer\" to the requested perimeter as an integer"
+    },
+    "task:side_length_value_query": {
+      "answer_hint": "set \"answer\" to the requested length as an integer"
+    }
+  },
+  "dynamic_slots": {
+    "target_name": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  }
+}

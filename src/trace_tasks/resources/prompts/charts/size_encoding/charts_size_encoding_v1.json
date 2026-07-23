@@ -1,0 +1,180 @@
+{
+  "bundle_id": "charts_size_encoding_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "size_encoded_chart_scene": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "size_encoding_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "largest_size_item_in_category_label": [
+        "Within category \"{category_label}\", which item has the {extremum_phrase} size?",
+        "Looking only at category \"{category_label}\", what item is visually {extremum_phrase}?",
+        "Among the \"{category_label}\" items, which label corresponds to the {extremum_phrase} item?",
+        "Filter to category \"{category_label}\". Which item has the {extremum_phrase} displayed value?",
+        "For category \"{category_label}\", name the item with the {extremum_phrase} visible size."
+      ],
+      "smallest_size_item_in_category_label": [
+        "Within category \"{category_label}\", which item has the {extremum_phrase} size?",
+        "Looking only at category \"{category_label}\", what item is visually {extremum_phrase}?",
+        "Among the \"{category_label}\" items, which label corresponds to the {extremum_phrase} item?",
+        "Filter to category \"{category_label}\". Which item has the {extremum_phrase} displayed value?",
+        "For category \"{category_label}\", name the item with the {extremum_phrase} visible size."
+      ],
+      "largest_overall_size_category_label": [
+        "Across all visible items, which category contains the item with the {extremum_phrase} displayed size?",
+        "Find the single item with the {extremum_phrase} size. What category does it belong to?",
+        "Which category contains the globally {extremum_phrase} size-encoded item?",
+        "Across the whole chart, identify the item with the {extremum_phrase} visible size. Which category is it in?",
+        "Name the category of the item that has the {extremum_phrase} displayed size overall."
+      ],
+      "smallest_overall_size_category_label": [
+        "Across all visible items, which category contains the item with the {extremum_phrase} displayed size?",
+        "Find the single item with the {extremum_phrase} size. What category does it belong to?",
+        "Which category contains the globally {extremum_phrase} size-encoded item?",
+        "Across the whole chart, identify the item with the {extremum_phrase} visible size. Which category is it in?",
+        "Name the category of the item that has the {extremum_phrase} displayed size overall."
+      ],
+      "largest_category_item_panel_label": [
+        "For category \"{category_label}\", which panel contains the item with the {extremum_phrase} size?",
+        "Looking only at category \"{category_label}\", name the panel that contains the {extremum_phrase} item.",
+        "Among the \"{category_label}\" bubbles, which panel has the {extremum_phrase} size-encoded item?",
+        "Filter to category \"{category_label}\". Which panel contains its {extremum_phrase} visible item?",
+        "Which panel contains the globally {extremum_phrase} item within category \"{category_label}\"?"
+      ],
+      "smallest_category_item_panel_label": [
+        "For category \"{category_label}\", which panel contains the item with the {extremum_phrase} size?",
+        "Looking only at category \"{category_label}\", name the panel that contains the {extremum_phrase} item.",
+        "Among the \"{category_label}\" bubbles, which panel has the {extremum_phrase} size-encoded item?",
+        "Filter to category \"{category_label}\". Which panel contains its {extremum_phrase} visible item?",
+        "Which panel contains the globally {extremum_phrase} item within category \"{category_label}\"?"
+      ],
+      "larger_than_reference_in_category_count": [
+        "Within category \"{category_label}\", how many items are larger than item \"{reference_label}\"?",
+        "Looking only at category \"{category_label}\", count the items with a larger visible size than \"{reference_label}\".",
+        "For category \"{category_label}\", how many labels are size-encoded larger than \"{reference_label}\"?",
+        "Filter to category \"{category_label}\". How many items are visibly larger than item \"{reference_label}\"?",
+        "Among the \"{category_label}\" items, count those larger than \"{reference_label}\"."
+      ],
+      "smaller_than_reference_in_category_count": [
+        "Within category \"{category_label}\", how many items are smaller than item \"{reference_label}\"?",
+        "Looking only at category \"{category_label}\", count the items with a smaller visible size than \"{reference_label}\".",
+        "For category \"{category_label}\", how many labels are size-encoded smaller than \"{reference_label}\"?",
+        "Filter to category \"{category_label}\". How many items are visibly smaller than item \"{reference_label}\"?",
+        "Among the \"{category_label}\" items, count those smaller than \"{reference_label}\"."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "category_label": {
+      "type": "string"
+    },
+    "extremum_phrase": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "panel_label": {
+      "type": "string"
+    },
+    "reference_label": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:size_encoded_chart_scene": [
+      "object_description"
+    ],
+    "query:largest_size_item_in_category_label": [
+      "category_label",
+      "extremum_phrase"
+    ],
+    "query:smallest_size_item_in_category_label": [
+      "category_label",
+      "extremum_phrase"
+    ],
+    "query:largest_overall_size_category_label": [
+      "extremum_phrase"
+    ],
+    "query:smallest_overall_size_category_label": [
+      "extremum_phrase"
+    ],
+    "query:largest_category_item_panel_label": [
+      "category_label",
+      "extremum_phrase"
+    ],
+    "query:smallest_category_item_panel_label": [
+      "category_label",
+      "extremum_phrase"
+    ],
+    "query:larger_than_reference_in_category_count": [
+      "category_label",
+      "reference_label"
+    ],
+    "query:smaller_than_reference_in_category_count": [
+      "category_label",
+      "reference_label"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

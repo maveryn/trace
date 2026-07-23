@@ -1,0 +1,71 @@
+generation:
+  task_overrides:
+    task_puzzles__color_gradient__color_gradient_violation_cell_label:
+      grid_size_variant_weights:
+        3x3: 1.0
+        4x4: 1.0
+      rule_variant_weights:
+        column_hue_row_lightness: 1.0
+        row_hue_column_lightness: 1.0
+        column_hue_row_saturation: 1.0
+      scene_variant_weights:
+        swatch_clean: 1.0
+        swatch_card: 1.0
+        swatch_notebook: 1.0
+      hue_step_min: 34.0
+      hue_step_max: 58.0
+      lightness_step_min: 0.060
+      lightness_step_max: 0.090
+      saturation_step_min: 0.070
+      saturation_step_max: 0.110
+    task_puzzles__color_gradient__color_gradient_completion_label:
+      sequence_length_variant_weights:
+        5_cell: 1.0
+        6_cell: 1.0
+        7_cell: 1.0
+      option_count_variant_weights:
+        4_options: 0.0
+        5_options: 0.0
+        6_options: 1.0
+      rule_variant_weights:
+        hue_gradient: 1.0
+        lightness_gradient: 1.0
+        hue_lightness_gradient: 1.0
+      scene_variant_weights:
+        swatch_clean: 1.0
+        swatch_card: 1.0
+        swatch_notebook: 1.0
+      completion_hue_step_min: 20.0
+      completion_hue_step_max: 34.0
+      completion_lightness_step_min: 0.035
+      completion_lightness_step_max: 0.060
+
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 760
+    swatch_size_px: 112
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    swatch_gap_px: 14
+    panel_padding_px: 34
+    panel_corner_radius_px: 26
+    panel_border_width_px: 3
+    swatch_corner_radius_px: 12
+    swatch_border_width_px: 3
+    label_chip_size_px: 40
+    label_margin_px: 9
+    label_font_size_px: 22
+    panel_fill_rgb: [250, 251, 253]
+    panel_border_rgb: [88, 96, 110]
+    swatch_border_rgb: [40, 46, 58]
+    notebook_line_rgb: [218, 226, 236]
+
+prompt:
+  shared:
+    bundle_id: puzzles_color_gradient_v1
+    scene_key: color_gradient
+
+visual:
+  noise:
+    apply_prob: 0.0

@@ -1,0 +1,28 @@
+generation:
+  shared:
+    balanced_sampling: true
+    candidate_label_pool:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    - H
+    - I
+rendering:
+  shared:
+    canvas_width: 1024
+    canvas_height: 720
+    line_width: 4
+prompt:
+  shared:
+    bundle_id: geometry_analytical_function_property_v1
+    scene_key: function_panel_grid
+    task_key: function_panel_query
+  task_overrides:
+    task_geometry__function_panels__intersection_property_label:
+      bundle_id: geometry_analytical_intersection_property_v1
+      scene_key: intersection_panel_grid
+      task_key: intersection_panel_query

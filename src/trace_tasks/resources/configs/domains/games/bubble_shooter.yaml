@@ -1,0 +1,98 @@
+generation:
+  shared:
+    scene_variant_weights:
+      open_pack: 1.0
+      dense_pack: 1.0
+    style_variant_weights:
+      classic: 1.0
+      pastel: 1.0
+      neon: 1.0
+      paper: 1.0
+      arcade: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_row_count_sampling: true
+    balanced_col_count_sampling: true
+    row_count_support:
+      - 7
+      - 8
+      - 9
+    col_count_support:
+      - 8
+      - 9
+      - 10
+  task_overrides:
+    task_games__bubble_shooter__pop_count:
+      balanced_target_answer_sampling: true
+      row_count_support:
+        - 7
+      pop_count_support:
+        - 0
+        - 2
+        - 3
+        - 4
+        - 5
+    task_games__bubble_shooter__drop_count:
+      balanced_target_answer_sampling: true
+      row_count_support:
+        - 7
+      drop_count_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+    task_games__bubble_shooter__pop_color_label:
+      balanced_option_count_sampling: true
+      balanced_target_label_sampling: true
+      option_count_support:
+        - 4
+        - 5
+        - 6
+      pop_color_label_support:
+        - A
+        - B
+        - C
+        - D
+        - E
+        - F
+    task_games__bubble_shooter__pop_target_label:
+      balanced_target_label_sampling: true
+      balanced_positive_pop_count_sampling: true
+      positive_pop_count_support:
+        - 2
+        - 3
+        - 4
+        - 5
+      pop_target_label_support:
+        - A
+        - B
+        - C
+        - D
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 820
+    panel_margin_px: 42
+    playfield_width_px: 860
+    playfield_height_px: 720
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    playfield_border_width_px: 5
+    board_top_px: 38
+    board_height_px: 500
+    bubble_gap_px: 2
+    path_width_px: 5
+    shooter_radius_px: 22
+    option_radius_px: 17
+    option_label_font_size_px: 22
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 500
+    canvas_side_padding_px: 120
+    canvas_vertical_padding_px: 86
+prompt:
+  shared:
+    bundle_id: games_bubble_shooter_v1
+    scene_key: visible_bubble_shooter_board
+    task_key: bubble_shooter_query

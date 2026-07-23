@@ -1,0 +1,138 @@
+{
+  "bundle_id": "games_darts_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_dartboard": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "darts_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "dart_score_value": [
+        "{scoring_rule_text} What score does the dart get?",
+        "Find the score of the dart. {scoring_rule_text}",
+        "{scoring_rule_text} Read the score for the dart.",
+        "Using the simplified dartboard scoring rule, what is the dart's score? {scoring_rule_text}",
+        "Score the dart. {scoring_rule_text}"
+      ],
+      "inside_bullseye_count": [
+        "How many darts are inside the center bullseye?",
+        "Count the darts that landed inside the bullseye.",
+        "What is the number of darts in the center bullseye?",
+        "How many visible darts are inside the bullseye circle?",
+        "Find the count of darts in the bullseye."
+      ],
+      "outside_bullseye_count": [
+        "How many darts are outside the center bullseye?",
+        "Count the darts that did not land in the bullseye.",
+        "What is the number of darts outside the bullseye circle?",
+        "How many visible darts are not inside the bullseye?",
+        "Find the count of darts outside the center bullseye."
+      ],
+      "highest_scoring_dart_label": [
+        "{scoring_rule_text} Which labeled dart A-D scores the most points?",
+        "{scoring_rule_text} Among the labeled darts A-D, which one has the highest score?",
+        "Compare the scores of labeled darts A-D. {scoring_rule_text} Which dart scores highest?",
+        "Using the simplified dartboard scoring rule, which labeled dart has the greatest score? {scoring_rule_text}",
+        "{scoring_rule_text} Select the label of the dart with the largest score."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_dartboard": [
+      "object_description"
+    ],
+    "query:dart_score_value": [
+      "scoring_rule_text"
+    ],
+    "query:inside_bullseye_count": [],
+    "query:outside_bullseye_count": [],
+    "query:highest_scoring_dart_label": [
+      "scoring_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:visible_dartboard": {
+      "object_description": "a simplified labeled dartboard with visible dart markers"
+    },
+    "query:dart_score_value": {
+      "scoring_rule_text": "A dart in a numbered sector scores that number; a dart in the center bullseye scores 50."
+    },
+    "query:highest_scoring_dart_label": {
+      "scoring_rule_text": "A dart in a numbered sector scores that number; a dart in the center bullseye scores 50."
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_single_board": "a simplified labeled dartboard with visible dart markers",
+    "scoring_rule_text": "A dart in a numbered sector scores that number; a dart in the center bullseye scores 50.",
+    "annotation_hint_dart_score_value": "set \"annotation\" to one pixel point [x, y] at the center of the dart",
+    "annotation_hint_inside_bullseye_count": "set \"annotation\" to a JSON array of pixel-space dart boxes [x0, y0, x1, y1] for every dart inside the bullseye",
+    "annotation_hint_outside_bullseye_count": "set \"annotation\" to a JSON array of pixel-space dart boxes [x0, y0, x1, y1] for every dart outside the bullseye",
+    "annotation_hint_highest_scoring_dart_label": "set \"annotation\" to one pixel point [x, y] at the center of the highest-scoring labeled dart",
+    "answer_hint_dart_score_value": "set \"answer\" to the integer score of the dart",
+    "answer_hint_inside_bullseye_count": "set \"answer\" to the number of darts inside the bullseye",
+    "answer_hint_outside_bullseye_count": "set \"answer\" to the number of darts outside the bullseye",
+    "answer_hint_highest_scoring_dart_label": "set \"answer\" to the single letter A, B, C, or D printed next to the highest-scoring dart"
+  }
+}

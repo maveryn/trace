@@ -1,0 +1,104 @@
+{
+  "bundle_id": "puzzles_sudoku_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "code_prompt_defaults": {
+    "object_description_sparse_grid": "a partially filled Sudoku grid",
+    "object_description_filled_grid": "a more filled Sudoku grid"
+  },
+  "templates": {
+    "scene": {
+      "visible_sudoku_grid": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "sudoku_grid_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_cell_value": [
+        "Rows, columns, and 3 by 3 boxes cannot repeat digits 1 through 9. The red outlined empty cell is the marked cell. What digit must go there?",
+        "Using standard Sudoku rules, what digit belongs in the red outlined empty cell?",
+        "Rows, columns, and 3 by 3 boxes cannot repeat digits 1 through 9. Which digit must be placed in the marked empty cell?",
+        "The red outlined empty cell is the marked cell. Under standard Sudoku rules, what is its only valid digit?",
+        "What digit must go in the marked empty Sudoku cell?"
+      ],
+      "marked_cell_candidate_count": [
+        "Rows, columns, and 3 by 3 boxes cannot repeat digits 1 through 9. The red outlined empty cell is the marked cell. How many digits could legally go there?",
+        "Using standard Sudoku rules, count the legal candidate digits for the marked empty cell.",
+        "How many digit values from 1 through 9 are still allowed in the red outlined empty cell?",
+        "The red outlined empty cell is the marked cell. How many Sudoku digits could be placed there?",
+        "Count the legal candidate digits for the marked empty Sudoku cell."
+      ],
+      "mistake_cell_label": [
+        "Rows, columns, and 3 by 3 boxes cannot repeat digits 1 through 9. One lettered filled cell has the wrong digit. Which lettered cell must be changed?",
+        "Using standard Sudoku rules, choose the lettered filled cell whose digit is wrong.",
+        "One of the lettered filled cells creates a Sudoku conflict. Which lettered cell is the mistake?",
+        "Which lettered filled Sudoku cell must be corrected?",
+        "The lettered filled cells are the options. Which option has the wrong digit?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:marked_cell_value": {
+      "answer_instruction": "the digit that must go in the marked empty cell",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] for the red outlined marked cell.",
+      "json_example": "{\"annotation\":[140,220,210,290],\"answer\":7}",
+      "json_example_answer_only": "{\"answer\":7}"
+    },
+    "query:marked_cell_candidate_count": {
+      "answer_instruction": "the number of legal candidate digits for the marked empty cell",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] for the red outlined marked cell.",
+      "json_example": "{\"annotation\":[140,220,210,290],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:mistake_cell_label": {
+      "answer_instruction": "the option letter of the filled cell with the wrong digit",
+      "annotation_hint": "Set annotation to one image-pixel bounding box [x0,y0,x1,y1] for the selected lettered cell.",
+      "json_example": "{\"annotation\":[140,220,210,290],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "unit_scope_text": {
+      "type": "string"
+    },
+    "target_digit": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_sudoku_grid": [
+      "object_description"
+    ]
+  }
+}

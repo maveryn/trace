@@ -1,0 +1,96 @@
+generation:
+  shared:
+    region_row_count_min: 4
+    region_row_count_max: 7
+    region_col_count_min: 4
+    region_col_count_max: 7
+    region_count_min: 14
+    region_count_max: 22
+    legend_bin_count_min: 3
+    legend_bin_count_max: 6
+    count_answer_min: 1
+    count_answer_max: 6
+    marker_value_min: 1
+    marker_value_max: 5
+    marked_region_count_max: 10
+    geographic_selected_region_count_min: 14
+    geographic_selected_region_count_max: 21
+    geographic_min_target_component_area_px: 400
+    geographic_min_target_component_width_px: 12
+    geographic_min_target_component_height_px: 10
+    balanced_geographic_map_variant_sampling: true
+    geographic_map_variant_weights:
+      world_countries: 0.5
+      usa_states: 0.25
+      eu_countries: 0.125
+      china_provinces: 0.125
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      synthetic_region_map: 0.3333333333333333
+      geographic_region_map: 0.6666666666666666
+rendering:
+  shared:
+    chart_context_profile: report_paragraph
+    canvas_width: 1180
+    canvas_height: 760
+    outer_margin_px: 42
+    panel_padding_px: 26
+    title_band_height_px: 62
+    legend_width_px: 238
+    legend_height_px: 118
+    map_legend_gap_px: 32
+    region_gap_px: 3
+    region_border_width_px: 3
+    label_font_size_px: 18
+    legend_font_size_px: 17
+    title_font_size_px: 28
+    region_border_rgb:
+    - 255
+    - 255
+    - 255
+    balanced_legend_position_sampling: true
+    legend_position_weights:
+      right: 1.0
+      top: 1.0
+      bottom: 1.0
+    balanced_numeric_palette_variant_sampling: true
+    numeric_palette_variant_weights:
+      blue: 1.0
+      green: 1.0
+      orange: 1.0
+      purple: 1.0
+      rose: 1.0
+      teal: 1.0
+      indigo: 1.0
+      magma: 1.0
+      earth: 1.0
+      sunset: 1.0
+    balanced_categorical_palette_variant_sampling: true
+    categorical_palette_variant_weights:
+      tableau: 1.0
+      bold: 1.0
+      pastel: 1.0
+      metro: 1.0
+      harbor: 1.0
+      orchid: 1.0
+      field: 1.0
+      civic: 1.0
+    balanced_world_map_style_sampling: true
+    world_map_style_weights:
+      atlas_light: 1.0
+      report_blue: 1.0
+      warm_print: 1.0
+      muted_gray: 1.0
+      clean_minimal: 1.0
+    balanced_marker_style_variant_sampling: true
+    marker_style_variant_weights:
+      teal: 1.0
+      coral: 1.0
+      violet: 1.0
+      gold: 1.0
+      ink: 1.0
+    marker_min_radius_px: 8
+    marker_max_radius_px: 22
+prompt:
+  shared:
+    bundle_id: charts_region_map_v1

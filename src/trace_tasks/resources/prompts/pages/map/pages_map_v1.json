@@ -1,0 +1,109 @@
+{
+  "bundle_id": "pages_map_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "printed_map": [
+        "The image shows {object_description}.",
+        "The map shows {object_description}.",
+        "This map shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "map_navigation_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "destination_after_directions": [
+        "Starting at \"{start_label}\", follow the map directions to the next labeled landmark each time: {direction_text}. What landmark do you reach?",
+        "Begin at \"{start_label}\" and follow these directions one step at a time: {direction_text}. Which landmark is reached?",
+        "From \"{start_label}\", move to the next labeled landmark for each direction: {direction_text}. What is the destination landmark?",
+        "Use the map paths from \"{start_label}\" and apply this direction sequence: {direction_text}. Which landmark do you end at?",
+        "Trace the route beginning at \"{start_label}\": {direction_text}. What labeled landmark is the final stop?"
+      ],
+      "landmark_after_route_step": [
+        "On the highlighted orange route from \"{route_start_label}\" to \"{route_end_label}\", what is the {step_ordinal} landmark reached after \"{route_start_label}\"?",
+        "Follow the highlighted route from \"{route_start_label}\" toward \"{route_end_label}\". Which landmark is reached {step_ordinal} after the start?",
+        "Using only the orange route, count landmarks after \"{route_start_label}\". What is the {step_ordinal} reached landmark?",
+        "Trace the highlighted path from \"{route_start_label}\" to \"{route_end_label}\". Which label is at the {step_ordinal} reached landmark?",
+        "Starting at \"{route_start_label}\", follow the orange route in order. What landmark is reached {step_ordinal}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:destination_after_directions": {
+      "object_description": "a printed campus layout with labeled landmarks, named zones, visible walking paths, and a compass",
+      "answer_hint": "set \"answer\" to the exact visible destination landmark label",
+      "annotation_hint": "set \"annotation\" to an ordered array of [x0, y0, x1, y1] pixel bounding boxes around the route landmarks from the start through the destination",
+      "json_example": "{\"annotation\":[[188,310,314,368],[426,310,552,368],[426,478,552,536]],\"answer\":\"Clinic\"}",
+      "json_example_answer_only": "{\"answer\":\"Clinic\"}"
+    },
+    "query:landmark_after_route_step": {
+      "object_description": "a printed campus layout with labeled landmarks, named zones, visible walking paths, and a highlighted orange route",
+      "answer_hint": "set \"answer\" to the exact visible landmark label at the requested route step",
+      "annotation_hint": "set \"annotation\" to an ordered array of [x0, y0, x1, y1] pixel bounding boxes around the highlighted-route landmarks from the start through the requested landmark",
+      "json_example": "{\"annotation\":[[214,388,340,446],[452,388,578,446],[690,388,816,446]],\"answer\":\"Gallery\"}",
+      "json_example_answer_only": "{\"answer\":\"Gallery\"}"
+    }
+  },
+  "dynamic_slots": {
+    "start_label": {"type": "string"},
+    "direction_text": {"type": "string"},
+    "route_start_label": {"type": "string"},
+    "route_end_label": {"type": "string"},
+    "step_ordinal": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:printed_map": [
+      "object_description"
+    ],
+    "query:destination_after_directions": [
+      "start_label",
+      "direction_text"
+    ],
+    "query:landmark_after_route_step": [
+      "route_start_label",
+      "route_end_label",
+      "step_ordinal"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

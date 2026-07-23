@@ -1,0 +1,124 @@
+{
+  "bundle_id": "games_tower_draughts_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "tower_draughts_board": [
+        "The image shows {object_description}.",
+        "The board shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The visual shows {object_description}.",
+        "This board shows {object_description}."
+      ]
+    },
+    "task": {
+      "tower_draughts_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "controlled_stack_count": [
+        "{ownership_rule_text} How many stacks are controlled by {target_player_name}?",
+        "{ownership_rule_text} Count the stacks whose top disk is {target_player_name}.",
+        "{ownership_rule_text} What is the number of {target_player_name}-controlled stacks?",
+        "{ownership_rule_text} How many visible stacks have a {target_player_name} disk on top?",
+        "{ownership_rule_text} Count every stack controlled by {target_player_name}."
+      ],
+      "marked_stack_capture_count": [
+        "{ownership_rule_text} {capture_rule_text} How many opponent-controlled stacks can the X-marked stack capture now?",
+        "{ownership_rule_text} {capture_rule_text} Count the immediate captures for the X-marked stack.",
+        "{ownership_rule_text} {capture_rule_text} What is the number of capture jumps available to the X-marked stack?",
+        "{ownership_rule_text} {capture_rule_text} How many adjacent opponent-controlled stacks can be jumped by the X-marked stack?",
+        "{ownership_rule_text} {capture_rule_text} Count the opponent stacks the X-marked stack can capture in one jump."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tower_draughts_board": [
+      "object_description"
+    ],
+    "query:controlled_stack_count": [
+      "ownership_rule_text"
+    ],
+    "query:marked_stack_capture_count": [
+      "ownership_rule_text",
+      "capture_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "capture_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "ownership_rule_text": {
+      "type": "string"
+    },
+    "target_player_name": {
+      "type": "string"
+    },
+    "marked_player_name": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description": "a tower-draughts-style board with stacks of red and black disks on alternating playable squares",
+    "ownership_rule_text": "A stack is controlled by the color of its top disk.",
+    "capture_rule_text": "A stack captures by jumping diagonally over an adjacent opponent-controlled stack into the empty playable square immediately beyond it.",
+    "annotation_hint_controlled_stack_count": "set \"annotation\" to bounding boxes [[x0, y0, x1, y1], ...] around every stack controlled by the named color; use an empty array if there are none",
+    "answer_hint_controlled_stack_count": "set \"answer\" to the number of stacks controlled by the named color",
+    "annotation_hint_marked_stack_capture_count": "set \"annotation\" to bounding boxes [[x0, y0, x1, y1], ...] around every opponent-controlled stack the X-marked stack can capture; use an empty array if there are none",
+    "answer_hint_marked_stack_capture_count": "set \"answer\" to the number of immediate captures for the X-marked stack"
+  }
+}

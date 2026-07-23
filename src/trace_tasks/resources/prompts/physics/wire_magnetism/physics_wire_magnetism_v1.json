@@ -1,0 +1,58 @@
+{
+  "bundle_id": "physics_wire_magnetism_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": false,
+  "templates": {
+    "scene": {
+      "wire_magnetism_diagram": [
+        "The image shows a current-carrying wire perpendicular to the page, a marked point P, and labeled arrow options.",
+        "The diagram shows a wire passing into or out of the page, point P nearby, and labeled field-direction arrows.",
+        "This figure shows a page-perpendicular wire carrying current, a nearby point P, and four labeled arrow options.",
+        "The visual shows a dot or cross current symbol, a marked point P, and arrow choices for the field direction.",
+        "The diagram shows a current-carrying wire through the page and direction options for the field at point P."
+      ]
+    },
+    "task": {
+      "wire_field_direction_choice_query": [
+        "Use the right-hand rule around the wire. A dot-in-circle means current out of the page, and a cross-in-circle means current into the page. Choose the arrow option for the field at P.",
+        "Apply the right-hand rule to the current symbol and point P. Dot means current out of the page; cross means current into the page. Select the matching arrow.",
+        "Use the wire current cue and point P to determine the circular magnetic-field direction. Choose the labeled arrow option.",
+        "Use the right-hand rule around the page-perpendicular wire to choose the field direction at P. Match the result to one labeled arrow.",
+        "Identify the labeled arrow for the magnetic field at P. Dot is out of page, cross is into page, and the field circles around the wire."
+      ]
+    },
+    "query": {
+      "single": [
+        "Which labeled arrow gives the magnetic-field direction at point P?",
+        "Which arrow option shows the magnetic field at P?",
+        "What labeled arrow option matches the field direction at point P?",
+        "Choose the arrow option for the field direction at P.",
+        "Which option gives the magnetic-field direction around the wire at P?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nUse this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:wire_field_direction_choice_query": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"wire_current\" and \"point_p\"; each value is a pixel bounding box [x0,y0,x1,y1] around that visual witness",
+      "answer_hint": "set \"answer\" to the selected option letter as a string",
+      "json_example": "{\"annotation\":{\"wire_current\":[170,310,610,390],\"point_p\":[360,165,420,238]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  }
+}

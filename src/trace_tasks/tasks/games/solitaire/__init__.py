@@ -1,0 +1,1 @@
+"""Solitaire tableau games tasks."""

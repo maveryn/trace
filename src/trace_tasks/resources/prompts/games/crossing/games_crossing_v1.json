@@ -1,0 +1,135 @@
+{
+  "bundle_id": "games_crossing_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_crossing_lane": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "crossing_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "first_exit_object_label": [
+        "{crossing_motion_rule_text} Which labeled moving object leaves the board first?",
+        "Use the arrows on the moving objects. Which labeled moving object exits the grid first? {crossing_motion_rule_text}",
+        "{crossing_motion_rule_text} Identify the labeled moving object that reaches an outer edge before the other labeled objects.",
+        "{crossing_motion_rule_text} Which labeled moving object will leave the lane grid first?",
+        "Which labeled moving object exits the board earliest? {crossing_motion_rule_text}"
+      ],
+      "hit_object_label": [
+        "{crossing_motion_rule_text} Which labeled moving object hits the numbered yellow route?",
+        "Use the numbered yellow route cells and the arrows on the moving objects. Which labeled moving object collides with the route? {crossing_motion_rule_text}",
+        "{crossing_motion_rule_text} Identify the labeled moving object that reaches the same lane cell as the yellow route at the matching tick.",
+        "For the marked yellow route, which labeled moving object lands on the route at the same tick?",
+        "Which labeled moving object will hit the numbered yellow route? {crossing_motion_rule_text}"
+      ],
+      "left_moving_object_count": [
+        "How many moving objects have arrows pointing left?",
+        "Count the moving objects whose arrows point left.",
+        "What is the number of moving objects moving left?",
+        "Determine how many moving objects show a left-pointing arrow.",
+        "Report the count of left-moving objects."
+      ],
+      "right_moving_object_count": [
+        "How many moving objects have arrows pointing right?",
+        "Count the moving objects whose arrows point right.",
+        "What is the number of moving objects moving right?",
+        "Determine how many moving objects show a right-pointing arrow.",
+        "Report the count of right-moving objects."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_crossing_lane": [
+      "object_description"
+    ],
+    "query:hit_object_label": [
+      "crossing_motion_rule_text"
+    ],
+    "query:first_exit_object_label": [
+      "crossing_motion_rule_text"
+    ],
+    "query:left_moving_object_count": [],
+    "query:right_moving_object_count": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "crossing_motion_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_traffic_crossing": "a lane-crossing game board with moving objects, direction arrows, start pads, and one marked route line",
+    "object_description_traffic_crossing_no_route": "a lane-crossing game board with moving objects and direction arrows",
+    "crossing_motion_rule_text": "At tick 1, the runner enters the bottom traffic row; at each next tick, the runner moves one row upward. Each moving object shifts one lane cell per tick in its arrow direction. Objects that reach an edge leave the board.",
+    "crossing_exit_motion_rule_text": "At each tick, every moving object shifts one lane cell in its arrow direction. A moving object exits when it moves past the left or right edge.",
+    "annotation_hint_first_exit_object_label": "set \"annotation\" to one point [x, y] at the center of the labeled moving object that leaves the board first",
+    "annotation_hint_hit_object_label": "set \"annotation\" to one point [x, y] at the center of the labeled moving object that hits the marked route",
+    "annotation_hint_left_moving_object_count": "set \"annotation\" to a JSON array of pixel-space object boxes [x0, y0, x1, y1], one for every moving object whose arrow points left",
+    "annotation_hint_right_moving_object_count": "set \"annotation\" to a JSON array of pixel-space object boxes [x0, y0, x1, y1], one for every moving object whose arrow points right",
+    "answer_hint_first_exit_object_label": "set \"answer\" to the visible label of the moving object that leaves the board first; the value is one of A, B, C, or D",
+    "answer_hint_hit_object_label": "set \"answer\" to the visible label of the moving object that hits the marked route; the value is one of A, B, C, or D",
+    "answer_hint_left_moving_object_count": "set \"answer\" to the number of moving objects whose arrow points left; the value is between 1 and 6",
+    "answer_hint_right_moving_object_count": "set \"answer\" to the number of moving objects whose arrow points right; the value is between 1 and 6"
+  }
+}

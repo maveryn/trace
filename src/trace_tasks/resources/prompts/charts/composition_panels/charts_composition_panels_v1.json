@@ -1,0 +1,188 @@
+{
+  "bundle_id": "charts_composition_panels_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "composition_panels_scene": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "composition_panels_aggregate_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "top_k_by_segment_then_sum_other_segment_count": [
+        "First choose the {top_k} panels with the highest Segment \"{rank_segment}\" percentage. For each chosen panel, compute Segment \"{target_segment}\" count as panel total times its percentage divided by 100, then add those counts. What is the total?",
+        "Find the {top_k} highest panels by Segment \"{rank_segment}\" percentage. For only those panels, convert Segment \"{target_segment}\" percentage to count using total × percentage / 100 and sum the counts.",
+        "Rank panels by Segment \"{rank_segment}\" percentage and keep the highest {top_k}. Add their Segment \"{target_segment}\" counts, where each count is panel total × percentage / 100.",
+        "Using the {top_k} panels with the highest Segment \"{rank_segment}\" share, compute the combined Segment \"{target_segment}\" count from each panel total and percentage.",
+        "Select the {top_k} panels whose Segment \"{rank_segment}\" percentages are highest. What is the sum of their Segment \"{target_segment}\" counts after converting percentage to count?"
+      ],
+      "conditioned_panel_sum_from_percent": [
+        "Select panels where Segment \"{condition_segment}\" is greater than {threshold}%. For each selected panel, compute Segment \"{target_segment}\" count as panel total times its percentage divided by 100, then add those counts. What is the total?",
+        "Filter to every panel with Segment \"{condition_segment}\" above {threshold}%. In those panels only, convert Segment \"{target_segment}\" percentage to count using total × percentage / 100 and sum the counts.",
+        "For panels whose Segment \"{condition_segment}\" percentage exceeds {threshold}, add the Segment \"{target_segment}\" counts. Each count is panel total × percentage / 100.",
+        "Use only panels where Segment \"{condition_segment}\" is over {threshold}%. What total Segment \"{target_segment}\" count do they contain after converting each percentage to a count?",
+        "Across panels with Segment \"{condition_segment}\" greater than {threshold}%, compute and add the Segment \"{target_segment}\" counts using the panel totals."
+      ],
+      "composition_shift_l1_distance": [
+        "Between panels \"{start_panel}\" and \"{end_panel}\", subtract the two percentages for each segment, take absolute values, then add those percentage-point differences. What is the total?",
+        "Compare panel \"{start_panel}\" with panel \"{end_panel}\". For every segment, take the absolute percentage-point difference, then add all the differences. What is the total?",
+        "For panels \"{start_panel}\" and \"{end_panel}\", compute the total absolute change across segments {segment_list}: subtract each pair of percentages, use absolute values, and sum them.",
+        "Sum the absolute segment-percentage differences from panel \"{start_panel}\" to panel \"{end_panel}\". Use every segment in the legend once.",
+        "Across all segments, what is the total absolute percentage-point shift between \"{start_panel}\" and \"{end_panel}\" after adding the absolute differences?"
+      ],
+      "segment_count_extremum_panel_label": [
+        "Which panel has the {extremum_word} count for Segment \"{target_segment}\"?",
+        "For Segment \"{target_segment}\", which panel has the {extremum_word} count?",
+        "Use each panel total and Segment \"{target_segment}\" percentage. Which panel gives the {extremum_word} count?",
+        "Compute the Segment \"{target_segment}\" count in each panel. Which panel is {extremum_word}?",
+        "Looking across all panels, which panel has the {extremum_word} Segment \"{target_segment}\" count?"
+      ],
+      "segment_count_nearest_target_panel_label": [
+        "Using counts, not percentages, which panel's Segment \"{target_segment}\" count is closest to {target_count}?",
+        "Compute the Segment \"{target_segment}\" count in every panel. Which panel is nearest to {target_count}?",
+        "Use each panel total and Segment \"{target_segment}\" percentage. Which panel gives a count closest to {target_count}?",
+        "Across all panels, find the Segment \"{target_segment}\" count nearest {target_count}. Which panel is it?",
+        "Which panel has the Segment \"{target_segment}\" count closest to the target count {target_count}?"
+      ],
+      "segment_pair_count_gap_extremum_panel_label": [
+        "Using counts, not percentages, which panel has the {extremum_word} difference between Segment \"{segment_a}\" and Segment \"{segment_b}\"?",
+        "For each panel, compute the count gap between Segment \"{segment_a}\" and Segment \"{segment_b}\". Which panel has the {extremum_word} gap?",
+        "Use each panel total and the displayed percentages to compare Segment \"{segment_a}\" and Segment \"{segment_b}\" by count. Which panel has the {extremum_word} difference?",
+        "Which panel gives the {extremum_word} absolute count difference between Segment \"{segment_a}\" and Segment \"{segment_b}\"?",
+        "Across all panels, find the {extremum_word} count gap between Segment \"{segment_a}\" and Segment \"{segment_b}\". Which panel is it?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "condition_segment": {
+      "type": "string"
+    },
+    "end_panel": {
+      "type": "string"
+    },
+    "extremum_word": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "rank_segment": {
+      "type": "string"
+    },
+    "segment_a": {
+      "type": "string"
+    },
+    "segment_b": {
+      "type": "string"
+    },
+    "segment_list": {
+      "type": "string"
+    },
+    "start_panel": {
+      "type": "string"
+    },
+    "target_segment": {
+      "type": "string"
+    },
+    "target_count": {
+      "type": "string"
+    },
+    "threshold": {
+      "type": "string"
+    },
+    "top_k": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:composition_panels_scene": [
+      "object_description"
+    ],
+    "query:top_k_by_segment_then_sum_other_segment_count": [
+      "top_k",
+      "rank_segment",
+      "target_segment"
+    ],
+    "query:conditioned_panel_sum_from_percent": [
+      "condition_segment",
+      "threshold",
+      "target_segment"
+    ],
+    "query:composition_shift_l1_distance": [
+      "start_panel",
+      "end_panel",
+      "segment_list"
+    ],
+    "query:segment_count_extremum_panel_label": [
+      "extremum_word",
+      "target_segment"
+    ],
+    "query:segment_count_nearest_target_panel_label": [
+      "target_segment",
+      "target_count"
+    ],
+    "query:segment_pair_count_gap_extremum_panel_label": [
+      "extremum_word",
+      "segment_a",
+      "segment_b"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

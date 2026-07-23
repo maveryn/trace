@@ -1,0 +1,63 @@
+generation:
+  shared:
+    scene_variant_weights:
+      compact_board: 1.0
+      classic_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      wood_board: 1.0
+      slate_board: 1.0
+      blue_board: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_target_answer_sampling: true
+    legal_move_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    flip_count_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    frontier_disc_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  task_overrides:
+    task_games__reversi__frontier_disc_count:
+      target_player_weights:
+        black: 1.0
+        white: 1.0
+      balanced_target_player_sampling: true
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 900
+    panel_margin_px: 48
+    player_badge_height_px: 52
+    player_badge_width_px: 190
+    header_gap_px: 18
+    max_board_size_px: 720
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_corner_radius_px: 24
+    board_frame_width_px: 14
+    cell_line_width_px: 3
+    marked_square_outline_width_px: 6
+    disc_inset_fraction: 0.14
+    player_badge_font_size_px: 22
+prompt:
+  shared:
+    bundle_id: games_reversi_v1
+    scene_key: visible_reversi_board
+    task_key: reversi_move_query

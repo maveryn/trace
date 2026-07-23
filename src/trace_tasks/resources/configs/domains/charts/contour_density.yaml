@@ -1,0 +1,82 @@
+generation:
+  shared:
+    region_count_min: 5
+    region_count_max: 7
+    scene_variant_weights:
+      contour_rings: 1.0
+      filled_density: 1.0
+      scatter_contour: 1.0
+    density_threshold_level_min: 2
+    density_threshold_level_max: 5
+    threshold_count_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+rendering:
+  shared:
+    chart_context_profile: dense_clean_minimal
+    canvas_width: 1280
+    canvas_height: 820
+    outer_margin_px: 48
+    plot_margin_left_px: 96
+    plot_margin_right_px: 76
+    plot_margin_top_px: 86
+    plot_margin_bottom_px: 88
+    axis_line_width_px_min: 1
+    axis_line_width_px_max: 2
+    grid_line_width_px: 1
+    tick_font_size_px: 15
+    label_font_size_px: 18
+    title_font_size_px: 26
+    reference_marker_radius_px: 8
+    plot_fill_rgb:
+    - 255
+    - 255
+    - 255
+    axis_color_rgb:
+    - 55
+    - 60
+    - 70
+    grid_color_rgb:
+    - 223
+    - 227
+    - 235
+    text_color_rgb:
+    - 35
+    - 40
+    - 52
+    muted_text_rgb:
+    - 83
+    - 91
+    - 105
+    reference_rgb:
+    - 24
+    - 26
+    - 30
+    region_palette_rgb:
+    - - 37
+      - 99
+      - 180
+    - - 210
+      - 83
+      - 73
+    - - 59
+      - 145
+      - 99
+    - - 143
+      - 91
+      - 184
+    - - 216
+      - 145
+      - 48
+    - - 65
+      - 157
+      - 183
+    - - 188
+      - 88
+      - 135
+prompt:
+  shared:
+    bundle_id: charts_contour_density_v1

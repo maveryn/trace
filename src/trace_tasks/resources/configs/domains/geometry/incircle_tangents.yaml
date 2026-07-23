@@ -1,0 +1,32 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    line_width: 4
+    label_font_size: 22
+    small_label_font_size: 18
+    label_stroke_width: 0
+    single_object_scene_rotation:
+      enabled: true
+      probability: 0.5
+      angle_abs_min: 15
+      angle_abs_max: 75
+      margin_px: 48
+      min_scale_after_fit: 0.86
+      max_attempts: 6
+  task_overrides:
+    task_geometry__incircle_tangents__incircle_tangent_perimeter_value:
+      canvas_width: 760
+      canvas_height: 560
+    task_geometry__incircle_tangents__incircle_radius_from_area_value:
+      canvas_width: 760
+      canvas_height: 560
+prompt:
+  shared:
+    bundle_id: geometry_tangent_polygon_incircle_v0
+    scene_key: tangent_polygon_incircle_scene
+  task_overrides:
+    task_geometry__incircle_tangents__incircle_tangent_perimeter_value:
+      task_key: incircle_tangent_perimeter_value_query
+    task_geometry__incircle_tangents__incircle_radius_from_area_value:
+      task_key: incircle_radius_from_area_value_query

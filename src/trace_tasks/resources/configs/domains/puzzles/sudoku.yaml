@@ -1,0 +1,53 @@
+generation:
+  shared:
+    scene_variant_weights:
+      sparse_grid: 1.0
+      filled_grid: 1.0
+    unit_type_weights:
+      row: 1.0
+      column: 1.0
+      box: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      notebook: 1.0
+      slate: 1.0
+      warm_paper: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_unit_type_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_answer_label_sampling: true
+    option_label_support: [A, B, C, D]
+  task_overrides:
+    task_puzzles__sudoku__marked_cell_value:
+      marked_cell_value_support: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    task_puzzles__sudoku__marked_cell_candidate_count:
+      marked_cell_candidate_count_support: [1, 2, 3, 4, 5]
+    task_puzzles__sudoku__mistake_cell_label: {}
+
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 900
+    panel_margin_px: 48
+    max_board_size_px: 760
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_border_width_px: 5
+    grid_line_width_px: 2
+    box_line_width_px: 5
+    cell_padding_px: 5
+    digit_font_size_px: 48
+    marked_cell_outline_width_px: 7
+
+prompt:
+  shared:
+    bundle_id: puzzles_sudoku_v1
+    scene_key: visible_sudoku_grid
+    task_key: sudoku_grid_query
+
+visual:
+  noise:
+    apply_prob: 0.5

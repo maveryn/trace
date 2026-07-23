@@ -1,0 +1,153 @@
+{
+  "bundle_id": "graph_adjacency_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "adjacency_representation": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The panel shows {object_description}."
+      ]
+    },
+    "task": {
+      "adjacency_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "mutual_pair_count": [
+        "How many unordered node pairs have edges in both directions between the two nodes?",
+        "Count the unordered node pairs where both directed edges are present.",
+        "What is the number of node pairs connected mutually in both directions?",
+        "How many off-diagonal node pairs show a two-way directed connection?",
+        "Count the node pairs whose two mirrored cells both show directed edges."
+      ],
+      "directed_strong_component_count": [
+        "How many strongly connected components does the directed graph have?",
+        "Count the strongly connected components in the directed graph.",
+        "What is the number of strongly connected components?",
+        "Determine how many strongly connected components are shown by the directed graph.",
+        "How many node groups are strongly connected components in this directed graph?"
+      ],
+      "undirected_component_count": [
+        "How many connected components does the undirected graph have?",
+        "Count the connected components in the undirected graph.",
+        "What is the number of connected components?",
+        "Determine how many connected components are shown by the undirected graph.",
+        "How many separate connected node groups are in this undirected graph?"
+      ],
+      "weighted_matrix_mst_weight": [
+        "What is the total weight of the minimum spanning tree?",
+        "Find the minimum spanning tree and give its total edge weight.",
+        "What is the sum of the edge weights in the minimum spanning tree?",
+        "Determine the total weight of the graph's minimum spanning tree.",
+        "Using the weighted adjacency matrix, what is the minimum spanning tree total weight?"
+    ],
+    "bfs_kth_visit_label": [
+      "Starting from node {source_label}, perform breadth-first search reading each neighbor row from left to right. Which node is visited at position {traversal_position}, counting the start as position 1?",
+      "Use breadth-first search from node {source_label}, reading neighbor entries left to right. Counting the source as position 1, what node label appears at visit position {traversal_position}?",
+      "Run BFS beginning at node {source_label} with neighbors read left to right. Counting the source as position 1, which node is at visit position {traversal_position}?",
+      "From source node {source_label}, follow breadth-first search in left-to-right neighbor order. Counting the source as position 1, what is the node label at visit position {traversal_position}?",
+      "Breadth-first search starts at node {source_label} and reads each neighbor row left to right. Counting that start node as position 1, which node is visited at position {traversal_position}?"
+    ],
+    "dfs_kth_visit_label": [
+      "Starting from node {source_label}, perform depth-first search reading each neighbor row from left to right. Which node is visited at position {traversal_position}, counting the start as position 1?",
+      "Use depth-first search from node {source_label}, reading neighbor entries left to right. Counting the source as position 1, what node label appears at visit position {traversal_position}?",
+      "Run DFS beginning at node {source_label} with neighbors read left to right. Counting the source as position 1, which node is at visit position {traversal_position}?",
+      "From source node {source_label}, follow depth-first search in left-to-right neighbor order. Counting the source as position 1, what is the node label at visit position {traversal_position}?",
+      "Depth-first search starts at node {source_label} and reads each neighbor row left to right. Counting that start node as position 1, which node is visited at position {traversal_position}?"
+    ]
+  },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:mutual_pair_count": {
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel point at the center of one mirrored matrix cell for one counted mutual node pair; use [] when the answer is zero",
+      "answer_hint": "set \"answer\" to the number of counted unordered node pairs as an integer",
+      "json_example": "{\"annotation\":[[[303,207],[353,157]]],\"answer\":1}",
+      "json_example_answer_only": "{\"answer\":1}"
+    },
+    "query:directed_strong_component_count": {
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes in image pixel coordinates around the topmost row label in each strongly connected component",
+      "answer_hint": "set \"answer\" to the number of strongly connected components as an integer",
+      "json_example": "{\"annotation\":[[70,126,158,158],[70,318,158,350]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:undirected_component_count": {
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes in image pixel coordinates around the topmost row label in each connected component",
+      "answer_hint": "set \"answer\" to the number of connected components as an integer",
+      "json_example": "{\"annotation\":[[70,126,158,158],[70,318,158,350]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:weighted_matrix_mst_weight": {
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes in image pixel coordinates around the matrix cell for each minimum-spanning-tree edge whose row label is topmost among the two endpoint rows",
+      "answer_hint": "set \"answer\" to the total weight of the minimum spanning tree as an integer",
+      "json_example": "{\"annotation\":[[278,182,328,232],[328,282,378,332],[378,332,428,382]],\"answer\":12}",
+      "json_example_answer_only": "{\"answer\":12}"
+    },
+    "query:bfs_kth_visit_label": {
+      "annotation_hint": "set \"annotation\" to an ordered JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the row labels visited by breadth-first search from the source row through the answer row",
+      "answer_hint": "set \"answer\" to the node label at the requested visit position as a string",
+      "json_example": "{\"annotation\":[[70,126,158,158],[70,174,158,206],[70,222,158,254]],\"answer\":\"M\"}",
+      "json_example_answer_only": "{\"answer\":\"M\"}"
+    },
+    "query:dfs_kth_visit_label": {
+      "annotation_hint": "set \"annotation\" to an ordered JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around the row labels visited by depth-first search from the source row through the answer row",
+      "answer_hint": "set \"answer\" to the node label at the requested visit position as a string",
+      "json_example": "{\"annotation\":[[70,126,158,158],[70,174,158,206],[70,222,158,254]],\"answer\":\"M\"}",
+      "json_example_answer_only": "{\"answer\":\"M\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string",
+      "scope": "scene:adjacency_representation",
+      "description": "Generated description of the rendered adjacency representation."
+    },
+    "source_label": {
+      "type": "label",
+      "scope": "query:bfs_kth_visit_label query:dfs_kth_visit_label",
+      "description": "Source node label for the traversal query."
+    },
+    "traversal_position": {
+      "type": "integer",
+      "scope": "query:bfs_kth_visit_label query:dfs_kth_visit_label",
+      "description": "One-indexed traversal visit position to answer."
+    }
+  },
+  "required_slots_by_key": {
+    "scene:adjacency_representation": [
+      "object_description"
+    ],
+    "query:bfs_kth_visit_label": [
+      "source_label",
+      "traversal_position"
+    ],
+    "query:dfs_kth_visit_label": [
+      "source_label",
+      "traversal_position"
+    ]
+  }
+}

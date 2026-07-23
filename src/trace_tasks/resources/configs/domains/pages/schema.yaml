@@ -1,0 +1,121 @@
+generation:
+  shared:
+    table_count_min: 5
+    table_count_max: 8
+    field_count_min: 3
+    field_count_max: 7
+    relationship_count_min: 5
+    relationship_count_max: 9
+    balanced_context_sampling: true
+    balanced_layout_sampling: true
+    balanced_style_sampling: true
+    context_weights:
+      clinic: 1.0
+      commerce: 1.0
+      event_ops: 1.0
+      game_platform: 1.0
+      library: 1.0
+      training: 1.0
+    layout_weights:
+      grid: 1.0
+      layered: 1.0
+      radial: 1.0
+    style_weights:
+      green_erd: 1.0
+      violet_cards: 1.0
+      monochrome_sql: 1.0
+      amber_blueprint: 1.0
+rendering:
+  shared:
+    canvas_width: 1300
+    canvas_height: 950
+    outer_margin_px: 44
+    panel_padding_px: 24
+    panel_corner_radius_px: 22
+    title_band_height_px: 62
+    table_width_px: 188
+    table_width_min_px: 164
+    table_width_max_px: 218
+    table_header_height_px: 34
+    field_row_height_px: 24
+    table_corner_radius_px: 10
+    table_border_width_px: 2
+    relationship_width_px: 3
+    title_font_size_px: 28
+    table_header_font_size_px: 17
+    field_font_size_px: 13
+    field_type_font_size_px: 10
+    role_font_size_px: 10
+    marker_font_size_px: 12
+    relationship_label_font_size_px: 12
+    layout_jitter_enabled: true
+    layout_jitter_x_px_min: -22
+    layout_jitter_x_px_max: 22
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 18
+    layout_jitter_min_margin_px: 18
+prompt:
+  shared:
+    bundle_id: pages_schema_v1
+visual:
+  background:
+    enabled: true
+    styles:
+      paper_light:
+        kind: solid
+        color:
+        - 244
+        - 245
+        - 241
+      paper_cool:
+        kind: solid
+        color:
+        - 236
+        - 242
+        - 246
+      paper_warm:
+        kind: solid
+        color:
+        - 248
+        - 241
+        - 230
+      paper_mint:
+        kind: solid
+        color:
+        - 238
+        - 246
+        - 240
+      paper_lavender:
+        kind: solid
+        color:
+        - 242
+        - 239
+        - 249
+    weights:
+      paper_light: 1.0
+      paper_cool: 1.0
+      paper_warm: 1.0
+      paper_mint: 1.0
+      paper_lavender: 1.0
+  noise:
+    apply_prob: 0.35
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.04
+        - 0.18
+      downsample:
+        scale:
+        - 0.95
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 97.0
+      noise:
+        alpha:
+        - 0.004
+        - 0.014

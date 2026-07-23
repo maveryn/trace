@@ -1,0 +1,127 @@
+{
+  "bundle_id": "games_mancala_pit_board_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "mancala_pit_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The board shows {object_description}.",
+        "This board shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "mancala_pit_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "sowing_landing_option_label": [
+        "{sowing_rule_text} Which option marks the pit that receives the last seed?",
+        "{sowing_rule_text} What option letter marks the pit where the last seed lands?",
+        "{sowing_rule_text} Select the option marking the final landing pit.",
+        "{sowing_rule_text} Which option letter is on the final landing pit?",
+        "{sowing_rule_text} Which option marks the pit that gets the last seed?"
+      ],
+      "post_sow_pit_count_value": [
+        "{sowing_rule_text} After that move, how many seeds are in the target-marked pit?",
+        "{sowing_rule_text} What is the seed count in the target-marked pit after the move?",
+        "{sowing_rule_text} Count the seeds in the target-marked pit after the move.",
+        "{sowing_rule_text} After sowing, how many seeds does the target-marked pit contain?",
+        "{sowing_rule_text} What is the final seed count for the target-marked pit?"
+      ],
+      "max_post_sow_option_label": [
+        "{sowing_rule_text} After the move, which marked option pit has the most seeds?",
+        "{sowing_rule_text} Which option letter marks the pit with the largest seed count after the move?",
+        "{sowing_rule_text} Select the option whose marked pit contains the most seeds after sowing.",
+        "{sowing_rule_text} After sowing, which marked option pit has the greatest number of seeds?",
+        "{sowing_rule_text} Which option marks the highest-count pit after the move?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:mancala_pit_board": [
+      "object_description"
+    ],
+    "query:sowing_landing_option_label": [
+      "sowing_rule_text"
+    ],
+    "query:post_sow_pit_count_value": [
+      "sowing_rule_text"
+    ],
+    "query:max_post_sow_option_label": [
+      "sowing_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "sowing_rule_text": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_low_seed": "a two-row pit board with visible seeds and an arrow direction",
+    "object_description_mixed_seed": "a two-row pit board with visible seeds and an arrow direction",
+    "object_description_busy_seed": "a two-row pit board with visible seeds and an arrow direction",
+    "sowing_rule_text": "Pick up all seeds from the X-marked pit and sow one seed at a time in the arrow direction.",
+    "annotation_hint_sowing_landing_option_label": "set \"annotation\" to one bounding box [x0,y0,x1,y1] around the selected landing pit",
+    "answer_hint_sowing_landing_option_label": "set \"answer\" to the option letter marking the final landing pit",
+    "annotation_hint_post_sow_pit_count_value": "set \"annotation\" to an object with keys \"source_pit\" and \"target_pit\", each mapped to that pit bounding box as [x0,y0,x1,y1] in pixels",
+    "answer_hint_post_sow_pit_count_value": "set \"answer\" to the integer number of seeds in the target-marked pit after the move",
+    "annotation_hint_max_post_sow_option_label": "set \"annotation\" to one bounding box [x0,y0,x1,y1] around the winning marked option pit",
+    "answer_hint_max_post_sow_option_label": "set \"answer\" to the option letter marking the pit with the most seeds after the move"
+  }
+}

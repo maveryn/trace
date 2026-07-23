@@ -1,0 +1,104 @@
+{
+  "bundle_id": "physics_gear_train_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "gear_train_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This mechanical diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ],
+      "gear_train_panel_options": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This mechanical diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "output_direction_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "output_speed_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "output_direction": [
+        "Which panel has the marked output gear rotating {target_direction}?",
+        "Use each panel's input rotation arrow and meshed gears. Which panel's marked output gear turns {target_direction}?",
+        "Following the gear contacts from input to output in each panel, choose the panel where the output gear rotates {target_direction}.",
+        "The input gear's rotation is shown in every panel. Which labeled panel has a marked output gear rotating {target_direction}?",
+        "Trace each gear train from input to output. Which panel's output gear will turn {target_direction}?"
+      ],
+      "output_speed": [
+        "What is the marked output gear's rotational speed in rpm?",
+        "Using the input rpm and the input/output tooth counts, what output speed is implied?",
+        "Compute the output rpm for the marked gear from the shown gear ratio.",
+        "Read the input speed and gear tooth counts. What integer rpm should replace the output question mark?",
+        "What rotational speed in rpm does the output gear have?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:gear_train_diagram": {
+      "object_description": "a meshed gear train with an input gear and a marked output gear"
+    },
+    "scene:gear_train_panel_options": {
+      "object_description": "four labeled gear-train panels, each with an input gear and a marked output gear"
+    },
+    "query:output_direction": {
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the selected labeled gear-train panel",
+      "answer_hint": "set \"answer\" to the selected panel letter, one of A, B, C, or D",
+      "json_example": "{\"annotation\":[40,50,520,390],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:output_speed": {
+      "annotation_hint": "set \"annotation\" to an object mapping input_gear and output_gear to [x0,y0,x1,y1] pixel boxes around the input gear with its tooth count and speed label, and the marked output gear with its tooth count",
+      "answer_hint": "set \"answer\" to the integer output rotational speed in rpm",
+      "json_example": "{\"annotation\":{\"input_gear\":[10,20,110,120],\"output_gear\":[260,30,360,130]},\"answer\":90}",
+      "json_example_answer_only": "{\"answer\":90}"
+    }
+  },
+  "dynamic_slots": {
+    "target_direction": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:gear_train_diagram": [
+      "object_description"
+    ],
+    "scene:gear_train_panel_options": [
+      "object_description"
+    ]
+  }
+}

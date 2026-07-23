@@ -1,0 +1,54 @@
+generation:
+  task_overrides:
+    task_physics__thermal_mixing__final_temperature_value:
+      cup_count_weights:
+        2: 1.0
+        3: 1.0
+        4: 1.0
+      final_temperature_support:
+      - 20
+      - 25
+      - 30
+      - 35
+      - 40
+      - 45
+      - 50
+      - 55
+      - 60
+      - 65
+      - 70
+      balanced_cup_count_sampling: true
+      balanced_target_answer_sampling: true
+rendering:
+  task_overrides:
+    task_physics__thermal_mixing__final_temperature_value:
+      canvas_width: 1180
+      canvas_height: 760
+      panel_left_px: 58
+      panel_top_px: 52
+      panel_right_margin_px: 58
+      panel_bottom_margin_px: 56
+      cup_width_px: 138
+      cup_width_px_min: 128
+      cup_width_px_max: 148
+      cup_height_px: 170
+      cup_height_px_min: 160
+      cup_height_px_max: 180
+      cup_top_px: 176
+      cup_gap_px: 42
+      mixer_width_px: 330
+      mixer_height_px: 172
+      mixer_top_px: 486
+      title_font_size_px: 27
+      label_font_size_px: 24
+      temp_font_size_px: 25
+      note_font_size_px: 20
+      label_stroke_width_px: 2
+      label_stroke_width_px_min: 1
+      label_stroke_width_px_max: 3
+prompt:
+  shared:
+    bundle_id: physics_thermal_mixing_v1
+  task_overrides:
+    task_physics__thermal_mixing__final_temperature_value:
+      task_key: final_temperature_value_query

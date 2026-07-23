@@ -1,0 +1,97 @@
+{
+  "bundle_id": "physics_wave_interference_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": false,
+  "templates": {
+    "scene": {
+      "wave_interference_tank": [
+        "The image shows a two-source ripple-tank interference diagram with circular crest and trough wavefronts.",
+        "The diagram shows two labeled wave sources and their circular interference wavefronts.",
+        "This figure shows a ripple-tank wave-interference pattern from two labeled sources.",
+        "The visual shows two wave sources with visible circular wavefront spacing.",
+        "The ripple-tank diagram shows two sources and a visible wave-interference pattern."
+      ]
+    },
+    "task": {
+      "interference_point_choice_query": [
+        "Which labeled point A-E has {target_condition_phrase}?",
+        "Using the source phase and wavefronts, choose the point with {target_condition_phrase}.",
+        "Among points A-E, which one matches {target_condition_phrase}?",
+        "Compare the two source phases at each candidate. Which point gives {target_condition_phrase}?",
+        "Select the labeled candidate point where the wavefronts produce {target_condition_phrase}."
+      ],
+      "path_difference_value_query": [
+        "What is the absolute path difference from S1 and S2 to P, counted in lambda/2 steps?",
+        "Using the wavefront spacing, determine |S1P-S2P| in lambda/2 steps.",
+        "Read the two labeled guided paths to P. What integer path difference do they show in lambda/2 steps?",
+        "How many lambda/2 steps apart are the two source-to-P path lengths?",
+        "Count the ring-step difference between S1P and S2P. What is the absolute value?"
+      ]
+    },
+    "query": {
+      "constructive_interference_point_choice": [
+        "Use the visible source labels and wavefront spacing.",
+        "Base the answer on the shown source phase and ring spacing.",
+        "Use the labeled sources and the visible wavefront pattern.",
+        "Read the needed distances from the shown ring spacing.",
+        "Use the diagram's visible wavefront spacing and labels."
+      ],
+      "destructive_interference_point_choice": [
+        "Use the visible source labels and wavefront spacing.",
+        "Base the answer on the shown source phase and ring spacing.",
+        "Use the labeled sources and the visible wavefront pattern.",
+        "Read the needed distances from the shown ring spacing.",
+        "Use the diagram's visible wavefront spacing and labels."
+      ],
+      "single": [
+        "Use the visible source labels and wavefront spacing.",
+        "Base the answer on the shown source phase and ring spacing.",
+        "Use the labeled sources and the visible wavefront pattern.",
+        "Read the needed distances from the shown ring spacing.",
+        "Use the diagram's visible wavefront spacing and labels."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nUse this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:interference_point_choice_query": {
+      "annotation_hint": "set \"annotation\" to one pixel point [x,y] at the center of the labeled candidate point matching the requested interference condition",
+      "answer_hint": "set \"answer\" to the matching candidate point letter as a string",
+      "json_example": "{\"annotation\":[247,225],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "task:path_difference_value_query": {
+      "annotation_hint": "set \"annotation\" to an array of two source-to-P pixel segments; each segment is [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point, and endpoint order does not matter",
+      "answer_hint": "set \"answer\" to the integer absolute path difference counted in lambda/2 steps",
+      "json_example": "{\"annotation\":[[[212,164],[486,356]],[[754,184],[486,356]]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "target_condition_phrase": {
+      "type": "string",
+      "scope": "task:interference_point_choice_query",
+      "description": "The requested constructive or destructive interference condition."
+    }
+  },
+  "required_slots_by_key": {
+    "task:interference_point_choice_query": [
+      "target_condition_phrase"
+    ]
+  }
+}

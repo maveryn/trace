@@ -1,0 +1,69 @@
+generation:
+  shared:
+    scene_variant_weights:
+      falling_notes: 1.0
+    style_variant_weights:
+      arcade: 1.0
+      neon: 1.0
+      paper: 1.0
+      dark: 1.0
+      pastel: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_lane_count_sampling: true
+    balanced_row_count_sampling: true
+    balanced_beat_window_sampling: true
+    balanced_note_count_sampling: true
+    balanced_score_total_sampling: true
+    lane_count_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    row_count_support:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    beat_window_support:
+    - 5
+    - 6
+    - 7
+    note_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    score_total_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+rendering:
+  shared:
+    canvas_width: 900
+    canvas_height: 900
+    panel_margin_px: 42
+    grid_width_px: 650
+    grid_height_px: 790
+    grid_border_width_px: 5
+    row_gap_px: 4
+    lane_gap_px: 9
+    note_radius_px: 13
+    label_font_size_px: 25
+prompt:
+  shared:
+    bundle_id: games_rhythm_v1
+    scene_key: visible_rhythm_lanes
+    task_key: rhythm_query

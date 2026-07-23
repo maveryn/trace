@@ -1,0 +1,103 @@
+{
+  "bundle_id": "geometry_tangent_polygon_incircle_v0",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "tangent_polygon_incircle_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "The labeled diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "incircle_tangent_perimeter_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "incircle_radius_from_area_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "triangle_perimeter_from_tangent_segments": [
+        "What is the perimeter of triangle ABC?",
+        "Find the perimeter of triangle ABC.",
+        "Determine the perimeter of triangle ABC.",
+        "What is the value of the triangle perimeter?",
+        "Use the labeled diagram to find the perimeter of triangle ABC."
+      ],
+      "inradius_from_tangent_segments": [
+        "What is the radius of the incircle?",
+        "Find the incircle radius.",
+        "Determine the radius of the circle inside the triangle.",
+        "What is the missing incircle radius?",
+        "Use the labeled diagram to find the incircle radius."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:tangent_polygon_incircle_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:tangent_polygon_incircle_scene": {
+      "object_description": "triangle ABC with an incircle tangent to all three sides and labeled equal tangent segments"
+    },
+    "task:incircle_tangent_perimeter_value_query": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these visible point-label keys: \"A\", \"B\", \"C\", \"D\", \"E\", \"F\"; each value must be that labeled construction point's pixel point [x,y]",
+      "answer_hint": "set \"answer\" to the perimeter as an integer",
+      "json_example": "{\"annotation\":{\"A\":[104,421],\"B\":[640,421],\"C\":[372,72],\"D\":[248,421],\"E\":[510,250],\"F\":[236,250]},\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    },
+    "task:incircle_radius_from_area_value_query": {
+      "annotation_hint": "set \"annotation\" to a JSON object with exactly these visible point-label keys: \"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"O\"; each value must be that labeled construction point's pixel point [x,y]",
+      "answer_hint": "set \"answer\" to the incircle radius rounded to one decimal place",
+      "json_example": "{\"annotation\":{\"A\":[104,421],\"B\":[640,421],\"C\":[372,72],\"D\":[248,421],\"E\":[510,250],\"F\":[236,250],\"O\":[372,286]},\"answer\":4.2}",
+      "json_example_answer_only": "{\"answer\":4.2}"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"answer\" and \"annotation\"."
+    }
+  }
+}

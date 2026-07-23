@@ -1,0 +1,154 @@
+{
+  "asset_version": "context_text_v0",
+  "generated_by": "scripts/build_context_text_assets.py",
+  "source_policy": "Shared context/distractor text manifests are normalized from CC0/public-domain compatible sources and Trace-authored templates. Runtime tasks should use these strings as non-answer context unless the verifier explicitly scopes them in.",
+  "sources": {
+    "corpora_project": {
+      "description": "Darius Kazemi's Corpora Project word and category lists.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/dariusk/corpora/master/data/words/adjs.json",
+        "https://raw.githubusercontent.com/dariusk/corpora/master/data/words/adverbs.json",
+        "https://raw.githubusercontent.com/dariusk/corpora/master/data/words/nouns.json",
+        "https://raw.githubusercontent.com/dariusk/corpora/master/data/words/verbs.json",
+        "https://raw.githubusercontent.com/dariusk/corpora/master/data/corporations/industries.json"
+      ],
+      "metadata_url": "https://github.com/dariusk/corpora",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "local_license": "licenses/CC0-1.0.txt"
+    },
+    "trace_context_templates": {
+      "description": "Trace-authored neutral templates for chart, graph, and page context text.",
+      "source_url": "",
+      "metadata_url": "",
+      "license": "Trace synthetic context text templates",
+      "license_url": "",
+      "local_license": "licenses/trace-synthetic.txt"
+    }
+  },
+  "manifests": {
+    "domains/industries_corpora.txt": {
+      "sources": [
+        "corpora_project"
+      ],
+      "count": 137,
+      "description": "Industry labels used as topic/context fillers."
+    },
+    "paragraphs/context_long_blocks.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 2000,
+      "description": "Trace-generated longer neutral context blocks built from CC0 word pools and templates."
+    },
+    "paragraphs/context_template_blocks.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 2000,
+      "description": "Trace-generated two-sentence context blocks built from neutral context sentence templates."
+    },
+    "phrases/callout_phrases.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 2336,
+      "description": "Short callout labels for annotation boxes."
+    },
+    "phrases/captions.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 2600,
+      "description": "Caption strings for non-answer chart, graph, and page context."
+    },
+    "phrases/footers.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 1600,
+      "description": "Footer strings for report/page framing."
+    },
+    "phrases/headlines.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 3200,
+      "description": "Short neutral headline/title strings for report and chart/page chrome."
+    },
+    "phrases/legend_notes.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 1800,
+      "description": "Legend-like explanatory strings for context panels."
+    },
+    "phrases/metric_snippets.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 3600,
+      "description": "Decorative metric snippets containing numbers for distractor text."
+    },
+    "phrases/sidebar_notes.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 2800,
+      "description": "Sidebar-note strings for non-answer context panels."
+    },
+    "phrases/source_notes.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 2200,
+      "description": "Source-note strings for footer and margin context."
+    },
+    "sentences/context_template_sentences.txt": {
+      "sources": [
+        "corpora_project",
+        "trace_context_templates"
+      ],
+      "count": 5000,
+      "description": "Trace-generated neutral context sentences built from CC0 word pools and templates."
+    },
+    "words/adjectives_corpora.txt": {
+      "sources": [
+        "corpora_project"
+      ],
+      "count": 961,
+      "description": "Normalized CC0 word pool used by Trace context text templates."
+    },
+    "words/adverbs_corpora.txt": {
+      "sources": [
+        "corpora_project"
+      ],
+      "count": 326,
+      "description": "Normalized CC0 word pool used by Trace context text templates."
+    },
+    "words/nouns_corpora.txt": {
+      "sources": [
+        "corpora_project"
+      ],
+      "count": 993,
+      "description": "Normalized CC0 word pool used by Trace context text templates."
+    },
+    "words/verbs_corpora.txt": {
+      "sources": [
+        "corpora_project"
+      ],
+      "count": 547,
+      "description": "Normalized CC0 word pool used by Trace context text templates."
+    }
+  }
+}

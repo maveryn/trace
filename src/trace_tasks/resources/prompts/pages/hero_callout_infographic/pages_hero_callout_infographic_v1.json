@@ -1,0 +1,132 @@
+{
+  "bundle_id": "pages_hero_callout_infographic_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "hero_callout_infographic": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This infographic shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "hero_callout_infographic_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "callout_composite_metric_extremum_label": [
+        "Across the callout cards, which callout has the {rank_direction} total from {first_field_label} plus {second_field_label}?",
+        "For each callout, add {first_field_label} and {second_field_label}. Which callout title has the {rank_direction} total?",
+        "Using the visible numbers for {first_field_label} and {second_field_label}, identify the callout with the {rank_direction} combined value.",
+        "When {first_field_label} plus {second_field_label} is compared across cards, which callout title is {rank_direction}?",
+        "Order the callouts by {first_field_label} plus {second_field_label}, {rank_order_phrase}. Which callout title is first?"
+      ],
+      "callout_metric_extremum_label": [
+        "Across the callout cards, which callout has the {rank_direction} visible value for field {field_label}?",
+        "For field {field_label}, what callout title contains the {rank_direction} value?",
+        "Scan the callout cards that show {field_label}. Which callout is {rank_direction}?",
+        "Using all visible {field_label} values, identify the callout title with the {rank_direction} value.",
+        "When the {field_label} values are ordered {rank_order_phrase}, which callout title is first?"
+      ],
+      "callout_condition_count": [
+        "How many callout cards have {field_label} {condition_phrase} {threshold_value}?",
+        "Count the callouts whose {field_label} value is {condition_phrase} {threshold_value}.",
+        "Across the callout cards, what is the number with {field_label} {condition_phrase} {threshold_value}?",
+        "Using field {field_label}, count the callout values that are {condition_phrase} {threshold_value}.",
+        "What count of callout cards satisfies {field_label} {condition_phrase} {threshold_value}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:callout_composite_metric_extremum_label": {
+      "object_description": "titled callout cards with field labels, visible values, badges, and connector lines",
+      "answer_hint": "set \"answer\" to the exact visible callout title requested by the question",
+      "annotation_hint": "set \"annotation\" to an object mapping \"winning_callout_card\" and each compared \"candidate_N_first_field_row\" and \"candidate_N_second_field_row\" to [x0, y0, x1, y1] pixel bounding boxes",
+      "json_example": "{\"annotation\":{\"winning_callout_card\":[80,210,360,350],\"candidate_1_first_field_row\":[96,250,344,288],\"candidate_1_second_field_row\":[96,290,344,328]},\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}"
+    },
+    "query:callout_metric_extremum_label": {
+      "object_description": "titled callout cards with field labels, visible values, badges, and connector lines",
+      "answer_hint": "set \"answer\" to the exact visible callout title requested by the question",
+      "annotation_hint": "set \"annotation\" to an object mapping \"winning_callout_card\" and each compared \"candidate_N_field_row\" to [x0, y0, x1, y1] pixel bounding boxes",
+      "json_example": "{\"annotation\":{\"winning_callout_card\":[80,210,360,350],\"candidate_1_field_row\":[96,280,344,318],\"candidate_2_field_row\":[700,430,948,468]},\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}"
+    },
+    "query:callout_condition_count": {
+      "object_description": "titled callout cards with field labels, visible values, badges, and connector lines",
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel bounding boxes for the matching field rows",
+      "json_example": "{\"annotation\":[[96,280,344,318],[700,430,948,468]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "field_label": {"type": "string"},
+    "first_field_label": {"type": "string"},
+    "second_field_label": {"type": "string"},
+    "rank_direction": {"type": "string"},
+    "rank_order_phrase": {"type": "string"},
+    "condition_phrase": {"type": "string"},
+    "threshold_value": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:hero_callout_infographic": [
+      "object_description"
+    ],
+    "query:callout_composite_metric_extremum_label": [
+      "first_field_label",
+      "second_field_label",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:callout_metric_extremum_label": [
+      "field_label",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:callout_condition_count": [
+      "field_label",
+      "condition_phrase",
+      "threshold_value"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

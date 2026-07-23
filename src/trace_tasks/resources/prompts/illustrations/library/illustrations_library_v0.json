@@ -1,0 +1,152 @@
+{
+  "bundle_id": "illustrations_library_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "books_in_section_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "filtered_book_in_section_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rotated_tile_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "swapped_tile_pair_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "missing_patch_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:library_canvas": [
+      "section_count"
+    ],
+    "query:books_in_section_count": [
+      "section_name"
+    ],
+    "query:book_color_in_section_count": [
+      "color_label",
+      "section_name"
+    ],
+    "query:upright_book_in_section_count": [
+      "orientation_name",
+      "section_name"
+    ],
+    "query:horizontal_book_in_section_count": [
+      "orientation_name",
+      "section_name"
+    ],
+    "query:rotated_tile_label": [],
+    "query:swapped_tile_pair_label": [],
+    "query:missing_patch_label": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "library_canvas": [
+      "The image shows an illustrated library with {section_count} labeled shelf sections.",
+      "The scene shows a library room containing {section_count} labeled book sections.",
+      "The picture shows {section_count} labeled library shelf sections.",
+      "The canvas contains a library with {section_count} labeled shelf sections.",
+      "This library scene contains {section_count} labeled book sections."
+    ]
+  },
+  "query_templates": {
+    "books_in_section_count": [
+      "How many books are in the {section_name} section?",
+      "Count the books in the {section_name} section.",
+      "What is the number of books in the {section_name} section?",
+      "How many visible books are shelved under {section_name}?",
+      "Find every book in the {section_name} section. What is the count?"
+    ],
+    "book_color_in_section_count": [
+      "How many {color_label} books are in the {section_name} section?",
+      "Count the {color_label} books in the {section_name} section.",
+      "What is the number of {color_label} books in the {section_name} section?",
+      "How many books colored {color_label} are shelved under {section_name}?",
+      "Find every {color_label} book in the {section_name} section. What is the count?"
+    ],
+    "upright_book_in_section_count": [
+      "How many upright books are in the {section_name} section?",
+      "Count the upright books in the {section_name} section.",
+      "What is the number of upright books in the {section_name} section?",
+      "How many books standing upright are shelved under {section_name}?",
+      "Find every upright book in the {section_name} section. What is the count?"
+    ],
+    "horizontal_book_in_section_count": [
+      "How many horizontal books are in the {section_name} section?",
+      "Count the horizontal books in the {section_name} section.",
+      "What is the number of horizontal books in the {section_name} section?",
+      "How many books lying horizontally are shelved under {section_name}?",
+      "Find every horizontal book in the {section_name} section. What is the count?"
+    ],
+    "rotated_tile_label": [
+      "The library image is divided into lettered tiles. One tile has been rotated. Which lettered tile is rotated?",
+      "The library scene is split into lettered tiles. Identify the tile that has been rotated.",
+      "One of the lettered tiles is rotated relative to the rest of the library. Which tile is it?",
+      "The lettered tile grid contains one rotated library fragment. Which tile is it?",
+      "Select the letter of the tile whose library fragment is rotated."
+    ],
+    "swapped_tile_pair_label": [
+      "The library image is divided into numbered cells, and exactly two cells have been swapped. Which option names the swapped pair?",
+      "Two numbered cells in the library grid are out of place. Select the option naming those two cells.",
+      "The numbered library grid has exactly two swapped cells. Which option gives those two cells?",
+      "Exactly two cells of the library image changed places. Choose the option naming the swapped cells.",
+      "Select the lettered option that names the two swapped cells in the library grid."
+    ],
+    "missing_patch_label": [
+      "Which option exactly fills the missing region?",
+      "Select the option that restores the missing part of the library image.",
+      "One region is missing from the library scene. Which lettered option matches it exactly?",
+      "The library image has one missing region. Which option belongs there?",
+      "Choose the patch option that completes the library illustration."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

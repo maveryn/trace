@@ -1,0 +1,147 @@
+{
+  "bundle_id": "graph_pipe_network_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "pipe_network": [
+        "The image shows {object_description}.",
+        "The visual shows {object_description}.",
+        "You are shown {object_description}.",
+        "The figure shows {object_description}.",
+        "The diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "pipe_network_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "pipe_shortest_path_length": [
+        "The pipe network has a unique shortest open route from junction {source_label} to junction {goal_label}. Ignoring blocked pipes, how many open pipe segments are in that route?",
+        "Using only open pipes, how many pipe segments are in the unique shortest route from {source_label} to {goal_label}?",
+        "Ignoring blocked pipes, what is the length in pipe segments of the shortest open route from junction {source_label} to junction {goal_label}?",
+        "Find the unique shortest route through open pipes from {source_label} to {goal_label}. How many open pipe segments does it use?",
+        "How many open pipe segments lie on the unique shortest open route from junction {source_label} to junction {goal_label}?"
+      ],
+      "pipe_bridge_count": [
+        "How many open pipes are bridges, meaning removing that single open pipe would disconnect part of the open network?",
+        "Count the open pipe segments whose removal would split the connected open-pipe network.",
+        "What is the number of bridge pipes in the open pipe network?",
+        "How many open pipe segments are critical connections that disconnect the network if removed?",
+        "Count open pipes that are the only connection between two parts of the open network."
+      ],
+      "pipe_exact_distance_count": [
+        "How many junctions have shortest open-pipe distance exactly {query_distance} segments from junction {query_label}?",
+        "Using only open pipes, count junctions exactly {query_distance} segments away from {query_label}.",
+        "What is the number of junctions at open-pipe distance {query_distance} from {query_label}?",
+        "Ignoring blocked pipes, how many junctions are exactly {query_distance} pipe segments from {query_label}?",
+        "Count the junctions whose shortest open route from {query_label} uses exactly {query_distance} pipe segments."
+      ],
+      "pipe_reachable_junction_count": [
+        "How many junctions, including junction {query_label} itself, are reachable from {query_label} using only open pipes?",
+        "Using only open pipes, count all junctions reachable from {query_label}, including {query_label}.",
+        "Ignoring blocked pipes, how many junctions can be reached from junction {query_label}?",
+        "From {query_label}, how many junctions are in the same open-pipe connected region, including the start junction?",
+        "Count the junctions reachable through open pipes from {query_label}, including {query_label} itself."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:pipe_network": [
+      "object_description"
+    ],
+    "query:pipe_shortest_path_length": [
+      "source_label",
+      "goal_label"
+    ],
+    "query:pipe_exact_distance_count": [
+      "query_label",
+      "query_distance"
+    ],
+    "query:pipe_reachable_junction_count": [
+      "query_label"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "goal_label": {
+      "type": "label"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "query_distance": {
+      "type": "integer"
+    },
+    "query_label": {
+      "type": "label"
+    },
+    "source_label": {
+      "type": "label"
+    }
+  },
+  "code_prompt_defaults": {
+    "scene_key": "pipe_network",
+    "task_key": "pipe_network_query",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer.",
+    "object_description": "a labeled pipe-junction network with open pipes and blocked pipes (blocked pipes are marked with a red X)",
+    "answer_hint": "set \"answer\" to the requested count or length as an integer",
+    "json_example": "{\"annotation\":[[180,220],[310,220],[430,300]],\"answer\":3}",
+    "json_example_answer_only": "{\"answer\":3}",
+    "annotation_hint_shortest_path_length": "set \"annotation\" to an ordered array of [x,y] pixel points at junction centers along the unique shortest open route from {source_label} to {goal_label}, including both endpoints",
+    "annotation_hint_bridge_count": "set \"annotation\" to a list of segments. Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel point at a junction center of one open pipe whose removal disconnects part of the open network; use [] when the answer is zero",
+    "annotation_hint_exact_distance_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of all junctions whose shortest open-pipe distance from {query_label} is exactly {query_distance} segments",
+    "annotation_hint_reachable_count": "set \"annotation\" to an array of [x,y] pixel points at the centers of all junctions reachable from {query_label} through open pipes, including {query_label} itself"
+  }
+}

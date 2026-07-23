@@ -1,0 +1,183 @@
+{
+  "bundle_id": "games_checkers_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_checkers_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "checkers_board_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "legal_move_count": [
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} How many legal landing squares are available to {current_player_name}?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} Count the legal landing squares for {current_player_name}.",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} What is the number of legal landing squares for {current_player_name}?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} How many one-move landing squares does {current_player_name} have?",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} Determine the legal landing-square count for {current_player_name}."
+      ],
+      "capture_move_count": [
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} How many capture landing squares are available to {current_player_name}?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} Count the capture landing squares for {current_player_name}.",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} What is the number of legal capture landing squares for {current_player_name}?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} How many one-jump landing squares does {current_player_name} have?",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} Determine the capture landing-square count for {current_player_name}."
+      ],
+      "piece_with_legal_move_count": [
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} How many {current_player_name} pieces have at least one legal move?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} Count the {current_player_name} pieces with at least one legal move.",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} What is the number of {current_player_name} pieces that can move?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} How many {current_player_name} pieces have one or more legal landing squares?",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} {legal_move_rule_text} Determine the movable-piece count for {current_player_name}."
+      ],
+      "piece_with_capture_move_count": [
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} How many {current_player_name} pieces have at least one capture jump?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} Count the {current_player_name} pieces with at least one capture jump.",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} What is the number of {current_player_name} pieces that can capture?",
+        "{current_player_name} to move. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} How many {current_player_name} pieces have one or more capture landing squares?",
+        "{current_player_name} moves next. {movement_rule_text} {capture_rule_text} {single_jump_rule_text} Determine the capture-capable piece count for {current_player_name}."
+      ],
+      "max_capture_chain_length": [
+        "{current_player_name} moves next. {capture_rule_text} {king_chain_rule_text} What is the maximum number of opponent pieces the marked king can capture in one continuous jump chain?",
+        "{current_player_name} to move. {capture_rule_text} {king_chain_rule_text} Count the largest possible number of captures in one chain for the marked king.",
+        "{current_player_name} moves next. {capture_rule_text} {king_chain_rule_text} How long is the marked king's longest capture chain, measured in captured pieces?",
+        "{current_player_name} to move. {capture_rule_text} {king_chain_rule_text} Determine the maximum capture-chain length for the marked king.",
+        "{current_player_name} moves next. {capture_rule_text} {king_chain_rule_text} What is the largest number of pieces that the marked king can capture before the chain stops?"
+      ],
+      "piece_state_count": [
+        "How many {target_player_name} pieces {piece_state_scope_phrase}?",
+        "Count the {target_player_name} pieces that {piece_state_scope_phrase}.",
+        "What is the number of {target_player_name} pieces that {piece_state_scope_phrase}?",
+        "How many visible {target_player_name} checkers pieces {piece_state_scope_phrase}?",
+        "Determine the count of {target_player_name} pieces that {piece_state_scope_phrase}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:legal_move_count": {
+      "capture_rule_text": "A jump captures one adjacent opponent piece and lands on the empty square beyond.",
+      "single_jump_rule_text": "Count only one jump per move; ignore follow-up jumps.",
+      "legal_move_rule_text": "A landing square is the empty square where a piece ends after exactly one move. Include simple diagonal steps and capture jumps.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space square boxes [x0, y0, x1, y1] for every legal landing square; use an empty array if none are available",
+      "answer_hint": "set \"answer\" to the count of legal landing squares",
+      "json_example": "{\"annotation\":[[132,188,196,252],[204,188,268,252],[276,188,340,252]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:capture_move_count": {
+      "capture_rule_text": "A jump captures one adjacent opponent piece and lands on the empty square beyond.",
+      "single_jump_rule_text": "Count only one jump per move; ignore follow-up jumps.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space square boxes [x0, y0, x1, y1] for every capture landing square; use an empty array if none are available",
+      "answer_hint": "set \"answer\" to the count of capture landing squares",
+      "json_example": "{\"annotation\":[[132,188,196,252],[204,188,268,252]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:piece_with_legal_move_count": {
+      "capture_rule_text": "A jump captures one adjacent opponent piece and lands on the empty square beyond.",
+      "single_jump_rule_text": "Count only one jump per move; ignore follow-up jumps.",
+      "legal_move_rule_text": "A landing square is the empty square where a piece ends after exactly one move. Include simple diagonal steps and capture jumps.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every current-player piece with at least one legal move; use an empty array if none are available",
+      "answer_hint": "set \"answer\" to the number of current-player pieces with at least one legal move",
+      "json_example": "{\"annotation\":[[144,200,184,240],[216,272,256,312],[288,344,328,384]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:piece_with_capture_move_count": {
+      "capture_rule_text": "A jump captures one adjacent opponent piece and lands on the empty square beyond.",
+      "single_jump_rule_text": "Count only one jump per move; ignore follow-up jumps.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every current-player piece with at least one capture jump; use an empty array if none are available",
+      "answer_hint": "set \"answer\" to the number of current-player pieces with at least one capture jump",
+      "json_example": "{\"annotation\":[[144,200,184,240],[216,272,256,312]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:max_capture_chain_length": {
+      "capture_rule_text": "A jump captures one adjacent opponent piece and lands on the empty square beyond.",
+      "king_chain_rule_text": "The outlined checker is a king; it may capture diagonally in any direction, remove the jumped piece, and continue jumping from each landing square while another capture is available.",
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for the opponent pieces captured along the longest chain",
+      "answer_hint": "set \"answer\" to the maximum number of opponent pieces the marked king can capture in one continuous jump chain",
+      "json_example": "{\"annotation\":[[144,200,184,240],[216,272,256,312],[288,344,328,384],[360,416,400,456]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:piece_state_count": {
+      "annotation_hint": "set \"annotation\" to a JSON array of pixel-space piece boxes [x0, y0, x1, y1] for every piece requested in the question; use an empty array if none are present",
+      "answer_hint": "set \"answer\" to the number of pieces requested in the question",
+      "json_example": "{\"annotation\":[[144,200,184,240],[216,272,256,312],[288,344,328,384]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string",
+      "description": "Prompt-facing description of the sampled Checkers board density."
+    },
+    "current_player_name": {
+      "type": "string",
+      "description": "Prompt-facing name of the side to move."
+    },
+    "movement_rule_text": {
+      "type": "string",
+      "description": "Prompt-facing direction convention for ordinary Checkers pieces."
+    },
+    "target_player_name": {
+      "type": "string"
+    },
+    "piece_state_scope_phrase": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_checkers_board": [
+      "object_description"
+    ],
+    "query:legal_move_count": [
+      "current_player_name",
+      "movement_rule_text"
+    ],
+    "query:capture_move_count": [
+      "current_player_name",
+      "movement_rule_text"
+    ],
+    "query:piece_with_legal_move_count": [
+      "current_player_name",
+      "movement_rule_text"
+    ],
+    "query:piece_with_capture_move_count": [
+      "current_player_name",
+      "movement_rule_text"
+    ],
+    "query:max_capture_chain_length": [
+      "current_player_name"
+    ],
+    "query:piece_state_count": [
+      "target_player_name",
+      "piece_state_scope_phrase"
+    ]
+  }
+}

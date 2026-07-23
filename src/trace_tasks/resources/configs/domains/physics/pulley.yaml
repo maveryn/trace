@@ -1,0 +1,155 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+  task_overrides:
+    task_physics__pulley__pulley_mechanical_advantage:
+      scene_variant_weights:
+        open_block: 1.0
+        compact_block: 1.0
+        tall_block: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_target_answer_sampling: true
+      balanced_connected_support_count_sampling: false
+      balanced_disconnected_segment_count_sampling: false
+      connected_support_count_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      disconnected_segment_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      effort_force_support:
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      load_force_support:
+      - 8
+      - 10
+      - 12
+      - 14
+      - 15
+      - 16
+      - 18
+      - 20
+      - 21
+      - 22
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 30
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 39
+      - 40
+      - 42
+      - 44
+      - 45
+      - 48
+      - 50
+      - 51
+      - 52
+      - 54
+      - 55
+      - 56
+      - 60
+      - 64
+      - 65
+      - 66
+      - 68
+      - 70
+      - 72
+      - 75
+      - 78
+      - 80
+      - 84
+      - 85
+      - 90
+      - 96
+      - 102
+      - 108
+      effort_force_min: 4
+      effort_force_max: 18
+
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 760
+    top_block_x_px: 250
+    top_block_y_px: 94
+    top_block_width_px: 780
+    top_block_height_px: 72
+    lower_block_y_px: 430
+    compact_lower_block_y_px: 390
+    tall_lower_block_y_px: 470
+    lower_block_height_px: 72
+    support_segment_gap_px: 48
+    rope_width_px: 7
+    rope_width_px_min: 6
+    rope_width_px_max: 8
+    pulley_radius_px: 20
+    pulley_hub_radius_px: 6
+    load_width_px: 170
+    load_height_px: 74
+    load_top_gap_px: 34
+    connector_width_px: 5
+    connector_width_px_min: 4
+    connector_width_px_max: 6
+    effort_arrow_x_gap_px: 92
+    effort_arrow_length_px: 144
+    label_font_size_px: 28
+    small_label_font_size_px: 24
+    label_stroke_width_px: 3
+    label_stroke_width_px_min: 2
+    label_stroke_width_px_max: 4
+    texture_line_width_px: 2
+    texture_line_width_px_min: 1
+    texture_line_width_px_max: 3
+    texture_spacing_px: 18
+    cut_endpoint_radius_px: 6
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 20
+    layout_jitter_x_px_min: -28
+    layout_jitter_x_px_max: 18
+    layout_jitter_y_px_min: -18
+    layout_jitter_y_px_max: 10
+    grid_spacing_px: 44
+
+prompt:
+  shared:
+    bundle_id: physics_pulley_v1
+  task_overrides:
+    task_physics__pulley__pulley_mechanical_advantage:
+      task_key: pulley_mechanical_advantage_query

@@ -1,0 +1,184 @@
+generation:
+  shared:
+    option_count_choices:
+    - 4
+    lattice_rows: 4
+    lattice_cols: 4
+    wallpaper_group_ids:
+    - p1
+    - p2
+    - pm
+    - pg
+    - cm
+    - pmm
+    - p4
+    - p3
+    pool_manifest: non_symmetry.txt
+rendering:
+  shared:
+    canvas_width: 1104
+    canvas_height: 640
+    outer_margin_px: 24
+    reference_panel_width_px: 300
+    panel_padding_px: 16
+    panel_corner_radius_px: 18
+    option_panel_gap_px: 18
+    lattice_rows: 4
+    lattice_cols: 4
+    scene_icon_size_min_px: 40
+    scene_icon_size_max_px: 44
+    cell_box_width_min_px: 0
+    cell_box_width_max_px: 0
+    cell_box_height_min_px: 0
+    cell_box_height_max_px: 0
+    scene_max_overlap_fraction: 0.12
+    scene_placement_max_attempts: 1
+    scene_size_shrink_rounds: 6
+    scene_size_shrink_factor: 0.9
+    palette_size_min: 1
+    palette_size_max: 1
+    color_channel_min: 24
+    color_channel_max: 220
+    min_color_distance: 40.0
+    color_distance_space: lab
+    panel_title_font_size_px: 24
+    background_color_rgb:
+    - 247
+    - 248
+    - 251
+    background_color_rgb_options:
+    - - 247
+      - 248
+      - 251
+    - - 243
+      - 246
+      - 252
+    - - 250
+      - 247
+      - 242
+    - - 244
+      - 249
+      - 246
+    - - 248
+      - 246
+      - 253
+    panel_fill_rgb:
+    - 255
+    - 255
+    - 255
+    panel_fill_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 253
+      - 254
+      - 255
+    - - 255
+      - 254
+      - 250
+    - - 250
+      - 253
+      - 250
+    panel_border_rgb:
+    - 205
+    - 212
+    - 224
+    panel_border_rgb_options:
+    - - 205
+      - 212
+      - 224
+    - - 198
+      - 209
+      - 222
+    - - 218
+      - 208
+      - 197
+    - - 198
+      - 218
+      - 211
+    header_text_rgb:
+    - 70
+    - 78
+    - 96
+    header_text_rgb_options:
+    - - 70
+      - 78
+      - 96
+    - - 63
+      - 84
+      - 112
+    - - 86
+      - 73
+      - 94
+    - - 68
+      - 91
+      - 79
+    cell_padding_px: 0
+    cell_icon_padding_px: 0
+    cell_corner_radius_px: 0
+    cell_border_rgb:
+    - 218
+    - 223
+    - 233
+    cell_label_font_size_px: 22
+    cell_label_color_rgb:
+    - 52
+    - 60
+    - 77
+    cell_label_color_rgb_options:
+    - - 52
+      - 60
+      - 77
+    - - 48
+      - 68
+      - 93
+    - - 77
+      - 61
+      - 81
+    - - 53
+      - 77
+      - 67
+    scene_content_side_padding_px: 0
+    scene_content_bottom_padding_px: 0
+    scene_content_top_offset_px: 0
+    icon_noise_edit_types:
+    - blur
+    - downsample
+    - jpeg
+    - noise
+    icon_noise_edit_count_range:
+    - 0
+    - 0
+    icon_noise_value_ranges:
+      blur:
+        radius:
+        - 0.2
+        - 0.6
+      downsample:
+        scale:
+        - 0.85
+        - 0.95
+      jpeg:
+        quality:
+        - 70
+        - 90
+      noise:
+        alpha:
+        - 0.03
+        - 0.08
+  task_overrides:
+    task_icons__wallpaper_panels__motif_violation_label:
+      scene_icon_size_min_px: 40
+      scene_icon_size_max_px: 44
+    task_icons__wallpaper_panels__same_pattern_as_reference_label:
+      canvas_height: 960
+prompt:
+  shared:
+    bundle_id: icons_wallpaper_panels_v1
+  task_overrides:
+    task_icons__wallpaper_panels__motif_violation_label:
+      scene_key: wallpaper_panel_violation_scene
+      task_key: motif_violation_label
+    task_icons__wallpaper_panels__same_pattern_as_reference_label:
+      scene_key: wallpaper_reference_match_scene
+      task_key: same_pattern_as_reference_label

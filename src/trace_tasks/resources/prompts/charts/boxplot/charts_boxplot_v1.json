@@ -1,0 +1,174 @@
+{
+  "bundle_id": "charts_boxplot_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "boxplot": [
+        "The image shows a set of labeled boxplots. Each box spans the interquartile range, the line inside the box marks the median, and the whiskers show the minimum and maximum values shown.",
+        "The figure shows a set of labeled boxplots. Each box spans the interquartile range, the line inside the box marks the median, and the whiskers show the minimum and maximum values shown.",
+        "The visual shows a set of labeled boxplots. Each box spans the interquartile range, the line inside the box marks the median, and the whiskers show the minimum and maximum values shown.",
+        "The chart shows a set of labeled boxplots. Each box spans the interquartile range, the line inside the box marks the median, and the whiskers show the minimum and maximum values shown.",
+        "The panel shows a set of labeled boxplots. Each box spans the interquartile range, the line inside the box marks the median, and the whiskers show the minimum and maximum values shown."
+      ],
+      "paired_boxplot": [
+        "The image shows two side-by-side boxplot panels with matching labels. The left panel is Before and the right panel is After.",
+        "The figure shows two side-by-side boxplot panels with matching labels. The left panel is Before and the right panel is After.",
+        "The visual shows two side-by-side boxplot panels with matching labels. The left panel is Before and the right panel is After.",
+        "The chart shows two side-by-side boxplot panels with matching labels. The left panel is Before and the right panel is After.",
+        "The panel shows two side-by-side boxplot panels with matching labels. The left panel is Before and the right panel is After."
+      ]
+    },
+    "task": {
+      "boxplot_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "median_top_second_difference_value": [
+        "What is the difference between the highest median and the second-highest median?",
+        "Subtract the second-highest median from the highest median. What value do you get?",
+        "Find the median value gap between the top-ranked boxplot and the second-ranked boxplot.",
+        "Compute the difference from the highest boxplot median to the second-highest boxplot median.",
+        "What integer difference separates the largest median from the second-largest median?"
+      ],
+      "median_top_third_difference_value": [
+        "What is the difference between the highest median and the third-highest median?",
+        "Subtract the third-highest median from the highest median. What value do you get?",
+        "Find the median value gap between the top-ranked boxplot and the third-ranked boxplot.",
+        "Compute the difference from the highest boxplot median to the third-highest boxplot median.",
+        "What integer difference separates the largest median from the third-largest median?"
+      ],
+      "median_top_bottom_difference_value": [
+        "What is the difference between the highest median and the lowest median?",
+        "Subtract the lowest median from the highest median. What value do you get?",
+        "Find the median value gap between the top-ranked boxplot and the bottom-ranked boxplot.",
+        "Compute the difference from the highest boxplot median to the lowest boxplot median.",
+        "What integer difference separates the largest median from the smallest median?"
+      ],
+      "paired_median_greatest_increase_label": [
+        "Compare each label's median in the After panel with the same label's median in the Before panel. Which label has the greatest median increase?",
+        "Using After minus Before for each label, which label has the largest median increase?",
+        "Which label's boxplot in the After panel has the biggest median gain over its matching boxplot in the Before panel?",
+        "Find the label with the greatest increase from its Before median to its After median.",
+        "Which matched label shows the largest upward median shift from Before to After?"
+      ],
+      "paired_median_greatest_decrease_label": [
+        "Compare each label's median in the Before panel with the same label's median in the After panel. Which label has the greatest median decrease?",
+        "Using Before minus After for each label, which label has the largest median decrease?",
+        "Which label's boxplot in the After panel drops the most below its matching boxplot in the Before panel?",
+        "Find the label with the greatest decrease from its Before median to its After median.",
+        "Which matched label shows the largest downward median shift from Before to After?"
+      ],
+      "paired_median_greatest_absolute_change_label": [
+        "Compare each label's median in the Before and After panels. Which label has the greatest absolute median change?",
+        "Which matched label has the largest absolute difference between its Before and After medians?",
+        "Find the label whose two boxplot medians are farthest apart.",
+        "Which label shows the largest median change in either direction between Before and After?",
+        "Determine the label with the greatest absolute shift from its Before median to its After median."
+      ],
+      "largest_iqr_label": [
+        "Which label has the {extremum_direction} interquartile range?",
+        "Find the label of the boxplot with the {iqr_width_phrase} interquartile range.",
+        "Determine which labeled boxplot has the {extremum_direction} IQR.",
+        "What label corresponds to the {extremum_direction} interquartile range?",
+        "Identify the boxplot label with the {iqr_width_phrase} box."
+      ],
+      "smallest_iqr_label": [
+        "Which label has the {extremum_direction} interquartile range?",
+        "Find the label of the boxplot with the {iqr_width_phrase} interquartile range.",
+        "Determine which labeled boxplot has the {extremum_direction} IQR.",
+        "What label corresponds to the {extremum_direction} interquartile range?",
+        "Identify the boxplot label with the {iqr_width_phrase} box."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:median_top_second_difference_value": {
+      "answer_hint": "set \"answer\" to the median difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"highest_median_boxplot\" and \"second_highest_median_boxplot\", each mapped to an [x,y] pixel center point of that boxplot",
+      "json_example": "{\"annotation\":{\"highest_median_boxplot\":[240,300],\"second_highest_median_boxplot\":[430,250]},\"answer\":7}",
+      "json_example_answer_only": "{\"answer\":7}"
+    },
+    "query:median_top_third_difference_value": {
+      "answer_hint": "set \"answer\" to the median difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"highest_median_boxplot\" and \"third_highest_median_boxplot\", each mapped to an [x,y] pixel center point of that boxplot",
+      "json_example": "{\"annotation\":{\"highest_median_boxplot\":[240,300],\"third_highest_median_boxplot\":[430,250]},\"answer\":9}",
+      "json_example_answer_only": "{\"answer\":9}"
+    },
+    "query:median_top_bottom_difference_value": {
+      "answer_hint": "set \"answer\" to the median difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"highest_median_boxplot\" and \"lowest_median_boxplot\", each mapped to an [x,y] pixel center point of that boxplot",
+      "json_example": "{\"annotation\":{\"highest_median_boxplot\":[240,300],\"lowest_median_boxplot\":[430,250]},\"answer\":14}",
+      "json_example_answer_only": "{\"answer\":14}"
+    },
+    "query:paired_median_greatest_increase_label": {
+      "answer_hint": "set \"answer\" to the exact visible matched label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"before_boxplot\" and \"after_boxplot\", each mapped to the [x,y] pixel center point of that winning label's boxplot in the corresponding panel",
+      "json_example": "{\"annotation\":{\"before_boxplot\":[240,300],\"after_boxplot\":[305,250]},\"answer\":\"Maple\"}",
+      "json_example_answer_only": "{\"answer\":\"Maple\"}"
+    },
+    "query:paired_median_greatest_decrease_label": {
+      "answer_hint": "set \"answer\" to the exact visible matched label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"before_boxplot\" and \"after_boxplot\", each mapped to the [x,y] pixel center point of that winning label's boxplot in the corresponding panel",
+      "json_example": "{\"annotation\":{\"before_boxplot\":[240,250],\"after_boxplot\":[305,310]},\"answer\":\"Maple\"}",
+      "json_example_answer_only": "{\"answer\":\"Maple\"}"
+    },
+    "query:paired_median_greatest_absolute_change_label": {
+      "answer_hint": "set \"answer\" to the exact visible matched label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"before_boxplot\" and \"after_boxplot\", each mapped to the [x,y] pixel center point of that winning label's boxplot in the corresponding panel",
+      "json_example": "{\"annotation\":{\"before_boxplot\":[240,300],\"after_boxplot\":[305,250]},\"answer\":\"Maple\"}",
+      "json_example_answer_only": "{\"answer\":\"Maple\"}"
+    },
+    "query:largest_iqr_label": {
+      "answer_hint": "set \"answer\" to the exact visible boxplot label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the winning boxplot's interquartile-range rectangle",
+      "json_example": "{\"annotation\":[394,210,466,290],\"answer\":\"Ivory\"}",
+      "json_example_answer_only": "{\"answer\":\"Ivory\"}"
+    },
+    "query:smallest_iqr_label": {
+      "answer_hint": "set \"answer\" to the exact visible boxplot label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the winning boxplot's interquartile-range rectangle",
+      "json_example": "{\"annotation\":[394,210,466,290],\"answer\":\"Ivory\"}",
+      "json_example_answer_only": "{\"answer\":\"Ivory\"}"
+    }
+  },
+  "dynamic_slots": {
+    "extremum_direction": {
+      "type": "string"
+    },
+    "iqr_width_phrase": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:largest_iqr_label": [
+      "extremum_direction",
+      "iqr_width_phrase"
+    ],
+    "query:smallest_iqr_label": [
+      "extremum_direction",
+      "iqr_width_phrase"
+    ]
+  }
+}

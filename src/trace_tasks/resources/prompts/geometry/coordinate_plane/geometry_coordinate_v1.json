@@ -1,0 +1,130 @@
+{
+  "bundle_id": "geometry_coordinate_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "coordinate_graph_scene": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "coordinate_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "parallel_count": [
+        "How many other segments are parallel to segment AB?",
+        "Count the other segments that are parallel to segment AB.",
+        "Use segment AB as the reference. How many other segments are parallel to it?",
+        "How many other segments have the same slope as segment AB?",
+        "Count the segments, excluding AB itself, that are parallel to segment AB."
+      ],
+      "perpendicular_count": [
+        "How many other segments are perpendicular to segment AB?",
+        "Count the other segments that are perpendicular to segment AB.",
+        "Use segment AB as the reference. How many other segments are perpendicular to it?",
+        "How many other segments form a right angle with segment AB?",
+        "Count the segments, excluding AB itself, that are perpendicular to segment AB."
+      ],
+      "collinear_count": [
+        "How many dot points lie on the same line as points A and B?",
+        "Count the dot points that are collinear with points A and B.",
+        "Using A and B as the reference line, how many dot points lie on that same line?",
+        "How many dot points lie on the line through A and B?",
+        "Count the dot points, excluding A and B themselves, that lie on the same line as A and B."
+      ],
+      "same_quadrant_count": [
+        "How many dot points lie in the same quadrant as the X-marked point?",
+        "Count the dot points that are in the same quadrant as the marked X point.",
+        "How many dot points lie in the same quadrant as the X-marked point?",
+        "Ignoring the marked X point itself, how many dot points lie in its quadrant?",
+        "Count the dot points that share a quadrant with the X-marked point."
+      ],
+      "point_in_shape_count": [
+        "How many integer grid-intersection points lie strictly inside the polygon, not on its boundary?",
+        "Count the integer lattice points at grid intersections that are strictly inside the polygon, excluding boundary points.",
+        "How many graph-paper grid intersections with integer coordinates are strictly inside the polygon?",
+        "Count only the integer grid-intersection points inside the polygon; do not count points on the polygon boundary.",
+        "How many integer-coordinate grid intersections lie in the interior of the polygon, excluding the boundary?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:parallel_count": {
+      "object_description": "reference segment AB and six other unlabeled segments",
+      "answer_hint": "set \"answer\" to the integer count requested by the question",
+      "annotation_hint": "set \"annotation\" to an array of segments, where each segment is [[x0,y0],[x1,y1]] for one non-AB segment satisfying the question",
+      "json_example": "{\"annotation\":[[[120,120],[180,120]],[[240,180],[300,180]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:perpendicular_count": {
+      "object_description": "reference segment AB and six other unlabeled segments",
+      "answer_hint": "set \"answer\" to the integer count requested by the question",
+      "annotation_hint": "set \"annotation\" to an array of segments, where each segment is [[x0,y0],[x1,y1]] for one non-AB segment satisfying the question",
+      "json_example": "{\"annotation\":[[[120,120],[180,120]],[[240,180],[300,180]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:collinear_count": {
+      "object_description": "labeled points A and B plus unlabeled dot points",
+      "answer_hint": "set \"answer\" to the integer count requested by the question",
+      "annotation_hint": "set \"annotation\" to an array of every pixel point [x,y] for the dot points that lie on the same line as A and B",
+      "json_example": "{\"annotation\":[[120,180],[220,240]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:same_quadrant_count": {
+      "object_description": "one X-marked reference point and unlabeled dot points",
+      "answer_hint": "set \"answer\" to the integer count requested by the question",
+      "annotation_hint": "set \"annotation\" to an array of every pixel point [x,y] that lies in the same quadrant as the marked point",
+      "json_example": "{\"annotation\":[[120,180],[220,240]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:point_in_shape_count": {
+      "object_description": "one polygon drawn on graph paper",
+      "answer_hint": "set \"answer\" to the integer count requested by the question",
+      "annotation_hint": "set \"annotation\" to an array containing every pixel point [x,y] for each integer lattice point that lies strictly inside the polygon",
+      "json_example": "{\"annotation\":[[120,180],[220,240]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:coordinate_graph_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

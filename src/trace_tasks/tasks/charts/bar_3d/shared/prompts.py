@@ -1,0 +1,36 @@
+"""Prompt assembly for the 3D bar-grid chart scene."""
+
+from __future__ import annotations
+
+from typing import Any, Mapping
+
+from trace_tasks.tasks.charts.bar_3d.shared.defaults import PROMPT_BUNDLE_ID, _PROMPT_DEFAULTS
+from trace_tasks.tasks.charts.bar_3d.shared.state import DOMAIN
+from trace_tasks.tasks.shared.prompt_variants import (
+    PromptTraceArtifacts,
+    build_prompt_trace_artifacts,
+    render_scene_prompt_variants,
+)
+
+
+SCENE_PROMPT_KEY = "bar_3d"
+TASK_PROMPT_KEY = "bar_3d_query"
+
+
+def build_prompt_artifacts(
+    *,
+    prompt_query_key: str,
+    dynamic_slots: Mapping[str, Any],
+    instance_seed: int,
+) -> PromptTraceArtifacts:
+    rendered_prompt = render_scene_prompt_variants(
+        domain=DOMAIN,
+        scene_id="bar_3d",
+        bundle_id=str(_PROMPT_DEFAULTS.get("bundle_id", PROMPT_BUNDLE_ID)),
+        scene_key=SCENE_PROMPT_KEY,
+        task_key=TASK_PROMPT_KEY,
+        query_key=str(prompt_query_key),
+        dynamic_slots=dict(dynamic_slots),
+        instance_seed=int(instance_seed),
+    )
+    return build_prompt_trace_artifacts(rendered_prompt)

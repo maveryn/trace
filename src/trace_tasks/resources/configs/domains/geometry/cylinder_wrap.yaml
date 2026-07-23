@@ -1,0 +1,23 @@
+generation:
+  task_overrides:
+    task_geometry__cylinder_wrap__wrapped_mark_position_label:
+      option_count_weights:
+        '4': 1.0
+        '6': 1.0
+rendering:
+  shared:
+    canvas_width: 820
+    canvas_height: 580
+    line_width: 4
+    label_font_size: 23
+    small_label_font_size: 18
+    tiny_label_font_size: 14
+prompt:
+  shared:
+    bundle_id: geometry_cylinder_wrap_v1
+    scene_key: cylinder_wrap_scene
+  task_overrides:
+    task_geometry__cylinder_wrap__surface_path_length_value:
+      task_key: surface_path_length_value_query
+    task_geometry__cylinder_wrap__wrapped_mark_position_label:
+      task_key: wrapped_mark_position_label_query

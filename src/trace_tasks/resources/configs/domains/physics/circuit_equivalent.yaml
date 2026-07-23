@@ -1,0 +1,107 @@
+generation:
+  shared:
+    scene_variant_weights:
+      series_parallel: 1.0
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_accent_color_name_sampling: true
+    total_resistance_target_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    total_capacitance_target_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    component_value_min: 1
+    component_value_max: 60
+    parallel_component_count_options:
+    - 2
+    - 3
+    - 4
+    parallel_block_count_options:
+    - 1
+    - 2
+    series_parallel_branch_count_options:
+    - 2
+    - 3
+
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 720
+    terminal_left_x_px: 96
+    terminal_radius_px: 12
+    terminal_font_size_px: 24
+    wire_width_px: 5
+    wire_width_px_min: 4
+    wire_width_px_max: 6
+    component_symbol_width_px: 118
+    component_symbol_height_px: 56
+    component_label_font_size_px: 20
+    label_stroke_width_px: 0
+    label_stroke_width_px_min: 0
+    label_stroke_width_px_max: 0
+    parallel_rail_left_x_px: 268
+    parallel_branch_top_y_px: 180
+    parallel_branch_bottom_y_px: 470
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -12
+    layout_jitter_x_px_max: 12
+    layout_jitter_y_px_min: -30
+    layout_jitter_y_px_max: 42
+
+prompt:
+  shared:
+    bundle_id: physics_circuit_equivalent_v1
+  task_overrides:
+    task_physics__circuit_equivalent__total_resistance_value:
+      task_key: total_resistance_value_query
+    task_physics__circuit_equivalent__total_capacitance_value:
+      task_key: total_capacitance_value_query

@@ -1,0 +1,125 @@
+{
+  "bundle_id": "geometry_analytical_function_property_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "function_panel_grid": [
+        "The image shows labeled coordinate-plane panels, each showing one relation.",
+        "The diagram shows labeled coordinate-plane panels, each showing one relation.",
+        "This diagram shows labeled coordinate-plane panels, each showing one relation.",
+        "The figure shows labeled coordinate-plane panels, each showing one relation.",
+        "The visual shows labeled coordinate-plane panels, each showing one relation."
+      ]
+    },
+    "task": {
+      "function_panel_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "function_status_label": [
+        "Which labeled relation is a function?",
+        "Which panel shows exactly one y-value for every x-value in its domain?",
+        "Which labeled graph represents y as a function of x?",
+        "Which labeled relation assigns a single output y to each input x?",
+        "Which relation never pairs the same x-value with two different y-values?"
+      ],
+      "one_to_one_status_label": [
+        "Which labeled relation represents a one-to-one function?",
+        "Which panel shows a function with no repeated y-values?",
+        "Which labeled graph is one-to-one?",
+        "Which panel shows a function where each y-value occurs at most once?",
+        "Which labeled relation maps different x-values to different y-values?"
+      ],
+      "range_match_label": [
+        "Which labeled relation has range {target_range}?",
+        "Which panel shows a relation whose range is {target_range}?",
+        "Find the labeled graph with y-values spanning {target_range}.",
+        "Which relation uses exactly the range {target_range}?",
+        "Which panel has range {target_range}?"
+      ],
+      "x_axis_symmetry_label": [
+        "Which labeled graph is symmetric about the x-axis?",
+        "Which panel shows a relation with mirror symmetry across the x-axis?",
+        "Find the relation that stays unchanged when reflected across the x-axis.",
+        "Which labeled relation has x-axis symmetry?",
+        "Which panel contains a graph symmetric across the horizontal axis?"
+      ],
+      "sign_interval_positive_label": [
+        "Which labeled graph stays above the x-axis on {target_interval}?",
+        "Which panel shows a graph with positive y-values throughout {target_interval}?",
+        "Find the graph that is positive on the interval {target_interval}.",
+        "Which relation remains above y = 0 for all x in {target_interval}?",
+        "Which panel contains a graph whose y-values are positive across {target_interval}?"
+      ],
+      "sign_interval_negative_label": [
+        "Which labeled graph stays below the x-axis on {target_interval}?",
+        "Which panel shows a graph with negative y-values throughout {target_interval}?",
+        "Find the graph that is negative on the interval {target_interval}.",
+        "Which relation remains below y = 0 for all x in {target_interval}?",
+        "Which panel contains a graph whose y-values are negative across {target_interval}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\".",
+      "answer_hint": "the selected panel label as a capital letter shown in the image",
+      "annotation_hint": "the selected panel bounding box [x0,y0,x1,y1] in pixels",
+      "json_example": "{\"annotation\":[40,40,310,320],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {
+    "target_range": {
+      "type": "string"
+    },
+    "target_interval": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:range_match_label": [
+      "target_range"
+    ],
+    "query:sign_interval_positive_label": [
+      "target_interval"
+    ],
+    "query:sign_interval_negative_label": [
+      "target_interval"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

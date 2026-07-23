@@ -1,0 +1,94 @@
+{
+  "bundle_id": "puzzles_maze_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "maze": [
+        "The image shows {object_description}.",
+        "The maze shows {object_description}.",
+        "This maze shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "exit_reachability_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "nearest_exit_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "exit_reachability_label": [
+        "Which labeled exit is {target_reachability_description} from START? There is exactly one such exit.",
+        "Identify the only boundary exit label that is {target_reachability_description} from START.",
+        "From START, which exit label is {target_reachability_description} through the maze corridors?",
+        "Find the single labeled exit that is {target_reachability_description} without crossing a wall.",
+        "What is the label of the {target_reachability_description} exit from START?"
+      ],
+      "nearest_exit_label": [
+        "Which labeled exit is nearest to START by corridor path length?",
+        "Using only open corridors, which exit label has the shortest path from START?",
+        "From START, which boundary exit can be reached in the fewest corridor steps?",
+        "Identify the exit label with the shortest open-corridor path from START.",
+        "What is the label of the exit nearest to START through the maze corridors?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to {answer_instruction}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:exit_reachability_label_query": {
+      "answer_instruction": "the selected exit label as a string",
+      "annotation_hint": "Set annotation to one image-pixel point [x,y] centered on the selected exit marker.",
+      "json_example": "{\"annotation\":[194,118],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "task:nearest_exit_label_query": {
+      "answer_instruction": "the selected exit label as a string",
+      "annotation_hint": "Set annotation to one image-pixel point [x,y] centered on the selected nearest exit marker.",
+      "json_example": "{\"annotation\":[194,118],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "target_reachability_description": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:maze": [
+      "object_description"
+    ],
+    "query:exit_reachability_label": [
+      "target_reachability_description"
+    ]
+  }
+}

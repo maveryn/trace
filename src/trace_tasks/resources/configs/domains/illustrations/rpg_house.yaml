@@ -1,0 +1,122 @@
+generation:
+  shared:
+    balanced_sampling: true
+  task_overrides:
+    task_illustrations__rpg_house__adjacent_room_count:
+      query_id_support:
+        - single
+      adjacent_room_count_support:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+      room_count_support:
+        - 6
+        - 7
+        - 8
+    task_illustrations__rpg_house__missing_patch_label:
+      query_id_support:
+        - single
+      source_room_count_min: 6
+      source_room_count_max: 8
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 34
+    task_illustrations__rpg_house__reachable_room_count:
+      query_id_support:
+        - single
+      reachable_room_count_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+      room_count_support:
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+    task_illustrations__rpg_house__room_count:
+      query_id_support:
+        - single
+      room_count_support:
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+    task_illustrations__rpg_house__swapped_tile_pair_label:
+      query_id_support:
+        - single
+      source_room_count_min: 6
+      source_room_count_max: 8
+      min_tile_detail_score: 120.0
+      min_pair_difference: 7.0
+
+rendering:
+  shared:
+    rpg_house_tile_px: 48
+
+prompt:
+  task_overrides:
+    task_illustrations__rpg_house__adjacent_room_count:
+      bundle_id: illustrations_rpg_house_v0
+      scene_key: rpg_house_canvas
+      task_key: rpg_house_adjacent_room_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_house_adjacent_room_count: set "answer" to the number of rooms that directly share a doorway with the player's room
+      annotation_hint_rpg_house_adjacent_room_count: set "annotation" to an object with keys "player" and "adjacent_rooms"; "player" contains one [x, y] point on the player, and "adjacent_rooms" contains one [x, y] point near the center of each counted room
+      json_example_rpg_house_adjacent_room_count: '{"annotation":{"player":[[420,360]],"adjacent_rooms":[[260,180],[620,180]]},"answer":2}'
+      json_example_answer_only_rpg_house_adjacent_room_count: '{"answer":2}'
+    task_illustrations__rpg_house__missing_patch_label:
+      bundle_id: illustrations_rpg_house_v0
+      scene_key: rpg_house_canvas
+      task_key: rpg_house_missing_patch_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_house_missing_patch_label: set "answer" to the selected patch option letter
+      annotation_hint_rpg_house_missing_patch_label: set "annotation" to an object with keys "missing_region" and "selected_option"; each value is a [x0, y0, x1, y1] pixel box
+      json_example_rpg_house_missing_patch_label: '{"annotation":{"missing_region":[120,80,300,220],"selected_option":[430,720,610,860]},"answer":"C"}'
+      json_example_answer_only_rpg_house_missing_patch_label: '{"answer":"C"}'
+    task_illustrations__rpg_house__reachable_room_count:
+      bundle_id: illustrations_rpg_house_v0
+      scene_key: rpg_house_canvas
+      task_key: rpg_house_reachable_room_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_house_reachable_room_count: set "answer" to the number of other rooms reachable from the player's room
+      annotation_hint_rpg_house_reachable_room_count: set "annotation" to an object with keys "player" and "reachable_rooms"; "player" contains one [x, y] point on the player, and "reachable_rooms" contains one [x, y] point near the center of each counted room
+      json_example_rpg_house_reachable_room_count: '{"annotation":{"player":[[420,360]],"reachable_rooms":[[260,180],[620,180]]},"answer":2}'
+      json_example_answer_only_rpg_house_reachable_room_count: '{"answer":2}'
+    task_illustrations__rpg_house__room_count:
+      bundle_id: illustrations_rpg_house_v0
+      scene_key: rpg_house_canvas
+      task_key: rpg_house_room_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_house_room_count: set "answer" to the total number of enclosed rooms
+      annotation_hint_rpg_house_room_count: set "annotation" to one [x, y] point near the center of each counted room in image pixel coordinates
+      json_example_rpg_house_room_count: '{"annotation":[[168,148],[456,148],[744,148],[312,492],[648,492]],"answer":5}'
+      json_example_answer_only_rpg_house_room_count: '{"answer":5}'
+    task_illustrations__rpg_house__swapped_tile_pair_label:
+      bundle_id: illustrations_rpg_house_v0
+      scene_key: rpg_house_canvas
+      task_key: rpg_house_swapped_tile_pair_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_house_swapped_tile_pair_label: set "answer" to the option letter naming the two swapped numbered tiles
+      annotation_hint_rpg_house_swapped_tile_pair_label: set "annotation" to two [x0, y0, x1, y1] pixel boxes around the swapped numbered tiles
+      json_example_rpg_house_swapped_tile_pair_label: '{"annotation":[[0,0,400,266],[800,532,1200,798]],"answer":"D"}'
+      json_example_answer_only_rpg_house_swapped_tile_pair_label: '{"answer":"D"}'

@@ -1,0 +1,98 @@
+generation:
+  shared:
+    candidate_count: 6
+    distractor_count_min: 4
+    distractor_count_max: 8
+    target_occurrence_count_min: 2
+    target_occurrence_count_max: 4
+    named_color_support:
+    - red
+    - blue
+    - green
+    - yellow
+    - orange
+    - purple
+    - brown
+    - cyan
+    - magenta
+    - maroon
+    named_icon_fill_style_support:
+    - solid
+    - striped
+    - dotted
+    named_icon_fill_style_weights:
+      solid: 0.55
+      striped: 0.15
+      dotted: 0.15
+  task_overrides:
+    task_icons__named_path__path_distance_value:
+      distance_answer_min: 1
+      distance_answer_max: 8
+      extra_stop_count_min: 2
+      extra_stop_count_max: 6
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 720
+    scene_icon_size_min_px: 52
+    scene_icon_size_max_px: 78
+    scene_max_overlap_fraction: 0.0
+    scene_placement_max_attempts: 200
+    path_stroke_width_px: 7
+    path_line_alpha: 145
+    path_stop_radius_px: 6
+    path_horizontal_margin_px: 72
+    path_vertical_margin_px: 92
+    path_amplitude_min_px: 72
+    path_amplitude_max_px: 136
+    icon_collision_gap_px: 6
+    candidate_label_font_size_px: 24
+    candidate_label_padding_px: 5
+    candidate_label_gap_px: 5
+    candidate_label_color_rgb:
+    - 52
+    - 60
+    - 77
+    candidate_label_background_rgb:
+    - 255
+    - 255
+    - 255
+    candidate_label_border_rgb:
+    - 172
+    - 183
+    - 204
+    path_color_rgb:
+    - 92
+    - 108
+    - 134
+    stop_fill_rgb:
+    - 255
+    - 255
+    - 255
+    stop_outline_rgb:
+    - 92
+    - 108
+    - 134
+    endpoint_label_font_size_px: 18
+    endpoint_label_color_rgb:
+    - 58
+    - 68
+    - 86
+    endpoint_label_background_rgb:
+    - 255
+    - 255
+    - 255
+prompt:
+  shared:
+    bundle_id: icons_named_path_v1
+    scene_key: named_path_relation
+    task_key: path_neighbor_query
+  task_overrides:
+    task_icons__named_path__path_distance_value:
+      task_key: path_distance_query
+      object_description: a START-to-END icon path with icon types placed on path stops
+      question_text: How many path stops are strictly between the "{first_shape_name}" icon and the "{second_shape_name}" icon along the path from START to END?
+      annotation_hint: set "annotation" to an array of [x0, y0, x1, y1] bounding boxes in image pixel coordinates for every counted path stop strictly between the two named icons
+      answer_hint: set "answer" to the number of path stops strictly between the two named icons as an integer
+      json_example: '{"annotation":[[252,244,312,304],[368,252,428,312],[486,240,546,300],[602,248,662,308]],"answer":4}'
+      json_example_answer_only: '{"answer":4}'

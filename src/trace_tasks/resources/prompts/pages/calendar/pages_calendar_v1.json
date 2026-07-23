@@ -1,0 +1,218 @@
+{
+  "bundle_id": "pages_calendar_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "month_calendar": [
+        "The image shows {object_description}.",
+        "The page contains {object_description}.",
+        "The picture shows {object_description}.",
+        "The canvas contains {object_description}.",
+        "This page shows {object_description}."
+      ]
+    },
+    "task": {
+      "calendar_weekday_occurrence_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "calendar_date_weekday_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "calendar_marked_day_class_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "calendar_workday_offset_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "calendar_date_range_day_class_count_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "weekday_occurrence_date": [
+        "What is the date number of the {ordinal} {weekday_name} in this month?",
+        "Find the date number for the {ordinal} {weekday_name} shown on the calendar.",
+        "Which date number is the {ordinal} {weekday_name} of the month?",
+        "Using the calendar, identify the date number of the {ordinal} {weekday_name}.",
+        "What date falls on the {ordinal} {weekday_name} in this month?"
+      ],
+      "date_weekday_label": [
+        "Which exact short weekday header is above date {target_date}, such as Mon, Tue, Wed, Thu, Fri, Sat, or Sun?",
+        "Find date {target_date} on the calendar. What exact three-letter weekday header is above its column?",
+        "Using the visible weekday headers, which one of Mon, Tue, Wed, Thu, Fri, Sat, or Sun is above date {target_date}?",
+        "What short weekday header appears above the column containing date {target_date}?",
+        "Look at date {target_date}; what exact weekday abbreviation is printed at the top of that column?"
+      ],
+      "marked_day_class_count": [
+        "How many marked dates fall on {marked_day_class_phrase}?",
+        "Count the marked dates that are {marked_day_class} days.",
+        "How many marked dates are on {marked_day_class_phrase}?",
+        "What is the number of marked {marked_day_class} dates?",
+        "Count only the marked dates that fall on {marked_day_class_phrase}."
+      ],
+      "workday_after_offset_date": [
+        "Workdays are Monday through Friday; skip Saturday and Sunday. Starting from the marked reference date, what date is {workday_offset} workdays after it?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. Move forward {workday_offset} workdays from the marked reference date. What date do you reach?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. What date number is reached {workday_offset} workdays after the marked reference date?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. Which date is {workday_offset} workdays after the marked reference date?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. From the marked date, go {workday_offset} workdays later. What date number is that?"
+      ],
+      "workday_before_offset_date": [
+        "Workdays are Monday through Friday; skip Saturday and Sunday. Starting from the marked reference date, what date is {workday_offset} workdays before it?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. Move backward {workday_offset} workdays from the marked reference date. What date do you reach?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. What date number is reached {workday_offset} workdays before the marked reference date?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. Which date is {workday_offset} workdays before the marked reference date?",
+        "Workdays are Monday through Friday; skip Saturday and Sunday. From the marked date, go {workday_offset} workdays earlier. What date number is that?"
+      ],
+      "weekday_range_count": [
+        "The two marked dates define an inclusive range. How many Monday-through-Friday dates are in that range?",
+        "Count the weekday dates from the earlier marked date through the later marked date, including both marked dates.",
+        "Between the two marked boundary dates, inclusive, how many dates fall on Monday through Friday?",
+        "Using the two marked dates as inclusive endpoints, count the dates that are weekdays.",
+        "How many dates in the marked inclusive range are Monday-through-Friday dates?"
+      ],
+      "weekend_range_count": [
+        "The two marked dates define an inclusive range. How many Saturday-or-Sunday dates are in that range?",
+        "Count the weekend dates from the earlier marked date through the later marked date, including both marked dates.",
+        "Between the two marked boundary dates, inclusive, how many dates fall on Saturday or Sunday?",
+        "Using the two marked dates as inclusive endpoints, count the dates that are weekend days.",
+        "How many dates in the marked inclusive range are Saturday-or-Sunday dates?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:weekday_occurrence_date": {
+      "object_description": "one month-view calendar with weekday headers and date cells",
+      "answer_hint": "set \"answer\" to the integer date number",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates around the target date cell",
+      "json_example": "{\"annotation\":[354,256,456,352],\"answer\":18}",
+      "json_example_answer_only": "{\"answer\":18}"
+    },
+    "query:date_weekday_label": {
+      "object_description": "one month-view calendar with weekday headers and date cells",
+      "answer_hint": "set \"answer\" to the exact visible three-letter weekday header label above the queried date, one of Mon, Tue, Wed, Thu, Fri, Sat, or Sun",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates around the queried date cell",
+      "json_example": "{\"annotation\":[354,256,456,352],\"answer\":\"Wed\"}",
+      "json_example_answer_only": "{\"answer\":\"Wed\"}"
+    },
+    "query:marked_day_class_count": {
+      "object_description": "one month-view calendar with weekday headers, date cells, and several marked dates",
+      "answer_hint": "set \"answer\" to the integer count of marked dates in the requested day class",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around all matching marked date cells; use [] if none match",
+      "json_example": "{\"annotation\":[[148,352,250,448],[560,352,662,448]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:workday_after_offset_date": {
+      "object_description": "one month-view calendar with weekday headers, date cells, and one marked reference date",
+      "answer_hint": "set \"answer\" to the integer date number reached after moving the requested number of workdays from the marked date",
+      "annotation_hint": "set \"annotation\" to an object with keys \"reference_date\" and \"target_date\", each mapped to the [x0, y0, x1, y1] box of that date cell",
+      "json_example": "{\"annotation\":{\"reference_date\":[354,256,456,352],\"target_date\":[560,256,662,352]},\"answer\":20}",
+      "json_example_answer_only": "{\"answer\":20}"
+    },
+    "query:workday_before_offset_date": {
+      "object_description": "one month-view calendar with weekday headers, date cells, and one marked reference date",
+      "answer_hint": "set \"answer\" to the integer date number reached before moving the requested number of workdays from the marked date",
+      "annotation_hint": "set \"annotation\" to an object with keys \"reference_date\" and \"target_date\", each mapped to the [x0, y0, x1, y1] box of that date cell",
+      "json_example": "{\"annotation\":{\"reference_date\":[560,256,662,352],\"target_date\":[354,256,456,352]},\"answer\":18}",
+      "json_example_answer_only": "{\"answer\":18}"
+    },
+    "query:weekday_range_count": {
+      "object_description": "one month-view calendar with weekday headers, date cells, and two marked boundary dates",
+      "answer_hint": "set \"answer\" to the integer count of weekday dates in the inclusive marked range",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around all counted weekday date cells",
+      "json_example": "{\"annotation\":[[148,256,250,352],[251,256,353,352],[354,256,456,352]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:weekend_range_count": {
+      "object_description": "one month-view calendar with weekday headers, date cells, and two marked boundary dates",
+      "answer_hint": "set \"answer\" to the integer count of weekend dates in the inclusive marked range",
+      "annotation_hint": "set \"annotation\" to a JSON array of [x0, y0, x1, y1] boxes in image pixel coordinates around all counted weekend date cells",
+      "json_example": "{\"annotation\":[[560,256,662,352],[663,256,765,352]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "ordinal": {"type": "string"},
+    "weekday_name": {"type": "string"},
+    "target_date": {"type": "integer"},
+    "marked_day_class": {"type": "string"},
+    "marked_day_class_phrase": {"type": "string"},
+    "workday_offset": {"type": "integer"}
+  },
+  "required_slots_by_key": {
+    "scene:month_calendar": [
+      "object_description"
+    ],
+    "query:weekday_occurrence_date": [
+      "ordinal",
+      "weekday_name"
+    ],
+    "query:date_weekday_label": [
+      "target_date"
+    ],
+    "query:marked_day_class_count": [
+      "marked_day_class",
+      "marked_day_class_phrase"
+    ],
+    "query:workday_after_offset_date": [
+      "workday_offset"
+    ],
+    "query:workday_before_offset_date": [
+      "workday_offset"
+    ],
+    "query:weekday_range_count": [],
+    "query:weekend_range_count": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

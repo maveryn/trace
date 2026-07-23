@@ -1,0 +1,101 @@
+{
+  "bundle_id": "physics_spring_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "spring_diagram": [
+        "The image shows two identical hanging springs with rulers and weight blocks.",
+        "The diagram shows two identical hanging springs next to extension rulers.",
+        "This diagram shows two identical springs with labeled weights and extension markers.",
+        "The figure shows a pair of identical springs with weight blocks and ruler markers.",
+        "The visual shows two matching spring setups with extension rulers."
+      ]
+    },
+    "task": {
+      "spring_missing_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "spring_extension_difference_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "missing_weight_for_extension": [
+        "What weight should replace the marked `?` on the right spring?",
+        "The two springs are identical. What integer weight belongs at the marked `?` on the right spring?",
+        "Use the reference spring and the shown right-side extension. What weight should the red `?` mark have?",
+        "The right spring is missing its weight. What integer value should replace the red `?` mark?",
+        "Determine the missing right-side weight from the identical-spring diagram."
+      ],
+      "missing_extension_for_weight": [
+        "What extension should replace the marked `?` on the right spring?",
+        "The two springs are identical. What integer extension belongs at the marked `?` on the right spring?",
+        "Use the reference spring and the shown right-side weight. What extension should the red `?` mark have?",
+        "The right spring is missing its extension. What integer value should replace the red `?` mark?",
+        "Determine the missing right-side extension from the identical-spring diagram."
+      ],
+      "spring_extension_difference": [
+        "What is the absolute difference between the two shown spring extensions?",
+        "Using the two ruler markers, what integer difference in extension do the springs show?",
+        "How many extension units apart are the two shown spring markers?",
+        "Read the two spring-extension markers. What is their absolute difference?",
+        "Determine the difference in extension between the two identical springs."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:spring_missing_value_query": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"reference_weight\", \"reference_extension\", \"query_weight\", and \"query_extension\"; each value is a [x0,y0,x1,y1] pixel box around the corresponding weight block or extension marker",
+      "answer_hint": "set \"answer\" to the integer missing weight or extension value",
+      "json_example": "{\"annotation\":{\"reference_weight\":[170,342,248,396],\"reference_extension\":[204,241,256,273],\"query_weight\":[595,226,647,260],\"query_extension\":[598,293,650,325]},\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "task:spring_extension_difference_query": {
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around the two extension markers being compared",
+      "answer_hint": "set \"answer\" to the integer extension difference",
+      "json_example": "{\"annotation\":[[210,217,260,249],[620,269,670,301]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    }
+  },
+  "dynamic_slots": {
+    "solve_for": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

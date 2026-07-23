@@ -1,0 +1,197 @@
+name: Public CI
+
+on:
+  push:
+    branches: [main, rlvr]
+    paths-ignore:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - "AGENTS.md"
+      - "docs/README.md"
+      - "docs/DEVELOPMENT.md"
+      - "docs/workflows/**/*.md"
+      - "scripts/README.md"
+      - "examples/**/*.md"
+  pull_request:
+    branches: [main, rlvr]
+    paths-ignore:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - "AGENTS.md"
+      - "docs/README.md"
+      - "docs/DEVELOPMENT.md"
+      - "docs/workflows/**/*.md"
+      - "scripts/README.md"
+      - "examples/**/*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PIP_CONSTRAINT: ${{ github.workspace }}/constraints/release.txt
+
+jobs:
+  source-smoke:
+    name: Source smoke (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/release.txt
+
+      - name: Install pinned test environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -c constraints/release.txt -e ".[test]"
+
+      - name: Run focused public smoke tests
+        run: >-
+          python -m pytest -q
+          tests/test_public_smoke.py
+          tests/test_public_release_check.py
+
+      - name: Check the editable CLI
+        run: trace-list --domain geometry --json > /dev/null
+
+  release-contracts:
+    name: Canonical source release contracts (Python 3.12)
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/release.txt
+
+      - name: Install pinned release environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -c constraints/release.txt -e ".[test]"
+
+      - name: Check source release contracts
+        run: python scripts/check_public_release.py --source-only
+
+  python-314-compatibility:
+    name: Python 3.14 package and CLI compatibility
+    runs-on: ubuntu-24.04
+    env:
+      PIP_CONSTRAINT: ${{ github.workspace }}/constraints/compat-py314.txt
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/compat-py314.txt
+
+      - name: Install Python 3.14 compatibility environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -c constraints/compat-py314.txt -e ".[test,export]"
+
+      - name: Run focused Python 3.14 smoke tests
+        run: >-
+          python -m pytest -q
+          tests/test_public_smoke.py
+          tests/test_public_release_check.py
+          tests/test_build_release_dataset.py::test_viewer_schema_and_rows_fail_closed
+
+      - name: Check the built package and installed CLI on Python 3.14
+        run: >-
+          python scripts/check_public_release.py
+          --package-only
+          --constraints constraints/compat-py314.txt
+
+  package-smoke:
+    name: Package and installed CLI smoke
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/release.txt
+
+      - name: Install pinned release environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -c constraints/release.txt -e ".[test]"
+
+      - name: Check the built package and installed CLI
+        run: >-
+          python scripts/check_public_release.py
+          --package-only
+          --constraints constraints/release.txt
+
+  release-tool-tests:
+    name: Release tools and examples
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/release.txt
+
+      - name: Install pinned release and export environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -c constraints/release.txt -e ".[test,export]"
+
+      - name: Run release-tool regression tests
+        run: >-
+          python -m pytest -q
+          tests/test_build_release_dataset.py
+          tests/test_cli_validation.py
+          tests/test_examples.py
+          tests/test_task_catalog_and_gallery.py
+          tests/test_trace_core.py::test_build_dataset_end_to_end_and_strict_repro
+          tests/test_pages_hierarchy_tasks.py::test_pages_hierarchy_total_reports_retries_infeasible_tree_size
+          tests/test_pages_infographic_tasks.py::test_pages_mixed_infographic_retries_infeasible_row_layout
+          tests/test_pages_infographic_tasks.py::test_pages_mixed_infographic_does_not_retry_unrelated_construction_errors

@@ -1,0 +1,75 @@
+prompt:
+  shared:
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+      in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for
+      the final answer.
+visual:
+  background:
+    enabled: true
+    styles:
+      solid_light:
+        kind: solid
+        color:
+        - 248
+        - 248
+        - 248
+      cool_light:
+        kind: solid
+        color:
+        - 246
+        - 249
+        - 251
+      warm_light:
+        kind: solid
+        color:
+        - 251
+        - 249
+        - 244
+      paper_light:
+        kind: solid
+        color:
+        - 250
+        - 248
+        - 241
+      mint_light:
+        kind: solid
+        color:
+        - 244
+        - 250
+        - 247
+      lavender_light:
+        kind: solid
+        color:
+        - 248
+        - 247
+        - 252
+    weights:
+      solid_light: 1.0
+      cool_light: 1.0
+      warm_light: 1.0
+      paper_light: 1.0
+      mint_light: 1.0
+      lavender_light: 1.0
+  noise:
+    apply_prob: 0.0
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.1
+        - 0.3
+      downsample:
+        scale:
+        - 0.94
+        - 0.98
+      jpeg:
+        quality:
+        - 86.0
+        - 95.0
+      noise:
+        alpha:
+        - 0.008
+        - 0.025

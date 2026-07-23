@@ -1,0 +1,1600 @@
+Footer note: source packet E43; page 7.
+Prepared for Atlas review during the reference period.
+Footer note: prepared for internal visual review.
+Footer note: labels are illustrative context only.
+Footer note: source packet M13; page 6.
+Prepared for Summit review during the reporting window.
+Footer note: source packet K20; page 9.
+Prepared for Beacon review during the current cycle.
+Footer note: source packet A46; page 8.
+Footer note: source packet P23; page 10.
+Footer note: source packet R66; page 10.
+Footer note: source packet Q86; page 4.
+Context footer for share records.
+Prepared for Echo review during the daily review.
+Context footer for balance records.
+Context footer for supply records.
+Prepared for River review during the monthly review.
+Footer note: source packet V30; page 10.
+Context footer for score records.
+Context footer for events records.
+Prepared for Delta review during the reference period.
+Context footer for reach records.
+Prepared for Willow review during the current cycle.
+Prepared for Summit review during the planning window.
+Footer note: source packet Y86; page 2.
+Footer note: source packet S54; page 11.
+Prepared for River review during the reporting window.
+Context footer for throughput records.
+Context footer for pipeline records.
+Footer note: source packet D43; page 3.
+Footer note: source packet Z76; page 11.
+Context footer for demand records.
+Prepared for Iris review during the reporting window.
+Context footer for output records.
+Context footer for coverage records.
+Context footer for status records.
+Prepared for Atlas review during the daily review.
+Context footer for quality records.
+Footer note: source packet W22; page 4.
+Footer note: source packet U30; page 4.
+Footer note: source packet G74; page 11.
+Prepared for Echo review during the quarterly update.
+Footer note: source packet P74; page 3.
+Context footer for margin records.
+Prepared for Delta review during the planning window.
+Footer note: source packet M66; page 4.
+Footer note: source packet L26; page 3.
+Prepared for Orion review during the quarterly update.
+Footer note: source packet D33; page 2.
+Prepared for Terra review during the quarterly update.
+Prepared for Delta review during the quarterly update.
+Footer note: source packet L42; page 8.
+Context footer for response records.
+Prepared for Willow review during the weekly summary.
+Footer note: source packet S60; page 9.
+Context footer for flow records.
+Context footer for load records.
+Prepared for Maple review during the daily review.
+Footer note: source packet S41; page 5.
+Footer note: source packet P25; page 10.
+Footer note: source packet F36; page 7.
+Prepared for Quartz review during the current cycle.
+Context footer for volume records.
+Footer note: source packet M63; page 10.
+Footer note: source packet M20; page 9.
+Context footer for index records.
+Prepared for Jade review during the weekly summary.
+Prepared for River review during the weekly summary.
+Prepared for Alpha review during the current cycle.
+Prepared for Summit review during the quarterly update.
+Prepared for Echo review during the current cycle.
+Prepared for Orion review during the planning window.
+Prepared for Maple review during the reporting window.
+Footer note: source packet E28; page 6.
+Prepared for Vertex review during the weekly summary.
+Prepared for Beacon review during the planning window.
+Prepared for Jade review during the reporting window.
+Context footer for risk records.
+Context footer for units records.
+Footer note: source packet C60; page 10.
+Prepared for Cedar review during the planning window.
+Footer note: source packet R27; page 2.
+Footer note: source packet F74; page 11.
+Prepared for Quartz review during the daily review.
+Prepared for Summit review during the reference period.
+Context footer for signal records.
+Prepared for Atlas review during the monthly review.
+Prepared for Iris review during the monthly review.
+Footer note: source packet R68; page 7.
+Footer note: source packet P86; page 9.
+Prepared for Maple review during the current cycle.
+Prepared for Maple review during the weekly summary.
+Footer note: source packet D32; page 5.
+Footer note: source packet T53; page 5.
+Footer note: source packet V30; page 4.
+Footer note: source packet W68; page 10.
+Footer note: source packet H49; page 10.
+Footer note: source packet B96; page 5.
+Context footer for trend records.
+Prepared for River review during the reference period.
+Footer note: source packet J13; page 2.
+Context footer for capacity records.
+Prepared for Iris review during the reference period.
+Footer note: source packet R65; page 2.
+Footer note: source packet H75; page 6.
+Footer note: source packet U78; page 11.
+Footer note: source packet P87; page 11.
+Footer note: source packet K12; page 4.
+Footer note: source packet J10; page 11.
+Prepared for Harbor review during the quarterly update.
+Prepared for Beacon review during the daily review.
+Footer note: source packet H40; page 7.
+Footer note: source packet P77; page 8.
+Footer note: source packet V59; page 3.
+Footer note: source packet D93; page 8.
+Footer note: source packet Q67; page 6.
+Prepared for Atlas review during the planning window.
+Prepared for Willow review during the reporting window.
+Prepared for Terra review during the monthly review.
+Footer note: source packet W63; page 6.
+Footer note: source packet X48; page 2.
+Prepared for Vertex review during the current cycle.
+Footer note: source packet H19; page 5.
+Prepared for Beacon review during the monthly review.
+Footer note: source packet M77; page 2.
+Prepared for Harbor review during the reporting window.
+Prepared for Alpha review during the quarterly update.
+Prepared for Vertex review during the quarterly update.
+Footer note: source packet L88; page 3.
+Prepared for Summit review during the current cycle.
+Prepared for Terra review during the weekly summary.
+Prepared for Vertex review during the daily review.
+Footer note: source packet P42; page 11.
+Prepared for Alpha review during the reference period.
+Prepared for Alpha review during the weekly summary.
+Prepared for Vertex review during the reference period.
+Prepared for Beacon review during the reporting window.
+Prepared for Jade review during the daily review.
+Prepared for Cedar review during the reference period.
+Prepared for Terra review during the planning window.
+Footer note: source packet R33; page 7.
+Footer note: source packet S89; page 3.
+Footer note: source packet J87; page 4.
+Context footer for requests records.
+Prepared for Orion review during the reference period.
+Footer note: source packet B27; page 8.
+Footer note: source packet T42; page 10.
+Footer note: source packet W12; page 10.
+Footer note: source packet J35; page 9.
+Footer note: source packet Q68; page 2.
+Prepared for Quartz review during the quarterly update.
+Prepared for Cedar review during the current cycle.
+Context footer for access records.
+Prepared for Delta review during the daily review.
+Prepared for Atlas review during the quarterly update.
+Footer note: source packet K72; page 2.
+Prepared for Orion review during the daily review.
+Footer note: source packet J83; page 11.
+Prepared for Iris review during the weekly summary.
+Prepared for Alpha review during the reporting window.
+Footer note: source packet Z28; page 9.
+Footer note: source packet D25; page 7.
+Footer note: source packet T72; page 4.
+Footer note: source packet V61; page 8.
+Context footer for activity records.
+Prepared for Orion review during the monthly review.
+Prepared for Nimbus review during the monthly review.
+Footer note: source packet K58; page 3.
+Footer note: source packet G41; page 5.
+Footer note: source packet Q17; page 8.
+Prepared for Willow review during the reference period.
+Prepared for Quartz review during the weekly summary.
+Footer note: source packet U62; page 2.
+Footer note: source packet N66; page 11.
+Footer note: source packet M84; page 7.
+Footer note: source packet V26; page 9.
+Footer note: source packet G31; page 7.
+Context footer for growth records.
+Footer note: source packet Q14; page 10.
+Footer note: source packet Q13; page 5.
+Footer note: source packet W37; page 3.
+Footer note: source packet B26; page 7.
+Footer note: source packet C66; page 6.
+Prepared for Harbor review during the monthly review.
+Prepared for Echo review during the monthly review.
+Prepared for Echo review during the weekly summary.
+Footer note: source packet M29; page 2.
+Footer note: source packet Z37; page 11.
+Footer note: source packet C61; page 10.
+Footer note: source packet D66; page 5.
+Footer note: source packet H89; page 9.
+Footer note: source packet Q94; page 7.
+Footer note: source packet T82; page 3.
+Footer note: source packet Y77; page 2.
+Prepared for Delta review during the monthly review.
+Footer note: source packet U59; page 5.
+Footer note: source packet F22; page 8.
+Footer note: source packet F18; page 4.
+Footer note: source packet A12; page 6.
+Footer note: source packet W40; page 7.
+Prepared for Echo review during the reporting window.
+Prepared for Nimbus review during the daily review.
+Footer note: source packet N47; page 6.
+Prepared for Jade review during the quarterly update.
+Footer note: source packet Q30; page 7.
+Prepared for Harbor review during the planning window.
+Prepared for Maple review during the monthly review.
+Footer note: source packet B47; page 5.
+Prepared for Cedar review during the quarterly update.
+Footer note: source packet Y51; page 6.
+Prepared for Harbor review during the weekly summary.
+Footer note: source packet C63; page 5.
+Footer note: source packet M91; page 7.
+Prepared for River review during the daily review.
+Prepared for Summit review during the daily review.
+Footer note: source packet Q72; page 2.
+Footer note: source packet S88; page 3.
+Footer note: source packet X76; page 4.
+Footer note: source packet N59; page 10.
+Prepared for Echo review during the planning window.
+Prepared for Quartz review during the reporting window.
+Footer note: source packet Z12; page 10.
+Prepared for River review during the quarterly update.
+Prepared for Terra review during the reference period.
+Footer note: source packet L55; page 11.
+Prepared for Orion review during the current cycle.
+Footer note: source packet X52; page 3.
+Footer note: source packet N62; page 11.
+Footer note: source packet V15; page 2.
+Footer note: source packet Q10; page 8.
+Footer note: source packet Q22; page 7.
+Footer note: source packet Z21; page 3.
+Footer note: source packet T76; page 4.
+Footer note: source packet W53; page 3.
+Prepared for Harbor review during the daily review.
+Footer note: source packet A45; page 8.
+Prepared for Orion review during the weekly summary.
+Footer note: source packet K29; page 5.
+Footer note: source packet X79; page 6.
+Footer note: source packet X67; page 8.
+Footer note: source packet D93; page 2.
+Footer note: source packet U61; page 11.
+Footer note: source packet Y20; page 3.
+Footer note: source packet D91; page 10.
+Footer note: source packet B29; page 10.
+Prepared for Beacon review during the reference period.
+Prepared for Terra review during the daily review.
+Footer note: source packet T55; page 10.
+Footer note: source packet M79; page 6.
+Footer note: source packet A51; page 5.
+Footer note: source packet Z45; page 7.
+Footer note: source packet P20; page 9.
+Footer note: source packet T31; page 4.
+Footer note: source packet T54; page 9.
+Footer note: source packet K91; page 9.
+Footer note: source packet N55; page 3.
+Prepared for Maple review during the reference period.
+Footer note: source packet Z13; page 11.
+Footer note: source packet P44; page 11.
+Footer note: source packet J64; page 9.
+Footer note: source packet Y53; page 5.
+Prepared for Delta review during the reporting window.
+Footer note: source packet Y20; page 2.
+Footer note: source packet B54; page 4.
+Footer note: source packet U81; page 9.
+Footer note: source packet Y17; page 8.
+Footer note: source packet W65; page 7.
+Prepared for Beacon review during the weekly summary.
+Footer note: source packet E41; page 11.
+Prepared for Echo review during the reference period.
+Prepared for Cedar review during the weekly summary.
+Footer note: source packet R94; page 3.
+Footer note: source packet M24; page 10.
+Footer note: source packet D40; page 4.
+Footer note: source packet D12; page 8.
+Prepared for Nimbus review during the reference period.
+Footer note: source packet D89; page 5.
+Footer note: source packet L60; page 6.
+Footer note: source packet X22; page 6.
+Footer note: source packet D43; page 4.
+Prepared for Harbor review during the reference period.
+Footer note: source packet L36; page 11.
+Prepared for Vertex review during the reporting window.
+Footer note: source packet A15; page 6.
+Prepared for Atlas review during the weekly summary.
+Footer note: source packet M96; page 7.
+Footer note: source packet M28; page 4.
+Footer note: source packet P74; page 10.
+Prepared for Vertex review during the monthly review.
+Footer note: source packet X30; page 3.
+Footer note: source packet U28; page 9.
+Footer note: source packet W22; page 3.
+Footer note: source packet Y17; page 2.
+Prepared for Beacon review during the quarterly update.
+Prepared for Quartz review during the planning window.
+Footer note: source packet Z61; page 3.
+Footer note: source packet C74; page 5.
+Footer note: source packet S57; page 4.
+Footer note: source packet N98; page 4.
+Footer note: source packet F43; page 3.
+Footer note: source packet H29; page 8.
+Footer note: source packet B78; page 6.
+Footer note: source packet Y56; page 8.
+Footer note: source packet F69; page 11.
+Footer note: source packet S10; page 11.
+Footer note: source packet L84; page 10.
+Footer note: source packet T58; page 8.
+Footer note: source packet L19; page 8.
+Footer note: source packet Q30; page 2.
+Prepared for Jade review during the reference period.
+Footer note: source packet K72; page 11.
+Prepared for Nimbus review during the weekly summary.
+Footer note: source packet E20; page 2.
+Footer note: source packet M60; page 4.
+Footer note: source packet F91; page 3.
+Prepared for Willow review during the quarterly update.
+Footer note: source packet G47; page 9.
+Footer note: source packet M81; page 10.
+Footer note: source packet P13; page 10.
+Footer note: source packet J18; page 2.
+Footer note: source packet K56; page 2.
+Footer note: source packet V24; page 2.
+Footer note: source packet V80; page 9.
+Footer note: source packet U64; page 8.
+Prepared for River review during the current cycle.
+Footer note: source packet Z52; page 4.
+Footer note: source packet L65; page 3.
+Footer note: source packet K87; page 3.
+Footer note: source packet D40; page 9.
+Footer note: source packet H42; page 5.
+Footer note: source packet F38; page 6.
+Prepared for Nimbus review during the reporting window.
+Footer note: source packet P59; page 2.
+Prepared for Terra review during the reporting window.
+Footer note: source packet D23; page 10.
+Footer note: source packet M41; page 11.
+Prepared for Delta review during the current cycle.
+Footer note: source packet S52; page 11.
+Footer note: source packet V93; page 4.
+Footer note: source packet H83; page 9.
+Footer note: source packet Q85; page 8.
+Footer note: source packet W67; page 4.
+Footer note: source packet T54; page 3.
+Prepared for Iris review during the quarterly update.
+Footer note: source packet C32; page 5.
+Footer note: source packet M11; page 11.
+Footer note: source packet T85; page 6.
+Footer note: source packet F53; page 9.
+Footer note: source packet Y56; page 10.
+Footer note: source packet A92; page 3.
+Footer note: source packet A21; page 10.
+Footer note: source packet J19; page 3.
+Prepared for Nimbus review during the planning window.
+Prepared for Vertex review during the planning window.
+Footer note: source packet C97; page 7.
+Prepared for Alpha review during the daily review.
+Footer note: source packet K79; page 3.
+Footer note: source packet F87; page 6.
+Footer note: source packet Q47; page 4.
+Footer note: source packet V66; page 9.
+Footer note: source packet Q18; page 11.
+Prepared for Delta review during the weekly summary.
+Prepared for Cedar review during the daily review.
+Footer note: source packet Y14; page 5.
+Prepared for Summit review during the weekly summary.
+Footer note: source packet E18; page 9.
+Footer note: source packet T61; page 9.
+Prepared for Iris review during the planning window.
+Footer note: source packet F73; page 7.
+Footer note: source packet N18; page 4.
+Footer note: source packet D19; page 6.
+Footer note: source packet T25; page 3.
+Prepared for Nimbus review during the quarterly update.
+Footer note: source packet Y75; page 7.
+Footer note: source packet X37; page 4.
+Footer note: source packet C18; page 3.
+Footer note: source packet X82; page 10.
+Footer note: source packet H79; page 2.
+Footer note: source packet C88; page 11.
+Footer note: source packet M11; page 10.
+Footer note: source packet K58; page 8.
+Footer note: source packet C24; page 7.
+Footer note: source packet M48; page 2.
+Footer note: source packet G27; page 11.
+Footer note: source packet S11; page 3.
+Footer note: source packet V22; page 4.
+Footer note: source packet A76; page 3.
+Footer note: source packet Y85; page 10.
+Footer note: source packet V90; page 6.
+Footer note: source packet Z46; page 6.
+Footer note: source packet B60; page 4.
+Footer note: source packet E59; page 5.
+Footer note: source packet N70; page 8.
+Prepared for River review during the planning window.
+Footer note: source packet H82; page 10.
+Prepared for Willow review during the daily review.
+Footer note: source packet H18; page 4.
+Footer note: source packet Q42; page 4.
+Footer note: source packet P28; page 3.
+Footer note: source packet E71; page 11.
+Footer note: source packet U14; page 9.
+Footer note: source packet M57; page 7.
+Prepared for Harbor review during the current cycle.
+Footer note: source packet D55; page 6.
+Footer note: source packet F17; page 2.
+Footer note: source packet G19; page 10.
+Footer note: source packet A23; page 8.
+Prepared for Summit review during the monthly review.
+Footer note: source packet P10; page 10.
+Footer note: source packet T61; page 10.
+Footer note: source packet D30; page 10.
+Footer note: source packet L69; page 7.
+Footer note: source packet H56; page 6.
+Footer note: source packet G43; page 6.
+Footer note: source packet S16; page 10.
+Footer note: source packet G46; page 11.
+Prepared for Cedar review during the reporting window.
+Footer note: source packet H77; page 8.
+Footer note: source packet A62; page 3.
+Prepared for Iris review during the daily review.
+Footer note: source packet R72; page 2.
+Footer note: source packet V16; page 2.
+Footer note: source packet Q46; page 4.
+Footer note: source packet A55; page 11.
+Footer note: source packet N30; page 3.
+Footer note: source packet Z70; page 4.
+Footer note: source packet S68; page 11.
+Footer note: source packet Q81; page 7.
+Footer note: source packet U72; page 11.
+Footer note: source packet J81; page 11.
+Footer note: source packet U58; page 11.
+Footer note: source packet Y80; page 11.
+Footer note: source packet F81; page 2.
+Prepared for Willow review during the monthly review.
+Footer note: source packet P68; page 2.
+Footer note: source packet L95; page 2.
+Footer note: source packet B54; page 9.
+Footer note: source packet Y72; page 5.
+Footer note: source packet M20; page 4.
+Footer note: source packet M37; page 11.
+Footer note: source packet G90; page 2.
+Footer note: source packet C43; page 5.
+Footer note: source packet J34; page 3.
+Footer note: source packet G63; page 9.
+Footer note: source packet S68; page 6.
+Footer note: source packet G77; page 2.
+Footer note: source packet W59; page 3.
+Footer note: source packet P58; page 5.
+Footer note: source packet M54; page 9.
+Footer note: source packet E79; page 8.
+Footer note: source packet V65; page 5.
+Footer note: source packet B63; page 11.
+Footer note: source packet V32; page 8.
+Prepared for Orion review during the reporting window.
+Footer note: source packet M36; page 5.
+Footer note: source packet V51; page 3.
+Footer note: source packet W97; page 2.
+Footer note: source packet G89; page 8.
+Footer note: source packet K61; page 5.
+Footer note: source packet H93; page 3.
+Footer note: source packet X29; page 10.
+Prepared for Atlas review during the reporting window.
+Footer note: source packet M72; page 3.
+Footer note: source packet B41; page 8.
+Footer note: source packet M66; page 11.
+Footer note: source packet R28; page 2.
+Footer note: source packet S39; page 10.
+Footer note: source packet U80; page 8.
+Footer note: source packet F57; page 7.
+Footer note: source packet R21; page 4.
+Footer note: source packet H42; page 7.
+Footer note: source packet S43; page 4.
+Footer note: source packet K84; page 5.
+Footer note: source packet Y75; page 9.
+Footer note: source packet H92; page 9.
+Footer note: source packet D70; page 5.
+Footer note: source packet R30; page 3.
+Footer note: source packet X16; page 9.
+Footer note: source packet E63; page 5.
+Footer note: source packet L46; page 9.
+Footer note: source packet M93; page 9.
+Footer note: source packet K94; page 5.
+Footer note: source packet J94; page 4.
+Footer note: source packet F28; page 11.
+Footer note: source packet F52; page 10.
+Footer note: source packet A95; page 4.
+Footer note: source packet D45; page 10.
+Footer note: source packet L77; page 2.
+Footer note: source packet L26; page 8.
+Footer note: source packet X43; page 4.
+Prepared for Jade review during the planning window.
+Footer note: source packet E62; page 10.
+Footer note: source packet W65; page 3.
+Footer note: source packet X30; page 7.
+Prepared for Jade review during the current cycle.
+Footer note: source packet W86; page 8.
+Footer note: source packet N29; page 2.
+Footer note: source packet G90; page 6.
+Footer note: source packet T63; page 10.
+Footer note: source packet F33; page 7.
+Footer note: source packet Q11; page 9.
+Footer note: source packet A61; page 3.
+Footer note: source packet U50; page 4.
+Footer note: source packet Q68; page 11.
+Footer note: source packet M45; page 3.
+Footer note: source packet V53; page 8.
+Footer note: source packet M76; page 10.
+Footer note: source packet B75; page 11.
+Footer note: source packet D11; page 7.
+Footer note: source packet E12; page 10.
+Footer note: source packet Q43; page 5.
+Footer note: source packet F98; page 3.
+Footer note: source packet C46; page 9.
+Footer note: source packet W63; page 5.
+Footer note: source packet X87; page 8.
+Prepared for Atlas review during the current cycle.
+Footer note: source packet M30; page 11.
+Footer note: source packet Y47; page 7.
+Footer note: source packet A89; page 4.
+Footer note: source packet E98; page 5.
+Footer note: source packet W86; page 6.
+Footer note: source packet E39; page 8.
+Footer note: source packet V52; page 2.
+Footer note: source packet X52; page 9.
+Footer note: source packet Z26; page 8.
+Footer note: source packet Q66; page 7.
+Footer note: source packet J21; page 11.
+Footer note: source packet G48; page 10.
+Footer note: source packet P78; page 5.
+Footer note: source packet E75; page 3.
+Footer note: source packet N98; page 3.
+Footer note: source packet L57; page 10.
+Footer note: source packet R22; page 6.
+Footer note: source packet M94; page 4.
+Footer note: source packet B87; page 4.
+Footer note: source packet L56; page 11.
+Footer note: source packet F20; page 9.
+Footer note: source packet G83; page 6.
+Footer note: source packet B14; page 4.
+Footer note: source packet B56; page 6.
+Footer note: source packet G95; page 11.
+Prepared for Terra review during the current cycle.
+Footer note: source packet P50; page 5.
+Footer note: source packet M95; page 3.
+Footer note: source packet K96; page 6.
+Footer note: source packet M64; page 10.
+Footer note: source packet W97; page 7.
+Footer note: source packet D76; page 4.
+Footer note: source packet X12; page 6.
+Footer note: source packet A62; page 6.
+Footer note: source packet T91; page 10.
+Footer note: source packet V13; page 8.
+Footer note: source packet N15; page 4.
+Footer note: source packet B87; page 2.
+Footer note: source packet X66; page 5.
+Footer note: source packet E25; page 4.
+Footer note: source packet Y21; page 4.
+Footer note: source packet Q72; page 9.
+Footer note: source packet T81; page 4.
+Footer note: source packet Y33; page 8.
+Footer note: source packet F25; page 4.
+Footer note: source packet W94; page 8.
+Prepared for Willow review during the planning window.
+Footer note: source packet Q25; page 2.
+Footer note: source packet T87; page 9.
+Footer note: source packet U40; page 7.
+Footer note: source packet B30; page 9.
+Footer note: source packet E73; page 8.
+Footer note: source packet W82; page 9.
+Footer note: source packet W20; page 10.
+Footer note: source packet K17; page 5.
+Footer note: source packet E86; page 5.
+Footer note: source packet P78; page 6.
+Footer note: source packet R91; page 2.
+Prepared for Cedar review during the monthly review.
+Footer note: source packet X98; page 3.
+Footer note: source packet P97; page 2.
+Footer note: source packet X57; page 7.
+Footer note: source packet M36; page 3.
+Footer note: source packet B96; page 3.
+Footer note: source packet M34; page 2.
+Footer note: source packet N72; page 7.
+Footer note: source packet J84; page 2.
+Footer note: source packet R79; page 8.
+Footer note: source packet N42; page 2.
+Prepared for Jade review during the monthly review.
+Footer note: source packet B88; page 8.
+Prepared for Alpha review during the monthly review.
+Footer note: source packet Y27; page 6.
+Footer note: source packet C98; page 11.
+Footer note: source packet P67; page 8.
+Footer note: source packet S29; page 4.
+Footer note: source packet U45; page 2.
+Footer note: source packet H20; page 4.
+Footer note: source packet Z80; page 9.
+Footer note: source packet K73; page 5.
+Footer note: source packet J45; page 9.
+Footer note: source packet S82; page 9.
+Footer note: source packet G52; page 5.
+Footer note: source packet H21; page 8.
+Footer note: source packet T33; page 8.
+Footer note: source packet J77; page 2.
+Footer note: source packet A44; page 9.
+Footer note: source packet T90; page 4.
+Footer note: source packet V85; page 7.
+Footer note: source packet G55; page 9.
+Prepared for Alpha review during the planning window.
+Footer note: source packet P38; page 5.
+Footer note: source packet J27; page 7.
+Footer note: source packet L48; page 5.
+Footer note: source packet D73; page 6.
+Footer note: source packet Y45; page 9.
+Footer note: source packet C98; page 5.
+Footer note: source packet U54; page 9.
+Footer note: source packet S81; page 8.
+Footer note: source packet C94; page 11.
+Footer note: source packet L56; page 4.
+Footer note: source packet V40; page 6.
+Footer note: source packet G25; page 8.
+Footer note: source packet Y50; page 8.
+Footer note: source packet P26; page 3.
+Footer note: source packet X42; page 5.
+Footer note: source packet D91; page 4.
+Footer note: source packet R96; page 7.
+Footer note: source packet W75; page 4.
+Footer note: source packet Q56; page 7.
+Footer note: source packet A65; page 7.
+Footer note: source packet Q54; page 9.
+Footer note: source packet F83; page 2.
+Footer note: source packet S81; page 7.
+Footer note: source packet Y80; page 2.
+Footer note: source packet E20; page 3.
+Footer note: source packet Z95; page 4.
+Footer note: source packet D77; page 8.
+Footer note: source packet A56; page 6.
+Footer note: source packet N52; page 8.
+Footer note: source packet Y15; page 2.
+Footer note: source packet F92; page 10.
+Footer note: source packet G36; page 10.
+Footer note: source packet V94; page 6.
+Footer note: source packet J43; page 2.
+Footer note: source packet T23; page 9.
+Footer note: source packet Z66; page 3.
+Footer note: source packet P23; page 6.
+Footer note: source packet V53; page 9.
+Footer note: source packet J98; page 10.
+Footer note: source packet G65; page 5.
+Footer note: source packet M33; page 6.
+Footer note: source packet E67; page 10.
+Prepared for Quartz review during the reference period.
+Footer note: source packet G46; page 4.
+Footer note: source packet L91; page 6.
+Footer note: source packet D86; page 4.
+Footer note: source packet X91; page 6.
+Footer note: source packet X45; page 11.
+Footer note: source packet X79; page 8.
+Footer note: source packet Y54; page 5.
+Footer note: source packet J30; page 3.
+Footer note: source packet J32; page 4.
+Footer note: source packet D82; page 2.
+Footer note: source packet Y58; page 8.
+Footer note: source packet J94; page 6.
+Footer note: source packet Z58; page 5.
+Footer note: source packet B69; page 11.
+Footer note: source packet C60; page 4.
+Footer note: source packet M50; page 6.
+Footer note: source packet U19; page 11.
+Footer note: source packet L82; page 7.
+Footer note: source packet H75; page 3.
+Footer note: source packet E72; page 11.
+Footer note: source packet H47; page 7.
+Footer note: source packet F61; page 9.
+Footer note: source packet Z76; page 5.
+Footer note: source packet L93; page 5.
+Footer note: source packet D59; page 7.
+Footer note: source packet K89; page 6.
+Footer note: source packet R29; page 5.
+Footer note: source packet B92; page 3.
+Footer note: source packet V49; page 5.
+Footer note: source packet E43; page 9.
+Footer note: source packet P63; page 9.
+Footer note: source packet M23; page 9.
+Footer note: source packet B53; page 6.
+Footer note: source packet D18; page 11.
+Footer note: source packet W68; page 8.
+Footer note: source packet R95; page 8.
+Footer note: source packet X77; page 10.
+Footer note: source packet U92; page 2.
+Footer note: source packet L42; page 3.
+Footer note: source packet F62; page 5.
+Footer note: source packet M73; page 6.
+Footer note: source packet G30; page 7.
+Footer note: source packet U53; page 2.
+Footer note: source packet N24; page 4.
+Footer note: source packet B22; page 8.
+Footer note: source packet H32; page 5.
+Footer note: source packet C96; page 8.
+Footer note: source packet K51; page 4.
+Footer note: source packet V69; page 2.
+Footer note: source packet L32; page 6.
+Footer note: source packet V37; page 4.
+Footer note: source packet S69; page 10.
+Footer note: source packet L66; page 11.
+Footer note: source packet F23; page 3.
+Footer note: source packet J91; page 4.
+Footer note: source packet K34; page 8.
+Footer note: source packet N59; page 9.
+Footer note: source packet N34; page 9.
+Footer note: source packet R91; page 5.
+Footer note: source packet L91; page 7.
+Footer note: source packet G12; page 3.
+Footer note: source packet P78; page 7.
+Footer note: source packet M43; page 7.
+Footer note: source packet E92; page 10.
+Footer note: source packet F43; page 4.
+Footer note: source packet L38; page 5.
+Prepared for Nimbus review during the current cycle.
+Footer note: source packet Z52; page 7.
+Footer note: source packet W64; page 10.
+Footer note: source packet G27; page 8.
+Footer note: source packet M28; page 9.
+Footer note: source packet C70; page 3.
+Footer note: source packet C75; page 6.
+Footer note: source packet J37; page 2.
+Footer note: source packet F84; page 4.
+Footer note: source packet Y41; page 8.
+Footer note: source packet D20; page 10.
+Footer note: source packet H22; page 11.
+Footer note: source packet D16; page 6.
+Footer note: source packet A38; page 6.
+Footer note: source packet B35; page 2.
+Footer note: source packet H28; page 4.
+Footer note: source packet Q94; page 8.
+Footer note: source packet B42; page 2.
+Footer note: source packet E20; page 11.
+Footer note: source packet W16; page 2.
+Footer note: source packet G56; page 5.
+Footer note: source packet J57; page 2.
+Prepared for Maple review during the quarterly update.
+Footer note: source packet C78; page 8.
+Footer note: source packet D17; page 9.
+Footer note: source packet F39; page 9.
+Footer note: source packet W84; page 7.
+Footer note: source packet W26; page 4.
+Footer note: source packet G61; page 5.
+Footer note: source packet C33; page 3.
+Footer note: source packet S35; page 5.
+Footer note: source packet X46; page 3.
+Footer note: source packet Y70; page 5.
+Footer note: source packet W17; page 2.
+Footer note: source packet H24; page 2.
+Footer note: source packet Q93; page 10.
+Footer note: source packet F46; page 6.
+Footer note: source packet Q98; page 6.
+Footer note: source packet V17; page 5.
+Footer note: source packet V74; page 9.
+Footer note: source packet B89; page 2.
+Footer note: source packet V78; page 3.
+Footer note: source packet G74; page 8.
+Footer note: source packet G62; page 2.
+Footer note: source packet C51; page 2.
+Footer note: source packet V71; page 4.
+Footer note: source packet G93; page 2.
+Footer note: source packet D36; page 5.
+Footer note: source packet R40; page 7.
+Footer note: source packet M12; page 9.
+Footer note: source packet E57; page 4.
+Footer note: source packet X58; page 2.
+Footer note: source packet A77; page 3.
+Footer note: source packet R42; page 9.
+Footer note: source packet Y19; page 9.
+Footer note: source packet R63; page 7.
+Footer note: source packet U96; page 3.
+Footer note: source packet M87; page 5.
+Footer note: source packet K63; page 2.
+Footer note: source packet Y42; page 7.
+Footer note: source packet F56; page 7.
+Footer note: source packet P33; page 2.
+Footer note: source packet E22; page 9.
+Footer note: source packet S21; page 7.
+Footer note: source packet K10; page 6.
+Footer note: source packet X50; page 5.
+Footer note: source packet J90; page 7.
+Footer note: source packet G63; page 7.
+Footer note: source packet Q51; page 8.
+Footer note: source packet N21; page 7.
+Footer note: source packet M58; page 5.
+Footer note: source packet F91; page 9.
+Footer note: source packet H25; page 3.
+Footer note: source packet R92; page 9.
+Footer note: source packet S76; page 3.
+Footer note: source packet V54; page 10.
+Footer note: source packet G52; page 4.
+Footer note: source packet B78; page 10.
+Footer note: source packet V92; page 10.
+Footer note: source packet X35; page 7.
+Footer note: source packet E96; page 2.
+Footer note: source packet K28; page 11.
+Footer note: source packet W62; page 10.
+Footer note: source packet Y76; page 2.
+Footer note: source packet Q71; page 11.
+Footer note: source packet Q54; page 4.
+Footer note: source packet K45; page 2.
+Footer note: source packet S83; page 10.
+Footer note: source packet E11; page 11.
+Footer note: source packet S33; page 6.
+Footer note: source packet Y63; page 8.
+Footer note: source packet P19; page 7.
+Footer note: source packet D12; page 11.
+Footer note: source packet N69; page 6.
+Footer note: source packet N67; page 5.
+Footer note: source packet S90; page 9.
+Footer note: source packet G65; page 9.
+Footer note: source packet V47; page 8.
+Footer note: source packet W54; page 7.
+Footer note: source packet Y39; page 8.
+Footer note: source packet D40; page 11.
+Footer note: source packet C91; page 9.
+Footer note: source packet K12; page 5.
+Footer note: source packet T34; page 3.
+Footer note: source packet W12; page 5.
+Footer note: source packet S76; page 8.
+Footer note: source packet W91; page 2.
+Footer note: source packet N23; page 5.
+Footer note: source packet L66; page 2.
+Footer note: source packet G67; page 10.
+Footer note: source packet G20; page 7.
+Footer note: source packet K43; page 4.
+Footer note: source packet N78; page 3.
+Footer note: source packet A47; page 3.
+Footer note: source packet V17; page 9.
+Footer note: source packet D95; page 2.
+Footer note: source packet Y15; page 7.
+Footer note: source packet Z11; page 8.
+Footer note: source packet E97; page 6.
+Prepared for Maple review during the planning window.
+Footer note: source packet X51; page 5.
+Footer note: source packet Y18; page 8.
+Footer note: source packet N44; page 9.
+Footer note: source packet G73; page 6.
+Footer note: source packet R98; page 11.
+Footer note: source packet B46; page 7.
+Footer note: source packet E85; page 9.
+Footer note: source packet M12; page 4.
+Footer note: source packet H93; page 4.
+Footer note: source packet C97; page 3.
+Footer note: source packet H50; page 4.
+Footer note: source packet J52; page 9.
+Footer note: source packet U30; page 10.
+Footer note: source packet A10; page 3.
+Footer note: source packet F38; page 11.
+Footer note: source packet Y26; page 8.
+Footer note: source packet H18; page 9.
+Footer note: source packet H28; page 9.
+Footer note: source packet J56; page 5.
+Footer note: source packet R16; page 2.
+Footer note: source packet R23; page 5.
+Footer note: source packet J37; page 5.
+Footer note: source packet B56; page 4.
+Footer note: source packet G20; page 2.
+Footer note: source packet D10; page 7.
+Footer note: source packet P70; page 7.
+Footer note: source packet M45; page 10.
+Footer note: source packet M79; page 8.
+Footer note: source packet P67; page 2.
+Footer note: source packet Y36; page 2.
+Footer note: source packet H43; page 5.
+Footer note: source packet T52; page 8.
+Footer note: source packet W16; page 6.
+Footer note: source packet J75; page 6.
+Footer note: source packet P10; page 7.
+Footer note: source packet K26; page 2.
+Footer note: source packet C17; page 7.
+Footer note: source packet E71; page 5.
+Footer note: source packet S30; page 8.
+Footer note: source packet B15; page 8.
+Footer note: source packet H79; page 3.
+Footer note: source packet Z29; page 5.
+Footer note: source packet T51; page 5.
+Footer note: source packet T79; page 5.
+Footer note: source packet N70; page 9.
+Footer note: source packet W81; page 7.
+Footer note: source packet F13; page 4.
+Footer note: source packet E56; page 11.
+Footer note: source packet X61; page 11.
+Footer note: source packet A97; page 9.
+Footer note: source packet T80; page 2.
+Footer note: source packet J97; page 8.
+Footer note: source packet P44; page 2.
+Footer note: source packet H16; page 3.
+Footer note: source packet W64; page 8.
+Prepared for Quartz review during the monthly review.
+Footer note: source packet U28; page 8.
+Footer note: source packet G18; page 6.
+Footer note: source packet B73; page 9.
+Footer note: source packet W12; page 9.
+Footer note: source packet L26; page 9.
+Footer note: source packet C44; page 8.
+Footer note: source packet T54; page 6.
+Footer note: source packet K36; page 6.
+Footer note: source packet Y23; page 8.
+Footer note: source packet V28; page 9.
+Footer note: source packet D41; page 10.
+Footer note: source packet Q54; page 3.
+Footer note: source packet U52; page 10.
+Footer note: source packet X38; page 10.
+Footer note: source packet G40; page 7.
+Footer note: source packet E74; page 5.
+Footer note: source packet Q43; page 8.
+Footer note: source packet S41; page 10.
+Footer note: source packet C60; page 11.
+Footer note: source packet H51; page 11.
+Footer note: source packet A19; page 6.
+Footer note: source packet Q90; page 8.
+Footer note: source packet N50; page 7.
+Footer note: source packet W11; page 2.
+Footer note: source packet F77; page 5.
+Footer note: source packet Y57; page 7.
+Footer note: source packet U76; page 3.
+Footer note: source packet J82; page 9.
+Footer note: source packet N82; page 6.
+Footer note: source packet S98; page 7.
+Footer note: source packet V86; page 9.
+Footer note: source packet K80; page 8.
+Footer note: source packet S57; page 6.
+Footer note: source packet G35; page 7.
+Footer note: source packet T77; page 7.
+Footer note: source packet C76; page 10.
+Footer note: source packet W53; page 5.
+Footer note: source packet Z46; page 9.
+Footer note: source packet A86; page 6.
+Footer note: source packet D36; page 6.
+Footer note: source packet F19; page 5.
+Footer note: source packet A64; page 8.
+Footer note: source packet F45; page 2.
+Footer note: source packet N21; page 3.
+Footer note: source packet H69; page 5.
+Footer note: source packet K31; page 7.
+Footer note: source packet L50; page 5.
+Footer note: source packet L76; page 4.
+Footer note: source packet Z88; page 4.
+Footer note: source packet K57; page 7.
+Footer note: source packet S92; page 4.
+Footer note: source packet G27; page 7.
+Footer note: source packet S46; page 7.
+Footer note: source packet Q87; page 6.
+Footer note: source packet G76; page 10.
+Footer note: source packet P40; page 8.
+Footer note: source packet J37; page 7.
+Footer note: source packet Y26; page 6.
+Footer note: source packet T48; page 11.
+Footer note: source packet Z95; page 11.
+Footer note: source packet L54; page 6.
+Footer note: source packet U16; page 6.
+Footer note: source packet P62; page 4.
+Footer note: source packet L23; page 5.
+Footer note: source packet U52; page 7.
+Footer note: source packet N51; page 6.
+Footer note: source packet R31; page 5.
+Footer note: source packet X75; page 5.
+Footer note: source packet F80; page 8.
+Footer note: source packet U66; page 4.
+Footer note: source packet E89; page 11.
+Footer note: source packet V32; page 6.
+Footer note: source packet T88; page 5.
+Footer note: source packet Z71; page 5.
+Footer note: source packet H39; page 11.
+Footer note: source packet A34; page 3.
+Footer note: source packet J25; page 11.
+Footer note: source packet K82; page 9.
+Footer note: source packet S92; page 7.
+Footer note: source packet W27; page 8.
+Footer note: source packet M64; page 3.
+Footer note: source packet D30; page 2.
+Footer note: source packet Z72; page 11.
+Footer note: source packet H33; page 9.
+Footer note: source packet B49; page 7.
+Footer note: source packet W77; page 8.
+Footer note: source packet G39; page 11.
+Footer note: source packet J14; page 7.
+Footer note: source packet N11; page 4.
+Footer note: source packet E90; page 9.
+Footer note: source packet J18; page 3.
+Footer note: source packet J46; page 4.
+Footer note: source packet X53; page 9.
+Footer note: source packet X27; page 11.
+Footer note: source packet E27; page 3.
+Footer note: source packet Q18; page 10.
+Footer note: source packet L90; page 4.
+Footer note: source packet R36; page 6.
+Footer note: source packet P80; page 6.
+Footer note: source packet M55; page 9.
+Footer note: source packet F64; page 9.
+Footer note: source packet N40; page 10.
+Footer note: source packet V49; page 6.
+Footer note: source packet N32; page 10.
+Footer note: source packet H69; page 2.
+Footer note: source packet Y82; page 9.
+Prepared for Iris review during the current cycle.
+Footer note: source packet K76; page 4.
+Footer note: source packet X35; page 8.
+Footer note: source packet R69; page 7.
+Footer note: source packet E24; page 8.
+Footer note: source packet Q62; page 11.
+Footer note: source packet L93; page 9.
+Footer note: source packet E19; page 9.
+Footer note: source packet F18; page 10.
+Footer note: source packet T53; page 10.
+Footer note: source packet C45; page 3.
+Footer note: source packet V87; page 3.
+Footer note: source packet Q95; page 5.
+Footer note: source packet N80; page 2.
+Footer note: source packet F41; page 9.
+Footer note: source packet W27; page 6.
+Footer note: source packet K94; page 3.
+Footer note: source packet U73; page 10.
+Footer note: source packet W83; page 3.
+Footer note: source packet E81; page 11.
+Footer note: source packet T33; page 4.
+Footer note: source packet L71; page 6.
+Footer note: source packet E78; page 3.
+Footer note: source packet G64; page 8.
+Footer note: source packet N61; page 11.
+Footer note: source packet T41; page 5.
+Footer note: source packet J32; page 3.
+Footer note: source packet A21; page 5.
+Footer note: source packet Q58; page 9.
+Footer note: source packet W91; page 10.
+Footer note: source packet G47; page 8.
+Footer note: source packet R17; page 9.
+Footer note: source packet R51; page 9.
+Footer note: source packet F70; page 10.
+Footer note: source packet X28; page 6.
+Footer note: source packet G29; page 10.
+Footer note: source packet L69; page 10.
+Footer note: source packet U97; page 7.
+Footer note: source packet L25; page 9.
+Footer note: source packet N84; page 9.
+Footer note: source packet E97; page 4.
+Footer note: source packet F89; page 2.
+Footer note: source packet X26; page 4.
+Footer note: source packet M41; page 10.
+Footer note: source packet V56; page 11.
+Footer note: source packet G52; page 9.
+Footer note: source packet S63; page 4.
+Footer note: source packet E65; page 8.
+Footer note: source packet F16; page 7.
+Footer note: source packet T88; page 2.
+Footer note: source packet X82; page 5.
+Footer note: source packet H94; page 11.
+Footer note: source packet Q53; page 3.
+Footer note: source packet F69; page 7.
+Footer note: source packet H39; page 4.
+Footer note: source packet V24; page 3.
+Footer note: source packet G28; page 5.
+Footer note: source packet W90; page 6.
+Footer note: source packet L39; page 11.
+Footer note: source packet M36; page 10.
+Footer note: source packet J41; page 8.
+Footer note: source packet M59; page 11.
+Footer note: source packet N12; page 2.
+Footer note: source packet U29; page 11.
+Footer note: source packet Y59; page 11.
+Footer note: source packet E13; page 4.
+Footer note: source packet J58; page 6.
+Footer note: source packet L85; page 2.
+Footer note: source packet Q82; page 7.
+Footer note: source packet F54; page 8.
+Footer note: source packet P33; page 7.
+Footer note: source packet A70; page 10.
+Footer note: source packet R75; page 3.
+Footer note: source packet N63; page 8.
+Footer note: source packet R90; page 4.
+Footer note: source packet A29; page 6.
+Footer note: source packet K12; page 10.
+Footer note: source packet Q26; page 4.
+Footer note: source packet J52; page 6.
+Footer note: source packet V24; page 6.
+Footer note: source packet Z80; page 2.
+Footer note: source packet R29; page 8.
+Footer note: source packet Z80; page 11.
+Footer note: source packet C63; page 8.
+Footer note: source packet N34; page 8.
+Footer note: source packet T25; page 4.
+Footer note: source packet H87; page 6.
+Footer note: source packet Q16; page 10.
+Footer note: source packet Q85; page 10.
+Footer note: source packet F94; page 2.
+Footer note: source packet Q70; page 4.
+Footer note: source packet R89; page 8.
+Footer note: source packet T62; page 8.
+Footer note: source packet R60; page 3.
+Footer note: source packet K56; page 9.
+Footer note: source packet F30; page 8.
+Footer note: source packet F11; page 10.
+Footer note: source packet N60; page 6.
+Footer note: source packet X73; page 9.
+Footer note: source packet L85; page 9.
+Footer note: source packet A83; page 7.
+Footer note: source packet X94; page 2.
+Footer note: source packet N20; page 4.
+Footer note: source packet Q26; page 10.
+Footer note: source packet N92; page 9.
+Footer note: source packet T89; page 5.
+Footer note: source packet J11; page 10.
+Footer note: source packet K39; page 8.
+Footer note: source packet V29; page 8.
+Footer note: source packet N79; page 5.
+Footer note: source packet G96; page 6.
+Footer note: source packet Q59; page 4.
+Footer note: source packet V85; page 11.
+Footer note: source packet Q94; page 9.
+Footer note: source packet S32; page 3.
+Footer note: source packet R41; page 8.
+Footer note: source packet L73; page 3.
+Footer note: source packet G48; page 4.
+Footer note: source packet R70; page 8.
+Footer note: source packet A11; page 7.
+Footer note: source packet W41; page 6.
+Footer note: source packet F68; page 6.
+Footer note: source packet A22; page 3.
+Footer note: source packet V45; page 6.
+Footer note: source packet E18; page 11.
+Footer note: source packet P21; page 8.
+Footer note: source packet V24; page 7.
+Footer note: source packet J45; page 6.
+Footer note: source packet Z16; page 2.
+Footer note: source packet H58; page 10.
+Footer note: source packet Q41; page 8.
+Footer note: source packet T66; page 11.
+Footer note: source packet G81; page 2.
+Footer note: source packet S75; page 3.
+Footer note: source packet Z68; page 9.
+Footer note: source packet B89; page 4.
+Footer note: source packet G53; page 11.
+Footer note: source packet X79; page 10.
+Footer note: source packet S31; page 10.
+Footer note: source packet B45; page 7.
+Footer note: source packet M43; page 6.
+Footer note: source packet X14; page 5.
+Footer note: source packet Q91; page 10.
+Footer note: source packet D32; page 6.
+Footer note: source packet S46; page 4.
+Footer note: source packet J85; page 8.
+Footer note: source packet U81; page 2.
+Footer note: source packet B76; page 3.
+Footer note: source packet F71; page 4.
+Footer note: source packet Y39; page 5.
+Footer note: source packet B94; page 7.
+Footer note: source packet S78; page 4.
+Footer note: source packet G62; page 9.
+Footer note: source packet C96; page 2.
+Footer note: source packet E25; page 6.
+Footer note: source packet B36; page 6.
+Footer note: source packet N13; page 11.
+Footer note: source packet F75; page 10.
+Footer note: source packet Z22; page 4.
+Footer note: source packet J25; page 5.
+Footer note: source packet Q18; page 9.
+Footer note: source packet J28; page 9.
+Footer note: source packet C32; page 4.
+Footer note: source packet A35; page 10.
+Footer note: source packet K19; page 2.
+Footer note: source packet Q81; page 4.
+Footer note: source packet B92; page 8.
+Footer note: source packet T74; page 11.
+Footer note: source packet J29; page 5.
+Footer note: source packet L65; page 11.
+Footer note: source packet T78; page 5.
+Footer note: source packet Y58; page 9.
+Footer note: source packet G93; page 10.
+Footer note: source packet B69; page 5.
+Footer note: source packet D69; page 6.
+Footer note: source packet V35; page 5.
+Footer note: source packet E60; page 6.
+Footer note: source packet V26; page 4.
+Footer note: source packet Z83; page 4.
+Footer note: source packet A52; page 10.
+Footer note: source packet X96; page 7.
+Footer note: source packet L97; page 7.
+Footer note: source packet K68; page 7.
+Footer note: source packet Y44; page 10.
+Footer note: source packet D11; page 3.
+Footer note: source packet H80; page 7.
+Footer note: source packet Q57; page 2.
+Footer note: source packet X74; page 2.
+Footer note: source packet B41; page 5.
+Footer note: source packet Y65; page 11.
+Footer note: source packet H91; page 5.
+Footer note: source packet C43; page 11.
+Footer note: source packet T46; page 5.
+Footer note: source packet G63; page 5.
+Footer note: source packet V46; page 11.
+Footer note: source packet K87; page 4.
+Footer note: source packet X98; page 4.
+Footer note: source packet F96; page 7.
+Footer note: source packet Q85; page 3.
+Footer note: source packet T33; page 11.
+Footer note: source packet W25; page 10.
+Footer note: source packet F80; page 6.
+Footer note: source packet P80; page 10.
+Footer note: source packet K88; page 11.
+Footer note: source packet T44; page 6.
+Footer note: source packet N26; page 6.
+Footer note: source packet F72; page 6.
+Footer note: source packet E47; page 8.
+Footer note: source packet E82; page 5.
+Footer note: source packet J13; page 8.
+Footer note: source packet K40; page 7.
+Footer note: source packet Y45; page 7.
+Footer note: source packet P48; page 3.
+Footer note: source packet Y12; page 9.
+Footer note: source packet W88; page 5.
+Footer note: source packet P96; page 6.
+Footer note: source packet P42; page 3.
+Footer note: source packet V35; page 10.
+Footer note: source packet E38; page 10.
+Footer note: source packet V34; page 11.
+Footer note: source packet H35; page 6.
+Footer note: source packet J71; page 8.
+Footer note: source packet R71; page 9.
+Footer note: source packet J25; page 6.
+Footer note: source packet V33; page 8.
+Footer note: source packet F12; page 3.
+Footer note: source packet S47; page 11.
+Footer note: source packet Z98; page 6.
+Footer note: source packet X86; page 2.
+Footer note: source packet M17; page 11.
+Footer note: source packet V85; page 3.
+Footer note: source packet Y51; page 7.
+Footer note: source packet F17; page 10.
+Footer note: source packet Q98; page 5.
+Footer note: source packet S79; page 5.
+Footer note: source packet Z40; page 11.
+Footer note: source packet A61; page 10.
+Footer note: source packet E80; page 6.
+Footer note: source packet X59; page 7.
+Footer note: source packet H87; page 4.
+Footer note: source packet U19; page 8.
+Footer note: source packet F44; page 4.
+Footer note: source packet R55; page 5.
+Footer note: source packet G44; page 4.
+Footer note: source packet H92; page 8.
+Footer note: source packet G70; page 3.
+Footer note: source packet U42; page 4.
+Footer note: source packet Q82; page 3.
+Footer note: source packet D48; page 8.
+Footer note: source packet U78; page 5.
+Footer note: source packet X27; page 4.
+Footer note: source packet Q92; page 3.
+Footer note: source packet Z20; page 2.
+Footer note: source packet T73; page 9.
+Footer note: source packet J83; page 6.
+Footer note: source packet E71; page 2.
+Footer note: source packet H13; page 5.
+Footer note: source packet E29; page 3.
+Footer note: source packet D70; page 11.
+Footer note: source packet Y53; page 4.
+Footer note: source packet A36; page 11.
+Footer note: source packet B63; page 6.
+Footer note: source packet T31; page 10.
+Footer note: source packet Y89; page 11.
+Footer note: source packet W65; page 11.
+Footer note: source packet D94; page 7.
+Footer note: source packet Y55; page 4.
+Footer note: source packet Y95; page 2.
+Footer note: source packet B81; page 8.
+Footer note: source packet U11; page 10.
+Footer note: source packet G69; page 7.
+Footer note: source packet X52; page 4.
+Footer note: source packet E87; page 9.
+Footer note: source packet J70; page 2.
+Footer note: source packet J91; page 9.
+Footer note: source packet L34; page 11.
+Footer note: source packet L87; page 10.
+Footer note: source packet Q27; page 8.
+Footer note: source packet P75; page 3.
+Footer note: source packet B39; page 3.
+Footer note: source packet J88; page 7.
+Footer note: source packet J15; page 7.
+Footer note: source packet Q13; page 4.
+Footer note: source packet T28; page 5.
+Footer note: source packet X15; page 2.
+Footer note: source packet V88; page 4.
+Footer note: source packet G96; page 11.
+Footer note: source packet V62; page 7.
+Footer note: source packet K20; page 6.
+Footer note: source packet M69; page 3.
+Footer note: source packet S72; page 2.
+Footer note: source packet C90; page 11.
+Footer note: source packet Z30; page 10.
+Footer note: source packet G44; page 9.
+Footer note: source packet Z61; page 6.
+Footer note: source packet H67; page 11.
+Footer note: source packet L23; page 2.
+Footer note: source packet V21; page 10.
+Footer note: source packet H58; page 5.
+Footer note: source packet K69; page 7.
+Footer note: source packet B33; page 8.
+Footer note: source packet F42; page 4.
+Footer note: source packet G21; page 10.
+Footer note: source packet T64; page 9.
+Footer note: source packet N76; page 10.
+Footer note: source packet P22; page 7.
+Footer note: source packet D97; page 11.
+Footer note: source packet S65; page 2.
+Footer note: source packet V98; page 2.
+Footer note: source packet N11; page 3.
+Footer note: source packet J30; page 4.
+Footer note: source packet Q47; page 11.
+Footer note: source packet Z41; page 3.
+Footer note: source packet W67; page 6.
+Footer note: source packet T84; page 11.
+Footer note: source packet W56; page 8.
+Footer note: source packet W52; page 2.
+Footer note: source packet L73; page 8.
+Footer note: source packet D16; page 10.
+Footer note: source packet L10; page 4.
+Footer note: source packet B79; page 6.
+Footer note: source packet L88; page 2.
+Footer note: source packet Y96; page 8.
+Footer note: source packet E80; page 3.
+Footer note: source packet N61; page 7.
+Footer note: source packet L33; page 6.
+Footer note: source packet S96; page 9.
+Footer note: source packet M31; page 10.
+Footer note: source packet P81; page 5.
+Footer note: source packet Z39; page 4.
+Footer note: source packet Q49; page 6.
+Footer note: source packet L45; page 3.
+Footer note: source packet Y67; page 4.
+Footer note: source packet D91; page 9.
+Footer note: source packet Q40; page 2.
+Footer note: source packet S62; page 10.
+Footer note: source packet T76; page 7.
+Footer note: source packet K95; page 10.
+Footer note: source packet Y84; page 3.
+Footer note: source packet D27; page 2.
+Footer note: source packet K27; page 3.
+Footer note: source packet Z30; page 8.
+Footer note: source packet M10; page 4.
+Footer note: source packet F90; page 2.
+Footer note: source packet F51; page 11.
+Footer note: source packet R86; page 6.
+Footer note: source packet W52; page 4.
+Footer note: source packet B20; page 4.
+Footer note: source packet C85; page 5.
+Footer note: source packet V50; page 9.
+Footer note: source packet C82; page 4.
+Footer note: source packet Y27; page 11.
+Footer note: source packet R71; page 10.
+Footer note: source packet Y79; page 6.
+Footer note: source packet P15; page 9.
+Footer note: source packet H79; page 5.
+Footer note: source packet B46; page 5.
+Footer note: source packet N93; page 10.
+Footer note: source packet C45; page 2.
+Footer note: source packet R28; page 3.
+Footer note: source packet U78; page 3.
+Footer note: source packet C40; page 10.
+Footer note: source packet B25; page 2.
+Footer note: source packet T68; page 3.
+Footer note: source packet P36; page 7.
+Footer note: source packet W31; page 3.
+Footer note: source packet A79; page 3.
+Footer note: source packet Z50; page 8.
+Footer note: source packet J89; page 5.
+Footer note: source packet A66; page 10.
+Footer note: source packet V67; page 3.
+Footer note: source packet K69; page 8.
+Footer note: source packet V86; page 7.
+Footer note: source packet C68; page 2.
+Footer note: source packet S80; page 3.
+Footer note: source packet W45; page 11.
+Footer note: source packet E26; page 9.
+Footer note: source packet S26; page 8.
+Footer note: source packet H94; page 6.
+Footer note: source packet M22; page 6.
+Footer note: source packet M27; page 5.
+Footer note: source packet D65; page 4.
+Footer note: source packet R82; page 2.
+Footer note: source packet D72; page 3.
+Footer note: source packet F28; page 5.
+Footer note: source packet G45; page 9.
+Footer note: source packet F19; page 10.
+Footer note: source packet X81; page 4.
+Footer note: source packet F37; page 8.
+Footer note: source packet E16; page 8.
+Footer note: source packet S76; page 5.
+Footer note: source packet G55; page 4.
+Footer note: source packet P34; page 3.
+Footer note: source packet Y25; page 6.
+Footer note: source packet R43; page 4.
+Footer note: source packet H36; page 9.
+Footer note: source packet H35; page 10.
+Footer note: source packet X64; page 8.
+Footer note: source packet Q93; page 3.
+Footer note: source packet Q66; page 4.
+Footer note: source packet S17; page 8.
+Footer note: source packet K64; page 3.
+Footer note: source packet Z31; page 9.
+Footer note: source packet Y80; page 6.
+Footer note: source packet E42; page 11.
+Footer note: source packet L81; page 10.
+Footer note: source packet T48; page 4.
+Footer note: source packet E43; page 4.
+Footer note: source packet Q13; page 7.
+Footer note: source packet A94; page 6.
+Footer note: source packet K77; page 6.
+Footer note: source packet E58; page 2.
+Footer note: source packet R69; page 4.
+Footer note: source packet P30; page 11.
+Footer note: source packet R87; page 8.
+Footer note: source packet T55; page 3.
+Footer note: source packet D96; page 11.
+Footer note: source packet X52; page 2.
+Footer note: source packet R82; page 11.
+Footer note: source packet R75; page 2.
+Footer note: source packet R39; page 11.
+Footer note: source packet M70; page 11.
+Footer note: source packet M41; page 6.
+Footer note: source packet Z15; page 3.
+Footer note: source packet Q44; page 2.
+Footer note: source packet C29; page 2.
+Footer note: source packet P73; page 7.
+Footer note: source packet Q17; page 9.
+Footer note: source packet C26; page 6.
+Footer note: source packet Y31; page 3.
+Footer note: source packet A12; page 2.
+Footer note: source packet T21; page 5.
+Footer note: source packet H29; page 10.
+Footer note: source packet A80; page 8.
+Footer note: source packet E98; page 6.
+Footer note: source packet T31; page 9.
+Footer note: source packet P26; page 6.
+Footer note: source packet F58; page 8.
+Footer note: source packet S70; page 3.
+Footer note: source packet T97; page 6.
+Footer note: source packet F97; page 2.
+Footer note: source packet N53; page 9.
+Footer note: source packet L53; page 5.
+Footer note: source packet V95; page 5.
+Footer note: source packet W50; page 8.
+Footer note: source packet S88; page 9.
+Footer note: source packet A37; page 10.
+Footer note: source packet X90; page 2.
+Footer note: source packet D88; page 3.
+Footer note: source packet Q66; page 2.
+Footer note: source packet S56; page 5.
+Footer note: source packet G59; page 5.
+Footer note: source packet Z38; page 3.
+Footer note: source packet A63; page 3.
+Footer note: source packet N35; page 10.
+Footer note: source packet S84; page 10.
+Footer note: source packet V26; page 8.
+Footer note: source packet F58; page 10.
+Footer note: source packet W11; page 11.
+Footer note: source packet P81; page 3.
+Footer note: source packet N54; page 7.
+Footer note: source packet H73; page 3.
+Footer note: source packet E46; page 5.
+Footer note: source packet W63; page 11.
+Footer note: source packet D77; page 6.
+Footer note: source packet B49; page 5.
+Footer note: source packet A59; page 4.
+Footer note: source packet D47; page 11.
+Footer note: source packet V14; page 9.
+Footer note: source packet E18; page 2.
+Footer note: source packet Q37; page 6.
+Footer note: source packet S59; page 5.
+Footer note: source packet U11; page 6.
+Footer note: source packet X63; page 4.
+Footer note: source packet H71; page 2.
+Footer note: source packet Y26; page 3.
+Footer note: source packet J14; page 5.
+Footer note: source packet N20; page 7.
+Footer note: source packet H46; page 5.
+Footer note: source packet Y57; page 11.
+Footer note: source packet K19; page 6.
+Footer note: source packet U97; page 3.
+Footer note: source packet N89; page 10.
+Footer note: source packet H50; page 9.
+Footer note: source packet W49; page 6.
+Footer note: source packet Y37; page 10.
+Footer note: source packet Q67; page 9.
+Footer note: source packet S82; page 5.
+Footer note: source packet K11; page 2.
+Footer note: source packet U92; page 3.
+Footer note: source packet A23; page 6.
+Footer note: source packet V90; page 3.
+Footer note: source packet S22; page 10.
+Footer note: source packet H14; page 4.
+Footer note: source packet N56; page 9.
+Footer note: source packet T59; page 7.
+Footer note: source packet E60; page 5.
+Footer note: source packet B28; page 2.
+Footer note: source packet K97; page 5.
+Footer note: source packet L52; page 5.
+Footer note: source packet T66; page 3.
+Footer note: source packet S70; page 4.
+Footer note: source packet V46; page 3.
+Footer note: source packet L92; page 4.
+Footer note: source packet P11; page 5.
+Footer note: source packet U94; page 9.
+Footer note: source packet N74; page 6.
+Footer note: source packet E56; page 9.
+Footer note: source packet T52; page 7.
+Footer note: source packet U30; page 2.
+Footer note: source packet M97; page 9.
+Footer note: source packet A28; page 9.
+Footer note: source packet Y52; page 5.
+Footer note: source packet P36; page 9.
+Footer note: source packet H48; page 2.
+Footer note: source packet A30; page 2.
+Footer note: source packet K26; page 11.
+Footer note: source packet S83; page 3.
+Footer note: source packet J55; page 11.
+Footer note: source packet Q30; page 3.
+Footer note: source packet S25; page 6.
+Footer note: source packet P92; page 4.
+Footer note: source packet S92; page 9.
+Footer note: source packet H26; page 11.
+Footer note: source packet B84; page 4.
+Footer note: source packet Y21; page 6.
+Footer note: source packet G95; page 7.
+Footer note: source packet W34; page 4.
+Footer note: source packet K31; page 9.
+Footer note: source packet S79; page 7.
+Footer note: source packet K69; page 4.
+Footer note: source packet H52; page 9.
+Footer note: source packet A48; page 4.
+Footer note: source packet L89; page 4.
+Footer note: source packet U62; page 5.
+Footer note: source packet B94; page 9.
+Footer note: source packet G40; page 3.
+Footer note: source packet X68; page 5.
+Footer note: source packet G79; page 10.
+Footer note: source packet E87; page 3.
+Footer note: source packet F52; page 7.
+Footer note: source packet Z70; page 9.
+Footer note: source packet X38; page 9.
+Footer note: source packet P31; page 8.
+Footer note: source packet H80; page 4.
+Footer note: source packet A26; page 10.
+Footer note: source packet G84; page 10.
+Footer note: source packet P68; page 10.
+Footer note: source packet J92; page 8.
+Footer note: source packet K18; page 9.
+Footer note: source packet H13; page 2.
+Footer note: source packet H78; page 7.
+Footer note: source packet M20; page 8.
+Footer note: source packet Z20; page 4.
+Footer note: source packet P16; page 2.
+Footer note: source packet K57; page 4.
+Footer note: source packet A63; page 4.
+Footer note: source packet G74; page 2.
+Footer note: source packet Q75; page 10.
+Footer note: source packet E61; page 11.
+Footer note: source packet L68; page 10.
+Footer note: source packet D22; page 11.
+Footer note: source packet L75; page 11.
+Footer note: source packet Z16; page 6.
+Footer note: source packet V76; page 9.
+Footer note: source packet A65; page 4.
+Footer note: source packet X47; page 3.
+Footer note: source packet J87; page 10.
+Footer note: source packet M90; page 7.
+Footer note: source packet Y22; page 4.
+Footer note: source packet M65; page 5.
+Footer note: source packet G62; page 11.
+Footer note: source packet M49; page 6.
+Footer note: source packet U66; page 2.
+Footer note: source packet H26; page 8.
+Footer note: source packet L11; page 4.
+Footer note: source packet J56; page 6.
+Footer note: source packet A65; page 6.
+Footer note: source packet F29; page 9.
+Footer note: source packet J64; page 2.
+Footer note: source packet C46; page 2.
+Footer note: source packet J32; page 10.
+Footer note: source packet H44; page 5.
+Footer note: source packet B98; page 2.
+Footer note: source packet N92; page 11.
+Footer note: source packet D57; page 8.
+Footer note: source packet G92; page 9.
+Footer note: source packet T22; page 2.
+Footer note: source packet R21; page 5.
+Footer note: source packet X91; page 2.
+Footer note: source packet W19; page 7.
+Footer note: source packet G92; page 2.
+Footer note: source packet N11; page 8.
+Footer note: source packet S59; page 10.
+Footer note: source packet N43; page 8.
+Footer note: source packet F16; page 10.
+Footer note: source packet T53; page 3.
+Footer note: source packet Q20; page 7.
+Footer note: source packet Q40; page 8.
+Footer note: source packet G30; page 11.
+Footer note: source packet C71; page 5.
+Footer note: source packet Y57; page 8.

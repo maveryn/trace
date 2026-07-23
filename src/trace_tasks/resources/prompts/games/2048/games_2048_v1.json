@@ -1,0 +1,93 @@
+{
+  "bundle_id": "games_2048_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_2048_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "twenty_forty_eight_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "merge_count": [
+        "{move_rule_text} Using the shown move arrow, how many merges occur?",
+        "{move_rule_text} Apply the shown move once. Count the number of tile merges.",
+        "{move_rule_text} If the board is moved in the arrow direction, how many merge events happen?",
+        "{move_rule_text} For the displayed move, report the count of equal-tile merges.",
+        "{move_rule_text} How many pairs of equal tiles merge after the shown move?"
+      ],
+      "max_tile_value": [
+        "{move_rule_text} After applying the shown move once, what is the largest tile value on the board?",
+        "{move_rule_text} Move the board in the arrow direction. What is the maximum resulting tile value?",
+        "{move_rule_text} What is the largest tile after the displayed move is made?",
+        "{move_rule_text} Apply the shown move and report the highest tile value that remains.",
+        "{move_rule_text} Which tile value is the maximum after the one-arrow move?"
+      ],
+      "move_result_board_label": [
+        "{move_rule_text} {result_board_rule_text} Which labeled candidate board shows the result after the shown move?",
+        "{move_rule_text} {result_board_rule_text} Apply the arrow move once. Which option board matches the resulting board state?",
+        "{move_rule_text} {result_board_rule_text} Choose the label of the candidate board that matches the board after this one move.",
+        "{move_rule_text} {result_board_rule_text} After the displayed move, which labeled board is correct?",
+        "{move_rule_text} {result_board_rule_text} Report the option letter for the post-move board."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_2048_board": {
+      "object_description": "a 4 x 4 2048 board with numbered tiles and move arrows"
+    },
+    "query:merge_count": {
+      "move_rule_text": "In 2048, a move slides all tiles toward the arrow; equal adjacent tiles in that direction merge once.",
+      "answer_hint": "set \"answer\" to the number of merges made by the shown move",
+      "annotation_hint": "set \"annotation\" to a list of merge segments. Each segment uses two pixel-point endpoints [x, y] in [[x0, y0], [x1, y1]] form, connecting the centers of the two source tile cells before the move that combine into one tile after the move; use [] when the merge count is 0",
+      "json_example": "{\"annotation\":[[[284,284],[418,284]],[[284,418],[418,418]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:max_tile_value": {
+      "move_rule_text": "In 2048, a move slides all tiles toward the arrow; equal adjacent tiles in that direction merge once.",
+      "answer_hint": "set \"answer\" to the largest tile value after the shown move",
+      "annotation_hint": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around the original tile cell or cells that form the largest tile after the shown move",
+      "json_example": "{\"annotation\":[[224,224,344,344],[358,224,478,344]],\"answer\":128}",
+      "json_example_answer_only": "{\"answer\":128}"
+    },
+    "query:move_result_board_label": {
+      "move_rule_text": "In 2048, a move slides all tiles toward the arrow; equal adjacent tiles in that direction merge once.",
+      "result_board_rule_text": "Labeled candidate boards are shown below. Use only the slide-and-merge result before any new tile is added.",
+      "answer_hint": "set \"answer\" to the single option letter of the candidate board that matches the result after the shown move",
+      "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected candidate result board",
+      "json_example": "{\"annotation\":[356,542,508,694],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

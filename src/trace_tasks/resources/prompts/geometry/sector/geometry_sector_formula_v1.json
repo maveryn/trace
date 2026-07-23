@@ -1,0 +1,161 @@
+{
+  "bundle_id": "geometry_sector_formula_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "sector_formula_scene": [
+        "The diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The image shows {object_description}.",
+        "This geometry diagram shows {object_description}.",
+        "The sector figure shows {object_description}."
+      ]
+    },
+    "task": {
+      "sector_area_from_complement_angle_value_query": [
+        "The shown adjacent angle and angle AOB together make a right angle. What is the area of shaded sector AOB?",
+        "The adjacent angle shown at O and angle AOB are complementary. Find the area of shaded sector AOB.",
+        "Use the right-angle relation at O to find angle AOB, then compute the area of shaded sector AOB.",
+        "The marked adjacent angle completes angle AOB to a right angle. Determine the area of shaded sector AOB.",
+        "Angle AOB and the shown adjacent angle add to 90 degrees. What area is covered by shaded sector AOB?"
+      ],
+      "arc_length_from_sector_area_value_query": [
+        "What is the length of the curved arc AB of sector AOB?",
+        "Find the length of curved arc AB.",
+        "Compute the curved arc length from A to B.",
+        "Determine the length of arc AB on sector AOB.",
+        "What is the curved arc length from A to B?"
+      ],
+      "arc_length_from_supplement_angle_value_query": [
+        "The shown adjacent angle and angle AOB together make a straight angle. What is the length of curved arc AB?",
+        "The adjacent angle shown at O and angle AOB are supplementary. Find the length of curved arc AB.",
+        "Use the straight-angle relation at O to find angle AOB, then compute the length of curved arc AB.",
+        "The marked adjacent angle completes angle AOB to a straight angle. Determine the curved arc length AB.",
+        "Angle AOB and the shown adjacent angle add to 180 degrees. What is the curved arc length from A to B?"
+      ],
+      "central_angle_from_sector_measure_value_query": [
+        "What is the measure of angle AOB?",
+        "Find the measure of angle AOB.",
+        "Compute the measure of angle AOB.",
+        "Determine the measure of angle AOB.",
+        "What is angle AOB?"
+      ],
+      "related_angle_from_sector_measure_value_query": [
+        "What is the measure of the angle marked ? at O?",
+        "Find the measure of the angle marked ? at O.",
+        "Compute the measure of the angle marked ? at O.",
+        "Determine the measure of the angle marked ? at O.",
+        "What is the marked angle at O?"
+      ]
+    },
+    "query": {
+      "single": [
+        "Use the visible radius and sector labels in the diagram.",
+        "Use the labeled radius and shown geometric relation.",
+        "Use the visible radius and angle information at O.",
+        "Use the measurements shown on the sector diagram.",
+        "Use the labels and angle relation visible in the figure."
+      ],
+      "from_arc_length": [
+        "Use the visible radius and arc length to work with angle AOB.",
+        "Use the labeled radius and arc AB measurement.",
+        "Use the shown arc length and radius of sector AOB.",
+        "Use arc AB and the visible radius to determine angle AOB.",
+        "Use the sector arc length formula with the shown radius."
+      ],
+      "from_sector_area": [
+        "Use the visible radius and sector area to work with angle AOB.",
+        "Use the labeled radius and shaded sector area.",
+        "Use the shown area and radius of sector AOB.",
+        "Use the sector area and visible radius to determine angle AOB.",
+        "Use the sector area formula with the shown radius."
+      ],
+      "complement_from_arc_length": [
+        "First use the visible radius and arc length to find angle AOB; the angle marked ? and angle AOB together make a right angle.",
+        "Use arc AB and the radius to determine angle AOB, then use the right-angle relation for the angle marked ?.",
+        "The angle marked ? completes angle AOB to 90 degrees; derive angle AOB from the shown arc length and radius.",
+        "Find angle AOB from the visible arc length and radius, then subtract it from 90 degrees.",
+        "Angle AOB and the angle marked ? are complementary; use the shown arc length and radius for angle AOB."
+      ],
+      "supplement_from_sector_area": [
+        "First use the visible radius and sector area to find angle AOB; the angle marked ? and angle AOB together make a straight angle.",
+        "Use the shaded sector area and radius to determine angle AOB, then use the straight-angle relation for the angle marked ?.",
+        "The angle marked ? completes angle AOB to 180 degrees; derive angle AOB from the shown sector area and radius.",
+        "Find angle AOB from the visible sector area and radius, then subtract it from 180 degrees.",
+        "Angle AOB and the angle marked ? are supplementary; use the shown sector area and radius for angle AOB."
+      ],
+      "remaining_from_arc_length": [
+        "First use the visible radius and arc length to find angle AOB; the angle marked ? is the remaining angle around O outside sector AOB.",
+        "Use arc AB and the radius to determine angle AOB, then use the remaining angle around the full circle.",
+        "The angle marked ? completes angle AOB to 360 degrees; derive angle AOB from the shown arc length and radius.",
+        "Find angle AOB from the visible arc length and radius, then subtract it from 360 degrees.",
+        "Angle AOB and the angle marked ? make a full turn around O; use the shown arc length and radius for angle AOB."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:sector_formula_scene": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "scene:sector_formula_scene": {
+      "object_description": "a circular sector with labeled points"
+    },
+    "global": {
+      "annotation_hint": "set \"annotation\" to the pixel bounding box [x0,y0,x1,y1] around the marked geometric target, excluding point labels and numeric readout text",
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "task:sector_area_from_complement_angle_value_query": {
+      "answer_hint": "set \"answer\" to the requested area as a number rounded to one decimal place"
+    },
+    "task:arc_length_from_sector_area_value_query": {
+      "answer_hint": "set \"answer\" to the requested arc length as a number rounded to one decimal place"
+    },
+    "task:arc_length_from_supplement_angle_value_query": {
+      "answer_hint": "set \"answer\" to the requested arc length as a number rounded to one decimal place"
+    },
+    "task:central_angle_from_sector_measure_value_query": {
+      "answer_hint": "set \"answer\" to the requested angle as a number rounded to one decimal place"
+    },
+    "task:related_angle_from_sector_measure_value_query": {
+      "answer_hint": "set \"answer\" to the requested angle as a number rounded to one decimal place"
+    }
+  },
+  "dynamic_slots": {
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  }
+}

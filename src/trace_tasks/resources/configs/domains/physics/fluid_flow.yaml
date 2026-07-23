@@ -1,0 +1,51 @@
+generation:
+  shared:
+    orientation_weights:
+      horizontal_pipe: 1.0
+      vertical_pipe: 1.0
+    balanced_orientation_sampling: true
+    balanced_missing_station_sampling: true
+    balanced_target_answer_sampling: true
+    area_cm2_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 9
+    - 10
+    - 12
+    speed_m_s_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 9
+    - 10
+    - 12
+    - 15
+    - 16
+    - 18
+    - 20
+    - 24
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 720
+    panel_margin_x_px: 58
+    panel_margin_top_px: 52
+    panel_margin_bottom_px: 58
+    label_font_size_px: 24
+    station_font_size_px: 28
+    title_font_size_px: 28
+
+prompt:
+  shared:
+    bundle_id: physics_fluid_flow_v1
+  task_overrides:
+    task_physics__fluid_flow__continuity_speed_value:
+      task_key: continuity_speed_value_query

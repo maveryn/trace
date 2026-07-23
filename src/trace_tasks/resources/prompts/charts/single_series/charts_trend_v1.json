@@ -1,0 +1,321 @@
+{
+  "bundle_id": "charts_trend_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "ordered_chart_trend": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "trend_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "threshold_crossing_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "turning_point_count": [
+        "How many local {turning_point_plural} are present? A local {turning_point_type} has a value {turning_point_comparison} the immediately previous and next labels in displayed order.",
+        "Count the local {turning_point_plural} in displayed order. A local {turning_point_type} is {turning_point_comparison} both adjacent labels.",
+        "How many labels are local {turning_point_plural} when you follow the chart in displayed order?",
+        "Determine the number of local {turning_point_plural}. Each one is {turning_point_comparison} the labels immediately before and after it in displayed order.",
+        "Find how many local {turning_point_plural} the ordered chart contains in displayed order."
+      ],
+      "longest_monotone_streak": [
+        "What is the length of the longest strictly {streak_direction} streak of consecutive labels in displayed order? Count labels in the streak.",
+        "Find the number of labels in the longest strictly {streak_direction} consecutive streak.",
+        "Determine the length of the longest streak where each consecutive label {streak_step_verb} in value. Count labels, not gaps.",
+        "How many labels are in the longest strictly {streak_direction} streak in displayed order?",
+        "Compute the length of the longest strictly {streak_direction} run of consecutive labels."
+      ],
+      "endpoint_change_value": [
+        "What is the {endpoint_change_instruction} from \"{start_label}\" to \"{end_label}\"?",
+        "Using \"{start_label}\" as the first endpoint and \"{end_label}\" as the second endpoint, compute the requested {endpoint_change_kind} change value.",
+        "Read the endpoint values at \"{start_label}\" and \"{end_label}\"; what is the requested {endpoint_change_kind} change?",
+        "Compute the requested endpoint-change value from \"{start_label}\" to \"{end_label}\".",
+        "Use endpoint labels \"{start_label}\" and \"{end_label}\" to compute the requested {endpoint_change_kind} change value."
+      ],
+      "interval_rate_value": [
+        "What is the absolute average change per step from \"{start_label}\" through \"{end_label}\"?",
+        "Compute the nonnegative absolute change from \"{start_label}\" to \"{end_label}\" divided by the number of steps between them.",
+        "Find the absolute average per-label-step change over the interval from \"{start_label}\" to \"{end_label}\".",
+        "Find the nonnegative integer average rate of change from \"{start_label}\" to \"{end_label}\".",
+        "Using endpoint labels \"{start_label}\" and \"{end_label}\", compute the absolute average change per step."
+      ],
+      "first_crosses_above_threshold": [
+        "Which label is the first one in displayed order with value greater than {threshold}?",
+        "Following the displayed order, find the first label whose value is above {threshold}.",
+        "What is the first label where the chart value crosses above threshold {threshold}?",
+        "Identify the earliest displayed label with value greater than {threshold}.",
+        "Starting from the first label, which label first exceeds {threshold}?"
+      ],
+      "first_crosses_below_threshold": [
+        "Which label is the first one in displayed order with value less than {threshold}?",
+        "Following the displayed order, find the first label whose value is below {threshold}.",
+        "What is the first label where the chart value crosses below threshold {threshold}?",
+        "Identify the earliest displayed label with value less than {threshold}.",
+        "Starting from the first label, which label first goes below {threshold}?"
+      ],
+      "threshold_crossing": [
+        "{crossing_mode_instruction} Which label is first with value {comparison_phrase} {threshold}? {unanswerable_instruction}",
+        "Use threshold {threshold}. {crossing_mode_instruction} Identify the first label that goes {crossing_direction} {threshold}. {unanswerable_instruction}",
+        "{crossing_mode_instruction} What is the first label whose value crosses {crossing_direction} threshold {threshold}? {unanswerable_instruction}",
+        "{crossing_mode_instruction} Find the earliest label with value {comparison_phrase} {threshold}. {unanswerable_instruction}",
+        "Use the threshold rule {comparison_phrase} {threshold}. {crossing_mode_instruction} Which label satisfies it first? {unanswerable_instruction}"
+      ],
+      "linear_projection_crosses_above": [
+        "The plotted labels form one linear series, and the final labels are empty future slots. Continue the same step; which future label is first greater than {threshold}?",
+        "Use the repeated step in the plotted linear series to extend into the empty future labels. Which future label first rises above {threshold}?",
+        "Following the empty future labels, what is the first label whose extrapolated linear-series value is greater than {threshold}?",
+        "Extend the shown linear trend into the future labels. Which future label first exceeds {threshold}?",
+        "Among the empty future labels, identify the first one whose continued linear-series value crosses above {threshold}."
+      ],
+      "linear_projection_crosses_below": [
+        "The plotted labels form one linear series, and the final labels are empty future slots. Continue the same step; which future label is first less than {threshold}?",
+        "Use the repeated step in the plotted linear series to extend into the empty future labels. Which future label first falls below {threshold}?",
+        "Following the empty future labels, what is the first label whose extrapolated linear-series value is less than {threshold}?",
+        "Extend the shown linear trend into the future labels. Which future label first goes below {threshold}?",
+        "Among the empty future labels, identify the first one whose continued linear-series value crosses below {threshold}."
+      ],
+      "absolute_change_between_labels": [
+        "What is the absolute change in value from \"{start_label}\" to \"{end_label}\"?",
+        "Find the absolute difference between the values at \"{start_label}\" and \"{end_label}\".",
+        "How much did the value change in absolute terms from \"{start_label}\" to \"{end_label}\"?",
+        "Compute |value at \"{end_label}\" minus value at \"{start_label}\"|.",
+        "Find the nonnegative change between \"{start_label}\" and \"{end_label}\"."
+      ],
+      "signed_change_between_labels": [
+        "What is the signed change in value from \"{start_label}\" to \"{end_label}\"? Use value at \"{end_label}\" minus value at \"{start_label}\".",
+        "Compute value at \"{end_label}\" minus value at \"{start_label}\"; keep the sign.",
+        "How much did the value change from \"{start_label}\" to \"{end_label}\", using a negative answer for a decrease?",
+        "Find the signed endpoint difference from \"{start_label}\" to \"{end_label}\".",
+        "Find the change from \"{start_label}\" to \"{end_label}\", preserving sign."
+      ],
+      "percent_change_between_labels": [
+        "What is the signed integer percentage change from \"{start_label}\" to \"{end_label}\"? Use ((end-start)/start)*100, keep negative values for decreases, and omit the percent sign.",
+        "Compute the signed percent change from \"{start_label}\" to \"{end_label}\"; use the integer percentage without a percent sign, negative if it decreased.",
+        "Using \"{start_label}\" as the base, what is the signed integer percent change at \"{end_label}\"? Use a negative value for a decrease.",
+        "Find 100 times the signed change divided by the value at \"{start_label}\"; keep the sign and omit the percent sign.",
+        "Find the signed integer percentage change from \"{start_label}\" to \"{end_label}\", using a negative answer for a decrease."
+      ],
+      "average_rate_over_interval": [
+        "What is the absolute average change per step from \"{start_label}\" through \"{end_label}\"?",
+        "Compute the nonnegative absolute change from \"{start_label}\" to \"{end_label}\" divided by the number of steps between them.",
+        "Find the absolute average per-label-step change over the interval from \"{start_label}\" to \"{end_label}\".",
+        "Find the nonnegative integer average rate of change from \"{start_label}\" to \"{end_label}\".",
+        "Using endpoint labels \"{start_label}\" and \"{end_label}\", compute the absolute average change per step."
+      ],
+      "peak_turning_point_count": [
+        "How many local {turning_point_plural} are present? A local {turning_point_type} has a value {turning_point_comparison} the immediately previous and next labels in displayed order.",
+        "Count the local {turning_point_plural} in displayed order. A local {turning_point_type} is {turning_point_comparison} both adjacent labels.",
+        "How many labels are local {turning_point_plural} when you follow the chart in displayed order?",
+        "Determine the number of local {turning_point_plural}. Each one is {turning_point_comparison} the labels immediately before and after it in displayed order.",
+        "Find how many local {turning_point_plural} the ordered chart contains in displayed order."
+      ],
+      "trough_turning_point_count": [
+        "How many local {turning_point_plural} are present? A local {turning_point_type} has a value {turning_point_comparison} the immediately previous and next labels in displayed order.",
+        "Count the local {turning_point_plural} in displayed order. A local {turning_point_type} is {turning_point_comparison} both adjacent labels.",
+        "How many labels are local {turning_point_plural} when you follow the chart in displayed order?",
+        "Determine the number of local {turning_point_plural}. Each one is {turning_point_comparison} the labels immediately before and after it in displayed order.",
+        "Find how many local {turning_point_plural} the ordered chart contains in displayed order."
+      ],
+      "longest_increasing_streak_length": [
+        "What is the length of the longest strictly {streak_direction} streak of consecutive labels in displayed order? Count labels in the streak.",
+        "Find the number of labels in the longest strictly {streak_direction} consecutive streak.",
+        "Determine the length of the longest streak where each consecutive label {streak_step_verb} in value. Count labels, not gaps.",
+        "How many labels are in the longest strictly {streak_direction} streak in displayed order?",
+        "Compute the length of the longest strictly {streak_direction} run of consecutive labels."
+      ],
+      "longest_decreasing_streak_length": [
+        "What is the length of the longest strictly {streak_direction} streak of consecutive labels in displayed order? Count labels in the streak.",
+        "Find the number of labels in the longest strictly {streak_direction} consecutive streak.",
+        "Determine the length of the longest streak where each consecutive label {streak_step_verb} in value. Count labels, not gaps.",
+        "How many labels are in the longest strictly {streak_direction} streak in displayed order?",
+        "Compute the length of the longest strictly {streak_direction} run of consecutive labels."
+      ],
+      "absolute_endpoint_change_value": [
+        "What is the absolute change in value from \"{start_label}\" to \"{end_label}\"?",
+        "Find the absolute difference between the values at \"{start_label}\" and \"{end_label}\".",
+        "How much did the value change in absolute terms from \"{start_label}\" to \"{end_label}\"?",
+        "Compute |value at \"{end_label}\" minus value at \"{start_label}\"|.",
+        "Find the nonnegative change between \"{start_label}\" and \"{end_label}\"."
+      ],
+      "signed_endpoint_change_value": [
+        "What is the signed change in value from \"{start_label}\" to \"{end_label}\"? Use value at \"{end_label}\" minus value at \"{start_label}\".",
+        "Compute value at \"{end_label}\" minus value at \"{start_label}\"; keep the sign.",
+        "How much did the value change from \"{start_label}\" to \"{end_label}\", using a negative answer for a decrease?",
+        "Find the signed endpoint difference from \"{start_label}\" to \"{end_label}\".",
+        "Find the change from \"{start_label}\" to \"{end_label}\", preserving sign."
+      ],
+      "percent_endpoint_change_value": [
+        "What is the signed integer percentage change from \"{start_label}\" to \"{end_label}\"? Use ((end-start)/start)*100, keep negative values for decreases, and omit the percent sign.",
+        "Compute the signed percent change from \"{start_label}\" to \"{end_label}\"; use the integer percentage without a percent sign, negative if it decreased.",
+        "Using \"{start_label}\" as the base, what is the signed integer percent change at \"{end_label}\"? Use a negative value for a decrease.",
+        "Find 100 times the signed change divided by the value at \"{start_label}\"; keep the sign and omit the percent sign.",
+        "Find the signed integer percentage change from \"{start_label}\" to \"{end_label}\", using a negative answer for a decrease."
+      ],
+      "observed_above_threshold_crossing_label": [
+        "Which label is the first one in displayed order with value greater than {threshold}?",
+        "Following the displayed order, find the first label whose value is above {threshold}.",
+        "What is the first label where the chart value crosses above threshold {threshold}?",
+        "Identify the earliest displayed label with value greater than {threshold}.",
+        "Starting from the first label, which label first exceeds {threshold}?"
+      ],
+      "observed_below_threshold_crossing_label": [
+        "Which label is the first one in displayed order with value less than {threshold}?",
+        "Following the displayed order, find the first label whose value is below {threshold}.",
+        "What is the first label where the chart value crosses below threshold {threshold}?",
+        "Identify the earliest displayed label with value less than {threshold}.",
+        "Starting from the first label, which label first goes below {threshold}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "comparison_phrase": {
+      "type": "string"
+    },
+    "crossing_direction": {
+      "type": "string"
+    },
+    "crossing_direction_verb": {
+      "type": "string"
+    },
+    "crossing_mode_instruction": {
+      "type": "string"
+    },
+    "end_label": {
+      "type": "string"
+    },
+    "endpoint_change_instruction": {
+      "type": "string"
+    },
+    "endpoint_change_kind": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "start_label": {
+      "type": "string"
+    },
+    "streak_direction": {
+      "type": "string"
+    },
+    "streak_step_verb": {
+      "type": "string"
+    },
+    "threshold": {
+      "type": "string"
+    },
+    "turning_point_comparison": {
+      "type": "string"
+    },
+    "turning_point_plural": {
+      "type": "string"
+    },
+    "turning_point_type": {
+      "type": "string"
+    },
+    "unanswerable_instruction": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {},
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+      "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+    },
+    "query:peak_turning_point_count": {
+      "answer_hint": "set \"answer\" to the requested count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on all local turning points of the requested type",
+      "json_example": "{\"annotation\":[[220,180],[520,210]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:trough_turning_point_count": {
+      "answer_hint": "set \"answer\" to the requested count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on all local turning points of the requested type",
+      "json_example": "{\"annotation\":[[220,180],[520,210]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:longest_increasing_streak_length": {
+      "answer_hint": "set \"answer\" to the requested streak length as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on every mark in the unique longest matching monotone streak",
+      "json_example": "{\"annotation\":[[180,420],[300,350],[420,260],[540,170]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:longest_decreasing_streak_length": {
+      "answer_hint": "set \"answer\" to the requested streak length as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on every mark in the unique longest matching monotone streak",
+      "json_example": "{\"annotation\":[[180,420],[300,350],[420,260],[540,170]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:absolute_endpoint_change_value": {
+      "answer_hint": "set \"answer\" to the requested endpoint-change value as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping \"start_mark\" and \"end_mark\" to [x,y] pixel points on the two endpoint marks",
+      "json_example": "{\"annotation\":{\"start_mark\":[160,420],\"end_mark\":[460,220]},\"answer\":20}",
+      "json_example_answer_only": "{\"answer\":20}"
+    },
+    "query:signed_endpoint_change_value": {
+      "answer_hint": "set \"answer\" to the requested endpoint-change value as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping \"start_mark\" and \"end_mark\" to [x,y] pixel points on the two endpoint marks",
+      "json_example": "{\"annotation\":{\"start_mark\":[160,420],\"end_mark\":[460,220]},\"answer\":20}",
+      "json_example_answer_only": "{\"answer\":20}"
+    },
+    "query:percent_endpoint_change_value": {
+      "answer_hint": "set \"answer\" to the requested signed integer percentage change, omitting the percent sign and using a negative value for a decrease",
+      "annotation_hint": "set \"annotation\" to an object mapping \"start_mark\" and \"end_mark\" to [x,y] pixel points on the two endpoint marks",
+      "json_example": "{\"annotation\":{\"start_mark\":[160,420],\"end_mark\":[460,220]},\"answer\":20}",
+      "json_example_answer_only": "{\"answer\":20}"
+    },
+    "query:average_rate_over_interval": {
+      "answer_hint": "set \"answer\" to the requested nonnegative absolute average rate as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping \"start_mark\" and \"end_mark\" to [x,y] pixel points on the two endpoint marks",
+      "json_example": "{\"annotation\":{\"start_mark\":[200,420],\"end_mark\":[500,240]},\"answer\":6}",
+      "json_example_answer_only": "{\"answer\":6}"
+    },
+    "query:observed_above_threshold_crossing_label": {
+      "answer_hint": "set \"answer\" to the requested crossing label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the first threshold-crossing mark",
+      "json_example": "{\"annotation\":[360,240],\"answer\":\"C4A7\"}",
+      "json_example_answer_only": "{\"answer\":\"C4A7\"}"
+    },
+    "query:observed_below_threshold_crossing_label": {
+      "answer_hint": "set \"answer\" to the requested crossing label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the first threshold-crossing mark",
+      "json_example": "{\"annotation\":[360,240],\"answer\":\"C4A7\"}",
+      "json_example_answer_only": "{\"answer\":\"C4A7\"}"
+    }
+  }
+}

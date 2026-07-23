@@ -1,0 +1,91 @@
+generation:
+  shared:
+    scene_variant_weights:
+      straight_chain: 1.0
+      staggered_chain: 1.0
+      arc_chain: 1.0
+    gear_count_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    gear_radius_px_support:
+    - 42
+    - 48
+    - 54
+    - 60
+    balanced_scene_variant_sampling: true
+    balanced_gear_count_sampling: true
+    balanced_target_answer_sampling: true
+  task_overrides:
+    task_physics__gear_train__output_direction_label:
+      gear_count_support:
+      - 2
+      - 3
+      - 4
+    task_physics__gear_train__output_speed_value:
+      gear_count_support:
+      - 2
+      - 3
+      - 4
+      tooth_count_support:
+      - 12
+      - 16
+      - 18
+      - 20
+      - 24
+      - 30
+      - 36
+      - 40
+      - 48
+      input_rpm_support:
+      - 30
+      - 40
+      - 45
+      - 60
+      - 72
+      - 80
+      - 90
+      - 100
+      - 120
+      - 144
+      - 150
+      - 180
+      output_rpm_min: 20
+      output_rpm_max: 240
+      balanced_speed_relation_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 680
+    panel_margin_x_px: 54
+    panel_margin_top_px: 52
+    panel_margin_bottom_px: 58
+    label_font_size_px: 23
+    title_font_size_px: 27
+  task_overrides:
+    task_physics__gear_train__output_direction_label:
+      direction_choice_canvas_width: 1180
+      direction_choice_canvas_height: 860
+      direction_choice_label_font_size_px: 17
+      direction_choice_title_font_size_px: 20
+      direction_choice_margin_x_px: 42
+      direction_choice_margin_top_px: 36
+      direction_choice_margin_bottom_px: 42
+      direction_choice_gap_x_px: 30
+      direction_choice_gap_y_px: 26
+    task_physics__gear_train__output_speed_value:
+      label_font_size_px: 22
+      tooth_label_font_size_px: 20
+      title_font_size_px: 27
+
+prompt:
+  shared:
+    bundle_id: physics_gear_train_v1
+  task_overrides:
+    task_physics__gear_train__output_direction_label:
+      task_key: output_direction_label_query
+    task_physics__gear_train__output_speed_value:
+      task_key: output_speed_value_query

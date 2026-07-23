@@ -1,0 +1,106 @@
+{
+  "bundle_id": "charts_radar_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "radar_profile_charts": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "radar_profile_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "highlighted_metric_threshold_panel_count": [
+        "For the highlighted metric \"{metric_label}\", how many panels have values above threshold {threshold_value}?",
+        "Count the panels where the highlighted spoke \"{metric_label}\" is greater than {threshold_value}.",
+                "Across the radar panels, how many profile vertices for spoke \"{metric_label}\" exceed threshold {threshold_value}?",
+        "Using highlighted metric \"{metric_label}\", count the panels with profile values above {threshold_value}.",
+        "How many panels are beyond ring {threshold_value} on the highlighted spoke \"{metric_label}\"?"
+      ],
+      "threshold_metric_count_for_panel": [
+        "In panel \"{panel_label}\", how many metrics are above threshold {threshold_value}?",
+        "For panel \"{panel_label}\", count the metric vertices with values greater than {threshold_value}.",
+        "Looking only at panel \"{panel_label}\", how many spokes have profile values above {threshold_value}?",
+        "Within panel \"{panel_label}\", what is the count of metrics whose vertices are beyond ring {threshold_value}?",
+        "How many metrics in panel \"{panel_label}\" exceed threshold {threshold_value}?"
+      ],
+      "profile_advantage_count": [
+        "How many metrics have profile \"{profile_a_label}\" greater than profile \"{profile_b_label}\"?",
+        "Count the spokes where \"{profile_a_label}\" is farther from the center than \"{profile_b_label}\".",
+        "For the two-profile radar chart, on how many metrics does \"{profile_a_label}\" exceed \"{profile_b_label}\"?",
+        "What is the count of metrics where \"{profile_a_label}\" has the larger value than \"{profile_b_label}\"?",
+        "Compare the two profiles by metric: how many times is \"{profile_a_label}\" greater than \"{profile_b_label}\"?"
+      ],
+      "matching_condition_panel_count": [
+        "How many panels have at least {minimum_metric_count} metrics above threshold {threshold_value}?",
+        "Count the panels where {minimum_metric_count} or more metric vertices are greater than {threshold_value}.",
+        "Across panels, how many radar charts have at least {minimum_metric_count} spokes above {threshold_value}?",
+        "What is the number of panels satisfying at least {minimum_metric_count} metrics above threshold {threshold_value}?",
+        "Using the shared ring scale, how many panels meet the condition of {minimum_metric_count} metrics above {threshold_value}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:highlighted_metric_threshold_panel_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes, one around each radar panel whose highlighted metric is above the threshold",
+      "json_example": "{\"annotation\":[[160,130,432,390],[516,130,788,390],[872,130,1144,390]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:threshold_metric_count_for_panel": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points, one at each counted vertex in the queried panel",
+      "json_example": "{\"annotation\":[[512,356],[588,420],[474,488]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:profile_advantage_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the two named profile points for one counted metric; use [] if no metrics match",
+      "json_example": "{\"annotation\":[[[650,244],[622,270]],[[744,430],[708,408]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:matching_condition_panel_count": {
+      "answer_hint": "set \"answer\" to the count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes, one around each radar panel satisfying the condition",
+      "json_example": "{\"annotation\":[[160,130,432,390],[516,130,788,390]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "metric_label": {"type": "string"},
+    "panel_label": {"type": "string"},
+    "profile_a_label": {"type": "string"},
+    "profile_b_label": {"type": "string"},
+    "threshold_value": {"type": "integer"},
+    "minimum_metric_count": {"type": "integer"}
+  }
+}

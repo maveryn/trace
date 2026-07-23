@@ -1,0 +1,61 @@
+generation:
+  shared:
+    scene_variant_weights:
+      brick_wall: 1.0
+    style_variant_weights:
+      classic: 1.0
+      neon: 1.0
+      paper: 1.0
+      blueprint: 1.0
+      arcade: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_brick_row_sampling: true
+    balanced_brick_col_sampling: true
+    balanced_lane_count_sampling: true
+    brick_row_count_support:
+      - 4
+      - 5
+    brick_col_count_support:
+      - 5
+      - 6
+    catch_lane_count_support:
+      - 5
+      - 6
+  task_overrides:
+    task_games__brick_breaker__hit_row_remaining_count:
+      balanced_row_remaining_count_sampling: true
+      row_remaining_count_support:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 740
+    panel_margin_px: 38
+    playfield_width_px: 860
+    playfield_height_px: 640
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    playfield_border_width_px: 5
+    brick_wall_top_px: 46
+    brick_wall_height_px: 270
+    brick_gap_px: 8
+    lane_pad_height_px: 42
+    lane_pad_gap_px: 8
+    ball_radius_px: 16
+    path_width_px: 5
+    label_font_size_px: 24
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 440
+    canvas_side_padding_px: 120
+    canvas_vertical_padding_px: 78
+prompt:
+  shared:
+    bundle_id: games_brick_breaker_v1
+    scene_key: visible_brick_breaker_playfield
+    task_key: brick_breaker_query

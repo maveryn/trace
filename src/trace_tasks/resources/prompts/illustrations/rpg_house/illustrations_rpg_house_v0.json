@@ -1,0 +1,122 @@
+{
+  "bundle_id": "illustrations_rpg_house_v0",
+    "schema_version": "v0",
+    "task_templates": {
+        "rpg_house_adjacent_room_count_task": [
+            "",
+            "",
+            "",
+      "",
+      ""
+    ],
+    "rpg_house_missing_patch_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rpg_house_reachable_room_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rpg_house_room_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rpg_house_swapped_tile_pair_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:rpg_house_canvas": [],
+        "query:adjacent_room_count": [],
+        "query:missing_patch_label": [],
+        "query:reachable_room_count": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ],
+    "query:swapped_tile_pair_label": []
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "rpg_house_canvas": [
+      "The image shows a top-down pixel RPG house floor plan with multiple rooms and doors.",
+      "The scene shows a top-down RPG-style house layout with rooms connected by doorways.",
+      "The picture shows a pixel-art house interior from above, including rooms, walls, and doors.",
+      "The canvas contains a top-down RPG house map with enclosed rooms, walls, and doorways.",
+      "This illustration shows an RPG-style indoor house layout from above."
+    ]
+  },
+  "query_templates": {
+        "adjacent_room_count": [
+            "How many rooms directly share a doorway with the player's room?",
+            "Count the rooms that touch the player's room through one doorway. What is the count?",
+            "How many rooms are immediately connected to the room with the player by a doorway?",
+            "From the player's room, how many other rooms are one doorway away?",
+            "Count the rooms directly adjacent to the player's room by a doorway. What is the total?"
+        ],
+    "missing_patch_label": [
+      "One rectangular region is missing from the source house image. Which patch option restores that missing region?",
+      "Select the lettered patch that belongs in the missing rectangle of the RPG house image.",
+      "Which option patch matches the hidden region in the top-down house layout?",
+      "A patch has been removed from the house floor plan. Which lettered option should fill it?",
+      "Choose the patch option that completes the missing part of the RPG house scene."
+    ],
+    "reachable_room_count": [
+      "Starting from the room with the player, how many other rooms can the player reach by passing only through open doors?",
+      "The player is standing in one room. How many different other rooms are reachable using only open doorways?",
+      "From the player's current room, count the other rooms that can be reached without crossing a closed door. What is the count?",
+      "How many rooms besides the player's room are connected to the player through open doors?",
+      "Follow paths through open doors from the player. How many other rooms can be reached?"
+    ],
+    "room_count": [
+      "How many enclosed rooms are shown in the house layout?",
+      "Count the distinct rooms enclosed by walls in the house. How many rooms are there?",
+      "What is the total number of separate rooms in this top-down house interior?",
+      "How many distinct rooms can be seen inside the RPG house floor plan?",
+      "Count each enclosed room once. What is the total number of rooms?"
+    ],
+    "swapped_tile_pair_label": [
+      "The numbered house grid has exactly two tiles swapped. Which option names the two swapped tiles?",
+      "Two numbered tiles are in each other's positions. Which lettered option gives the swapped pair?",
+      "Identify the pair of numbered cells that were exchanged in the RPG house grid. Which option is correct?",
+      "Which option lists the two tiles that need to be swapped back?",
+      "In the numbered house layout, exactly two tiles are out of place. Which option names them?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

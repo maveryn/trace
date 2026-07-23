@@ -1,0 +1,338 @@
+{
+  "bundle_id": "pages_infographic_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "infographic_metric_arithmetic": [
+        "The image shows a multi-section infographic with labeled metric cards and printed values.",
+        "The image shows a multi-section infographic with labeled metric cards and printed values.",
+        "The image shows a multi-section infographic with labeled metric cards and printed values.",
+        "The image shows a multi-section infographic with labeled metric cards and printed values.",
+        "The image shows a multi-section infographic with labeled metric cards and printed values."
+      ]
+    },
+    "task": {
+      "metric_arithmetic_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "sum_named_metrics": [
+        "What is the sum of the values for {target_labels}?",
+        "Add the printed values for {target_labels}. What is the total?",
+        "What total do you get from the metric cards labeled {target_labels}?",
+        "Compute the sum of the named values {target_labels}.",
+        "Using the cards labeled {target_labels}, what is the combined value?"
+      ],
+      "section_extrema_arithmetic": [
+        "What is the {extrema_operation} of the {target_extremum_a} value in section {target_section_a} and the {target_extremum_b} value in section {target_section_b}?",
+        "Find the {target_extremum_a} value in section {target_section_a} and the {target_extremum_b} value in section {target_section_b}. What is their {extrema_operation}?",
+        "Using section {target_section_a} and section {target_section_b}, compute the {extrema_operation} of the {target_extremum_a} value in {target_section_a} and the {target_extremum_b} value in {target_section_b}.",
+        "Look up the {target_extremum_a} metric in section {target_section_a} and the {target_extremum_b} metric in section {target_section_b}. What is their {extrema_operation}?",
+        "What integer do you get from the {extrema_operation} of the {target_extremum_a} value in {target_section_a} and the {target_extremum_b} value in {target_section_b}?"
+      ],
+      "section_total_extrema_difference": [
+        "What is the difference between the highest section total and the lowest section total?",
+        "Sum each section, then subtract the lowest section total from the highest section total.",
+        "Find the section with the largest total and the section with the smallest total. What is their difference?",
+        "After totaling every section, what is highest total minus lowest total?",
+        "Compute the nonnegative difference between the largest and smallest section totals."
+      ],
+      "section_total_except_named": [
+        "In section {target_section}, what is the sum of all printed metric values except {excluded_labels}?",
+        "Add every value in section {target_section}, but exclude {excluded_labels}. What is the total?",
+        "What is the total for section {target_section} after removing the values for {excluded_labels}?",
+        "Within section {target_section}, skip {excluded_labels} and sum the remaining metric values.",
+        "Compute the section {target_section} total excluding {excluded_labels}."
+      ],
+      "section_ranked_total_label": [
+        "After summing the printed values in each section, which section has the {rank_ordinal} {rank_direction} total?",
+        "Sum each section's metric cards. What section is {rank_ordinal} {rank_direction} by total?",
+        "Which section ranks {rank_ordinal} when the section totals are ordered from {rank_order_phrase}?",
+        "Using the total of each section, identify the section with the {rank_ordinal} {rank_direction} total.",
+        "What is the section label for the {rank_ordinal} {rank_direction} section total?"
+      ],
+      "nth_highest_metric_label": [
+        "Which metric card has the {rank_ordinal} {rank_direction} printed value?",
+        "Order all metric-card values from {rank_order_phrase}. What card label is {rank_ordinal}?",
+        "Across the whole infographic, which metric label is {rank_ordinal} when values are sorted from {rank_order_phrase}?",
+        "Using every metric card, identify the label with the {rank_ordinal} {rank_direction} value.",
+        "What is the card label for the {rank_ordinal} {rank_direction} printed metric value?"
+      ],
+      "nth_lowest_metric_label": [
+        "Which metric card has the {rank_ordinal} {rank_direction} printed value?",
+        "Order all metric-card values from {rank_order_phrase}. What card label is {rank_ordinal}?",
+        "Across the whole infographic, which metric label is {rank_ordinal} when values are sorted from {rank_order_phrase}?",
+        "Using every metric card, identify the label with the {rank_ordinal} {rank_direction} value.",
+        "What is the card label for the {rank_ordinal} {rank_direction} printed metric value?"
+      ],
+      "nth_highest_metric_in_section_label": [
+        "In section {target_section}, which metric card has the {rank_ordinal} {rank_direction} printed value?",
+        "Within section {target_section}, order the metric-card values from {rank_order_phrase}. What card label is {rank_ordinal}?",
+        "Looking only at section {target_section}, which metric label is {rank_ordinal} when values are sorted from {rank_order_phrase}?",
+        "Using the cards in section {target_section}, identify the label with the {rank_ordinal} {rank_direction} value.",
+        "What is the metric-card label for the {rank_ordinal} {rank_direction} printed value in section {target_section}?"
+      ],
+      "nth_lowest_metric_in_section_label": [
+        "In section {target_section}, which metric card has the {rank_ordinal} {rank_direction} printed value?",
+        "Within section {target_section}, order the metric-card values from {rank_order_phrase}. What card label is {rank_ordinal}?",
+        "Looking only at section {target_section}, which metric label is {rank_ordinal} when values are sorted from {rank_order_phrase}?",
+        "Using the cards in section {target_section}, identify the label with the {rank_ordinal} {rank_direction} value.",
+        "What is the metric-card label for the {rank_ordinal} {rank_direction} printed value in section {target_section}?"
+      ],
+      "section_icon_total_value": [
+        "In section {target_section}, what is the sum of the values on cards using the {filter_icon_kind} icon?",
+        "Look only at section {target_section}. Add the values for cards marked with the {filter_icon_kind} icon.",
+        "What total do you get from the {filter_icon_kind}-icon cards in section {target_section}?",
+        "Within section {target_section}, sum every printed value whose card uses the {filter_icon_kind} icon.",
+        "Using the {filter_icon_kind} icon as the filter, what is the total in section {target_section}?"
+      ],
+      "section_icon_total_difference_value": [
+        "For cards with the {comparison_icon_kind} icon, what is the absolute difference between the total in section {target_section_a} and the total in section {target_section_b}?",
+        "Compare sections {target_section_a} and {target_section_b}. For the {comparison_icon_kind}-icon cards, what is the difference between their section totals?",
+        "Add the {comparison_icon_kind}-icon cards in section {target_section_a} and in section {target_section_b}. What is the nonnegative difference?",
+        "Using only cards marked with the {comparison_icon_kind} icon, compute the absolute total gap between {target_section_a} and {target_section_b}.",
+        "What is the absolute difference between the {comparison_icon_kind}-icon total in {target_section_a} and the {comparison_icon_kind}-icon total in {target_section_b}?"
+      ],
+      "section_icon_extremum_label": [
+        "Using only cards with the {comparison_icon_kind} icon, which section has the {rank_direction} total?",
+        "Filter to the {comparison_icon_kind}-icon cards. Which section has the {rank_direction} sum?",
+        "After summing {comparison_icon_kind}-icon cards within each section, what section has the {rank_direction} total?",
+        "Which section label has the {rank_direction} total among cards marked with the {comparison_icon_kind} icon?",
+        "Compare section totals using only {comparison_icon_kind}-icon cards. Which section is {rank_direction}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:sum_named_metrics": {
+      "json_example": "{\"annotation\":[[108,164,248,258],[398,164,538,258]],\"answer\":64}",
+      "json_example_answer_only": "{\"answer\":64}",
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes for the supporting metric cards"
+    },
+    "query:section_extrema_arithmetic": {
+      "json_example": "{\"annotation\":{\"section_a_extremum\":[108,164,248,258],\"section_b_extremum\":[398,164,538,258]},\"answer\":64}",
+      "json_example_answer_only": "{\"answer\":64}",
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"section_a_extremum\" and \"section_b_extremum\", each mapped to the supporting metric card [x0, y0, x1, y1] pixel bounding box"
+    },
+    "query:section_total_extrema_difference": {
+      "json_example": "{\"annotation\":{\"highest_total_section\":[[108,164,248,258],[252,164,392,258]],\"lowest_total_section\":[[398,164,538,258],[542,164,682,258]]},\"answer\":64}",
+      "json_example_answer_only": "{\"answer\":64}",
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"highest_total_section\" and \"lowest_total_section\", each mapped to a list of supporting metric card [x0, y0, x1, y1] pixel bounding boxes"
+    },
+    "query:section_total_except_named": {
+      "json_example": "{\"annotation\":[[108,164,248,258],[398,164,538,258]],\"answer\":64}",
+      "json_example_answer_only": "{\"answer\":64}",
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes for the included metric cards after exclusions"
+    },
+    "query:section_ranked_total_label": {
+      "json_example": "{\"annotation\":[[108,164,248,258],[398,164,538,258]],\"answer\":\"Program Totals\"}",
+      "json_example_answer_only": "{\"answer\":\"Program Totals\"}",
+      "answer_hint": "set \"answer\" to the exact visible section label requested by the question",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes for the metric cards in the selected section"
+    },
+    "query:nth_highest_metric_label": {
+      "json_example": "{\"annotation\":[108,164,248,258],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}",
+      "answer_hint": "set \"answer\" to the exact visible metric-card label requested by the question",
+      "annotation_hint": "set \"annotation\" to the selected metric card [x0, y0, x1, y1] pixel bounding box"
+    },
+    "query:nth_lowest_metric_label": {
+      "json_example": "{\"annotation\":[108,164,248,258],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}",
+      "answer_hint": "set \"answer\" to the exact visible metric-card label requested by the question",
+      "annotation_hint": "set \"annotation\" to the selected metric card [x0, y0, x1, y1] pixel bounding box"
+    },
+    "query:nth_highest_metric_in_section_label": {
+      "json_example": "{\"annotation\":[108,164,248,258],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}",
+      "answer_hint": "set \"answer\" to the exact visible metric-card label requested by the question",
+      "annotation_hint": "set \"annotation\" to the selected metric card [x0, y0, x1, y1] pixel bounding box"
+    },
+    "query:nth_lowest_metric_in_section_label": {
+      "json_example": "{\"annotation\":[108,164,248,258],\"answer\":\"Atlas\"}",
+      "json_example_answer_only": "{\"answer\":\"Atlas\"}",
+      "answer_hint": "set \"answer\" to the exact visible metric-card label requested by the question",
+      "annotation_hint": "set \"annotation\" to the selected metric card [x0, y0, x1, y1] pixel bounding box"
+    },
+    "query:section_icon_total_value": {
+      "json_example": "{\"annotation\":[[108,164,248,258],[398,164,538,258]],\"answer\":64}",
+      "json_example_answer_only": "{\"answer\":64}",
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to a list of [x0, y0, x1, y1] pixel bounding boxes for the matching icon-filtered metric cards"
+    },
+    "query:section_icon_total_difference_value": {
+      "json_example": "{\"annotation\":{\"section_a_filtered_icon_cards\":[[108,164,248,258],[252,164,392,258]],\"section_b_filtered_icon_cards\":[[398,164,538,258]]},\"answer\":64}",
+      "json_example_answer_only": "{\"answer\":64}",
+      "answer_hint": "set \"answer\" to the requested integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"section_a_filtered_icon_cards\" and \"section_b_filtered_icon_cards\", each mapped to a list of matching metric card [x0, y0, x1, y1] pixel bounding boxes"
+    },
+    "query:section_icon_extremum_label": {
+      "json_example": "{\"annotation\":[80,120,420,360],\"answer\":\"Program Totals\"}",
+      "json_example_answer_only": "{\"answer\":\"Program Totals\"}",
+      "answer_hint": "set \"answer\" to the exact visible section label requested by the question",
+      "annotation_hint": "set \"annotation\" to the answer section panel [x0, y0, x1, y1] pixel bounding box"
+    }
+  },
+  "dynamic_slots": {
+    "target_label": {
+      "type": "string"
+    },
+    "target_label_a": {
+      "type": "string"
+    },
+    "target_label_b": {
+      "type": "string"
+    },
+    "target_labels": {
+      "type": "string"
+    },
+    "target_group_a": {
+      "type": "string"
+    },
+    "target_group_b": {
+      "type": "string"
+    },
+    "target_section": {
+      "type": "string"
+    },
+    "target_section_a": {
+      "type": "string"
+    },
+    "target_section_b": {
+      "type": "string"
+    },
+    "target_extremum_a": {
+      "type": "string"
+    },
+    "target_extremum_b": {
+      "type": "string"
+    },
+    "extrema_operation": {
+      "type": "string"
+    },
+    "rank_direction": {
+      "type": "string"
+    },
+    "rank_ordinal": {
+      "type": "string"
+    },
+    "rank_order_phrase": {
+      "type": "string"
+    },
+    "rank_position": {
+      "type": "string"
+    },
+    "excluded_labels": {
+      "type": "string"
+    },
+    "filter_icon_kind": {
+      "type": "string"
+    },
+    "comparison_icon_kind": {
+      "type": "string"
+    },
+    "target_value": {
+      "type": "string"
+    },
+    "target_detail": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:sum_named_metrics": [
+      "target_labels"
+    ],
+    "query:section_extrema_arithmetic": [
+      "target_section_a",
+      "target_section_b",
+      "target_extremum_a",
+      "target_extremum_b",
+      "extrema_operation"
+    ],
+    "query:section_total_extrema_difference": [],
+    "query:section_total_except_named": [
+      "target_section",
+      "excluded_labels"
+    ],
+    "query:section_ranked_total_label": [
+      "rank_ordinal",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:nth_highest_metric_label": [
+      "rank_ordinal",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:nth_lowest_metric_label": [
+      "rank_ordinal",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:nth_highest_metric_in_section_label": [
+      "target_section",
+      "rank_ordinal",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:nth_lowest_metric_in_section_label": [
+      "target_section",
+      "rank_ordinal",
+      "rank_direction",
+      "rank_order_phrase"
+    ],
+    "query:section_icon_total_value": [
+      "target_section",
+      "filter_icon_kind"
+    ],
+    "query:section_icon_total_difference_value": [
+      "target_section_a",
+      "target_section_b",
+      "comparison_icon_kind"
+    ],
+    "query:section_icon_extremum_label": [
+      "comparison_icon_kind",
+      "rank_direction"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

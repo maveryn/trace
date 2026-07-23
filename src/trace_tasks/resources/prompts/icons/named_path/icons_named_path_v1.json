@@ -1,0 +1,93 @@
+{
+  "bundle_id": "icons_named_path_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "named_path_relation": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "path_neighbor_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ],
+      "path_distance_query": [
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}",
+        "{question_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "question_text": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:named_path_relation": [
+      "object_description"
+    ],
+    "task:path_neighbor_query": [
+      "question_text"
+    ],
+    "task:path_distance_query": [
+      "question_text"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description": "a START-to-END icon path with six option icons labeled A-F and other icons",
+    "question_text_after_first_shape_label": "Which labeled icon comes immediately after the first \"{target_shape_name}\" icon along the path from START to END?",
+    "question_text_before_first_shape_label": "Which labeled icon comes immediately before the first \"{target_shape_name}\" icon along the path from START to END?",
+    "question_text_after_last_shape_label": "Which labeled icon comes immediately after the last \"{target_shape_name}\" icon along the path from START to END?",
+    "question_text_before_last_shape_label": "Which labeled icon comes immediately before the last \"{target_shape_name}\" icon along the path from START to END?",
+    "question_text_after_second_shape_label": "Which labeled icon comes immediately after the second \"{target_shape_name}\" icon along the path from START to END?",
+    "question_text_before_second_shape_label": "Which labeled icon comes immediately before the second \"{target_shape_name}\" icon along the path from START to END?",
+    "question_text": "How many path stops are strictly between the \"{first_shape_name}\" icon and the \"{second_shape_name}\" icon along the path from START to END?",
+    "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] bounding box in image pixel coordinates for the selected answer icon",
+    "answer_hint": "set \"answer\" to the selected option letter as a string",
+    "json_example": "{\"annotation\":[546,246,606,306],\"answer\":\"E\"}",
+    "json_example_answer_only": "{\"answer\":\"E\"}"
+  }
+}

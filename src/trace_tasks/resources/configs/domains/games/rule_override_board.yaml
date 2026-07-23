@@ -1,0 +1,82 @@
+generation:
+  shared:
+    board_style_weights:
+      classic: 1.0
+      paper: 1.0
+      chalkboard: 1.0
+      arcade: 1.0
+      wood: 1.0
+    line_target_player_weights:
+      X: 1.0
+      O: 1.0
+    piece_target_player_weights:
+      Black: 1.0
+      White: 1.0
+    balanced_board_style_sampling: true
+    balanced_target_player_sampling: true
+    balanced_board_count_sampling: true
+    balanced_board_size_sampling: true
+    balanced_target_answer_sampling: true
+    board_count_support:
+    - 4
+    - 5
+    - 6
+    target_answer_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    line_board_size_support:
+    - 3
+    - 4
+    piece_board_size_support:
+    - 4
+    - 5
+rendering:
+  shared:
+    min_canvas_width_px: 520
+    min_canvas_height_px: 420
+    cell_size_px: 56
+    board_gap_px: 22
+    board_padding_px: 14
+    board_label_height_px: 38
+    content_margin_px: 56
+    panel_radius_px: 18
+    panel_border_width_px: 2
+    board_border_width_px: 3
+    grid_width_px: 3
+    board_label_font_size_px: 20
+    mark_font_size_px: 34
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+prompt:
+  shared:
+    bundle_id: games_rule_override_board_v1
+    scene_key: rule_override_board
+    task_key: rule_override_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

@@ -1,0 +1,63 @@
+generation:
+  shared:
+    category_count_min: 16
+    category_count_max: 24
+    value_min: 1
+    value_max: 18
+    compact_value_min: 2
+    compact_value_max: 40
+    contiguous_category_count_min: 4
+    contiguous_category_count_max: 6
+    contiguous_span_count_min: 2
+    contiguous_span_count_max: 4
+    counterfactual_category_count_min: 4
+    counterfactual_category_count_max: 6
+    counterfactual_transfer_delta_min: 1
+    counterfactual_transfer_delta_max: 5
+    part_whole_category_count_min: 4
+    part_whole_category_count_max: 6
+    part_whole_span_count_min: 3
+    part_whole_span_count_max: 5
+    part_whole_angle_span_count_min: 2
+    part_whole_angle_span_count_max: 3
+    subset_denominator_size_min: 2
+    subset_denominator_size_max: 4
+    subset_denominator_answer_values:
+    - 20
+    - 25
+    - 30
+    - 40
+    - 50
+    - 60
+    - 70
+    - 75
+    - 80
+    scene_variant_weights:
+      pie: 1.0
+      donut: 1.0
+    balanced_scene_variant_sampling: true
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 920
+    plot_margin_left_px: 42
+    plot_margin_right_px: 42
+    plot_margin_top_px: 46
+    plot_margin_bottom_px: 42
+    table_width_px: 450
+    table_height_px: 280
+    table_position_options:
+    - right
+    - left
+    - bottom
+    - top
+    chart_table_gap_px: 34
+    title_font_size_px: 26
+    label_font_size_px: 18
+    table_font_size_px: 18
+    table_header_font_size_px: 19
+    mark_outline_width_px: 2
+    chart_context_profile: dense_clean_minimal
+prompt:
+  shared:
+    bundle_id: charts_part_whole_v1

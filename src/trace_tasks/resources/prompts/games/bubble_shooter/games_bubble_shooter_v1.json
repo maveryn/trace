@@ -1,0 +1,106 @@
+{
+  "bundle_id": "games_bubble_shooter_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_bubble_shooter_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "bubble_shooter_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "pop_count": [
+        "{bubble_shooter_rule_text} The launcher bubble lands at the marked target. How many existing board bubbles pop?",
+        "{bubble_shooter_rule_text} Count the existing board bubbles that pop when the shown shot lands at the marked target.",
+        "{bubble_shooter_rule_text} If the launcher bubble attaches at the marked target, how many existing board bubbles are removed?",
+        "{bubble_shooter_rule_text} How many existing board bubbles pop after the shown same-color shot?",
+        "{bubble_shooter_rule_text} Report the number of existing board bubbles that pop from the marked shot."
+      ],
+      "drop_count": [
+        "{bubble_shooter_rule_text} After the shot pops its same-color group, how many remaining bubbles drop?",
+        "{bubble_shooter_rule_text} Count the bubbles that fall after the popped group is removed.",
+        "{bubble_shooter_rule_text} If the launcher bubble lands at the marked target, how many bubbles become disconnected from the top afterward?",
+        "{bubble_shooter_rule_text} How many bubbles drop after resolving the shown shot?",
+        "{bubble_shooter_rule_text} Report the number of bubbles that drop after the pop."
+      ],
+      "pop_color_label": [
+        "{bubble_shooter_rule_text} Which labeled next-bubble option would make bubbles pop at the marked target?",
+        "{bubble_shooter_rule_text} Choose the option label for the bubble color that would pop a group at the marked target.",
+        "{bubble_shooter_rule_text} Among the labeled color options, which one creates a popping group at the marked target?",
+        "{bubble_shooter_rule_text} If one option color is shot to the marked target, which option label would cause a pop?",
+        "{bubble_shooter_rule_text} Report the label of the only shown color option that would make bubbles pop."
+      ],
+      "pop_target_label": [
+        "{bubble_shooter_rule_text} The launcher bubble can land at one of the labeled targets. Which target would make bubbles pop?",
+        "{bubble_shooter_rule_text} Choose the labeled landing target where the launcher bubble would create a popping group.",
+        "{bubble_shooter_rule_text} Among the labeled landing targets, which one would cause bubbles to pop?",
+        "{bubble_shooter_rule_text} If the launcher bubble attaches at one labeled target, which target label makes a group pop?",
+        "{bubble_shooter_rule_text} Report the label of the only shown landing target that would make bubbles pop."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_bubble_shooter_board": {
+      "object_description": "a close-packed bubble-shooter board with colored bubbles, visible landing target markers, and a launcher area"
+    },
+    "query:pop_count": {
+      "bubble_shooter_rule_text": "The launcher fires one bubble to the marked empty target. If the placed bubble touches same-color board bubbles and the connected group including the placed bubble has size three or more, the same-color board bubbles in that group pop. Count only existing board bubbles that pop; do not count the fired bubble.",
+      "answer_hint": "set \"answer\" to the number of existing board bubbles that pop",
+      "annotation_hint": "set \"annotation\" to an array of pixel-space bubble boxes [x0, y0, x1, y1] for the existing board bubbles that pop",
+      "json_example": "{\"annotation\":[[352,216,394,258],[398,216,440,258],[375,256,417,298]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":5}"
+    },
+    "query:drop_count": {
+      "bubble_shooter_rule_text": "The launcher fires one bubble to the marked empty target. First, any same-color group made by the placed bubble pops if the group including the placed bubble has size three or more. Then any remaining board bubbles with no connected path to the top row drop. Count only the dropped remaining bubbles; do not count popped bubbles or the fired bubble.",
+      "answer_hint": "set \"answer\" to the number of bubbles that drop after the shot is resolved",
+      "annotation_hint": "set \"annotation\" to an array of pixel-space bubble boxes [x0, y0, x1, y1] for the bubbles that drop",
+      "json_example": "{\"annotation\":[[462,352,504,394],[508,352,550,394],[485,392,527,434],[531,392,573,434]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:pop_color_label": {
+      "bubble_shooter_rule_text": "A shot bubble attaches at the marked target. A same-color connected group pops when the placed bubble makes that group size at least three.",
+      "answer_hint": "set \"answer\" to the single option label whose color would make bubbles pop",
+      "annotation_hint": "set \"annotation\" to an array of pixel-space bubble boxes [x0, y0, x1, y1] for the existing board bubbles that would pop for the selected option",
+      "json_example": "{\"annotation\":[[382,258,424,300],[428,258,470,300]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:pop_target_label": {
+      "bubble_shooter_rule_text": "A shot bubble attaches at a labeled landing target. A same-color connected group pops when the placed bubble makes that group size at least three. Use the visible launcher bubble color for every labeled target.",
+      "answer_hint": "set \"answer\" to the single landing-target label that would make bubbles pop",
+      "annotation_hint": "set \"annotation\" to the pixel-space box [x0, y0, x1, y1] around the selected labeled landing target",
+      "json_example": "{\"annotation\":[352,216,394,258],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

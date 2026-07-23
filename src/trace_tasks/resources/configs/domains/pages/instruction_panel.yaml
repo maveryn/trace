@@ -1,0 +1,66 @@
+generation:
+  shared:
+    step_count_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    controls_per_step_support:
+    - 2
+    - 3
+    control_count_support:
+    - 9
+    - 10
+    - 11
+    - 12
+    step_set_size_support:
+    - 2
+    - 3
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      manual_cards: 1.0
+      checklist_table: 1.0
+      side_legend_sheet: 1.0
+rendering:
+  shared:
+    canvas_width: 1100
+    canvas_height: 880
+    outer_margin_px: 34
+    header_height_px: 92
+    gap_px: 14
+    corner_radius_px: 12
+    outline_width_px: 2
+    title_font_size_px: 30
+    subtitle_font_size_px: 16
+    step_title_font_size_px: 20
+    step_detail_font_size_px: 13
+    control_font_size_px: 14
+    number_badge_size_px: 34
+    control_chip_height_px: 30
+    pages_context_text_enabled: false
+prompt:
+  shared:
+    bundle_id: pages_instruction_panel_v1
+visual:
+  noise:
+    apply_prob: 0.4
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.18
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 90.0
+        - 97.0
+      noise:
+        alpha:
+        - 0.004
+        - 0.012

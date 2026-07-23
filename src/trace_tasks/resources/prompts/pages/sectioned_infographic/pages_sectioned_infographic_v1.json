@@ -1,0 +1,105 @@
+{
+  "bundle_id": "pages_sectioned_infographic_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "sectioned_infographic": [
+        "The image shows {object_description}.",
+        "The page shows {object_description}.",
+        "This page shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "sectioned_infographic_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "section_item_count": [
+        "How many visible item rows are listed in section {target_section}?",
+        "In section {target_section}, how many listed items are visible?",
+        "Count the item rows shown under section {target_section}.",
+        "What is the number of visible listed items in section {target_section}?",
+        "Using section {target_section}, count the visible items in that section."
+      ],
+      "section_filtered_item_label": [
+        "In section {target_section}, what item label has the {filter_marker_label}?",
+        "Find section {target_section}. Which listed item is marked with the {filter_marker_label}?",
+        "What is the visible item label next to the {filter_marker_label} in section {target_section}?",
+        "Using section {target_section}, read the item label with the {filter_marker_label}.",
+        "Within section {target_section}, which item is paired with the {filter_marker_label}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "scene:sectioned_infographic": {
+      "object_description": "a sectioned infographic with named sections and short visible item rows"
+    },
+    "query:section_item_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] boxes for the visible item rows in the requested section",
+      "json_example": "{\"annotation\":[[20,80,180,104],[20,110,180,134]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:section_filtered_item_label": {
+      "answer_hint": "set \"answer\" to the exact visible item label requested by the question",
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box around the matching item row",
+      "json_example": "{\"annotation\":[20,80,180,104],\"answer\":\"Check lights\"}",
+      "json_example_answer_only": "{\"answer\":\"Check lights\"}"
+    }
+  },
+  "dynamic_slots": {
+    "target_section": {"type": "string"},
+    "filter_marker_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:sectioned_infographic": [
+      "object_description"
+    ],
+    "query:section_item_count": [
+      "target_section"
+    ],
+    "query:section_filtered_item_label": [
+      "target_section",
+      "filter_marker_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

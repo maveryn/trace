@@ -1,0 +1,133 @@
+{
+  "bundle_id": "physics_electrostatic_field_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "electrostatic_field_map": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The physics diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "field_direction_choice_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "zero_field_point_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "potential_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "electric_field_direction": [
+        "Which candidate arrow shows the electric field direction at P?",
+        "At point P, choose the option arrow that matches the net electric field direction.",
+        "Using the signs and positions of the charges, which labeled arrow gives the electric field direction at P?",
+        "Which option A-H points in the direction of the electric field at P?",
+        "Infer the net field direction at P. Which candidate arrow represents it?"
+      ],
+      "force_on_positive_charge": [
+        "Which candidate arrow shows the force direction on the positive test charge at P?",
+        "At point P, choose the option arrow that matches the force on the positive test charge.",
+        "Using the signs and positions of the charges, which labeled arrow gives the force direction on the positive test charge at P?",
+        "Which option A-H points in the direction of the force on the positive test charge at P?",
+        "Infer the force on the positive test charge at P. Which candidate arrow represents it?"
+      ],
+      "force_on_negative_charge": [
+        "Which candidate arrow shows the force direction on the negative test charge at P?",
+        "At point P, choose the option arrow that matches the force on the negative test charge.",
+        "Using the signs and positions of the charges, which labeled arrow gives the force direction on the negative test charge at P?",
+        "Which option A-H points in the direction of the force on the negative test charge at P?",
+        "Infer the force on the negative test charge at P. Which candidate arrow represents it?"
+      ],
+      "zero_field_point_label": [
+        "Which labeled point A-F has zero net electric field?",
+        "Using the shown charge strengths and positions, which candidate point has zero electric field?",
+        "Choose the labeled point where the electric fields from the fixed charges cancel.",
+        "Among points A-F, which one is the zero-field point?",
+        "Which candidate point is located where the net electric field is zero?"
+      ],
+      "potential_value": [
+        "Using k=1 and the shown distances, what is the signed electric potential at P?",
+        "Compute the electric potential at P from the visible charges and distances, with k=1.",
+        "What signed integer value gives V at P when V=sum(q/r)?",
+        "Using the displayed q and r labels, determine the signed potential at P.",
+        "Read the field map and compute the electric potential at P with k=1."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:electrostatic_field_map": {
+      "object_description": "an electrostatic coordinate grid with fixed point charges, a marked point or labeled candidate points, and visible option arrows or distance labels"
+    },
+    "query:electric_field_direction": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"Q1\", \"Q2\", \"Q3\", and \"P\"; each value is the [x,y] pixel point at the center of that marker",
+      "answer_hint": "set \"answer\" to the option letter of the candidate arrow",
+      "json_example": "{\"annotation\":{\"Q1\":[248,318],\"Q2\":[526,196],\"Q3\":[526,440],\"P\":[386,318]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:force_on_positive_charge": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"Q1\", \"Q2\", \"Q3\", and \"P\"; each value is the [x,y] pixel point at the center of that marker",
+      "answer_hint": "set \"answer\" to the option letter of the candidate arrow",
+      "json_example": "{\"annotation\":{\"Q1\":[248,318],\"Q2\":[526,196],\"Q3\":[526,440],\"P\":[386,318]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:force_on_negative_charge": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"Q1\", \"Q2\", \"Q3\", and \"P\"; each value is the [x,y] pixel point at the center of that marker",
+      "answer_hint": "set \"answer\" to the option letter of the candidate arrow",
+      "json_example": "{\"annotation\":{\"Q1\":[248,318],\"Q2\":[526,196],\"Q3\":[526,440],\"P\":[386,318]},\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:zero_field_point_label": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"Q1\", \"Q2\", and \"zero_point\"; each value is the [x,y] pixel point at the center of that marker",
+      "answer_hint": "set \"answer\" to the option letter of the labeled zero-field point",
+      "json_example": "{\"annotation\":{\"Q1\":[248,318],\"Q2\":[526,318],\"zero_point\":[340,318]},\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "query:potential_value": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"Q1\", \"Q2\", \"Q3\", and \"P\"; each value is the [x,y] pixel point at the center of that marker",
+      "answer_hint": "set \"answer\" to the signed integer electric potential at P",
+      "json_example": "{\"annotation\":{\"Q1\":[526,318],\"Q2\":[386,148],\"Q3\":[108,318],\"P\":[386,318]},\"answer\":-4}",
+      "json_example_answer_only": "{\"answer\":-4}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:electrostatic_field_map": [
+      "object_description"
+    ]
+  }
+}

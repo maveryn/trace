@@ -1,0 +1,47 @@
+generation:
+  shared:
+    bin_count_min: 8
+    bin_count_max: 15
+    bin_width_min: 1
+    bin_width_max: 1
+    bin_start_min: 1
+    bin_start_max: 99
+    bin_frequency_min: 1
+    bin_frequency_max: 15
+    interval_bin_span_min: 3
+    interval_bin_span_max: 6
+rendering:
+  shared:
+    canvas_width: 860
+    canvas_height: 780
+    plot_margin_left_px: 104
+    plot_margin_right_px: 54
+    plot_margin_top_px: 44
+    plot_margin_bottom_px: 110
+    axis_line_width_px: 2
+    grid_line_width_px: 1
+    tick_length_px: 8
+    label_font_size_px: 22
+    tick_font_size_px: 18
+    label_stroke_width_px: 0
+    mark_outline_width_px: 2
+    line_width_px: 4
+    point_radius_px: 8
+    bar_width_fraction: 0.58
+    mark_color_channel_min: 0
+    mark_color_channel_max: 220
+    mark_color_min_distance: 40.0
+    mark_color_distance_space: lab
+    value_axis_window_enabled: true
+    value_axis_span_min: 15
+    value_axis_span_max: 15
+    value_axis_hard_max: 15
+    value_axis_major_tick_step: 5
+    value_axis_minor_tick_step: 1
+    value_axis_allow_nonzero_min: false
+    guide_line_mode: always
+prompt:
+  shared:
+    bundle_id: charts_histogram_v1
+    scene_key: histogram_scene
+    task_key: histogram_query

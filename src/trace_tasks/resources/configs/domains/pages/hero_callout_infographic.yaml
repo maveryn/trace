@@ -1,0 +1,60 @@
+generation:
+  shared:
+    callout_count_support:
+    - 5
+    - 6
+    - 7
+    field_count_support:
+    - 2
+    - 3
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      radial_halo: 1.0
+      side_rail_poster: 1.0
+      diagonal_chain: 1.0
+      split_poster: 1.0
+      stacked_feature: 1.0
+rendering:
+  shared:
+    canvas_width: 1040
+    canvas_height: 1320
+    outer_margin_px: 36
+    header_height_px: 104
+    callout_gap_px: 14
+    corner_radius_px: 14
+    outline_width_px: 2
+    title_font_size_px: 32
+    subtitle_font_size_px: 17
+    callout_title_font_size_px: 17
+    field_font_size_px: 12
+    value_font_size_px: 15
+    hero_min_size_px: 260
+    hero_max_size_px: 380
+    information_scene_shadow_policy: none
+    page_backdrop_blend_scale: 0.35
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.2
+      downsample:
+        scale:
+        - 0.95
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.015
+prompt:
+  shared:
+    bundle_id: pages_hero_callout_infographic_v1

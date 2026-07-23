@@ -1,0 +1,60 @@
+generation:
+  shared:
+    density_curve_count_min: 4
+    density_curve_count_max: 6
+    density_curve_count_weights:
+      "4": 1.0
+      "5": 1.0
+      "6": 1.0
+    density_curve_x_min: 0.0
+    density_curve_x_max: 100.0
+    density_curve_x_grid_size: 161
+    density_curve_interval_width_min: 18.0
+    density_curve_interval_width_max: 34.0
+    density_curve_mean_winner_gap_min: 5.5
+    density_curve_mode_winner_gap_min: 5.0
+    density_curve_interval_mass_winner_gap_min: 0.08
+    density_curve_at_x_winner_gap_min: 0.006
+    density_curve_label_min_chars: 3
+    density_curve_label_max_chars: 10
+    density_curve_label_allow_spaces: false
+    density_family_weights:
+      gaussian: 1.0
+      gaussian_mixture_2: 1.25
+      gaussian_mixture_3: 0.65
+      skewed_unimodal: 0.9
+      lognormal_like: 0.75
+      student_t_like: 0.75
+      asymmetric_bimodal: 0.8
+    density_curve_line_style_weights:
+      solid: 1.0
+      dash: 0.8
+      dot: 0.45
+rendering:
+  shared:
+    chart_context_profile: dense_clean_minimal
+    canvas_width: 980
+    canvas_height: 660
+    plot_margin_left_px: 92
+    plot_margin_right_px: 178
+    plot_margin_top_px: 74
+    plot_margin_bottom_px: 104
+    axis_line_width_px: 2
+    grid_line_width_px: 1
+    tick_length_px: 7
+    label_font_size_px: 20
+    tick_font_size_px: 15
+    label_stroke_width_px: 2
+    line_width_px: 4
+    point_radius_px: 6
+    guide_line_width_px: 2
+    mark_color_channel_min: 18
+    mark_color_channel_max: 205
+    mark_color_min_distance: 50.0
+    mark_color_distance_space: lab
+    density_curve_palette_mode: safe_qualitative
+prompt:
+  shared:
+    bundle_id: charts_density_curve_v1
+    scene_key: density_curve
+    task_key: density_curve_query

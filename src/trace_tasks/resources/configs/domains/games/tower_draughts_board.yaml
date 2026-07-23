@@ -1,0 +1,98 @@
+generation:
+  shared:
+    style_variant_weights:
+      wood_table: 1.0
+      ink_board: 1.0
+      felt_mat: 1.0
+      night_tokens: 1.0
+      parchment: 1.0
+    target_player_weights:
+      red: 1.0
+      black: 1.0
+    marked_player_weights:
+      red: 1.0
+      black: 1.0
+    top_kind_weights:
+      regular: 1.0
+      crowned: 1.0
+    balanced_style_variant_sampling: true
+    balanced_target_player_sampling: true
+    balanced_marked_player_sampling: true
+    balanced_top_kind_sampling: true
+    balanced_board_size_sampling: true
+    balanced_target_answer_sampling: true
+    board_size_support:
+    - 4
+    - 5
+    - 6
+    controlled_stack_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    marked_capture_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    stack_height_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    min_occupied_fraction: 0.4
+    max_occupied_fraction: 0.65
+    crowned_top_probability: 0.25
+rendering:
+  shared:
+    canvas_width: 700
+    canvas_height: 680
+    panel_margin_px: 40
+    max_board_size_px: 500
+    cell_size_min_px: 56
+    cell_size_max_px: 80
+    board_frame_width_px: 8
+    marker_width_px: 5
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 480
+    canvas_min_height_px: 460
+    canvas_side_padding_px: 84
+    canvas_vertical_padding_px: 84
+prompt:
+  shared:
+    bundle_id: games_tower_draughts_board_v1
+    scene_key: tower_draughts_board
+    task_key: tower_draughts_board_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

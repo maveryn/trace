@@ -1,0 +1,187 @@
+{
+  "bundle_id": "charts_region_map_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "region_map_scene": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The map shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "region_map_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "numeric_threshold_region_count": [
+        "How many {region_noun} have values {threshold_phrase}?",
+        "Count the {region_noun} with values {threshold_phrase}.",
+        "Using the value legend, how many {region_noun} are {threshold_phrase}?",
+        "What number of {region_noun} fall in value bins {threshold_phrase}?",
+        "From the map legend, count {region_noun} whose values are {threshold_phrase}."
+      ],
+      "numeric_interval_region_count": [
+        "How many {region_noun} have values {interval_phrase}?",
+        "Count the {region_noun} with values {interval_phrase}.",
+        "Using the value legend, how many {region_noun} are {interval_phrase}?",
+        "What number of {region_noun} fall in value bins {interval_phrase}?",
+        "From the map legend, count {region_noun} whose values are {interval_phrase}."
+      ],
+      "categorical_region_count": [
+        "How many {region_noun} are in the \"{category_label}\" category?",
+        "Count the {region_noun} assigned to \"{category_label}\".",
+        "Using the category legend, how many {region_noun} fall under \"{category_label}\"?",
+        "What number of {region_noun} match the category \"{category_label}\"?",
+        "From the map legend, count {region_noun} in category \"{category_label}\"."
+      ],
+      "named_region_set_total_value": [
+        "For \"{region_set_name}\" ({region_set_label_list}), what is the total of the visible integer values?",
+        "Sum the visible values for the \"{region_set_name}\" regions: {region_set_label_list}.",
+        "Using the visible region labels, what is the combined value for \"{region_set_name}\": {region_set_label_list}?",
+        "What total do you get after adding the visible values for \"{region_set_name}\" ({region_set_label_list})?",
+        "Add the integer values printed in regions {region_set_label_list} for \"{region_set_name}\"."
+      ],
+      "group_category_region_count": [
+        "Among the visible colored {region_noun} in \"{continent_label}\", how many are in the \"{category_label}\" category?",
+        "Count the visible colored {region_noun} located in \"{continent_label}\" and assigned to \"{category_label}\".",
+        "Using the world map and category legend, how many visible colored {region_noun} in \"{continent_label}\" fall under \"{category_label}\"?",
+        "What number of visible colored {region_noun} are both in \"{continent_label}\" and in category \"{category_label}\"?",
+        "From the map legend, count visible colored {region_noun} in \"{continent_label}\" with category \"{category_label}\"."
+      ],
+      "adjacent_same_category_count": [
+        "How many colored {region_noun} touching region \"{reference_region_label}\" by edge or corner have the same category as region \"{reference_region_label}\"?",
+        "Count the colored {region_noun} touching region \"{reference_region_label}\" by edge or corner that share its category.",
+        "Using the category legend, how many edge-or-corner neighboring colored {region_noun} match region \"{reference_region_label}\"?",
+        "What number of colored {region_noun} touching region \"{reference_region_label}\" by edge or corner are in the same category?",
+        "From the map, count edge-or-corner neighboring colored {region_noun} with the same category as region \"{reference_region_label}\"."
+      ],
+      "adjacent_category_count": [
+        "How many colored {region_noun} touching region \"{reference_region_label}\" by edge or corner are in the \"{category_label}\" category?",
+        "Count the colored {region_noun} touching region \"{reference_region_label}\" by edge or corner that are assigned to \"{category_label}\".",
+        "Using the category legend, how many edge-or-corner neighboring colored {region_noun} touching region \"{reference_region_label}\" fall under \"{category_label}\"?",
+        "What number of colored {region_noun} touching region \"{reference_region_label}\" by edge or corner match category \"{category_label}\"?",
+        "From the map legend, count edge-or-corner neighboring colored {region_noun} touching region \"{reference_region_label}\" in category \"{category_label}\"."
+      ],
+      "adjacent_numeric_threshold_count": [
+        "How many colored {region_noun} touching region \"{reference_region_label}\" by edge or corner have values {threshold_phrase}?",
+        "Count the colored {region_noun} touching region \"{reference_region_label}\" by edge or corner with values {threshold_phrase}.",
+        "Using the value legend, how many edge-or-corner neighboring colored {region_noun} touching region \"{reference_region_label}\" are {threshold_phrase}?",
+        "What number of colored {region_noun} touching region \"{reference_region_label}\" by edge or corner fall in value bins {threshold_phrase}?",
+        "From the map legend, count edge-or-corner neighboring colored {region_noun} touching region \"{reference_region_label}\" whose values are {threshold_phrase}."
+      ],
+      "marker_region_threshold_count": [
+        "How many {region_noun} have marker values {threshold_phrase}?",
+        "Count the {region_noun} whose marker bubbles encode values {threshold_phrase}.",
+        "Using the marker bubbles, how many {region_noun} have values {threshold_phrase}?",
+        "What number of {region_noun} have marker-encoded values {threshold_phrase}?",
+        "From the marker layer, count {region_noun} with values {threshold_phrase}."
+      ],
+      "marker_region_extremum_label": [
+        "Which visible region label has the {extremum_word} marker value?",
+        "Using the marker bubbles, report the label with the {extremum_word} value.",
+        "What is the visible label whose marker bubble encodes the {extremum_word} value?",
+        "Find the map label with the {extremum_word} marker value and return that label.",
+        "From the marker layer, which visible label has the {extremum_word} value?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:numeric_threshold_region_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the counted regions",
+      "json_example": "{\"annotation\":[[185,225],[385,223],[487,307]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:numeric_interval_region_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the counted regions",
+      "json_example": "{\"annotation\":[[193,247],[303,255],[417,259],[529,267]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:categorical_region_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the counted regions",
+      "json_example": "{\"annotation\":[[175,216],[295,212],[441,300]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:named_region_set_total_value": {
+      "answer_hint": "set \"answer\" to the requested total as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around the regions included in the total",
+      "json_example": "{\"annotation\":[[132,182,218,250],[252,178,338,246],[398,266,484,334]],\"answer\":126}",
+      "json_example_answer_only": "{\"answer\":126}"
+    },
+    "query:group_category_region_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points at the centers of the counted regions",
+      "json_example": "{\"annotation\":[[175,216],[295,212],[441,300]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:adjacent_same_category_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes for the counted neighboring regions",
+      "json_example": "{\"annotation\":[[132,182,218,250],[252,178,338,246]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:adjacent_category_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes for the counted neighboring regions",
+      "json_example": "{\"annotation\":[[132,182,218,250],[252,178,338,246],[398,266,484,334]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:adjacent_numeric_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes for the counted neighboring regions",
+      "json_example": "{\"annotation\":[[132,182,218,250],[252,178,338,246]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:marker_region_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested number of regions as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points, one at the center of each counted marker bubble",
+      "json_example": "{\"annotation\":[[193,233],[333,273],[473,223]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:marker_region_extremum_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the answer marker bubble",
+      "json_example": "{\"annotation\":[441,251],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "region_noun": {"type": "string"},
+    "continent_label": {"type": "string"},
+    "threshold_phrase": {"type": "string"},
+    "extremum_word": {"type": "string"},
+    "interval_phrase": {"type": "string"},
+    "category_label": {"type": "string"},
+    "reference_region_label": {"type": "string"},
+    "region_set_name": {"type": "string"},
+    "region_set_label_list": {"type": "string"}
+  }
+}

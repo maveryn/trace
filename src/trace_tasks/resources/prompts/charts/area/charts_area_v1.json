@@ -1,0 +1,111 @@
+{
+  "bundle_id": "charts_area_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "single_area": [
+        "The image shows one filled area chart with labeled x-axis positions and numeric values shown at the points.",
+        "The figure shows one filled area chart with labeled x-axis positions and numeric values shown at the points.",
+        "The visual shows one filled area chart with labeled x-axis positions and numeric values shown at the points.",
+        "The image contains one filled area chart with labeled x-axis positions and numeric values shown at the points.",
+        "The chart presents one filled area chart with labeled x-axis positions and numeric values shown at the points."
+      ],
+      "stacked_area": [
+        "The image shows one stacked area chart with colored category bands, numeric band values, and a legend.",
+        "The figure shows one stacked area chart with colored category bands, numeric band values, and a legend.",
+        "The visual shows one stacked area chart with colored category bands, numeric band values, and a legend.",
+        "The image contains one stacked area chart with colored category bands, numeric band values, and a legend.",
+        "The chart presents one stacked area chart with colored category bands, numeric band values, and a legend."
+      ]
+    },
+    "task": {
+      "area_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "interval_area_value": [
+        "Using displayed x-axis order from {start_label} through {end_label}, compute the area under the filled curve by summing (left value + right value) / 2 for each adjacent pair.",
+        "From {start_label} through {end_label}, use each neighboring pair of point values in order; add (left + right) / 2 for every pair to get the total area.",
+        "Compute the area under the area chart from {start_label} to {end_label}: for each adjacent x-axis pair, average the two point values, then sum those averages.",
+        "What is the total area under the filled curve over {start_label} through {end_label}? Use unit width, so each adjacent pair contributes (left value + right value) / 2.",
+        "Use the point values from {start_label} through {end_label} in displayed order; sum (neighboring value pair total) / 2 across the interval."
+      ],
+      "stacked_band_interval_sum_value": [
+        "For category {category_label}, what is the sum of its band values from {start_label} through {end_label}, inclusive, in displayed x-axis order?",
+        "Add the band values for {category_label} across displayed x-axis labels {start_label} through {end_label}; what is the total?",
+        "Using the legend to find {category_label}, compute its total band value from {start_label} to {end_label} in displayed x-axis order.",
+        "What is the inclusive displayed-interval sum for category {category_label} between {start_label} and {end_label}?",
+        "Find category {category_label} in the stacked area chart and sum its shown band values from {start_label} through {end_label} in displayed x-axis order."
+      ],
+      "stacked_band_dominance_label": [
+        "From {start_label} through {end_label} in displayed x-axis order, which category has the largest total band value?",
+        "Across the displayed interval {start_label} through {end_label}, identify the category with the greatest sum of shown band values.",
+        "Which legend category contributes the highest total from {start_label} to {end_label} in displayed x-axis order?",
+        "Sum each category's band values over {start_label} through {end_label} in displayed x-axis order; which category is largest?",
+        "Over the inclusive displayed x-axis interval {start_label} to {end_label}, which category has the dominant total?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:interval_area_value": {
+      "answer_hint": "set \"answer\" to the requested area as an integer",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points at the centers of the data point markers from the first queried x-axis label through the second queried x-axis label",
+      "json_example": "{\"annotation\":[[180,420],[280,360],[380,300],[480,260]],\"answer\":72}",
+      "json_example_answer_only": "{\"answer\":72}"
+    },
+    "query:stacked_band_interval_sum_value": {
+      "answer_hint": "set \"answer\" to the requested band-value sum as an integer",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points at the centers of the queried category's band-value points from the first queried x-axis label through the second queried x-axis label",
+      "json_example": "{\"annotation\":[[220,380],[330,340],[440,310]],\"answer\":36}",
+      "json_example_answer_only": "{\"answer\":36}"
+    },
+    "query:stacked_band_dominance_label": {
+      "answer_hint": "set \"answer\" to the exact category label as a string",
+      "annotation_hint": "set \"annotation\" to [x, y] pixel points at the centers of the answer category's band-value points in the queried x-axis interval",
+      "json_example": "{\"annotation\":[[210,420],[330,390],[450,360]],\"answer\":\"Orion\"}",
+      "json_example_answer_only": "{\"answer\":\"Orion\"}"
+    }
+  },
+  "dynamic_slots": {
+    "start_label": {"type": "string"},
+    "end_label": {"type": "string"},
+    "category_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "query:interval_area_value": [
+      "start_label",
+      "end_label"
+    ],
+    "query:stacked_band_interval_sum_value": [
+      "category_label",
+      "start_label",
+      "end_label"
+    ],
+    "query:stacked_band_dominance_label": [
+      "start_label",
+      "end_label"
+    ]
+  }
+}

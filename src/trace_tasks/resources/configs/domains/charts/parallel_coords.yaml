@@ -1,0 +1,41 @@
+generation:
+  shared:
+    axis_count_min: 4
+    axis_count_max: 6
+    profile_count_min: 5
+    profile_count_max: 8
+    crossing_axis_count_min: 4
+    crossing_axis_count_max: 5
+    crossing_profile_count_min: 4
+    crossing_profile_count_max: 6
+    value_min: 1
+    value_max: 20
+    condition_threshold_min: 8
+    condition_threshold_max: 14
+    condition_answer_count_min: 1
+    condition_answer_count_max: 5
+    crossing_answer_count_min: 1
+    crossing_answer_count_max: 6
+    scene_variant_weights:
+      vertical_parallel_coordinates: 1.0
+    balanced_scene_variant_sampling: true
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    plot_margin_left_px: 168
+    plot_margin_right_px: 168
+    plot_margin_top_px: 116
+    plot_margin_bottom_px: 118
+    line_width_px: 4
+    point_radius_px: 5
+    axis_line_width_px: 2
+    selected_axis_line_width_px: 4
+    grid_line_width_px: 1
+    label_font_size_px: 18
+    tick_font_size_px: 15
+    title_font_size_px: 28
+    threshold_font_size_px: 15
+prompt:
+  shared:
+    bundle_id: charts_parallel_coords_v1

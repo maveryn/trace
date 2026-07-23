@@ -1,0 +1,51 @@
+generation:
+  task_overrides:
+    task_physics__signal_transform__periodic_harmonic_spectrum_match_label:
+      scene_variant_weights:
+        clean_match: 1.0
+        grid_match: 1.0
+        lab_sheet: 1.0
+      waveform_family_weights:
+        square_wave: 1.0
+        triangle_wave: 1.0
+        sawtooth_wave: 1.0
+      correct_option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_waveform_family_sampling: true
+      balanced_target_answer_sampling: true
+
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 860
+    sheet_left_px: 54
+    sheet_top_px: 46
+    sheet_right_margin_px: 54
+    sheet_bottom_margin_px: 46
+    input_left_px: 92
+    input_top_px: 112
+    input_width_px: 1096
+    input_height_px: 194
+    options_left_px: 92
+    options_top_px: 346
+    option_width_px: 530
+    option_height_px: 198
+    option_gap_x_px: 35
+    option_gap_y_px: 34
+    title_font_size_px: 28
+    label_font_size_px: 24
+    axis_font_size_px: 19
+    waveform_line_width_px: 4
+    spectrum_line_width_px: 4
+    grid_line_width_px: 1
+
+prompt:
+  shared:
+    bundle_id: physics_signal_transform_v1
+  task_overrides:
+    task_physics__signal_transform__periodic_harmonic_spectrum_match_label:
+      task_key: periodic_harmonic_spectrum_match_query

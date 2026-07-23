@@ -1,0 +1,106 @@
+{
+  "bundle_id": "physics_hydraulic_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "hydraulic_piston_diagram": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "hydraulic_missing_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "missing_output_force": [
+        "Using Pascal's law, what output force should replace the marked red `?` label?",
+        "The connected fluid transmits equal pressure. What integer output force belongs at the marked red `?`?",
+        "Use the shown input force and piston areas. What output force is required at the red `?`?",
+        "What force on the output piston corresponds to the shown input force and piston areas?",
+        "Determine the missing output force for the hydraulic piston system."
+      ],
+      "missing_input_force": [
+        "Using Pascal's law, what input force should replace the marked red `?` label?",
+        "The connected fluid transmits equal pressure. What integer input force belongs at the marked red `?`?",
+        "Use the shown output force and piston areas. What input force is required at the red `?`?",
+        "What force on the input piston corresponds to the shown output force and piston areas?",
+        "Determine the missing input force for the hydraulic piston system."
+      ],
+      "missing_piston_area": [
+        "Using Pascal's law, what output piston area should replace the marked red `?` label?",
+        "The connected fluid transmits equal pressure. What integer piston area belongs at the marked red `?`?",
+        "Use the shown forces and input piston area. What output piston area is required at the red `?`?",
+        "What output piston area corresponds to the shown input area and force labels?",
+        "Determine the missing output piston area for the hydraulic piston system."
+      ],
+      "missing_input_area": [
+        "Using Pascal's law, what input piston area should replace the marked red `?` label?",
+        "The connected fluid transmits equal pressure. What integer input piston area belongs at the marked red `?`?",
+        "Use the shown forces and output piston area. What input piston area is required at the red `?`?",
+        "What input piston area corresponds to the shown output area and force labels?",
+        "Determine the missing input piston area for the hydraulic piston system."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:hydraulic_piston_diagram": {
+      "object_description": "a connected hydraulic piston diagram with three fluid chambers, piston area labels, downward force arrows, and one red `?` label"
+    },
+    "query:missing_output_force": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"input_side\" and \"output_side\"; each value is a [x0,y0,x1,y1] pixel box around the corresponding piston side, including its force label, chamber, and area label",
+      "answer_hint": "set \"answer\" to the requested integer force value in newtons",
+      "json_example": "{\"annotation\":{\"input_side\":[120,70,340,562],\"output_side\":[760,70,980,562]},\"answer\":48}",
+      "json_example_answer_only": "{\"answer\":48}"
+    },
+    "query:missing_input_force": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"input_side\" and \"output_side\"; each value is a [x0,y0,x1,y1] pixel box around the corresponding piston side, including its force label, chamber, and area label",
+      "answer_hint": "set \"answer\" to the requested integer force value in newtons",
+      "json_example": "{\"annotation\":{\"input_side\":[120,70,340,562],\"output_side\":[760,70,980,562]},\"answer\":8}",
+      "json_example_answer_only": "{\"answer\":8}"
+    },
+    "query:missing_piston_area": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"input_side\" and \"output_side\"; each value is a [x0,y0,x1,y1] pixel box around the corresponding piston side, including its force label, chamber, and area label",
+      "answer_hint": "set \"answer\" to the requested integer piston area in cm^2",
+      "json_example": "{\"annotation\":{\"input_side\":[120,70,340,562],\"output_side\":[760,70,980,562]},\"answer\":30}",
+      "json_example_answer_only": "{\"answer\":30}"
+    },
+    "query:missing_input_area": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"input_side\" and \"output_side\"; each value is a [x0,y0,x1,y1] pixel box around the corresponding piston side, including its force label, chamber, and area label",
+      "answer_hint": "set \"answer\" to the requested integer piston area in cm^2",
+      "json_example": "{\"annotation\":{\"input_side\":[120,70,340,562],\"output_side\":[760,70,980,562]},\"answer\":6}",
+      "json_example_answer_only": "{\"answer\":6}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:hydraulic_piston_diagram": [
+      "object_description"
+    ]
+  }
+}

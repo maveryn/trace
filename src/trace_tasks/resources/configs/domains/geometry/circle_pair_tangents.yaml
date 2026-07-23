@@ -1,0 +1,18 @@
+generation:
+  task_overrides:
+    task_geometry__circle_pair_tangents__external_tangent_segment_length_value: {}
+rendering:
+  task_overrides:
+    task_geometry__circle_pair_tangents__external_tangent_segment_length_value:
+      canvas_width: 820
+      canvas_height: 600
+      line_width: 3
+      label_font_size: 22
+      small_label_font_size: 18
+prompt:
+  shared:
+    bundle_id: geometry_circle_pair_tangents_v1
+    scene_key: circle_pair_tangents_scene
+  task_overrides:
+    task_geometry__circle_pair_tangents__external_tangent_segment_length_value:
+      task_key: external_tangent_segment_length_value_query

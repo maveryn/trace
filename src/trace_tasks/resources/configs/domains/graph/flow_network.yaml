@@ -1,0 +1,83 @@
+generation:
+  shared:
+    layout_variant_weights:
+      layered: 1.0
+    balanced_layout_variant_sampling: true
+    layout_transform_variant_weights:
+      identity: 1.0
+      rotate_90: 1.0
+      rotate_180: 1.0
+      rotate_270: 1.0
+      mirror_left_right: 1.0
+      mirror_up_down: 1.0
+    balanced_layout_transform_variant_sampling: true
+    edge_routing_variant_weights:
+      straight: 1.0
+      slight_curve: 1.0
+      elbow: 1.0
+    balanced_edge_routing_variant_sampling: true
+    node_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_node_color_name_sampling: true
+  task_overrides:
+    task_graph__flow_network__max_flow_value:
+      node_count_min: 4
+      node_count_max: 5
+      max_flow_value_min: 2
+      max_flow_value_max: 6
+      max_flow_cut_edge_count_min: 1
+      max_flow_cut_edge_count_max: 1
+      min_cut_edge_count_min: 1
+      min_cut_edge_count_max: 5
+      cut_capacity_part_max: 9
+      max_flow_distractor_edge_min: 0
+      max_flow_distractor_edge_max: 1
+      max_crossing_count: 0
+      layout_transform_variant: identity
+      layout_transform_variant_weights:
+        identity: 1.0
+      balanced_layout_transform_variant_sampling: false
+    task_graph__flow_network__min_cut_edge_count:
+      node_count_min: 5
+      node_count_max: 6
+      max_flow_value_min: 2
+      max_flow_value_max: 6
+      max_flow_cut_edge_count_min: 1
+      max_flow_cut_edge_count_max: 2
+      min_cut_edge_count_min: 1
+      min_cut_edge_count_max: 5
+      cut_capacity_part_max: 9
+      distractor_edge_min: 1
+      distractor_edge_max: 2
+rendering:
+  shared:
+    canvas_width: 864
+    canvas_height: 640
+    outer_margin_px: 28
+    panel_padding_px: 24
+    panel_corner_radius_px: 20
+    panel_title_font_size_px: 24
+    node_shape_variant: circle
+    node_radius_min_px: 20
+    node_radius_max_px: 25
+    edge_width_px: 4
+    arrow_length_px: 14
+    arrow_width_px: 9
+    node_border_width_px: 2
+    label_font_size_px: 20
+    capacity_label_font_size_px: 20
+    capacity_label_offset_px: 22
+    capacity_label_padding_px: 6
+    context_text_probability: 0.35
+prompt:
+  shared:
+    bundle_id: graph_flow_network_v1

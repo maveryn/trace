@@ -1,0 +1,113 @@
+generation:
+  shared:
+    scene_variant_weights:
+      sparse_board: 1.0
+      crowded_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      wood_token: 1.0
+      blue_glyph: 1.0
+      monochrome_glyph: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+  task_overrides:
+    task_games__chess__marked_piece_destination_count:
+      balanced_target_answer_sampling: true
+      balanced_marked_piece_kind_sampling: true
+      marked_piece_destination_count_support: [1, 2, 3, 4, 5, 6]
+      marked_piece_kind_weights:
+        knight: 1.0
+        bishop: 1.0
+        rook: 1.0
+        queen: 1.0
+    task_games__chess__marked_piece_capture_count:
+      balanced_target_answer_sampling: true
+      balanced_marked_piece_kind_sampling: true
+      marked_piece_capture_count_support: [0, 1, 2, 3, 4]
+      marked_piece_kind_weights:
+        knight: 1.0
+        bishop: 1.0
+        rook: 1.0
+        queen: 1.0
+    task_games__chess__player_capture_piece_count:
+      balanced_target_answer_sampling: true
+      player_capture_piece_count_support: [1, 2, 3, 4, 5, 6]
+    task_games__chess__target_square_attacker_count:
+      balanced_target_answer_sampling: true
+      target_square_attacker_count_support: [0, 1, 2, 3, 4]
+    task_games__chess__king_escape_square_count:
+      balanced_target_answer_sampling: true
+      king_escape_square_count_support: [0, 1, 2, 3, 4, 5]
+    task_games__chess__piece_kind_count:
+      balanced_target_answer_sampling: true
+      balanced_target_piece_kind_sampling: true
+      balanced_piece_count_distractor_count_sampling: true
+      piece_type_count_support: [0, 1, 2, 3, 4, 5, 6]
+      piece_count_distractor_count_support: [1, 2, 3, 4, 5, 6, 7, 8]
+      target_piece_kind_weights:
+        king: 1.0
+        queen: 1.0
+        rook: 1.0
+        bishop: 1.0
+        knight: 1.0
+        pawn: 1.0
+    task_games__chess__colored_piece_kind_count:
+      balanced_target_answer_sampling: true
+      balanced_target_piece_kind_sampling: true
+      balanced_target_piece_color_sampling: true
+      balanced_piece_count_distractor_count_sampling: true
+      piece_type_count_support: [0, 1, 2, 3, 4, 5, 6]
+      piece_count_distractor_count_support: [1, 2, 3, 4, 5, 6, 7, 8]
+      target_piece_kind_weights:
+        king: 1.0
+        queen: 1.0
+        rook: 1.0
+        bishop: 1.0
+        knight: 1.0
+        pawn: 1.0
+      target_piece_color_weights:
+        white: 1.0
+        black: 1.0
+    task_games__chess__checkmate_move_label:
+      balanced_checkmate_option_count_sampling: true
+      balanced_checkmate_answer_label_sampling: true
+      checkmate_option_count_support: [4, 6]
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 920
+    panel_margin_px: 48
+    player_badge_height_px: 52
+    player_badge_width_px: 270
+    header_gap_px: 18
+    max_board_size_px: 780
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_corner_radius_px: 26
+    board_frame_width_px: 10
+    piece_inset_fraction: 0.12
+    piece_font_size_px: 78
+    marked_square_outline_width_px: 7
+    player_badge_font_size_px: 22
+    coordinate_label_font_size_px: 18
+    option_panel_gap_px: 18
+    option_panel_height_px: 0
+    option_panel_font_size_px: 20
+    checkmate_max_board_size_px: 640
+    checkmate_board_frame_width_px: 8
+    checkmate_option_panel_height_px: 154
+    checkmate_option_panel_gap_px: 46
+    checkmate_option_panel_font_size_px: 18
+    checkmate_coordinate_label_font_size_px: 18
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 560
+    canvas_side_padding_px: 132
+    canvas_vertical_padding_px: 92
+prompt:
+  shared:
+    bundle_id: games_chess_v1
+    scene_key: visible_chess_board
+    task_key: chess_board_query

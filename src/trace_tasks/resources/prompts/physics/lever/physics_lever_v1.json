@@ -1,0 +1,100 @@
+{
+  "bundle_id": "physics_lever_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "lever_balance_diagram": [
+        "The image shows a horizontal lever beam with a fulcrum, numbered distance marks, and weight blocks.",
+        "The diagram shows a horizontal lever beam with a fulcrum, numbered distance marks, and weight blocks.",
+        "This diagram shows a lever beam with numbered distance marks and weight blocks on the beam.",
+        "The figure shows a lever setup with a fulcrum, distance marks, and weight blocks.",
+        "The visual shows a lever balance diagram with distance marks and weight blocks."
+      ]
+    },
+    "task": {
+      "side_torque_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "missing_weight_balance_value_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "side_torque_value": [
+        "What is the total torque from the weights on the {torque_side} side of the fulcrum?",
+        "Using the shown {torque_side}-side weights and their distances from the fulcrum, what torque is produced?",
+        "Determine the torque contributed by the weights on the {torque_side} side of the lever.",
+        "What total {torque_side}-side torque is shown by the lever diagram?",
+        "Read the {torque_side}-side weights and distance marks. What torque do they produce about the fulcrum?"
+      ],
+      "missing_weight_balance_value": [
+        "What weight should replace the marked `?` block so the lever balances?",
+        "A missing weight is marked with `?`. What value would balance the lever?",
+        "How large should the marked `?` weight be so the torques on both sides match?",
+        "Use the shown weights and distances. What value must the marked `?` weight have for the lever to balance?",
+        "What integer weight is required in the marked `?` block so the beam is balanced about the fulcrum?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:side_torque_value_query": {
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around every weight block on the queried side of the fulcrum",
+      "answer_hint": "set \"answer\" to the integer torque value",
+      "json_example": "{\"annotation\":[[192,282,250,334],[326,282,384,334]],\"answer\":12}",
+      "json_example_answer_only": "{\"answer\":12}"
+    },
+    "task:missing_weight_balance_value_query": {
+      "annotation_hint": "set \"annotation\" to an object with keys \"known_weights\" and \"target_weight\"; each value is an array of [x0,y0,x1,y1] pixel boxes around the known weight blocks or the marked `?` weight block used for the balance",
+      "answer_hint": "set \"answer\" to the integer missing weight value",
+      "json_example": "{\"annotation\":{\"known_weights\":[[192,282,250,334],[760,282,818,334]],\"target_weight\":[[430,282,488,334]]},\"answer\":5}",
+      "json_example_answer_only": "{\"answer\":5}"
+    }
+  },
+  "dynamic_slots": {
+    "torque_side": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "task:side_torque_value_query": [
+      "torque_side"
+    ],
+    "query:side_torque_value": [
+      "torque_side"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

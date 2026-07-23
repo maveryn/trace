@@ -1,0 +1,118 @@
+generation:
+  shared:
+    scene_variant_weights:
+      classic: 1.0
+      roadmap: 1.0
+      minimal: 1.0
+    style_variant_weights:
+      studio: 1.0
+      accented: 1.0
+      marker: 1.0
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_accent_color_name_sampling: true
+    year_min: 2024
+    year_max: 2030
+    event_count_support:
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    between_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    outside_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    balanced_between_count_sampling: true
+    balanced_outside_count_sampling: true
+    threshold_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    balanced_threshold_count_sampling: true
+    relative_offset_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    balanced_relative_offset_sampling: true
+    event_label_pool:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    - H
+    - I
+    - J
+    - K
+    - L
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 700
+    outer_margin_px: 34
+    title_height_px: 86
+    title_gap_px: 18
+    panel_corner_radius_px: 20
+    panel_outline_width_px: 3
+    panel_outline_width_px_min: 2
+    panel_outline_width_px_max: 4
+    axis_width_px: 4
+    axis_width_px_min: 3
+    axis_width_px_max: 5
+    axis_tick_height_px: 12
+    marker_radius_px: 10
+    marker_radius_px_min: 9
+    marker_radius_px_max: 12
+    marker_outline_width_px: 3
+    marker_outline_width_px_min: 2
+    marker_outline_width_px_max: 4
+    connector_width_px: 3
+    connector_width_px_min: 2
+    connector_width_px_max: 4
+    card_width_px: 106
+    card_height_px: 70
+    card_corner_radius_px: 14
+    card_outline_width_px: 3
+    card_outline_width_px_min: 2
+    card_outline_width_px_max: 4
+    label_font_size_px: 22
+    date_font_size_px: 16
+    title_font_size_px: 30
+    subtitle_font_size_px: 18
+    event_vertical_gap_px: 16
+    event_stem_length_px: 44
+    pages_context_profile: report_paragraph
+    pages_context_mode_weights:
+      clean: 0.24
+      minimal: 0.2
+      paragraph_box: 0.56
+    pages_context_text_max_elements: 7
+prompt:
+  shared:
+    bundle_id: pages_timeline_v1

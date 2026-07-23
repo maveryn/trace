@@ -1,0 +1,117 @@
+{
+  "bundle_id": "games_minigolf_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_minigolf_course": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "minigolf_course_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "first_obstacle_label": [
+        "{minigolf_cue_rule_text} Which labeled obstacle will the ball hit first?",
+        "{minigolf_cue_rule_text} What is the label of the first obstacle on that line?",
+        "{minigolf_cue_rule_text} Report the label on the obstacle reached before any other obstacle.",
+        "The ball follows the dashed cue direction. Which labeled obstacle is hit first?",
+        "{minigolf_cue_rule_text} Identify the first labeled obstacle the ball would reach."
+      ],
+      "shot_path_label": [
+        "{minigolf_bank_rule_text} Which numbered shot cue would reach the hole without hitting an obstacle first?",
+        "Compare the numbered starting cues. {minigolf_bank_rule_text} Which shot number reaches the hole?",
+        "{minigolf_bank_rule_text} Report the number of the cue whose putt reaches the hole.",
+        "Each numbered cue shows a starting direction. {minigolf_bank_rule_text} Which cue should be selected to reach the hole?",
+        "{minigolf_bank_rule_text} Identify the numbered shot that reaches the hole before any obstacle."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_minigolf_course": [
+      "object_description"
+    ],
+    "query:first_obstacle_label": [
+      "minigolf_cue_rule_text"
+    ],
+    "query:shot_path_label": [
+      "minigolf_bank_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "minigolf_bank_rule_text": {
+      "type": "string"
+    },
+    "minigolf_cue_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_putting_course": "a mini-golf putting course with a ball, a hole, visible obstacles, and any shown shot cues",
+    "minigolf_cue_rule_text": "The dashed cue shows the starting direction of the putt; extend it as a straight line.",
+    "minigolf_bank_rule_text": "A shot travels straight and bounces off course walls like a mirror before continuing.",
+    "annotation_hint_first_obstacle_label": "set \"annotation\" to one [x, y] pixel point at the center of the first labeled obstacle hit by the extended cue",
+    "answer_hint_first_obstacle_label": "set \"answer\" to the selected obstacle label as a string",
+    "annotation_hint_shot_path_label": "set \"annotation\" to one path segment using two pixel-point endpoints [x, y] in [[x0, y0], [x1, y1]] form, matching the endpoints of the selected visible dashed cue from the ball outward",
+    "answer_hint_shot_path_label": "set \"answer\" to the selected numbered shot label as a string"
+  }
+}

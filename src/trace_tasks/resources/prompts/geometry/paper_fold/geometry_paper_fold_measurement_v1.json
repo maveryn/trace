@@ -1,0 +1,98 @@
+{
+  "bundle_id": "geometry_paper_fold_measurement_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "paper_fold_measurement_scene": [
+        "The diagram shows {object_description}.",
+        "The image shows {object_description}.",
+        "This folded-paper diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The paper-fold geometry diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "paper_fold_angle_value": [
+        "What is the measure of angle x in degrees?",
+        "Find the angle measure x in degrees.",
+        "What is x, in degrees?",
+        "Determine the measure of the marked angle x.",
+        "Use the shown angle relationship to find x in degrees."
+      ],
+      "folded_segment_length_value": [
+        "Triangle AEF is folded along crease EF so A lands on P. Find the length of segment {target_segment}.",
+        "Triangle AEF folds to triangle PEF along crease EF. What is the length of segment {target_segment}?",
+        "The fold maps A to P while E and F stay on the crease. Determine the length of {target_segment}.",
+        "Triangle AEF is folded along EF onto triangle PEF. Find the length of {target_segment}.",
+        "The crease EF folds A onto P. What is the value of the marked segment {target_segment}?"
+      ]
+    },
+    "query": {},
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:paper_fold_measurement_scene": [
+      "object_description"
+    ],
+    "task:folded_segment_length_value": [
+      "target_segment"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "static_slots_by_key": {
+    "task:paper_fold_angle_value": {
+      "answer_hint": "set \"answer\" to the angle measure in degrees rounded to one decimal place"
+    },
+    "task:folded_segment_length_value": {
+      "answer_hint": "set \"answer\" to the requested segment length as an integer"
+    },
+    "output:answer_only": {
+      "json_output_contract_answer_only": "Return a JSON object with exactly one key: \"answer\"."
+    },
+    "output:answer_and_annotation": {
+      "json_output_contract": "Return a JSON object with exactly two keys: \"annotation\" and \"answer\"."
+    }
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "target_segment": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+generation:
+  shared:
+    pool_manifest: all_icons.txt
+  task_overrides:
+    task_icons__icon_field__singleton_type_count:
+      object_count_min: 5
+      object_count_max: 10
+      target_count_min: 0
+      target_count_max: 4
+      repeated_type_count_min: 1
+      repeated_type_count_max: 4
+      repeated_type_multiplicity_min: 2
+      repeated_type_multiplicity_max: 4
+    task_icons__icon_field__most_frequent_type_count:
+      object_count_min: 7
+      object_count_max: 12
+      target_count_min: 2
+      target_count_max: 6
+      other_repeated_type_count_max: 3
+    task_icons__icon_field__frequency_extreme_type_label:
+      object_count_min: 8
+      object_count_max: 18
+      frequency_min: 1
+      frequency_max: 5
+      option_count_support:
+      - 4
+      - 6
+rendering:
+  shared:
+    canvas_width: 960
+    canvas_height: 544
+    outer_margin_px: 24
+    panel_padding_px: 20
+    panel_corner_radius_px: 18
+    panel_title_font_size_px: 24
+    scene_icon_size_min_px: 64
+    scene_icon_size_max_px: 96
+    scene_max_overlap_fraction: 0.1
+    scene_placement_max_attempts: 120
+    scene_size_shrink_rounds: 6
+    scene_size_shrink_factor: 0.9
+    rotation_candidates_degrees:
+    - 0
+    - 90
+    - 180
+    - 270
+    palette_size_min: 8
+    palette_size_max: 12
+    color_channel_min: 24
+    color_channel_max: 220
+    min_color_distance: 40.0
+    color_distance_space: lab
+    icon_noise_edit_types:
+    - blur
+    - downsample
+    - jpeg
+    - noise
+    icon_noise_edit_count_range:
+    - 0
+    - 2
+    icon_noise_value_ranges:
+      blur:
+        radius:
+        - 0.2
+        - 0.6
+      downsample:
+        scale:
+        - 0.85
+        - 0.95
+      jpeg:
+        quality:
+        - 70
+        - 90
+      noise:
+        alpha:
+        - 0.03
+        - 0.08
+prompt:
+  shared:
+    bundle_id: icons_icon_field_v1
+    scene_key: single_scene_counting
+    task_key: type_frequency_query

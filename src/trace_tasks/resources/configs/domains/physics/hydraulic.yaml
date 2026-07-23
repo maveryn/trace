@@ -1,0 +1,168 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      wide_bench: 1.0
+      compact_frame: 1.0
+      tall_columns: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_mechanical_advantage_sampling: true
+    input_force_support:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    input_area_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    mechanical_advantage_support:
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    output_force_support:
+    - 12
+    - 15
+    - 16
+    - 18
+    - 20
+    - 21
+    - 22
+    - 24
+    - 25
+    - 27
+    - 28
+    - 30
+    - 32
+    - 33
+    - 35
+    - 36
+    - 40
+    - 42
+    - 44
+    - 45
+    - 48
+    - 49
+    - 50
+    - 54
+    - 55
+    - 56
+    - 60
+    - 63
+    - 64
+    - 66
+    - 70
+    - 72
+    - 77
+    - 80
+    - 84
+    - 88
+    - 96
+    output_area_support:
+    - 6
+    - 8
+    - 9
+    - 10
+    - 12
+    - 14
+    - 15
+    - 16
+    - 18
+    - 20
+    - 21
+    - 24
+    - 25
+    - 27
+    - 28
+    - 30
+    - 32
+    - 35
+    - 36
+    - 40
+    - 42
+    - 45
+    - 48
+    - 49
+    - 54
+    - 56
+    - 63
+    - 64
+    - 72
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 660
+    chamber_top_px: 178
+    chamber_height_px: 318
+    chamber_min_width_px: 92
+    chamber_area_scale_px: 3
+    chamber_corner_radius_px: 18
+    chamber_outline_width_px: 5
+    chamber_outline_width_px_min: 4
+    chamber_outline_width_px_max: 6
+    piston_height_px: 34
+    piston_outline_width_px: 4
+    piston_outline_width_px_min: 3
+    piston_outline_width_px_max: 5
+    fluid_top_gap_px: 96
+    pipe_height_px: 58
+    pipe_outline_width_px: 5
+    pipe_outline_width_px_min: 4
+    pipe_outline_width_px_max: 6
+    force_arrow_length_px: 104
+    force_arrow_width_px: 8
+    force_arrow_width_px_min: 7
+    force_arrow_width_px_max: 9
+    label_font_size_px: 25
+    label_font_size_px_min: 24
+    label_font_size_px_max: 27
+    small_label_font_size_px: 22
+    small_label_font_size_px_min: 21
+    small_label_font_size_px_max: 23
+    label_padding_px: 8
+    label_stroke_width_px: 3
+    label_stroke_width_px_min: 2
+    label_stroke_width_px_max: 4
+    texture_line_width_px: 2
+    texture_line_width_px_min: 1
+    texture_line_width_px_max: 3
+    texture_spacing_px: 18
+    layout_jitter_enabled: true
+    layout_jitter_min_margin_px: 18
+    layout_jitter_x_px_min: -18
+    layout_jitter_x_px_max: 18
+    layout_jitter_y_px_min: 0
+    layout_jitter_y_px_max: 24
+
+prompt:
+  shared:
+    bundle_id: physics_hydraulic_v1
+  task_overrides:
+    task_physics__hydraulic__hydraulic_missing_value:
+      task_key: hydraulic_missing_value_query

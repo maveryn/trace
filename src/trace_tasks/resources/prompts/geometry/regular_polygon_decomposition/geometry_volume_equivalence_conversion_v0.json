@@ -1,0 +1,112 @@
+{
+  "bundle_id": "geometry_volume_equivalence_conversion_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "missing_dimension_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "equal_volume_option_label_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:volume_equivalence_conversion_scene": [
+      "object_description"
+    ],
+    "query:cuboid_to_cylinder_length": [],
+    "query:cylinder_to_cone_height": [],
+    "query:cone_to_cuboid_height": [],
+    "query:cone_matches_cylinder_option": [],
+    "query:cylinder_matches_cone_option": [],
+    "query:cuboid_matches_cylinder_option": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"answer\" field: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "volume_equivalence_conversion_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The image shows {object_description}.",
+      "The labeled diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "cuboid_to_cylinder_length": [
+      "If the target cylinder has the same volume as the source cuboid, what target length replaces ?",
+      "Find the missing cylinder length so the target volume equals the source cuboid volume.",
+      "Using the shown dimensions, what is the target cylinder length?",
+      "What integer length makes the cylinder volume equal to the cuboid volume?",
+      "Compute the missing cylinder length in the equal-volume conversion."
+    ],
+    "cylinder_to_cone_height": [
+      "If the target cone has the same volume as the source cylinder, what height replaces ?",
+      "Find the missing cone height so the target volume equals the source cylinder volume.",
+      "Using the shown dimensions, what is the target cone height?",
+      "What integer height makes the cone volume equal to the cylinder volume?",
+      "Compute the missing cone height in the equal-volume conversion."
+    ],
+    "cone_to_cuboid_height": [
+      "If the target cuboid has the same volume as the source cone, what height replaces ?",
+      "Find the missing cuboid height so the target volume equals the source cone volume.",
+      "Using the shown dimensions, what is the target cuboid height?",
+      "What integer height makes the cuboid volume equal to the cone volume?",
+      "Compute the missing cuboid height in the equal-volume conversion."
+    ],
+    "cone_matches_cylinder_option": [
+      "Which cylinder option has the same volume as the source cone?",
+      "Select the option letter for the cylinder whose volume equals the source cone volume.",
+      "Which labeled target cylinder matches the cone volume?",
+      "Find the visual option with equal volume to the source cone.",
+      "What option letter should be chosen for the equal-volume cylinder?"
+    ],
+    "cylinder_matches_cone_option": [
+      "Which cone option has the same volume as the source cylinder?",
+      "Select the option letter for the cone whose volume equals the source cylinder volume.",
+      "Which labeled target cone matches the cylinder volume?",
+      "Find the visual option with equal volume to the source cylinder.",
+      "What option letter should be chosen for the equal-volume cone?"
+    ],
+    "cuboid_matches_cylinder_option": [
+      "Which cylinder option has the same volume as the source cuboid?",
+      "Select the option letter for the cylinder whose volume equals the source cuboid volume.",
+      "Which labeled target cylinder matches the cuboid volume?",
+      "Find the visual option with equal volume to the source cuboid.",
+      "What option letter should be chosen for the equal-volume cylinder?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

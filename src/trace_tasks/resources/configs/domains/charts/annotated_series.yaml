@@ -1,0 +1,111 @@
+generation:
+  shared:
+    mark_count_min: 8
+    mark_count_max: 14
+    value_min: 10
+    value_max: 90
+    value_window_enabled: true
+    value_window_span_min: 25
+    value_window_span_max: 25
+    value_hard_max: 90
+    scene_variant_weights:
+      line: 1.0
+      bar: 1.0
+      area: 1.0
+      dot_plot: 1.0
+      lollipop: 1.0
+    balanced_scene_variant_sampling: true
+rendering:
+  shared:
+    canvas_width: 1100
+    canvas_height: 700
+    plot_margin_left_px: 96
+    plot_margin_right_px: 58
+    plot_margin_top_px: 58
+    plot_margin_bottom_px: 98
+    axis_line_width_px: 2
+    grid_line_width_px: 1
+    tick_length_px: 8
+    label_font_size_px: 21
+    tick_font_size_px: 17
+    label_stroke_width_px: 2
+    mark_outline_width_px: 2
+    line_width_px: 4
+    point_radius_px: 8
+    bar_width_fraction: 0.56
+    value_axis_window_enabled: true
+    value_axis_span_min: 18
+    value_axis_span_max: 28
+    value_axis_hard_max: 99
+    value_axis_major_tick_step: 5
+    guide_line_mode: always
+    guide_line_styles:
+    - dashed
+    - dotted
+    - solid
+    guide_line_width_px: 1
+    callout_box_width_px: 138
+    callout_box_height_px: 48
+    callout_font_size_px: 20
+    callout_label_manifest_path: phrases/callout_phrases.txt
+    callout_label_max_chars: 14
+    callout_label_sample_attempts: 160
+    callout_corner_radius_px_min: 4
+    callout_corner_radius_px_max: 12
+    callout_arrow_width_px_min: 2
+    callout_arrow_width_px_max: 4
+    callout_fill_rgb_options:
+    - - 255
+      - 255
+      - 255
+    - - 253
+      - 250
+      - 244
+    - - 246
+      - 251
+      - 255
+    - - 248
+      - 252
+      - 248
+    callout_outline_rgb_options:
+    - - 42
+      - 98
+      - 176
+    - - 154
+      - 82
+      - 44
+    - - 68
+      - 128
+      - 84
+    - - 132
+      - 74
+      - 154
+    callout_text_rgb_options:
+    - - 36
+      - 42
+      - 52
+    - - 42
+      - 47
+      - 58
+    - - 48
+      - 44
+      - 38
+    context_text_enabled: true
+    chart_context_profile: report_paragraph
+    chart_context_mode_weights:
+      clean: 0.3
+      minimal: 0.4
+      paragraph_box: 0.3
+    context_text_top_reserved_px: 64
+    context_text_bottom_reserved_px: 28
+    context_text_sidebar_width_min_px: 180
+    context_text_sidebar_width_max_px: 230
+    context_text_sidebar_gap_px: 14
+    context_text_bottom_band_height_min_px: 86
+    context_text_bottom_band_height_max_px: 120
+    context_text_bottom_band_gap_px: 14
+    context_text_box_count_min: 1
+    context_text_box_count_max: 2
+prompt:
+  shared:
+    bundle_id: charts_annotated_series_v1

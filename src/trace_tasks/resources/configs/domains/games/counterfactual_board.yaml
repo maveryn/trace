@@ -1,0 +1,56 @@
+generation:
+  shared: {}
+rendering:
+  shared:
+    scene_supersample_scale: 2
+    unit_size_px_min: 42
+    unit_size_px_max: 60
+    outer_padding_fraction_min: 0.08
+    outer_padding_fraction_max: 0.14
+    placement_jitter_fraction_min: 0.03
+    placement_jitter_fraction_max: 0.08
+    line_annotation_thickness_px: 28
+    outline_rgb:
+    - 33
+    - 37
+    - 45
+    chess_light_rgb:
+    - 238
+    - 229
+    - 206
+    chess_dark_rgb:
+    - 92
+    - 124
+    - 80
+    sudoku_fill_rgb:
+    - 255
+    - 255
+    - 252
+    sudoku_line_rgb:
+    - 38
+    - 42
+    - 50
+    xiangqi_board_rgb:
+    - 241
+    - 205
+    - 142
+    xiangqi_line_rgb:
+    - 72
+    - 45
+    - 24
+prompt:
+  shared:
+    bundle_id: games_counterfactual_board_v1
+    scene_key: counterfactual_board
+    task_key: board_grid_count_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    edit_types:
+    - blur
+    - downsample
+    - jpeg
+    - noise

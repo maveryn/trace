@@ -1,0 +1,201 @@
+generation:
+  shared:
+    scene_variant_weights:
+      multi_row: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      ivory: 1.0
+      slate: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+  task_overrides:
+    task_games__cards__same_suit_as_reference_count:
+      balanced_target_answer_sampling: true
+      balanced_card_count_sampling: true
+      same_suit_target_answer_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      same_suit_order_by_suit: false
+      same_suit_center_label_mode: suit_symbol
+      same_suit_as_reference_count_card_count_support:
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 26
+    task_games__cards__higher_than_reference_count:
+      balanced_target_answer_sampling: true
+      balanced_card_count_sampling: true
+      higher_rank_target_answer_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      higher_rank_order_by_rank: false
+      higher_rank_center_label_mode: rank_suit
+      higher_than_reference_count_card_count_support:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+    task_games__cards__exact_triple_count:
+      balanced_target_answer_sampling: true
+      balanced_card_count_sampling: true
+      exact_triple_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      exact_triple_count_order_by_rank: true
+      exact_triple_count_center_label_mode: rank_suit
+      exact_triple_count_card_count_support:
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+    task_games__cards__longest_run_length:
+      balanced_target_answer_sampling: true
+      balanced_card_count_sampling: true
+      longest_run_length_support:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      longest_run_center_label_mode: suit_symbol
+      card_count_support:
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+    task_games__cards__blackjack_best_hand_label:
+      balanced_option_count_sampling: true
+      balanced_cards_per_hand_sampling: true
+      blackjack_hand_count_support:
+      - 4
+      - 6
+      blackjack_cards_per_hand_support:
+      - 3
+      - 4
+    task_games__cards__poker_best_hand_label:
+      balanced_option_count_sampling: true
+      balanced_poker_winning_category_sampling: true
+      poker_winning_category_weights:
+        one_pair: 1.0
+        two_pair: 1.0
+        three_of_a_kind: 1.0
+        straight: 1.0
+        flush: 1.0
+        full_house: 1.0
+        four_of_a_kind: 1.0
+        straight_flush: 1.0
+      poker_hand_count_support:
+      - 4
+      - 6
+    task_games__cards__poker_draw_card_label:
+      balanced_option_count_sampling: true
+      balanced_poker_draw_target_category_sampling: true
+      poker_draw_target_category_weights:
+        one_pair: 1.0
+        two_pair: 1.0
+        three_of_a_kind: 1.0
+        straight: 1.0
+        flush: 1.0
+        full_house: 1.0
+        four_of_a_kind: 1.0
+        straight_flush: 1.0
+      poker_draw_candidate_count_support:
+      - 4
+      - 6
+    task_games__cards__missing_card_to_complete_hand_label:
+      balanced_option_count_sampling: true
+      missing_card_candidate_count_support:
+      - 4
+      - 6
+    task_games__cards__trick_taking_winner_label:
+      balanced_option_count_sampling: true
+      trick_player_count_support:
+      - 4
+      - 6
+    task_games__cards__trick_winning_play_label:
+      balanced_option_count_sampling: true
+      balanced_trick_played_count_sampling: true
+      balanced_trick_play_trump_mode_sampling: true
+      trick_play_trump_mode_weights:
+        no_trump: 1.0
+        with_trump: 1.0
+      trick_play_candidate_count_support:
+      - 4
+      - 6
+      trick_play_played_count_support:
+      - 3
+      - 4
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    card_width_px: 84
+    card_height_px: 122
+    panel_margin_px: 42
+    card_gap_px: 12
+    row_gap_px: 22
+    card_corner_radius_px: 12
+    rank_font_size_px: 19
+    center_symbol_font_size_px: 44
+    group_label_font_size_px: 22
+    center_label_mode: suit_symbol
+    reference_banner_height_px: 20
+    reference_font_size_px: 14
+    continuation_font_size_px: 22
+    continuation_gap_px: 28
+    max_cards_per_row: 8
+prompt:
+  shared:
+    bundle_id: games_cards_v1
+    scene_key: visible_card_hand
+    task_key: cards_hand_query

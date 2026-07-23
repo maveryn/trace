@@ -1,0 +1,60 @@
+generation:
+  shared:
+    scene_variant_weights:
+      single_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      wood_panel: 1.0
+      slate: 1.0
+      parchment: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+  task_overrides:
+    task_games__nine_mens_morris__pieces_in_mill_count:
+      balanced_target_answer_sampling: true
+      all_pieces_in_mill_count_support:
+      - 0
+      - 3
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+    task_games__nine_mens_morris__mill_completion_point_count:
+      balanced_target_answer_sampling: true
+      white_mill_completion_point_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      black_mill_completion_point_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 820
+    board_width_px: 860
+    board_height_px: 660
+    board_corner_radius_px: 24
+    panel_margin_px: 56
+    title_font_size_px: 34
+    title_band_height_px: 62
+    board_padding_px: 72
+    piece_radius_px: 22
+    node_radius_px: 5
+    unit_size_scale_min: 0.55
+    unit_size_scale_max: 1.1
+prompt:
+  shared:
+    bundle_id: games_nine_mens_morris_v1
+    scene_key: visible_nine_mens_morris_board
+    task_key: pieces_in_mill_query

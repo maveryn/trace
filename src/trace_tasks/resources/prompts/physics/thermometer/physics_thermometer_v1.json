@@ -1,0 +1,80 @@
+{
+  "bundle_id": "physics_thermometer_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "thermometer_scale": [
+        "The image shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "This figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The thermometer diagram shows {object_description}."
+      ]
+    },
+    "task": {
+      "temperature_conversion_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "celsius_to_fahrenheit_value": [
+        "Read the Celsius temperature from the thermometer and convert it to Fahrenheit using F = 9C/5 + 32. What integer Fahrenheit temperature is equivalent?",
+        "The thermometer scale is in Celsius. Using F = 9C/5 + 32, what is the equivalent integer temperature in degrees Fahrenheit?",
+        "First read the Celsius value shown by the liquid level. Then convert it with F = 9C/5 + 32. What integer Fahrenheit value results?",
+        "What is the displayed thermometer temperature in degrees Fahrenheit? Read the Celsius scale and use F = 9C/5 + 32.",
+        "Convert the visible Celsius thermometer reading to degrees Fahrenheit. What integer value should be returned?"
+      ],
+      "fahrenheit_to_celsius_value": [
+        "Read the Fahrenheit temperature from the thermometer and convert it to Celsius using C = 5(F - 32)/9. What integer Celsius temperature is equivalent?",
+        "The thermometer scale is in Fahrenheit. Using C = 5(F - 32)/9, what is the equivalent integer temperature in degrees Celsius?",
+        "First read the Fahrenheit value shown by the liquid level. Then convert it with C = 5(F - 32)/9. What integer Celsius value results?",
+        "What is the displayed thermometer temperature in degrees Celsius? Read the Fahrenheit scale and use C = 5(F - 32)/9.",
+        "Convert the visible Fahrenheit thermometer reading to degrees Celsius. What integer value should be returned?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nUse this annotation format: {annotation_hint}.\nUse this answer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:thermometer_scale": {
+      "object_description": "a vertical thermometer with a visible liquid level, numeric tick scale, and source temperature unit label"
+    },
+    "query:celsius_to_fahrenheit_value": {
+      "annotation_hint": "set \"annotation\" to the visible liquid-level segment as [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point",
+      "answer_hint": "set \"answer\" to the integer equivalent temperature in degrees Fahrenheit",
+      "json_example": "{\"annotation\":[[522,280],[578,280]],\"answer\":77}",
+      "json_example_answer_only": "{\"answer\":77}"
+    },
+    "query:fahrenheit_to_celsius_value": {
+      "annotation_hint": "set \"annotation\" to the visible liquid-level segment as [[x0, y0], [x1, y1]], where each endpoint is a [x, y] pixel point",
+      "answer_hint": "set \"answer\" to the integer equivalent temperature in degrees Celsius",
+      "json_example": "{\"annotation\":[[522,350],[578,350]],\"answer\":20}",
+      "json_example_answer_only": "{\"answer\":20}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:thermometer_scale": [
+      "object_description"
+    ]
+  }
+}

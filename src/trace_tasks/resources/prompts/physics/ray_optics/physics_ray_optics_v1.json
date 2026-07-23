@@ -1,0 +1,83 @@
+{
+  "bundle_id": "physics_ray_optics_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "mirror_ray_diagram": [
+        "The image shows a graph-paper ray diagram with an incoming ray and diagonal mirrors.",
+        "The diagram shows a ray entering a grid with diagonal mirrors and coordinate labels.",
+        "This figure shows a reflected ray setup on a square grid.",
+        "The visual shows a grid-based mirror ray diagram.",
+        "The image contains a ray-tracing grid with mirrors and an incoming ray."
+      ]
+    },
+    "task": {
+      "ray_bounce_count": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "ray_target_hit_count": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "bounce_count": [
+        "How many times does the implied ray bounce off a mirror before leaving the grid?",
+        "Infer the ray path. How many mirror reflections happen before the ray exits the grid?",
+        "What is the total number of mirror bounces in the implied ray path?",
+        "How many reflections from mirrors occur before the ray leaves the diagram?",
+        "Follow the implied ray path and count the mirror bounces before exit."
+      ],
+      "target_hit_count": [
+        "How many target points are touched by the implied ray before it leaves the grid?",
+        "Trace the ray through the mirrors. How many target points does it hit before exit?",
+        "What is the total number of target points crossed by the implied ray?",
+        "Count the target points touched by the ray path before the ray leaves the grid.",
+        "Follow the implied ray and determine how many target points it hits before exiting the diagram."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    }
+  },
+  "static_slots_by_key": {
+    "query:bounce_count": {
+      "answer_hint": "set \"answer\" to the mirror-bounce count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x, y] pixel points at each mirror-bounce point"
+    },
+    "query:target_hit_count": {
+      "answer_hint": "set \"answer\" to the target-hit count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x, y] pixel points at each target point touched by the ray"
+    }
+  },
+  "required_slots_by_key": {}
+}

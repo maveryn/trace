@@ -1,0 +1,124 @@
+rendering:
+  shared:
+    information_scene_allow_dark: true
+    information_scene_allow_colored_surface: true
+    information_scene_treatments:
+    - clean_default
+    - report_card
+    - dashboard_tile
+    - executive_dashboard
+    - news_graphic
+    - academic_figure
+    - journal_appendix
+    - infographic_panel
+    - poster_explainer
+    - annotated_callout
+    - caption_heavy_figure
+    - source_note_sheet
+    - compact_small_multiples
+    - data_table_report
+    - web_article_embed
+    - desktop_app_window
+    - control_console
+    - lab_report_sheet
+    - presentation_slide
+    - print_scan_sheet
+    - dark_analytics_board
+    - dark_report_card
+    - dark_publication_figure
+    - dark_dashboard_tile
+    - dark_console_panel
+    information_scene_treatment_weights:
+      clean_default: 1.0
+      report_card: 1.0
+      dashboard_tile: 1.0
+      executive_dashboard: 1.0
+      news_graphic: 1.0
+      academic_figure: 1.0
+      journal_appendix: 1.0
+      infographic_panel: 1.0
+      poster_explainer: 1.0
+      annotated_callout: 1.0
+      caption_heavy_figure: 1.0
+      source_note_sheet: 1.0
+      compact_small_multiples: 1.0
+      data_table_report: 1.0
+      web_article_embed: 1.0
+      desktop_app_window: 1.0
+      control_console: 1.0
+      lab_report_sheet: 1.0
+      presentation_slide: 1.0
+      print_scan_sheet: 1.0
+      dark_analytics_board: 1.0
+      dark_report_card: 1.0
+      dark_publication_figure: 1.0
+      dark_dashboard_tile: 1.0
+      dark_console_panel: 1.0
+    information_scene_palette_weights:
+      neutral_report: 0.75
+      publication_gray: 0.7
+      cool_business: 0.9
+      warm_editorial: 0.75
+      soft_mint: 0.7
+      slate_amber: 0.75
+      ink_teal: 0.8
+      burgundy_sage: 0.65
+      indigo_ochre: 0.75
+      coastal_blue: 0.75
+      atlas_map: 0.55
+      metro_bright: 0.65
+      data_viz_classic: 0.9
+      okabe_ito_light: 0.75
+      pastel_dashboard: 0.65
+      monochrome_news: 0.6
+      high_contrast_light: 0.7
+      dark_analytics: 0.85
+      dark_mint: 0.75
+      dark_blue_orange: 0.75
+    information_scene_chrome_mode_weights:
+      none: 0.42
+      thin_frame: 0.28
+      accent_frame: 0.3
+    pages_context_text_enabled: true
+    pages_context_profile: dense_clean_minimal
+    pages_context_mode_weights:
+      clean: 0.7
+      minimal: 0.3
+      paragraph_box: 0.0
+    pages_context_mode_configs:
+      clean:
+        simple_count_min: 0
+        simple_count_max: 0
+        paragraph_box_count_min: 0
+        paragraph_box_count_max: 0
+      minimal:
+        simple_count_min: 2
+        simple_count_max: 4
+        paragraph_box_count_min: 0
+        paragraph_box_count_max: 0
+      paragraph_box:
+        simple_count_min: 1
+        simple_count_max: 3
+        paragraph_box_count_min: 1
+        paragraph_box_count_max: 2
+    pages_context_overlap_padding_px: 8
+    pages_context_text_rgb:
+    - 62
+    - 70
+    - 82
+    pages_context_muted_text_rgb:
+    - 101
+    - 109
+    - 123
+    pages_context_box_fill_rgb:
+    - 255
+    - 255
+    - 255
+    pages_context_box_border_rgb:
+    - 204
+    - 211
+    - 222
+prompt:
+  shared:
+    json_output_contract: Use a valid JSON object with keys "annotation" and "answer" in that order for the final answer.
+    json_output_contract_answer_only: Use a valid JSON object with key "answer" for the final answer.

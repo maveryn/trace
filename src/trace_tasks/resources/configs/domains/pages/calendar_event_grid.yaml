@@ -1,0 +1,133 @@
+generation:
+  shared:
+    scene_variant_weights:
+      classic: 1.0
+      minimal: 1.0
+      outline: 1.0
+    style_variant_weights:
+      studio: 1.0
+      accented: 1.0
+      marker: 1.0
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    layout_mode_weights:
+      center_clean: 1.0
+      free_jitter_clean: 1.0
+      left_with_side_note: 1.0
+      right_with_side_note: 1.0
+      top_with_bottom_note: 1.0
+    title_mode_weights:
+      generic: 1.25
+      full_month_year: 1.0
+    surface_mode_weights:
+      light: 1.0
+      dark: 1.0
+    text_color_mode_weights:
+      neutral: 1.0
+      accent: 1.0
+      cool: 1.0
+      warm: 1.0
+    slot_id_weights:
+      top: 1.0
+      mid: 1.0
+      end: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_accent_color_name_sampling: true
+    balanced_layout_mode_sampling: true
+    balanced_title_mode_sampling: true
+    balanced_surface_mode_sampling: true
+    balanced_text_color_mode_sampling: true
+    balanced_slot_id_sampling: true
+    year_min: 2022
+    year_max: 2030
+    event_category_labels:
+    - Arts
+    - Civic
+    - Culture
+    - Finance
+    - Health
+    - Policy
+    - Science
+    - Sports
+    - Tech
+    - Travel
+    target_count_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    filled_event_slot_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    weekday_column_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    weekday_column_distractor_support:
+    - 3
+    - 4
+    - 5
+    - 6
+    busiest_two_chip_distractor_date_count_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    busiest_single_chip_distractor_date_count_support:
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    min_random_extra_chips: 10
+    max_random_extra_chips: 18
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 780
+    outer_margin_px: 34
+    title_height_px: 62
+    title_bottom_gap_px: 12
+    weekday_header_height_px: 32
+    weekday_grid_gap_px: 8
+    cell_gap_px: 7
+    panel_corner_radius_px: 16
+    panel_outline_width_px: 3
+    panel_outline_width_px_min: 2
+    panel_outline_width_px_max: 4
+    cell_corner_radius_px: 10
+    cell_outline_width_px: 2
+    cell_outline_width_px_min: 1
+    cell_outline_width_px_max: 3
+    title_font_size_px: 30
+    weekday_font_size_px: 15
+    date_font_size_px: 20
+    marker_inset_px: 8
+    marker_inset_px_min: 8
+    marker_inset_px_max: 12
+    marker_outline_width_px: 2
+    marker_outline_width_px_min: 2
+    marker_outline_width_px_max: 4
+    pages_context_profile: report_paragraph
+    pages_context_mode_weights:
+      clean: 0.24
+      minimal: 0.2
+      paragraph_box: 0.56
+    pages_context_text_max_elements: 7
+prompt:
+  shared:
+    bundle_id: pages_calendar_event_grid_v1

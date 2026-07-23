@@ -1,0 +1,187 @@
+generation:
+  task_overrides:
+    task_physics__motion_graph__average_speed_value:
+      scene_variant_weights:
+        clean_grid: 1.0
+        paper_grid: 1.0
+        bold_grid: 1.0
+      balanced_scene_variant_sampling: true
+      average_speed_interval_width_support:
+      - 1
+      - 2
+      average_speed_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    task_physics__motion_graph__speed_change_state_choice:
+      scene_variant_weights:
+        clean_grid: 1.0
+        paper_grid: 1.0
+        bold_grid: 1.0
+      motion_state_weights:
+        speeding_up: 1.0
+        slowing_down: 1.0
+        constant_speed: 1.0
+      correct_option_letter_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+      balanced_scene_variant_sampling: true
+      balanced_motion_state_sampling: true
+      balanced_correct_option_letter_sampling: true
+    task_physics__motion_graph__interval_displacement_value:
+      scene_variant_weights:
+        clean_grid: 1.0
+        paper_grid: 1.0
+        bold_grid: 1.0
+      balanced_scene_variant_sampling: true
+      constant_velocity_interval_width_support:
+      - 2
+      - 3
+      - 4
+      constant_acceleration_interval_width_support:
+      - 2
+      - 4
+      constant_velocity_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      acceleration_endpoint_velocity_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      constant_acceleration_slope_support:
+      - -2
+      - -1
+      - 1
+      - 2
+rendering:
+  task_overrides:
+    task_physics__motion_graph__average_speed_value:
+      canvas_width: 1120
+      canvas_height: 720
+      plot_left_px: 132
+      plot_top_px: 86
+      plot_width_px: 856
+      plot_height_px: 500
+      axis_width_px: 5
+      axis_width_px_min: 4
+      axis_width_px_max: 6
+      curve_width_px: 7
+      curve_width_px_min: 6
+      curve_width_px_max: 8
+      grid_line_width_px: 1
+      bold_grid_line_width_px: 2
+      label_font_size_px: 25
+      tick_font_size_px: 18
+      option_font_size_px: 22
+      title_font_size_px: 28
+      label_stroke_width_px: 2
+      label_stroke_width_px_min: 1
+      label_stroke_width_px_max: 3
+      point_radius_px: 5
+      y_min: 0
+      y_max: 12
+      t_min: 0
+      t_max: 8
+      layout_jitter_enabled: true
+      layout_jitter_min_margin_px: 18
+      layout_jitter_x_px_min: -24
+      layout_jitter_x_px_max: 24
+      layout_jitter_y_px_min: -12
+      layout_jitter_y_px_max: 10
+    task_physics__motion_graph__speed_change_state_choice:
+      canvas_width: 1120
+      canvas_height: 760
+      plot_left_px: 132
+      plot_top_px: 74
+      plot_width_px: 856
+      plot_height_px: 500
+      option_panel_top_px: 610
+      option_cell_left_px: 70
+      option_cell_width_px: 468
+      option_cell_height_px: 66
+      option_cell_gap_x_px: 24
+      option_cell_gap_y_px: 14
+      axis_width_px: 5
+      axis_width_px_min: 4
+      axis_width_px_max: 6
+      curve_width_px: 7
+      curve_width_px_min: 6
+      curve_width_px_max: 8
+      grid_line_width_px: 1
+      bold_grid_line_width_px: 2
+      label_font_size_px: 25
+      tick_font_size_px: 18
+      option_font_size_px: 22
+      title_font_size_px: 28
+      label_stroke_width_px: 2
+      label_stroke_width_px_min: 1
+      label_stroke_width_px_max: 3
+      point_radius_px: 5
+      y_min: -5
+      y_max: 5
+      t_min: 0
+      t_max: 6
+      layout_jitter_enabled: true
+      layout_jitter_min_margin_px: 18
+      layout_jitter_x_px_min: -24
+      layout_jitter_x_px_max: 24
+      layout_jitter_y_px_min: -12
+      layout_jitter_y_px_max: 10
+    task_physics__motion_graph__interval_displacement_value:
+      canvas_width: 1120
+      canvas_height: 720
+      plot_left_px: 132
+      plot_top_px: 86
+      plot_width_px: 856
+      plot_height_px: 500
+      axis_width_px: 5
+      axis_width_px_min: 4
+      axis_width_px_max: 6
+      curve_width_px: 7
+      curve_width_px_min: 6
+      curve_width_px_max: 8
+      grid_line_width_px: 1
+      bold_grid_line_width_px: 2
+      label_font_size_px: 25
+      tick_font_size_px: 18
+      option_font_size_px: 22
+      title_font_size_px: 28
+      label_stroke_width_px: 2
+      label_stroke_width_px_min: 1
+      label_stroke_width_px_max: 3
+      point_radius_px: 5
+      y_min: 0
+      y_max: 8
+      t_min: 0
+      t_max: 8
+      layout_jitter_enabled: true
+      layout_jitter_min_margin_px: 18
+      layout_jitter_x_px_min: -24
+      layout_jitter_x_px_max: 24
+      layout_jitter_y_px_min: -12
+      layout_jitter_y_px_max: 10
+prompt:
+  shared:
+    bundle_id: physics_motion_graph_v1
+  task_overrides:
+    task_physics__motion_graph__average_speed_value:
+      task_key: motion_graph_average_speed_value_query
+    task_physics__motion_graph__speed_change_state_choice:
+      task_key: motion_graph_speed_change_state_choice_query
+    task_physics__motion_graph__interval_displacement_value:
+      task_key: motion_graph_interval_displacement_value_query

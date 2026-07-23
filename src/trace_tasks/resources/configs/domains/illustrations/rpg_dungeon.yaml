@@ -1,0 +1,110 @@
+generation:
+  shared:
+    balanced_sampling: true
+  task_overrides:
+    task_illustrations__rpg_dungeon__reachable_chest_count:
+      query_id_support:
+        - single
+      total_chest_count_support:
+        - 4
+        - 5
+        - 6
+      reachable_chest_count_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+    task_illustrations__rpg_dungeon__monster_chamber_count:
+      query_id_support:
+        - single
+      total_chest_count_support:
+        - 4
+        - 5
+        - 6
+      monster_chamber_count_support:
+        - 1
+        - 2
+        - 3
+        - 4
+    task_illustrations__rpg_dungeon__safe_reachable_chest_count:
+      query_id_support:
+        - single
+      total_chest_count_support:
+        - 4
+        - 5
+        - 6
+      safe_reachable_chest_count_support:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+    task_illustrations__rpg_dungeon__missing_patch_label:
+      query_id_support:
+        - single
+      source_chest_count_support:
+        - 5
+        - 6
+      source_monster_count_support:
+        - 1
+        - 2
+        - 3
+      option_count_support:
+        - 4
+        - 6
+      patch_width_ratio_min: 0.15
+      patch_width_ratio_max: 0.30
+      patch_height_ratio_min: 0.15
+      patch_height_ratio_max: 0.26
+      patch_area_ratio_max: 0.065
+      crop_margin_px: 36
+rendering:
+  shared:
+    rpg_dungeon_tile_px: 48
+
+prompt:
+  task_overrides:
+    task_illustrations__rpg_dungeon__reachable_chest_count:
+      bundle_id: illustrations_rpg_dungeon_v0
+      scene_key: rpg_dungeon_canvas
+      task_key: rpg_dungeon_reachable_chest_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_dungeon_reachable_chest_count: set "answer" to the number of treasure chests reachable from the player
+      annotation_hint_rpg_dungeon_reachable_chest_count: set "annotation" to a list containing one [x0, y0, x1, y1] bounding box around each counted reachable chest; use an empty list when the answer is 0
+      json_example_rpg_dungeon_reachable_chest_count: '{"annotation":[[236,156,284,204],[596,156,644,204]],"answer":2}'
+      json_example_answer_only_rpg_dungeon_reachable_chest_count: '{"answer":2}'
+    task_illustrations__rpg_dungeon__monster_chamber_count:
+      bundle_id: illustrations_rpg_dungeon_v0
+      scene_key: rpg_dungeon_monster_canvas
+      task_key: rpg_dungeon_monster_chamber_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_dungeon_monster_chamber_count: set "answer" to the number of treasure chambers that contain a monster
+      annotation_hint_rpg_dungeon_monster_chamber_count: set "annotation" to a list containing one [x0, y0, x1, y1] bounding box around each counted monster
+      json_example_rpg_dungeon_monster_chamber_count: '{"annotation":[[236,156,284,204],[596,156,644,204]],"answer":2}'
+      json_example_answer_only_rpg_dungeon_monster_chamber_count: '{"answer":2}'
+    task_illustrations__rpg_dungeon__safe_reachable_chest_count:
+      bundle_id: illustrations_rpg_dungeon_v0
+      scene_key: rpg_dungeon_hazard_canvas
+      task_key: rpg_dungeon_safe_reachable_chest_count_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_dungeon_safe_reachable_chest_count: set "answer" to the number of reachable treasure chests after excluding chests in monster chambers
+      annotation_hint_rpg_dungeon_safe_reachable_chest_count: set "annotation" to a list containing one [x0, y0, x1, y1] bounding box around each counted chest; use an empty list when the answer is 0
+      json_example_rpg_dungeon_safe_reachable_chest_count: '{"annotation":[[236,156,284,204],[596,156,644,204]],"answer":2}'
+      json_example_answer_only_rpg_dungeon_safe_reachable_chest_count: '{"answer":2}'
+    task_illustrations__rpg_dungeon__missing_patch_label:
+      bundle_id: illustrations_rpg_dungeon_v0
+      scene_key: rpg_dungeon_patch_canvas
+      task_key: rpg_dungeon_missing_patch_label_task
+      json_output_contract: 'Return JSON with keys "annotation" and "answer".'
+      json_output_contract_answer_only: 'Return JSON with key "answer".'
+      answer_hint_rpg_dungeon_missing_patch_label: set "answer" to the selected patch option letter
+      annotation_hint_rpg_dungeon_missing_patch_label: set "annotation" to an object with keys "missing_region" and "selected_option"; each value is one [x0, y0, x1, y1] pixel bounding box
+      json_example_rpg_dungeon_missing_patch_label: '{"annotation":{"missing_region":[220,150,420,310],"selected_option":[580,760,780,920]},"answer":"C"}'
+      json_example_answer_only_rpg_dungeon_missing_patch_label: '{"answer":"C"}'

@@ -1,0 +1,125 @@
+{
+  "bundle_id": "games_marble_chain_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "marble_chain_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This board shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "marble_chain_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "closure_match_direction_label": [
+        "{marble_chain_rule_text} Which labeled arrow removes marbles and leaves two same-color marbles touching after the chain closes?",
+        "{marble_chain_rule_text} Choose the arrow letter whose pop makes the closing chain connect two marbles of the same color.",
+        "{marble_chain_rule_text} Among the labeled shot arrows, which one pops marbles and leaves a same-color pair at the closure gap?",
+        "{marble_chain_rule_text} Report the shot-arrow label that creates a same-color match when the popped gap closes.",
+        "{marble_chain_rule_text} Which arrow removes an existing run and causes the two boundary marbles to touch with matching colors?"
+      ],
+      "max_pop_direction_label": [
+        "{marble_chain_rule_text} Which labeled arrow removes the most existing chain marbles?",
+        "{marble_chain_rule_text} Choose the arrow letter that makes the largest number of existing marbles pop.",
+        "{marble_chain_rule_text} Among the labeled shot arrows, which shot pops the most existing marbles?",
+        "{marble_chain_rule_text} Report the label of the shot arrow with the largest pop count.",
+        "{marble_chain_rule_text} Which labeled arrow gives the maximum number of existing marbles removed?"
+      ],
+      "pop_count_after_marked_shot": [
+        "{marble_chain_rule_text} Following the marked shot arrow, how many existing chain marbles are removed?",
+        "{marble_chain_rule_text} Count the existing marbles that pop after the shown marked shot.",
+        "{marble_chain_rule_text} What is the pop count for existing chain marbles along the marked arrow?",
+        "{marble_chain_rule_text} After the marked shot, how many existing chain marbles are removed?",
+        "{marble_chain_rule_text} Determine the number of existing chain marbles that pop from the marked shot."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:marble_chain_board": [
+      "object_description"
+    ],
+    "query:closure_match_direction_label": [
+      "marble_chain_rule_text"
+    ],
+    "query:max_pop_direction_label": [
+      "marble_chain_rule_text"
+    ],
+    "query:pop_count_after_marked_shot": [
+      "marble_chain_rule_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "marble_chain_rule_text": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_marble_chain_board": "a Zuma-like marble-chain board with a central shooter, a colored shooter marble, arrow shot options, and colored marbles on a curved track",
+    "marble_chain_rule_text": "Fire the shooter marble straight along the chosen arrow. It inserts at the chain gap indicated by that arrow. If the inserted marble's same-color contiguous run has at least three marbles, the existing marbles in that run are removed and the chain closes once. Do not apply any later cascade.",
+    "annotation_hint_closure_match_direction_label": "set \"annotation\" to one pixel-space point [x, y] at the insertion gap indicated by the selected arrow",
+    "answer_hint_closure_match_direction_label": "set \"answer\" to only the selected shot-arrow letter",
+    "annotation_hint_max_pop_direction_label": "set \"annotation\" to one pixel-space point [x, y] at the insertion gap indicated by the selected arrow",
+    "answer_hint_max_pop_direction_label": "set \"answer\" to only the selected shot-arrow letter",
+    "annotation_hint_pop_count_after_marked_shot": "set \"annotation\" to bounding boxes [x0, y0, x1, y1], one for each existing chain marble that would pop; use an empty array if none pop",
+    "answer_hint_pop_count_after_marked_shot": "set \"answer\" to the number of existing chain marbles removed by the marked shot, excluding the shooter marble"
+  }
+}

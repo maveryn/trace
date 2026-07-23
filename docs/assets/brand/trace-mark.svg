@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" role="img" aria-labelledby="title desc">
+  <title id="title">Trace domain atlas</title>
+  <desc id="desc">A three-by-three atlas of visual reasoning motifs with a central Trace monogram.</desc>
+  <style>
+    .frame { fill: none; stroke: #17242d; }
+    .tile { fill: #f7f9f9; stroke: #cad6da; }
+    .ink { fill: none; stroke: #17242d; }
+    .soft { fill: none; stroke: #667983; }
+    @media (prefers-color-scheme: dark) {
+      .frame { stroke: #edf3f5; }
+      .tile { fill: #17242d; stroke: #3a4c55; }
+      .ink { stroke: #edf3f5; }
+      .soft { stroke: #aebdc4; }
+    }
+  </style>
+
+  <rect class="frame" x="20" y="20" width="240" height="240" rx="14" stroke-width="3"/>
+
+  <!-- Charts -->
+  <g>
+    <rect class="tile" x="30" y="30" width="68" height="68" rx="8" stroke-width="2"/>
+    <path class="ink" d="M43 43v43h43" stroke-width="3" stroke-linecap="round"/>
+    <path d="M50 70h8v16h-8zm13-14h8v30h-8zm13 7h8v23h-8z" fill="#3974d7"/>
+    <path d="m49 63 15-11 11 5 11-15" fill="none" stroke="#e85d4a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Games and puzzles -->
+  <g>
+    <rect class="tile" x="106" y="30" width="68" height="68" rx="8" stroke-width="2"/>
+    <g fill="#3974d7">
+      <path d="m122 48 5 5 5-5 4 10-9 5-9-5Z"/>
+      <path d="m145 46 5 5 5-5 4 10-9 5-9-5Z"/>
+    </g>
+    <path d="m131 84 9-15 9 15-6-3-3 6-3-6Z" fill="#159b91"/>
+    <path d="M127 68v8m13-10v-5m11 6v7" fill="none" stroke="#e85d4a" stroke-width="2.3" stroke-linecap="round"/>
+    <circle cx="121" cy="74" r="2" fill="#e5a62b"/>
+    <circle cx="160" cy="45" r="1.7" fill="#e5a62b"/>
+  </g>
+
+  <!-- Geometry -->
+  <g>
+    <rect class="tile" x="182" y="30" width="68" height="68" rx="8" stroke-width="2"/>
+    <path class="ink" d="M195 80V45l43 35Z" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M195 71h9v9" fill="none" stroke="#e5a62b" stroke-width="2.8" stroke-linejoin="round"/>
+    <path d="M195 57a12 12 0 0 1 9-9" fill="none" stroke="#159b91" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M199 89h35m-35-4v8m35-8v8" fill="none" stroke="#3974d7" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="m214 60 5-6" fill="none" stroke="#e85d4a" stroke-width="2.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Graphs -->
+  <g>
+    <rect class="tile" x="30" y="106" width="68" height="68" rx="8" stroke-width="2"/>
+    <path class="soft" d="m44 126 36-5-20 35m20-35 5 35m-25 0h25l-41-30" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="44" cy="126" r="7" fill="#3974d7"/>
+    <circle cx="80" cy="121" r="7" fill="#159b91"/>
+    <circle cx="60" cy="156" r="7" fill="#e85d4a"/>
+    <circle cx="85" cy="156" r="7" fill="#e5a62b"/>
+  </g>
+
+  <!-- Trace monogram -->
+  <g>
+    <rect class="tile" x="106" y="106" width="68" height="68" rx="8" stroke-width="2"/>
+    <path d="M119 120h42v11h-15v30h-12v-30h-15Z" fill="#3974d7"/>
+  </g>
+
+  <!-- Illustrations and 3D scenes -->
+  <g>
+    <rect class="tile" x="182" y="106" width="68" height="68" rx="8" stroke-width="2"/>
+    <path d="m190 143 26-16 26 16-26 16Z" fill="#56a45b" fill-opacity=".58" stroke="#159b91" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="m190 143 26 16 26-16v7l-26 16-26-16Z" fill="#b9864f" fill-opacity=".78"/>
+    <path d="m203 135 26 16m0-16-26 16" fill="none" stroke="#2f7951" stroke-width="1.3"/>
+    <path d="M230 126v18" stroke="#725038" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="m230 114 9 16h-18Z" fill="#159b91"/>
+    <path d="m200 140 7-4 7 4-7 4Z" fill="#e5a62b" stroke="#8b6722" stroke-width="1"/>
+    <path d="m200 140 7 4 7-4v7l-7 4-7-4Z" fill="#e85d4a" fill-opacity=".8"/>
+  </g>
+
+  <!-- Pages -->
+  <g>
+    <rect class="tile" x="30" y="182" width="68" height="68" rx="8" stroke-width="2"/>
+    <path class="ink" d="M48 192h27l9 9v39H48zm27 0v10h9" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M55 211h21M55 220h21M55 229h14" fill="none" stroke="#3974d7" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Physics -->
+  <g>
+    <rect class="tile" x="106" y="182" width="68" height="68" rx="8" stroke-width="2"/>
+    <path class="ink" d="M122 201h13m13 0h15v36h-41v-14m0-10v-12" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="135" cy="201" r="2.6" fill="#3974d7"/>
+    <circle cx="148" cy="201" r="2.6" fill="#3974d7"/>
+    <path d="m136 199 10-8" stroke="#3974d7" stroke-width="2.8" stroke-linecap="round"/>
+    <path class="ink" d="M115 213h14m-10 8h7" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="151" cy="224" r="8" fill="none" stroke="#159b91" stroke-width="2.8"/>
+    <path d="M146 224h10m-7-4 5 8" stroke="#e5a62b" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Symbolic and icons -->
+  <g>
+    <rect class="tile" x="182" y="182" width="68" height="68" rx="8" stroke-width="2"/>
+    <circle class="ink" cx="216" cy="216" r="22" stroke-width="3.2"/>
+    <path class="soft" d="M216 197v5m0 28v5m-19-19h5m28 0h5" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="m216 216 12-8m-12 8v-12" fill="none" stroke="#3974d7" stroke-width="3.6" stroke-linecap="round"/>
+    <circle cx="216" cy="216" r="4" fill="#e85d4a"/>
+  </g>
+</svg>

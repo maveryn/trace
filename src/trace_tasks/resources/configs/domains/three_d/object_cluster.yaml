@@ -1,0 +1,126 @@
+generation:
+  shared:
+    scene_variant_weights:
+      tabletop_pile: 1.0
+      shallow_tray: 1.0
+      cluster_mat: 1.0
+    balanced_scene_variant_sampling: true
+  task_overrides:
+    task_three_d__object_cluster__total_object_count:
+      answer_count_bin_weights:
+        '6_10': 0.35
+        '11_17': 0.4
+        '18_25': 0.25
+      object_count_min: 6
+      object_count_max: 20
+      single_type_count_min: 6
+      single_type_count_max: 20
+    task_three_d__object_cluster__object_type_count:
+      composition_mode_weights:
+        near_homogeneous_cluster: 0.7
+        mixed_type_cluster: 0.3
+      answer_count_bin_weights:
+        '4_8': 1.0
+      target_count_min: 4
+      target_count_max: 8
+      single_type_count_min: 4
+      single_type_count_max: 8
+      near_homogeneous_target_count_min: 4
+      near_homogeneous_target_count_max: 8
+      near_homogeneous_object_count_min: 8
+      near_homogeneous_object_count_max: 12
+      near_homogeneous_distractor_count_min: 1
+      near_homogeneous_distractor_count_max: 4
+      mixed_type_target_count_min: 4
+      mixed_type_target_count_max: 8
+      mixed_type_object_count_min: 16
+      mixed_type_object_count_max: 20
+      mixed_type_distractor_count_min: 5
+    task_three_d__object_cluster__multi_attribute_and_count:
+      object_count_min: 16
+      object_count_max: 20
+      target_count_min: 1
+      target_count_max: 6
+    task_three_d__object_cluster__color_membership_count:
+      object_count_min: 16
+      object_count_max: 20
+      target_count_min: 3
+      target_count_max: 8
+    task_three_d__object_cluster__counterfactual_count:
+      object_count_min: 12
+      object_count_max: 20
+      target_count_min: 3
+      target_count_max: 8
+      distractor_count_min: 5
+      distractor_count_max: 10
+      edit_step_count_min: 2
+      edit_step_count_max: 3
+      edit_amount_max: 2
+    task_three_d__object_cluster__multi_attribute_or_count:
+      object_count_min: 16
+      object_count_max: 20
+      target_count_min: 3
+      target_count_max: 8
+    task_three_d__object_cluster__multi_attribute_xor_count:
+      object_count_min: 16
+      object_count_max: 20
+      target_count_min: 1
+      target_count_max: 6
+    task_three_d__object_cluster__multi_attribute_exclusion_count:
+      object_count_min: 16
+      object_count_max: 20
+      target_count_min: 1
+      target_count_max: 6
+    task_three_d__object_cluster__object_type_count_arithmetic:
+      object_count_min: 16
+      object_count_max: 20
+      operand_count_min: 1
+      operand_count_max: 6
+      difference_answer_max: 5
+    task_three_d__object_cluster__color_count_arithmetic:
+      object_count_min: 16
+      object_count_max: 20
+      operand_count_min: 1
+      operand_count_max: 6
+      difference_answer_max: 5
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 900
+    scene_margin_left_px: 44
+    scene_margin_right_px: 44
+    scene_margin_top_px: 36
+    scene_margin_bottom_px: 42
+    room_extent: 2.85
+    room_height: 3.0
+    grid_step: 0.0
+    marker_radius_px: 22
+    label_font_size_px: 24
+    line_width_px: 2
+    full_bleed_floor: true
+    full_bleed_floor_extent_multiplier: 3.4
+prompt:
+  shared:
+    bundle_id: three_d_object_cluster_v1
+    scene_key: object_cluster
+  task_overrides:
+    task_three_d__object_cluster__total_object_count:
+      task_key: object_cluster_total_count_query
+    task_three_d__object_cluster__object_type_count:
+      task_key: object_cluster_instance_count_query
+    task_three_d__object_cluster__multi_attribute_and_count:
+      task_key: object_cluster_multi_attribute_count_query
+    task_three_d__object_cluster__color_membership_count:
+      task_key: object_cluster_color_count_query
+    task_three_d__object_cluster__counterfactual_count:
+      task_key: object_cluster_counterfactual_count_query
+    task_three_d__object_cluster__multi_attribute_or_count:
+      task_key: object_cluster_multi_attribute_or_count_query
+    task_three_d__object_cluster__multi_attribute_xor_count:
+      task_key: object_cluster_multi_attribute_xor_count_query
+    task_three_d__object_cluster__multi_attribute_exclusion_count:
+      task_key: object_cluster_multi_attribute_exclusion_count_query
+    task_three_d__object_cluster__object_type_count_arithmetic:
+      task_key: object_cluster_count_arithmetic_query
+    task_three_d__object_cluster__color_count_arithmetic:
+      task_key: object_cluster_count_arithmetic_query

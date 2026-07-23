@@ -1,0 +1,163 @@
+generation:
+  shared:
+    balanced_scene_variant_sampling: true
+    scene_variant_weights:
+      clean_card: 1.0
+      wood_frame: 1.0
+      worksheet: 1.0
+  task_overrides:
+    task_symbolic__abacus__displayed_value_readout:
+      target_answer_min: 0
+      target_answer_max: 999
+      option_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      option_count: 6
+      balanced_correct_option_label_sampling: true
+      correct_option_label_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+    task_symbolic__abacus__place_digit_readout:
+      target_value_min: 0
+      target_value_max: 999
+      balanced_target_column_role_sampling: true
+      target_column_role_weights:
+        hundreds: 1.0
+        tens: 1.0
+        ones: 1.0
+      option_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      option_count: 6
+      balanced_correct_option_label_sampling: true
+      correct_option_label_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+    task_symbolic__abacus__target_value_match_label:
+      option_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      option_count: 6
+      balanced_correct_option_label_sampling: true
+      correct_option_label_weights:
+        A: 1.0
+        B: 1.0
+        C: 1.0
+        D: 1.0
+        E: 1.0
+        F: 1.0
+      target_value_min: 0
+      target_value_max: 999
+
+visual:
+  noise:
+    apply_prob: 0.18
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.22
+      downsample:
+        scale:
+        - 0.96
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.004
+        - 0.018
+
+rendering:
+  task_overrides:
+    task_symbolic__abacus__displayed_value_readout:
+      canvas_width: 980
+      canvas_height: 860
+      panel_width_px: 800
+      panel_height_px: 540
+      panel_corner_radius_px: 24
+      frame_width_px: 8
+      rod_width_px: 5
+      beam_height_px: 22
+      bead_width_px: 58
+      bead_height_px: 34
+      title_font_size_px: 25
+      label_font_size_px: 23
+      small_font_size_px: 16
+      readout_option_card_width_px: 130
+      readout_option_card_height_px: 58
+      readout_option_card_gap_px: 12
+      readout_option_card_margin_top_px: 24
+      readout_option_label_font_size_px: 22
+      readout_option_value_font_size_px: 24
+    task_symbolic__abacus__place_digit_readout:
+      canvas_width: 980
+      canvas_height: 860
+      panel_width_px: 800
+      panel_height_px: 540
+      panel_corner_radius_px: 24
+      frame_width_px: 8
+      rod_width_px: 5
+      beam_height_px: 22
+      bead_width_px: 58
+      bead_height_px: 34
+      title_font_size_px: 25
+      label_font_size_px: 23
+      small_font_size_px: 16
+      readout_option_card_width_px: 130
+      readout_option_card_height_px: 58
+      readout_option_card_gap_px: 12
+      readout_option_card_margin_top_px: 24
+      readout_option_label_font_size_px: 22
+      readout_option_value_font_size_px: 24
+    task_symbolic__abacus__target_value_match_label:
+      canvas_width: 1200
+      canvas_height: 760
+      option_card_width_px: 340
+      option_card_height_px: 280
+      option_card_gap_x_px: 44
+      option_card_gap_y_px: 52
+      option_card_corner_radius_px: 18
+      option_label_font_size_px: 26
+      option_place_label_font_size_px: 16
+      option_bead_width_px: 32
+      option_bead_height_px: 20
+      option_rod_width_px: 3
+      option_beam_height_px: 10
+
+prompt:
+  shared:
+    bundle_id: symbolic_abacus_v1
+    scene_key: abacus
+  task_overrides:
+    task_symbolic__abacus__displayed_value_readout:
+      task_key: abacus_displayed_value_query
+    task_symbolic__abacus__place_digit_readout:
+      task_key: abacus_place_digit_query
+    task_symbolic__abacus__target_value_match_label:
+      task_key: abacus_target_value_match_query

@@ -1,0 +1,112 @@
+generation:
+  shared:
+    scene_variant_weights:
+      classic: 1.0
+      minimal: 1.0
+      outline: 1.0
+    style_variant_weights:
+      studio: 1.0
+      accented: 1.0
+      marker: 1.0
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_accent_color_name_sampling: true
+    start_hour: 8
+    end_hour: 18
+    slot_minutes: 30
+    max_lane_count: 5
+    event_count_support:
+    - 7
+    - 8
+    - 9
+    - 10
+    overlap_count_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    overlap_max_lane_count: 4
+    overlap_nonoverlap_min_gap_slots: 1
+    longer_than_count_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    maximum_non_overlapping_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    reference_duration_slots_support:
+    - 2
+    - 3
+    - 4
+    duration_slots_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    day_label_support:
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    event_label_pool:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    - H
+    - I
+    - J
+    - K
+    - L
+    - M
+rendering:
+  shared:
+    canvas_width: 920
+    canvas_height: 820
+    outer_margin_px: 36
+    header_height_px: 92
+    panel_corner_radius_px: 20
+    panel_outline_width_px: 3
+    panel_outline_width_px_min: 2
+    panel_outline_width_px_max: 4
+    time_axis_width_px: 94
+    planner_top_gap_px: 18
+    planner_bottom_gap_px: 24
+    lane_gap_px: 8
+    grid_line_width_px: 2
+    grid_line_width_px_min: 1
+    grid_line_width_px_max: 3
+    minor_grid_line_width_px: 1
+    minor_grid_line_width_px_min: 1
+    minor_grid_line_width_px_max: 2
+    hour_label_font_size_px: 16
+    title_font_size_px: 28
+    event_label_font_size_px: 18
+    event_corner_radius_px: 12
+    event_text_padding_px: 8
+    show_reference_time_band: false
+prompt:
+  shared:
+    bundle_id: pages_schedule_v1

@@ -1,0 +1,102 @@
+generation:
+  shared:
+    scene_variant_weights:
+      low_seed: 1.0
+      mixed_seed: 1.0
+      busy_seed: 1.0
+    style_variant_weights:
+      wood_tray: 1.0
+      sand_stone: 1.0
+      slate_bowls: 1.0
+      cloth_pits: 1.0
+      arcade_pits: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    min_seed_count_per_pit: 0
+    max_seed_count_per_pit: 8
+    min_source_seed_count: 1
+    max_source_seed_count: 8
+  task_overrides:
+    task_games__mancala_pit_board__sowing_landing_option_label:
+      target_landing_label_support:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+      - I
+      - J
+      balanced_target_landing_label_sampling: true
+      answer_option_label_support:
+      - A
+      - B
+      - C
+      - D
+      balanced_answer_option_label_sampling: true
+    task_games__mancala_pit_board__post_sow_pit_count_value:
+      target_count_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      balanced_target_count_sampling: true
+    task_games__mancala_pit_board__max_post_sow_option_label:
+      answer_option_label_support:
+      - A
+      - B
+      - C
+      - D
+      balanced_answer_option_label_sampling: true
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 440
+    canvas_min_width_px: 760
+    canvas_min_height_px: 340
+    canvas_side_padding_px: 168
+    canvas_vertical_padding_px: 132
+    pit_width_px: 108
+    pit_height_px: 68
+    pit_gap_px: 20
+    row_gap_px: 74
+    board_padding_px: 48
+    seed_diameter_min_px: 16
+    seed_diameter_max_px: 20
+    pit_outline_width_px: 4
+    marker_width_px: 5
+prompt:
+  shared:
+    bundle_id: games_mancala_pit_board_v1
+    scene_key: mancala_pit_board
+    task_key: mancala_pit_board_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

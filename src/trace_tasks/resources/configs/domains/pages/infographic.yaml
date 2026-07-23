@@ -1,0 +1,61 @@
+generation:
+  shared:
+    card_count_min: 20
+    card_count_max: 30
+    section_count_min: 4
+    section_count_max: 6
+    value_min: 10
+    value_max: 99
+    sum_operand_count_min: 4
+    sum_operand_count_max: 6
+    excluded_metric_count_min: 2
+    excluded_metric_count_max: 2
+    section_except_included_count_min: 3
+    rank_position_support:
+    - 2
+    - 3
+    balanced_count_sampling: true
+rendering:
+  shared:
+    canvas_width: 912
+    canvas_height: 1416
+    page_margin_x_px: 34
+    page_margin_top_px: 30
+    page_margin_bottom_px: 30
+    header_height_px: 62
+    section_gap_px: 14
+    card_gap_px: 12
+    section_padding_px: 14
+    section_header_height_px: 34
+    title_font_size_px: 30
+    subtitle_font_size_px: 16
+    section_font_size_px: 20
+    label_font_size_px: 18
+    caption_font_size_px: 13
+prompt:
+  shared:
+    bundle_id: pages_infographic_v1
+visual:
+  task_overrides: {}
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.05
+        - 0.2
+      downsample:
+        scale:
+        - 0.95
+        - 0.99
+      jpeg:
+        quality:
+        - 88.0
+        - 96.0
+      noise:
+        alpha:
+        - 0.005
+        - 0.015

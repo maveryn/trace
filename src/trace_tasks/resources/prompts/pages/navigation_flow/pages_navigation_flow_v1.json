@@ -1,0 +1,143 @@
+{
+  "bundle_id": "pages_navigation_flow_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "navigation_flow": [
+        "The image shows {object_description}.",
+        "The screen shows {object_description}.",
+        "This screen shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "navigation_path_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "menu_path_target_label": [
+        "Follow the menu path \"{path_display}\". Which candidate letter marks the final command?",
+        "Which candidate letter is the final command reached by the menu path \"{path_display}\"?",
+        "For the menu path \"{path_display}\", select the letter on the final command.",
+        "Trace the menu path \"{path_display}\" and choose the candidate letter on its final command.",
+        "What candidate letter marks the command at the end of \"{path_display}\"?"
+      ],
+      "sidebar_tree_target_label": [
+        "Follow the sidebar path \"{path_display}\". Which candidate letter marks the final item?",
+        "Which candidate letter is the final item reached by the sidebar path \"{path_display}\"?",
+        "For the sidebar path \"{path_display}\", select the letter on the final item.",
+        "Trace the sidebar path \"{path_display}\" and choose the candidate letter on its final item.",
+        "What candidate letter marks the item at the end of \"{path_display}\"?"
+      ],
+      "ribbon_group_command_label": [
+        "In ribbon tab \"{path_parent}\" and group \"{path_child}\", which candidate letter marks \"{command_label}\"?",
+        "Which candidate letter marks \"{command_label}\" in the \"{path_parent}\" ribbon tab under \"{path_child}\"?",
+        "For ribbon path \"{path_display}\", select the letter on the command.",
+        "Trace the ribbon path \"{path_display}\" and choose the candidate letter on the command.",
+        "What candidate letter marks \"{command_label}\" in ribbon path \"{path_display}\"?"
+      ],
+      "same_group_target_label": [
+        "Which candidate letter marks the other control in the same visible group as candidate \"{reference_label}\"?",
+        "Candidate \"{reference_label}\" is in one visible group. Which other candidate letter is in that same group?",
+        "What candidate letter is in the same visible group as candidate \"{reference_label}\", excluding \"{reference_label}\"?",
+        "Choose the candidate letter on the other control inside candidate \"{reference_label}\"'s group.",
+        "Which lettered control shares its visible group with candidate \"{reference_label}\"?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "global": {
+      "json_output_contract": "Return a JSON object with \"annotation\" and \"answer\".",
+      "json_output_contract_answer_only": "Return a JSON object with \"answer\" only."
+    },
+    "query:menu_path_target_label": {
+      "object_description": "a desktop application navigation screen with menu paths and lettered candidate commands",
+      "answer_hint": "set \"answer\" to the selected candidate letter",
+      "annotation_hint": "set \"annotation\" to the bounding box of the selected target command",
+      "json_example": "{\"annotation\":[112,316,286,354],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:sidebar_tree_target_label": {
+      "object_description": "a desktop application navigation screen with a sidebar tree and lettered candidate items",
+      "answer_hint": "set \"answer\" to the selected candidate letter",
+      "annotation_hint": "set \"annotation\" to the bounding box of the selected target item",
+      "json_example": "{\"annotation\":[112,316,286,354],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:ribbon_group_command_label": {
+      "object_description": "a desktop application navigation screen with ribbon tabs, ribbon groups, and lettered candidate commands",
+      "answer_hint": "set \"answer\" to the selected candidate letter",
+      "annotation_hint": "set \"annotation\" to the bounding box of the selected target command",
+      "json_example": "{\"annotation\":[112,316,286,354],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:same_group_target_label": {
+      "object_description": "a desktop application navigation screen with grouped lettered candidate controls",
+      "answer_hint": "set \"answer\" to the selected candidate letter",
+      "annotation_hint": "set \"annotation\" to the bounding box of the selected target control",
+      "json_example": "{\"annotation\":[112,316,286,354],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    }
+  },
+  "dynamic_slots": {
+    "path_display": {"type": "string"},
+    "path_parent": {"type": "string"},
+    "path_child": {"type": "string"},
+    "command_label": {"type": "string"},
+    "reference_label": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:navigation_flow": [
+      "object_description"
+    ],
+    "query:menu_path_target_label": [
+      "path_display"
+    ],
+    "query:sidebar_tree_target_label": [
+      "path_display"
+    ],
+    "query:ribbon_group_command_label": [
+      "path_display",
+      "path_parent",
+      "path_child",
+      "command_label"
+    ],
+    "query:same_group_target_label": [
+      "reference_label"
+    ],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+dataset_name: example_task_icons__sequence_strip__rotation_progression_completion_label
+output_root: outputs/example_task_icons__sequence_strip__rotation_progression_completion_label
+instance_version: v0
+image_format: png
+max_attempts_per_instance: 200
+strict_repro: false
+sampling_seed: 31
+tasks:
+  - task_id: task_icons__sequence_strip__rotation_progression_completion_label
+    count: 8
+    params: {}

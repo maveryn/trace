@@ -1,0 +1,192 @@
+{
+  "bundle_id": "illustrations_rpg_tactical_map_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "movement_reachable_tile_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "movement_sequence_endpoint_label_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "movement_reachable_tile_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "terrain_type_tile_count_task": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+        "movement_cost_value_task": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "counterfactual_terrain_conversion_cost_value_task": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "water_barrier_unreachable_tile_label_task": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+  },
+  "required_slots_by_key": {
+    "scene:rpg_tactical_map_canvas": [],
+    "scene:rpg_tactical_map_unlettered_canvas": [],
+    "query:movement_reachable_tile": [
+      "movement_points",
+      "terrain_rules"
+    ],
+    "query:movement_sequence_endpoint": [
+      "move_sequence"
+    ],
+    "query:movement_reachable_tile_count": [
+      "movement_points",
+      "terrain_rules"
+    ],
+    "query:terrain_type_tile_count": [
+      "terrain_label"
+    ],
+        "query:movement_cost_value": [
+            "terrain_rules"
+        ],
+        "query:counterfactual_terrain_conversion_cost_value": [
+            "terrain_rules",
+            "conversion_rule"
+        ],
+        "query:water_barrier_unreachable_tile": [
+            "water_rule"
+        ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "rpg_tactical_map_canvas": [
+      "The image shows a top-down tactical RPG map with terrain tiles, one blue unit, and lettered candidate tiles.",
+      "The scene shows a grid-based tactical map from above, with a blue unit, varied terrain, and lettered target tiles.",
+      "The picture shows a pixel-art tactical movement map containing terrain tiles, a blue unit, and lettered candidate tiles.",
+      "The canvas contains a top-down RPG battle map with grass, roads, forests, water, bridges, mountains, one blue unit, and lettered tiles.",
+      "This illustration shows a tactical RPG grid map where a blue unit can move across terrain toward lettered tiles."
+    ],
+        "rpg_tactical_map_unlettered_canvas": [
+            "The image shows a top-down tactical RPG map with terrain tiles and one blue unit.",
+            "The scene shows a grid-based tactical map from above, with a blue unit and varied terrain.",
+            "The picture shows a pixel-art tactical movement map containing terrain tiles and one blue unit.",
+            "The canvas contains a top-down RPG battle map with grass, roads, forests, water, bridges, mountains, and one blue unit.",
+            "This illustration shows a tactical RPG grid map where a blue unit can move across terrain."
+        ],
+        "rpg_tactical_map_marked_destination_canvas": [
+            "The image shows a top-down tactical RPG map with terrain tiles, one blue unit, and one marked target tile.",
+            "The scene shows a grid-based tactical map from above, with a blue unit, varied terrain, and one marked destination tile.",
+            "The picture shows a pixel-art tactical movement map containing terrain tiles, a blue unit, and a target marker on one tile.",
+            "The canvas contains a top-down RPG battle map with grass, roads, forests, water, bridges, mountains, one blue unit, and one marked target tile.",
+            "This illustration shows a tactical RPG grid map where a blue unit can move across terrain toward the marked target tile."
+        ],
+        "rpg_tactical_map_water_barrier_canvas": [
+            "The image shows a top-down tactical RPG map with terrain tiles, one blue unit, a continuous water barrier, and lettered candidate tiles.",
+            "The scene shows a grid-based tactical map from above, with a blue unit, one water barrier crossing the map, and lettered target tiles.",
+            "The picture shows a pixel-art tactical map containing terrain tiles, a blue unit, a full water barrier, and lettered candidate tiles.",
+            "The canvas contains a top-down RPG battle map with one blue unit, lettered tiles, and a continuous strip of water separating two sides of the map.",
+            "This illustration shows a tactical RPG grid map where water divides the map and lettered tiles appear on both sides."
+        ]
+  },
+  "query_templates": {
+    "movement_reachable_tile": [
+      "{terrain_rules} With {movement_points} movement points, which lettered tile can the blue unit reach?",
+      "Using {movement_points} movement points, choose the lettered tile the blue unit can reach. {terrain_rules}",
+      "The blue unit starts on its current tile. It has {movement_points} movement points. {terrain_rules} Which lettered tile is reachable?",
+      "{terrain_rules} Which candidate letter marks a tile reachable by the blue unit with {movement_points} movement points?",
+      "The blue unit may spend up to {movement_points} movement points. {terrain_rules} Select the reachable lettered tile."
+    ],
+    "movement_sequence_endpoint": [
+      "The blue unit follows this move sequence: {move_sequence}. Which lettered tile does it end on?",
+      "Starting from the blue unit, follow these moves in order: {move_sequence}. Choose the lettered ending tile.",
+      "Apply the moves {move_sequence} from the blue unit's current tile. Which lettered tile is the final position?",
+      "Move the blue unit one tile per step using this sequence: {move_sequence}. Which letter marks the endpoint?",
+      "Follow this ordered move list from the blue unit: {move_sequence}. Select the final lettered tile."
+    ],
+    "movement_reachable_tile_count": [
+      "{terrain_rules} Using at most {movement_points} movement points, how many tiles can the blue unit reach? Do not count the tile the unit starts on.",
+      "The blue unit starts on its current tile. {terrain_rules} How many other tiles can it reach using at most {movement_points} movement points?",
+      "With up to {movement_points} movement points, count the tiles the blue unit can reach, excluding its starting tile. {terrain_rules}",
+      "{terrain_rules} How many non-starting tiles are reachable by the blue unit within {movement_points} movement points?",
+      "The blue unit may spend up to {movement_points} movement points. {terrain_rules} Count every reachable tile except the starting tile."
+    ],
+    "terrain_type_tile_count": [
+      "How many visible {terrain_label} tiles are in the map?",
+      "Count the {terrain_label} terrain tiles in the tactical map.",
+      "What is the number of visible {terrain_label} tiles?",
+      "How many grid cells are {terrain_label} terrain?",
+      "Count every visible tile whose terrain type is {terrain_label}."
+    ],
+        "movement_cost_value": [
+            "{terrain_rules} What is the fewest number of movement points the blue unit needs to reach the marked target tile?",
+            "Using the terrain costs, find the minimum movement-point cost for the blue unit to reach the marked target tile. {terrain_rules}",
+            "The blue unit starts on its current tile. {terrain_rules} How many movement points are needed to reach the marked destination tile using the cheapest path?",
+            "{terrain_rules} Count the minimum total movement cost from the blue unit to the marked target tile.",
+            "The blue unit may move only up, down, left, or right. {terrain_rules} What is the shortest movement cost to the marked target tile?"
+        ],
+        "counterfactual_terrain_conversion_cost_value": [
+            "{terrain_rules} {conversion_rule} What is the fewest number of movement points the blue unit needs to reach the marked target tile?",
+            "Using the terrain costs, choose the best single terrain-to-road conversion before moving. {terrain_rules} {conversion_rule} What is the minimum movement-point cost to reach the marked target tile?",
+            "The blue unit starts on its current tile. {terrain_rules} {conversion_rule} After that conversion, how many movement points are needed to reach the marked destination tile using the cheapest path?",
+            "{terrain_rules} {conversion_rule} Count the minimum total movement cost from the blue unit to the marked target tile after the best conversion.",
+            "The blue unit may move only up, down, left, or right. {terrain_rules} {conversion_rule} What is the shortest movement cost to the marked target tile?"
+        ],
+        "water_barrier_unreachable_tile": [
+            "{water_rule} Which lettered tile cannot be reached from the blue unit?",
+            "The blue unit starts on its current tile. {water_rule} Select the lettered tile that is unreachable.",
+            "{water_rule} Which candidate letter marks a tile on a part of the map the blue unit cannot reach?",
+            "Using only the water-blocking rule, choose the lettered tile that cannot be reached from the blue unit. {water_rule}",
+            "From the blue unit's current tile, determine which lettered tile is cut off by water. {water_rule}"
+        ]
+  },
+  "allow_empty_task_templates": true
+}

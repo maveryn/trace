@@ -1,0 +1,37 @@
+output_root: ./out
+
+dataset_name: strict_repro_geometry
+instance_version: v0
+image_format: png
+strict_repro: true
+max_attempts_per_instance: 180
+sampling_seed: 0
+tasks:
+  - task_id: task_geometry__shape_reference__rotation_match
+    count: 8
+    params:
+      scene_variant: triangle
+  - task_id: task_geometry__shape_reference__congruent_match
+    count: 8
+    params:
+      scene_variant: quadrilateral
+  - task_id: task_geometry__graph_paper__circle_circumference_value
+    count: 8
+    params:
+      scene_variant: circle
+  - task_id: task_geometry__graph_paper__area_extremum_label
+    count: 8
+    params:
+      scene_variant: rectangle
+      extremum_direction: largest
+  - task_id: task_geometry__graph_paper__triangle_type_count
+    count: 8
+    params:
+      scene_variant: triangle
+      triangle_type: right
+  - task_id: task_geometry__function_panels__relation_property_label
+    count: 8
+  - task_id: task_geometry__function_panels__intersection_property_label
+    count: 8
+  - task_id: task_geometry__circle_theorem__secant_secant_length_value
+    count: 8

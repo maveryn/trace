@@ -1,0 +1,227 @@
+generation:
+  shared:
+    row_count_min: 5
+    row_count_max: 10
+    numeric_column_count_min: 3
+    numeric_column_count_max: 5
+    value_min: 1
+    value_max: 32
+    scene_variant_weights:
+      spreadsheet: 1.0
+      zebra: 1.0
+      ledger: 1.0
+      card_table: 1.0
+  task_overrides:
+    task_charts__table__threshold_count:
+      row_count_min: 8
+      row_count_max: 16
+      threshold_count_target_count_min: 4
+      threshold_count_target_count_max_row_offset: 2
+      threshold_count_boundary_distractor_radius: 2
+    task_charts__table__interval_value_count:
+      row_count_min: 8
+      row_count_max: 16
+      in_interval_target_count_min: 4
+      in_interval_target_count_max_row_offset: 2
+      in_interval_boundary_distractor_radius: 2
+    task_charts__table__categorical_value_count:
+      row_count_min: 8
+      row_count_max: 16
+    task_charts__table__column_rank_label:
+      row_count_min: 8
+      row_count_max: 16
+    task_charts__table__column_summary_value:
+      row_count_min: 8
+      row_count_max: 16
+    task_charts__table__filtered_column_mean:
+      row_count_min: 8
+      row_count_max: 16
+      selected_row_count_min: 6
+      selected_row_count_max: 7
+    task_charts__table__absolute_difference_between_rows_over_year_interval:
+      row_count_min: 8
+      row_count_max: 16
+      numeric_column_count_min: 8
+      numeric_column_count_max: 12
+      interval_length_min: 4
+      interval_length_max: 5
+      value_min: 1
+      value_max: 99
+    task_charts__table__sum_absolute_differences_between_rows_over_year_interval:
+      row_count_min: 8
+      row_count_max: 16
+      numeric_column_count_min: 8
+      numeric_column_count_max: 12
+      interval_length_min: 4
+      interval_length_max: 5
+      value_min: 1
+      value_max: 99
+rendering:
+  shared:
+    canvas_width: 940
+    canvas_height: 640
+    table_margin_left_px: 52
+    table_margin_left_px_min: 44
+    table_margin_left_px_max: 68
+    table_margin_right_px: 52
+    table_margin_right_px_min: 44
+    table_margin_right_px_max: 68
+    table_margin_top_px: 56
+    table_margin_top_px_min: 44
+    table_margin_top_px_max: 72
+    table_margin_bottom_px: 52
+    table_margin_bottom_px_min: 44
+    table_margin_bottom_px_max: 64
+    row_label_width_fraction: 0.28
+    label_font_size_px: 24
+    label_font_size_px_min: 22
+    label_font_size_px_max: 25
+    value_font_size_px: 22
+    value_font_size_px_min: 20
+    value_font_size_px_max: 23
+    border_width_px: 2
+    border_width_px_min: 2
+    border_width_px_max: 3
+    grid_width_px: 1
+    grid_width_px_min: 1
+    grid_width_px_max: 2
+    rounded_corner_radius_px: 18
+    rounded_corner_radius_px_min: 10
+    rounded_corner_radius_px_max: 22
+    cell_padding_px: 14
+    cell_padding_px_min: 10
+    cell_padding_px_max: 16
+    header_style_options: [light, accent, dark]
+    frame_style_options: [flat, shadow]
+    inner_rule_style_options: [solid, soft, dashed]
+    numeric_alignment_options: [center, right]
+    header_fill_rgb: [232, 236, 243]
+    header_fill_rgb_options:
+      - [232, 236, 243]
+      - [229, 239, 237]
+      - [240, 236, 227]
+      - [224, 232, 246]
+      - [237, 228, 240]
+    header_dark_fill_rgb: [63, 72, 86]
+    header_dark_fill_rgb_options:
+      - [63, 72, 86]
+      - [52, 83, 84]
+      - [91, 72, 58]
+      - [80, 62, 88]
+    header_dark_text_rgb: [255, 255, 255]
+    zebra_row_fill_rgb: [247, 249, 252]
+    zebra_row_fill_rgb_options:
+      - [247, 249, 252]
+      - [246, 250, 248]
+      - [251, 248, 242]
+      - [250, 246, 251]
+    card_fill_rgb: [250, 250, 252]
+    card_fill_rgb_options:
+      - [250, 250, 252]
+      - [248, 251, 252]
+      - [252, 250, 246]
+      - [251, 248, 252]
+    border_color_rgb: [92, 98, 109]
+    border_color_rgb_options:
+      - [92, 98, 109]
+      - [84, 101, 104]
+      - [105, 94, 82]
+    grid_color_rgb: [204, 209, 218]
+    grid_color_rgb_options:
+      - [204, 209, 218]
+      - [199, 213, 211]
+      - [216, 208, 197]
+    text_color_rgb: [36, 39, 45]
+    text_stroke_rgb: [255, 255, 255]
+    shadow_color_rgb: [214, 218, 224]
+    shadow_color_rgb_options:
+      - [214, 218, 224]
+      - [210, 220, 218]
+      - [224, 217, 207]
+    shadow_offset_px: 5
+    shadow_offset_px_min: 3
+    shadow_offset_px_max: 7
+  task_overrides:
+    task_charts__table__threshold_count:
+      canvas_height: 900
+    task_charts__table__interval_value_count:
+      canvas_height: 900
+    task_charts__table__categorical_value_count:
+      canvas_height: 900
+    task_charts__table__column_rank_label:
+      canvas_height: 900
+    task_charts__table__column_summary_value:
+      canvas_height: 900
+    task_charts__table__filtered_column_mean:
+      canvas_height: 900
+    task_charts__table__absolute_difference_between_rows_over_year_interval:
+      canvas_width: 1360
+      canvas_height: 872
+      row_label_width_fraction: 0.08
+      row_label_min_width_px: 76
+      label_font_size_px: 18
+      value_font_size_px: 18
+      cell_padding_px: 8
+    task_charts__table__sum_absolute_differences_between_rows_over_year_interval:
+      canvas_width: 1360
+      canvas_height: 872
+      row_label_width_fraction: 0.08
+      row_label_min_width_px: 76
+      label_font_size_px: 18
+      value_font_size_px: 18
+      cell_padding_px: 8
+prompt:
+  shared:
+    bundle_id: charts_table_counting_v1
+  task_overrides:
+    task_charts__table__column_rank_label:
+      bundle_id: charts_table_ranking_v1
+    task_charts__table__column_summary_value:
+      bundle_id: charts_table_statistics_v1
+    task_charts__table__filtered_column_mean:
+      bundle_id: charts_table_statistics_v1
+    task_charts__table__absolute_difference_between_rows_over_year_interval:
+      bundle_id: charts_table_temporal_v1
+    task_charts__table__sum_absolute_differences_between_rows_over_year_interval:
+      bundle_id: charts_table_temporal_v1
+visual:
+  background:
+    enabled: true
+    styles:
+      solid_light:
+        kind: solid
+        color: [248, 248, 248]
+      cool_light:
+        kind: solid
+        color: [246, 249, 251]
+      warm_light:
+        kind: solid
+        color: [251, 249, 244]
+      paper_light:
+        kind: solid
+        color: [250, 248, 241]
+      mint_light:
+        kind: solid
+        color: [244, 250, 247]
+      lavender_light:
+        kind: solid
+        color: [248, 247, 252]
+    weights:
+      solid_light: 1.0
+      cool_light: 1.0
+      warm_light: 1.0
+      paper_light: 1.0
+      mint_light: 1.0
+      lavender_light: 1.0
+  noise:
+    apply_prob: 0.5
+    edit_count_range: [1, 1]
+    value_ranges:
+      blur:
+        radius: [0.12, 0.35]
+      downsample:
+        scale: [0.9, 0.97]
+      jpeg:
+        quality: [80.0, 94.0]
+      noise:
+        alpha: [0.01, 0.035]

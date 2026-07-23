@@ -1,0 +1,59 @@
+generation:
+  task_overrides:
+    task_puzzles__word_search__search_location_label:
+      grid_size_min: 4
+      grid_size_max: 6
+      word_length_min: 3
+      word_length_max: 4
+      option_count_min: 6
+      option_count_max: 6
+      scene_variant_weights:
+        word_search_classic: 1.0
+        word_search_notebook: 1.0
+        word_search_card: 1.0
+    task_puzzles__word_search__present_word_option_label:
+      grid_size_min: 4
+      grid_size_max: 6
+      word_length_min: 3
+      word_length_max: 4
+      option_count_min: 4
+      option_count_max: 4
+      scene_variant_weights:
+        word_search_classic: 1.0
+        word_search_notebook: 1.0
+        word_search_card: 1.0
+
+rendering:
+  shared:
+    canvas_width: 880
+    canvas_height: 740
+    cell_size_px: 56
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    header_size_px: 42
+    panel_padding_px: 24
+    panel_corner_radius_px: 18
+    grid_line_width_px: 2
+    option_panel_width_px: 220
+    option_panel_height_px: 54
+    option_gap_px: 10
+    option_font_size_px: 18
+    letter_font_size_px: 24
+    index_font_size_px: 17
+    panel_fill_rgb: [250, 251, 253]
+    grid_fill_rgb: [255, 255, 255]
+    header_fill_rgb: [239, 243, 248]
+    grid_line_rgb: [93, 102, 116]
+    text_rgb: [26, 31, 39]
+    text_stroke_rgb: [255, 255, 255]
+    option_fill_rgb: [255, 250, 224]
+    option_border_rgb: [54, 96, 168]
+
+prompt:
+  shared:
+    bundle_id: puzzles_word_search_v1
+    scene_key: word_search
+
+visual:
+  noise:
+    apply_prob: 0.15

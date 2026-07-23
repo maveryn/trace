@@ -1,0 +1,145 @@
+{
+  "bundle_id": "charts_pictogram_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": false,
+  "templates": {
+    "scene": {
+      "pictogram_scene": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The image contains {object_description}."
+      ]
+    },
+    "task": {
+      "category_total_value": [
+        "Using the unit scale, what is the total for category \"{category_label}\"?",
+        "Read category \"{category_label}\". What total value do its repeated marks represent?",
+        "For \"{category_label}\", compute the total from its marks and the unit scale.",
+        "What integer total is represented by the marks in category \"{category_label}\"?",
+        "Use the legend scale to find the total for category \"{category_label}\"."
+      ],
+      "category_total_extremum_label": [
+        "Use the unit scale to compare the totals represented by every category row.",
+        "Read each category total from the repeated marks and compare all rows.",
+        "Using the legend scale, compare the total values for all visible categories.",
+        "Determine each category total from its marks before selecting the requested row.",
+        "Compare all category totals represented in the pictogram."
+      ],
+      "group_difference_value": [
+        "Using the unit scale, what is the absolute difference between categories \"{category_label_a}\" and \"{category_label_b}\"?",
+        "Compare \"{category_label_a}\" and \"{category_label_b}\". What is the absolute difference in their totals?",
+        "From the repeated marks, compute the total difference between \"{category_label_a}\" and \"{category_label_b}\".",
+        "How much larger is one of \"{category_label_a}\" and \"{category_label_b}\" than the other, in total value?",
+        "Use the legend scale to calculate the absolute total gap between \"{category_label_a}\" and \"{category_label_b}\"."
+      ],
+      "target_value_nearest_category_label": [
+        "Using the unit scale, which category has the total closest to {target_value}?",
+        "Which category's scaled total is nearest to {target_value}?",
+        "Read each category total from the repeated marks. Which category is closest to {target_value}?",
+        "Compare the category totals with {target_value}. Which category is nearest?",
+        "Use the legend scale to find the category whose total is closest to {target_value}."
+      ],
+      "threshold_count": [
+        "Use the unit scale to compare each category total with the threshold.",
+        "Read each category total from the repeated marks and the legend scale.",
+        "Compare the scaled total for every category row against the requested threshold.",
+        "Use the legend scale, then evaluate the requested threshold condition for each row.",
+        "Determine each category total from its marks before applying the threshold."
+      ]
+    },
+    "query": {
+      "largest_total_category_label": [
+        "Which category has the largest total?",
+        "Which visible category row represents the largest total value?",
+        "What category label corresponds to the largest scaled total?",
+        "Which category has the highest total after applying the unit scale?",
+        "Find the category with the largest represented total."
+      ],
+      "smallest_total_category_label": [
+        "Which category has the smallest total?",
+        "Which visible category row represents the smallest total value?",
+        "What category label corresponds to the smallest scaled total?",
+        "Which category has the lowest total after applying the unit scale?",
+        "Find the category with the smallest represented total."
+      ],
+      "greater_than_threshold": [
+        "How many categories have totals greater than {threshold_value}?",
+        "Count the categories whose total value is greater than {threshold_value}.",
+        "How many category rows represent a total greater than {threshold_value}?",
+        "From the repeated marks, count categories with totals greater than {threshold_value}.",
+        "Use the legend scale to count the categories whose totals are greater than {threshold_value}."
+      ],
+      "less_than_threshold": [
+        "How many categories have totals less than {threshold_value}?",
+        "Count the categories whose total value is less than {threshold_value}.",
+        "How many category rows represent a total less than {threshold_value}?",
+        "From the repeated marks, count categories with totals less than {threshold_value}.",
+        "Use the legend scale to count the categories whose totals are less than {threshold_value}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:category_total_value": {
+      "answer_hint": "set \"answer\" to the requested integer value",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the requested category row",
+      "json_example": "{\"annotation\":[92,180,1160,248],\"answer\":42}",
+      "json_example_answer_only": "{\"answer\":42}"
+    },
+    "task:category_total_extremum_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the answer category row",
+      "json_example": "{\"annotation\":[92,180,860,248],\"answer\":\"Orchid\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+    },
+    "task:group_difference_value": {
+      "answer_hint": "set \"answer\" to the requested integer value",
+      "annotation_hint": "set \"annotation\" to an object mapping each compared category label to an [x0, y0, x1, y1] pixel box around that category row",
+      "json_example": "{\"annotation\":{\"M4\":[92,270,1160,338],\"Q8\":[92,430,1160,498]},\"answer\":18}",
+      "json_example_answer_only": "{\"answer\":18}"
+    },
+    "task:target_value_nearest_category_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0, y0, x1, y1] pixel box around the answer category row",
+      "json_example": "{\"annotation\":[92,180,860,248],\"answer\":\"Orchid\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid\"}"
+    },
+    "query:greater_than_threshold": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around every category row with a total greater than the threshold",
+      "json_example": "{\"annotation\":[[92,180,1160,248],[92,350,1160,418],[92,520,1160,588]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:less_than_threshold": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around every category row with a total less than the threshold",
+      "json_example": "{\"annotation\":[[92,180,1160,248],[92,350,1160,418],[92,520,1160,588]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "category_label": {"type": "string"},
+    "category_label_a": {"type": "string"},
+    "category_label_b": {"type": "string"},
+    "target_value": {"type": "integer"},
+    "threshold_value": {"type": "integer"}
+  }
+}

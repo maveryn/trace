@@ -1,0 +1,306 @@
+{
+  "bundle_id": "charts_dashboard_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "dashboard_mixed_chart": [
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}.",
+        "The image shows {object_description}."
+      ]
+    },
+    "task": {
+      "dashboard_cross_panel_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "statement_option_selection_label": [
+        "Which displayed statement option is {requested_truth_phrase}?",
+        "Select the option letter for the statement that is {requested_truth_phrase}.",
+        "From the statement options shown in the image, which one is {requested_truth_phrase}?",
+        "Which option contains the {requested_truth_phrase} statement?",
+        "Choose the displayed statement option that is {requested_truth_phrase}."
+      ],
+      "category_panel_greater_than_threshold_count": [
+        "For category \"{condition_category_label}\", how many dashboard panels show a value {panel_condition_phrase}?",
+        "For category \"{condition_category_label}\" across all panels, count the panels where its value is {panel_condition_phrase}.",
+        "Using the shared category label \"{condition_category_label}\", how many panels satisfy the condition that its value is {panel_condition_phrase}?",
+        "Across the dashboard, count panels in which category \"{condition_category_label}\" has a value {panel_condition_phrase}.",
+        "What is the number of panels where \"{condition_category_label}\" meets the value condition {panel_condition_phrase}?"
+      ],
+      "category_panel_less_than_threshold_count": [
+        "For category \"{condition_category_label}\", how many dashboard panels show a value {panel_condition_phrase}?",
+        "For category \"{condition_category_label}\" across all panels, count the panels where its value is {panel_condition_phrase}.",
+        "Using the shared category label \"{condition_category_label}\", how many panels satisfy the condition that its value is {panel_condition_phrase}?",
+        "Across the dashboard, count panels in which category \"{condition_category_label}\" has a value {panel_condition_phrase}.",
+        "What is the number of panels where \"{condition_category_label}\" meets the value condition {panel_condition_phrase}?"
+      ],
+      "largest_category_panel_label": [
+        "For category \"{target_category_label}\", which dashboard panel shows the largest value?",
+        "Across all dashboard panels, find category \"{target_category_label}\". Which panel has its largest value?",
+        "Which panel title corresponds to the highest value for \"{target_category_label}\"?",
+        "Look only at category \"{target_category_label}\" in each panel. Which panel is largest?",
+        "For the shared category \"{target_category_label}\", report the panel with the greatest value."
+      ],
+      "smallest_category_panel_label": [
+        "For category \"{target_category_label}\", which dashboard panel shows the smallest value?",
+        "Across all dashboard panels, find category \"{target_category_label}\". Which panel has its smallest value?",
+        "Which panel title corresponds to the lowest value for \"{target_category_label}\"?",
+        "Look only at category \"{target_category_label}\" in each panel. Which panel is smallest?",
+        "For the shared category \"{target_category_label}\", report the panel with the least value."
+      ],
+      "largest_category_total_label": [
+        "Which category label has the largest total across all dashboard panels? {unanswerable_instruction}",
+        "Sum each category across every panel. Which category has the largest total? {unanswerable_instruction}",
+        "Across the dashboard, which shared category label has the greatest combined value? {unanswerable_instruction}",
+        "Add each category's values over all panels. Which category is largest overall? {unanswerable_instruction}",
+        "What category label has the highest total when all panels are combined? {unanswerable_instruction}"
+      ],
+      "smallest_category_total_label": [
+        "Which category label has the smallest total across all dashboard panels? {unanswerable_instruction}",
+        "Sum each category across every panel. Which category has the smallest total? {unanswerable_instruction}",
+        "Across the dashboard, which shared category label has the least combined value? {unanswerable_instruction}",
+        "Add each category's values over all panels. Which category is smallest overall? {unanswerable_instruction}",
+        "What category label has the lowest total when all panels are combined? {unanswerable_instruction}"
+      ],
+      "largest_panel_value_range_label": [
+        "Which dashboard panel has the largest spread between its category values?",
+        "Find the panel whose category values span the widest range. What is its panel title?",
+        "Across the dashboard, which panel has the greatest difference between its largest and smallest category values?",
+        "Which panel title belongs to the widest category-value range?",
+        "Compare each panel's largest and smallest category values. Which panel has the largest range?"
+      ],
+      "smallest_panel_value_range_label": [
+        "Which dashboard panel has the smallest spread between its category values?",
+        "Find the panel whose category values span the narrowest range. What is its panel title?",
+        "Across the dashboard, which panel has the least difference between its largest and smallest category values?",
+        "Which panel title belongs to the narrowest category-value range?",
+        "Compare each panel's largest and smallest category values. Which panel has the smallest range?"
+      ],
+      "panel_value_range_value": [
+        "In the \"{selected_panel_name}\" panel, what is the difference between its largest and smallest category values?",
+        "For the dashboard panel named \"{selected_panel_name}\", subtract its smallest category value from its largest category value. What is the result?",
+        "Using only \"{selected_panel_name}\", what range do its category values span from smallest to largest?",
+        "Within \"{selected_panel_name}\", find the largest and smallest category values. What is their difference?",
+        "What is the value range in \"{selected_panel_name}\", computed as largest category value minus smallest category value?"
+      ],
+      "largest_panel_total_label": [
+        "Which dashboard panel has the largest total across all of its category values?",
+        "Sum the category values within each panel. Which panel has the largest total?",
+        "Across the dashboard, what panel title has the greatest combined category value?",
+        "Add all category values in each panel. Which panel is largest overall?",
+        "Which panel title corresponds to the highest total over its categories?"
+      ],
+      "smallest_panel_total_label": [
+        "Which dashboard panel has the smallest total across all of its category values?",
+        "Sum the category values within each panel. Which panel has the smallest total?",
+        "Across the dashboard, what panel title has the least combined category value?",
+        "Add all category values in each panel. Which panel is smallest overall?",
+        "Which panel title corresponds to the lowest total over its categories?"
+      ],
+      "global_maximum_value_category_label": [
+        "Which category label has the single largest value anywhere in the dashboard?",
+        "Across every panel and category, find the highest displayed value. What category label does it belong to?",
+        "What category label is attached to the dashboard's global maximum value?",
+        "Find the one largest value in the whole dashboard. Which category label is it for?",
+        "Looking across all panels, which category has the highest value overall?"
+      ],
+      "global_minimum_value_category_label": [
+        "Which category label has the single smallest value anywhere in the dashboard?",
+        "Across every panel and category, find the lowest displayed value. What category label does it belong to?",
+        "What category label is attached to the dashboard's global minimum value?",
+        "Find the one smallest value in the whole dashboard. Which category label is it for?",
+        "Looking across all panels, which category has the lowest value overall?"
+      ],
+      "largest_source_rank_target_value": [
+        "In the \"{source_panel_name}\" panel, find the category with the {rank_phrase} value. What is that same category's value in the \"{target_panel_name}\" panel?",
+        "Use \"{source_panel_name}\" to identify the {rank_phrase} category, then give its value in \"{target_panel_name}\".",
+        "Which value does \"{target_panel_name}\" show for the category ranked {rank_phrase} in \"{source_panel_name}\"?",
+        "First rank categories in \"{source_panel_name}\"; for the {rank_phrase} one, what value appears in \"{target_panel_name}\"?",
+        "Find the {rank_phrase} category in \"{source_panel_name}\". Report its integer value from \"{target_panel_name}\"."
+      ],
+      "smallest_source_rank_target_value": [
+        "In the \"{source_panel_name}\" panel, find the category with the {rank_phrase} value. What is that same category's value in the \"{target_panel_name}\" panel?",
+        "Use \"{source_panel_name}\" to identify the {rank_phrase} category, then give its value in \"{target_panel_name}\".",
+        "Which value does \"{target_panel_name}\" show for the category ranked {rank_phrase} in \"{source_panel_name}\"?",
+        "First rank categories in \"{source_panel_name}\"; for the {rank_phrase} one, what value appears in \"{target_panel_name}\"?",
+        "Find the {rank_phrase} category in \"{source_panel_name}\". Report its integer value from \"{target_panel_name}\"."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:statement_option_selection_label": {
+      "answer_hint": "set \"answer\" to the selected option letter as a capital letter",
+      "annotation_hint": "set \"annotation\" to an array of two [x,y] pixel points on the chart marks that verify the selected statement",
+      "json_example": "{\"annotation\":[[175,240],[805,250]],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:category_panel_greater_than_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on each counted category mark",
+      "json_example": "{\"annotation\":[[190,240],[790,245],[845,298]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:category_panel_less_than_threshold_count": {
+      "answer_hint": "set \"answer\" to the requested integer count",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on each counted category mark",
+      "json_example": "{\"annotation\":[[190,240],[790,245],[845,298]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:largest_category_panel_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel title as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the target category mark in the answer panel",
+      "json_example": "{\"annotation\":[610,244],\"answer\":\"Orchid Bar\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid Bar\"}"
+    },
+    "query:smallest_category_panel_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel title as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the target category mark in the answer panel",
+      "json_example": "{\"annotation\":[610,244],\"answer\":\"Orchid Bar\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid Bar\"}"
+    },
+    "query:largest_category_total_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string, or \"unanswerable\" if any category is not shown in every dashboard panel",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on that category's mark in every panel; if the answer is \"unanswerable\", use an empty array",
+      "json_example": "{\"annotation\":[[180,220],[475,240],[790,260],[1080,245]],\"answer\":\"Mica\"}",
+      "json_example_answer_only": "{\"answer\":\"Mica\"}"
+    },
+    "query:smallest_category_total_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string, or \"unanswerable\" if any category is not shown in every dashboard panel",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on that category's mark in every panel; if the answer is \"unanswerable\", use an empty array",
+      "json_example": "{\"annotation\":[[180,220],[475,240],[790,260],[1080,245]],\"answer\":\"Mica\"}",
+      "json_example_answer_only": "{\"answer\":\"Mica\"}"
+    },
+    "query:largest_panel_value_range_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel title as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping \"largest_value\" and \"smallest_value\" to [x,y] pixel points on the two category marks that define the answer panel's range",
+      "json_example": "{\"annotation\":{\"largest_value\":[430,218],\"smallest_value\":[512,337]},\"answer\":\"Orchid Bar\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid Bar\"}"
+    },
+    "query:smallest_panel_value_range_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel title as a string",
+      "annotation_hint": "set \"annotation\" to an object mapping \"largest_value\" and \"smallest_value\" to [x,y] pixel points on the two category marks that define the answer panel's range",
+      "json_example": "{\"annotation\":{\"largest_value\":[430,218],\"smallest_value\":[512,337]},\"answer\":\"Orchid Bar\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid Bar\"}"
+    },
+    "query:panel_value_range_value": {
+      "answer_hint": "set \"answer\" to the requested integer difference",
+      "annotation_hint": "set \"annotation\" to an object mapping \"largest_value\" and \"smallest_value\" to [x,y] pixel points on those category marks in the named panel",
+      "json_example": "{\"annotation\":{\"largest_value\":[430,218],\"smallest_value\":[512,337]},\"answer\":37}",
+      "json_example_answer_only": "{\"answer\":37}"
+    },
+    "query:largest_panel_total_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel title as a string",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on every category mark in the answer panel",
+      "json_example": "{\"annotation\":[[430,218],[512,337],[588,260],[642,232]],\"answer\":\"Orchid Bar\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid Bar\"}"
+    },
+    "query:smallest_panel_total_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel title as a string",
+      "annotation_hint": "set \"annotation\" to an array of [x,y] pixel points on every category mark in the answer panel",
+      "json_example": "{\"annotation\":[[430,218],[512,337],[588,260],[642,232]],\"answer\":\"Orchid Bar\"}",
+      "json_example_answer_only": "{\"answer\":\"Orchid Bar\"}"
+    },
+    "query:global_maximum_value_category_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the global maximum category mark",
+      "json_example": "{\"annotation\":[610,244],\"answer\":\"Mica\"}",
+      "json_example_answer_only": "{\"answer\":\"Mica\"}"
+    },
+    "query:global_minimum_value_category_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the global minimum category mark",
+      "json_example": "{\"annotation\":[610,244],\"answer\":\"Mica\"}",
+      "json_example_answer_only": "{\"answer\":\"Mica\"}"
+    },
+    "query:largest_source_rank_target_value": {
+      "answer_hint": "set \"answer\" to the requested integer value",
+      "annotation_hint": "set \"annotation\" to an object mapping \"source_panel\" and \"target_panel\" to [x,y] pixel points on the selected category marks in those panels",
+      "json_example": "{\"annotation\":{\"source_panel\":[180,220],\"target_panel\":[860,260]},\"answer\":47}",
+      "json_example_answer_only": "{\"answer\":47}"
+    },
+    "query:smallest_source_rank_target_value": {
+      "answer_hint": "set \"answer\" to the requested integer value",
+      "annotation_hint": "set \"annotation\" to an object mapping \"source_panel\" and \"target_panel\" to [x,y] pixel points on the selected category marks in those panels",
+      "json_example": "{\"annotation\":{\"source_panel\":[180,220],\"target_panel\":[860,260]},\"answer\":47}",
+      "json_example_answer_only": "{\"answer\":47}"
+    }
+  },
+  "dynamic_slots": {
+    "condition_category_label": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "panel_condition_phrase": {
+      "type": "string"
+    },
+    "rank_phrase": {
+      "type": "string"
+    },
+    "requested_truth_phrase": {
+      "type": "string"
+    },
+    "selected_panel_name": {
+      "type": "string"
+    },
+    "source_panel_name": {
+      "type": "string"
+    },
+    "target_category_label": {
+      "type": "string"
+    },
+    "target_panel_name": {
+      "type": "string"
+    },
+    "unanswerable_instruction": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:category_panel_greater_than_threshold_count": [],
+    "query:category_panel_less_than_threshold_count": [],
+    "query:largest_category_panel_label": [],
+    "query:smallest_category_panel_label": [],
+    "query:largest_category_total_label": [
+      "unanswerable_instruction"
+    ],
+    "query:smallest_category_total_label": [
+      "unanswerable_instruction"
+    ],
+    "query:largest_panel_value_range_label": [],
+    "query:smallest_panel_value_range_label": [],
+    "query:panel_value_range_value": [],
+    "query:largest_panel_total_label": [],
+    "query:smallest_panel_total_label": [],
+    "query:global_maximum_value_category_label": [],
+    "query:global_minimum_value_category_label": [],
+    "query:largest_source_rank_target_value": [],
+    "query:smallest_source_rank_target_value": []
+  }
+}

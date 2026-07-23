@@ -1,0 +1,94 @@
+{
+  "bundle_id": "charts_matrix_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "matrix_cell": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "matrix_cell_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "axis_extremum_label": [
+        "In {query_axis} \"{axis_label}\", which {answer_axis} label has the {extremum_phrase}? {unanswerable_instruction}",
+        "Look only at {query_axis} \"{axis_label}\". What {answer_axis} label contains the {extremum_phrase}? {unanswerable_instruction}",
+        "For {query_axis} \"{axis_label}\", what {answer_axis} label has the cell with the {extremum_phrase}? {unanswerable_instruction}",
+        "Within the {query_axis} labeled \"{axis_label}\", which {answer_axis} has the {extremum_phrase}? {unanswerable_instruction}",
+        "What {answer_axis} label corresponds to the {extremum_phrase} in {query_axis} \"{axis_label}\"? {unanswerable_instruction}"
+      ],
+      "off_diagonal_confusion_label": [
+        "For actual class \"{row_label}\", ignoring the diagonal cell, which predicted column has the largest printed count?",
+        "In the row for actual class \"{row_label}\", exclude the matching diagonal cell. What predicted column label has the largest count?",
+        "Look across actual class \"{row_label}\" and ignore the diagonal. Which predicted column label is highest?",
+        "For the actual-class row \"{row_label}\", which off-diagonal predicted column has the largest printed value?",
+        "Ignoring the correct-class diagonal cell for actual class \"{row_label}\", which predicted label has the highest count?"
+      ],
+      "threshold_cell_count": [
+        "In {query_axis} \"{axis_label}\", how many active cells have printed values {comparison_phrase}?",
+        "Look only at {query_axis} \"{axis_label}\". Count the active cells with values {comparison_phrase}.",
+        "For {query_axis} \"{axis_label}\", how many printed values are {comparison_phrase}?",
+        "Within the {query_axis} labeled \"{axis_label}\", how many active cells satisfy {comparison_phrase}?",
+        "Count the cells in {query_axis} \"{axis_label}\" whose printed values are {comparison_phrase}."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:axis_extremum_label": {
+      "answer_hint": "set \"answer\" to the exact visible row or column label as a string",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes for all candidate cells in the selected row or column",
+      "json_example": "{\"annotation\":[[240,300,310,345],[320,300,390,345],[400,300,470,345]],\"answer\":\"C7\"}",
+      "json_example_answer_only": "{\"answer\":\"C7\"}"
+    },
+    "query:off_diagonal_confusion_label": {
+      "answer_hint": "set \"answer\" to the exact visible predicted column label as a string",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes for the off-diagonal candidate cells in the actual-class row",
+      "json_example": "{\"annotation\":[[240,260,310,305],[320,260,390,305],[400,260,470,305]],\"answer\":\"C5\"}",
+      "json_example_answer_only": "{\"answer\":\"C5\"}"
+    },
+    "query:threshold_cell_count": {
+      "answer_hint": "set \"answer\" to the requested cell count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes for the cells matching the threshold",
+      "json_example": "{\"annotation\":[[240,260,310,305],[320,260,390,305],[400,260,470,305],[480,260,550,305]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "query_axis": {"type": "string"},
+    "axis_label": {"type": "string"},
+    "answer_axis": {"type": "string"},
+    "extremum_phrase": {"type": "string"},
+    "unanswerable_instruction": {"type": "string"},
+    "row_label": {"type": "string"},
+    "comparison_phrase": {"type": "string"}
+  }
+}

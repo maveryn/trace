@@ -1,0 +1,100 @@
+{
+  "bundle_id": "puzzles_cube_net_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "cube_net": [
+        "The image shows {object_description}.",
+        "The puzzle diagram shows {object_description}.",
+        "This puzzle diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "opposite_face_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "marked_edge_neighbor_face_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "equivalent_net_label_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "opposite_face_label": [
+        "Which option shows the face opposite the marked face when the net is folded into a cube?",
+        "When folded into a cube, which option is opposite the marked face?",
+        "Choose the option for the face opposite the marked reference face.",
+        "Which labeled option corresponds to the cube face opposite the marked face?",
+        "Identify the option whose face is opposite the marked face after folding."
+      ],
+      "marked_edge_neighbor_face_label": [
+        "Which option shows the face that touches the red marked edge when the net is folded into a cube?",
+        "When folded into a cube, which option is adjacent across the red marked edge?",
+        "Choose the option for the face connected through the red marked edge after folding.",
+        "Which labeled option touches the red marked edge on the folded cube?",
+        "Identify the option whose face shares the red marked edge after the net is folded."
+      ],
+      "equivalent_net_label": [
+        "Which option folds into the same colored cube as the reference net, allowing the cube to be turned?",
+        "Choose the candidate net that makes the same colored cube as the reference after folding and turning the cube.",
+        "Which labeled option is equivalent to the reference colored cube net after folding?",
+        "After folding, which option has the same cube-face coloring as the reference net, up to cube rotation?",
+        "Identify the option whose colored net folds to the same cube as the reference."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}",
+        "Use this answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}\nAnswer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}\nRequired answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}\nFormat for the \"answer\" field: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Use this annotation format: {annotation_hint}\nUse this answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}\nFinal answer format: set \"answer\" to the single option label as a capital letter.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "task:opposite_face_label_query": {
+      "object_description": "a labeled cube net with one marked reference face and labeled face options",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] of the chosen option card.",
+      "json_example": "{\"annotation\":[812,220,966,326],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "task:marked_edge_neighbor_face_label_query": {
+      "object_description": "a labeled cube net with one red marked edge and labeled face options",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] of the chosen option card.",
+      "json_example": "{\"annotation\":[812,220,966,326],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    },
+    "task:equivalent_net_label_query": {
+      "object_description": "a reference colored cube net and four labeled candidate colored cube nets",
+      "annotation_hint": "Set annotation to the image-pixel bounding box [x0,y0,x1,y1] of the chosen option net panel.",
+      "json_example": "{\"annotation\":[782,452,1074,774],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

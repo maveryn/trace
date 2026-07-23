@@ -1,0 +1,123 @@
+{
+  "bundle_id": "geometry_coordinate_locus_v0",
+  "schema_version": "v0",
+  "allow_empty_task_templates": true,
+  "task_templates": {
+    "coordinate_locus_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:coordinate_locus_candidate_scene": [
+      "object_description"
+    ],
+    "scene:coordinate_locus_panel_grid_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "coordinate_locus_candidate_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This coordinate diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ],
+    "coordinate_locus_panel_grid_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This coordinate panel grid shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "circle_region_point": [
+      "Which lettered point lies in the shaded region?",
+      "Choose the lettered point inside the shaded region.",
+      "Which candidate point is in the shaded region?",
+      "Find the lettered candidate located in the shaded region.",
+      "Select the point whose letter is inside the shaded region."
+    ],
+    "annulus_region_point": [
+      "Which lettered point lies in the shaded region?",
+      "Choose the lettered point inside the shaded region.",
+      "Which candidate point is in the shaded region?",
+      "Find the lettered candidate located in the shaded region.",
+      "Select the point whose letter is inside the shaded region."
+    ],
+    "vertical_strip_region_point": [
+      "Which lettered point lies in the shaded region?",
+      "Choose the lettered point inside the shaded region.",
+      "Which candidate point is in the shaded region?",
+      "Find the lettered candidate located in the shaded region.",
+      "Select the point whose letter is inside the shaded region."
+    ],
+    "half_plane_intersection_region_point": [
+      "Which lettered point lies in the shaded region?",
+      "Choose the lettered point inside the shaded region.",
+      "Which candidate point is in the shaded region?",
+      "Find the lettered candidate located in the shaded region.",
+      "Select the point whose letter is inside the shaded region."
+    ],
+    "circle_inequality_panel_match": [
+      "Which labeled panel shows the region described in the condition box?",
+      "Choose the panel whose shaded region matches the condition box.",
+      "Find the labeled panel matching the displayed condition.",
+      "Which panel has the shaded region for the condition shown?",
+      "Select the panel that represents the condition in the box."
+    ],
+    "vertical_strip_panel_match": [
+      "Which labeled panel shows the region described in the condition box?",
+      "Choose the panel whose shaded region matches the condition box.",
+      "Find the labeled panel matching the displayed condition.",
+      "Which panel has the shaded region for the condition shown?",
+      "Select the panel that represents the condition in the box."
+    ],
+    "horizontal_halfplane_panel_match": [
+      "Which labeled panel shows the region described in the condition box?",
+      "Choose the panel whose shaded region matches the condition box.",
+      "Find the labeled panel matching the displayed condition.",
+      "Which panel has the shaded region for the condition shown?",
+      "Select the panel that represents the condition in the box."
+    ],
+    "two_inequality_panel_match": [
+      "Which labeled panel shows the region described in the condition box?",
+      "Choose the panel whose shaded region matches the condition box.",
+      "Find the labeled panel matching the displayed condition.",
+      "Which panel has the shaded region for the condition shown?",
+      "Select the panel that represents the condition in the box."
+    ]
+  }
+}

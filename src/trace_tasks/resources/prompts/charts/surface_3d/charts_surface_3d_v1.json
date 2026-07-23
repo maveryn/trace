@@ -1,0 +1,120 @@
+{
+  "bundle_id": "charts_surface_3d_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "surface_3d": [
+        "The image shows a synthetic 3D chart.",
+        "The figure shows a synthetic 3D chart.",
+        "The visual shows a synthetic 3D chart.",
+        "The chart shows a synthetic 3D chart.",
+        "The plotted figure shows a synthetic 3D chart."
+      ]
+    },
+    "task": {
+      "three_d_chart_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "reference_nearest_label": [
+        "Which labeled point has \"{target_axis_label}\" closest to {target_axis_value}?",
+        "Find the point label whose \"{target_axis_label}\" value is nearest to {target_axis_value}.",
+        "Which point is closest to {target_axis_value} on the \"{target_axis_label}\" axis?",
+        "Compare the labeled points by \"{target_axis_label}\". Which one is nearest to {target_axis_value}?",
+        "What label marks the point with \"{target_axis_label}\" value closest to {target_axis_value}?"
+      ],
+      "increase": [
+        "Which series has the greatest increase in z-axis value from the first x-axis position to the last?",
+        "Compare each series from its first x-axis point to its last x-axis point. Which has the greatest increase in z-axis value?",
+        "What series label shows the largest first-to-last increase in z-axis value?",
+        "From the first x-axis position to the last, which series has the strongest z-axis increase?",
+        "Which labeled series increases the most in z-axis value between the first and last x-axis positions?"
+      ],
+      "decrease": [
+        "Which series has the greatest decrease in z-axis value from the first x-axis position to the last?",
+        "Compare each series from its first x-axis point to its last x-axis point. Which has the greatest decrease in z-axis value?",
+        "What series label shows the largest first-to-last decrease in z-axis value?",
+        "From the first x-axis position to the last, which series has the strongest z-axis decrease?",
+        "Which labeled series decreases the most in z-axis value between the first and last x-axis positions?"
+      ],
+      "panel_variation_label": [
+        "Which panel has the largest z-axis value range?",
+        "Compare the panels by z-axis value range. Which panel has the largest range?",
+        "What panel label has the largest spread of z-axis values?",
+        "Find the panel with the largest z-axis range.",
+        "Which small 3D chart panel shows the largest z-axis value range?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:reference_nearest_label": {
+      "answer_hint": "set \"answer\" to the exact visible point label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the selected point marker",
+      "json_example": "{\"annotation\":[343,223],\"answer\":\"Haidon\"}",
+      "json_example_answer_only": "{\"answer\":\"Haidon\"}"
+    },
+    "query:increase": {
+      "answer_hint": "set \"answer\" to the exact visible series label as a string",
+      "annotation_hint": "set \"annotation\" to one segment [[x0,y0],[x1,y1]] connecting the first and last marker centers of the answer series",
+      "json_example": "{\"annotation\":[[229,369],[599,235]],\"answer\":\"Davin\"}",
+      "json_example_answer_only": "{\"answer\":\"Davin\"}"
+    },
+    "query:decrease": {
+      "answer_hint": "set \"answer\" to the exact visible series label as a string",
+      "annotation_hint": "set \"annotation\" to one segment [[x0,y0],[x1,y1]] connecting the first and last marker centers of the answer series",
+      "json_example": "{\"annotation\":[[229,235],[599,369]],\"answer\":\"Davin\"}",
+      "json_example_answer_only": "{\"answer\":\"Davin\"}"
+    },
+    "query:panel_variation_label": {
+      "answer_hint": "set \"answer\" to the exact visible panel label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected panel",
+      "json_example": "{\"annotation\":[144,116,438,352],\"answer\":\"Trade\"}",
+      "json_example_answer_only": "{\"answer\":\"Trade\"}"
+    }
+  },
+  "dynamic_slots": {
+    "target_axis_label": {
+      "type": "string"
+    },
+    "target_axis_value": {
+      "type": "integer"
+    }
+  },
+  "required_slots_by_key": {
+    "query:reference_nearest_label": [
+      "target_axis_label",
+      "target_axis_value"
+    ],
+    "answer_or_annotation:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

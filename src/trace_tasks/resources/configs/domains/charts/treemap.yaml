@@ -1,0 +1,40 @@
+generation:
+  shared:
+    treemap_parent_count_min: 4
+    treemap_parent_count_max: 6
+    treemap_leaf_count_min: 4
+    treemap_leaf_count_max: 6
+    treemap_value_min: 16
+    treemap_value_max: 88
+rendering:
+  shared:
+    canvas_width: 1280
+    canvas_height: 940
+    chart_context_profile: report_paragraph
+    chart_context_mode_weights:
+      clean: 0.3
+      minimal: 0.4
+      paragraph_box: 0.3
+    plot_margin_left_px: 62
+    plot_margin_right_px: 78
+    plot_margin_top_px: 78
+    plot_margin_bottom_px: 56
+    title_font_size_px: 26
+    parent_font_size_px: 20
+    leaf_font_size_px: 17
+    value_font_size_px: 20
+    note_font_size_px: 14
+    panel_fill_rgb_options:
+      - [252, 253, 250]
+      - [250, 252, 255]
+      - [255, 252, 247]
+      - [250, 255, 252]
+    panel_border_rgb: [44, 50, 60]
+    text_color_rgb: [26, 31, 38]
+    muted_text_rgb: [78, 86, 98]
+    separator_rgb: [246, 248, 250]
+    text_stroke_rgb: [255, 255, 255]
+    label_stroke_width_px: 1
+prompt:
+  shared:
+    bundle_id: charts_treemap_v1

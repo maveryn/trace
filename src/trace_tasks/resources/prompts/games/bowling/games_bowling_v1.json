@@ -1,0 +1,92 @@
+{
+  "bundle_id": "games_bowling_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_bowling_lane": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "bowling_lane_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "first_pin_hit_label": [
+        "{bowling_motion_rule_text} Which labeled pin will the ball hit first?",
+        "{bowling_motion_rule_text} What is the label of the first pin on that path?",
+        "{bowling_motion_rule_text} Extend that path and identify the labeled pin reached before any other pin.",
+        "{bowling_motion_rule_text} Which labeled pin is hit first?",
+        "{bowling_motion_rule_text} Report the label on the first pin the ball would reach if the path continues."
+      ],
+      "spare_path_label": [
+        "{spare_path_rule_text} Which numbered path is the correct spare path?",
+        "Compare the numbered dashed paths. {spare_path_rule_text} Which path number should be selected?",
+        "{spare_path_rule_text} Report the number of the path that covers the whole spare.",
+        "{spare_path_rule_text} Which numbered dashed path should be selected?",
+        "{spare_path_rule_text} Identify the numbered path that picks up all remaining pins."
+      ],
+      "path_hit_count": [
+        "{path_hit_rule_text} How many standing pins does the extended path pass through?",
+        "{path_hit_rule_text} Count the standing pins crossed by the extended path.",
+        "Extending the straight dashed cue from the ball, how many standing pins are crossed? {path_hit_rule_text}",
+        "{path_hit_rule_text} What is the number of standing pins intersected by the extended path?",
+        "Count only the standing pins whose visible bodies are crossed by the extended path. {path_hit_rule_text}"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:visible_bowling_lane": {
+      "object_description": "a bowling lane with a ball, labeled pins, and any shown aiming paths"
+    },
+    "query:first_pin_hit_label": {
+      "bowling_motion_rule_text": "The dashed arrow shows the ball's current straight path.",
+      "answer_hint": "set \"answer\" to the selected pin label as a string",
+      "annotation_hint": "set \"annotation\" to one point [x, y] at the center of the first pin hit by the shown path",
+      "json_example": "{\"annotation\":[532,194],\"answer\":\"G\"}",
+      "json_example_answer_only": "{\"answer\":\"G\"}"
+    },
+    "query:spare_path_label": {
+      "spare_path_rule_text": "Extend each numbered dashed path straight toward the pins; the correct spare path is the extended line that passes through every remaining standing pin.",
+      "answer_hint": "set \"answer\" to the selected numbered path label as a string",
+      "annotation_hint": "set \"annotation\" to one segment using two pixel-point endpoints [x, y] in [[x0, y0], [x1, y1]] form, matching the endpoints of the selected visible dashed cue",
+      "json_example": "{\"annotation\":[[430,610],[620,250]],\"answer\":\"4\"}",
+      "json_example_answer_only": "{\"answer\":\"4\"}"
+    },
+    "query:path_hit_count": {
+      "path_hit_rule_text": "Extend the short straight dashed path from the ball toward the pins. Count standing pins whose visible pin body is crossed by that extended path, and ignore any chain reaction after contact.",
+      "answer_hint": "set \"answer\" to the number of standing pins crossed by the shown path",
+      "annotation_hint": "set \"annotation\" to bounding boxes [x0, y0, x1, y1] around every counted standing pin",
+      "json_example": "{\"annotation\":[[430,135,472,193],[492,185,534,243],[554,238,596,296]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

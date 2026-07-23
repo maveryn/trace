@@ -1,0 +1,71 @@
+generation:
+  shared:
+    scene_variant_weights:
+      traffic_crossing: 1.0
+    style_variant_weights:
+      day: 1.0
+      night: 1.0
+      retro: 1.0
+      paper: 1.0
+      construction: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_lane_count_sampling: true
+    balanced_row_count_sampling: true
+    balanced_target_answer_sampling: true
+    lane_count_support:
+    - 5
+    - 6
+    - 7
+    - 8
+    row_count_support:
+    - 5
+    - 6
+    - 7
+  task_overrides:
+    task_games__crossing__first_exit_object_label:
+      first_exit_label_index_support:
+      - 0
+      - 1
+      - 2
+      - 3
+    task_games__crossing__hit_object_label:
+      hit_object_label_index_support:
+      - 0
+      - 1
+      - 2
+      - 3
+      hit_object_max_extra_per_row: 1
+    task_games__crossing__moving_object_direction_count:
+      left_moving_object_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      right_moving_object_count_support:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+rendering:
+  shared:
+    canvas_width: 1000
+    canvas_height: 780
+    panel_margin_px: 40
+    playfield_width_px: 860
+    playfield_height_px: 680
+    border_width_px: 5
+    safe_band_height_px: 82
+    vehicle_width_px: 70
+    vehicle_height_px: 42
+    path_width_px: 5
+    label_font_size_px: 24
+prompt:
+  shared:
+    bundle_id: games_crossing_v1
+    scene_key: visible_crossing_lane
+    task_key: crossing_query

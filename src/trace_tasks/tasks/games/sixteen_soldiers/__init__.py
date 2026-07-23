@@ -1,0 +1,1 @@
+"""Sixteen Soldiers games tasks."""

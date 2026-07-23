@@ -1,0 +1,45 @@
+generation:
+  shared:
+    balanced_target_answer_sampling: true
+    balanced_height_sampling: true
+    balanced_kpa_per_cm_sampling: true
+    height_cm_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    kpa_per_cm_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+
+rendering:
+  shared:
+    canvas_width: 1120
+    canvas_height: 720
+    px_per_cm: 17
+    tube_top_px: 188
+    tube_bottom_px: 560
+    tube_width_px: 86
+    tube_gap_px: 290
+    high_level_y_px: 258
+    label_font_size_px: 28
+    small_font_size_px: 22
+    title_font_size_px: 30
+    label_stroke_width_px: 2
+
+prompt:
+  shared:
+    bundle_id: physics_manometer_v1
+  task_overrides:
+    task_physics__manometer__pressure_difference_value:
+      task_key: pressure_difference_value_query

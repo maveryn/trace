@@ -1,0 +1,140 @@
+{
+  "bundle_id": "geometry_coordinate_algebra_v0",
+  "schema_version": "v0",
+  "allow_empty_task_templates": true,
+  "task_templates": {
+    "coordinate_algebra_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:coordinate_algebra_midpoint_scene": [
+      "object_description"
+    ],
+    "scene:coordinate_algebra_section_scene": [
+      "object_description"
+    ],
+    "scene:coordinate_algebra_transform_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "coordinate_algebra_midpoint_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This coordinate diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ],
+    "coordinate_algebra_section_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This coordinate diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ],
+    "coordinate_algebra_transform_scene": [
+      "The image shows {object_description}.",
+      "The diagram shows {object_description}.",
+      "This coordinate diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "The visual shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "missing_endpoint_from_midpoint": [
+      "Point M is the midpoint of segment PQ. Points P and M are shown. Which lettered candidate is point Q?",
+      "M is the midpoint of PQ. With P and M plotted, choose the lettered point for Q.",
+      "Using M as the midpoint of segment PQ, which candidate point is Q?",
+      "Point P and midpoint M are plotted for segment PQ. Which lettered point completes endpoint Q?",
+      "Which lettered candidate is the other endpoint Q if M is the midpoint of PQ?"
+    ],
+    "missing_startpoint_from_midpoint": [
+      "Point M is the midpoint of segment PQ. Points Q and M are shown. Which lettered candidate is point P?",
+      "M is the midpoint of PQ. With Q and M plotted, choose the lettered point for P.",
+      "Using M as the midpoint of segment PQ, which candidate point is P?",
+      "Point Q and midpoint M are plotted for segment PQ. Which lettered point completes endpoint P?",
+      "Which lettered candidate is the other endpoint P if M is the midpoint of PQ?"
+    ],
+    "one_third_from_p_to_q": [
+      "Points P and Q are shown. Which lettered candidate is one-third of the way from P to Q?",
+      "Choose the candidate point located one-third along segment PQ, starting at P.",
+      "Which lettered point lies at one-third of the distance from P toward Q?",
+      "On segment PQ, which candidate is the point one-third from P to Q?",
+      "Find the lettered candidate at the one-third section point from P toward Q."
+    ],
+    "two_thirds_from_p_to_q": [
+      "Points P and Q are shown. Which lettered candidate is two-thirds of the way from P to Q?",
+      "Choose the candidate point located two-thirds along segment PQ, starting at P.",
+      "Which lettered point lies at two-thirds of the distance from P toward Q?",
+      "On segment PQ, which candidate is the point two-thirds from P to Q?",
+      "Find the lettered candidate at the two-thirds section point from P toward Q."
+    ],
+    "translate_point": [
+      "Which lettered candidate is the image of point P after the translation shown in the diagram?",
+      "Apply the shown translation to point P. Which lettered candidate is the image point?",
+      "Which candidate point is P after the translation written on the diagram?",
+      "Use the displayed translation for point P. Which lettered point is the result?",
+      "After translating point P as shown, which lettered candidate is P'?"
+    ],
+    "translate_by_reference_vector": [
+      "Use vector RS as the translation vector for point P. Which lettered candidate is P'?",
+      "Translate P by the vector from R to S. Which candidate point is the image?",
+      "Which lettered point is the image of P after translating by vector RS?",
+      "Apply the reference vector RS to point P. Which candidate is P'?",
+      "Using the directed vector from R to S, choose the translated image of P."
+    ],
+    "reflect_over_vertical_line": [
+      "Which lettered candidate is the reflection of point P across the marked vertical line?",
+      "Reflect point P over the shown vertical line. Which candidate point is P'?",
+      "Which lettered point is P' after reflection across the vertical line in the diagram?",
+      "Use the marked vertical reflection line. Which candidate is the image of P?",
+      "After reflecting P over the displayed vertical line, which lettered candidate is P'?"
+    ],
+    "reflect_over_horizontal_line": [
+      "Which lettered candidate is the reflection of point P across the marked horizontal line?",
+      "Reflect point P over the shown horizontal line. Which candidate point is P'?",
+      "Which lettered point is P' after reflection across the horizontal line in the diagram?",
+      "Use the marked horizontal reflection line. Which candidate is the image of P?",
+      "After reflecting P over the displayed horizontal line, which lettered candidate is P'?"
+    ],
+    "rotate_90_about_marked_center": [
+      "Rotate point P as shown about center O. Which lettered candidate is P'?",
+      "Using the displayed 90-degree rotation about O, choose the image of P.",
+      "Which candidate point is P' after the shown 90-degree rotation around O?",
+      "Apply the rotation written in the diagram to point P. Which lettered point is the result?",
+      "Point O is the rotation center. After the shown 90-degree rotation, which candidate is P'?"
+    ]
+  }
+}

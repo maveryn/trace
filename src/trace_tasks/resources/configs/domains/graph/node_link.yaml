@@ -1,0 +1,2352 @@
+generation:
+  task_overrides:
+    task_graph__node_link__articulation_point_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 5
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__bridge_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 5
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__common_related_node_count:
+      node_count_min: 6
+      node_count_max: 10
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      common_neighbor_mode_weights:
+        undirected_common_neighbor: 1.0
+        directed_common_successor: 1.0
+        directed_common_predecessor: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_common_neighbor_mode_sampling: true
+      balanced_target_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+      directed_node_count_max: 10
+      target_count_min: 0
+      target_count_max: 4
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 5
+    task_graph__node_link__component_size_after_edge_edit:
+      node_count_min: 5
+      node_count_max: 12
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 1
+      target_component_size_max: 8
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_edit_operation_weights:
+        edge_removal: 1.0
+        edge_addition: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_edit_operation_sampling: true
+      balanced_target_component_size_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__cross_color_edge_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 6
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 5
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_target_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__degree_after_removal_filter_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 5
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      degree_mode_weights:
+        degree: 1.0
+        in_degree: 1.0
+        out_degree: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_degree_mode_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__degree_extremum_value:
+      node_count_min: 5
+      node_count_max: 10
+      component_count_min: 2
+      component_count_max: 4
+      target_largest_component_size_min: 3
+      target_largest_component_size_max: 9
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      directed_node_count_max: 10
+      target_degree_min: 0
+      target_degree_max: 4
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__degree_value_filter_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 5
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      degree_mode_weights:
+        in_degree: 1.0
+        out_degree: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_degree_mode_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__edge_between_nodes_label:
+      node_count_min: 5
+      node_count_max: 8
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      edge_label_support_size: 16
+      edge_label_min_chars: 3
+      edge_label_max_chars: 5
+      max_labeled_edge_count: 12
+      edge_label_bucket_weights:
+        people_first: 1.0
+        people_surnames: 1.0
+        places_countries: 1.0
+        places_cities: 1.0
+        organizations_tickers: 1.0
+        organizations_terms: 1.0
+        occupations: 1.0
+        industries: 1.0
+        mixed_proper: 1.0
+        mixed_compact: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_target_edge_label_sampling: true
+      balanced_edge_routing_variant_sampling: true
+      directed_node_count_max: 8
+      degree_sequence_max_degree: 3
+      directed_degree_sequence_max_degree: 3
+    task_graph__node_link__edge_color_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 8
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 5
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      target_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_target_color_name_sampling: true
+      balanced_target_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__edge_text_count:
+      node_count_min: 5
+      node_count_max: 8
+      directed_node_count_max: 8
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 1
+      target_count_max: 5
+      degree_sequence_max_degree: 3
+      directed_degree_sequence_max_degree: 3
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      edge_label_support_size: 16
+      edge_label_min_chars: 3
+      edge_label_max_chars: 5
+      max_labeled_edge_count: 12
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_target_edge_label_sampling: true
+      balanced_target_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__hamiltonian_cycle_neighbor_label:
+      node_count_min: 4
+      node_count_max: 6
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__isolated_after_removal_count:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 5
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_target_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__largest_chordless_cycle_size:
+      node_count_min: 8
+      node_count_max: 10
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+      target_cycle_size_min: 3
+      target_cycle_size_max: 7
+    task_graph__node_link__largest_component_size:
+      node_count_min: 6
+      node_count_max: 15
+      component_count_min: 2
+      component_count_max: 4
+      target_largest_component_size_min: 3
+      target_largest_component_size_max: 9
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__longest_path_length:
+      node_count_min: 5
+      node_count_max: 15
+      directed_node_count_max: 10
+      target_shortest_path_length_min: 3
+      target_shortest_path_length_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_target_longest_path_length_sampling: true
+      balanced_edge_routing_variant_sampling: true
+      target_longest_path_length_min: 2
+      target_longest_path_length_max: 6
+    task_graph__node_link__mst_weight:
+      node_count_min: 4
+      node_count_max: 5
+      extra_edge_count_min: 1
+      extra_edge_count_max: 2
+      edge_weight_min: 1
+      edge_weight_max: 9
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+    task_graph__node_link__named_node_degree_value:
+      node_count_min: 5
+      node_count_max: 10
+      directed_node_count_max: 10
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 0
+      target_count_max: 5
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 4
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      degree_mode_weights:
+        in_degree: 1.0
+        out_degree: 1.0
+        total_degree: 1.0
+      target_degree_min: 0
+      target_degree_max: 4
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_degree_mode_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__node_color_count:
+      node_count_min: 8
+      node_count_max: 12
+      directed_node_count_max: 12
+      query_degree_min: 0
+      query_degree_max: 4
+      target_count_min: 3
+      target_count_max: 7
+      degree_sequence_max_degree: 5
+      directed_degree_sequence_max_degree: 5
+      graph_search_attempts: 600
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      graph_directionality_weights:
+        undirected: 1.0
+        directed: 1.0
+      target_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_graph_directionality_sampling: true
+      balanced_target_color_name_sampling: true
+      balanced_target_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__reachable_count:
+      node_count_min: 5
+      node_count_max: 15
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+      directed_node_count_max: 9
+      target_reachable_count_min: 1
+      target_reachable_count_max: 6
+    task_graph__node_link__reachable_count_after_edge_edit:
+      node_count_min: 5
+      node_count_max: 15
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_edit_operation_weights:
+        edge_removal: 1.0
+        edge_addition: 1.0
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_edit_operation_sampling: true
+      balanced_target_reachable_count_sampling: true
+      balanced_edge_routing_variant_sampling: true
+      directed_node_count_max: 10
+      target_reachable_count_min: 1
+      target_reachable_count_max: 8
+    task_graph__node_link__same_component_count:
+      node_count_min: 6
+      node_count_max: 15
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__shortest_path_length:
+      node_count_min: 5
+      node_count_max: 15
+      directed_node_count_max: 15
+      target_shortest_path_length_min: 2
+      target_shortest_path_length_max: 5
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__topological_endpoint_node_label:
+      node_count_min: 3
+      node_count_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+    task_graph__node_link__unique_cycle_size:
+      node_count_min: 5
+      node_count_max: 10
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+      target_cycle_size_min: 3
+      target_cycle_size_max: 7
+    task_graph__node_link__unique_related_node_label:
+      node_count_min: 5
+      node_count_max: 12
+      component_count_min: 2
+      component_count_max: 4
+      target_component_size_min: 2
+      target_component_size_max: 7
+      topology_profile_weights:
+        balanced: 1.0
+        low_degree: 1.0
+        hub_heavy: 1.0
+      label_variant_weights:
+        letters: 1.0
+        numbers: 1.0
+        named: 2.0
+      layout_variant_weights:
+        circular: 1.0
+        shell: 1.0
+        spring: 1.0
+        grid_jitter: 1.0
+        layered: 1.0
+        component_clustered: 1.0
+        path_spine: 1.0
+        radial_tree: 1.0
+      node_shape_variant_weights:
+        circle: 1.0
+        rounded_square: 1.0
+        hexagon: 1.0
+      layout_transform_variant_weights:
+        identity: 1.0
+        rotate_90: 1.0
+        rotate_180: 1.0
+        rotate_270: 1.0
+        mirror_left_right: 1.0
+        mirror_up_down: 1.0
+      node_color_name_weights:
+        red: 1.0
+        blue: 1.0
+        green: 1.0
+        yellow: 1.0
+        orange: 1.0
+        purple: 1.0
+        brown: 1.0
+        cyan: 1.0
+        magenta: 1.0
+        maroon: 1.0
+      balanced_topology_profile_sampling: true
+      balanced_label_variant_sampling: true
+      balanced_layout_variant_sampling: true
+      balanced_node_shape_variant_sampling: true
+      balanced_layout_transform_variant_sampling: true
+      balanced_node_color_name_sampling: true
+      edge_routing_variant_weights:
+        straight: 1.0
+        mixed_arc: 1.0
+      balanced_edge_routing_variant_sampling: true
+      unique_neighbor_node_count_min: 6
+      unique_neighbor_node_count_max: 9
+      unique_directed_node_count_min: 4
+      unique_directed_node_count_max: 8
+      unique_neighbor_degree_sequence_max_degree: 4
+      unique_directed_degree_sequence_max_degree: 3
+      unique_neighbor_topology_profile_weights:
+        low_degree: 1.0
+        balanced: 1.0
+      unique_neighbor_layout_variant_weights:
+        circular: 1.0
+        layered: 1.0
+        shell: 1.0
+      balanced_unique_neighbor_topology_profile_sampling: true
+      unique_directed_layout_variant_weights:
+        layered: 1.0
+        path_spine: 1.0
+        shell: 1.0
+        spring: 1.0
+      balanced_unique_neighbor_layout_variant_sampling: true
+      balanced_unique_directed_layout_variant_sampling: true
+rendering:
+  task_overrides:
+    task_graph__node_link__edge_between_nodes_label:
+      canvas_width: 960
+      canvas_height: 720
+      outer_margin_px: 28
+      panel_padding_px: 24
+      panel_corner_radius_px: 20
+      panel_title_font_size_px: 24
+      node_radius_min_px: 18
+      node_radius_max_px: 24
+      edge_width_px: 4
+      arrow_length_px: 12
+      arrow_width_px: 7
+      node_border_width_px: 2
+      label_font_size_px: 20
+      edge_text_label_font_size_px: 22
+    task_graph__node_link__edge_color_count:
+      canvas_width: 864
+      canvas_height: 640
+      outer_margin_px: 28
+      panel_padding_px: 24
+      panel_corner_radius_px: 20
+      panel_title_font_size_px: 24
+      node_radius_min_px: 18
+      node_radius_max_px: 24
+      edge_width_px: 5
+      arrow_length_px: 12
+      arrow_width_px: 7
+      node_border_width_px: 2
+      label_font_size_px: 20
+    task_graph__node_link__edge_text_count:
+      canvas_width: 960
+      canvas_height: 720
+      outer_margin_px: 28
+      panel_padding_px: 24
+      panel_corner_radius_px: 20
+      panel_title_font_size_px: 24
+      node_radius_min_px: 18
+      node_radius_max_px: 24
+      edge_width_px: 4
+      arrow_length_px: 12
+      arrow_width_px: 7
+      node_border_width_px: 2
+      label_font_size_px: 20
+      edge_text_label_font_size_px: 22
+    task_graph__node_link__unique_related_node_label:
+      canvas_width: 864
+      canvas_height: 640
+      outer_margin_px: 28
+      panel_padding_px: 24
+      panel_corner_radius_px: 20
+      panel_title_font_size_px: 24
+      node_radius_min_px: 22
+      node_radius_max_px: 26
+      edge_width_px: 4
+      arrow_length_px: 16
+      arrow_width_px: 10
+      node_border_width_px: 2
+      label_font_size_px: 22
+      unique_neighbor_layout_fallback_variants:
+      - shell
+      - circular
+      - layered
+prompt:
+  task_overrides:
+    task_graph__node_link__component_size_after_edge_edit:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: component_size_after_edge_edit_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      answer_hint: set "answer" to the count of those nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      annotation_hint_component_size_after_edge_removal: set "annotation" to an array
+        of [x,y] pixel points at the centers of all nodes that would be in the same
+        connected component as {query_label} after removing the edge between {edit_label_a}
+        and {edit_label_b}, including {query_label}
+      annotation_hint_component_size_after_edge_addition: set "annotation" to an array
+        of [x,y] pixel points at the centers of all nodes that would be in the same
+        connected component as {query_label} after adding an edge between {edit_label_a}
+        and {edit_label_b}, including {query_label}
+    task_graph__node_link__largest_component_size:
+      bundle_id: graph_node_link_comparison_v1
+      scene_key: single_graph_comparison
+      task_key: largest_component_size_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the unique largest connected component
+      answer_hint: set "answer" to the number of nodes in that component as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260],[520,340]],"answer":4}'
+      json_example_answer_only: '{"answer":4}'
+    task_graph__node_link__same_component_count:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: same_component_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the connected component containing the asked node, including
+        the asked node itself
+      answer_hint: set "answer" to the count of those nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+    task_graph__node_link__shortest_path_length:
+      bundle_id: graph_node_link_path_v1
+      scene_key: single_graph_path
+      task_key: shortest_path_length_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      annotation_hint_shortest_path_length: set "annotation" to an ordered array of
+        [x,y] pixel points at node centers after node {source_label} along the unique
+        shortest path to node {goal_label}, ending at {goal_label}
+      annotation_hint_directed_shortest_path_length: set "annotation" to an ordered
+        array of [x,y] pixel points at node centers after node {source_label} along
+        the unique shortest path to node {goal_label} while following arrow directions,
+        ending at {goal_label}
+      answer_hint: set "answer" to the number of edges in that path as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+    task_graph__node_link__mst_weight:
+      bundle_id: graph_node_link_optimization_v1
+      scene_key: single_graph_optimization
+      task_key: minimum_spanning_tree_weight_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled connected weighted graph
+      annotation_hint: set "annotation" to a list of segments. Each segment is [[x0,
+        y0], [x1, y1]], where each endpoint is an [x, y] pixel point at the center
+        of one endpoint node of an edge in the minimum spanning tree
+      answer_hint: set "answer" to the total weight of that minimum spanning tree
+        as an integer
+      json_example: '{"annotation":[[[180,220],[310,180]],[[310,180],[430,260]],[[430,260],[520,340]]],"answer":12}'
+      json_example_answer_only: '{"answer":12}'
+    task_graph__node_link__topological_endpoint_node_label:
+      bundle_id: graph_node_link_order_v1
+      scene_key: single_graph_order
+      task_key: topological_endpoint_node_label_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled directed acyclic graph
+      annotation_hint_first_in_topological_order_label: set "annotation" to one [x,y]
+        pixel point at the center of the first node in the unique topological order
+      annotation_hint_last_in_topological_order_label: set "annotation" to one [x,y]
+        pixel point at the center of the last node in the unique topological order
+      answer_hint: set "answer" to that node label as a string
+      json_example: '{"annotation":[180,160],"answer":"A"}'
+      json_example_answer_only: '{"answer":"A"}'
+    task_graph__node_link__degree_value_filter_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: degree_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count as an integer
+      json_example: '{"annotation":[[180,220],[310,180]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+    task_graph__node_link__articulation_point_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: articulation_point_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of articulation-point nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      question_text_articulation_point_count: How many nodes are articulation points?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all articulation-point nodes
+    task_graph__node_link__bridge_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: bridge_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of bridge edges as an integer
+      json_example: '{"annotation":[[[180,220],[310,180]],[[310,180],[430,260]]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      question_text_bridge_count: How many edges are bridges?
+      annotation_hint: set "annotation" to a list of segments. Each segment is [[x0,
+        y0], [x1, y1]], where each endpoint is an [x, y] pixel point at the center
+        of one endpoint node of a bridge edge
+    task_graph__node_link__common_related_node_count:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: common_neighbor_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the connected component containing the asked node, including
+        the asked node itself
+      answer_hint: set "answer" to the count of those nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint_common_neighbor_count: set "annotation" to an array of [x,y]
+        pixel points at the centers of every node directly connected to both {query_label_a}
+        and {query_label_b}; use an empty array when the answer is zero
+      annotation_hint_common_successor_count: set "annotation" to an array of [x,y]
+        pixel points at the centers of every node that both {query_label_a} and {query_label_b}
+        point to directly; use an empty array when the answer is zero
+      annotation_hint_common_predecessor_count: set "annotation" to an array of [x,y]
+        pixel points at the centers of every node that points directly to both {query_label_a}
+        and {query_label_b}; use an empty array when the answer is zero
+    task_graph__node_link__cross_color_edge_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: cross_color_edge_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph with colored nodes
+      object_description_directed: a labeled directed graph with colored nodes
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of matching edges as an integer
+      json_example: '{"annotation":[[[180,220],[310,180]],[[180,220],[430,260]]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint_cross_color_edge_count: set "annotation" to a list of segments.
+        Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel
+        point at the center of one endpoint node of an edge connecting a {source_color_label}
+        node and a {target_color_label} node; use [] when the answer is zero
+      annotation_hint_directed_cross_color_edge_count: set "annotation" to a list
+        of segments. Each segment is [[x0, y0], [x1, y1]], where each endpoint is
+        an [x, y] pixel point at the source or target node center for one arrow from
+        a {source_color_label} node to a {target_color_label} node; use [] when the
+        answer is zero
+    task_graph__node_link__degree_after_removal_filter_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: node_count_after_degree_filter_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      answer_hint: set "answer" to the count of remaining nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      annotation_hint_undirected_degree_one_filter_remaining_count: set "annotation"
+        to an array of [x,y] pixel points at the centers of all nodes that would remain
+        after removing every node with degree 1; use an empty array when the answer
+        is zero
+      annotation_hint_directed_in_degree_one_filter_remaining_count: set "annotation"
+        to an array of [x,y] pixel points at the centers of all nodes that would remain
+        after removing every node with in-degree 1; use an empty array when the answer
+        is zero
+      annotation_hint_directed_out_degree_one_filter_remaining_count: set "annotation"
+        to an array of [x,y] pixel points at the centers of all nodes that would remain
+        after removing every node with out-degree 1; use an empty array when the answer
+        is zero
+    task_graph__node_link__degree_extremum_value:
+      bundle_id: graph_node_link_comparison_v1
+      scene_key: single_graph_comparison
+      task_key: extreme_degree_value_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      answer_hint: set "answer" to the requested maximum or minimum degree value as
+        an integer
+      json_example: '{"annotation":[180,220],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      annotation_hint_max_degree_value: set "annotation" to one [x,y] pixel point
+        at the center of the node whose degree equals the maximum degree value
+      annotation_hint_min_degree_value: set "annotation" to one [x,y] pixel point
+        at the center of the node whose degree equals the minimum degree value
+      annotation_hint_max_in_degree_value: set "annotation" to one [x,y] pixel point
+        at the center of the node whose in-degree equals the maximum in-degree value
+      annotation_hint_max_out_degree_value: set "annotation" to one [x,y] pixel point
+        at the center of the node whose out-degree equals the maximum out-degree value
+    task_graph__node_link__edge_between_nodes_label:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: edge_attribute_label_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a directed graph with text labels on its arrows
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the connected component containing the asked node, including
+        the asked node itself
+      answer_hint: set "answer" to that edge label as a lowercase string
+      json_example: '{"annotation":[248,190,300,214],"answer":"feeds"}'
+      json_example_answer_only: '{"answer":"feeds"}'
+      object_description_undirected: a graph with text labels on its edges
+      annotation_hint_edge_between_nodes_label: set "annotation" to one [x0,y0,x1,y1]
+        pixel box around the visible text label on the edge between {source_label}
+        and {target_label}
+      annotation_hint_directed_edge_between_nodes_label: set "annotation" to one [x0,y0,x1,y1]
+        pixel box around the visible text label on the arrow from {source_label} to
+        {target_label}
+    task_graph__node_link__edge_color_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: edge_color_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph with colored edges
+      object_description_directed: a labeled directed graph with colored edges
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of matching edges as an integer
+      json_example: '{"annotation":[[[180,220],[310,180]],[[180,220],[430,260]]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint: set "annotation" to a list of segments. Each segment is [[x0,
+        y0], [x1, y1]], where each endpoint is an [x, y] pixel point at the center
+        of one endpoint node of an edge colored {target_color_label}; for directed
+        graphs, use the source and target node centers; use [] when the answer is
+        zero
+    task_graph__node_link__edge_text_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: edge_text_label_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph with visible boxed
+        text labels on its edges
+      object_description_directed: a labeled directed graph with visible boxed text
+        labels on its arrows
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of matching edge labels as an integer
+      json_example: '{"annotation":[[248,190,300,214],[420,238,472,262]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint: set "annotation" to an array of [x0,y0,x1,y1] pixel boxes around
+        every visible edge-label text box that reads "{target_edge_label}"
+    task_graph__node_link__hamiltonian_cycle_neighbor_label:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: hamiltonian_cycle_neighbor_label_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph with exactly one Hamiltonian
+        cycle
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to one [x,y] pixel point at the center of
+        the answer node
+      answer_hint: set "answer" to the label of the requested node as a string
+      json_example: '{"annotation":[310,180],"answer":"C"}'
+      json_example_answer_only: '{"answer":"C"}'
+      question_text_next_in_hamiltonian_cycle_label: Use the Hamiltonian-cycle direction
+        that starts at node {orientation_start_label} and returns to it from node
+        {orientation_final_label}. Which node comes immediately after the starting
+        node {orientation_start_label} along this cycle?
+      question_text_previous_in_hamiltonian_cycle_label: Use the Hamiltonian-cycle
+        direction that starts at node {orientation_start_label} and returns to it
+        from node {orientation_final_label}. Which node comes immediately before the
+        final node {orientation_final_label} along this cycle?
+    task_graph__node_link__isolated_after_removal_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: isolated_node_count_after_node_removal_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of those remaining isolated nodes as
+        an integer
+      json_example: '{"annotation":[[180,220],[310,180]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all remaining nodes that would be isolated after removing {query_label};
+        use an empty array when the answer is zero
+    task_graph__node_link__largest_chordless_cycle_size:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: largest_chordless_cycle_size_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph with several cycles
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in one largest chordless cycle; order does not matter
+      answer_hint: set "answer" to the number of nodes in that largest chordless cycle
+        as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260],[520,340]],"answer":4}'
+      json_example_answer_only: '{"answer":4}'
+      question_text_largest_chordless_cycle_size: A chordless cycle is a cycle with
+        no extra edge connecting two non-adjacent nodes in that cycle. What is the
+        size, in nodes, of the largest chordless cycle in the graph?
+    task_graph__node_link__longest_path_length:
+      bundle_id: graph_node_link_path_v1
+      scene_key: single_graph_path
+      task_key: longest_path_length_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a labeled directed acyclic graph
+      question_text_shortest_path_length: The graph has a unique shortest path from
+        node {source_label} to node {goal_label}. How many edges are in that path?
+      question_text_directed_shortest_path_length: There is a unique shortest path
+        from node {source_label} to node {goal_label} when following the direction
+        of the arrows. How many edges are in that path?
+      annotation_hint_shortest_path_length: set "annotation" to an ordered array of
+        [x,y] pixel points at node centers along the unique shortest path from node
+        {source_label} to node {goal_label}, including both endpoints
+      annotation_hint_directed_shortest_path_length: set "annotation" to an ordered
+        array of [x,y] pixel points at node centers along the unique shortest path
+        from node {source_label} to node {goal_label} while following arrow directions,
+        including both endpoints
+      answer_hint: set "answer" to the number of directed edges in that path as an
+        integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint: set "annotation" to an ordered array of [x,y] pixel points
+        at node centers along the unique longest directed path, from its start node
+        to its end node
+    task_graph__node_link__named_node_degree_value:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: named_node_degree_value_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the queried node degree as an integer
+      json_example: '{"annotation":[[[180,220],[310,180]],[[180,220],[430,260]]],"answer":2}'
+      json_example_answer_only: '{"answer":2}'
+      annotation_hint_named_node_degree_value: set "annotation" to a list of segments.
+        Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel
+        point at the center of one endpoint node of an edge touching node {query_label};
+        use [] when the answer is zero
+      annotation_hint_named_node_in_degree_value: set "annotation" to a list of segments.
+        Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel
+        point at the source or target node center for one arrow pointing into node
+        {query_label}; use [] when the answer is zero
+      annotation_hint_named_node_out_degree_value: set "annotation" to a list of segments.
+        Each segment is [[x0, y0], [x1, y1]], where each endpoint is an [x, y] pixel
+        point at the source or target node center for one arrow leaving node {query_label};
+        use [] when the answer is zero
+      annotation_hint_named_node_total_degree_value: set "annotation" to a list of
+        segments. Each segment is [[x0, y0], [x1, y1]], where each endpoint is an
+        [x, y] pixel point at the source or target node center of one arrow touching
+        node {query_label}; use [] when the answer is zero
+    task_graph__node_link__node_color_count:
+      bundle_id: graph_node_link_counting_v1
+      scene_key: single_graph_counting
+      task_key: node_color_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description_undirected: a labeled undirected graph with colored nodes
+      object_description_directed: a labeled directed graph with colored nodes
+      question_text_degree_count: How many nodes have degree {query_degree}?
+      question_text_in_degree: How many nodes have in-degree {query_degree}?
+      question_text_out_degree: How many nodes have out-degree {query_degree}?
+      annotation_hint_degree_count: set "annotation" to an array of [x,y] pixel points
+        at the centers of all nodes with degree {query_degree}; use an empty array
+        when the answer is zero
+      annotation_hint_in_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with in-degree {query_degree}; use an empty
+        array when the answer is zero
+      annotation_hint_out_degree_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes with out-degree {query_degree}; use an
+        empty array when the answer is zero
+      answer_hint: set "answer" to the count of matching nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes colored {target_color_label}
+    task_graph__node_link__reachable_count:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: reachable_count_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the connected component containing the asked node, including
+        the asked node itself
+      answer_hint: set "answer" to the count of those nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      question_text_reachable_count: How many nodes, excluding node {query_label}
+        itself, are reachable from {query_label} by following the direction of the
+        arrows?
+      annotation_hint_reachable_count: set "annotation" to an array of [x,y] pixel
+        points at the centers of all nodes reachable from {query_label}, excluding
+        {query_label} itself
+    task_graph__node_link__reachable_count_after_edge_edit:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: reachable_count_after_edge_edit_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the connected component containing the asked node, including
+        the asked node itself
+      answer_hint: set "answer" to the count of those nodes as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260]],"answer":3}'
+      json_example_answer_only: '{"answer":3}'
+      annotation_hint_reachable_count_after_edge_removal: set "annotation" to an array
+        of [x,y] pixel points at the centers of all nodes that would be reachable
+        from {query_label} after removing the arrow from {edit_label_a} to {edit_label_b},
+        including {query_label}
+      annotation_hint_reachable_count_after_edge_addition: set "annotation" to an
+        array of [x,y] pixel points at the centers of all nodes that would be reachable
+        from {query_label} after adding an arrow from {edit_label_a} to {edit_label_b},
+        including {query_label}
+    task_graph__node_link__unique_cycle_size:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: unique_cycle_size_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph that contains exactly one cycle
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the unique cycle
+      answer_hint: set "answer" to the number of nodes in the unique cycle as an integer
+      json_example: '{"annotation":[[180,220],[310,180],[430,260],[520,340]],"answer":4}'
+      json_example_answer_only: '{"answer":4}'
+      question_text_unique_cycle_size: The graph contains exactly one cycle. How many
+        nodes are in that cycle?
+    task_graph__node_link__unique_related_node_label:
+      bundle_id: graph_node_link_relation_v1
+      scene_key: single_graph_relation
+      task_key: unique_node_label_query
+      json_output_contract: Use a valid JSON object with keys "annotation" and "answer"
+        in that order for the final answer.
+      json_output_contract_answer_only: Use a valid JSON object with key "answer"
+        for the final answer.
+      object_description: a labeled undirected graph
+      object_description_directed: a labeled directed graph
+      question_text_same_component_count: How many nodes, including node {query_label}
+        itself, are in the same connected component as {query_label}?
+      annotation_hint: set "annotation" to an array of [x,y] pixel points at the centers
+        of all nodes in the connected component containing the asked node, including
+        the asked node itself
+      answer_hint: set "answer" to the answer node label as a string exactly as shown
+      json_example: '{"annotation":[303,187],"answer":"B"}'
+      json_example_answer_only: '{"answer":"B"}'
+      object_description_undirected: a labeled undirected graph
+      annotation_hint_unique_neighbor_label: set "annotation" to one [x,y] pixel point
+        at the center of the only node adjacent to {query_label}
+      annotation_hint_unique_successor_label: set "annotation" to one [x,y] pixel
+        point at the center of the only node reached by an outgoing arrow from {query_label}
+      annotation_hint_unique_predecessor_label: set "annotation" to one [x,y] pixel
+        point at the center of the only node with an arrow pointing into {query_label}

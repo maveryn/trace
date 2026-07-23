@@ -1,0 +1,133 @@
+{
+  "bundle_id": "graph_phylogeny_tree_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "phylogeny_tree": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "You are shown {object_description}."
+      ],
+      "phylogeny_tree_options": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}.",
+        "The diagram shows {object_description}.",
+        "You are shown {object_description}."
+      ]
+    },
+    "task": {
+      "phylogeny_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "marked_clade_leaf_count": [
+        "How many taxa are in the marked clade?",
+        "Count the descendant taxa inside the marked clade.",
+        "What is the number of labeled taxa descending from the marked clade?",
+        "The highlighted branch marks one clade. How many terminal taxa does that clade contain?",
+        "Find the marked clade and count its descendant taxon labels. How many are there?"
+      ],
+      "sister_leaf_label": [
+        "Which taxon label is the sister taxon of \"{query_label}\"?",
+        "Find the leaf that shares the most recent parent branch with \"{query_label}\". What is its label?",
+        "What is the label of the sister taxon paired with \"{query_label}\"?",
+        "In the cladogram, which terminal taxon shares an immediate parent with \"{query_label}\"?",
+        "Identify the sister leaf of \"{query_label}\"."
+      ],
+      "mrca_leaf_count": [
+        "How many taxa descend from the most recent common ancestor of \"{query_label_a}\" and \"{query_label_b}\"?",
+        "Find the smallest clade containing \"{query_label_a}\" and \"{query_label_b}\". How many terminal taxa are in it?",
+        "What is the number of taxa in the clade rooted at the most recent common ancestor of \"{query_label_a}\" and \"{query_label_b}\"?",
+        "Trace back from \"{query_label_a}\" and \"{query_label_b}\" to their most recent common ancestor. How many descendant taxa does that ancestor have?",
+        "Count the terminal taxa in the MRCA clade for \"{query_label_a}\" and \"{query_label_b}\"."
+      ],
+      "topology_outlier_label": [
+        "Three options have the same rooted topology, ignoring branch order and layout. Which option is the outlier?",
+        "Which option has a different rooted clade structure from the other three options?",
+        "Ignoring rotations and drawing layout, select the one cladogram whose topology differs.",
+        "Find the option whose set of nested clades is not the same as the other options.",
+        "Which labeled option is the topology outlier?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Final answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:marked_clade_leaf_count": {
+      "annotation_hint": "set \"annotation\" to a JSON array of [x,y] pixel points at the terminal centers of every descendant taxon in the marked clade",
+      "answer_hint": "set \"answer\" to the number of descendant taxa in the marked clade as an integer",
+      "json_example": "{\"annotation\":[[742,188],[742,282],[742,376]],\"answer\":3}",
+      "json_example_answer_only": "{\"answer\":3}"
+    },
+    "query:sister_leaf_label": {
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point at the center of the sister taxon leaf",
+      "answer_hint": "set \"answer\" to the sister taxon label as a string exactly as shown",
+      "json_example": "{\"annotation\":[742,248],\"answer\":\"B\"}",
+      "json_example_answer_only": "{\"answer\":\"B\"}"
+    },
+    "query:mrca_leaf_count": {
+      "annotation_hint": "set \"annotation\" to a JSON array of [x,y] pixel points at the terminal centers of every taxon descending from the most recent common ancestor",
+      "answer_hint": "set \"answer\" to the number of taxa descending from the most recent common ancestor as an integer",
+      "json_example": "{\"annotation\":[[742,180],[742,240],[742,300],[742,360]],\"answer\":4}",
+      "json_example_answer_only": "{\"answer\":4}"
+    },
+    "query:topology_outlier_label": {
+      "annotation_hint": "set \"annotation\" to a [x0,y0,x1,y1] pixel box around the selected option panel",
+      "answer_hint": "set \"answer\" to the exact option letter of the topology outlier",
+      "json_example": "{\"annotation\":[472,520,828,742],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {
+      "type": "string"
+    },
+    "query_label": {
+      "type": "label"
+    },
+    "query_label_a": {
+      "type": "label"
+    },
+    "query_label_b": {
+      "type": "label"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:phylogeny_tree": [
+      "object_description"
+    ],
+    "scene:phylogeny_tree_options": [
+      "object_description"
+    ],
+    "query:sister_leaf_label": [
+      "query_label"
+    ],
+    "query:mrca_leaf_count": [
+      "query_label_a",
+      "query_label_b"
+    ]
+  }
+}

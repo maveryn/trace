@@ -1,0 +1,150 @@
+{
+  "bundle_id": "games_hex_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "visible_hex_board": [
+        "The image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "This scene shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "hex_connection_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "winning_move_cell_label": [
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Which labeled empty cell lets {query_player} win immediately?",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} {query_player} will play one labeled empty cell. Which label completes a winning connection?",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Find the labeled empty cell where {query_player} can move to win now.",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Which candidate cell gives {query_player} a connected path between the required sides?",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Choose the one labeled cell that makes an immediate winning chain for {query_player}."
+      ],
+      "connection_gap_count": [
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} What is the minimum number of empty cells {query_player} must fill to connect the required sides?",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Count the fewest empty cells needed for {query_player} to complete a side-to-side connection.",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} How many empty cells are needed on a shortest connecting route for {query_player}?",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Determine the minimum connection gap for {query_player}.",
+        "{hex_rule_text} {red_goal_text} {blue_goal_text} Find the smallest number of empty cells that would complete {query_player}'s connection."
+      ],
+      "candidate_neighbor_count": [
+        "{hex_rule_text} The green cell is the reference cell. How many adjacent cells are {neighbor_state}?",
+        "{hex_rule_text} Count the {neighbor_state} neighbors touching the green reference cell.",
+        "{hex_rule_text} Around the green cell, how many neighboring cells are {neighbor_state}?",
+        "{hex_rule_text} How many cells adjacent to the green cell are {neighbor_state}?",
+        "{hex_rule_text} Use the six cells touching the green reference cell. How many of them are {neighbor_state}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "required_slots_by_key": {
+    "scene:visible_hex_board": [
+      "object_description"
+    ],
+    "query:winning_move_cell_label": [
+      "hex_rule_text",
+      "red_goal_text",
+      "blue_goal_text",
+      "query_player"
+    ],
+    "query:connection_gap_count": [
+      "hex_rule_text",
+      "red_goal_text",
+      "blue_goal_text",
+      "query_player"
+    ],
+    "query:candidate_neighbor_count": [
+      "hex_rule_text",
+      "neighbor_state"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "dynamic_slots": {
+    "annotation_hint": {
+      "type": "string"
+    },
+    "answer_hint": {
+      "type": "string"
+    },
+    "blue_goal_text": {
+      "type": "string"
+    },
+    "hex_rule_text": {
+      "type": "string"
+    },
+    "json_example": {
+      "type": "string"
+    },
+    "json_example_answer_only": {
+      "type": "string"
+    },
+    "json_output_contract": {
+      "type": "string"
+    },
+    "json_output_contract_answer_only": {
+      "type": "string"
+    },
+    "object_description": {
+      "type": "string"
+    },
+    "query_player": {
+      "type": "string"
+    },
+    "red_goal_text": {
+      "type": "string"
+    },
+    "neighbor_state": {
+      "type": "string"
+    },
+    "query_player_lower": {
+      "type": "string"
+    }
+  },
+  "code_prompt_defaults": {
+    "object_description_open_board": "a Hex board with red and blue stones, colored goal sides, and open cells",
+    "object_description_crowded_board": "a Hex board with red and blue stones, colored goal sides, and a crowded mix of open cells and stones",
+    "hex_rule_text": "In Hex, adjacent cells are the six cells sharing an edge.",
+    "red_goal_text": "Red connects the left and right red sides.",
+    "blue_goal_text": "Blue connects the top and bottom blue sides.",
+    "annotation_hint_winning_move_cell_label": "set \"annotation\" to one pixel-space point [x, y] at the center of the chosen winning cell",
+    "answer_hint_winning_move_cell_label": "set \"answer\" to the single candidate letter of the empty cell that lets {query_player} win immediately",
+    "annotation_hint_connection_gap_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at the centers of the empty cells in the unique minimum connection gap for {query_player}",
+    "answer_hint_connection_gap_count": "set \"answer\" to the minimum number of empty cells {query_player} must fill to connect the required sides",
+    "annotation_hint_candidate_neighbor_count": "set \"annotation\" to a JSON array of pixel-space points [x, y] at the centers of {neighbor_state} neighboring cells adjacent to the green reference cell; use [] if none match",
+    "answer_hint_candidate_neighbor_count": "set \"answer\" to the number of {neighbor_state} neighboring cells adjacent to the green reference cell"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "bundle_id": "charts_scatter_cluster_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "scatter_cluster": [
+        "The image shows {object_description}.",
+        "The chart shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "scatter_cluster_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "upward_trend_label": [
+        "Which cluster has the strongest upward trend?",
+        "Find the labeled cluster whose points show the strongest upward trend.",
+        "Based on the point-cloud direction, which cluster is most clearly upward?",
+        "Compare the cluster trends. Which cluster has the strongest upward pattern?",
+        "Which cluster label has the clearest upward trend?"
+      ],
+      "downward_trend_label": [
+        "Which cluster has the strongest downward trend?",
+        "Find the labeled cluster whose points show the strongest downward trend.",
+        "Based on the point-cloud direction, which cluster is most clearly downward?",
+        "Compare the cluster trends. Which cluster has the strongest downward pattern?",
+        "Which cluster label has the clearest downward trend?"
+      ],
+      "largest_horizontal_spread_label": [
+        "Which cluster has the largest horizontal spread?",
+        "Find the labeled cluster with the largest horizontal dispersion.",
+        "Compare the point-cloud shapes. Which cluster has the largest horizontal spread?",
+        "What cluster label has the largest spread in the horizontal direction?",
+        "Which cluster has points with the largest horizontal spread?"
+      ],
+      "smallest_horizontal_spread_label": [
+        "Which cluster has the smallest horizontal spread?",
+        "Find the labeled cluster with the smallest horizontal dispersion.",
+        "Compare the point-cloud shapes. Which cluster has the smallest horizontal spread?",
+        "What cluster label has the smallest spread in the horizontal direction?",
+        "Which cluster has points with the smallest horizontal spread?"
+      ],
+      "largest_vertical_spread_label": [
+        "Which cluster has the largest vertical spread?",
+        "Find the labeled cluster with the largest vertical dispersion.",
+        "Compare the point-cloud shapes. Which cluster has the largest vertical spread?",
+        "What cluster label has the largest spread in the vertical direction?",
+        "Which cluster has points with the largest vertical spread?"
+      ],
+      "smallest_vertical_spread_label": [
+        "Which cluster has the smallest vertical spread?",
+        "Find the labeled cluster with the smallest vertical dispersion.",
+        "Compare the point-cloud shapes. Which cluster has the smallest vertical spread?",
+        "What cluster label has the smallest spread in the vertical direction?",
+        "Which cluster has points with the smallest vertical spread?"
+      ],
+      "largest_overall_spread_label": [
+        "Which cluster has the largest overall spread?",
+        "Find the labeled cluster with the largest overall dispersion.",
+        "Compare the point-cloud shapes. Which cluster has the largest overall spread?",
+        "What cluster label has the largest combined spread across both axes?",
+        "Which cluster has points with the largest overall spread?"
+      ],
+      "smallest_overall_spread_label": [
+        "Which cluster has the smallest overall spread?",
+        "Find the labeled cluster with the smallest overall dispersion.",
+        "Compare the point-cloud shapes. Which cluster has the smallest overall spread?",
+        "What cluster label has the smallest combined spread across both axes?",
+        "Which cluster has points with the smallest overall spread?"
+      ],
+      "largest_cluster_area_label": [
+        "Using the shaded cluster footprints, which cluster has the {area_rank_phrase} displayed area?",
+        "Compare the shaded footprints. What cluster label has the {area_rank_phrase} footprint area?",
+        "Which labeled cluster has the {area_rank_phrase} shaded footprint by area?",
+        "Using the displayed shaded cluster areas, which cluster is {area_rank_phrase}?",
+        "Which cluster's shaded footprint has the {area_rank_phrase} area?"
+      ],
+      "smallest_cluster_area_label": [
+        "Using the shaded cluster footprints, which cluster has the {area_rank_phrase} displayed area?",
+        "Compare the shaded footprints. What cluster label has the {area_rank_phrase} footprint area?",
+        "Which labeled cluster has the {area_rank_phrase} shaded footprint by area?",
+        "Using the displayed shaded cluster areas, which cluster is {area_rank_phrase}?",
+        "Which cluster's shaded footprint has the {area_rank_phrase} area?"
+      ],
+      "centroid_option_selection_label": [
+        "For cluster \"{target_cluster_label}\", which option marker is closest to the cluster's mean center?",
+        "Estimate the mean center of cluster \"{target_cluster_label}\". Which option marker is closest to it?",
+        "Using the points in cluster \"{target_cluster_label}\", choose the option marker nearest to that cluster's centroid.",
+        "Which option marker best matches the center of mass of cluster \"{target_cluster_label}\"?",
+        "Find the centroid of cluster \"{target_cluster_label}\" by eye. Which option marker is closest?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:upward_trend_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:downward_trend_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:largest_horizontal_spread_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:smallest_horizontal_spread_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:largest_vertical_spread_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:smallest_vertical_spread_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:largest_overall_spread_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:smallest_overall_spread_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster hull",
+      "json_example": "{\"annotation\":[220,360,340,455],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:largest_cluster_area_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster's shaded footprint",
+      "json_example": "{\"annotation\":[145,255,276,344],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:smallest_cluster_area_label": {
+      "answer_hint": "set \"answer\" to the requested cluster label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] pixel box around the answer cluster's shaded footprint",
+      "json_example": "{\"annotation\":[145,255,276,344],\"answer\":\"Cobalt\"}",
+      "json_example_answer_only": "{\"answer\":\"Cobalt\"}"
+    },
+    "query:centroid_option_selection_label": {
+      "answer_hint": "set \"answer\" to the selected option letter as a capital letter",
+      "annotation_hint": "set \"annotation\" to the [x,y] pixel point at the center of the selected option marker",
+      "json_example": "{\"annotation\":[327,291],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "trend_direction_phrase": {"type": "string"},
+    "spread_axis_phrase": {"type": "string"},
+    "spread_extremum_phrase": {"type": "string"},
+    "area_rank_phrase": {"type": "string"},
+    "target_cluster_label": {"type": "string"}
+  }
+}

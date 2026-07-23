@@ -1,0 +1,93 @@
+generation:
+  shared:
+    scene_variant_weights:
+      klondike_tableau: 1.0
+      freecell_tableau: 1.0
+    style_variant_weights:
+      classic_cards: 1.0
+      ivory_table: 1.0
+      casino_felt: 1.0
+      slate_cards: 1.0
+      paper_tableau: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_target_answer_sampling: true
+    balanced_option_count_sampling: true
+    move_option_count_support:
+    - 4
+    card_option_count_support:
+    - 4
+    - 6
+    cascade_depth_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    foundation_ready_target_answer_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    column_card_count_target_answer_support:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    tableau_movable_card_count_target_answer_support:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+rendering:
+  shared:
+    canvas_width: 1060
+    canvas_height: 820
+    card_width_px: 74
+    card_height_px: 104
+    card_gap_px: 16
+    column_gap_px: 18
+    column_step_y_px: 32
+    panel_margin_px: 44
+    foundation_gap_px: 14
+    card_corner_radius_px: 9
+    rank_font_size_px: 18
+    card_center_font_size_px: 31
+    badge_font_size_px: 14
+    label_font_size_px: 15
+    option_font_size_px: 22
+    option_height_px: 46
+    option_gap_px: 10
+prompt:
+  shared:
+    bundle_id: games_solitaire_v1
+    scene_key: solitaire_tableau
+    task_key: solitaire_tableau_query
+visual:
+  noise:
+    apply_prob: 0.5
+    edit_count_range:
+    - 1
+    - 1
+    value_ranges:
+      blur:
+        radius:
+        - 0.15
+        - 0.4
+      downsample:
+        scale:
+        - 0.9
+        - 0.97
+      jpeg:
+        quality:
+        - 78.0
+        - 94.0
+      noise:
+        alpha:
+        - 0.015
+        - 0.045

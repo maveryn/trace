@@ -1,0 +1,89 @@
+generation:
+  shared:
+    step_count_min: 6
+    step_count_max: 9
+    start_value_min: 35
+    start_value_max: 65
+    delta_abs_min: 5
+    delta_abs_max: 20
+    running_total_min: 8
+    running_total_max: 95
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    chart_context_profile: report_paragraph
+    chart_context_mode_weights:
+      clean: 0.3
+      minimal: 0.4
+      paragraph_box: 0.3
+    plot_margin_left_px: 82
+    plot_margin_right_px: 46
+    plot_margin_top_px: 72
+    plot_margin_bottom_px: 98
+    y_axis_max: 100
+    y_tick_step: 20
+    axis_line_width_px: 2
+    grid_line_width_px: 1
+    connector_width_px: 2
+    bar_outline_width_px: 2
+    tick_length_px: 8
+    title_font_size_px: 26
+    tick_font_size_px: 16
+    label_font_size_px: 18
+    value_font_size_px: 17
+    threshold_font_size_px: 16
+    bar_width_fraction: 0.56
+    start_fill_rgb_options:
+    - - 76
+      - 118
+      - 178
+    - - 87
+      - 118
+      - 160
+    - - 72
+      - 132
+      - 154
+    final_fill_rgb_options:
+    - - 58
+      - 92
+      - 150
+    - - 66
+      - 96
+      - 138
+    - - 58
+      - 111
+      - 136
+    positive_fill_rgb_options:
+    - - 74
+      - 154
+      - 98
+    - - 63
+      - 143
+      - 126
+    - - 88
+      - 150
+      - 84
+    negative_fill_rgb_options:
+    - - 206
+      - 92
+      - 74
+    - - 194
+      - 103
+      - 67
+    - - 188
+      - 82
+      - 108
+    threshold_rgb_options:
+    - - 102
+      - 91
+      - 168
+    - - 136
+      - 86
+      - 152
+    - - 92
+      - 112
+      - 168
+prompt:
+  shared:
+    bundle_id: charts_waterfall_v1

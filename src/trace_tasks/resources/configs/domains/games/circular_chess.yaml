@@ -1,0 +1,59 @@
+generation:
+  shared:
+    scene_variant_weights:
+      sparse_board: 1.0
+      crowded_board: 1.0
+    marked_piece_kind_weights:
+      king: 1.0
+      queen: 1.0
+      rook: 1.0
+      bishop: 1.0
+      knight: 1.0
+    marked_piece_color_weights:
+      white: 1.0
+      black: 1.0
+    style_variant_weights:
+      classic_ring: 1.0
+      slate_ring: 1.0
+      parchment_ring: 1.0
+      emerald_ring: 1.0
+      monochrome_ring: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_marked_piece_kind_sampling: true
+    balanced_marked_piece_color_sampling: true
+    balanced_style_variant_sampling: true
+    balanced_target_answer_sampling: true
+    sparse_min_occupied_count: 8
+    sparse_max_occupied_count: 13
+    crowded_min_occupied_count: 14
+    crowded_max_occupied_count: 22
+  task_overrides:
+    task_games__circular_chess__marked_piece_destination_count:
+      marked_piece_move_count_support: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+      marked_piece_capture_count_support: [0, 1, 2, 3, 4, 5, 6]
+    task_games__circular_chess__target_cell_reacher_count:
+      white_piece_reaches_target_count_support: [0, 1, 2, 3, 4, 5, 6]
+      black_piece_reaches_target_count_support: [0, 1, 2, 3, 4, 5, 6]
+rendering:
+  shared:
+    canvas_width: 840
+    canvas_height: 840
+    panel_margin_px: 40
+    max_board_size_px: 640
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_frame_width_px: 8
+    cell_outline_width_px: 2
+    piece_font_size_px: 56
+    piece_bbox_fraction: 0.72
+    marker_width_px: 5
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 560
+    canvas_side_padding_px: 80
+    canvas_vertical_padding_px: 80
+prompt:
+  shared:
+    bundle_id: games_circular_chess_v1
+    scene_key: circular_chess_board
+    task_key: circular_chess_query

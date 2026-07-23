@@ -1,0 +1,1 @@
+"""Symbolic clock scene."""

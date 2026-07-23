@@ -1,0 +1,134 @@
+{
+  "bundle_id": "geometry_container_volume_transfer_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "fill_count_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "resulting_height_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "target_capacity_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "transferred_volume_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:container_volume_transfer_scene": [
+      "object_description"
+    ],
+    "query:cone_to_cylinder_fill_count": [],
+    "query:cylinder_to_cuboid_fill_count": [],
+    "query:cone_pours_to_cylinder_height": [],
+    "query:cylinder_pours_to_cuboid_height": [],
+    "query:target_capacity_from_source_and_count": [],
+    "query:repeated_cone_pours_total_volume": [],
+    "query:repeated_cylinder_pours_total_volume": [],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFormat for the \"answer\" field: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "container_volume_transfer_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The image shows {object_description}.",
+      "The labeled diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "cone_to_cylinder_fill_count": [
+      "How many full source-cone pours are needed to fill the target cylinder?",
+      "Using the visible dimensions, how many full pours from the source cone fill the target cylinder?",
+      "What integer count replaces ? for the number of full cone pours needed?",
+      "Find the number of full source-container pours needed to fill the target container.",
+      "How many complete pours from the cone source match the target cylinder capacity?"
+    ],
+    "cylinder_to_cuboid_fill_count": [
+      "How many full source-cylinder pours are needed to fill the target rectangular tank?",
+      "Using the visible dimensions, how many full pours from the source cylinder fill the target cuboid?",
+      "What integer count replaces ? for the number of full cylinder pours needed?",
+      "Find the number of full source-container pours needed to fill the target container.",
+      "How many complete pours from the cylinder source match the target rectangular-tank capacity?"
+    ],
+    "cone_pours_to_cylinder_height": [
+      "After the shown cone pours, what is the target-cylinder liquid height?",
+      "Use the dimensions and pour count to find the target height.",
+      "What height does the fill mark show after the displayed cone pours?",
+      "Compute the target-cylinder height reached by the pours.",
+      "What target-cylinder liquid height replaces the ? height mark?"
+    ],
+    "cylinder_pours_to_cuboid_height": [
+      "After the shown cylinder pours, what is the target-tank liquid height?",
+      "Use the dimensions and pour count to find the target height.",
+      "What height does the fill mark show after the displayed cylinder pours?",
+      "Compute the target-tank height reached by the pours.",
+      "What target-tank liquid height replaces the ? height mark?"
+    ],
+    "target_capacity_from_source_and_count": [
+      "What capacity replaces the ? label on the target container?",
+      "Using the source dimensions and shown pour count, find the target container capacity.",
+      "What is the target capacity represented by the displayed full source-container pours?",
+      "Compute the target container capacity from the source container and transfer count.",
+      "What volume capacity should be written for the target container?"
+    ],
+    "repeated_cone_pours_total_volume": [
+      "What total volume is transferred by the displayed number of full source-cone pours?",
+      "Using the visible cone dimensions and pour count, find the total volume moved into the target.",
+      "What integer volume replaces the total-volume ? label for the cone pours?",
+      "Compute the combined volume of the shown repeated full cone pours.",
+      "How much total volume is poured from the cone source?"
+    ],
+    "repeated_cylinder_pours_total_volume": [
+      "What total volume is transferred by the displayed number of full source-cylinder pours?",
+      "Using the visible cylinder dimensions and pour count, find the total volume moved into the target.",
+      "What integer volume replaces the total-volume ? label for the cylinder pours?",
+      "Compute the combined volume of the shown repeated full cylinder pours.",
+      "How much total volume is poured from the cylinder source?"
+    ]
+  },
+  "allow_empty_task_templates": true
+}

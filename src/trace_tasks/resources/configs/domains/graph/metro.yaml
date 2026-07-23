@@ -1,0 +1,65 @@
+generation:
+  shared:
+    label_variant_weights:
+      letters: 1.0
+      numbers: 1.0
+      named: 2.0
+    balanced_label_variant_sampling: true
+    node_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_node_color_name_sampling: true
+  task_overrides:
+    task_graph__metro__station_membership_count:
+      target_count_min: 1
+      target_count_max: 6
+      route_count_min: 3
+      route_count_max: 5
+    task_graph__metro__exact_distance_station_count:
+      target_count_min: 1
+      target_count_max: 6
+      query_distance_min: 2
+      query_distance_max: 3
+      route_count_min: 3
+      route_count_max: 5
+    task_graph__metro__route_condition_station_count:
+      target_count_min: 0
+      target_count_max: 5
+      route_count_min: 2
+      route_count_max: 5
+    task_graph__metro__shortest_path_length:
+      target_shortest_path_length_min: 2
+      target_shortest_path_length_max: 6
+      route_count_min: 3
+      route_count_max: 5
+rendering:
+  shared:
+    canvas_width: 864
+    canvas_height: 640
+    outer_margin_px: 28
+    panel_padding_px: 24
+    panel_corner_radius_px: 20
+    panel_title_font_size_px: 24
+    node_shape_variant: circle
+    node_radius_min_px: 18
+    node_radius_max_px: 24
+    edge_width_px: 4
+    arrow_length_px: 12
+    arrow_width_px: 7
+    node_border_width_px: 2
+    label_font_size_px: 18
+    context_text_probability: 0.35
+    context_text_max_elements: 2
+    context_block_probability: 0.18
+    context_block_max_elements: 1
+prompt:
+  shared:
+    bundle_id: graph_metro_v1

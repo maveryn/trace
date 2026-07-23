@@ -1,0 +1,223 @@
+{
+  "bundle_id": "charts_contour_density_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "contour_density_scene": [
+        "The image shows a contour-density chart with labeled regions, numeric axes, and visible reference marks when needed.",
+        "The figure shows a labeled contour-density field with numeric axes and reference marks when the question needs them.",
+        "The visual shows a contour-density plot with labeled regions and density levels.",
+        "The chart shows a labeled density field with contour regions and numeric axes.",
+        "The panel shows a contour-density visualization with labeled regions."
+      ]
+    },
+    "task": {
+      "contour_density_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "highest_density_region_label": [
+        "Density level is shown by the contour marks: more nested rings, and when present more dots or stronger fill, mean higher density. Ignoring footprint size and position, which region has the {density_extremum_phrase} density?",
+        "Use the contour-level marks, not footprint size: more nested rings/dots or stronger fill means higher density. Find the labeled region with the {density_extremum_phrase} density.",
+        "Compare density by contour level. More nested rings, dots, or stronger fill indicate higher density; fewer indicate lower density. Which label corresponds to the {density_extremum_phrase} density?",
+        "Using the visible contour-density levels rather than region area or position, what visible region label has the {density_extremum_phrase} density?",
+        "Which labeled region is the {density_extremum_phrase}-density region? Use nested contour rings, dots, or fill intensity as the density cue."
+      ],
+      "lowest_density_region_label": [
+        "Density level is shown by the contour marks: more nested rings, and when present more dots or stronger fill, mean higher density. Ignoring footprint size and position, which region has the {density_extremum_phrase} density?",
+        "Use the contour-level marks, not footprint size: more nested rings/dots or stronger fill means higher density. Find the labeled region with the {density_extremum_phrase} density.",
+        "Compare density by contour level. More nested rings, dots, or stronger fill indicate higher density; fewer indicate lower density. Which label corresponds to the {density_extremum_phrase} density?",
+        "Using the visible contour-density levels rather than region area or position, what visible region label has the {density_extremum_phrase} density?",
+        "Which labeled region is the {density_extremum_phrase}-density region? Use nested contour rings, dots, or fill intensity as the density cue."
+      ],
+      "point_nearest_region_label": [
+        "Which labeled region is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "Compare region centers to the {reference_kind_phrase}. Which region is {distance_extremum_phrase} it?",
+        "Using the visible reference mark, identify the region {distance_extremum_phrase} the {reference_kind_phrase}.",
+        "What region label is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "From the labeled contour regions, which one is {distance_extremum_phrase} the {reference_kind_phrase}?"
+      ],
+      "point_farthest_region_label": [
+        "Which labeled region is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "Compare region centers to the {reference_kind_phrase}. Which region is {distance_extremum_phrase} it?",
+        "Using the visible reference mark, identify the region {distance_extremum_phrase} the {reference_kind_phrase}.",
+        "What region label is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "From the labeled contour regions, which one is {distance_extremum_phrase} the {reference_kind_phrase}?"
+      ],
+      "vertical_line_nearest_region_label": [
+        "Which labeled region is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "Compare region centers to the {reference_kind_phrase}. Which region is {distance_extremum_phrase} it?",
+        "Using the visible reference mark, identify the region {distance_extremum_phrase} the {reference_kind_phrase}.",
+        "What region label is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "From the labeled contour regions, which one is {distance_extremum_phrase} the {reference_kind_phrase}?"
+      ],
+      "vertical_line_farthest_region_label": [
+        "Which labeled region is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "Compare region centers to the {reference_kind_phrase}. Which region is {distance_extremum_phrase} it?",
+        "Using the visible reference mark, identify the region {distance_extremum_phrase} the {reference_kind_phrase}.",
+        "What region label is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "From the labeled contour regions, which one is {distance_extremum_phrase} the {reference_kind_phrase}?"
+      ],
+      "horizontal_line_nearest_region_label": [
+        "Which labeled region is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "Compare region centers to the {reference_kind_phrase}. Which region is {distance_extremum_phrase} it?",
+        "Using the visible reference mark, identify the region {distance_extremum_phrase} the {reference_kind_phrase}.",
+        "What region label is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "From the labeled contour regions, which one is {distance_extremum_phrase} the {reference_kind_phrase}?"
+      ],
+      "horizontal_line_farthest_region_label": [
+        "Which labeled region is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "Compare region centers to the {reference_kind_phrase}. Which region is {distance_extremum_phrase} it?",
+        "Using the visible reference mark, identify the region {distance_extremum_phrase} the {reference_kind_phrase}.",
+        "What region label is {distance_extremum_phrase} the {reference_kind_phrase}?",
+        "From the labeled contour regions, which one is {distance_extremum_phrase} the {reference_kind_phrase}?"
+      ],
+      "density_at_least_threshold_region_count": [
+        "Density level is shown by the contour marks: more nested rings, and when present more dots or stronger fill, mean higher density. Ignoring footprint size and position, how many labeled regions have density level {density_threshold_phrase} {density_threshold_level}?",
+        "Use the contour-level marks, not footprint size: more nested rings/dots or stronger fill means higher density. Count the regions whose visible density level is {density_threshold_phrase} {density_threshold_level}.",
+        "Using the density-level encoding from contour rings, dots, or fill intensity, how many regions are {density_threshold_phrase} level {density_threshold_level}?",
+        "Compare density by contour level. More nested rings, dots, or stronger fill indicate higher density; fewer indicate lower density. How many labeled regions have density level {density_threshold_phrase} {density_threshold_level}?",
+        "Compare each region's visible density level to {density_threshold_level} using the contour marks rather than footprint size or position. How many regions are {density_threshold_phrase} that level?"
+      ],
+      "density_below_threshold_region_count": [
+        "Density level is shown by the contour marks: more nested rings, and when present more dots or stronger fill, mean higher density. Ignoring footprint size and position, how many labeled regions have density level {density_threshold_phrase} {density_threshold_level}?",
+        "Use the contour-level marks, not footprint size: more nested rings/dots or stronger fill means higher density. Count the regions whose visible density level is {density_threshold_phrase} {density_threshold_level}.",
+        "Using the density-level encoding from contour rings, dots, or fill intensity, how many regions are {density_threshold_phrase} level {density_threshold_level}?",
+        "Compare density by contour level. More nested rings, dots, or stronger fill indicate higher density; fewer indicate lower density. How many labeled regions have density level {density_threshold_phrase} {density_threshold_level}?",
+        "Compare each region's visible density level to {density_threshold_level} using the contour marks rather than footprint size or position. How many regions are {density_threshold_phrase} that level?"
+      ],
+      "widest_spread_region_label": [
+        "Which labeled region has the {spread_extremum_phrase} visible footprint?",
+        "Compare the contour footprints. What region label has the {spread_extremum_phrase} spread?",
+        "Which region occupies the {spread_extremum_phrase} visible area?",
+        "Find the labeled region with the {spread_extremum_phrase} contour footprint.",
+        "Among the visible contour regions, which label corresponds to the {spread_extremum_phrase} footprint?"
+      ],
+      "narrowest_spread_region_label": [
+        "Which labeled region has the {spread_extremum_phrase} visible footprint?",
+        "Compare the contour footprints. What region label has the {spread_extremum_phrase} spread?",
+        "Which region occupies the {spread_extremum_phrase} visible area?",
+        "Find the labeled region with the {spread_extremum_phrase} contour footprint.",
+        "Among the visible contour regions, which label corresponds to the {spread_extremum_phrase} footprint?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:highest_density_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected density region",
+      "json_example": "{\"annotation\":[510,220,650,355],\"answer\":\"Delta\"}",
+      "json_example_answer_only": "{\"answer\":\"Delta\"}"
+    },
+    "query:lowest_density_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected density region",
+      "json_example": "{\"annotation\":[510,220,650,355],\"answer\":\"Delta\"}",
+      "json_example_answer_only": "{\"answer\":\"Delta\"}"
+    },
+    "query:point_nearest_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] box around the selected density region",
+      "json_example": "{\"annotation\":[620,330,760,470],\"answer\":\"Lumen\"}",
+      "json_example_answer_only": "{\"answer\":\"Lumen\"}"
+    },
+    "query:point_farthest_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] box around the selected density region",
+      "json_example": "{\"annotation\":[620,330,760,470],\"answer\":\"Lumen\"}",
+      "json_example_answer_only": "{\"answer\":\"Lumen\"}"
+    },
+    "query:vertical_line_nearest_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] box around the selected density region",
+      "json_example": "{\"annotation\":[620,330,760,470],\"answer\":\"Lumen\"}",
+      "json_example_answer_only": "{\"answer\":\"Lumen\"}"
+    },
+    "query:vertical_line_farthest_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] box around the selected density region",
+      "json_example": "{\"annotation\":[620,330,760,470],\"answer\":\"Lumen\"}",
+      "json_example_answer_only": "{\"answer\":\"Lumen\"}"
+    },
+    "query:horizontal_line_nearest_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] box around the selected density region",
+      "json_example": "{\"annotation\":[620,330,760,470],\"answer\":\"Lumen\"}",
+      "json_example_answer_only": "{\"answer\":\"Lumen\"}"
+    },
+    "query:horizontal_line_farthest_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to the [x0,y0,x1,y1] box around the selected density region",
+      "json_example": "{\"annotation\":[620,330,760,470],\"answer\":\"Lumen\"}",
+      "json_example_answer_only": "{\"answer\":\"Lumen\"}"
+    },
+    "query:density_at_least_threshold_region_count": {
+      "answer_hint": "set \"answer\" to the requested count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] boxes around every region matching the density-level threshold",
+      "json_example": "{\"annotation\":[[210,180,330,300],[520,260,660,410]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:density_below_threshold_region_count": {
+      "answer_hint": "set \"answer\" to the requested count as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] boxes around every region matching the density-level threshold",
+      "json_example": "{\"annotation\":[[210,180,330,300],[520,260,660,410]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:widest_spread_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected footprint region",
+      "json_example": "{\"annotation\":[510,220,650,355],\"answer\":\"Delta\"}",
+      "json_example_answer_only": "{\"answer\":\"Delta\"}"
+    },
+    "query:narrowest_spread_region_label": {
+      "answer_hint": "set \"answer\" to the exact visible region label as a string",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the selected footprint region",
+      "json_example": "{\"annotation\":[510,220,650,355],\"answer\":\"Delta\"}",
+      "json_example_answer_only": "{\"answer\":\"Delta\"}"
+    }
+  },
+  "dynamic_slots": {
+    "density_extremum_phrase": {"type": "string"},
+    "density_threshold_level": {"type": "string"},
+    "density_threshold_phrase": {"type": "string"},
+    "distance_extremum_phrase": {"type": "string"},
+    "reference_kind_phrase": {"type": "string"},
+    "spread_extremum_phrase": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "query:highest_density_region_label": ["density_extremum_phrase"],
+    "query:lowest_density_region_label": ["density_extremum_phrase"],
+    "query:point_nearest_region_label": ["distance_extremum_phrase", "reference_kind_phrase"],
+    "query:point_farthest_region_label": ["distance_extremum_phrase", "reference_kind_phrase"],
+    "query:vertical_line_nearest_region_label": ["distance_extremum_phrase", "reference_kind_phrase"],
+    "query:vertical_line_farthest_region_label": ["distance_extremum_phrase", "reference_kind_phrase"],
+    "query:horizontal_line_nearest_region_label": ["distance_extremum_phrase", "reference_kind_phrase"],
+    "query:horizontal_line_farthest_region_label": ["distance_extremum_phrase", "reference_kind_phrase"],
+    "query:density_at_least_threshold_region_count": ["density_threshold_phrase", "density_threshold_level"],
+    "query:density_below_threshold_region_count": ["density_threshold_phrase", "density_threshold_level"],
+    "query:widest_spread_region_label": ["spread_extremum_phrase"],
+    "query:narrowest_spread_region_label": ["spread_extremum_phrase"]
+  }
+}

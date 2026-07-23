@@ -1,0 +1,61 @@
+{
+  "bundle_id": "geometry_cylinder_wrap_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "surface_path_length_value_query": [
+      "What is the length of the marked path on the unwrapped cylinder side?",
+      "Use the unwrapped net to compute the marked path length.",
+      "Find the marked path length from the rectangular cylinder-side net.",
+      "What length does the marked diagonal path represent on the cylinder side?",
+      "Compute the length of the marked path shown on the cylinder net."
+    ],
+    "wrapped_mark_position_label_query": [
+      "Which labeled rim position matches the marked position on the unwrapped strip?",
+      "Find the rim label that corresponds to the marked position on the strip.",
+      "When the strip wraps around the cylinder, which labeled point does the mark align with?",
+      "Match the strip mark to the labeled top-view rim position.",
+      "Which candidate label shows where the marked strip position lands on the rim?"
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:cylinder_wrap_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "cylinder_wrap_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The image shows {object_description}.",
+      "The labeled wrapping diagram shows {object_description}."
+    ]
+  }
+}

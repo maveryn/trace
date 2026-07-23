@@ -1,0 +1,107 @@
+{
+  "bundle_id": "symbolic_radial_code_wheel_v1",
+  "schema_version": "v1",
+  "templates": {
+    "scene": {
+      "radial_code_wheel": [
+        "A radial code wheel shows {object_description}. To use the wheel, read the first code symbol in the inner ring, the second code symbol in the middle ring, and the third code symbol in the outer ring.",
+        "This radial code wheel shows {object_description}. Read codes from center to edge: first symbol in the inner ring, second in the middle ring, third in the outer ring.",
+        "The code-wheel panel shows {object_description}. Follow a code from the center outward through the inner, middle, and outer rings.",
+        "A synthetic radial lookup wheel presents {object_description}. Each three-symbol code is read center-to-edge through the three rings.",
+        "The radial notation panel shows {object_description}. The inner, middle, and outer rings give the first, second, and third code symbols."
+      ]
+    },
+    "task": {
+      "code_output_label": [
+        "Which option is the output label reached by the shown code?",
+        "Follow the shown code through the wheel. Which option gives the reached output label?",
+        "Use the code card and select the option with the terminal output label it reaches.",
+        "Which labeled option matches the output reached by this three-symbol code?",
+        "Read the code through the radial wheel and choose the matching output option."
+      ],
+      "output_code_match_label": [
+        "Which code option reaches the shown output label?",
+        "Find the shown output label on the wheel. Which option gives the code that reaches it?",
+        "Select the labeled code option whose path ends at the target output label.",
+        "Which option letter contains the three-symbol code for the shown output?",
+        "Use the radial wheel to choose the code option that leads to the displayed output label."
+      ],
+      "missing_code_symbol_label": [
+        "Which code symbol should replace the question mark so the code reaches the shown output label?",
+        "Fill the missing symbol in the incomplete code. Which symbol makes the code end at the target output?",
+        "Use the wheel and the target output. What symbol belongs in the question-mark position of the code?",
+        "Which symbol completes the displayed code so it reaches the shown output label?",
+        "What code symbol replaces the question mark and leads to the target output?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "{json_output_contract}\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "dynamic_slots": {
+    "object_description": {"type": "string"},
+    "json_output_contract": {"type": "string"},
+    "json_output_contract_answer_only": {"type": "string"},
+    "annotation_hint": {"type": "string"},
+    "answer_hint": {"type": "string"},
+    "json_example": {"type": "string"},
+    "json_example_answer_only": {"type": "string"}
+  },
+  "required_slots_by_key": {
+    "scene:radial_code_wheel": [
+      "object_description"
+    ],
+    "task:code_output_label": [],
+    "task:output_code_match_label": [],
+    "task:missing_code_symbol_label": [],
+    "output:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  },
+  "code_prompt_defaults": {
+    "object_description_code_output_label_clean_wheel": "a clean three-ring code wheel, a source code card, and six labeled output options",
+    "object_description_code_output_label_notebook_wheel": "a notebook-style three-ring code wheel, a source code card, and six labeled output options",
+    "object_description_code_output_label_exam_scan": "an exam-scan-style three-ring code wheel, a source code card, and six labeled output options",
+    "object_description_output_code_match_label_clean_wheel": "a clean three-ring code wheel, a target output card, and six labeled code options",
+    "object_description_output_code_match_label_notebook_wheel": "a notebook-style three-ring code wheel, a target output card, and six labeled code options",
+    "object_description_output_code_match_label_exam_scan": "an exam-scan-style three-ring code wheel, a target output card, and six labeled code options",
+    "object_description_missing_code_symbol_label_clean_wheel": "a clean three-ring code wheel, a target output card, and an incomplete code card with one question mark",
+    "object_description_missing_code_symbol_label_notebook_wheel": "a notebook-style three-ring code wheel, a target output card, and an incomplete code card with one question mark",
+    "object_description_missing_code_symbol_label_exam_scan": "an exam-scan-style three-ring code wheel, a target output card, and an incomplete code card with one question mark",
+    "annotation_hint_code_output_label": "set \"annotation\" to an object with keys \"inner_ring_symbol\", \"middle_ring_symbol\", and \"outer_ring_symbol\", each mapped to the pixel-space center point [x, y] of the matching code symbol on that ring",
+    "answer_hint_code_output_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_code_output_label": "{\"annotation\":{\"inner_ring_symbol\":[408,327],\"middle_ring_symbol\":[481,405],\"outer_ring_symbol\":[568,461]},\"answer\":\"D\"}",
+    "json_example_answer_only_code_output_label": "{\"answer\":\"D\"}",
+    "annotation_hint_output_code_match_label": "set \"annotation\" to an object with keys \"inner_ring_symbol\", \"middle_ring_symbol\", and \"outer_ring_symbol\", each mapped to the pixel-space center point [x, y] of the code path that reaches the target output",
+    "answer_hint_output_code_match_label": "set \"answer\" to the single capital-letter option label",
+    "json_example_output_code_match_label": "{\"annotation\":{\"inner_ring_symbol\":[408,327],\"middle_ring_symbol\":[481,405],\"outer_ring_symbol\":[568,461]},\"answer\":\"E\"}",
+    "json_example_answer_only_output_code_match_label": "{\"answer\":\"E\"}",
+    "annotation_hint_missing_code_symbol_label": "set \"annotation\" to the pixel-space center point [x, y] of the missing code symbol on the matching wheel ring",
+    "answer_hint_missing_code_symbol_label": "set \"answer\" to the single missing code symbol as a string, one of A, B, C, or D",
+    "json_example_missing_code_symbol_label": "{\"annotation\":[481,405],\"answer\":\"C\"}",
+    "json_example_answer_only_missing_code_symbol_label": "{\"answer\":\"C\"}",
+    "json_output_contract": "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.",
+    "json_output_contract_answer_only": "Use a valid JSON object with key \"answer\" for the final answer."
+  }
+}

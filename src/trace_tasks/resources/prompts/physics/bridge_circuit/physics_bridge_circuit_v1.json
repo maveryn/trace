@@ -1,0 +1,67 @@
+{
+  "bundle_id": "physics_bridge_circuit_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "bridge_circuit_diagram": [
+        "The image shows {object_description}.",
+        "The circuit diagram shows {object_description}.",
+        "This circuit diagram shows {object_description}.",
+        "The figure shows {object_description}.",
+        "The visual shows {object_description}."
+      ]
+    },
+    "task": {
+      "bridge_missing_resistance_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "What is the missing resistance in the balanced bridge circuit?",
+        "Using the zero meter reading and the shown resistor labels, what value should replace the question mark?",
+        "Find the unknown resistor value that balances this bridge circuit.",
+        "What integer resistance makes the bridge meter read zero?",
+        "Determine the missing resistance in ohms."
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:bridge_circuit_diagram": {
+      "object_description": "a balanced resistor bridge circuit with four labeled bridge resistors, one resistor marked with a question mark, and a center meter reading zero"
+    },
+    "query:single": {
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel bounding box around the question-mark resistor",
+      "answer_hint": "set \"answer\" to the missing resistance as an integer number of ohms",
+      "json_example": "{\"annotation\":[912,128,982,214],\"answer\":6}",
+      "json_example_answer_only": "{\"answer\":6}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:bridge_circuit_diagram": [
+      "object_description"
+    ]
+  }
+}

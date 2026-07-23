@@ -1,0 +1,153 @@
+generation:
+  task_overrides:
+    task_three_d__street__intersection_nearest_label:
+      scene_variant_weights:
+        downtown_intersection: 1.0
+        neighborhood_intersection: 1.0
+        transit_intersection: 1.0
+      intersection_layout_weights:
+        four_way: 1.0
+        t_missing_north: 1.0
+        t_missing_south: 1.0
+        t_missing_east: 1.0
+        t_missing_west: 1.0
+      intersection_center_jitter_x: 0.62
+      intersection_center_jitter_y: 0.54
+      candidate_count_min: 4
+      candidate_count_max: 4
+      context_object_count_min: 10
+      context_object_count_max: 10
+      balanced_scene_variant_sampling: true
+      balanced_intersection_layout_sampling: true
+    task_three_d__street__same_road_arm_reference_label:
+      scene_variant_weights:
+        downtown_intersection: 1.0
+        neighborhood_intersection: 1.0
+        transit_intersection: 1.0
+      intersection_layout_weights:
+        four_way: 1.0
+        t_missing_north: 1.0
+        t_missing_south: 1.0
+        t_missing_east: 1.0
+        t_missing_west: 1.0
+      intersection_center_jitter_x: 0.62
+      intersection_center_jitter_y: 0.54
+      candidate_count_min: 4
+      candidate_count_max: 4
+      context_object_count_min: 10
+      context_object_count_max: 10
+      balanced_scene_variant_sampling: true
+      balanced_intersection_layout_sampling: true
+    task_three_d__street__lane_ahead_object_label:
+      scene_variant_weights:
+        downtown_intersection: 1.0
+        neighborhood_intersection: 1.0
+        transit_intersection: 1.0
+      intersection_layout_weights:
+        four_way: 1.0
+        t_missing_north: 1.0
+        t_missing_south: 1.0
+        t_missing_east: 1.0
+        t_missing_west: 1.0
+      travel_mode_weights:
+        toward_intersection: 1.0
+        away_from_intersection: 1.0
+      intersection_center_jitter_x: 0.62
+      intersection_center_jitter_y: 0.54
+      candidate_count_min: 4
+      candidate_count_max: 4
+      context_object_count_min: 8
+      context_object_count_max: 8
+      balanced_scene_variant_sampling: true
+      balanced_intersection_layout_sampling: true
+      balanced_travel_mode_sampling: true
+rendering:
+  shared:
+    canvas_preset_weights:
+      landscape: 1.0
+      portrait: 0.0
+      square: 1.0
+  task_overrides:
+    task_three_d__street__intersection_nearest_label:
+      canvas_width: 1180
+      canvas_height: 920
+      scene_margin_left_px: 48
+      scene_margin_right_px: 48
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 52
+      street_extent: 4.45
+      road_half_width: 1.02
+      marker_radius_px: 20
+      label_font_size_px: 25
+      line_width_px: 2
+      asphalt_rgb:
+      - 86
+      - 93
+      - 101
+      road_mark_rgb:
+      - 236
+      - 210
+      - 86
+      crosswalk_rgb:
+      - 240
+      - 243
+      - 238
+    task_three_d__street__same_road_arm_reference_label:
+      canvas_width: 1180
+      canvas_height: 920
+      scene_margin_left_px: 48
+      scene_margin_right_px: 48
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 52
+      street_extent: 4.45
+      road_half_width: 1.02
+      marker_radius_px: 20
+      label_font_size_px: 25
+      line_width_px: 2
+      asphalt_rgb:
+      - 86
+      - 93
+      - 101
+      road_mark_rgb:
+      - 236
+      - 210
+      - 86
+      crosswalk_rgb:
+      - 240
+      - 243
+      - 238
+    task_three_d__street__lane_ahead_object_label:
+      canvas_width: 1180
+      canvas_height: 920
+      scene_margin_left_px: 48
+      scene_margin_right_px: 48
+      scene_margin_top_px: 42
+      scene_margin_bottom_px: 52
+      street_extent: 4.45
+      road_half_width: 1.02
+      marker_radius_px: 20
+      label_font_size_px: 25
+      line_width_px: 2
+      asphalt_rgb:
+      - 86
+      - 93
+      - 101
+      road_mark_rgb:
+      - 236
+      - 210
+      - 86
+      crosswalk_rgb:
+      - 240
+      - 243
+      - 238
+prompt:
+  shared:
+    bundle_id: three_d_street_v1
+    scene_key: street
+  task_overrides:
+    task_three_d__street__intersection_nearest_label:
+      task_key: street_intersection_nearest_query
+    task_three_d__street__lane_ahead_object_label:
+      task_key: street_lane_ahead_object_query
+    task_three_d__street__same_road_arm_reference_label:
+      task_key: street_same_road_arm_reference_query

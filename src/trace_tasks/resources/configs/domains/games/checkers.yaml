@@ -1,0 +1,70 @@
+generation:
+  shared:
+    scene_variant_weights:
+      midgame_board: 1.0
+      crowded_board: 1.0
+    style_variant_weights:
+      classic: 1.0
+      soft: 1.0
+      outlined: 1.0
+      wood_token: 1.0
+      blue_table: 1.0
+      charcoal: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_style_variant_sampling: true
+    midgame_min_occupied_count: 8
+    midgame_max_occupied_count: 12
+    crowded_min_occupied_count: 13
+    crowded_max_occupied_count: 17
+  task_overrides:
+    task_games__checkers__move_count:
+      balanced_target_answer_sampling: true
+      min_occupied_count: 6
+      max_occupied_count: 10
+      legal_move_count_support: [0, 1, 2, 3, 4, 5]
+      capture_move_count_support: [0, 1, 2, 3, 4]
+    task_games__checkers__max_capture_chain_length:
+      balanced_target_answer_sampling: true
+      max_capture_chain_length_support: [1, 2, 3, 4, 5]
+    task_games__checkers__piece_mobility_count:
+      balanced_target_answer_sampling: true
+      piece_with_legal_move_count_support: [0, 1, 2, 3, 4, 5]
+      piece_with_capture_move_count_support: [0, 1, 2, 3, 4]
+    task_games__checkers__piece_state_count:
+      balanced_target_answer_sampling: true
+      min_occupied_count: 6
+      max_occupied_count: 12
+      piece_state_count_support: [0, 1, 2, 3, 4, 5, 6]
+      target_player_weights:
+        red: 1.0
+        black: 1.0
+      piece_state_kind_weights:
+        all: 1.0
+        edge: 1.0
+      balanced_target_player_sampling: true
+      balanced_piece_state_kind_sampling: true
+rendering:
+  shared:
+    canvas_width: 980
+    canvas_height: 920
+    panel_margin_px: 48
+    player_badge_height_px: 52
+    player_badge_width_px: 230
+    header_gap_px: 18
+    max_board_size_px: 780
+    unit_size_scale_min: 0.5
+    unit_size_scale_max: 1.0
+    board_corner_radius_px: 26
+    board_frame_width_px: 10
+    piece_inset_fraction: 0.17
+    player_badge_font_size_px: 22
+    dynamic_canvas_size_enabled: true
+    canvas_min_width_px: 560
+    canvas_min_height_px: 560
+    canvas_side_padding_px: 132
+    canvas_vertical_padding_px: 92
+prompt:
+  shared:
+    bundle_id: games_checkers_v1
+    scene_key: visible_checkers_board
+    task_key: checkers_board_query

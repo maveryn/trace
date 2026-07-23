@@ -1,0 +1,102 @@
+{
+  "bundle_id": "icons_sequence_strip_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "sequence_completion_options": [
+        "The image shows {object_description}.",
+        "The figure shows {object_description}.",
+        "This image shows {object_description}.",
+        "The scene shows {object_description}.",
+        "The picture shows {object_description}."
+      ]
+    },
+    "task": {
+      "completion_option_label": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "count_progression_completion_label": [
+        "Which option completes the icon-count sequence in the question-mark box?",
+        "Choose the option that belongs in the question-mark box to continue the count sequence.",
+        "Which option has the number of icons needed to complete the sequence?",
+        "Select the option that makes the icon counts follow the sequence.",
+        "Which labeled option should replace the question mark in the count sequence?"
+      ],
+      "rotation_progression_completion_label": [
+        "Which option completes the rotation sequence in the question-mark box?",
+        "Choose the option that belongs in the question-mark box to continue the rotation pattern.",
+        "Which option has the icon rotation needed to complete the sequence?",
+        "Select the option that makes the icon rotations follow the sequence.",
+        "Which labeled option should replace the question mark in the rotation sequence?"
+      ],
+      "size_progression_completion_label": [
+        "Which option completes the size sequence in the question-mark box?",
+        "Choose the option that belongs in the question-mark box to continue the size pattern.",
+        "Which option has the icon size needed to complete the sequence?",
+        "Select the option that makes the icon sizes follow the sequence.",
+        "Which labeled option should replace the question mark in the size sequence?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nRequired annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFormat for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "scene:sequence_completion_options": {
+      "object_description": "a top row of four boxed sequence cells with one question-mark box and a bottom row of four labeled option boxes"
+    },
+    "query:count_progression_completion_label": {
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates for the correct option box",
+      "answer_hint": "set \"answer\" to the correct option label as a string, one of \"A\", \"B\", \"C\", or \"D\"",
+      "json_example": "{\"annotation\":[412,250,540,398],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:rotation_progression_completion_label": {
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates for the correct option box",
+      "answer_hint": "set \"answer\" to the correct option label as a string, one of \"A\", \"B\", \"C\", or \"D\"",
+      "json_example": "{\"annotation\":[412,250,540,398],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:size_progression_completion_label": {
+      "annotation_hint": "set \"annotation\" to one [x0, y0, x1, y1] box in image pixel coordinates for the correct option box",
+      "answer_hint": "set \"answer\" to the correct option label as a string, one of \"A\", \"B\", \"C\", or \"D\"",
+      "json_example": "{\"annotation\":[412,250,540,398],\"answer\":\"C\"}",
+      "json_example_answer_only": "{\"answer\":\"C\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {
+    "scene:sequence_completion_options": [
+      "object_description"
+    ],
+    "output:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "output:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

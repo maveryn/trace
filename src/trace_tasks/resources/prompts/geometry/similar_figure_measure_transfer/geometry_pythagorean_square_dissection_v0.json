@@ -1,0 +1,65 @@
+{
+  "bundle_id": "geometry_pythagorean_square_dissection_v0",
+  "schema_version": "v0",
+  "task_templates": {
+    "pythagorean_square_dissection_value_query": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "required_slots_by_key": {
+    "scene:pythagorean_square_dissection_scene": [
+      "object_description"
+    ],
+    "answer_or_annotation:answer_only": [
+      "json_output_contract_answer_only",
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "json_output_contract",
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ],
+    "query:central_square_area_from_triangle_legs": []
+  },
+  "answer_or_annotation_templates": {
+    "answer_only": [
+      "{json_output_contract_answer_only}\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+      "{json_output_contract_answer_only}\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+    ],
+    "answer_and_annotation": [
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+      "{json_output_contract}\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+    ]
+  },
+  "scene_templates": {
+    "pythagorean_square_dissection_scene": [
+      "The diagram shows {object_description}.",
+      "The figure shows {object_description}.",
+      "This geometry diagram shows {object_description}.",
+      "The image shows {object_description}.",
+      "The labeled diagram shows {object_description}."
+    ]
+  },
+  "query_templates": {
+    "central_square_area_from_triangle_legs": [
+      "What is the area of the central square?",
+      "Find the area of the square in the center.",
+      "Determine the area of the central tilted square.",
+      "What is the missing area of the central square?",
+      "Use the labeled dissection to find the central square area."
+    ]
+  },
+  "allow_empty_task_templates": true
+}

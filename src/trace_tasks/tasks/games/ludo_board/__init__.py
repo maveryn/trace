@@ -1,0 +1,1 @@
+"""Ludo board games tasks."""

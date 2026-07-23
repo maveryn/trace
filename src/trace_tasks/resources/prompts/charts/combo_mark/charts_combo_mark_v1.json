@@ -1,0 +1,461 @@
+{
+  "bundle_id": "charts_combo_mark_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "bar_line_shared_axis": [
+        "The image shows a combo chart where vertical bars show {primary_name} and the overlaid line shows {line_name} on the same value axis. Each category has printed values for both series.",
+        "The figure shows a bar-and-line combo chart: bars encode {primary_name}, and the overlaid line encodes {line_name} on the same value scale.",
+        "The image shows a combo chart where vertical bars show {primary_name} and the overlaid line shows {line_name} on the same value axis. Each category has printed values for both series.",
+        "The image shows a combo chart where vertical bars show {primary_name} and the overlaid line shows {line_name} on the same value axis. Each category has printed values for both series.",
+        "The image shows a combo chart where vertical bars show {primary_name} and the overlaid line shows {line_name} on the same value axis. Each category has printed values for both series."
+      ],
+      "bar_line_dual_axis": [
+        "The image shows a combo chart where vertical bars show {primary_name} on the left axis and the overlaid line shows {line_name} on the right axis. Each category has printed values for both series.",
+        "The figure shows a dual-axis bar-and-line combo chart: bars encode {primary_name}, and the overlaid line encodes {line_name}.",
+        "The image shows a combo chart where vertical bars show {primary_name} on the left axis and the overlaid line shows {line_name} on the right axis. Each category has printed values for both series.",
+        "The image shows a combo chart where vertical bars show {primary_name} on the left axis and the overlaid line shows {line_name} on the right axis. Each category has printed values for both series.",
+        "The image shows a combo chart where vertical bars show {primary_name} on the left axis and the overlaid line shows {line_name} on the right axis. Each category has printed values for both series."
+      ],
+      "stacked_bar_line": [
+        "The image shows a combo chart where each stacked bar's printed total shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series.",
+        "The figure shows stacked bars for {primary_name} with an overlaid line for {line_name}; each category displays the relevant printed values.",
+        "The image shows a combo chart where each stacked bar's printed total shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series.",
+        "The image shows a combo chart where each stacked bar's printed total shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series.",
+        "The image shows a combo chart where each stacked bar's printed total shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series."
+      ],
+      "area_line_overlay": [
+        "The image shows a combo chart where the filled area shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series.",
+        "The figure shows a filled-area series for {primary_name} with an overlaid line series for {line_name}.",
+        "The image shows a combo chart where the filled area shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series.",
+        "The image shows a combo chart where the filled area shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series.",
+        "The image shows a combo chart where the filled area shows {primary_name}, and the overlaid line shows {line_name}. Each category has printed values for both series."
+      ]
+    },
+    "task": {
+      "combo_mark_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "primary_minus_line_at_label": [
+        "At category {target_label}, what is the {primary_name} value minus the {line_name} line value?",
+        "For {target_label}, subtract the {line_name} line value from the {primary_name} value.",
+        "At category {target_label}, what is the {primary_name} value minus the {line_name} line value?",
+        "At category {target_label}, what is the {primary_name} value minus the {line_name} line value?",
+        "At category {target_label}, what is the {primary_name} value minus the {line_name} line value?"
+      ],
+      "line_minus_primary_at_label": [
+        "At category {target_label}, what is the {line_name} line value minus the {primary_name} value?",
+        "For {target_label}, subtract the {primary_name} value from the {line_name} line value.",
+        "At category {target_label}, what is the {line_name} line value minus the {primary_name} value?",
+        "At category {target_label}, what is the {line_name} line value minus the {primary_name} value?",
+        "At category {target_label}, what is the {line_name} line value minus the {primary_name} value?"
+      ],
+      "max_line_where_primary_above_threshold": [
+        "Among categories where {primary_name} is above {threshold_value}, which category has the highest {line_name} line value?",
+        "First keep categories with {primary_name} greater than {threshold_value}; which remaining category has the maximum {line_name} value?",
+        "Among categories where {primary_name} is above {threshold_value}, which category has the highest {line_name} line value?",
+        "Among categories where {primary_name} is above {threshold_value}, which category has the highest {line_name} line value?",
+        "Among categories where {primary_name} is above {threshold_value}, which category has the highest {line_name} line value?"
+      ],
+      "min_line_where_primary_above_threshold": [
+        "Among categories where {primary_name} is above {threshold_value}, which category has the lowest {line_name} line value?",
+        "First keep categories with {primary_name} greater than {threshold_value}; which remaining category has the minimum {line_name} value?",
+        "Among categories where {primary_name} is above {threshold_value}, which category has the lowest {line_name} line value?",
+        "Among categories where {primary_name} is above {threshold_value}, which category has the lowest {line_name} line value?",
+        "Among categories where {primary_name} is above {threshold_value}, which category has the lowest {line_name} line value?"
+      ],
+      "max_primary_where_line_below_threshold": [
+        "Among categories where {line_name} is below {threshold_value}, which category has the highest {primary_name} value?",
+        "First keep categories with {line_name} less than {threshold_value}; which remaining category has the maximum {primary_name} value?",
+        "Among categories where {line_name} is below {threshold_value}, which category has the highest {primary_name} value?",
+        "Among categories where {line_name} is below {threshold_value}, which category has the highest {primary_name} value?",
+        "Among categories where {line_name} is below {threshold_value}, which category has the highest {primary_name} value?"
+      ],
+      "min_primary_where_line_below_threshold": [
+        "Among categories where {line_name} is below {threshold_value}, which category has the lowest {primary_name} value?",
+        "First keep categories with {line_name} less than {threshold_value}; which remaining category has the minimum {primary_name} value?",
+        "Among categories where {line_name} is below {threshold_value}, which category has the lowest {primary_name} value?",
+        "Among categories where {line_name} is below {threshold_value}, which category has the lowest {primary_name} value?",
+        "Among categories where {line_name} is below {threshold_value}, which category has the lowest {primary_name} value?"
+      ],
+      "primary_above_and_line_above": [
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} above {line_threshold_value}?",
+        "Count the categories satisfying both conditions: {primary_name} > {primary_threshold_value} and {line_name} > {line_threshold_value}.",
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} above {line_threshold_value}?",
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} above {line_threshold_value}?",
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} above {line_threshold_value}?"
+      ],
+      "primary_above_and_line_below": [
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} below {line_threshold_value}?",
+        "Count the categories satisfying both conditions: {primary_name} > {primary_threshold_value} and {line_name} < {line_threshold_value}.",
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} below {line_threshold_value}?",
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} below {line_threshold_value}?",
+        "How many categories have {primary_name} above {primary_threshold_value} and {line_name} below {line_threshold_value}?"
+      ],
+      "primary_below_and_line_above": [
+        "How many categories have {primary_name} below {primary_threshold_value} and {line_name} above {line_threshold_value}?",
+        "Count the categories satisfying both conditions: {primary_name} < {primary_threshold_value} and {line_name} > {line_threshold_value}.",
+        "How many categories have {primary_name} below {primary_threshold_value} and {line_name} above {line_threshold_value}?",
+        "How many categories have {primary_name} below {primary_threshold_value} and {line_name} above {line_threshold_value}?",
+        "How many categories have {primary_name} below {primary_threshold_value} and {line_name} above {line_threshold_value}?"
+      ],
+      "primary_between_and_line_above": [
+        "How many categories have {primary_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {line_name} is above {line_threshold_value}?",
+        "Count categories where {primary_name} is in the inclusive range {lower_threshold_value} to {upper_threshold_value} and {line_name} exceeds {line_threshold_value}.",
+        "How many categories have {primary_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {line_name} is above {line_threshold_value}?",
+        "How many categories have {primary_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {line_name} is above {line_threshold_value}?",
+        "How many categories have {primary_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {line_name} is above {line_threshold_value}?"
+      ],
+      "line_between_and_primary_above": [
+        "How many categories have {line_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {primary_name} is above {primary_threshold_value}?",
+        "Count categories where {line_name} is in the inclusive range {lower_threshold_value} to {upper_threshold_value} and {primary_name} exceeds {primary_threshold_value}.",
+        "How many categories have {line_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {primary_name} is above {primary_threshold_value}?",
+        "How many categories have {line_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {primary_name} is above {primary_threshold_value}?",
+        "How many categories have {line_name} between {lower_threshold_value} and {upper_threshold_value}, inclusive, while {primary_name} is above {primary_threshold_value}?"
+      ],
+      "largest_absolute_gap_label": [
+        "Which category has the largest absolute gap between {primary_name} and {line_name}?",
+        "Find the category where the two series values are farthest apart.",
+        "Which category has the largest absolute gap between {primary_name} and {line_name}?",
+        "Which category has the largest absolute gap between {primary_name} and {line_name}?",
+        "Which category has the largest absolute gap between {primary_name} and {line_name}?"
+      ],
+      "smallest_nonzero_absolute_gap_label": [
+        "Which category has the smallest nonzero absolute gap between {primary_name} and {line_name}?",
+        "Find the category where the two series values differ by the smallest nonzero amount.",
+        "Which category has the smallest nonzero absolute gap between {primary_name} and {line_name}?",
+        "Which category has the smallest nonzero absolute gap between {primary_name} and {line_name}?",
+        "Which category has the smallest nonzero absolute gap between {primary_name} and {line_name}?"
+      ],
+      "largest_primary_over_line_gap_label": [
+        "Which category has the largest positive gap where {primary_name} is greater than {line_name}?",
+        "Find the category where {primary_name} exceeds {line_name} by the largest amount.",
+        "Which category has the largest positive gap where {primary_name} is greater than {line_name}?",
+        "Which category has the largest positive gap where {primary_name} is greater than {line_name}?",
+        "Which category has the largest positive gap where {primary_name} is greater than {line_name}?"
+      ],
+      "largest_line_over_primary_gap_label": [
+        "Which category has the largest positive gap where {line_name} is greater than {primary_name}?",
+        "Find the category where {line_name} exceeds {primary_name} by the largest amount.",
+        "Which category has the largest positive gap where {line_name} is greater than {primary_name}?",
+        "Which category has the largest positive gap where {line_name} is greater than {primary_name}?",
+        "Which category has the largest positive gap where {line_name} is greater than {primary_name}?"
+      ],
+      "primary_first_above_threshold_label": [
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Scan categories from left to right and identify the first label where {target_series_name} is {comparison_phrase} {threshold_value}.",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?"
+      ],
+      "primary_first_below_threshold_label": [
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Scan categories from left to right and identify the first label where {target_series_name} is {comparison_phrase} {threshold_value}.",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?"
+      ],
+      "line_first_above_threshold_label": [
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Scan categories from left to right and identify the first label where {target_series_name} is {comparison_phrase} {threshold_value}.",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?"
+      ],
+      "line_first_below_threshold_label": [
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Scan categories from left to right and identify the first label where {target_series_name} is {comparison_phrase} {threshold_value}.",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?",
+        "Reading left to right, what is the first category where {target_series_name} is {comparison_phrase} {threshold_value}?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:primary_minus_line_at_label": {
+      "answer_hint": "set \"answer\" to the requested signed difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the queried category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":12}",
+      "json_example_answer_only": "{\"answer\":12}"
+    },
+    "query:line_minus_primary_at_label": {
+      "answer_hint": "set \"answer\" to the requested signed difference as an integer",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the queried category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":-12}",
+      "json_example_answer_only": "{\"answer\":-12}"
+    },
+    "query:max_line_where_primary_above_threshold": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:min_line_where_primary_above_threshold": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:max_primary_where_line_below_threshold": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:min_primary_where_line_below_threshold": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:primary_above_and_line_above": {
+      "answer_hint": "set \"answer\" to the number of matching categories as an integer",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the primary-series mark point and the overlaid line mark point for one matching category; use [] if no categories match",
+      "json_example": "{\"annotation\":[[[180,260],[180,190]],[[360,220],[360,170]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:primary_above_and_line_below": {
+      "answer_hint": "set \"answer\" to the number of matching categories as an integer",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the primary-series mark point and the overlaid line mark point for one matching category; use [] if no categories match",
+      "json_example": "{\"annotation\":[[[180,260],[180,190]],[[360,220],[360,170]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:primary_below_and_line_above": {
+      "answer_hint": "set \"answer\" to the number of matching categories as an integer",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the primary-series mark point and the overlaid line mark point for one matching category; use [] if no categories match",
+      "json_example": "{\"annotation\":[[[180,260],[180,190]],[[360,220],[360,170]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:primary_between_and_line_above": {
+      "answer_hint": "set \"answer\" to the number of matching categories as an integer",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the primary-series mark point and the overlaid line mark point for one matching category; use [] if no categories match",
+      "json_example": "{\"annotation\":[[[180,260],[180,190]],[[360,220],[360,170]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:line_between_and_primary_above": {
+      "answer_hint": "set \"answer\" to the number of matching categories as an integer",
+      "annotation_hint": "set \"annotation\" to a list of segments. Each segment is two [x, y] pixel points formatted [[x0, y0], [x1, y1]], using the primary-series mark point and the overlaid line mark point for one matching category; use [] if no categories match",
+      "json_example": "{\"annotation\":[[[180,260],[180,190]],[[360,220],[360,170]]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:largest_absolute_gap_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:smallest_nonzero_absolute_gap_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:largest_primary_over_line_gap_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:largest_line_over_primary_gap_label": {
+      "answer_hint": "set \"answer\" to the exact visible category label as a string",
+      "annotation_hint": "set \"annotation\" to an object with keys \"primary_mark\" and \"line_mark\"; \"primary_mark\" is a [x,y] pixel point on the primary-series mark at the answer category, and \"line_mark\" is a [x,y] pixel point on the overlaid line mark at the same answer category",
+      "json_example": "{\"annotation\":{\"primary_mark\":[180,260],\"line_mark\":[180,190]},\"answer\":\"Cedar\"}",
+      "json_example_answer_only": "{\"answer\":\"Cedar\"}"
+    },
+    "query:primary_first_above_threshold_label": {
+      "answer_hint": "set \"answer\" to the first matching category label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the target-series mark at the answer category",
+      "json_example": "{\"annotation\":[400,240],\"answer\":\"Harbor\"}",
+      "json_example_answer_only": "{\"answer\":\"Harbor\"}"
+    },
+    "query:primary_first_below_threshold_label": {
+      "answer_hint": "set \"answer\" to the first matching category label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the target-series mark at the answer category",
+      "json_example": "{\"annotation\":[400,240],\"answer\":\"Harbor\"}",
+      "json_example_answer_only": "{\"answer\":\"Harbor\"}"
+    },
+    "query:line_first_above_threshold_label": {
+      "answer_hint": "set \"answer\" to the first matching category label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the target-series mark at the answer category",
+      "json_example": "{\"annotation\":[400,240],\"answer\":\"Harbor\"}",
+      "json_example_answer_only": "{\"answer\":\"Harbor\"}"
+    },
+    "query:line_first_below_threshold_label": {
+      "answer_hint": "set \"answer\" to the first matching category label as a string",
+      "annotation_hint": "set \"annotation\" to one [x,y] pixel point on the target-series mark at the answer category",
+      "json_example": "{\"annotation\":[400,240],\"answer\":\"Harbor\"}",
+      "json_example_answer_only": "{\"answer\":\"Harbor\"}"
+    }
+  },
+  "dynamic_slots": {
+    "comparison_phrase": {
+      "type": "string"
+    },
+    "line_name": {
+      "type": "string"
+    },
+    "line_threshold_value": {
+      "type": "string"
+    },
+    "lower_threshold_value": {
+      "type": "string"
+    },
+    "primary_name": {
+      "type": "string"
+    },
+    "primary_threshold_value": {
+      "type": "string"
+    },
+    "target_label": {
+      "type": "string"
+    },
+    "target_series_name": {
+      "type": "string"
+    },
+    "threshold_value": {
+      "type": "string"
+    },
+    "upper_threshold_value": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "scene:bar_line_shared_axis": [
+      "primary_name",
+      "line_name"
+    ],
+    "scene:bar_line_dual_axis": [
+      "primary_name",
+      "line_name"
+    ],
+    "scene:stacked_bar_line": [
+      "primary_name",
+      "line_name"
+    ],
+    "scene:area_line_overlay": [
+      "primary_name",
+      "line_name"
+    ],
+    "query:primary_minus_line_at_label": [
+      "primary_name",
+      "line_name",
+      "target_label"
+    ],
+    "query:line_minus_primary_at_label": [
+      "primary_name",
+      "line_name",
+      "target_label"
+    ],
+    "query:max_line_where_primary_above_threshold": [
+      "primary_name",
+      "line_name",
+      "threshold_value"
+    ],
+    "query:min_line_where_primary_above_threshold": [
+      "primary_name",
+      "line_name",
+      "threshold_value"
+    ],
+    "query:max_primary_where_line_below_threshold": [
+      "primary_name",
+      "line_name",
+      "threshold_value"
+    ],
+    "query:min_primary_where_line_below_threshold": [
+      "primary_name",
+      "line_name",
+      "threshold_value"
+    ],
+    "query:primary_above_and_line_above": [
+      "primary_name",
+      "line_name",
+      "primary_threshold_value",
+      "line_threshold_value"
+    ],
+    "query:primary_above_and_line_below": [
+      "primary_name",
+      "line_name",
+      "primary_threshold_value",
+      "line_threshold_value"
+    ],
+    "query:primary_below_and_line_above": [
+      "primary_name",
+      "line_name",
+      "primary_threshold_value",
+      "line_threshold_value"
+    ],
+    "query:primary_between_and_line_above": [
+      "primary_name",
+      "line_name",
+      "lower_threshold_value",
+      "upper_threshold_value",
+      "line_threshold_value"
+    ],
+    "query:line_between_and_primary_above": [
+      "primary_name",
+      "line_name",
+      "lower_threshold_value",
+      "upper_threshold_value",
+      "primary_threshold_value"
+    ],
+    "query:largest_absolute_gap_label": [
+      "primary_name",
+      "line_name"
+    ],
+    "query:smallest_nonzero_absolute_gap_label": [
+      "primary_name",
+      "line_name"
+    ],
+    "query:largest_primary_over_line_gap_label": [
+      "primary_name",
+      "line_name"
+    ],
+    "query:largest_line_over_primary_gap_label": [
+      "primary_name",
+      "line_name"
+    ],
+    "query:primary_first_above_threshold_label": [
+      "target_series_name",
+      "threshold_value",
+      "comparison_phrase"
+    ],
+    "query:primary_first_below_threshold_label": [
+      "target_series_name",
+      "threshold_value",
+      "comparison_phrase"
+    ],
+    "query:line_first_above_threshold_label": [
+      "target_series_name",
+      "threshold_value",
+      "comparison_phrase"
+    ],
+    "query:line_first_below_threshold_label": [
+      "target_series_name",
+      "threshold_value",
+      "comparison_phrase"
+    ]
+  }
+}

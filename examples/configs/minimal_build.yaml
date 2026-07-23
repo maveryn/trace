@@ -1,0 +1,12 @@
+output_root: ./out
+dataset_name: minimal_trace
+instance_version: v0
+image_format: png
+strict_repro: false
+max_attempts_per_instance: 40
+sampling_seed: 7
+tasks:
+  - task_id: task_geometry__graph_paper__polygon_area_value
+    count: 1
+    params:
+      scene_variant: triangle

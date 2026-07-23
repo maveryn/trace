@@ -1,0 +1,1 @@
+"""Platformer games tasks."""

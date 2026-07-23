@@ -1,0 +1,56 @@
+generation:
+  shared:
+    edge_mode_weights:
+      undirected: 1.0
+      directed: 1.0
+    balanced_edge_mode_sampling: true
+    scene_variant_weights:
+      clean_graph_options: 1.0
+      colored_node_graph_options: 1.0
+      notebook_graph_options: 1.0
+    balanced_scene_variant_sampling: true
+  task_overrides:
+    task_graph__graph_options__same_structure_label:
+      node_count_min: 4
+      node_count_max: 6
+      same_structure_node_count_min: 4
+      same_structure_node_count_max: 6
+      extra_edge_min: 1
+      extra_edge_max: 3
+      option_count: 4
+    task_graph__graph_options__contained_subgraph_label:
+      node_count_min: 4
+      node_count_max: 6
+      subgraph_node_count_min: 3
+      subgraph_node_count_max: 4
+      extra_edge_min: 1
+      extra_edge_max: 3
+      option_count: 4
+rendering:
+  shared:
+    canvas_width: 1260
+    canvas_height: 920
+    outer_margin_px: 28
+    panel_padding_px: 24
+    panel_corner_radius_px: 24
+    panel_title_font_size_px: 24
+    node_radius_min_px: 18
+    node_radius_max_px: 24
+    edge_width_px: 5
+    arrow_length_px: 12
+    arrow_width_px: 7
+    node_border_width_px: 2
+    label_font_size_px: 20
+    margin_x_px: 66
+    margin_top_px: 46
+    reference_panel_height_px: 300
+    reference_to_options_gap_px: 34
+    option_gap_px: 26
+    option_row_gap_px: 24
+    border_width_px: 3
+    title_font_size_px: 28
+    option_label_font_size_px: 30
+    node_radius_px: 22
+prompt:
+  shared:
+    bundle_id: graph_options_v1

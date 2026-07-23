@@ -1,0 +1,141 @@
+{
+  "bundle_id": "charts_waterfall_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "waterfall": [
+        "The image shows a waterfall chart with a start bar, signed contribution bars, connector lines, and a final-total bar.",
+        "The figure shows a waterfall chart with a start bar, signed contribution bars, connector lines, and a final-total bar.",
+        "The visual shows a waterfall chart with a start bar, signed contribution bars, connector lines, and a final-total bar.",
+        "The chart shows a waterfall chart with a start bar, signed contribution bars, connector lines, and a final-total bar.",
+        "The image contains a waterfall chart with a start bar, signed contribution bars, connector lines, and a final-total bar."
+      ]
+    },
+    "task": {
+      "waterfall_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "running_total_after_step": [
+        "What is the running total after contribution \"{target_step_label}\"?",
+        "Starting from the start bar, add the signed contributions through \"{target_step_label}\". What running total do you get?",
+        "Use the start value and signed contribution bars up to \"{target_step_label}\". What is the cumulative total after that step?",
+        "After applying contribution \"{target_step_label}\", what is the running total?",
+        "Compute the waterfall total at the end of step \"{target_step_label}\"."
+      ],
+      "running_total_extremum_value": [
+        "Across the start bar and contribution bars, what is the {extremum_word} cumulative total reached?",
+        "Ignoring the summary final bar, scan the start and contribution bars. What is the {extremum_word} running total?",
+        "What is the {extremum_word} running total reached by the waterfall sequence before the final summary bar?",
+        "Use the start bar and signed contribution bars. What {extremum_word} cumulative total appears in the sequence?",
+        "Among the start and contribution bars, find the {extremum_word} cumulative total. What is its value?"
+      ],
+      "remove_step_final_total": [
+        "If contribution \"{target_step_label}\" were {counterfactual_phrase}, what would the final total be?",
+        "The final bar includes every signed contribution. If \"{target_step_label}\" were {counterfactual_phrase}, what final total would result?",
+        "Remove the effect of contribution \"{target_step_label}\" from the final total. What value remains?",
+        "What would the final total be after excluding contribution \"{target_step_label}\"?",
+        "Use the final-total bar and contribution \"{target_step_label}\". If that contribution were {counterfactual_phrase}, what is the new final total?"
+      ],
+      "reverse_step_final_total": [
+        "Contribution \"{target_step_label}\" is {target_delta_text}. If it changed sign to {reversed_delta_text} while all other contributions stayed the same, what would the final total be?",
+        "The final bar includes every signed contribution. If \"{target_step_label}\" changed from {target_delta_text} to {reversed_delta_text}, what final total would result?",
+        "Reverse only contribution \"{target_step_label}\" from {target_delta_text} to {reversed_delta_text}. Keeping all other contributions the same, what is the final total?",
+        "What would the final total be if contribution \"{target_step_label}\" changed sign from {target_delta_text} to {reversed_delta_text}?",
+        "Use the final-total bar and contribution \"{target_step_label}\". If that contribution changed from {target_delta_text} to {reversed_delta_text}, what is the new final total?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Answer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Required answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Final answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Format for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Annotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Required annotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Annotation format: {annotation_hint}.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Format for the \"annotation\" field: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:running_total_after_step": {
+      "answer_hint": "set \"answer\" to the requested running total as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around the full waterfall bars from the start bar through the target contribution bar, including the target contribution bar",
+      "json_example": "{\"annotation\":[[72,420,132,610],[182,330,242,610],[292,330,366,512]],\"answer\":57}",
+      "json_example_answer_only": "{\"answer\":57}"
+    },
+    "query:running_total_extremum_value": {
+      "answer_hint": "set \"answer\" to the requested cumulative total as an integer",
+      "annotation_hint": "set \"annotation\" to one [x0,y0,x1,y1] pixel box around the full start or contribution bar where that cumulative total is reached",
+      "json_example": "{\"annotation\":[292,218,366,610],\"answer\":76}",
+      "json_example_answer_only": "{\"answer\":76}"
+    },
+    "query:remove_step_final_total": {
+      "answer_hint": "set \"answer\" to the counterfactual final total as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping \"final_total_bar\" and \"target_contribution_bar\" to [x0,y0,x1,y1] pixel boxes around the full waterfall bars",
+      "json_example": "{\"annotation\":{\"final_total_bar\":[960,210,1038,610],\"target_contribution_bar\":[370,318,438,512]},\"answer\":57}",
+      "json_example_answer_only": "{\"answer\":57}"
+    },
+    "query:reverse_step_final_total": {
+      "answer_hint": "set \"answer\" to the counterfactual final total as an integer",
+      "annotation_hint": "set \"annotation\" to an object mapping \"final_total_bar\" and \"target_contribution_bar\" to [x0,y0,x1,y1] pixel boxes around the full waterfall bars",
+      "json_example": "{\"annotation\":{\"final_total_bar\":[960,210,1038,610],\"target_contribution_bar\":[370,318,438,512]},\"answer\":57}",
+      "json_example_answer_only": "{\"answer\":57}"
+    }
+  },
+  "dynamic_slots": {
+    "counterfactual_phrase": {
+      "type": "string"
+    },
+    "extremum_word": {
+      "type": "string"
+    },
+    "target_step_label": {
+      "type": "string"
+    },
+    "target_delta_text": {
+      "type": "string"
+    },
+    "reversed_delta_text": {
+      "type": "string"
+    }
+  },
+  "required_slots_by_key": {
+    "query:running_total_after_step": [
+      "target_step_label"
+    ],
+    "query:running_total_extremum_value": [
+      "extremum_word"
+    ],
+    "query:remove_step_final_total": [
+      "target_step_label",
+      "counterfactual_phrase"
+    ],
+    "query:reverse_step_final_total": [
+      "target_step_label",
+      "counterfactual_phrase",
+      "target_delta_text",
+      "reversed_delta_text"
+    ],
+    "answer_or_annotation:answer_only": [
+      "answer_hint",
+      "json_example_answer_only"
+    ],
+    "answer_or_annotation:answer_and_annotation": [
+      "annotation_hint",
+      "answer_hint",
+      "json_example"
+    ]
+  }
+}

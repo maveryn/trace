@@ -1,0 +1,60 @@
+{
+  "bundle_id": "physics_shadow_cause_v1",
+  "schema_version": "v1",
+  "allow_empty_task_templates": true,
+  "templates": {
+    "scene": {
+      "shadow_cause_diagram": [
+        "The image shows an object, its cast shadow, and six labeled candidate light sources.",
+        "The diagram shows a shadow-casting object, a visible shadow, and labeled light-source choices.",
+        "This figure shows one object with a cast shadow and six candidate lamps labeled A through F.",
+        "The visual shows a light-and-shadow setup with one object, its shadow, and labeled lamp options.",
+        "The image contains a shadow diagram with six labeled candidate light sources around the object."
+      ]
+    },
+    "task": {
+      "shadow_cause_query": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "query": {
+      "single": [
+        "Which labeled light source would cast the shown shadow from the object?",
+        "Choose the light-source label that matches the direction of the visible shadow.",
+        "Which candidate lamp is positioned to create the shown cast shadow?",
+        "Select the labeled light source that would produce the shadow from this object.",
+        "From the object and shadow direction, which labeled light source is correct?"
+      ]
+    },
+    "output": {
+      "answer_only": [
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nAnswer field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFinal answer format: {answer_hint}.\nExample JSON:\n{json_example_answer_only}",
+        "Use a valid JSON object with key \"answer\" for the final answer.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example_answer_only}"
+      ],
+      "answer_and_annotation": [
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nAnswer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnswer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nFinal answer format: {answer_hint}.\nAnnotation format: {annotation_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nRequired answer format: {answer_hint}.\nExample JSON:\n{json_example}",
+        "Use a valid JSON object with keys \"annotation\" and \"answer\" in that order for the final answer.\nAnnotation format: {annotation_hint}.\nFormat for the \"answer\" field: {answer_hint}.\nExample JSON:\n{json_example}"
+      ]
+    }
+  },
+  "static_slots_by_key": {
+    "query:single": {
+      "annotation_hint": "set \"annotation\" to one pixel box [x0,y0,x1,y1] around the selected labeled light-source option",
+      "answer_hint": "set \"answer\" to the selected light-source option letter as a string",
+      "json_example": "{\"annotation\":[720,140,810,230],\"answer\":\"D\"}",
+      "json_example_answer_only": "{\"answer\":\"D\"}"
+    }
+  },
+  "dynamic_slots": {},
+  "required_slots_by_key": {}
+}

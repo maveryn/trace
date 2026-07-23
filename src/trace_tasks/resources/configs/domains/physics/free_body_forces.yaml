@@ -1,0 +1,97 @@
+generation:
+  shared:
+    accent_color_name_weights:
+      red: 1.0
+      blue: 1.0
+      green: 1.0
+      yellow: 1.0
+      orange: 1.0
+      purple: 1.0
+      brown: 1.0
+      cyan: 1.0
+      magenta: 1.0
+      maroon: 1.0
+    balanced_accent_color_name_sampling: true
+    scene_variant_weights:
+      clean_table: 1.0
+      gridded_table: 1.0
+      lab_card: 1.0
+    net_force_direction_weights:
+      east: 1.0
+      northeast: 1.0
+      north: 1.0
+      northwest: 1.0
+      west: 1.0
+      southwest: 1.0
+      south: 1.0
+      southeast: 1.0
+    correct_option_letter_weights:
+      A: 1.0
+      B: 1.0
+      C: 1.0
+      D: 1.0
+      E: 1.0
+      F: 1.0
+      G: 1.0
+      H: 1.0
+    balanced_scene_variant_sampling: true
+    balanced_net_force_direction_sampling: true
+    balanced_correct_option_letter_sampling: true
+    resultant_component_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    base_force_support:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    canceling_pair_support:
+    - 1
+    - 2
+    - 3
+    - 4
+
+rendering:
+  shared:
+    canvas_width: 1180
+    canvas_height: 760
+    panel_left_px: 52
+    panel_top_px: 52
+    panel_right_px: 1128
+    panel_bottom_px: 708
+    panel_corner_radius_px: 22
+    object_center_x_px: 590
+    object_center_y_px: 340
+    object_width_px: 148
+    object_height_px: 104
+    force_arrow_length_px: 112
+    force_arrow_width_px: 8
+    force_arrow_head_length_px: 24
+    force_arrow_head_width_px: 20
+    option_panel_top_px: 594
+    option_cell_left_px: 58
+    option_cell_width_px: 132
+    option_cell_height_px: 92
+    option_arrow_length_px: 54
+    option_arrow_width_px: 6
+    option_arrow_head_length_px: 18
+    option_arrow_head_width_px: 16
+    title_font_size_px: 27
+    label_font_size_px: 22
+    option_font_size_px: 22
+    label_stroke_width_px: 2
+    label_stroke_width_px_min: 1
+    label_stroke_width_px_max: 3
+
+prompt:
+  shared:
+    bundle_id: physics_free_body_forces_v1
+  task_overrides:
+    task_physics__free_body_forces__net_force_direction_choice:
+      task_key: net_force_direction_choice_query
