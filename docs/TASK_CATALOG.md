@@ -5,7 +5,7 @@ Do not edit this page or its domain pages by hand.
 
 ## Summary
 
-- Active tasks: `1000`
+- Active tasks: `1004`
 - Public domains: `11`
 - Public scenes: `277`
 
@@ -15,8 +15,8 @@ Each domain page links every active task to its reviewed contract and implementa
 
 | Domain | Scenes | Tasks |
 | --- | --- | --- |
-| [charts](task_catalog/charts.md) | 42 | 180 |
-| [games](task_catalog/games.md) | 52 | 170 |
+| [charts](task_catalog/charts.md) | 42 | 182 |
+| [games](task_catalog/games.md) | 52 | 172 |
 | [geometry](task_catalog/geometry.md) | 40 | 170 |
 | [graph](task_catalog/graph.md) | 10 | 60 |
 | [icons](task_catalog/icons.md) | 17 | 50 |
@@ -33,7 +33,7 @@ Each domain page links every active task to its reviewed contract and implementa
 
 | Type | Tasks |
 | --- | --- |
-| `integer` | 547 |
+| `integer` | 551 |
 | `number` | 51 |
 | `option_letter` | 210 |
 | `string` | 192 |
@@ -45,7 +45,7 @@ Each domain page links every active task to its reviewed contract and implementa
 | `bbox` | 245 |
 | `bbox_map` | 85 |
 | `bbox_sequence` | 4 |
-| `bbox_set` | 269 |
+| `bbox_set` | 272 |
 | `bbox_set_map` | 16 |
 | `point` | 79 |
 | `point_map` | 108 |
@@ -53,22 +53,22 @@ Each domain page links every active task to its reviewed contract and implementa
 | `point_set` | 105 |
 | `point_set_map` | 5 |
 | `segment` | 37 |
-| `segment_set` | 38 |
+| `segment_set` | 39 |
 
 ## Reasoning Coverage
 
 | Operation family | Tasks |
 | --- | --- |
-| `aggregation` | 82 |
-| `comparison` | 76 |
-| `counting` | 397 |
+| `aggregation` | 83 |
+| `comparison` | 78 |
+| `counting` | 400 |
 | `direct_retrieval` | 8 |
-| `filtering` | 329 |
-| `formula_evaluation` | 313 |
+| `filtering` | 332 |
+| `formula_evaluation` | 314 |
 | `logical_composition` | 62 |
 | `matching` | 127 |
 | `ranking` | 206 |
-| `spatial_relations` | 116 |
-| `state_update` | 112 |
+| `spatial_relations` | 117 |
+| `state_update` | 113 |
 | `topology` | 185 |
 | `transformation` | 78 |

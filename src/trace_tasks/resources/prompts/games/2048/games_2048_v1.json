@@ -42,6 +42,13 @@
         "{move_rule_text} {result_board_rule_text} Choose the label of the candidate board that matches the board after this one move.",
         "{move_rule_text} {result_board_rule_text} After the displayed move, which labeled board is correct?",
         "{move_rule_text} {result_board_rule_text} Report the option letter for the post-move board."
+      ],
+      "move_score_value": [
+        "{move_rule_text} {score_rule_text} What score does the shown move produce?",
+        "{move_rule_text} {score_rule_text} Apply the shown move once. What is the score it earns?",
+        "{move_rule_text} {score_rule_text} If the board is moved in the arrow direction, what score results from the merges?",
+        "{move_rule_text} {score_rule_text} For the displayed move, what is the total score gained?",
+        "{move_rule_text} {score_rule_text} How many points does this single move score?"
       ]
     },
     "output": {
@@ -86,6 +93,14 @@
       "annotation_hint": "set \"annotation\" to the bounding box [x0, y0, x1, y1] around the selected candidate result board",
       "json_example": "{\"annotation\":[356,542,508,694],\"answer\":\"C\"}",
       "json_example_answer_only": "{\"answer\":\"C\"}"
+    },
+    "query:move_score_value": {
+      "move_rule_text": "In 2048, a move slides all tiles toward the arrow; equal adjacent tiles in that direction merge once.",
+      "score_rule_text": "Each merge scores the value of the new combined tile, and the move score is the sum over all merges; a move with no merges scores 0.",
+      "answer_hint": "set \"answer\" to the total score earned by the shown move",
+      "annotation_hint": "set \"annotation\" to a list of merge segments. Each segment uses two pixel-point endpoints [x, y] in [[x0, y0], [x1, y1]] form, connecting the centers of the two source tile cells before the move that combine into one tile after the move; use [] when the move scores 0",
+      "json_example": "{\"annotation\":[[[284,284],[418,284]],[[284,418],[418,418]]],\"answer\":24}",
+      "json_example_answer_only": "{\"answer\":24}"
     }
   },
   "dynamic_slots": {},

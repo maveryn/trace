@@ -66,8 +66,8 @@ def _literal_source_operations(task_id: str) -> tuple[str, ...]:
 
 def test_every_active_task_has_valid_code_authoritative_reasoning_operations() -> None:
     task_ids = _active_task_ids()
-    assert len(task_ids) == 1000
-    assert len(set(task_ids)) == 1000
+    assert len(task_ids) == 1004
+    assert len(set(task_ids)) == 1004
 
     counts: Counter[str] = Counter()
     for task_id in task_ids:

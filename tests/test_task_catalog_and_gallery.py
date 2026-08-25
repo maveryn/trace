@@ -17,10 +17,10 @@ def test_generated_task_catalog_is_current_and_complete() -> None:
 
     assert generate_task_catalog.check_outputs(outputs) == []
     assert catalog["schema_version"] == "trace_task_catalog_v1"
-    assert catalog["summary"]["default_task_count"] == 1000
-    assert catalog["summary"]["registered_task_count"] == 1000
+    assert catalog["summary"]["default_task_count"] == 1004
+    assert catalog["summary"]["registered_task_count"] == 1004
     assert catalog["summary"]["domain_count"] == len(ACTIVE_DOMAINS) == 11
-    assert len(catalog["tasks"]) == 1000
+    assert len(catalog["tasks"]) == 1004
     assert {record["domain"] for record in catalog["tasks"]} == set(ACTIVE_DOMAINS)
     assert all(record["reasoning_operations"] for record in catalog["tasks"])
     assert all(

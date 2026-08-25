@@ -57,6 +57,13 @@
         "What is the number of rows with one empty cell?",
         "How many rows are missing exactly one block?"
       ],
+      "hole_count": [
+        "{hole_rule_text} How many holes does the stack contain?",
+        "{hole_rule_text} Count the holes in the shown stack. How many are there?",
+        "{hole_rule_text} What is the number of holes on the board?",
+        "{hole_rule_text} How many hole cells are hidden under the locked blocks?",
+        "{hole_rule_text} Counting every column, how many holes are in the stack?"
+      ],
       "no_shift_collision_time": [
         "For the falling piece in the START board, {shift_instruction}, then let it fall straight down. {collision_time_rule_text} How many timesteps occur before it collides?",
         "Use the falling piece in the START board. First {shift_instruction}; then drop it vertically. {collision_time_rule_text} What is the timestep count before collision?",
@@ -110,6 +117,9 @@
       "line_clear_rule_text"
     ],
     "query:full_row_count": [],
+    "query:hole_count": [
+      "hole_rule_text"
+    ],
     "query:no_shift_collision_time": [
       "shift_instruction",
       "collision_time_rule_text"
@@ -159,6 +169,9 @@
     "json_output_contract_answer_only": {
       "type": "string"
     },
+    "hole_rule_text": {
+      "type": "string"
+    },
     "line_clear_rule_text": {
       "type": "string"
     },
@@ -190,6 +203,8 @@
     "answer_hint_drop_result_label": "set \"answer\" to only the selected option letter",
     "annotation_hint_row_occupancy_status_count": "set \"annotation\" to an array containing one whole-row bounding box [x0, y0, x1, y1] for each qualifying row",
     "answer_hint_row_occupancy_status_count": "set \"answer\" to the number of qualifying rows",
+    "annotation_hint_hole_count": "set \"annotation\" to an array containing one cell bounding box [x0, y0, x1, y1] for each covered hole cell",
+    "answer_hint_hole_count": "set \"answer\" to the number of covered hole cells",
     "annotation_hint_drop_collision_time_value": "set \"annotation\" to an object mapping \"start_piece\" and \"stop_witness\" to arrays of cell bounding boxes [x0, y0, x1, y1]",
     "answer_hint_drop_collision_time_value": "set \"answer\" to the number of successful downward timesteps"
   }

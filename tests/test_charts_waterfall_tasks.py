@@ -2,11 +2,18 @@
 
 from __future__ import annotations
 
+from collections import Counter
+
 from trace_tasks.core.query_ids import SINGLE_QUERY_ID
 from trace_tasks.tasks import TASK_REGISTRY, ensure_scene_tasks_registered
 from trace_tasks.tasks.charts.waterfall.running_total_extremum_value import (
     MAXIMUM_QUERY_ID,
     MINIMUM_QUERY_ID,
+)
+from trace_tasks.tasks.charts.waterfall.signed_step_threshold_count import (
+    DECREASE_QUERY_ID,
+    INCREASE_QUERY_ID,
+    SIGNED_STEP_THRESHOLD_COUNT_SUPPORT,
 )
 
 
@@ -18,6 +25,10 @@ WATERFALL_TASKS = {
     },
     "task_charts__waterfall__remove_step_final_total": {SINGLE_QUERY_ID},
     "task_charts__waterfall__reverse_step_final_total": {SINGLE_QUERY_ID},
+    "task_charts__waterfall__signed_step_threshold_count": {
+        DECREASE_QUERY_ID,
+        INCREASE_QUERY_ID,
+    },
 }
 
 
@@ -135,8 +146,90 @@ def test_waterfall_tasks_generate_each_query_branch_and_answer_contract() -> Non
                     "final_total_bar",
                     "target_contribution_bar",
                 }
+            elif task_id.endswith("__signed_step_threshold_count"):
+                select_negative = str(query_id) == DECREASE_QUERY_ID
+                threshold = int(execution["magnitude_threshold"])
+                expected_ids = [
+                    str(step["step_id"])
+                    for step in execution["steps"]
+                    if (int(step["delta"]) < 0) == select_negative
+                    and abs(int(step["delta"])) > threshold
+                ]
+                same_signed = [
+                    step
+                    for step in execution["steps"]
+                    if (int(step["delta"]) < 0) == select_negative
+                ]
+                # Bar colour encodes only the sign, so a colour-only count must
+                # over-count: at least one same-signed step stays below the threshold.
+                assert len(same_signed) > len(expected_ids)
+                assert output.answer_gt.type == "integer"
+                assert output.answer_gt.value == len(expected_ids)
+                assert execution["matching_step_ids"] == expected_ids
+                assert output.annotation_gt.type == "bbox_set"
+                expected_boxes = [
+                    _round_bbox(output.trace_payload["render_map"]["bar_bboxes_px"][bar_id])
+                    for bar_id in expected_ids
+                ]
+                assert output.annotation_gt.value == expected_boxes
 
             seed_index += 1
+
+
+def test_waterfall_signed_step_threshold_count_pins_explicit_target() -> None:
+    task = _task("task_charts__waterfall__signed_step_threshold_count")
+    for target_answer in (1, 2, 3, 4, 5):
+        output = task.generate(
+            105_000 + target_answer,
+            params={
+                "query_id": DECREASE_QUERY_ID,
+                "target_answer": target_answer,
+                "magnitude_threshold": 10,
+            },
+            max_attempts=100,
+        )
+        execution = output.trace_payload["execution_trace"]
+        steps = execution["steps"]
+        negatives = [step for step in steps if int(step["delta"]) < 0]
+        positives = [step for step in steps if int(step["delta"]) > 0]
+        over = [step for step in negatives if abs(int(step["delta"])) > 10]
+        assert int(execution["magnitude_threshold"]) == 10
+        assert output.answer_gt.value == target_answer
+        assert len(over) == target_answer
+        assert len(negatives) > len(over)
+        assert positives
+        assert len(output.annotation_gt.value) == target_answer
+
+
+def test_waterfall_signed_step_threshold_count_spreads_answers_across_its_support() -> None:
+    task = _task("task_charts__waterfall__signed_step_threshold_count")
+    for query_id in (DECREASE_QUERY_ID, INCREASE_QUERY_ID):
+        counts: Counter[int] = Counter()
+        for offset in range(24):
+            output = task.generate(
+                107_000 + offset,
+                params={"query_id": query_id, "_sample_cursor": offset},
+                max_attempts=100,
+            )
+            counts[int(output.answer_gt.value)] += 1
+        total = sum(counts.values())
+        # The public anti-degeneracy gate: at least four distinct answers and no
+        # single answer above one third of the samples.
+        assert len(counts) >= 4
+        assert max(counts.values()) / total < 1 / 3
+        assert set(counts) <= set(SIGNED_STEP_THRESHOLD_COUNT_SUPPORT)
+
+
+def test_waterfall_signed_step_threshold_count_is_deterministic() -> None:
+    task = _task("task_charts__waterfall__signed_step_threshold_count")
+    params = {"query_id": INCREASE_QUERY_ID}
+    first = task.generate(106_001, params=params, max_attempts=100)
+    second = task.generate(106_001, params=params, max_attempts=100)
+    assert first.prompt == second.prompt
+    assert first.answer_gt.to_dict() == second.answer_gt.to_dict()
+    assert first.annotation_gt.to_dict() == second.annotation_gt.to_dict()
+    assert first.trace_payload["execution_trace"] == second.trace_payload["execution_trace"]
+    assert first.image.tobytes() == second.image.tobytes()
 
 
 def test_waterfall_running_total_uses_late_nonfinal_targets() -> None:

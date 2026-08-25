@@ -15,6 +15,7 @@ _state = import_module("trace_tasks.tasks.games.2048.shared.state")
 _max_tile_task = import_module("trace_tasks.tasks.games.2048.max_tile_value")
 _merge_task = import_module("trace_tasks.tasks.games.2048.merge_count")
 _move_result_task = import_module("trace_tasks.tasks.games.2048.move_result_board_label")
+_move_score_task = import_module("trace_tasks.tasks.games.2048.move_score_value")
 
 SUPPORTED_2048_STYLE_VARIANTS = _state.SUPPORTED_2048_STYLE_VARIANTS
 board_max_tile = _mechanics.board_max_tile
@@ -24,6 +25,8 @@ simulate_2048_move = _mechanics.simulate_2048_move
 Games2048MaxTileValueTask = _max_tile_task.Games2048MaxTileValueTask
 Games2048MergeCountTask = _merge_task.Games2048MergeCountTask
 Games2048MoveResultBoardLabelTask = _move_result_task.Games2048MoveResultBoardLabelTask
+Games2048MoveScoreValueTask = _move_score_task.Games2048MoveScoreValueTask
+MOVE_SCORE_SUPPORT = _move_score_task.MOVE_SCORE_SUPPORT
 
 
 def test_games_2048_scene_package_source_layout() -> None:
@@ -31,6 +34,7 @@ def test_games_2048_scene_package_source_layout() -> None:
         Games2048MaxTileValueTask: Path("src/trace_tasks/tasks/games/2048/max_tile_value.py"),
         Games2048MergeCountTask: Path("src/trace_tasks/tasks/games/2048/merge_count.py"),
         Games2048MoveResultBoardLabelTask: Path("src/trace_tasks/tasks/games/2048/move_result_board_label.py"),
+        Games2048MoveScoreValueTask: Path("src/trace_tasks/tasks/games/2048/move_score_value.py"),
     }
 
     for task_cls, relative_path in expected_sources.items():
@@ -116,6 +120,53 @@ def test_games_2048_move_result_value_emits_expected_contract(
     assert float(trace["render_spec"]["effective_cell_size_px"]) >= 28.0
     assert trace["render_spec"]["text_style"]["font_family"]
     assert trace["render_map"]["font_family"] == trace["render_spec"]["text_style"]["font_family"]
+
+
+def test_games_2048_move_score_value_matches_simulated_score() -> None:
+    for target_score in (0, 12, 24, 48):
+        out = Games2048MoveScoreValueTask().generate(
+            204860 + int(target_score),
+            params={"target_answer": int(target_score)},
+            max_attempts=128,
+        )
+        execution = out.trace_payload["execution_trace"]
+        result = simulate_2048_move(_board(execution["board_before"]), str(execution["move_direction"]))
+
+        assert out.scene_id == "2048"
+        assert out.query_id == "single"
+        assert out.answer_gt.type == "integer"
+        assert int(out.answer_gt.value) == int(result.score) == int(target_score)
+        assert out.annotation_gt.type == "segment_set"
+        assert len(out.annotation_gt.value) == len(result.merge_pairs)
+        assert out.trace_payload["projected_annotation"]["type"] == "segment_set"
+        assert out.trace_payload["projected_annotation"]["segment_set"] == out.annotation_gt.value
+        assert len(execution["annotation_entity_id_pairs"]) == len(out.annotation_gt.value)
+
+
+def test_games_2048_move_score_value_covers_score_support() -> None:
+    observed: set[int] = set()
+    for sampling_index in range(64):
+        out = Games2048MoveScoreValueTask().generate(
+            205900 + int(sampling_index),
+            params={"_sample_cursor": int(sampling_index)},
+            max_attempts=128,
+        )
+        observed.add(int(out.answer_gt.value))
+    assert observed <= set(int(value) for value in MOVE_SCORE_SUPPORT)
+    assert len(observed) >= 5
+
+
+def test_games_2048_move_score_value_is_deterministic() -> None:
+    params = {"target_answer": 16, "move_direction": "right"}
+    task = Games2048MoveScoreValueTask()
+    out_a = task.generate(204871, params=params, max_attempts=128)
+    out_b = task.generate(204871, params=params, max_attempts=128)
+
+    assert out_a.answer_gt.to_dict() == out_b.answer_gt.to_dict()
+    assert out_a.annotation_gt.to_dict() == out_b.annotation_gt.to_dict()
+    assert out_a.trace_payload["execution_trace"] == out_b.trace_payload["execution_trace"]
+    assert out_a.prompt == out_b.prompt
+    assert out_a.image.tobytes() == out_b.image.tobytes()
 
 
 def test_games_2048_max_tile_annotation_uses_source_cells_for_unique_max() -> None:

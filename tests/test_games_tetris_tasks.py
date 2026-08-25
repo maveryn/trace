@@ -8,6 +8,7 @@ from trace_tasks.core.seed import spawn_rng
 from trace_tasks.tasks.games.tetris.active_piece_shape_label import GamesTetrisActivePieceShapeLabelTask
 from trace_tasks.tasks.games.tetris.drop_collision_time_value import GamesTetrisDropCollisionTimeValueTask
 from trace_tasks.tasks.games.tetris.drop_result_label import GamesTetrisDropResultLabelTask
+from trace_tasks.tasks.games.tetris.hole_count import GamesTetrisHoleCountTask
 from trace_tasks.tasks.games.tetris.line_clear_count import GamesTetrisLineClearCountTask
 from trace_tasks.tasks.games.tetris.row_occupancy_status_count import GamesTetrisRowOccupancyStatusCountTask
 from trace_tasks.tasks.games.tetris.shared.rules import (
@@ -15,6 +16,8 @@ from trace_tasks.tasks.games.tetris.shared.rules import (
     drop_collision,
     evaluate_outcome,
     freeze,
+    hole_cell_coords,
+    hole_count,
     is_supported_stack_board,
     piece_cells,
 )
@@ -306,9 +309,53 @@ def test_games_tetris_drop_collision_time_contract_and_rule_match() -> None:
         assert out.trace_payload["projected_annotation"]["bbox_set_map"] == expected_annotation
 
 
+def test_games_tetris_hole_count_contract_and_rule_match() -> None:
+    for target_hole_count in (0, 2, 4):
+        out = GamesTetrisHoleCountTask().generate(
+            26052491 + int(target_hole_count),
+            params={
+                "target_hole_count": int(target_hole_count),
+                "board_rows": 12,
+                "board_cols": 8,
+            },
+            max_attempts=64,
+        )
+        execution = out.trace_payload["execution_trace"]
+        board = _board_from_execution(execution)
+        holes = hole_cell_coords(board)
+        expected_entity_ids = tuple(f"main_cell_{int(row)}_{int(col)}" for row, col in holes)
+        expected_bboxes = [
+            [float(v) for v in out.trace_payload["render_map"]["cell_bboxes_px"][str(entity_id)]]
+            for entity_id in expected_entity_ids
+        ]
+
+        assert out.scene_id == "tetris"
+        assert out.query_id == "single"
+        assert out.answer_gt.type == "integer"
+        assert int(out.answer_gt.value) == int(hole_count(board)) == int(target_hole_count)
+        assert execution["target_hole_count"] == int(target_hole_count)
+        assert execution["hole_cells"] == [[int(row), int(col)] for row, col in holes]
+        assert tuple(execution["annotation_entity_ids"]) == expected_entity_ids
+        assert out.annotation_gt.type == "bbox_set"
+        assert out.annotation_gt.value == expected_bboxes
+        assert out.trace_payload["projected_annotation"]["type"] == "bbox_set"
+        assert out.trace_payload["projected_annotation"]["bbox_set"] == expected_bboxes
+
+
+def test_games_tetris_hole_count_is_deterministic() -> None:
+    first = GamesTetrisHoleCountTask().generate(26052501, params={}, max_attempts=64)
+    second = GamesTetrisHoleCountTask().generate(26052501, params={}, max_attempts=64)
+    assert first.prompt == second.prompt
+    assert first.answer_gt.to_dict() == second.answer_gt.to_dict()
+    assert first.annotation_gt.to_dict() == second.annotation_gt.to_dict()
+    assert first.trace_payload["execution_trace"] == second.trace_payload["execution_trace"]
+    assert first.image.tobytes() == second.image.tobytes()
+
+
 def test_games_tetris_taxonomy() -> None:
     assert resolve_task_taxonomy("task_games__tetris__active_piece_shape_label").scene_id == "tetris"
     assert resolve_task_taxonomy("task_games__tetris__line_clear_count").scene_id == "tetris"
     assert resolve_task_taxonomy("task_games__tetris__drop_result_label").scene_id == "tetris"
     assert resolve_task_taxonomy("task_games__tetris__row_occupancy_status_count").scene_id == "tetris"
     assert resolve_task_taxonomy("task_games__tetris__drop_collision_time_value").scene_id == "tetris"
+    assert resolve_task_taxonomy("task_games__tetris__hole_count").scene_id == "tetris"

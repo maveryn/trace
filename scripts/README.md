@@ -27,7 +27,7 @@ The tools are:
 - `check_public_release.py` runs the source, package, installation, CLI, and
   repository-hygiene release gates. Its `--package-only` mode tests another
   supported Python runtime without regenerating committed artifacts.
-- `check_review_recipe.py` validates the 1,000-task, 25,000-request review
+- `check_review_recipe.py` validates the 1,004-task, 25,100-request review
   recipe and detects changes to its generator inputs.
 - `generate_active_task_inventory.py` regenerates the registry-derived active
   task inventory.

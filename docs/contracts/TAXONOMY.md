@@ -81,7 +81,7 @@ Each public task declares a code-authoritative, multi-label decomposition over
 the 13 analysis families defined in
 `docs/contracts/PROGRAM_SCHEMA_CATALOG.md`. These labels support aggregate
 coverage analysis; they are not public taxonomy nodes, task-boundary
-rules, or sampling units. The current 1,000-task inventory remains the stable
+rules, or sampling units. The current 1,004-task inventory remains the stable
 public surface even when several tasks share operation families or outer
 program scaffolds.
 

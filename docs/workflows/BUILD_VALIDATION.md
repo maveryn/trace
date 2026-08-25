@@ -53,7 +53,7 @@ receipt.
 `scripts/build_release_dataset.py` reconstructs the same published dataset
 recipe from the current Trace source:
 
-- 1,000 tasks;
+- all public default tasks (currently 1,004);
 - 64 training examples per task with generation seed `42`;
 - two IID validation examples per task with generation seed `1042`;
 - embedded images capped at `1,280,000` pixels;

@@ -120,6 +120,20 @@ def hole_count(board: Board) -> int:
     return int(holes)
 
 
+def hole_cell_coords(board: Board) -> Tuple[Coord, ...]:
+    """Return every covered hole cell in board scan order."""
+
+    board_rows, board_cols = board_size(board)
+    holes: List[Coord] = []
+    for row in range(board_rows):
+        for col in range(board_cols):
+            if board[row][col] != EMPTY:
+                continue
+            if any(board[above][col] != EMPTY for above in range(row)):
+                holes.append((int(row), int(col)))
+    return tuple(holes)
+
+
 def evaluate_outcome(board: Board, placement: Placement) -> Outcome:
     locked = lock_piece(board, placement)
     result, cleared_rows = clear_full_rows(locked)

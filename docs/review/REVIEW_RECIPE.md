@@ -7,11 +7,11 @@ while materialized outputs stay outside Git.
 ## Stored recipe
 
 The recipe consists of one manifest and domain-sharded JSONL rows. It contains
-exactly 25 query-stratified requests for each of the 1,000 public tasks: 25,000
+exactly 25 query-stratified requests for each of the 1,004 public tasks: 25,100
 rows total. For each task, every query variant is selected once before the
 remaining positions are filled in stable round-robin order.
 
-The accepted 25,000-row tree is about 14 MB and belongs in ordinary Git. Do not
+The accepted 25,100-row tree is about 14 MB and belongs in ordinary Git. Do not
 move the recipe to Git LFS or external artifact storage. Only its
 multi-gigabyte materialized replay is generated beneath the ignored local
 `review/` workspace.
@@ -89,7 +89,7 @@ trace-review capture \
 Use task or domain filters when those match the dependency scope more precisely.
 Accept a draft for review only when row ordering, seeds, retry decisions, hashes,
 and manifest inputs agree between the two independent roots. A draft may contain
-fewer than 1,000 tasks and is local review evidence only. Do not commit it or
+fewer than 1,004 tasks and is local review evidence only. Do not commit it or
 splice its rows into an accepted recipe.
 
 ### Replace the complete accepted recipe
@@ -115,7 +115,7 @@ trace-review capture \
 
 After the two roots and the reviewed affected slice agree, replace the complete
 checked-in recipe with one candidate without changing its captured
-contents. The promoted manifest must still cover all 1,000 tasks and 25,000
+contents. The promoted manifest must still cover all 1,004 tasks and 25,100
 rows. Never hand-edit rows, hashes, or manifests, and never promote a filtered
 draft as the accepted recipe.
 

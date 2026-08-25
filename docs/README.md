@@ -39,7 +39,7 @@ hide:
 
 <div class="trace-stat-grid">
   <div class="trace-stat">
-    <span class="trace-stat__value">1,000</span>
+    <span class="trace-stat__value">1,004</span>
     <span class="trace-stat__label">reasoning tasks</span>
   </div>
   <div class="trace-stat">
@@ -222,7 +222,7 @@ for training, evaluation, progress reporting, and validation.
   </a>
   <a class="trace-doc-card" href="TASK_CATALOG/">
     <h3>Browse the catalog</h3>
-    <p>Explore all 1,000 task contracts by domain, scene, answer type, and reasoning operation.</p>
+    <p>Explore all 1,004 task contracts by domain, scene, answer type, and reasoning operation.</p>
   </a>
   <a class="trace-doc-card" href="DEVELOPMENT/">
     <h3>Contribute</h3>

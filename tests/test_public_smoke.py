@@ -15,8 +15,8 @@ from trace_tasks.tasks import create_task, list_default_task_ids
 
 
 EXPECTED_DOMAIN_COUNTS = {
-    "charts": 180,
-    "games": 170,
+    "charts": 182,
+    "games": 172,
     "geometry": 170,
     "graph": 60,
     "icons": 50,
@@ -37,7 +37,7 @@ def _png_bytes(output) -> bytes:
 
 def test_public_registry_inventory() -> None:
     task_ids = list_default_task_ids()
-    assert len(task_ids) == 1000
+    assert len(task_ids) == 1004
     assert len(set(task_ids)) == len(task_ids)
     assert task_ids == sorted(task_ids)
     counts = Counter(parse_public_task_id(task_id).domain for task_id in task_ids)

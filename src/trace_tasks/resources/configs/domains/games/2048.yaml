@@ -46,6 +46,17 @@ generation:
       result_board_option_count_support:
         - 4
         - 6
+    task_games__2048__move_score_value:
+      balanced_target_answer_sampling: true
+      move_score_support:
+        - 0
+        - 4
+        - 8
+        - 12
+        - 16
+        - 24
+        - 32
+        - 48
 rendering:
   shared:
     canvas_width: 900

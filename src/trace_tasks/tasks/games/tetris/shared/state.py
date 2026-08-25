@@ -55,6 +55,7 @@ class TetrisDefaults:
     line_clear_count_support: Tuple[int, ...] = (0, 1, 2, 3, 4)
     drop_result_clear_count_support: Tuple[int, ...] = (0, 1, 2)
     row_occupancy_status_count_support: Tuple[int, ...] = (0, 1, 2, 3, 4, 5)
+    hole_count_support: Tuple[int, ...] = (0, 1, 2, 3, 4, 5)
     drop_collision_time_support: Tuple[int, ...] = tuple(range(0, 9))
     shift_magnitude_support: Tuple[int, ...] = (1, 2, 3)
     option_count_support: Tuple[int, ...] = (4,)

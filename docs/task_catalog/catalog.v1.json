@@ -3,12 +3,12 @@
     {
       "domain": "charts",
       "scene_count": 42,
-      "task_count": 180
+      "task_count": 182
     },
     {
       "domain": "games",
       "scene_count": 52,
-      "task_count": 170
+      "task_count": 172
     },
     {
       "domain": "geometry",
@@ -73,7 +73,7 @@
       "bbox": 245,
       "bbox_map": 85,
       "bbox_sequence": 4,
-      "bbox_set": 269,
+      "bbox_set": 272,
       "bbox_set_map": 16,
       "point": 79,
       "point_map": 108,
@@ -81,32 +81,32 @@
       "point_set": 105,
       "point_set_map": 5,
       "segment": 37,
-      "segment_set": 38
+      "segment_set": 39
     },
     "answer_type_counts": {
-      "integer": 547,
+      "integer": 551,
       "number": 51,
       "option_letter": 210,
       "string": 192
     },
-    "default_task_count": 1000,
+    "default_task_count": 1004,
     "domain_count": 11,
     "reasoning_operation_counts": {
-      "aggregation": 82,
-      "comparison": 76,
-      "counting": 397,
+      "aggregation": 83,
+      "comparison": 78,
+      "counting": 400,
       "direct_retrieval": 8,
-      "filtering": 329,
-      "formula_evaluation": 313,
+      "filtering": 332,
+      "formula_evaluation": 314,
       "logical_composition": 62,
       "matching": 127,
       "ranking": 206,
-      "spatial_relations": 116,
-      "state_update": 112,
+      "spatial_relations": 117,
+      "state_update": 113,
       "topology": 185,
       "transformation": 78
     },
-    "registered_task_count": 1000,
+    "registered_task_count": 1004,
     "scene_count": 277
   },
   "tasks": [
@@ -428,6 +428,27 @@
       "source_path": "src/trace_tasks/tasks/charts/candlestick/counterfactual_close_value.py",
       "source_sha256": "f251fd14c5fc7c775359612f1c8fb9ceeb58d89d16c432122532fd450862f111",
       "task_id": "task_charts__candlestick__counterfactual_close_value"
+    },
+    {
+      "annotation_schema": "bbox_set",
+      "annotation_type": "bbox_set",
+      "answer_schema": "integer_count",
+      "answer_type": "integer",
+      "doc_path": "docs/tasks/charts/candlestick/task_charts__candlestick__directional_body_threshold_count.md",
+      "doc_sha256": "b08c997d7fb92c73b7c8bdfea3e8986a8096242cfd6e8b06b6e1f6f89259f270",
+      "domain": "charts",
+      "objective_contract": "directional_body_threshold_count",
+      "program_contract": "count(filter(candles, direction(candle) = direction and body_size(candle) > threshold)); direction={up,down}; output=integer_count; annotation=bbox_set(matching_candle_bodies); scene=candlestick; scope=directional_body_threshold_count",
+      "program_contract_sha256": "5b5eb45363a22e94d21c6fb39b8d7f10c55ef20a60c3c6e3277cab174d15ad67",
+      "reasoning_operations": [
+        "filtering",
+        "counting",
+        "comparison"
+      ],
+      "scene_id": "candlestick",
+      "source_path": "src/trace_tasks/tasks/charts/candlestick/directional_body_threshold_count.py",
+      "source_sha256": "acdbb36fcc7118ba751996fe15c0c6b7b645946c47381729f9426b42488c4a64",
+      "task_id": "task_charts__candlestick__directional_body_threshold_count"
     },
     {
       "annotation_schema": "segment",
@@ -3758,6 +3779,27 @@
     {
       "annotation_schema": "bbox_set",
       "annotation_type": "bbox_set",
+      "answer_schema": "integer_count",
+      "answer_type": "integer",
+      "doc_path": "docs/tasks/charts/waterfall/task_charts__waterfall__signed_step_threshold_count.md",
+      "doc_sha256": "42841084eabb01cf52c732c3643576e6450cf18dbe12810e335b008a0a285378",
+      "domain": "charts",
+      "objective_contract": "signed_step_threshold_count",
+      "program_contract": "count(filter(contribution_steps, sign(delta) = direction and abs(delta) > threshold)); direction={negative,positive}; output=integer_count; annotation=bbox_set(matching_contribution_bars); scene=waterfall; scope=signed_step_threshold_count",
+      "program_contract_sha256": "15265f8a4b66cbafd954dd3182128b8984cfd8b27be471233801383369a52ae6",
+      "reasoning_operations": [
+        "filtering",
+        "counting",
+        "comparison"
+      ],
+      "scene_id": "waterfall",
+      "source_path": "src/trace_tasks/tasks/charts/waterfall/signed_step_threshold_count.py",
+      "source_sha256": "ba872d57d89ecf0b0ad383e2db0aaf061eccc17a127242f19d5df4af1fde67ad",
+      "task_id": "task_charts__waterfall__signed_step_threshold_count"
+    },
+    {
+      "annotation_schema": "bbox_set",
+      "annotation_type": "bbox_set",
       "answer_schema": "integer_value",
       "answer_type": "integer",
       "doc_path": "docs/tasks/games/2048/task_games__2048__max_tile_value.md",
@@ -3813,6 +3855,27 @@
       "source_path": "src/trace_tasks/tasks/games/2048/move_result_board_label.py",
       "source_sha256": "f2c42f1759824ab56fe8087a528e5b07534e3b67be27d6c507efb42a39bddd99",
       "task_id": "task_games__2048__move_result_board_label"
+    },
+    {
+      "annotation_schema": "segment_set",
+      "annotation_type": "segment_set",
+      "answer_schema": "integer_value",
+      "answer_type": "integer",
+      "doc_path": "docs/tasks/games/2048/task_games__2048__move_score_value.md",
+      "doc_sha256": "3e9bb9cb64327abc4240d3edaa0c5c29a7eebb910247cf88f5a66c05dc3ead15",
+      "domain": "games",
+      "objective_contract": "move_score_value",
+      "program_contract": "sum(simulate(board, rules=slide_merge_2048, action=move_direction).merge_events.merged_value); scene=2048; scope=move_score_value",
+      "program_contract_sha256": "128803fd367f64b43de018a5671b796b1022521c54843195149250c2fe907c47",
+      "reasoning_operations": [
+        "aggregation",
+        "state_update",
+        "formula_evaluation"
+      ],
+      "scene_id": "2048",
+      "source_path": "src/trace_tasks/tasks/games/2048/move_score_value.py",
+      "source_sha256": "dd7da16c3677ab6452ab8a1dfa170af1d7758ef8631d3f7773c338e055621622",
+      "task_id": "task_games__2048__move_score_value"
     },
     {
       "annotation_schema": "bbox_set",
@@ -6955,6 +7018,27 @@
       "source_path": "src/trace_tasks/tasks/games/tetris/drop_result_label.py",
       "source_sha256": "155377497354710b561c23db5a5ca1e8d945f40cf6ecbf1a7a59e03cd44f31ad",
       "task_id": "task_games__tetris__drop_result_label"
+    },
+    {
+      "annotation_schema": "bbox_set",
+      "annotation_type": "bbox_set",
+      "answer_schema": "integer_count",
+      "answer_type": "integer",
+      "doc_path": "docs/tasks/games/tetris/task_games__tetris__hole_count.md",
+      "doc_sha256": "8c12c7ef1e78fb96ef06f77819dc741e6149c07558c4f8c884ca3870453e68df",
+      "domain": "games",
+      "objective_contract": "hole_count",
+      "program_contract": "count(cells where cell_is_empty(cell) and filled_block_above(cell)); scene=tetris; scope=hole_count",
+      "program_contract_sha256": "d95814b29f24467fa6153ad8498366390efa4496d5ac0a2cccfb0c7a2ba067aa",
+      "reasoning_operations": [
+        "filtering",
+        "counting",
+        "spatial_relations"
+      ],
+      "scene_id": "tetris",
+      "source_path": "src/trace_tasks/tasks/games/tetris/hole_count.py",
+      "source_sha256": "90bdd9cb3cec6ab5721ae2f33a369df82dca8a741cb8b1910676171c44e468c8",
+      "task_id": "task_games__tetris__hole_count"
     },
     {
       "annotation_schema": "bbox_map",

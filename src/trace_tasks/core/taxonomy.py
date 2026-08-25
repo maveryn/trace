@@ -118,6 +118,9 @@ TASK_TAXONOMY: dict[str, TaxonomyEntry] = {
     "task_charts__candlestick__counterfactual_close_value": _entry(
         "charts", "candlestick", "charts", "candlestick"
     ),
+    "task_charts__candlestick__directional_body_threshold_count": _entry(
+        "charts", "candlestick", "charts", "candlestick"
+    ),
     "task_charts__candlestick__range_extremum_label": _entry(
         "charts", "candlestick", "charts", "candlestick"
     ),
@@ -596,6 +599,9 @@ TASK_TAXONOMY: dict[str, TaxonomyEntry] = {
     "task_charts__waterfall__running_total_value": _entry(
         "charts", "waterfall", "charts", "waterfall"
     ),
+    "task_charts__waterfall__signed_step_threshold_count": _entry(
+        "charts", "waterfall", "charts", "waterfall"
+    ),
     "task_charts__waterfall__threshold_crossing_label": _entry(
         "charts", "waterfall", "charts", "waterfall"
     ),
@@ -844,6 +850,7 @@ TASK_TAXONOMY: dict[str, TaxonomyEntry] = {
     ),
     "task_games__2048__max_tile_value": _entry("games", "2048", "games", "2048"),
     "task_games__2048__merge_count": _entry("games", "2048", "games", "2048"),
+    "task_games__2048__move_score_value": _entry("games", "2048", "games", "2048"),
     "task_games__backgammon__destination_count": _entry(
         "games", "backgammon", "games", "backgammon"
     ),
@@ -1272,6 +1279,9 @@ TASK_TAXONOMY: dict[str, TaxonomyEntry] = {
         "games", "tetris", "games", "tetris"
     ),
     "task_games__tetris__drop_result_label": _entry(
+        "games", "tetris", "games", "tetris"
+    ),
+    "task_games__tetris__hole_count": _entry(
         "games", "tetris", "games", "tetris"
     ),
     "task_games__tetris__line_clear_count": _entry(

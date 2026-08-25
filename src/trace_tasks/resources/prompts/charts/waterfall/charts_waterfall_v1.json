@@ -49,6 +49,13 @@
         "Reverse only contribution \"{target_step_label}\" from {target_delta_text} to {reversed_delta_text}. Keeping all other contributions the same, what is the final total?",
         "What would the final total be if contribution \"{target_step_label}\" changed sign from {target_delta_text} to {reversed_delta_text}?",
         "Use the final-total bar and contribution \"{target_step_label}\". If that contribution changed from {target_delta_text} to {reversed_delta_text}, what is the new final total?"
+      ],
+      "signed_step_threshold_count": [
+        "Ignoring the start and final-total bars, how many contribution steps {direction_word} the running total by more than {magnitude_threshold}?",
+        "Count the contribution bars whose signed change is a {motion_word} of more than {magnitude_threshold}. How many are there?",
+        "Using the printed contribution values, how many steps {direction_word} the cumulative total by more than {magnitude_threshold}?",
+        "How many contribution bars record a {motion_word} larger than {magnitude_threshold}?",
+        "Among the signed contribution bars, how many {direction_word} the running total by strictly more than {magnitude_threshold}?"
       ]
     },
     "output": {
@@ -92,10 +99,19 @@
       "annotation_hint": "set \"annotation\" to an object mapping \"final_total_bar\" and \"target_contribution_bar\" to [x0,y0,x1,y1] pixel boxes around the full waterfall bars",
       "json_example": "{\"annotation\":{\"final_total_bar\":[960,210,1038,610],\"target_contribution_bar\":[370,318,438,512]},\"answer\":57}",
       "json_example_answer_only": "{\"answer\":57}"
+    },
+    "query:signed_step_threshold_count": {
+      "answer_hint": "set \"answer\" to the number of matching contribution steps as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] pixel boxes around each full contribution bar whose signed change matches the requested direction and exceeds the stated magnitude",
+      "json_example": "{\"annotation\":[[182,330,242,610],[478,286,552,428]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
     }
   },
   "dynamic_slots": {
     "counterfactual_phrase": {
+      "type": "string"
+    },
+    "direction_word": {
       "type": "string"
     },
     "extremum_word": {
@@ -109,6 +125,12 @@
     },
     "reversed_delta_text": {
       "type": "string"
+    },
+    "motion_word": {
+      "type": "string"
+    },
+    "magnitude_threshold": {
+      "type": "integer"
     }
   },
   "required_slots_by_key": {
@@ -136,6 +158,11 @@
       "annotation_hint",
       "answer_hint",
       "json_example"
+    ],
+    "query:signed_step_threshold_count": [
+      "direction_word",
+      "motion_word",
+      "magnitude_threshold"
     ]
   }
 }

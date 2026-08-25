@@ -30,11 +30,11 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = REPO_ROOT / "src"
 # These values are the public 0.1 registry contract. A deliberate registry
 # change must update both the generated inventory and this release assertion.
-EXPECTED_DEFAULT_TASK_COUNT = 1_000
-EXPECTED_REGISTERED_TASK_COUNT = 1_000
+EXPECTED_DEFAULT_TASK_COUNT = 1_004
+EXPECTED_REGISTERED_TASK_COUNT = 1_004
 EXPECTED_SCENE_COUNT = 277
 EXPECTED_RELEASE_TASK_IDS_SHA256 = (
-    "1ef0419e23368309a961dd596d0cbc7212cdee64625d98d78cf1f6e654e47a98"
+    "a48247f0f7e52c66dcb14cc7cfdfb961ab24ef90255b7faaaad1039625d556ab"
 )
 HISTORICAL_DATASET_REVISION = "e317b746b258630682367cc6a9d87dedd195113c"
 EXPECTED_RELEASE_VIEWER_COLUMNS = [
@@ -72,8 +72,8 @@ EXPECTED_RELEASE_SIDECARS = [
     "validation_report.json",
 ]
 EXPECTED_DOMAIN_TASK_COUNTS = {
-    "charts": 180,
-    "games": 170,
+    "charts": 182,
+    "games": 172,
     "geometry": 170,
     "graph": 60,
     "icons": 50,
@@ -391,8 +391,8 @@ def _expected_release_recipe_contract() -> dict[str, object]:
             "generation_seed": 42,
             "required_sidecars": EXPECTED_RELEASE_SIDECARS,
             "role": "train",
-            "rows": 64_000,
-            "rows_per_shard": 4_000,
+            "rows": 64_256,
+            "rows_per_shard": 4_016,
             "samples_per_task": 64,
             "shard_count": 16,
             "shard_paths": [
@@ -407,8 +407,8 @@ def _expected_release_recipe_contract() -> dict[str, object]:
             "generation_seed": 1_042,
             "required_sidecars": EXPECTED_RELEASE_SIDECARS,
             "role": "validation_iid",
-            "rows": 2_000,
-            "rows_per_shard": 2_000,
+            "rows": 2_008,
+            "rows_per_shard": 2_008,
             "samples_per_task": 2,
             "shard_count": 1,
             "shard_paths": [

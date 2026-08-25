@@ -63,6 +63,20 @@
         "Using period {target_label}, keep the open value fixed and {change_verb} only the open-close body size by {change_value} units while preserving direction. What is the new close?",
         "If candle {target_label} kept the same open value and direction, but its open-close body size were {change_past_phrase} by {change_value} units, what close value should it have?",
         "For candle {target_label}, leave the open value fixed, preserve direction, and {change_verb} the open-close body size by {change_value} units. What is the resulting close value?"
+      ],
+      "up_body_threshold_count": [
+        "How many candles {direction_phrase} by more than {body_threshold} points?",
+        "Using the printed open and close values, count the periods that {direction_phrase} by over {body_threshold}. How many are there?",
+        "Across all candles, how many have an open-close body larger than {body_threshold} in the direction where the candle {direction_phrase}?",
+        "How many periods {direction_phrase} with an open-close gap greater than {body_threshold}?",
+        "Compare each candle's open and close. How many {direction_phrase} by strictly more than {body_threshold}?"
+      ],
+      "down_body_threshold_count": [
+        "How many candles {direction_phrase} by more than {body_threshold} points?",
+        "Using the printed open and close values, count the periods that {direction_phrase} by over {body_threshold}. How many are there?",
+        "Across all candles, how many have an open-close body larger than {body_threshold} in the direction where the candle {direction_phrase}?",
+        "How many periods {direction_phrase} with an open-close gap greater than {body_threshold}?",
+        "Compare each candle's open and close. How many {direction_phrase} by strictly more than {body_threshold}?"
       ]
     },
     "output": {
@@ -118,6 +132,18 @@
       "annotation_hint": "set \"annotation\" to one [x,y] pixel point at the center of the target candle body",
       "json_example": "{\"annotation\":[262,280],\"answer\":42}",
       "json_example_answer_only": "{\"answer\":42}"
+    },
+    "query:up_body_threshold_count": {
+      "answer_hint": "set \"answer\" to the number of matching candles as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around the open-close body of each candle that matches the requested direction and exceeds the stated body size",
+      "json_example": "{\"annotation\":[[196,238,232,314],[418,196,454,282]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
+    },
+    "query:down_body_threshold_count": {
+      "answer_hint": "set \"answer\" to the number of matching candles as an integer",
+      "annotation_hint": "set \"annotation\" to an array of [x0, y0, x1, y1] pixel boxes around the open-close body of each candle that matches the requested direction and exceeds the stated body size",
+      "json_example": "{\"annotation\":[[196,238,232,314],[418,196,454,282]],\"answer\":2}",
+      "json_example_answer_only": "{\"answer\":2}"
     }
   },
   "dynamic_slots": {
@@ -137,6 +163,12 @@
       "type": "string"
     },
     "target_label": {
+      "type": "string"
+    },
+    "body_threshold": {
+      "type": "integer"
+    },
+    "direction_phrase": {
       "type": "string"
     }
   },
@@ -168,6 +200,14 @@
       "change_verb",
       "change_past_phrase",
       "change_value"
+    ],
+    "query:up_body_threshold_count": [
+      "direction_phrase",
+      "body_threshold"
+    ],
+    "query:down_body_threshold_count": [
+      "direction_phrase",
+      "body_threshold"
     ]
   }
 }

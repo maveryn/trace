@@ -64,7 +64,7 @@ def test_dry_run_reports_the_frozen_recipe_without_writes(
 
     result = json.loads(capsys.readouterr().out)
     assert result["recipe"] == "trace_rlvr_all1000_iid_v1"
-    assert result["task_count"] == 1_000
+    assert result["task_count"] == 1_004
     assert result["task_ids_sha256"] == release_dataset._ordered_id_digest(task_ids)
     assert result["max_embedded_image_pixels"] == 1_280_000
     assert result["row_order_seed"] == 20_260_711
@@ -75,8 +75,8 @@ def test_dry_run_reports_the_frozen_recipe_without_writes(
     assert result["rebuild_contract"]["byte_identity_expected"] is False
     assert result["prompt_export_variant"] == "answer_and_annotation"
     assert result["viewer_columns"] == release_dataset.VIEWER_COLUMNS
-    assert result["splits"][0]["rows"] == 64_000
-    assert result["splits"][0]["rows_per_shard"] == 4_000
+    assert result["splits"][0]["rows"] == 64_256
+    assert result["splits"][0]["rows_per_shard"] == 4_016
     assert len(result["splits"][0]["shard_paths"]) == 16
     assert result["splits"][1]["generation_seed"] == 1_042
     assert not output_dir.exists()

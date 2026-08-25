@@ -23,6 +23,7 @@ from .rules import (
     evaluate_outcome,
     freeze,
     hard_drop_top,
+    hole_cell_coords,
     horizontal_sweep_cells,
     is_supported_stack_board,
     piece_cells,
@@ -681,6 +682,81 @@ def build_row_occupancy_sample(
             "row_occupancy_status": str(row_status),
             "qualifying_rows": [int(row) for row in qualifying_rows],
             "row_empty_counts": [int(row_empty_count(row)) for row in board],
+        },
+    )
+
+
+def build_hole_count_sample(
+    rng,
+    *,
+    scene_variant: str,
+    board_rows: int,
+    board_cols: int,
+    target_hole_count: int,
+    max_holes_per_column: int = 2,
+) -> TetrisSample:
+    """Construct a static stack with an exact count of covered hole cells."""
+
+    target = int(target_hole_count)
+    heights = random_supported_heights(
+        rng,
+        scene_variant=str(scene_variant),
+        board_rows=int(board_rows),
+        board_cols=int(board_cols),
+        force_gap_column=bool(target == 0),
+    )
+    board = supported_stack_from_heights(
+        rng,
+        board_rows=int(board_rows),
+        board_cols=int(board_cols),
+        heights=heights,
+    )
+    rows = [list(row) for row in board]
+    carved: List[Coord] = []
+    if target > 0:
+        candidates: List[Coord] = []
+        for col in range(int(board_cols)):
+            height = max(0, min(int(heights[int(col)]), int(board_rows)))
+            top_row = int(board_rows) - int(height)
+            candidates.extend((int(row), int(col)) for row in range(top_row + 1, int(board_rows)))
+        rng.shuffle(candidates)
+        per_column: Dict[int, int] = {}
+        for row, col in candidates:
+            if len(carved) >= target:
+                break
+            if per_column.get(int(col), 0) >= int(max_holes_per_column):
+                continue
+            carved.append((int(row), int(col)))
+            per_column[int(col)] = per_column.get(int(col), 0) + 1
+        if len(carved) < target:
+            raise ValueError("Tetris stack has too few carveable hole cells")
+        for row, col in carved:
+            rows[int(row)][int(col)] = EMPTY
+    board = freeze(rows)
+    holes = hole_cell_coords(board)
+    if len(holes) != target:
+        raise ValueError("constructed Tetris hole-count board has wrong answer")
+    return TetrisSample(
+        answer=int(target),
+        answer_type="integer",
+        board=board,
+        piece="",
+        preview_orientation_index=0,
+        placement=None,
+        falling_placement=None,
+        outcome=None,
+        options=(),
+        annotation_entity_ids=tuple(f"main_cell_{int(row)}_{int(col)}" for row, col in holes),
+        annotation_kind="cell_set",
+        metadata={
+            "board_generation": {
+                "mode": "carved_hole_stack",
+                "strategy": "column_heights_with_carved_holes",
+                "cell_support_policy": "column tops stay filled; carved interior cells become covered holes",
+            },
+            "target_hole_count": int(target),
+            "hole_cells": [[int(row), int(col)] for row, col in holes],
+            "column_heights": [int(value) for value in column_heights(board)],
         },
     )
 
