@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cert.filtered_mean.v1",
+  "title": "Filtered-mean certificate (table)",
+  "description": "Public response envelope. JSON Schema cannot express the stricter RFC-JSON rules that the scorer enforces for F: no duplicate keys, no NaN/Infinity, integral floats such as 15.0 (valid 'integer' here) give F=0, annotation_index < len(annotation), and a 16 KiB cap on the final object.",
+  "type": "object",
+  "properties": {
+    "annotation": {
+      "type": "object",
+      "properties": {
+        "filter_cells": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/box"
+          }
+        },
+        "target_cells": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/box"
+          }
+        }
+      },
+      "required": [
+        "filter_cells",
+        "target_cells"
+      ],
+      "additionalProperties": false
+    },
+    "certificate": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "filtered_mean"
+        },
+        "rows": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "properties": {
+              "annotation_index": {
+                "$ref": "#/$defs/index"
+              },
+              "filter_value": {
+                "$ref": "#/$defs/int"
+              },
+              "target_value": {
+                "$ref": "#/$defs/int"
+              }
+            },
+            "required": [
+              "annotation_index",
+              "filter_value",
+              "target_value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "sum": {
+          "$ref": "#/$defs/int"
+        },
+        "count": {
+          "$ref": "#/$defs/int"
+        },
+        "mean": {
+          "$ref": "#/$defs/int"
+        }
+      },
+      "required": [
+        "kind",
+        "rows",
+        "sum",
+        "count",
+        "mean"
+      ],
+      "additionalProperties": false
+    },
+    "answer": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "annotation",
+    "certificate",
+    "answer"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "box": {
+      "description": "[x0, y0, x1, y1] in the response frame (px_source or rel1000); finite numbers.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "point": {
+      "description": "[x, y] in the response frame; finite numbers.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "box_list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/box"
+      }
+    },
+    "int": {
+      "type": "integer"
+    },
+    "index": {
+      "description": "0-based position in the annotation list; the upper bound (len(annotation)) is checked by the scorer, not expressible here.",
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

@@ -1,0 +1,110 @@
+# TRACE certificates, M3 RL (DESIGN 7.3): Qwen2.5-VL-7B, arms A / G / P (+ P_gated / G_gated).
+#
+# experiments/certificates/train_rl.py loads the `easyr1:` block of the release config named in
+# `release.config` (read-only trace-rlvr checkout, $TRACE_RLVR_ROOT) and changes ONLY the keys in
+# `overrides` (the DESIGN 7.3 table) plus the run plumbing in `plumbing` (which rlvr/train.py's own
+# _resolved_config also sets). Everything else (optimizer, clip, rollout sampling, micro-batches,
+# offload, image pixel bounds, ...) stays at the release value; tests_rl/ asserts both facts and
+# that the arms differ only in worker.reward.reward_function_kwargs.{arm,gated}.
+#
+# ${NAME} placeholders are filled by the runner, never with values from this file:
+#   TRACE_ROOT   this checkout            TRC_DATA    frozen data root ($TRACE_CERT_RUNS/data/v2)
+#   N            GPUs of the allocation   MODEL_PATH  --sft-dir (the M2 SFT dir; base snapshot for --smoke)
+#   SEED         training seed            SAVE_FREQ   schedule.save_freq, or the preemptible rule below
+#   RUN_DIR      run directory            EXPERIMENT  cert-rl-<model>-<arm>-s<seed>
+#   REWARD_KWARGS  reward.* below + the arm's {arm, gated} + store sha256 + details_dir
+# A value that is exactly "${NAME}" takes the typed value; otherwise the name is substituted as text.
+schema_version: trace-cert-rl-config-v1
+config_id: cert-rl-qwen2.5-vl-7b
+model: 7b
+
+release:
+  config: rlvr/configs/trace-qwen2.5-vl-7b.yaml   # relative to $TRACE_RLVR_ROOT
+  config_id: trace-qwen2.5-vl-7b
+  sha256: c02334c3fb8b7ae02aa4f2cd95b83bc2b456eff2991814500773f84978991b33
+  backend: rlvr/easyr1_backend
+  merger: rlvr/easyr1_backend/scripts/model_merger.py
+  merger_sha256: 7eaa79b273cafe37741cf0f486a45b04734e2b866653303d366360bfb84746f0
+
+base_model:   # the smoke model, and the identity every SFT dir must match
+  repo_id: Qwen/Qwen2.5-VL-7B-Instruct
+  revision: cc594898137f460bfe9f0759e9844b3ce807cfb5
+  architecture: Qwen2_5_VLForConditionalGeneration
+  hidden_size: 3584
+  num_hidden_layers: 28
+
+hardware:
+  n_gpus: [2, 4]                 # DESIGN 7.3: the runner refuses any other N (exit 4)
+  min_vram_gb: {2: 120, 4: 80}   # per card, by N (exit 4 below); 7B on 2 cards: ~66 GB static/GPU (DESIGN 7.5: 2x H200 NVL)
+  # host RAM of the allocation (Slurm memory cgroup), by N (exit 4). NOT measured for 7B: the 3B
+  # measurement (rss+shmem 164 GB on 2 GPUs) scaled by the offloaded fp32 state (2.2x params) and
+  # the per-rank vLLM weight copies; TRC_RL_MIN_HOST_RAM_GB overrides it. Refine after the 7B smoke.
+  min_host_ram_gb: {2: 320, 4: 360}
+
+overrides:   # DESIGN 7.3, identical for A/G/P/P_gated/G_gated
+  trainer.n_gpus_per_node: ${N}
+  worker.rollout.tensor_parallel_size: 1
+  data.rollout_batch_size: 64
+  worker.actor.global_batch_size: 64       # = rollout_batch_size: one optimizer step per rollout
+  worker.rollout.n: 8                      # 512 rollouts per step
+  trainer.max_steps: 300
+  data.max_prompt_length: 3072             # `check` asserts the longest RL / val prompt fits (clip ratio 0)
+  data.max_response_length: 2048
+  data.train_files: ${TRC_DATA}/rl/rl
+  data.val_files: ${TRC_DATA}/rl/e1_dev/e1_dev.parquet
+  trainer.val_freq: 50                     # temperature 0.6, n 1 (release val_override_config)
+  data.prompt_key: prompt_cert
+  data.answer_key: answer_gt               # the {"cert_extension_id": ...} sentinel
+  data.system_prompt_file: ${TRACE_ROOT}/src/trace_tasks/resources/prompts/experimental/certificates/cert_system_v1.txt
+  worker.actor.model.model_path: ${MODEL_PATH}
+  worker.actor.model.tokenizer_path: ${MODEL_PATH}   # as rlvr/train.py sets it
+  worker.reward.reward_function: ${TRACE_ROOT}/experiments/certificates/reward_entry.py:compute_score
+  worker.reward.reward_function_kwargs: ${REWARD_KWARGS}
+  worker.reward.num_cpus: 4
+  data.seed: ${SEED}
+  worker.rollout.seed: ${SEED}
+  trainer.save_freq: ${SAVE_FREQ}
+  trainer.save_limit: 2
+  trainer.find_last_checkpoint: true
+
+plumbing:    # run identity and logging only; set by rlvr/train.py too
+  trainer.save_checkpoint_path: ${RUN_DIR}/ckpt
+  trainer.experiment_name: ${EXPERIMENT}
+  trainer.logger: [console, file]          # file: ckpt/experiment_log.jsonl (rotated per attempt)
+
+reward:      # DESIGN 5: R = (1-f)[a A + (1-a) B] + f F; gated: (1-f) A [a + (1-a) B] + f F
+  alpha: 0.8
+  format_weight: 0.05
+  coord_frame: px_source                   # every trained model and target uses source pixels (D8)
+  arms:
+    A: {arm: A, gated: false}
+    G: {arm: G, gated: false}
+    P: {arm: P, gated: false}
+    P_gated: {arm: P, gated: true}
+    G_gated: {arm: G, gated: true}
+
+data:        # relative to TRC_DATA; sha256 values come from the export receipts
+  train: {split: rl, path: rl/rl/rl.parquet, dir: rl/rl}
+  val: {split: e1_dev, path: rl/e1_dev/e1_dev.parquet}
+  store: private/extensions_v1.jsonl.zst   # merged store: holds the rl and e1_dev extensions
+  system_prompt: cert_system_v1.txt        # checked against provenance.resource_sha256 of the receipts
+
+schedule:
+  save_freq: 25
+  min_free_disk_gb: 400                     # run refuses to start below this (FSDP save ~100 GB; save_limit 2 + best + keep/)
+  keep_steps: [100, 200]                   # hard-linked into keep/ as soon as saved (retention bug, 7.3)
+  preemptible:                             # DESIGN 7.3: a save at least every 45 min of measured step time
+    nodes: '^(notch|grn077)'               # bash/python regex over the short hostname
+    max_minutes_between_saves: 45
+    save_freq_choices: [25, 20, 10, 5, 4, 2, 1]   # divisors of 100: steps 100/200/300 are always saved
+    default_step_seconds: 360              # used until a previous attempt has measured the step time
+
+smoke:       # jobs/rl.sh --smoke: BASE model, tiny batch, resume tested (1 step, relaunch, 2nd step)
+  steps: 2
+  overrides:
+    data.rollout_batch_size: 8
+    worker.actor.global_batch_size: 8
+    worker.rollout.n: 4
+    trainer.val_freq: -1
+    trainer.save_freq: 1
+  val_rows_per_task: 2                     # EasyR1 always validates after the last step: 8 E1-dev rows

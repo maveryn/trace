@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cert.path.v1",
+  "title": "Path certificate (rpg movement cost)",
+  "description": "Public response envelope. JSON Schema cannot express the stricter RFC-JSON rules that the scorer enforces for F: no duplicate keys, no NaN/Infinity, integral floats such as 15.0 (valid 'integer' here) give F=0, annotation_index < len(annotation), and a 16 KiB cap on the final object.",
+  "type": "object",
+  "properties": {
+    "annotation": {
+      "type": "object",
+      "properties": {
+        "player_cell": {
+          "$ref": "#/$defs/box"
+        },
+        "target_cell": {
+          "$ref": "#/$defs/box"
+        }
+      },
+      "required": [
+        "player_cell",
+        "target_cell"
+      ],
+      "additionalProperties": false
+    },
+    "certificate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "path"
+            },
+            "reachable": {
+              "const": true
+            },
+            "steps": {
+              "type": "array",
+              "maxItems": 32,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "at": {
+                    "$ref": "#/$defs/point"
+                  },
+                  "cost": {
+                    "$ref": "#/$defs/int"
+                  }
+                },
+                "required": [
+                  "at",
+                  "cost"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "total": {
+              "$ref": "#/$defs/int"
+            }
+          },
+          "required": [
+            "kind",
+            "reachable",
+            "steps",
+            "total"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "path"
+            },
+            "reachable": {
+              "const": false
+            }
+          },
+          "required": [
+            "kind",
+            "reachable"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "answer": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "annotation",
+    "certificate",
+    "answer"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "box": {
+      "description": "[x0, y0, x1, y1] in the response frame (px_source or rel1000); finite numbers.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "point": {
+      "description": "[x, y] in the response frame; finite numbers.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "box_list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/box"
+      }
+    },
+    "int": {
+      "type": "integer"
+    },
+    "index": {
+      "description": "0-based position in the annotation list; the upper bound (len(annotation)) is checked by the scorer, not expressible here.",
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

@@ -1,0 +1,62 @@
+# trace-tool conditions for the certificate zero-shot evaluation (DESIGN 7.1).
+#
+# TEMPLATE. jobs/common.sh (render_conditions) replaces @CERT_SYSTEM_PROMPT@ with the absolute
+# path of src/trace_tasks/resources/prompts/experimental/certificates/cert_system_v1.txt (after
+# checking its sha256 against the export receipt) and writes the concrete
+# trace_tool_conditions_v1.yaml into the run directory. Nothing machine-specific is committed.
+#
+# How trace-tool reads this file (trace-tool-eval --config <rendered yaml>):
+#   - every condition merges over `defaults`; conditions.py reads every episode key, so the
+#     defaults block is complete (max_turns ... oracle_crop) and `decoding` names a preset.
+#   - system_prompt_files are joined with "\n\n" after stripping. A relative entry resolves
+#     against the trace-tool checkout; an absolute entry is read as is (read_system_prompt
+#     does `root / name`). prompts/trace_system_prompt.txt is checked against TRACE's sha256.
+#   - the user prompt is the dataset's `prompt_answer` column, so each condition runs on its own
+#     public parquet: ans_v1 <- <split>.ans, ann_v1 <- <split>.ann, cert_v1 <- <split>.cert_px
+#     (Qwen2.5-VL family) or <split>.cert_rel1000 (Qwen3.5 family).
+#   - thinking is not a condition key: trace-tool sends chat_template_kwargs
+#     {"enable_thinking": false} for the Qwen3.5 family on every request, and nothing for
+#     Qwen2.5-VL. With no tools, the request holds only the system text, the user text and the
+#     image (checked by jobs/payload_check.py before every GPU run).
+#
+# Budget: one turn, 8192 new tokens (the 2048-cap result is derived as within_2048).
+# Decoding: TRACE preset `trace` = temperature 0.6, top_p 0.95, top_k -1, repetition_penalty 1.0,
+# presence_penalty 0.0. Pixel bounds: TRACE suite values. oracle_crop is off everywhere.
+
+defaults:
+  system_prompt_files: [prompts/trace_system_prompt.txt]
+  tools: []
+  decoding: trace
+  max_turns: 1
+  max_tokens_per_turn: 8192
+  max_total_tokens: 8192
+  max_calls_per_turn: 2
+  min_pixels: 262144
+  max_pixels: 4194304
+  oracle_crop: false
+
+conditions:
+  # TRACE answer-only protocol: TRACE system prompt (sha f394927d), answer_only user prompt.
+  ans_v1:
+    system_prompt_files: [prompts/trace_system_prompt.txt]
+    tools: []
+    max_turns: 1
+    max_tokens_per_turn: 8192
+    max_total_tokens: 8192
+    oracle_crop: false
+  # Legacy answer_and_annotation user prompt under the certificate system prompt.
+  ann_v1:
+    system_prompt_files: ["@CERT_SYSTEM_PROMPT@"]
+    tools: []
+    max_turns: 1
+    max_tokens_per_turn: 8192
+    max_total_tokens: 8192
+    oracle_crop: false
+  # Certificate prompt (frame chosen by the parquet: px for Qwen2.5-VL, rel1000 for Qwen3.5).
+  cert_v1:
+    system_prompt_files: ["@CERT_SYSTEM_PROMPT@"]
+    tools: []
+    max_turns: 1
+    max_tokens_per_turn: 8192
+    max_total_tokens: 8192
+    oracle_crop: false

@@ -1,0 +1,89 @@
+# TRACE certificates, M2 structured SFT (DESIGN 7.2): Qwen2.5-VL-3B shared warm start.
+#
+# Read by experiments/certificates/sft.py (plan | check | train | gen | merge-gen) and
+# jobs/sft.sh / jobs/sft_select.py. Paths under `data:` are relative to $TRC_DATA (the frozen data
+# root, default $TRACE_CERT_RUNS/data/v2); outputs go to $TRACE_CERT_RUNS/sft/<model.tag>/ (or
+# sft_smoke/<model.tag>/ with --smoke). No machine paths here (DESIGN 1).
+#
+# What is fixed by DESIGN 7.2 (do not edit without a new config_id): full fine-tune of the LLM and
+# the vision merger with the ViT frozen; fp32 master weights with bf16 compute (FSDP mixed
+# precision) and FlashAttention-2; assistant-only loss; EasyR1's chat template and image path
+# (min/max pixels 262144/4194304, use_fast processor); compact JSON targets of export-sft; AdamW lr
+# 1e-5, cosine, 3% warmup, weight decay 0, global batch 32, max length 4096, 3 epochs, seed 1; a
+# save every half epoch; the pre-registered stop rule in `select:`.
+# Free knobs that never change the training math (the global batch is fixed and the loss is the
+# token mean over the whole global batch): train.per_device_batch, fsdp.*.
+schema_version: trace-cert-sft-config-v1
+config_id: cert-sft-qwen2.5-vl-3b-v1
+
+model:
+  repo_id: Qwen/Qwen2.5-VL-3B-Instruct
+  revision: 66285546d2b821cf421d4f5eb2576359d3770cd3
+  tag: qwen2.5-vl-3b                  # $TRACE_CERT_RUNS/sft/<tag>/
+  architecture: Qwen2_5_VLForConditionalGeneration
+  attn_implementation: flash_attention_2
+  trainable: llm_and_merger           # model.visual frozen except model.visual.merger
+
+data:
+  sft_jsonl: sft/sft.jsonl            # export-sft output (messages + image path + compact target)
+  sft_receipt: receipts/sft.sft.json  # its receipt (sha256 of sft.jsonl)
+  export_receipt: receipts/sft.json   # the sft split export receipt (store sha256)
+  store: private/sft.extensions_v1.jsonl.zst
+  dev_split: e1_dev
+  dev_parquet: public/e1_dev.cert_px.parquet   # the eval public prompt (== rl/e1_dev prompt_cert)
+  dev_receipt: receipts/e1_dev.json
+  dev_store: private/e1_dev.extensions_v1.jsonl.zst
+  rl_dev_parquet: rl/e1_dev/e1_dev.parquet     # EasyR1 val file: the token-identity check reads it
+  min_pixels: 262144                  # EasyR1 data.min_pixels / max_pixels (process_image)
+  max_pixels: 4194304
+  max_length: 4096                    # prompt + target tokens; `check` proves every row fits
+
+train:
+  lr: 1.0e-5
+  scheduler: cosine                   # transformers get_cosine_schedule_with_warmup semantics
+  warmup_ratio: 0.03                  # warmup steps = ceil(0.03 * total steps)
+  weight_decay: 0.0
+  adam_betas: [0.9, 0.999]
+  adam_eps: 1.0e-8
+  max_grad_norm: 1.0
+  global_batch: 32                    # = N x per_device_batch x grad_accum (N must divide 32)
+  per_device_batch: 4                 # micro-batch per GPU; lowered to a divisor of 32/N if needed
+  epochs: 3                           # 6000 rows -> 188 steps/epoch -> 564 steps
+  seed: 1                             # DistributedSampler seed (data order); nothing else is random
+  save: half_epoch                    # steps 94, 188, 282, 376, 470, 564
+  keep_train_states: 1                # resumable FSDP state (fp32 params + AdamW) of the last save only
+  dataloader_workers: 4               # per rank
+
+fsdp:
+  sharding_strategy: FULL_SHARD       # FULL_SHARD | SHARD_GRAD_OP
+  accumulate_unsharded_grads: true    # no_sync() on all but the last micro-batch of a step
+  gradient_checkpointing: true
+  ce_chunk_tokens: 1024               # label tokens per lm_head/CE chunk (recomputed in backward)
+  param_dtype: bf16
+  reduce_dtype: fp32
+
+eval:                                 # pre-registered stop-rule generation (DESIGN 7.2)
+  engine: vllm-offline                # vLLM 0.10.2 in the training env, TP=1, one process per GPU
+  temperature: 0.0                    # greedy
+  max_new_tokens: 2048
+  seed: 42
+  max_model_len: 6144
+  gpu_memory_utilization: 0.85
+  suppress_image_token: true          # EasyR1 rollout logit_bias {<|image_pad|>: -100}
+  condition: cert_v1
+
+select:
+  min_F: 0.95                         # dev F >= 0.95
+  max_abs_dA: 0.015                   # |A_k - A_{k-1}| <= 1.5 pp
+  max_abs_dM: 0.02                    # |M_k - M_{k-1}| <= 2 pp
+  fallback: last                      # none qualifies -> the last save (end of epoch 3)
+
+smoke:                                # jobs/sft.sh --smoke
+  train_rows: 256                     # first 64 rows per adapter in sft.jsonl order
+  max_steps: 20
+  save: final                         # one save, at step 20
+  dev_rows_per_task: 8                # 32 E1-dev rows
+
+resources:                            # per allocation (exit 4 otherwise)
+  min_card_mib: 75000                 # 80 GB-class cards
+  min_total_mib: 150000               # >= 2 x 80 GB (DESIGN 7.5 W2b)

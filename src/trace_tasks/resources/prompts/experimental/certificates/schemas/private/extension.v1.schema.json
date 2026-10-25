@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cert.extension.v1",
+  "title": "Private certificate extension record (one line of extensions_v1.jsonl.zst)",
+  "description": "Private. Holds labels and the oracle; it must never reach a prompt, a public parquet or a rollout. Required members are exactly those that types.CertificateExtension.from_dict checks, plus the oracle; the remaining DESIGN 2.6 members are typed here and optional.",
+  "type": "object",
+  "properties": {
+    "certificate_extension_id": {
+      "type": "string",
+      "pattern": "^blake3:[0-9a-f]{64}$"
+    },
+    "base": {
+      "type": "object",
+      "properties": {
+        "instance_id": {
+          "type": "string",
+          "pattern": "^blake3:[0-9a-f]{64}$"
+        },
+        "trace_record_hash": {
+          "type": "string",
+          "pattern": "^blake3:[0-9a-f]{64}$"
+        },
+        "task": {
+          "type": "string",
+          "minLength": 1
+        },
+        "query_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instance_seed": {
+          "type": "integer"
+        },
+        "sampling_seed": {
+          "type": "integer"
+        },
+        "seed_index": {
+          "type": "integer"
+        },
+        "scene_group": {
+          "type": "string",
+          "pattern": "^blake3:[0-9a-f]{64}$"
+        },
+        "split": {
+          "type": "string"
+        },
+        "cell": {
+          "type": "string"
+        },
+        "code_hash": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "instance_id",
+        "trace_record_hash",
+        "task",
+        "query_id",
+        "instance_seed"
+      ],
+      "additionalProperties": true
+    },
+    "adapter": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z_]+\\.[a-z0-9_]+$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_id": {
+          "type": "string",
+          "pattern": "^cert\\.[a-z_]+\\.v[0-9]+$"
+        },
+        "verifier_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "schema_id",
+        "verifier_version"
+      ],
+      "additionalProperties": false
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "answer_gt": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "value": {}
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "annotation_gt": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "value": {}
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "reward_contract": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "answer_gt",
+        "annotation_gt",
+        "reward_contract"
+      ],
+      "additionalProperties": true
+    },
+    "public": {
+      "type": "object",
+      "properties": {
+        "image_size": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "prompt_sha256": {
+          "type": "object",
+          "properties": {
+            "px_source": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "rel1000": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "ans_v1": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "ann_v1": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "image_size"
+      ],
+      "additionalProperties": true
+    },
+    "oracle": {
+      "description": "Adapter-specific private oracle (DESIGN 3.x); validated by the adapter, not here.",
+      "type": "object"
+    },
+    "sft_target": {
+      "type": "object",
+      "properties": {
+        "annotation": {},
+        "certificate": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "answer": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "annotation",
+        "certificate",
+        "answer"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "certificate_extension_id",
+    "base",
+    "adapter",
+    "labels",
+    "public",
+    "oracle"
+  ],
+  "additionalProperties": false
+}

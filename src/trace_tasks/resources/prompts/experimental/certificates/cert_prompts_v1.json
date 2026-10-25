@@ -1,0 +1,270 @@
+{
+  "bundle_id": "cert_prompts_v1",
+  "schema_version": 1,
+  "description": "Public prompt text of the certificate condition (DESIGN section 4). The JSON is the single source of truth for every sentence except the per-row question line and the image size. Placeholders: {W} and {H} in frame texts only.",
+  "image_marker": "<image>",
+  "question_banned_words": [
+    "JSON",
+    "answer",
+    "annotation"
+  ],
+  "frames": {
+    "px_source": "Image size: {W}x{H} pixels. Give every box as [x0, y0, x1, y1] and every point as [x, y] in pixels of this image (origin at the top-left corner, x to the right, y downward).",
+    "rel1000": "Give every box as [x0, y0, x1, y1] and every point as [x, y] in coordinates normalized to 0-1000 (0,0 is the top-left corner and 1000,1000 the bottom-right corner)."
+  },
+  "envelope": "End your response with one JSON object with exactly the keys \"annotation\", \"certificate\" and \"answer\". All numbers in \"certificate\" and \"answer\" are integers.",
+  "annotation_label": "Annotation format: ",
+  "answer_label": "Answer format: ",
+  "example_header": "Example JSON:",
+  "frame_words_removed": [
+    "pixel-space",
+    "pixel"
+  ],
+  "legacy_annotation_prefixes": [
+    "Required annotation format",
+    "Annotation format",
+    "Format for the \"annotation\" field"
+  ],
+  "legacy_answer_prefixes": [
+    "Required answer format",
+    "Final answer format",
+    "Answer format",
+    "Answer field",
+    "Format for the \"answer\" field"
+  ],
+  "kinds": {
+    "selected_set": {
+      "schema_id": "cert.selected_set.v1",
+      "annotation_type": "bbox_set",
+      "list_key": "members",
+      "list_cap": 64,
+      "tasks": {
+        "task_games__chess__colored_piece_kind_count": {
+          "annotation_hint": "set \"annotation\" to a JSON array of piece boxes [x0, y0, x1, y1] for every matching visible piece; use an empty array if none are shown",
+          "answer_hint": "set \"answer\" to the count of matching visible pieces"
+        },
+        "task_games__chess__piece_kind_count": {
+          "annotation_hint": "set \"annotation\" to a JSON array of piece boxes [x0, y0, x1, y1] for every matching visible piece; use an empty array if none are shown",
+          "answer_hint": "set \"answer\" to the count of matching visible pieces"
+        }
+      },
+      "certificate_line": "Certificate format: set \"certificate\" to {\"kind\": \"selected_set\", \"members\": [...], \"count\": n} with one member per box in \"annotation\", in the same order: {\"annotation_index\": i, \"color\": c, \"piece\": p}. Here i is the 0-based position of the box in \"annotation\", c is \"white\" or \"black\", and p is one of \"pawn\", \"knight\", \"bishop\", \"rook\", \"queen\" or \"king\", as seen in that box. n is the number of members. At most 64 members; use \"members\": [] and \"count\": 0 if there are none.",
+      "example": {
+        "annotation": [
+          [
+            116,
+            116,
+            164,
+            164
+          ],
+          [
+            276,
+            116,
+            324,
+            164
+          ]
+        ],
+        "certificate": {
+          "kind": "selected_set",
+          "members": [
+            {
+              "annotation_index": 0,
+              "color": "white",
+              "piece": "rook"
+            },
+            {
+              "annotation_index": 1,
+              "color": "white",
+              "piece": "rook"
+            }
+          ],
+          "count": 2
+        },
+        "answer": 2
+      }
+    },
+    "filtered_mean": {
+      "schema_id": "cert.filtered_mean.v1",
+      "annotation_type": "bbox_set_map",
+      "list_key": "rows",
+      "list_cap": 16,
+      "tasks": {
+        "task_charts__table__filtered_column_mean": {
+          "annotation_hint": "set \"annotation\" to an object with \"filter_cells\" and \"target_cells\", each mapping to arrays of [x0,y0,x1,y1] boxes for the selected rows",
+          "answer_hint": "set \"answer\" to the exact integer result"
+        }
+      },
+      "certificate_line": "Certificate format: set \"certificate\" to {\"kind\": \"filtered_mean\", \"rows\": [...], \"sum\": s, \"count\": k, \"mean\": m} with one row per selected row: {\"annotation_index\": i, \"filter_value\": f, \"target_value\": t}. Here i is the 0-based position of the row's boxes in both \"filter_cells\" and \"target_cells\" (the two lists must list the rows in the same order), f is the number printed in the row's filter-column cell and t is the number printed in the row's target-column cell. s is the sum of all t, k is the number of rows and m = s / k. At most 16 rows.",
+      "example": {
+        "annotation": {
+          "filter_cells": [
+            [
+              260,
+              180,
+              372,
+              236
+            ],
+            [
+              260,
+              236,
+              372,
+              292
+            ]
+          ],
+          "target_cells": [
+            [
+              374,
+              180,
+              486,
+              236
+            ],
+            [
+              374,
+              236,
+              486,
+              292
+            ]
+          ]
+        },
+        "certificate": {
+          "kind": "filtered_mean",
+          "rows": [
+            {
+              "annotation_index": 0,
+              "filter_value": 22,
+              "target_value": 12
+            },
+            {
+              "annotation_index": 1,
+              "filter_value": 31,
+              "target_value": 16
+            }
+          ],
+          "sum": 28,
+          "count": 2,
+          "mean": 14
+        },
+        "answer": 14
+      }
+    },
+    "weighted_sum": {
+      "schema_id": "cert.weighted_sum.v1",
+      "annotation_type": "bbox_set",
+      "list_key": "terms",
+      "list_cap": 8,
+      "tasks": {
+        "task_physics__lever__side_torque_value": {
+          "annotation_hint": "set \"annotation\" to an array of [x0,y0,x1,y1] boxes around every weight block on the queried side of the fulcrum",
+          "answer_hint": "set \"answer\" to the integer torque value"
+        }
+      },
+      "certificate_line": "Certificate format: set \"certificate\" to {\"kind\": \"weighted_sum\", \"terms\": [...]} with one term per box in \"annotation\", in the same order: {\"annotation_index\": i, \"weight\": w, \"distance\": d, \"product\": p}. Here i is the 0-based position of the box in \"annotation\", w is the number printed on the block, d is the distance mark below the block and p = w × d. At most 8 terms.",
+      "example": {
+        "annotation": [
+          [
+            192,
+            282,
+            250,
+            334
+          ],
+          [
+            326,
+            282,
+            384,
+            334
+          ]
+        ],
+        "certificate": {
+          "kind": "weighted_sum",
+          "terms": [
+            {
+              "annotation_index": 0,
+              "weight": 3,
+              "distance": 2,
+              "product": 6
+            },
+            {
+              "annotation_index": 1,
+              "weight": 2,
+              "distance": 3,
+              "product": 6
+            }
+          ]
+        },
+        "answer": 12
+      }
+    },
+    "path": {
+      "schema_id": "cert.path.v1",
+      "annotation_type": "bbox_map",
+      "list_key": "steps",
+      "list_cap": 32,
+      "tasks": {
+        "task_illustrations__rpg_tactical_map__movement_cost_value": {
+          "annotation_hint": "set \"annotation\" to an object with keys \"player_cell\" and \"target_cell\", each mapping to one [x0, y0, x1, y1] bounding box around that tile",
+          "answer_hint": "set \"answer\" to the fewest number of movement points needed to reach the marked target tile"
+        }
+      },
+      "certificate_line": "Certificate format: set \"certificate\" to {\"kind\": \"path\", \"reachable\": true, \"steps\": [...], \"total\": t}. \"steps\" lists every tile of a cheapest route from the starting tile to the target tile, in order and including both ends: {\"at\": [x, y], \"cost\": c}, where \"at\" is a point inside the tile and c is the movement cost of entering that tile (0 for the starting tile). t is the sum of all c. Consecutive tiles must be neighbours (up, down, left or right). If the target cannot be reached, use {\"kind\": \"path\", \"reachable\": false}. At most 32 steps.",
+      "example": {
+        "annotation": {
+          "player_cell": [
+            160,
+            320,
+            240,
+            400
+          ],
+          "target_cell": [
+            320,
+            320,
+            400,
+            400
+          ]
+        },
+        "certificate": {
+          "kind": "path",
+          "reachable": true,
+          "steps": [
+            {
+              "at": [
+                200,
+                360
+              ],
+              "cost": 0
+            },
+            {
+              "at": [
+                200,
+                440
+              ],
+              "cost": 1
+            },
+            {
+              "at": [
+                280,
+                440
+              ],
+              "cost": 2
+            },
+            {
+              "at": [
+                360,
+                440
+              ],
+              "cost": 1
+            },
+            {
+              "at": [
+                360,
+                360
+              ],
+              "cost": 3
+            }
+          ],
+          "total": 7
+        },
+        "answer": 7
+      }
+    }
+  }
+}

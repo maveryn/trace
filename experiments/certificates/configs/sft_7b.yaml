@@ -1,0 +1,79 @@
+# TRACE certificates, M2 structured SFT (DESIGN 7.2): Qwen2.5-VL-7B warm start for stage 3 (7.3).
+#
+# Identical to sft_3b.yaml except the model, the learning rate (DESIGN 7.2: 5e-6 for 7B), the
+# micro-batch, the gradient-accumulation mode and the hardware floor (DESIGN 7.5 W6: 2 x H200 NVL).
+# See sft_3b.yaml for the meaning of every key.
+schema_version: trace-cert-sft-config-v1
+config_id: cert-sft-qwen2.5-vl-7b-v1
+
+model:
+  repo_id: Qwen/Qwen2.5-VL-7B-Instruct
+  revision: cc594898137f460bfe9f0759e9844b3ce807cfb5
+  tag: qwen2.5-vl-7b
+  architecture: Qwen2_5_VLForConditionalGeneration
+  attn_implementation: flash_attention_2
+  trainable: llm_and_merger
+
+data:
+  sft_jsonl: sft/sft.jsonl
+  sft_receipt: receipts/sft.sft.json
+  export_receipt: receipts/sft.json
+  store: private/sft.extensions_v1.jsonl.zst
+  dev_split: e1_dev
+  dev_parquet: public/e1_dev.cert_px.parquet
+  dev_receipt: receipts/e1_dev.json
+  dev_store: private/e1_dev.extensions_v1.jsonl.zst
+  rl_dev_parquet: rl/e1_dev/e1_dev.parquet
+  min_pixels: 262144
+  max_pixels: 4194304
+  max_length: 4096
+
+train:
+  lr: 5.0e-6
+  scheduler: cosine
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  adam_betas: [0.9, 0.999]
+  adam_eps: 1.0e-8
+  max_grad_norm: 1.0
+  global_batch: 32
+  per_device_batch: 2
+  epochs: 3
+  seed: 1
+  save: half_epoch
+  keep_train_states: 1
+  dataloader_workers: 4
+
+fsdp:
+  sharding_strategy: FULL_SHARD
+  accumulate_unsharded_grads: false   # 7B: keep gradients sharded (unsharded fp32 grads = 33 GB/GPU)
+  gradient_checkpointing: true
+  ce_chunk_tokens: 1024               # label tokens per lm_head/CE chunk (recomputed in backward)
+  param_dtype: bf16
+  reduce_dtype: fp32
+
+eval:
+  engine: vllm-offline
+  temperature: 0.0
+  max_new_tokens: 2048
+  seed: 42
+  max_model_len: 6144
+  gpu_memory_utilization: 0.85
+  suppress_image_token: true
+  condition: cert_v1
+
+select:
+  min_F: 0.95
+  max_abs_dA: 0.015
+  max_abs_dM: 0.02
+  fallback: last
+
+smoke:
+  train_rows: 256
+  max_steps: 20
+  save: final
+  dev_rows_per_task: 8
+
+resources:
+  min_card_mib: 75000
+  min_total_mib: 270000               # 2 x H200 NVL (2 x 143 GB) or 4 x 80 GB; refuses 2 x 80 GB
