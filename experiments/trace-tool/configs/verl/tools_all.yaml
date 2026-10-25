@@ -1,0 +1,14 @@
+# verl tool config for the all-tools RL arm.
+tools:
+  - class_name: trace_tool.rl.verl_tools.ImageZoomInTool
+    config: {type: native, family: qwen2.5-vl}
+  - class_name: trace_tool.rl.verl_tools.ImageRotateTool
+    config: {type: native, family: qwen2.5-vl}
+  - class_name: trace_tool.rl.verl_tools.ImageFlipTool
+    config: {type: native, family: qwen2.5-vl}
+  - class_name: trace_tool.rl.verl_tools.ImageDrawTool
+    config: {type: native, family: qwen2.5-vl}
+  - class_name: trace_tool.rl.verl_tools.CalculatorTool
+    config: {type: native, family: qwen2.5-vl}
+  - class_name: trace_tool.rl.verl_tools.OCRTool
+    config: {type: native, family: qwen2.5-vl}

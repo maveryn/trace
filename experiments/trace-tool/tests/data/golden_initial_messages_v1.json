@@ -1,0 +1,202 @@
+{
+ "qwen2.5-vl/all": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "55642696230619957d5f1f0c23a8006b1ec768f9ac77cf4d7e42c09a69fc7848",
+  "payload_sha256": "fe712e0189f3467ab89fe6d464d4055f11089d35544f6876f588ce5b38609e22",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "577904a92e6fff7194f84f9ba5a54450aa70c3a06149ec76b3da65a8ff8dc8de"
+ },
+ "qwen2.5-vl/calculator": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "a71f9b75743d44cd05f620ebc580899e0d8a829c0b39d9b1567c051372559357",
+  "payload_sha256": "6bd8c76ba02172548f7118fcd08a91de2d6913c746f0a0eb0f9da830da648675",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "f2379ecdcc2541ceff2ef859445565f0bed2a8a1b83c652be205483c7a60131a"
+ },
+ "qwen2.5-vl/no_tool": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "e6ef637b581f50cdcc67cf51f04db86a071ab7c0f42363bce6b737d1894e8fc0",
+  "payload_sha256": "a6ee7e8291c1b34181cbacdef13ac25f7ad4fe4a1948da174c90b278f19e2d18",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen2.5-vl/no_tool_budget": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "e6ef637b581f50cdcc67cf51f04db86a071ab7c0f42363bce6b737d1894e8fc0",
+  "payload_sha256": "a6ee7e8291c1b34181cbacdef13ac25f7ad4fe4a1948da174c90b278f19e2d18",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen2.5-vl/no_tool_lowres": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "186717fa4a6d55ce01d2f2ff24f03bcbd579a0e4590e94f1160641620a41d09e",
+  "payload_sha256": "7678f1fa14bb819c89a661c6e224d1f90ac29d5a77fafcb9a6e8a19984973f20",
+  "png_sha256": [
+   "daeb0a8e1abb3e4f799794878a0a385901eb4f3a46df40b88db46321ab754114"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen2.5-vl/ocr": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "d8abdb98b06c2a6419a8101629a00e37a4f5a0771757eed5dd1159aed3af27a7",
+  "payload_sha256": "82d9def040f62a4b70f161c6841c597f29f20c7ef9f5409d37f86fb10f531a61",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "5bcf28f42389ea61203ab7febb1681552e356d1b4c8f36905f5c45e0a5a00f64"
+ },
+ "qwen2.5-vl/oracle_crop": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "01c8131b6a0623291bee724edc32d3e90ec6d83e3b538e7410f1a9a1a73e46bb",
+  "payload_sha256": "03f0e2c5d76b04065f2276e549e6366bd8569b46e8bead3e371fe58db931d859",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b",
+   "6b6952075f4d7f3c05f3b30327c9ae7f01d021ee9ae6a9f58d6b172d680b1caa"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen2.5-vl/visual_ops": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "9385deff67f81500add85d9a0f5ad0473ed2a65b596db10ea613ae3c9db2d487",
+  "payload_sha256": "2945fe75514065cfb78c6220d86c9899b4c5442882c6a3c6d66545ce660d637e",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "ea778dc45fb8f1d38216d959fdf8b59773b55a6d8f44aea634fd60178afaa33e"
+ },
+ "qwen2.5-vl/zoom": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "0afcac0fb672479ea50bce62353cf8d2740b829ae92d2f1720c0950cd798924d",
+  "payload_sha256": "bb20ca0676ade0601077ecb7413540a15efdaafc7d298d3a944d552e67013d8d",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "680a425ad36ed33ff5cbb96a6e866d15d360445dbab34a68d599b811f932f4e7"
+ },
+ "qwen2.5-vl/zoom_cookbook": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "7aa762edcb29b3fb69c9ce7a2fc414901c7df4c30ddbd6be2d20f67f6f6f35ff",
+  "payload_sha256": "64ddf0eccae533ba0eb82d02640f799a3856d9fd23c1519e2e73e9e967b37723",
+  "png_sha256": [
+   "97df1ba7bd0b5b2cf237e78ca0adce7b80496a7dea807d7c2801c0fbde401e9b"
+  ],
+  "system_sha256": "6e058463861ad5b6c9e2ff721f9e5094b14b4d66d4303ce843a772e613224b32"
+ },
+ "qwen2.5-vl/zoom_lowres": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "d84127411f0f83eb97dac3aa33d4053761a465a52ffc8e38b9f7b433731f86a9",
+  "payload_sha256": "88d8149a8302121cedcaee570fd848113a1d76d40fd3bef7efc886afa88a62f4",
+  "png_sha256": [
+   "daeb0a8e1abb3e4f799794878a0a385901eb4f3a46df40b88db46321ab754114"
+  ],
+  "system_sha256": "680a425ad36ed33ff5cbb96a6e866d15d360445dbab34a68d599b811f932f4e7"
+ },
+ "qwen3-vl/all": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "57609b9ae370015bafcfd99a42c43b60768ae510665de4f185db545eeded2462",
+  "payload_sha256": "3792599943f3e8ce7e8511c990b90e46d76d98b28860d7f1e3aae97b088fdd34",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "77abc63a7d29f0fd302dac278d0507ef1b6f8d935f495021f013e4acbfec287a"
+ },
+ "qwen3-vl/calculator": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "6874a21bf8169d9a47c0eea03abdcf658ab368ed7f4983430ba4305d346925bd",
+  "payload_sha256": "ad809d63e450edf75814d63d2f2dedf6f3d6e1865c9be9d79d72b5d7196b38e6",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "f2379ecdcc2541ceff2ef859445565f0bed2a8a1b83c652be205483c7a60131a"
+ },
+ "qwen3-vl/no_tool": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "e2cc29f40522b09baad3ccb0db54b5389445037cce9bad483d41f1309cf03f69",
+  "payload_sha256": "d90073283fa119fa82a16b8b780782464a9399a12053e91c1ebd9b1e2bf8089e",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen3-vl/no_tool_budget": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "e2cc29f40522b09baad3ccb0db54b5389445037cce9bad483d41f1309cf03f69",
+  "payload_sha256": "d90073283fa119fa82a16b8b780782464a9399a12053e91c1ebd9b1e2bf8089e",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen3-vl/no_tool_lowres": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "11b6859bf0ffa78df1495e82b31e4fdb0b01d299f61693a712bf8b50d7d875bd",
+  "payload_sha256": "12afad4a06ba4e0f5da90052d6aea0079e29202f754b7ed36962e143ac1607eb",
+  "png_sha256": [
+   "6cd1e245d4f006c276b685eb5659f6b81539e14fbbcb676a5a3c55fb54b60cb7"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen3-vl/ocr": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "eac982bad26031aac25d370201db3e5a98fa78166b23c803e8d34a297733ff22",
+  "payload_sha256": "318bd778da07d93abfc865fa496315366cf2d671c524d04621b6ad4b530262ed",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "717ba4e100c69c1d6b4c8271d697915a9f4b070fe0219ee8969c5f6ce5ee343a"
+ },
+ "qwen3-vl/oracle_crop": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "cfdb113e0266ae9f65e8f3465d54fa43094809881de4e1b7a111f4e6231fb851",
+  "payload_sha256": "c1affe0aefdd739ec9f5c19ea42b73c1132cdc7e38ce37fa92de7847f83a14e9",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba",
+   "1f7f17c1b840c621126909d857899ae3f46c157a263bb45b737863ebb0aeba26"
+  ],
+  "system_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4"
+ },
+ "qwen3-vl/visual_ops": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "573a65b8609f5d201c8b5681693c5408d1b74366172ce2de2e066e6c5ef97a11",
+  "payload_sha256": "b94a06dd3a42546d60d1bcc67af9282fac16807d928fbdfb96512cf6761da19e",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "6faefe1058aa5d671493bdf619f9df0efe3635e86327ecabeaffa57a25475154"
+ },
+ "qwen3-vl/zoom": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "e4c05193c0f6d54022227241907e5481034aeece841a17ea9c616c0e53b23bec",
+  "payload_sha256": "6390a642db0d3e47857fca2770e0ff24f7b325dff1e5852d3c2c2d25ace1eb37",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "680a425ad36ed33ff5cbb96a6e866d15d360445dbab34a68d599b811f932f4e7"
+ },
+ "qwen3-vl/zoom_cookbook": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "eae36c8676c044ce5e57468064c93725b46eb5c43f8603ff008f961a734f177e",
+  "payload_sha256": "9ff7c0cc2b024deaabddefeb4651bdda3699942788792db7b947d99ab77ad1c5",
+  "png_sha256": [
+   "eb0ca36ef863bb2bb09cd9ef63447209b7011c0497d65e878ea989cbc1a201ba"
+  ],
+  "system_sha256": "6e058463861ad5b6c9e2ff721f9e5094b14b4d66d4303ce843a772e613224b32"
+ },
+ "qwen3-vl/zoom_lowres": {
+  "n_messages": 2,
+  "payload_pixels_sha256": "7e4bfdb1db618bb1e9a497c80fdc69cae3439512fa051ce604334ca6b97d6eab",
+  "payload_sha256": "727b4a0efd8c69284a471ce9d25d869ff8423988618a27915456b80710b0a7ed",
+  "png_sha256": [
+   "6cd1e245d4f006c276b685eb5659f6b81539e14fbbcb676a5a3c55fb54b60cb7"
+  ],
+  "system_sha256": "680a425ad36ed33ff5cbb96a6e866d15d360445dbab34a68d599b811f932f4e7"
+ }
+}

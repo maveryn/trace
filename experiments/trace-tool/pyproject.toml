@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trace-tool"
+version = "0.1.0"
+description = "Tool-calling experiments (zoom-in, image ops, calculator, OCR) for Qwen2.5-VL (and Qwen3-VL) on TRACE"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pillow>=10.0",
+    "pyarrow>=15.0",
+    "huggingface_hub>=0.24",
+    "openai>=1.40",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+# RapidOCR (Apache-2.0) on onnxruntime (MIT). Pulls opencv-python (Apache-2.0),
+# shapely (BSD-3), pyclipper (MIT), omegaconf (BSD-3).
+ocr = ["rapidocr>=3.4,<4", "onnxruntime>=1.18"]
+# scripts/check_template.py renders with the checkpoint's own processor
+# (transformers: Apache-2.0; torchvision/torch: BSD-3). A vLLM env already has them.
+check = ["transformers>=4.57", "torchvision"]
+# Alternative OCR backend; also needs the `tesseract` system binary (Apache-2.0).
+tesseract = ["pytesseract>=0.3.10"]
+# Lenient JSON for malformed tool calls, as Qwen-Agent does (json5: Apache-2.0).
+json5 = ["json5>=0.9"]
+# Only needed by the annotation (bbox/point) scorers in the vendored TRACE code.
+scipy = ["scipy>=1.10"]
+dev = ["pytest>=8.0", "jinja2>=3.1"]
+
+[project.scripts]
+trace-tool-eval = "trace_tool.run_eval:main"
+trace-tool-score = "trace_tool.score_runs:main"
+trace-tool-compare = "trace_tool.compare:main"
+trace-tool-judge = "trace_tool.judge:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+trace_tool = ["vendor/trace_rlvr/LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

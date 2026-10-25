@@ -1,0 +1,4 @@
+# verl tool config for the zoom-only RL arm (no tool_schema: see trace_tool/rl/verl_tools.py).
+tools:
+  - class_name: trace_tool.rl.verl_tools.ImageZoomInTool
+    config: {type: native, family: qwen2.5-vl}

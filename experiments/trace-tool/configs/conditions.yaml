@@ -1,0 +1,109 @@
+# Evaluation conditions. Every condition inherits `defaults` and overrides keys.
+# Paths are relative to the repository root.
+#
+#   tools                tool names or groups (zoom, visual_ops, calculator, ocr, all)
+#   system_prompt_files  concatenated with "\n\n" (forced conditions then append the budget
+#                        statement); the tool block follows the result (Qwen2.5-VL, Qwen3-VL)
+#                        or precedes it (Qwen3.5, where its chat template puts it)
+#   max_turns            max assistant turns (LLM calls) per episode
+#   max_tokens_per_turn  max_tokens of each call
+#   max_total_tokens     cap on generated tokens summed over turns
+#   max_calls_per_turn   tool calls executed per assistant turn (extra calls get an error)
+#   min_pixels/max_pixels  bounds for the image the model sees (tools always read full res)
+#   oracle_crop          also show a crop of the ground-truth annotation region (diagnostic)
+#
+# Forced conditions only (never in `defaults`; recorded in run_config.json only where set):
+#   forced_answer        true: state the call budget in the system prompt, end the last tool response
+#                        of each tool turn with "[Tool calls left: N]" (inside its <tool_response>
+#                        tags), and when the turns (one left), calls or tokens (only the reserve
+#                        left) run out, end it with a final-answer notice instead; the next turn
+#                        is the answer (calls in it are recorded, never executed: stop_reason
+#                        "forced_tool_call"). Needs tools, max_turns >= 2 and max_calls_per_turn >= 1.
+#   tool_call_budget     total tool calls handled per episode within the per-turn cap: calls that
+#                        run, and malformed or unknown-function calls too (their records have
+#                        executed=False). Default (max_turns - 1) * max_calls_per_turn, 10 with the
+#                        defaults, the implicit budget of the unforced conditions. At that value it
+#                        never binds before the turn limit: forcing is by "turns" or "tokens" only,
+#                        and no call is skipped for the budget.
+#   answer_token_reserve tokens held back from tool turns for the final answer (default 1024;
+#                        in [1, max_tokens_per_turn] and below max_total_tokens)
+
+defaults:
+  system_prompt_files: [prompts/trace_system_prompt.txt]
+  tools: []
+  decoding: trace
+  max_turns: 6
+  max_tokens_per_turn: 2048
+  max_total_tokens: 8192
+  max_calls_per_turn: 2
+  min_pixels: 262144
+  max_pixels: 4194304
+  oracle_crop: false
+
+conditions:
+  # --- core comparison -------------------------------------------------------
+  # TRACE validation protocol exactly: one turn, 2048 tokens.
+  no_tool:
+    max_turns: 1
+    max_total_tokens: 2048
+  # Same, with the tool conditions' total token budget (controls for "more tokens").
+  no_tool_budget:
+    max_turns: 1
+    max_tokens_per_turn: 8192
+  # ZwZ "Qwen3-VL with official tool use" baseline.
+  zoom:
+    tools: [zoom]
+  # Zoom + the ZwZ Table 9 operations we implement (rotate, flip, draw).
+  visual_ops:
+    tools: [visual_ops]
+  calculator:
+    tools: [calculator]
+  ocr:
+    tools: [ocr]
+  all:
+    tools: [all]
+
+  # --- diagnostics -------------------------------------------------------------
+  # Zoom with the cookbook's "research assistant" system prompt prepended.
+  zoom_cookbook:
+    tools: [zoom]
+    system_prompt_files: [prompts/qwen3vl_cookbook_analysis_prompt.txt, prompts/trace_system_prompt.txt]
+  # Upper bound for perfect localisation (uses ground-truth annotations; not a deployable method).
+  oracle_crop:
+    max_turns: 1
+    max_total_tokens: 2048
+    oracle_crop: true
+  # ZwZ fn. 1: zoom adds information only when the input was downsampled. ~0.4 MP view, full-res tools.
+  no_tool_lowres:
+    max_turns: 1
+    max_total_tokens: 2048
+    min_pixels: 65536
+    max_pixels: 401408
+  zoom_lowres:
+    tools: [zoom]
+    min_pixels: 65536
+    max_pixels: 401408
+
+  # --- forced final answer ------------------------------------------------------
+  # The core tool conditions with budget notices and a forced final-answer turn
+  # (run for the Qwen3.5 models; scripts/_model_env.sh EXTRA_CONDITIONS).
+  zoom_forced:
+    tools: [zoom]
+    forced_answer: true
+    tool_call_budget: 10
+  visual_ops_forced:
+    tools: [visual_ops]
+    forced_answer: true
+    tool_call_budget: 10
+  calculator_forced:
+    tools: [calculator]
+    forced_answer: true
+    tool_call_budget: 10
+  ocr_forced:
+    tools: [ocr]
+    forced_answer: true
+    tool_call_budget: 10
+  all_forced:
+    tools: [all]
+    forced_answer: true
+    tool_call_budget: 10

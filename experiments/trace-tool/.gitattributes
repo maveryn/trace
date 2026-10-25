@@ -1,0 +1,3 @@
+# Reports written by trace-tool-compare / trace-tool-score, kept byte-for-byte
+# as generated (they end with a blank line).
+results/** -whitespace

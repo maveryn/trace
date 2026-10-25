@@ -1,0 +1,1708 @@
+{
+ "qwen2.5-vl/all": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "ocr_backend": "rapidocr",
+  "ocr_min_score": 0.5,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "all"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Rotate an image counterclockwise by the given angle in degrees; the canvas is expanded so nothing is cropped",
+     "name": "image_rotate_tool",
+     "parameters": {
+      "properties": {
+       "angle": {
+        "description": "Counterclockwise rotation angle in degrees, e.g. 90, 180, -45",
+        "type": "number"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "angle",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Mirror an image horizontally (left-right) or vertically (top-bottom)",
+     "name": "image_flip_tool",
+     "parameters": {
+      "properties": {
+       "direction": {
+        "description": "'horizontal' mirrors left-right, 'vertical' mirrors top-bottom",
+        "enum": [
+         "horizontal",
+         "vertical"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "direction",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Draw auxiliary marks (straight lines, rectangles, points) on a copy of an image, e.g. a horizontal guide line to compare heights or a box around a region",
+     "name": "image_draw_tool",
+     "parameters": {
+      "properties": {
+       "boxes": {
+        "description": "Rectangles as [x1, y1, x2, y2] in pixel coordinates of that image as you see it",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "color": {
+        "description": "Color of the marks (default red)",
+        "enum": [
+         "black",
+         "blue",
+         "cyan",
+         "green",
+         "magenta",
+         "orange",
+         "red",
+         "white",
+         "yellow"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       },
+       "lines": {
+        "description": "Line segments as [x1, y1, x2, y2] in pixel coordinates of that image as you see it",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "points": {
+        "description": "Points as [x, y] in pixel coordinates of that image as you see it",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 2,
+         "minItems": 2,
+         "type": "array"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Evaluate an arithmetic expression and return the result (floats shown with 12 significant digits; comparisons, floor/ceil/trunc, // and % use the value as shown). Supports + - * / // % ** (or ^), parentheses, comparisons, lists like [1, 2, 3], the constants pi, e, tau, and the functions abs, acos, acosd, asin, asind, atan, atan2, atan2d, atand, cbrt, ceil, comb, cos, cosd, degrees, exp, factorial, floor, gcd, hypot, lcm, ln, log, log10, log2, max, mean, median, min, perm, pow, pstdev, radians, round, sin, sind, sqrt, stdev, sum, tan, tand, trunc. Write every multiplication with * (2*pi, not 2pi) and call functions by name (sqrt(2), not math.sqrt(2)). % is the remainder, not percent. log and ln are natural logs. sin/cos/tan use radians; sind/cosd/tand/asind/acosd/atand/atan2d use degrees and are exact at special angles. round is Python's round: exact ties go to the even digit.",
+     "name": "calculator",
+     "parameters": {
+      "properties": {
+       "expression": {
+        "description": "The expression to evaluate, e.g. \"(12.5 + 7) * 3\" or \"sqrt(3**2 + 4**2)\"",
+        "type": "string"
+       }
+      },
+      "required": [
+       "expression"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Read the text in an image (or in one region of it) with an OCR engine. Returns each detected text line with its bounding box [x1, y1, x2, y2] in pixel coordinates of that image as you see it",
+     "name": "ocr",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "Optional region to read, as [x1, y1, x2, y2] in pixel coordinates of that image as you see it; omit to read the whole image",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the image to read (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "calculator",
+   "image_draw_tool",
+   "image_flip_tool",
+   "image_rotate_tool",
+   "image_zoom_in_tool",
+   "ocr"
+  ]
+ },
+ "qwen2.5-vl/calculator": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "calculator"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Evaluate an arithmetic expression and return the result (floats shown with 12 significant digits; comparisons, floor/ceil/trunc, // and % use the value as shown). Supports + - * / // % ** (or ^), parentheses, comparisons, lists like [1, 2, 3], the constants pi, e, tau, and the functions abs, acos, acosd, asin, asind, atan, atan2, atan2d, atand, cbrt, ceil, comb, cos, cosd, degrees, exp, factorial, floor, gcd, hypot, lcm, ln, log, log10, log2, max, mean, median, min, perm, pow, pstdev, radians, round, sin, sind, sqrt, stdev, sum, tan, tand, trunc. Write every multiplication with * (2*pi, not 2pi) and call functions by name (sqrt(2), not math.sqrt(2)). % is the remainder, not percent. log and ln are natural logs. sin/cos/tan use radians; sind/cosd/tand/asind/acosd/atand/atan2d use degrees and are exact at special angles. round is Python's round: exact ties go to the even digit.",
+     "name": "calculator",
+     "parameters": {
+      "properties": {
+       "expression": {
+        "description": "The expression to evaluate, e.g. \"(12.5 + 7) * 3\" or \"sqrt(3**2 + 4**2)\"",
+        "type": "string"
+       }
+      },
+      "required": [
+       "expression"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "calculator"
+  ]
+ },
+ "qwen2.5-vl/no_tool": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 2048,
+  "max_turns": 1,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen2.5-vl/no_tool_budget": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 8192,
+  "max_total_tokens": 8192,
+  "max_turns": 1,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen2.5-vl/no_tool_lowres": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 401408,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 2048,
+  "max_turns": 1,
+  "min_pixels": 65536,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen2.5-vl/ocr": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "ocr_backend": "rapidocr",
+  "ocr_min_score": 0.5,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "ocr"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Read the text in an image (or in one region of it) with an OCR engine. Returns each detected text line with its bounding box [x1, y1, x2, y2] in pixel coordinates of that image as you see it",
+     "name": "ocr",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "Optional region to read, as [x1, y1, x2, y2] in pixel coordinates of that image as you see it; omit to read the whole image",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the image to read (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "ocr"
+  ]
+ },
+ "qwen2.5-vl/oracle_crop": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 2048,
+  "max_turns": 1,
+  "min_pixels": 262144,
+  "oracle_crop": true,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen2.5-vl/visual_ops": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "visual_ops"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Rotate an image counterclockwise by the given angle in degrees; the canvas is expanded so nothing is cropped",
+     "name": "image_rotate_tool",
+     "parameters": {
+      "properties": {
+       "angle": {
+        "description": "Counterclockwise rotation angle in degrees, e.g. 90, 180, -45",
+        "type": "number"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "angle",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Mirror an image horizontally (left-right) or vertically (top-bottom)",
+     "name": "image_flip_tool",
+     "parameters": {
+      "properties": {
+       "direction": {
+        "description": "'horizontal' mirrors left-right, 'vertical' mirrors top-bottom",
+        "enum": [
+         "horizontal",
+         "vertical"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "direction",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Draw auxiliary marks (straight lines, rectangles, points) on a copy of an image, e.g. a horizontal guide line to compare heights or a box around a region",
+     "name": "image_draw_tool",
+     "parameters": {
+      "properties": {
+       "boxes": {
+        "description": "Rectangles as [x1, y1, x2, y2] in pixel coordinates of that image as you see it",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "color": {
+        "description": "Color of the marks (default red)",
+        "enum": [
+         "black",
+         "blue",
+         "cyan",
+         "green",
+         "magenta",
+         "orange",
+         "red",
+         "white",
+         "yellow"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       },
+       "lines": {
+        "description": "Line segments as [x1, y1, x2, y2] in pixel coordinates of that image as you see it",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "points": {
+        "description": "Points as [x, y] in pixel coordinates of that image as you see it",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 2,
+         "minItems": 2,
+         "type": "array"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_draw_tool",
+   "image_flip_tool",
+   "image_rotate_tool",
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen2.5-vl/zoom": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "zoom"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen2.5-vl/zoom_cookbook": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/qwen3vl_cookbook_analysis_prompt.txt",
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "5e45409ca1a942be46def4df7c1c18c82e408558ee7cd0c057c398bb35a0c998",
+  "tool_groups_requested": [
+   "zoom"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen2.5-vl/zoom_lowres": {
+  "coords": "abs",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen2.5-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 401408,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 65536,
+  "oracle_crop": false,
+  "patch_factor": 28,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "zoom"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen3-vl/all": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "ocr_backend": "rapidocr",
+  "ocr_min_score": 0.5,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "all"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Rotate an image counterclockwise by the given angle in degrees; the canvas is expanded so nothing is cropped",
+     "name": "image_rotate_tool",
+     "parameters": {
+      "properties": {
+       "angle": {
+        "description": "Counterclockwise rotation angle in degrees, e.g. 90, 180, -45",
+        "type": "number"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "angle",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Mirror an image horizontally (left-right) or vertically (top-bottom)",
+     "name": "image_flip_tool",
+     "parameters": {
+      "properties": {
+       "direction": {
+        "description": "'horizontal' mirrors left-right, 'vertical' mirrors top-bottom",
+        "enum": [
+         "horizontal",
+         "vertical"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "direction",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Draw auxiliary marks (straight lines, rectangles, points) on a copy of an image, e.g. a horizontal guide line to compare heights or a box around a region",
+     "name": "image_draw_tool",
+     "parameters": {
+      "properties": {
+       "boxes": {
+        "description": "Rectangles as [x1, y1, x2, y2] in relative coordinates [0, 1000]",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "color": {
+        "description": "Color of the marks (default red)",
+        "enum": [
+         "black",
+         "blue",
+         "cyan",
+         "green",
+         "magenta",
+         "orange",
+         "red",
+         "white",
+         "yellow"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       },
+       "lines": {
+        "description": "Line segments as [x1, y1, x2, y2] in relative coordinates [0, 1000]",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "points": {
+        "description": "Points as [x, y] in relative coordinates [0, 1000]",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 2,
+         "minItems": 2,
+         "type": "array"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Evaluate an arithmetic expression and return the result (floats shown with 12 significant digits; comparisons, floor/ceil/trunc, // and % use the value as shown). Supports + - * / // % ** (or ^), parentheses, comparisons, lists like [1, 2, 3], the constants pi, e, tau, and the functions abs, acos, acosd, asin, asind, atan, atan2, atan2d, atand, cbrt, ceil, comb, cos, cosd, degrees, exp, factorial, floor, gcd, hypot, lcm, ln, log, log10, log2, max, mean, median, min, perm, pow, pstdev, radians, round, sin, sind, sqrt, stdev, sum, tan, tand, trunc. Write every multiplication with * (2*pi, not 2pi) and call functions by name (sqrt(2), not math.sqrt(2)). % is the remainder, not percent. log and ln are natural logs. sin/cos/tan use radians; sind/cosd/tand/asind/acosd/atand/atan2d use degrees and are exact at special angles. round is Python's round: exact ties go to the even digit.",
+     "name": "calculator",
+     "parameters": {
+      "properties": {
+       "expression": {
+        "description": "The expression to evaluate, e.g. \"(12.5 + 7) * 3\" or \"sqrt(3**2 + 4**2)\"",
+        "type": "string"
+       }
+      },
+      "required": [
+       "expression"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Read the text in an image (or in one region of it) with an OCR engine. Returns each detected text line with its bounding box [x1, y1, x2, y2] in relative coordinates [0, 1000] of that image",
+     "name": "ocr",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "Optional region to read, as [x1, y1, x2, y2] in relative coordinates [0, 1000]; omit to read the whole image",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the image to read (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "calculator",
+   "image_draw_tool",
+   "image_flip_tool",
+   "image_rotate_tool",
+   "image_zoom_in_tool",
+   "ocr"
+  ]
+ },
+ "qwen3-vl/calculator": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "calculator"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Evaluate an arithmetic expression and return the result (floats shown with 12 significant digits; comparisons, floor/ceil/trunc, // and % use the value as shown). Supports + - * / // % ** (or ^), parentheses, comparisons, lists like [1, 2, 3], the constants pi, e, tau, and the functions abs, acos, acosd, asin, asind, atan, atan2, atan2d, atand, cbrt, ceil, comb, cos, cosd, degrees, exp, factorial, floor, gcd, hypot, lcm, ln, log, log10, log2, max, mean, median, min, perm, pow, pstdev, radians, round, sin, sind, sqrt, stdev, sum, tan, tand, trunc. Write every multiplication with * (2*pi, not 2pi) and call functions by name (sqrt(2), not math.sqrt(2)). % is the remainder, not percent. log and ln are natural logs. sin/cos/tan use radians; sind/cosd/tand/asind/acosd/atand/atan2d use degrees and are exact at special angles. round is Python's round: exact ties go to the even digit.",
+     "name": "calculator",
+     "parameters": {
+      "properties": {
+       "expression": {
+        "description": "The expression to evaluate, e.g. \"(12.5 + 7) * 3\" or \"sqrt(3**2 + 4**2)\"",
+        "type": "string"
+       }
+      },
+      "required": [
+       "expression"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "calculator"
+  ]
+ },
+ "qwen3-vl/no_tool": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 2048,
+  "max_turns": 1,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen3-vl/no_tool_budget": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 8192,
+  "max_total_tokens": 8192,
+  "max_turns": 1,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen3-vl/no_tool_lowres": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 401408,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 2048,
+  "max_turns": 1,
+  "min_pixels": 65536,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen3-vl/ocr": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "ocr_backend": "rapidocr",
+  "ocr_min_score": 0.5,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "ocr"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Read the text in an image (or in one region of it) with an OCR engine. Returns each detected text line with its bounding box [x1, y1, x2, y2] in relative coordinates [0, 1000] of that image",
+     "name": "ocr",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "Optional region to read, as [x1, y1, x2, y2] in relative coordinates [0, 1000]; omit to read the whole image",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the image to read (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "ocr"
+  ]
+ },
+ "qwen3-vl/oracle_crop": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 2048,
+  "max_turns": 1,
+  "min_pixels": 262144,
+  "oracle_crop": true,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [],
+  "tool_schemas": [],
+  "tools": []
+ },
+ "qwen3-vl/visual_ops": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "visual_ops"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Rotate an image counterclockwise by the given angle in degrees; the canvas is expanded so nothing is cropped",
+     "name": "image_rotate_tool",
+     "parameters": {
+      "properties": {
+       "angle": {
+        "description": "Counterclockwise rotation angle in degrees, e.g. 90, 180, -45",
+        "type": "number"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "angle",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Mirror an image horizontally (left-right) or vertically (top-bottom)",
+     "name": "image_flip_tool",
+     "parameters": {
+      "properties": {
+       "direction": {
+        "description": "'horizontal' mirrors left-right, 'vertical' mirrors top-bottom",
+        "enum": [
+         "horizontal",
+         "vertical"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       }
+      },
+      "required": [
+       "direction",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   },
+   {
+    "function": {
+     "description": "Draw auxiliary marks (straight lines, rectangles, points) on a copy of an image, e.g. a horizontal guide line to compare heights or a box around a region",
+     "name": "image_draw_tool",
+     "parameters": {
+      "properties": {
+       "boxes": {
+        "description": "Rectangles as [x1, y1, x2, y2] in relative coordinates [0, 1000]",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "color": {
+        "description": "Color of the marks (default red)",
+        "enum": [
+         "black",
+         "blue",
+         "cyan",
+         "green",
+         "magenta",
+         "orange",
+         "red",
+         "white",
+         "yellow"
+        ],
+        "type": "string"
+       },
+       "img_idx": {
+        "description": "The index of the image to operate on (starting from 0)",
+        "type": "number"
+       },
+       "lines": {
+        "description": "Line segments as [x1, y1, x2, y2] in relative coordinates [0, 1000]",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 4,
+         "minItems": 4,
+         "type": "array"
+        },
+        "type": "array"
+       },
+       "points": {
+        "description": "Points as [x, y] in relative coordinates [0, 1000]",
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "maxItems": 2,
+         "minItems": 2,
+         "type": "array"
+        },
+        "type": "array"
+       }
+      },
+      "required": [
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_draw_tool",
+   "image_flip_tool",
+   "image_rotate_tool",
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen3-vl/zoom": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "zoom"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen3-vl/zoom_cookbook": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 4194304,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 262144,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/qwen3vl_cookbook_analysis_prompt.txt",
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "5e45409ca1a942be46def4df7c1c18c82e408558ee7cd0c057c398bb35a0c998",
+  "tool_groups_requested": [
+   "zoom"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_zoom_in_tool"
+  ]
+ },
+ "qwen3-vl/zoom_lowres": {
+  "coords": "rel1000",
+  "decoding": "trace",
+  "decoding_params": {
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 0.95
+  },
+  "family": "qwen3-vl",
+  "max_calls_per_turn": 2,
+  "max_pixels": 401408,
+  "max_tokens_per_turn": 2048,
+  "max_total_tokens": 8192,
+  "max_turns": 6,
+  "min_pixels": 65536,
+  "oracle_crop": false,
+  "patch_factor": 32,
+  "system_prompt_files": [
+   "prompts/trace_system_prompt.txt"
+  ],
+  "system_prompt_sha256": "d6105d53a9a11d7cdcaa6f3d045882b49998ad0c5978d7d4ec8b489479a491e4",
+  "tool_groups_requested": [
+   "zoom"
+  ],
+  "tool_schemas": [
+   {
+    "function": {
+     "description": "Zoom in on a specific region of an image by cropping it based on a bounding box (bbox) and an optional object label",
+     "name": "image_zoom_in_tool",
+     "parameters": {
+      "properties": {
+       "bbox_2d": {
+        "description": "The bounding box of the region to zoom in, as [x1, y1, x2, y2], where (x1, y1) is the top-left corner and (x2, y2) is the bottom-right corner",
+        "items": {
+         "type": "number"
+        },
+        "maxItems": 4,
+        "minItems": 4,
+        "type": "array"
+       },
+       "img_idx": {
+        "description": "The index of the zoomed-in image (starting from 0)",
+        "type": "number"
+       },
+       "label": {
+        "description": "The name or label of the object in the specified bounding box",
+        "type": "string"
+       }
+      },
+      "required": [
+       "bbox_2d",
+       "label",
+       "img_idx"
+      ],
+      "type": "object"
+     }
+    },
+    "type": "function"
+   }
+  ],
+  "tools": [
+   "image_zoom_in_tool"
+  ]
+ }
+}
