@@ -390,8 +390,9 @@ def _tier_local(cfg: StudyConfig, tier: str) -> dict[str, list[int]]:
 
 
 def capture_tables(cfg: StudyConfig, rows: pd.DataFrame, metrics: dict[str, Any], ga: pd.DataFrame,
-                   merges: Sequence[str], vero: str, seeds: Sequence[int]) -> pd.DataFrame:
-    binary = binary_benchmarks(cfg)
+                   merges: Sequence[str], vero: str, seeds: Sequence[int],
+                   benchmarks: Sequence[str] | None = None) -> pd.DataFrame:
+    binary = list(benchmarks) if benchmarks is not None else binary_benchmarks(cfg)
     brows = with_binary(rows[rows["benchmark_id"].isin(binary)], metrics, binary)
     matrix = bh.build_outcome_matrix(brows, expected_benchmarks=binary)
     spec = bh.BootstrapSpec.from_config(cfg.raw["statistics"])
@@ -564,3 +565,95 @@ def confirm(cfg: StudyConfig, *, log: Log = print) -> dict[str, Any]:
                         for r in d.itertuples()}}
     _write_json(out / "summary.json", summary)
     return summary
+
+
+# ------------------------------------------------------------------------------------------------ base reference
+
+BASE_REFERENCE = "B (reference)"
+# V@P1's LaTeX-wrapped option letters are scored 0 on these two benchmarks, which moves rows into the TRACE-only group
+FORMAT_AFFECTED = ("puzzlevqa", "visualpuzzles")
+
+
+def with_base_reference(rows: pd.DataFrame) -> pd.DataFrame:
+    """Append a copy of B's rows labelled ``BASE_REFERENCE``, so B can be scored like a merge (capture_damage needs
+    four distinct labels)."""
+
+    ref = rows[rows["model_label"] == "B"].copy()
+    ref["model_label"] = BASE_REFERENCE
+    return pd.concat([rows, ref], ignore_index=True)
+
+
+def capture_base_reference(cfg: StudyConfig, *, log: Log = print) -> pd.DataFrame:
+    """Post-hoc, written after the confirmation tables were read (analysis_report.md §4.4); descriptive, outside the
+    locked family. The base model's own capture/damage rates on the confirmation groups, beside the three merges: the
+    rate a merge would reach by doing nothing. Computed on the 21 binary benchmarks and again without the two
+    format-affected puzzle benchmarks."""
+
+    lock, _ = verify_lock(cfg, runs=True)
+    local: dict[str, list[int]] = {}
+    for r in lock["confirmation_runs"]:
+        local.setdefault(r["label"], []).append(int(r["seed"]))
+    seeds = sorted({s for v in local.values() for s in v})
+    metrics = mt.build_metrics(cfg)
+    ga = assignments(cfg)
+    binary = binary_benchmarks(cfg)
+    rows = load_rows(cfg, labels=["B", "T", *local], seeds=seeds, benchmarks=binary, local=local,
+                     subset="confirmation")
+    rows = with_base_reference(restrict(rows, ga, "confirmation"))
+    merges = ["M050@P1", "CV050@P1", "CT050@P1", BASE_REFERENCE]
+    frames = []
+    for name, benches in (("all_binary", binary), ("without_" + "_".join(FORMAT_AFFECTED),
+                                                    [b for b in binary if b not in FORMAT_AFFECTED])):
+        cd = capture_tables(cfg, rows[rows["benchmark_id"].isin(benches)], metrics, ga, merges=merges, vero="V@P1",
+                            seeds=seeds, benchmarks=benches)
+        cd.insert(0, "benchmark_set", name)
+        frames.append(cd)
+        log(f"[capture-reference] {name}: {len(benches)} benchmarks")
+    table = pd.concat(frames, ignore_index=True)
+    # overall and category rows only: the benchmark-level rows of the three merges are in merge_capture_damage.csv
+    table = table[table["level"].isin(["overall", "category"])].reset_index(drop=True)
+    _write(table, cfg.work("tables", "confirmation", "merge_capture_damage.base_reference.csv"), tier="confirmation",
+           post_hoc=True)
+    return table
+
+
+# ------------------------------------------------------------------------------------------------ answer format
+
+FORMAT_COLUMNS = ["model_label", "seed", "benchmark_id", "content_key", "source_ordinal", "source_index",
+                  "source_row_sha256", "source_record_sha256", "archived_row_score", "official_excluded",
+                  "extraction_status", "extraction_value_json", "judge_output", "response_text", "source", "run_id"]
+FORMAT_TABLE_DIR = {"development": "screen", "confirmation": "confirmation"}
+
+
+def answer_format_table(cfg: StudyConfig, tier: str, *, log: Log = print) -> pd.DataFrame:
+    """Diagnostic, never a score (handoff 8.3): per letter-answer benchmark, model and seed of a tier, the official
+    accuracy, the share of responses ending in a LaTeX-wrapped option letter, and the share scored 0 whose leniently
+    read final letter is the correct option. Parents come from the archive, new models from the tier's local runs."""
+
+    from . import diagnostics as dg
+
+    subset = TIER_SUBSET[tier]
+    benches = list(dg.LETTER_ANSWER_BENCHMARKS)
+    metrics = mt.build_metrics(cfg, benches)
+    ga = assignments(cfg)
+    local = _tier_local(cfg, tier)
+    seeds = sorted({s for v in local.values() for s in v})
+    out = []
+    for b in benches:
+        meta = mt.load_benchmark_meta(cfg, b)
+        for label in [*ARCHIVE_LABELS, *local]:
+            for seed in (seeds if label in ARCHIVE_LABELS else local[label]):
+                if label in ARCHIVE_LABELS:
+                    r = ig.load_aligned(cfg, columns=FORMAT_COLUMNS, labels=[label], seeds=[seed], benchmarks=[b])
+                else:
+                    r = ig.load_aligned(cfg, columns=FORMAT_COLUMNS, benchmarks=[b], include_archive=False,
+                                        local_runs=[local_run_name(label, subset, seed)])
+                if r["official_excluded"].dtype != bool:
+                    r["official_excluded"] = r["official_excluded"].map(lambda v: str(v) == "True")
+                r = restrict(r, ga, subset).reset_index(drop=True)
+                res = dg.answer_format_sensitivity(r, metrics[b].row_scores(r), meta, b)
+                out.append({"model_label": label, "seed": int(seed), **res})
+        log(f"[format] {b}: {len(out)} slices")
+    table = pd.DataFrame(out)
+    _write(table, cfg.work("tables", FORMAT_TABLE_DIR[tier], "answer_format_sensitivity.csv"), tier=subset)
+    return table

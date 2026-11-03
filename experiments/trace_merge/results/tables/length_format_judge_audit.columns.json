@@ -1,0 +1,24 @@
+{
+ "columns": {
+  "completion_tokens_*": "engine-reported completion tokens over rows where known (n_known next to it)",
+  "extraction_<status>": "protocol extraction status counts (resolved, ambiguous, invalid, excluded)",
+  "extraction_failure_rate": "not reported: no deterministic extraction-failure measure applies across the suite (on several routes the value is the raw response by design); use the sentinel, the markers and the length_stop_* cross-tab",
+  "extraction_method_*": "rows per extraction method",
+  "extraction_status_not_resolved_rate": "share of rows whose protocol status is not 'resolved'. This is the exporter's status, not an answer-extraction failure measure: truncated or unparseable responses are usually 'resolved' with the raw text as value",
+  "extraction_value_is_response_rate": "share of rows whose extracted value equals the (stripped) response: the official scorer parses the response itself. Normal on the benchmark_adapter route, so not a failure measure",
+  "finish_reason_*": "recorded finish reasons; length_stop_rate = length / rows with a known finish reason",
+  "judge_incomplete_sentinel_rows": "rows whose extracted value starts with the judge's 'The model response is incomplete / does not ...' statement (deterministic sentinel of no answer)",
+  "length_stop_judge_incomplete_sentinel": "length-stopped rows whose extracted value is the judge's 'incomplete' statement",
+  "length_stop_marker_any_final": "length-stopped rows that still contain a final-answer marker",
+  "length_stop_score_available / _score_zero": "length-stopped rows with an official row score / scored 0",
+  "length_stop_value_is_response": "length-stopped rows whose extracted value is the raw response",
+  "marker_*_rate": "deterministic final-answer markers over rows with known text (presence only)",
+  "n_rows": "rows in the slice",
+  "n_tokens_at_or_above_cap": "rows whose completion tokens reach max_tokens; NOT a length stop by itself",
+  "row_scorer_judge_rows / row_scorer_known": "local runs: rows scored by a judge-backed scorer (scorer name matches judge/qwen3) / rows with a recorded scorer; null for the archive, which does not record per-row scorers",
+  "scoring_route / score_contract_names_judge": "suite scoring route, and whether the suite score contract or benchmark provenance names a judge (judge-backed official scoring the used_judge flag may not show)",
+  "used_judge_rate": "export's extraction used_judge flag over rows where known"
+ },
+ "max_tokens": 4096,
+ "table": "length_format_judge_audit.csv"
+}

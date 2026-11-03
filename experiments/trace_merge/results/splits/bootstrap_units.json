@@ -1,0 +1,24 @@
+{
+ "bootstrap_units": 26070,
+ "bootstrap_units_sha256": "e78bcd7817248ee9781e69aacbe9b00017e9e612ddee76a8eb4c820fb6732ae1",
+ "components": 26422,
+ "confirmation_rows_with_development_twin": 130,
+ "confirmation_rows_with_development_twin_by_benchmark": {
+  "mathvista": 45,
+  "mme_reasoning": 15,
+  "mmstar": 62,
+  "puzzlevqa": 8
+ },
+ "frozen_at": "2026-11-02T10:33:49+00:00",
+ "group_assignments_sha256": "fdabf28d08d2bd829516f79519443e907f6aaec21a72b6e09f3bb980a73969f9",
+ "rule": "bootstrap units = components joined by verified cross-benchmark near-duplicate image twins (same question and answer); the frozen partition is unchanged",
+ "schema": "trace-merge-bootstrap-units-v1",
+ "twin_pairs": 465,
+ "twin_pairs_by_benchmarks": {
+  "mathvista|mmstar": 159,
+  "mme_reasoning|puzzlevqa": 78,
+  "mmstar|mathvista": 135,
+  "puzzlevqa|mme_reasoning": 93
+ },
+ "twins_csv_sha256": "c151d9fe4d5fe8db0f8f1a83494610f47938c72ac559e9f9a52fd20e8a10e66d"
+}

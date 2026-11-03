@@ -34,7 +34,11 @@ COLORS = {  # reference palette slots, assigned per entity in a fixed order
 }
 PALETTE = ("#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#6250d6")   # positional fallback, fixed order
 DISPLAY = {"B": "Base (Qwen2.5-VL-7B)", "T": "TRACE", "V@P0": "VERO (own template)", "V@P1": "VERO (backbone template)",
-           "M050@P1": "M050 = ½VERO + ½TRACE", "CV050@P1": "CV050 = ½VERO + ½base", "CT050@P1": "CT050 = ½TRACE + ½base"}
+           "M050@P1": "M050 = ½VERO + ½TRACE", "CV050@P1": "CV050 = ½VERO + ½base", "CT050@P1": "CT050 = ½TRACE + ½base",
+           "B@P2": "Base, VERO interface", "T@P2": "TRACE, VERO interface", "M050@P2": "M050, VERO interface",
+           "CV050@P2": "CV050, VERO interface", "CT050@P2": "CT050, VERO interface"}
+CAPTURE_EVENTS = (("trace_only_capture", "TRACE-only capture"), ("vero_only_capture", "VERO-only capture"),
+                  ("shared_success_damage", "shared-success damage"), ("joint_failure_rescue", "joint-failure rescue"))
 # a whole absolute machine path, from its root segment up to the next delimiter
 ABS_PATH = re.compile(r"(?<![\w.~-])/(?:scratch|uufs|home|Users|users|tmp|mnt|data|proj|opt|root|var|workspace|content"
                       r"|dev/shm|kaggle)(?=[/\s'\"`),;|\]}>]|$)[^\s'\"`),;|\]}>]*")
@@ -95,6 +99,9 @@ def fig_benchmark_gains(cfg: StudyConfig, diffs: pd.DataFrame, out: Path, compar
     colors = [color_of(p[side]) for p in pairs]
     if len(set(colors)) < len(colors):
         colors = [PALETTE[j % len(PALETTE)] for j in range(len(colors))]
+    missing = [comp for comp in comparisons if comp not in d.index.get_level_values(0)]
+    if missing:
+        raise ValueError(f"no benchmark rows for {missing} in the differences table")
     for j, comp in enumerate(comparisons):
         color = colors[j]
         ys, xs, lo, hi = [], [], [], []
@@ -105,7 +112,7 @@ def fig_benchmark_gains(cfg: StudyConfig, diffs: pd.DataFrame, out: Path, compar
             ys.append(i + offsets[j]); xs.append(r["estimate"]); lo.append(r["ci_low"]); hi.append(r["ci_high"])
         ax.hlines(ys, lo, hi, color=color, linewidth=2, alpha=0.85)
         ax.plot(xs, ys, "o", color=color, markersize=5, markeredgecolor=SURFACE, markeredgewidth=1,
-                label=comp.replace("@P0", "").replace("-", " − "))
+                label=" − ".join(short_label(x) for x in comp.split("-", 1)))
     ax.axvline(0, color=INK_2, linewidth=1)
     ax.set_yticks(range(len(order)))
     ax.set_yticklabels(ylabels)
@@ -119,9 +126,9 @@ def fig_benchmark_gains(cfg: StudyConfig, diffs: pd.DataFrame, out: Path, compar
         ax.text(1.01, i, cat, transform=ax.get_yaxis_transform(), va="center", ha="left", fontsize=8, color=INK_2)
     ax.set_xlabel("difference in official score (percentage points)")
     ax.set_title(title, loc="left")
-    ax.legend(loc="lower right", frameon=False)
+    ax.legend(loc="upper left", bbox_to_anchor=(0, -0.045), frameon=False, ncol=min(2, len(comparisons)))
     fig.text(0.01, 0.005, caption, fontsize=7, color=INK_2, ha="left", va="bottom", wrap=True)
-    fig.tight_layout(rect=(0, 0.04, 0.86, 1))
+    fig.tight_layout(rect=(0, 0.06, 0.86, 1))
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=170)
     plt.close(fig)
@@ -129,7 +136,7 @@ def fig_benchmark_gains(cfg: StudyConfig, diffs: pd.DataFrame, out: Path, compar
 
 
 def fig_parent_overlap(overlap: pd.DataFrame, out: Path, caption: str, category_order: Sequence[str] = (),
-                       title: str = "Discovery (Stage B): where TRACE and VERO succeed, parent outcome cells") -> Path:
+                       title: str = "Discovery (Stage B): parent outcome cells") -> Path:
     """Stacked bars: share of rows in each parent-outcome cell, per category in suite order (seed-averaged, pooled
     rows), each labelled with its rows per seed."""
 
@@ -142,7 +149,7 @@ def fig_parent_overlap(overlap: pd.DataFrame, out: Path, caption: str, category_
     p = p.sort_values(["order", "suite_rank", "scope"])
     cells = [("both_correct_pct", "both correct", "#6b6a66"), ("trace_only_pct", "TRACE only", COLORS["T"]),
              ("vero_only_pct", "VERO only", COLORS["V@P0"]), ("both_wrong_pct", "both wrong", "#d8d7d1")]
-    fig, ax = plt.subplots(figsize=(7.2, 0.42 * len(p) + 1.4))
+    fig, ax = plt.subplots(figsize=(7.2, 0.6 * len(p) + 1.4))
     left = np.zeros(len(p))
     for col, lab, color in cells:
         vals = p[col].to_numpy()
@@ -169,7 +176,7 @@ def fig_parent_overlap(overlap: pd.DataFrame, out: Path, caption: str, category_
 
 def fig_response_lengths(cfg: StudyConfig, audit: pd.DataFrame, out: Path, labels: Sequence[str], caption: str,
                          source: str = "archive",
-                         title: str = "Discovery (Stage B): response length by benchmark") -> Path:
+                         title: str = "Discovery (Stage B): response length") -> Path:
     """Median completion tokens per benchmark and model (seed-averaged)."""
 
     plt = _plt()
@@ -228,16 +235,19 @@ def stage_b_figures(cfg: StudyConfig) -> list[Path]:
     t = cfg.work("tables", "stage_b")
     fig = cfg.work("figures")
     diffs = pd.read_csv(t / "differences.all.csv")
+    units = json.loads((t / "bootstrap.all.json").read_text(encoding="utf-8"))["n_components"]
     out = [fig_benchmark_gains(
         cfg, diffs, fig / "stage_b_benchmark_gains.png", ["T-B", "V@P0-B"],
-        "Discovery (Stage B): gains over the base model, per benchmark (archived runs)",
-        "Discovery (Stage B), full split, seeds 42-44 averaged. Dots: paired difference of official scores; lines: 95% "
-        "cluster-bootstrap intervals over 26,422 image/problem groups (10,000 replicates). VERO with its own template.")]
+        "Discovery (Stage B): gains over the base model",
+        "Discovery (Stage B), archived runs, full split, seeds 42-44 averaged. Dots: paired difference of official "
+        f"scores; lines: 95% cluster-bootstrap intervals over {units:,} bootstrap units (image/problem groups, "
+        "near-duplicate twins joined; 10,000 replicates). VERO with its own template.")]
     out.append(fig_benchmark_gains(
         cfg, diffs, fig / "stage_b_trace_minus_vero.png", ["T-V@P0"],
-        "Discovery (Stage B): TRACE − VERO, per benchmark (archived runs)",
-        "Discovery (Stage B), full split, seeds 42-44. 95% cluster-bootstrap intervals; 24 unadjusted exploratory "
-        "comparisons. VERO evaluated with its own system prompt, TRACE with the backbone template."))
+        "Discovery (Stage B): TRACE − VERO, per benchmark",
+        f"Discovery (Stage B), archived runs, full split, seeds 42-44. 95% cluster-bootstrap intervals over {units:,} "
+        "bootstrap units; 24 unadjusted exploratory comparisons. VERO with its own system prompt, TRACE with the "
+        "backbone template."))
     out.append(fig_parent_overlap(pd.read_csv(t / "parent_overlap.csv"), fig / "stage_b_parent_overlap.png",
                                   "21 binary-eligible benchmarks (27,617 rows per seed); same-seed cells averaged over "
                                   "seeds 42-44. 'TRACE only' = T correct, VERO wrong. Hindsight cells, not a router.",
@@ -246,6 +256,185 @@ def stage_b_figures(cfg: StudyConfig) -> list[Path]:
     out.append(fig_response_lengths(cfg, audit, fig / "stage_b_response_lengths.png", ["B", "T", "V@P0"],
                                     "Archived runs, seeds 42-44 (per-seed medians averaged). VERO's responses include "
                                     "its <think> block; length stops are rare (B 313, T 14, VERO 8 of 98,415 each)."))
+    return out
+
+
+SHORT = {"B": "base", "T": "TRACE", "V@P0": "VERO (own template)", "V@P1": "VERO (backbone template)",
+         "B@P2": "base@P2", "T@P2": "TRACE@P2"}
+
+
+def short_label(label: str) -> str:
+    """Compact legend name: parents spelled out, merges without the primary interface suffix."""
+
+    return SHORT.get(label, label.removesuffix("@P1"))
+
+
+def fig_category_contrasts(diffs: pd.DataFrame, out: Path, comparisons: Sequence[str], categories: Sequence[str],
+                           title: str, caption: str) -> Path:
+    """Dot-and-interval plot: the macro and each category, every comparison's paired difference with its 95%
+    interval (Holm-adjusted p in the legend when the comparison is in the primary family)."""
+
+    plt = _plt()
+    d = diffs[diffs["level"].isin(["overall", "category"])].set_index(["comparison", "scope"])
+    overall = diffs.loc[diffs["level"] == "overall", "scope"].iloc[0]
+    scopes = [overall, *categories]
+    fig, ax = plt.subplots(figsize=(7.2, 0.5 * len(scopes) + 1.6))
+    offsets = np.linspace(-0.22, 0.22, len(comparisons)) if len(comparisons) > 1 else [0.0]
+    refs = [comp.split("-", 1)[1] for comp in comparisons]
+    colors = [color_of(r) for r in refs]
+    if len(set(colors)) < len(colors):
+        colors = [PALETTE[j % len(PALETTE)] for j in range(len(colors))]
+    for j, comp in enumerate(comparisons):
+        color = colors[j]
+        ys, xs, lo, hi = [], [], [], []
+        for i, sc in enumerate(scopes):
+            if (comp, sc) in d.index:
+                r = d.loc[(comp, sc)]
+                ys.append(i + offsets[j]); xs.append(r["estimate"]); lo.append(r["ci_low"]); hi.append(r["ci_high"])
+        if not xs:
+            raise ValueError(f"no overall or category rows for {comp} in the differences table")
+        label = " − ".join(short_label(x) for x in comp.split("-", 1))
+        if (comp, overall) in d.index and "p_holm" in d.columns:
+            ph = d.loc[(comp, overall)]["p_holm"]
+            label += f" (Holm p = {ph:.3g})" if ph == ph else ""
+        ax.hlines(ys, lo, hi, color=color, linewidth=2, alpha=0.85)
+        ax.plot(xs, ys, "o", color=color, markersize=6, markeredgecolor=SURFACE, markeredgewidth=1, label=label)
+    ax.axvline(0, color=INK_2, linewidth=1)
+    ax.axhline(0.5, color=GRID, linewidth=1.2)
+    ax.set_yticks(range(len(scopes)))
+    ax.set_yticklabels(scopes)
+    ax.invert_yaxis()
+    ax.set_xlabel("difference in official score (percentage points)")
+    ax.set_title(title, loc="left")
+    ax.legend(loc="upper left", bbox_to_anchor=(0, -0.11), frameon=False, fontsize=8)
+    fig.text(0.01, 0.005, caption, fontsize=7, color=INK_2, ha="left", va="bottom", wrap=True)
+    fig.tight_layout(rect=(0, 0.05, 1, 1))
+    out.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out, dpi=170)
+    plt.close(fig)
+    return out
+
+
+def capture_overall(cd: pd.DataFrame, variant: str) -> pd.DataFrame:
+    """Overall pooled-row capture/damage rows of one variant (pooled over seeds or seed pairs when there are several)."""
+
+    c = cd[(cd["level"] == "overall") & (cd["variant"] == variant)]
+    if "seed_scope" in c.columns:
+        pooled = c[c["seed_scope"].astype(str).str.contains("pool|mean", regex=True)]
+        c = pooled if len(pooled) else c
+    if "aggregation" in c.columns and (c["aggregation"] == "pooled_rows").any():
+        c = c[c["aggregation"] == "pooled_rows"]
+    return c
+
+
+def fig_capture(cd: pd.DataFrame, out: Path, merges: Sequence[str], variant: str, title: str, caption: str) -> Path:
+    """Per capture/damage event, each merge's conditional rate with its 95% interval; group sizes in the labels."""
+
+    plt = _plt()
+    c = capture_overall(cd, variant).set_index(["metric", "merge_label"])
+    fig, ax = plt.subplots(figsize=(7.2, 0.62 * len(CAPTURE_EVENTS) * max(1, len(merges)) / 2 + 1.8))
+    offsets = np.linspace(-0.24, 0.24, len(merges)) if len(merges) > 1 else [0.0]
+    ylabels = []
+    for i, (metric, name) in enumerate(CAPTURE_EVENTS):
+        n = next((int(round(float(c.loc[(metric, m)]["n_group"]))) for m in merges if (metric, m) in c.index), None)
+        ylabels.append(f"{name}\nn = {n:,} rows per seed" if n is not None else name)
+        for j, m in enumerate(merges):
+            if (metric, m) not in c.index:
+                continue
+            r = c.loc[(metric, m)]
+            y = i + offsets[j]
+            ax.hlines(y, r["conditional_rate_pct_ci_low"], r["conditional_rate_pct_ci_high"], color=color_of(m),
+                      linewidth=2.2)
+            ax.plot(r["conditional_rate_pct"], y, "o", color=color_of(m), markersize=6, markeredgecolor=SURFACE,
+                    markeredgewidth=1, label=DISPLAY.get(m, m) if i == 0 else None)
+    ax.set_yticks(range(len(CAPTURE_EVENTS)))
+    ax.set_yticklabels(ylabels)
+    ax.invert_yaxis()
+    ax.set_xlim(left=0)
+    ax.set_xlabel("conditional rate (% of the group's rows)")
+    ax.set_title(title, loc="left")
+    ax.legend(loc="lower right", frameon=False, fontsize=8)
+    fig.text(0.01, 0.005, caption, fontsize=7, color=INK_2, ha="left", va="bottom", wrap=True)
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    out.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out, dpi=170)
+    plt.close(fig)
+    return out
+
+
+P1_MODELS = ("B", "T", "V@P0", "V@P1", "M050@P1", "CV050@P1", "CT050@P1")
+P2_MODELS = ("B@P2", "T@P2", "V@P0", "M050@P2", "CV050@P2", "CT050@P2")
+MERGES = ("M050@P1", "CV050@P1", "CT050@P1")
+
+
+def screen_figures(cfg: StudyConfig) -> list[Path]:
+    t = cfg.work("tables", "screen")
+    fig = cfg.work("figures")
+    cats = list(cfg.categories())
+    n = "development screen, seed 42, 2,910 rows (81-129 per benchmark)"
+    ci = "95% paired cluster-bootstrap intervals over the screen's bootstrap units (10,000 replicates), unadjusted"
+    out = [fig_model_scores(pd.read_csv(t / "scores.P1.csv"), fig / "screen_model_scores.P1.png", P1_MODELS,
+                            "Screen (P1, backbone interface): 24-benchmark macro",
+                            f"Development tier, descriptive only: {n}. Lines: {ci}.")]
+    out.append(fig_model_scores(pd.read_csv(t / "scores.P2.csv"), fig / "screen_model_scores.P2.png", P2_MODELS,
+                                "Screen diagnostic (P2, VERO interface): macro",
+                                f"Development tier, diagnostic only: {n}. VERO's tokenizer, template and processor for "
+                                f"every model; VERO itself is its archived own-template run. Lines: {ci}."))
+    out.append(fig_category_contrasts(
+        pd.read_csv(t / "differences.P1.csv"), fig / "screen_contrasts.P1.png",
+        ["M050@P1-T", "M050@P1-V@P1", "M050@P1-CV050@P1", "M050@P1-CT050@P1"], cats,
+        "Screen (P1): M050 against parents and controls",
+        f"Development tier, descriptive only: {n}. Dots: paired difference of official scores; lines: {ci}."))
+    out.append(fig_category_contrasts(
+        pd.read_csv(t / "differences.P2.csv"), fig / "screen_contrasts.P2.png",
+        ["M050@P2-V@P0", "M050@P2-CV050@P2", "M050@P2-CT050@P2"], cats,
+        "Screen diagnostic (P2): M050 against VERO, controls",
+        f"Development tier, diagnostic only: {n}. Dots: paired difference of official scores; lines: {ci}."))
+    out.append(fig_capture(
+        pd.read_csv(t / "merge_capture_damage.csv"), fig / "screen_capture_damage.png", MERGES, "contemporaneous",
+        "Screen (P1): capture and damage, same-seed parents",
+        "Development tier, seed 42, 21 binary-eligible benchmarks, rows pooled. Groups from T and VERO (backbone "
+        f"template) on the same seed, so they include lucky parental failures. Lines: {ci}."))
+    return out
+
+
+def confirmation_figures(cfg: StudyConfig) -> list[Path]:
+    t = cfg.work("tables", "confirmation")
+    fig = cfg.work("figures")
+    cats = list(cfg.categories())
+    summary = json.loads((t / "summary.json").read_text(encoding="utf-8"))
+    seeds = "-".join(str(s) for s in (summary["seeds"][0], summary["seeds"][-1]))
+    n = f"confirmation split, 26,228 rows, seeds {seeds} averaged within model"
+    ci = "95% paired cluster-bootstrap intervals over bootstrap units, seeds resampled together (10,000 replicates)"
+    diffs = pd.read_csv(t / "differences.csv")
+    # the lock names the family by model ids ("M050-T"); the table carries the resolved labels ("M050@P1-T")
+    flagged = diffs["family_member"].astype(str).str.lower() == "true"
+    family = list(dict.fromkeys(diffs.loc[flagged & (diffs["level"] == "overall"), "comparison"]))
+    if len(family) != len(summary["family"]):
+        raise ValueError(f"family {summary['family']} resolves to {family} in differences.csv")
+    out = [fig_model_scores(pd.read_csv(t / "scores.csv"), fig / "confirmation_model_scores.png", P1_MODELS,
+                            "Confirmation (P1): 24-benchmark macro",
+                            f"Confirmation tier, prespecified models: {n}. Lines: {ci}.")]
+    out.append(fig_category_contrasts(
+        diffs, fig / "confirmation_primary_family.png", family, cats,
+        "Confirmation (P1): the prespecified primary family",
+        f"Confirmation tier: {n}. Dots: paired difference of official scores; lines: {ci}, unadjusted. Holm "
+        f"adjustment over the {len(family)} macro comparisons."))
+    out.append(fig_benchmark_gains(
+        cfg, diffs, fig / "confirmation_benchmark_contrasts.png", [c for c in family if "CV050" in c or "CT050" in c],
+        "Confirmation (P1): each half-update, per benchmark",
+        f"Confirmation tier: {n}. M050 − CV050 adds TRACE's half-update to a VERO blend; M050 − CT050 adds VERO's to a "
+        f"TRACE blend. Lines: {ci}, unadjusted (exploratory per benchmark)."))
+    cd = pd.read_csv(t / "merge_capture_damage.csv")
+    for variant in ("contemporaneous", "independent_repeat"):
+        if (cd["variant"] == variant).any():
+            out.append(fig_capture(
+                cd, fig / f"confirmation_capture_damage.{variant}.png", MERGES, variant,
+                f"Confirmation (P1): capture/damage, {variant.replace('_', ' ')}",
+                f"Confirmation tier, 21 binary-eligible benchmarks, rows pooled over seeds. "
+                + ("Parent groups and merge outcome from the same seed. " if variant == "contemporaneous" else
+                   "Parent groups from one seed, merge outcome from a different seed (no shared draw). ")
+                + f"Lines: {ci}."))
     return out
 
 
@@ -281,6 +470,44 @@ def assert_sanitized(path: Path) -> None:
     problems = sanitization_problems(path.read_text(encoding="utf-8", errors="replace"))
     if problems:
         raise RuntimeError(f"{path} contains {' and '.join(problems)}")
+
+
+# work-root files of the public bundle (handoff 11.2), as globs relative to the work root; row-level artifacts (row
+# lists, aligned predictions, group/unit assignments, run directories) stay in the work root
+BUNDLE_GLOBS = ("audit/*.md", "audit/*.json", "audit/*.csv", "manifests/*.json", "splits/split_manifest.json",
+                "splits/bootstrap_units.json", "reports/*.md", "reports/*.json", "tables/*.csv", "tables/*.json",
+                "tables/*/*.csv", "tables/*/*.json", "figures/*.png", "merges/*/merge_manifest.json",
+                "merges/*/recipe.json", "tests/test_report.txt")
+
+
+def bundle_files(cfg: StudyConfig) -> dict[str, Path]:
+    """Published path -> work-root source for every file of the public bundle that exists."""
+
+    root = cfg.work()
+    files = {}
+    for pattern in BUNDLE_GLOBS:
+        for src in sorted(root.glob(pattern)):
+            if src.is_file():
+                files[src.relative_to(root).as_posix()] = src
+    return files
+
+
+def write_costs(cfg: StudyConfig) -> Path:
+    costs = evaluation_costs(cfg)
+    out = cfg.work("tables", "evaluation_costs.csv")
+    costs.to_csv(out, index=False)
+    totals = {"gpu_hours": round(float(costs["gpu_hours"].sum()), 2) if len(costs) else 0.0,
+              "completion_tokens": int(pd.to_numeric(costs.get("completion_tokens"), errors="coerce").fillna(0).sum())
+              if len(costs) else 0,
+              "attempts": int(costs["attempts"].sum()) if len(costs) else 0,
+              "failed_or_incomplete_attempts": int((costs["attempts"] - costs["successful_attempts"]).sum())
+              if len(costs) else 0,
+              "merged_weights_gib": costs.attrs.get("merged_weights_gib", 0.0),
+              # run_dir_gib is the size of the run directory the seeds of one model and tier share: count it once
+              "run_dirs_gib": round(float(costs.drop_duplicates(["view_slug", "tier"])["run_dir_gib"].sum()), 2)
+              if len(costs) else 0.0}
+    write_json(cfg.work("tables", "evaluation_costs.totals.json"), totals)
+    return out
 
 
 def export_results(cfg: StudyConfig, files: dict[str, Path], dest: Path | None = None) -> dict[str, str]:

@@ -1,0 +1,732 @@
+{
+ "archive": {
+  "artifacts": 648,
+  "configs": [
+   {
+    "config_name": "responses",
+    "contract_version": "trace_eval_response_v1",
+    "parts": 216,
+    "placeholder_records_removed": 0,
+    "rows": 295245
+   },
+   {
+    "config_name": "extractions",
+    "contract_version": "trace_eval_extraction_v1",
+    "parts": 216,
+    "placeholder_records_removed": 0,
+    "rows": 295245
+   },
+   {
+    "config_name": "scores",
+    "contract_version": "trace_eval_score_v1",
+    "parts": 216,
+    "placeholder_records_removed": 49860,
+    "rows": 195174
+   }
+  ],
+  "generation_settings": [
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "qwen2.5-vl-7b-base",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 42,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "qwen2.5-vl-7b-base",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 43,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "qwen2.5-vl-7b-base",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 44,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "trace-qwen2.5-vl-7b",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 42,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "trace-qwen2.5-vl-7b",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 43,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "trace-qwen2.5-vl-7b",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 44,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "vero-qwen2.5-vl-7b",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 42,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "vero-qwen2.5-vl-7b",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 43,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   {
+    "image_jpeg_quality": null,
+    "max_image_pixels": 12845056,
+    "max_image_side": null,
+    "max_output_tokens": 4096,
+    "media_contract_version": "trace_eval_media_v1",
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "model_id": "vero-qwen2.5-vl-7b",
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 44,
+    "source_media_contract_sha256": "2ea80f5e23aa8b8326ee28ce5a85861b904850933db7e2faeec391021f67ece0",
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   }
+  ],
+  "judge": {
+   "model_id": "Qwen/Qwen3-32B",
+   "model_revision": "9216db5781bf21249d130ec9da846c4624c16137"
+  },
+  "manifest_path": "metadata/manifest.json",
+  "manifest_sha256": "0334afa738e441631591197e5e16a379bc6c0380d293122b4036dd5621d47b28",
+  "manifest_sha256_expected": "0334afa738e441631591197e5e16a379bc6c0380d293122b4036dd5621d47b28",
+  "model_metadata": {
+   "B": {
+    "display_name": "Qwen2.5-VL-7B-Instruct",
+    "model_id": "qwen2.5-vl-7b-base",
+    "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "repository_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "repository_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "schema_version": "trace_eval_model_v1"
+   },
+   "T": {
+    "display_name": "Trace Qwen2.5-VL-7B",
+    "model_id": "trace-qwen2.5-vl-7b",
+    "model_revision": "sha256set:8396b0be6a760ff7cbbdff02b3017b6b5bc352c87291480aba18fd3e3b6a13b5",
+    "repository_id": "maveryn/trace-qwen2.5-vl-7b",
+    "repository_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d",
+    "schema_version": "trace_eval_model_v1"
+   },
+   "V": {
+    "display_name": "VERO Qwen2.5-VL-7B",
+    "model_id": "vero-qwen2.5-vl-7b",
+    "model_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+    "repository_id": "zlab-princeton/Vero-Qwen25-7B",
+    "repository_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+    "schema_version": "trace_eval_model_v1"
+   }
+  },
+  "parts_by_config": {
+   "extractions": 216,
+   "responses": 216,
+   "scores": 216
+  },
+  "problems": [],
+  "receipt": {
+   "immutable_tree_url": "https://huggingface.co/datasets/maveryn/trace-eval-runs/tree/4178a839b689babe16f8ac36f0de7b1b2c5ef36c/runs/qwen2.5-vl-7b-comparison-temp06-seeds42-44-v1",
+   "manifest_sha256": "0334afa738e441631591197e5e16a379bc6c0380d293122b4036dd5621d47b28",
+   "repository_id": "maveryn/trace-eval-runs",
+   "result_sha256": "578e574d68702af0b83a9c1962bd73c36f8887787cc9ac10a8f7da3d207c10ac",
+   "revision": "4178a839b689babe16f8ac36f0de7b1b2c5ef36c",
+   "run_id": "qwen2.5-vl-7b-comparison-temp06-seeds42-44-v1"
+  },
+  "release_files": [
+   {
+    "ok": false,
+    "path": "README.md",
+    "present": false
+   }
+  ],
+  "repository_id": "maveryn/trace-eval-runs",
+  "result_file": "metadata/results/benchmark_scores.json",
+  "result_sha256": "578e574d68702af0b83a9c1962bd73c36f8887787cc9ac10a8f7da3d207c10ac",
+  "revision": "4178a839b689babe16f8ac36f0de7b1b2c5ef36c",
+  "rows_by_config": {
+   "extractions": 295245,
+   "responses": 295245,
+   "scores": 195174
+  },
+  "run_id": "qwen2.5-vl-7b-comparison-temp06-seeds42-44-v1",
+  "source_selection_sha256": "84d341c960e3e1ca725ff87dee5f93edd4ec67d6e317e799b4e3bdf8b7875e82",
+  "source_slice_set_sha256": "0befd59288cd0ff9e7a1dbee3bfa628a1d44c91f4379942937713a0acffe21ab",
+  "status": "verified",
+  "verified_bytes": 375160074,
+  "verified_files": 1303,
+  "warnings": [
+   "release file README.md (repository-level documentation) is not in the local snapshot"
+  ]
+ },
+ "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+ "created_at": "2026-11-02T06:45:17+00:00",
+ "dataset_manifest": {
+  "benchmarks": {
+   "blink": {
+    "alias": "BLINK",
+    "dataset_snapshot_sha256": "a1faaa7068e13bdca4f0961176b18417ac01ab9afdbef661a8af9c8621e86d72",
+    "metadata_files": [
+     {
+      "path": "BLINK.tsv",
+      "present": true,
+      "sha256": "fa2190bcb4e80d25af9ff778caae60ee02ae37b9d0f40bdbc3483cfdf328107c",
+      "sha256_ok": true,
+      "size_bytes": 538366044,
+      "size_ok": true
+     }
+    ],
+    "rows": 1901,
+    "unique_media": 3675
+   },
+   "chartqapro": {
+    "alias": "ChartQAPro_CoT",
+    "dataset_snapshot_sha256": "b9fe6b9a652714f729876c051073f43680ab70abb7886072c86b9a492bf12375",
+    "metadata_files": [
+     {
+      "path": "ChartQAPro_CoT.tsv",
+      "present": true,
+      "sha256": "fd8073b5061211594d4a320ee3fbf63a0c28967c146ca1e9e12f7f392866a8eb",
+      "sha256_ok": true,
+      "size_bytes": 335044080,
+      "size_ok": true
+     }
+    ],
+    "rows": 1948,
+    "unique_media": 1948
+   },
+   "charxivreason": {
+    "alias": "CharXiv_reasoning_val",
+    "dataset_snapshot_sha256": "93e15391f79b2006606016e1170deb099773ab85c9dbcc3a0228765761a7f58a",
+    "metadata_files": [
+     {
+      "path": "CharXiv_reasoning_val.tsv",
+      "present": true,
+      "sha256": "88381fc53b97d5be4c833dda520dcb6d6cf98509547c2a62d20ae9545408cf05",
+      "sha256_ok": true,
+      "size_bytes": 99441202,
+      "size_ok": true
+     }
+    ],
+    "rows": 1000,
+    "unique_media": 1000
+   },
+   "countbenchqa": {
+    "alias": "CountBenchQA",
+    "dataset_snapshot_sha256": "388a8159f6ed3467c6b72ad164e7d24c7413d87caff0c8b089993db6644445f5",
+    "metadata_files": [
+     {
+      "path": "CountBenchQA.tsv",
+      "present": true,
+      "sha256": "04bdc86ac7804e3210394c4d8e17495523fc86da962b908ab8344280067dcc28",
+      "sha256_ok": true,
+      "size_bytes": 29528050,
+      "size_ok": true
+     }
+    ],
+    "rows": 487,
+    "unique_media": 487
+   },
+   "countqa": {
+    "alias": "CountQA",
+    "dataset_snapshot_sha256": "5092922404bf6b1281a135cc1066a09c291d2b14659c5cbb468275da7309ab80",
+    "metadata_files": [
+     {
+      "path": "CountQA.tsv",
+      "present": true,
+      "sha256": "9af51b9fdf5c9e07bf18a71a686b092f1e6758ae462bf025b0eab08a6b8276e7",
+      "sha256_ok": true,
+      "size_bytes": 980060,
+      "size_ok": true
+     }
+    ],
+    "rows": 1528,
+    "unique_media": 1001
+   },
+   "cvbench_3d": {
+    "alias": "CV-Bench-3D",
+    "dataset_snapshot_sha256": "37df159f13e09a37c0500562fdda584c7f2cd54f932518ac51e0395ed06fd22a",
+    "metadata_files": [
+     {
+      "path": "CV-Bench-3D.tsv",
+      "present": true,
+      "sha256": "11c7debda31275b382017e6cf287b995efe809b4246dbaabd6e4ac5496cead17",
+      "sha256_ok": true,
+      "size_bytes": 158154864,
+      "size_ok": true
+     }
+    ],
+    "rows": 1200,
+    "unique_media": 1200
+   },
+   "embspatial": {
+    "alias": "EmbSpatialBench",
+    "dataset_snapshot_sha256": "c48c69b834385c2c9b198ac1b482ab877fef2c75c6f9dee85e48f771c71de542",
+    "metadata_files": [
+     {
+      "path": "EmbSpatialBench.tsv",
+      "present": true,
+      "sha256": "f091026e7b5b15900efd36d7be9ab8eaf1ce19f453333fbeabc6d4808d7a874a",
+      "sha256_ok": true,
+      "size_bytes": 252147965,
+      "size_ok": true
+     }
+    ],
+    "rows": 3640,
+    "unique_media": 3640
+   },
+   "erqa": {
+    "alias": "ERQA",
+    "dataset_snapshot_sha256": "73faa6400a87606380601038664e1e21d9952bdeb9758991d9e05f9cab69fde5",
+    "metadata_files": [
+     {
+      "path": "ERQA.tsv",
+      "present": true,
+      "sha256": "366397928d2b628205d045c0351d24ae2b03b1ecfbe6126e99302687782cf096",
+      "sha256_ok": true,
+      "size_bytes": 121761616,
+      "size_ok": true
+     }
+    ],
+    "rows": 400,
+    "unique_media": 630
+   },
+   "evochart": {
+    "alias": "EvoChart",
+    "dataset_snapshot_sha256": "01b04e7cf3ced9857d1a168fe09116224ca2679de1218a35ad984ab955fd2122",
+    "metadata_files": [
+     {
+      "path": "EvoChart.tsv",
+      "present": true,
+      "sha256": "af9ac437bb67b07f2a9ccbcf05c2e9a49e640dac0c5d4fcf58d4a7723069da94",
+      "sha256_ok": true,
+      "size_bytes": 311882,
+      "size_ok": true
+     }
+    ],
+    "rows": 1250,
+    "unique_media": 1250
+   },
+   "logicvista": {
+    "alias": "LogicVista",
+    "dataset_snapshot_sha256": "fd1fa22a96bde31f8558d935d8729ad93c62e3f83da42c018bc024d80d92fb4b",
+    "metadata_files": [
+     {
+      "path": "LogicVista.tsv",
+      "present": true,
+      "sha256": "f5e797e904e875843e823556e54e91d95d427426ad160321a06f034539ad9795",
+      "sha256_ok": true,
+      "size_bytes": 34532902,
+      "size_ok": true
+     }
+    ],
+    "rows": 447,
+    "unique_media": 447
+   },
+   "mathverse": {
+    "alias": "MathVerse_MINI_Vision_Only_cot",
+    "dataset_snapshot_sha256": "80518d1d7a338a73d97f16fb6ea20c2bb81be76fa48942d1a746f3f7280b5288",
+    "metadata_files": [
+     {
+      "path": "MathVerse_MINI_Vision_Only_cot.tsv",
+      "present": true,
+      "sha256": "e4280ca3f27563c3bc3559e6d27bc3af0586d690356318354c160346313e52ed",
+      "sha256_ok": true,
+      "size_bytes": 101241205,
+      "size_ok": true
+     }
+    ],
+    "rows": 788,
+    "unique_media": 788
+   },
+   "mathvision": {
+    "alias": "MathVision",
+    "dataset_snapshot_sha256": "b23bfc07d253a09674bd5e27474aa81a24583d66cfc971c7d3e9cfc11467711f",
+    "metadata_files": [
+     {
+      "path": "MathVision.tsv",
+      "present": true,
+      "sha256": "9d8bdce8283730b8f22b36cac91e9d23fe375a38032d8d2f8566e6e9e9ace719",
+      "sha256_ok": true,
+      "size_bytes": 120787658,
+      "size_ok": true
+     }
+    ],
+    "rows": 3040,
+    "unique_media": 3040
+   },
+   "mathvista": {
+    "alias": "MathVista_MINI",
+    "dataset_snapshot_sha256": "6c76f629a74ec408282de9e9cb7fca6b951c72901609f957dc6b8debf2b539fe",
+    "metadata_files": [
+     {
+      "path": "MathVista_MINI.tsv",
+      "present": true,
+      "sha256": "876bc02fce10e4d2a13c1cf4fc02226daf8c039599f85725c05c5ef4996dc455",
+      "sha256_ok": true,
+      "size_bytes": 55136266,
+      "size_ok": true
+     }
+    ],
+    "rows": 1000,
+    "unique_media": 1000
+   },
+   "mme_reasoning": {
+    "alias": "MME-Reasoning",
+    "dataset_snapshot_sha256": "fb9d4a8ea160325dfdcecabeab80dccf9a2ac78d662daa17fea63fa71fde22ca",
+    "metadata_files": [
+     {
+      "path": "MME-Reasoning.tsv",
+      "present": true,
+      "sha256": "43ffe6d333aa0b60622a2f4d6189af3b78514a3d3f1e7aad0958bd5958bcab1d",
+      "sha256_ok": true,
+      "size_bytes": 76559610,
+      "size_ok": true
+     }
+    ],
+    "rows": 1188,
+    "unique_media": 1287
+   },
+   "mmmu_pro_vision": {
+    "alias": "MMMU_Pro_V_COT",
+    "dataset_snapshot_sha256": "feba3d015a14c84dd5ad01a30dc5801570ff1f7d009fe059586aeecfe47568f2",
+    "metadata_files": [
+     {
+      "path": "MMMU_Pro_V_COT.tsv",
+      "present": true,
+      "sha256": "80dbb7fb75442d4c1d113ea4725127371a9553dc787466c4b3b39149f83dfb91",
+      "sha256_ok": true,
+      "size_bytes": 507321469,
+      "size_ok": true
+     }
+    ],
+    "rows": 1730,
+    "unique_media": 1730
+   },
+   "mmstar": {
+    "alias": "MMStar",
+    "dataset_snapshot_sha256": "3e2d91b22fb992d55867edeb90a4b18f6a254e9eb73961635c10d1c6140b0351",
+    "metadata_files": [
+     {
+      "path": "MMStar.tsv",
+      "present": true,
+      "sha256": "5b581d485fcfbb0f4c8fc0440fc4ecea17fb4ba1750c6446fd20833070552e95",
+      "sha256_ok": true,
+      "size_bytes": 59552082,
+      "size_ok": true
+     }
+    ],
+    "rows": 1500,
+    "unique_media": 1500
+   },
+   "phyx_mini_mc": {
+    "alias": "PhyX_mini_MC",
+    "dataset_snapshot_sha256": "243721c55b39738fb89335f0e615b29cd7579f6326e95e834ec51e8d6d34df8a",
+    "metadata_files": [
+     {
+      "path": "PhyX_mini_MC.tsv",
+      "present": true,
+      "sha256": "1c16d4d824627602a48f55cb67c047d8838540198a9d11db32d3d96f49e564cb",
+      "sha256_ok": true,
+      "size_bytes": 29401679,
+      "size_ok": true
+     }
+    ],
+    "rows": 1000,
+    "unique_media": 1000
+   },
+   "puzzlevqa": {
+    "alias": "PuzzleVQA",
+    "dataset_snapshot_sha256": "c9c9d0e1762d667b59bbc21c7181118c1e5fd27aa2927d2558caed91e06ff8eb",
+    "metadata_files": [
+     {
+      "path": "PuzzleVQA.tsv",
+      "present": true,
+      "sha256": "e9e35b0e6edd6a7b46b08cc7b9c04fefa4a9d01a2150d134727b7dbe4d122985",
+      "sha256_ok": true,
+      "size_bytes": 85167339,
+      "size_ok": true
+     }
+    ],
+    "rows": 2000,
+    "unique_media": 2000
+   },
+   "realworldqa": {
+    "alias": "RealWorldQA",
+    "dataset_snapshot_sha256": "6d5c4a18e8d9669a54e4e0d4e0597e5d362b535dcc46ee6868710a4d571cac4e",
+    "metadata_files": [
+     {
+      "path": "RealWorldQA.tsv",
+      "present": true,
+      "sha256": "77ed7d5adff8522a3b6c28d3a3df5830473901c9c2c0768ad5b0b26151813816",
+      "sha256_ok": true,
+      "size_bytes": 183675999,
+      "size_ok": true
+     }
+    ],
+    "rows": 765,
+    "unique_media": 765
+   },
+   "spatialvizbench_cot": {
+    "alias": "SpatialVizBench_CoT",
+    "dataset_snapshot_sha256": "86f5c7044db617c64874e5d008753f6e6c2465e1ae316fdb70f86a042ee4eefd",
+    "metadata_files": [
+     {
+      "path": "SpatialVizBench_CoT.tsv",
+      "present": true,
+      "sha256": "510a27dd9cbb2d1abcd5f7a901621af96cc874ddfd935b9ec44b3bee5a0c4f2f",
+      "sha256_ok": true,
+      "size_bytes": 219706547,
+      "size_ok": true
+     }
+    ],
+    "rows": 1180,
+    "unique_media": 1180
+   },
+   "tablevqabench": {
+    "alias": "TableVQABench",
+    "dataset_snapshot_sha256": "f1d3457a5cbe38014d587e7432f7bed1cc98aa797e38342b14ea4dcddb2f4216",
+    "metadata_files": [
+     {
+      "path": "TableVQABench.tsv",
+      "present": true,
+      "sha256": "dd656f51ef8684c502368adf2e670115b1b5b4750f182b1f9751e75b311d6070",
+      "sha256_ok": true,
+      "size_bytes": 358766217,
+      "size_ok": true
+     }
+    ],
+    "rows": 1500,
+    "unique_media": 1263
+   },
+   "treebench": {
+    "alias": "TreeBench",
+    "dataset_snapshot_sha256": "6d3f5de874633e04ae18cd6a4d516767e9403061d412b6751303f1361b9ac932",
+    "metadata_files": [
+     {
+      "path": "TreeBench.tsv",
+      "present": true,
+      "sha256": "128b4d82dfeafad45b1576c9eef83e3faced8c08b00c87f58ed9207bda5ff80d",
+      "sha256_ok": true,
+      "size_bytes": 288977847,
+      "size_ok": true
+     }
+    ],
+    "rows": 405,
+    "unique_media": 405
+   },
+   "visualpuzzles": {
+    "alias": "VisualPuzzles",
+    "dataset_snapshot_sha256": "0079744c2dc735cb346d7b0ac6c940d535f67eda603f8ce09452f51265066716",
+    "metadata_files": [
+     {
+      "path": "VisualPuzzles.tsv",
+      "present": true,
+      "sha256": "dc6d074ff1c0c8f1d07a600bf85986e22a608c1f7719d9b440d61b9a5748cfe2",
+      "sha256_ok": true,
+      "size_bytes": 191832909,
+      "size_ok": true
+     }
+    ],
+    "rows": 1168,
+    "unique_media": 1168
+   },
+   "wemath": {
+    "alias": "WeMath_COT",
+    "dataset_snapshot_sha256": "b349e5ba2455942728c20b5215a126cf55cc06647e453a33012c2d70f3af65ca",
+    "metadata_files": [
+     {
+      "path": "WeMath_COT.tsv",
+      "present": true,
+      "sha256": "6a858b26641c535056494ef0257a9fd9af1226cce91b5e9ccaf4581f0cbaa9bf",
+      "sha256_ok": true,
+      "size_bytes": 59378253,
+      "size_ok": true
+     }
+    ],
+    "rows": 1740,
+    "unique_media": 1740
+   }
+  },
+  "dataset_snapshot_recomputed": "f274650ba686529a04c01d98c9a25cb8eb1f1cbd71d1262453d9e37e6eb5dcef",
+  "dataset_snapshot_sha256": "f274650ba686529a04c01d98c9a25cb8eb1f1cbd71d1262453d9e37e6eb5dcef",
+  "metadata_files_hashed": true,
+  "path": "rlvr/evaluation/.work/LMUData/trace_eval_v1_dataset_manifest.json (protocol clone)",
+  "problems": [],
+  "schema_version": "trace-final25-datasets-v2",
+  "sha256": "fa3f105e74b4f3fb9a601a2855367002c05f76f95911f1f7b21ccfa87e433684",
+  "status": "verified",
+  "suite_sha256": "b84262bcd2243d1d2879b2e02d9b49b17052659ea767df3d7303758f4d63de71",
+  "vlmevalkit_commit": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+ },
+ "problems": [],
+ "protocol": {
+  "code_revision": "af32fe0e668eb878e909daef7322ac1c4ae20f64",
+  "generation": {
+   "max_image_pixels": 12845056,
+   "max_tokens": 4096,
+   "media_transport": "file-url",
+   "min_image_pixels": 3136,
+   "presence_penalty": 0.0,
+   "repetition_penalty": 1.0,
+   "temperature": 0.6,
+   "top_k": -1,
+   "top_p": 1.0
+  },
+  "judge": {
+   "repo_id": "Qwen/Qwen3-32B",
+   "revision": "9216db5781bf21249d130ec9da846c4624c16137"
+  },
+  "vlmevalkit_revision": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+ },
+ "protocol_code": {
+  "trace_eval_hf_archive_lib": {
+   "clone_sha256": "eab942fe73c766709304ee33a56e635792a8663019c8cf23611ae11fde7f2a70",
+   "path": "rlvr/evaluation/scripts/trace_eval_hf_archive_lib.py",
+   "sha256": "eab942fe73c766709304ee33a56e635792a8663019c8cf23611ae11fde7f2a70"
+  },
+  "trace_eval_media_contract": {
+   "clone_sha256": "d9e6e86387d88db8b4c5fe9123e1609025bbc0e389a37882ed0c4269c05107bc",
+   "path": "rlvr/evaluation/scripts/trace_eval_media_contract.py",
+   "sha256": "d9e6e86387d88db8b4c5fe9123e1609025bbc0e389a37882ed0c4269c05107bc"
+  },
+  "trace_eval_public_export": {
+   "clone_sha256": "4e208ca43f2fbbc54f10f7e734dc03da282e6652fa530c90df9b66ff76c251c3",
+   "path": "rlvr/evaluation/scripts/trace_eval_public_export.py",
+   "sha256": "4e208ca43f2fbbc54f10f7e734dc03da282e6652fa530c90df9b66ff76c251c3"
+  }
+ },
+ "release_inputs": {
+  "files": [
+   {
+    "expected": "6d8ae0a5a6c6ff60e6f56376a5f9b2b175f906753c2796d1a2292a02d9f89c1e",
+    "ok": true,
+    "path": "rlvr/evaluation/requirements.txt",
+    "sha256": "6d8ae0a5a6c6ff60e6f56376a5f9b2b175f906753c2796d1a2292a02d9f89c1e"
+   },
+   {
+    "expected": "601730dd3cdc55d14f43e58c7d82a48d31e7614ef521758c8799fbcabd07ca5a",
+    "ok": true,
+    "path": "rlvr/evaluation/trace_eval/RESULTS.md",
+    "sha256": "601730dd3cdc55d14f43e58c7d82a48d31e7614ef521758c8799fbcabd07ca5a"
+   },
+   {
+    "expected": "6a1a8f8e39580cfc83f5c68f5fb38d9969cd73df29058a97bf5d33982d49da11",
+    "ok": true,
+    "path": "rlvr/evaluation/trace_eval/benchmark_provenance.v1.json",
+    "sha256": "6a1a8f8e39580cfc83f5c68f5fb38d9969cd73df29058a97bf5d33982d49da11"
+   },
+   {
+    "expected": "569ea2463ace4c6b505d1fb168957e558667641810e90a8d9ede80f555823c98",
+    "ok": true,
+    "path": "rlvr/evaluation/trace_eval/results.json",
+    "sha256": "569ea2463ace4c6b505d1fb168957e558667641810e90a8d9ede80f555823c98"
+   },
+   {
+    "expected": "b84262bcd2243d1d2879b2e02d9b49b17052659ea767df3d7303758f4d63de71",
+    "ok": true,
+    "path": "rlvr/evaluation/trace_eval/suite.v1.json",
+    "sha256": "b84262bcd2243d1d2879b2e02d9b49b17052659ea767df3d7303758f4d63de71"
+   }
+  ],
+  "problems": [],
+  "status": "verified"
+ },
+ "rl_baselines_archive": "not used: holds no B/T/V run (DESIGN.md section 1)",
+ "schema": "trace_merge_input_manifest_v1",
+ "status": "verified",
+ "study_id": "trace_vero_qwen25_v1"
+}

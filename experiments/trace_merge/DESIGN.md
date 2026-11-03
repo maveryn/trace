@@ -247,3 +247,37 @@ from the 8×H100 reference configuration and change no decoding setting: request
 64/128 on 40-80/≥80 GB cards (protocol 32), the judge's tensor-parallel degree chosen per node (1 on ≥90 GB cards, 2 on
 44-80 GB cards, with 8,192 batched tokens when headroom is tight), and judge weight verification by marker. Each run's
 `timing.seed<S>.json` records the values it used.
+
+**A8 (2026-11-03 00:10 MST, after the confirmation tables had been read): one confirmation run rescored after a judge
+fault.** (a) Found during the independent verification of the confirmation report: M050@P1 seed 44 scored 16.98 on
+MathVerse against 43.65 and 47.30 on seeds 42 and 43 (MathVista 67.25 against 78.00/77.75; LogicVista 47.21 against
+50.84/51.68), while its responses look like the other seeds' (length, finish reason, `\boxed{}` rate). Its scoring half
+ran on grn023 (6× A800 40 GB) with the Qwen3-32B judge at tensor-parallel degree 4, the only run of the study with that
+judge configuration (A7(c): every other run used degree 1 or 2). Its batched judge outputs do not match their prompts:
+on MathVerse the judge-extracted answer equals the response's own final `\boxed{}` answer on 14.8% of rows, against
+43–88% on all 24 other runs (smoke, development, P2 and confirmation), and one batch returns the same output ("130.5")
+for two different problems. The cause inside the serving stack was not isolated. (b) Repair, a technical repair and not
+a selection: the run's generation outputs are kept unchanged; its scoring outputs (the seed's score campaign directory,
+campaign manifest and completion files, validation and summary files, and its 48 extraction/score archive-spool
+descriptors with their payloads) are moved, not deleted, to `runs/m050-p1/confirmation/quarantine_seed44_tp4_judge/`
+with a `QUARANTINE.json` record, and the scoring half is rerun (`eval_subset.sh --judge-only`) on ≥90 GB cards, where
+the judge runs at degree 1. This rule was fixed before any rescored value was read. (c) Nothing locked changes: the
+confirmed set, the primary family, the split, the merges and the views are as locked; the rescored run is re-ingested
+and `confirm` is rerun on all twelve runs. The confirmation tables computed with the faulty scores are superseded and
+are not reported.
+
+**A9 (2026-11-03 02:10 MST, record): corrections to A7(c) and A8 found by the second verification pass.** (a) A8(a)
+describes the fault as outputs that "do not match their prompts" and cites one batch returning "130.5" for two
+problems. Both are wrong descriptions of the mechanism: the rescored judge returns "130.5" for the same two rows (both
+responses conclude 130°), and the faulty outputs mostly concern their own prompt (61.5% begin with the row's own
+`\boxed{}` answer). What went wrong is degraded generation: the faulty outputs often run on and copy text from the
+judge prompt's few-shot examples (the phrase "They give the solutions to the equation" appears in 133 of 630 MathVerse
+extraction outputs, against 0 of 630 after the rescore; 297 against 540 are short single-line answers). The agreement
+numbers in A8(a) (14.8% against 43–88%) and the repair in A8(b) stand. The cause inside the serving stack remains not
+isolated. (b) Besides MathVerse, MathVista and LogicVista, the faulty judge also changed MathVision (470 of 1,702 judge
+outputs differ; seed-44 score 27.18 before, 27.92 after) and, slightly, other judge-routed benchmarks; the rescore
+replaced all of them. (c) A7(c)'s "Each run's `timing.seed<S>.json` records the values it used" holds only for attempts
+started after A7; for earlier attempts the judge's tensor-parallel degree is in `logs/vllm_judge.*.start.log`, which
+shows degree 1 or 2 for every scoring attempt except the A8 one. (d) A8's 00:10 stamp is rounded: its text was final at
+00:07:47 MST, after the quarantine move (00:07:14) and before any rescored value existed (first rescored descriptor
+00:17).

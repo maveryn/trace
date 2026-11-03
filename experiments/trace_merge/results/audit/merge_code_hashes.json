@@ -1,0 +1,12 @@
+{
+ "note": "merge/view code as used by build job 2299598 (working tree on top of af32fe0, uncommitted at build time)",
+ "recorded": "2026-11-02T05:27:30.380763Z",
+ "sha256": {
+  "trace_merge/merge.py": "b905dac29e28661e85f6ad66dd0c95bba7efde01fe3184b6469bdbf33af9c209",
+  "trace_merge/safetensors_io.py": "f647d78fb42c864acdf7c26cba9a68a5f2bfd3abd02566ca101752a3765fb494",
+  "trace_merge/compatibility.py": "055af96ed0d60daa9c95d8ed65c5c296e5888fcb5463465d0a0385ede6ed4f4c",
+  "trace_merge/views.py": "868f7ec61d6669e6a0d8994a6a18c5174fd1a1dc6ca27f1e98a66bfff7c806bc",
+  "trace_merge/config.py": "b5ea780625ac88a41d1383e7a6898f23d87baa61bf2e52fad8362cc2d16d1003",
+  "trace_merge/cli.py": "7c7e18e143d3c1c40ac4ec75eb1f514337e6c142220024776b1958a368426162"
+ }
+}

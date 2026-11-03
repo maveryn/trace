@@ -1,0 +1,1595 @@
+{
+ "accepted_benchmarks": [
+  "blink",
+  "chartqapro",
+  "charxivreason",
+  "countbenchqa",
+  "countqa",
+  "cvbench_3d",
+  "embspatial",
+  "erqa",
+  "evochart",
+  "logicvista",
+  "mathverse",
+  "mathvision",
+  "mathvista",
+  "mme_reasoning",
+  "mmmu_pro_vision",
+  "mmstar",
+  "phyx_mini_mc",
+  "puzzlevqa",
+  "realworldqa",
+  "spatialvizbench_cot",
+  "tablevqabench",
+  "treebench",
+  "visualpuzzles",
+  "wemath"
+ ],
+ "benchmarks": {
+  "blink": {
+   "aggregation": "row_mean",
+   "benchmark_id": "blink",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.evaluate_heuristic",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py::report_acc",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.report_primary_metric"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "14 subtasks; report_acc's 'Overall' is the pooled mean over split 'none'",
+   "official_alias": "BLINK",
+   "official_metric_id": "blink:primary",
+   "official_metric_key": "Overall Acc",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "blink-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Perception & Counting",
+    "display": "BLINK",
+    "rows": 1901,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "chartqapro": {
+   "aggregation": "row_mean",
+   "benchmark_id": "chartqapro",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py::_adapt_chartqapro_prediction",
+    "external/VLMEvalKit/vlmeval/dataset/chartqapro.py::ChartQAPro.get_scores",
+    "external/VLMEvalKit/vlmeval/dataset/utils/chartqapro.py::evaluate_predictions_chartqapro"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/chartqapro.py": "122acb0e1ad6542aca4ab76a312dcd1f741548f4269e1cf22491e8eba32311ee",
+    "external/VLMEvalKit/vlmeval/dataset/utils/chartqapro.py": "9bfa75feb8c70341f788a7d85095df9a18cca08c04a7ab793d802b66afd2db83",
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "answer",
+    "question_type",
+    "year"
+   ],
+   "notes": "final_numbers['Overall'] = sum(relaxed correctness) / rows; per-row relaxed correctness/ANLS is fractional",
+   "official_alias": "ChartQAPro_CoT",
+   "official_metric_id": "chartqapro:primary",
+   "official_metric_key": "Overall Acc",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "fd8073b5061211594d4a320ee3fbf63a0c28967c146ca1e9e12f7f392866a8eb",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/chartqapro.py": "122acb0e1ad6542aca4ab76a312dcd1f741548f4269e1cf22491e8eba32311ee",
+      "external/VLMEvalKit/vlmeval/dataset/utils/chartqapro.py": "9bfa75feb8c70341f788a7d85095df9a18cca08c04a7ab793d802b66afd2db83",
+      "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "fractional",
+    "supported": false
+   },
+   "row_score_type": "fractional",
+   "scorer_id": "chartqapro-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "mandated final 'The answer is X' sentence",
+    "category": "Charts & Tables",
+    "display": "ChartQAPro",
+    "rows": 1948,
+    "score_contract": "pinned ChartQAPro dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "charxivreason": {
+   "aggregation": "row_mean",
+   "benchmark_id": "charxivreason",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py::_run_charxiv_local_judge",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py::_charxiv_primary_score"
+   ],
+   "code_sha256": {
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "scores['Overall'] = sum(row judge scores) / rows; the per-category means are not averaged",
+   "official_alias": "CharXiv_reasoning_val",
+   "official_metric_id": "charxivreason:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "charxivreason-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark grading prompt extracts answer",
+    "category": "Charts & Tables",
+    "display": "CharXivReason",
+    "rows": 1000,
+    "score_contract": "Qwen3-32B rubric score from benchmark grading prompt"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "countbenchqa": {
+   "aggregation": "row_mean",
+   "benchmark_id": "countbenchqa",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_vqa.py::CountBenchQA.evaluate"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_vqa.py": "f76692b8bf6f18a4585a4ff41d2fe30bb83fa74c283da355a2c6d720113e55e6"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "answer"
+   ],
+   "notes": "hit = str(answer) in str(prediction) on the raw prediction cell",
+   "official_alias": "CountBenchQA",
+   "official_metric_id": "countbenchqa:primary",
+   "official_metric_key": "accuracy",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 1.4210854715202004e-14,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "04bdc86ac7804e3210394c4d8e17495523fc86da962b908ab8344280067dcc28",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_vqa.py": "f76692b8bf6f18a4585a4ff41d2fe30bb83fa74c283da355a2c6d720113e55e6"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "countbenchqa-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Perception & Counting",
+    "display": "CountBenchQA",
+    "rows": 487,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "countqa": {
+   "aggregation": "row_mean",
+   "benchmark_id": "countqa",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/trace_eval_local_vqa.py::CountQA.evaluate"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/trace_eval_local_vqa.py": "0e7647c4ca3f6a7291e6a7e049e970f774497ed42b72783d84367485d2f085be"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "",
+   "official_alias": "CountQA",
+   "official_metric_id": "countqa:primary",
+   "official_metric_key": "split=Overall|acc",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 3.552713678800501e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/trace_eval_local_vqa.py": "0e7647c4ca3f6a7291e6a7e049e970f774497ed42b72783d84367485d2f085be"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "countqa-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Perception & Counting",
+    "display": "CountQA",
+    "rows": 1528,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "cvbench_3d": {
+   "aggregation": "row_mean",
+   "benchmark_id": "cvbench_3d",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::CVBench.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py::report_acc"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "3D uses report_acc (pooled over split 3D); only CV-Bench-2D uses the per-source macro report_accuracy",
+   "official_alias": "CV-Bench-3D",
+   "official_metric_id": "cvbench_3d:primary",
+   "official_metric_key": "split=3D|Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 0.0,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "cvbench_3d-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Spatial Reasoning",
+    "display": "CV-Bench 3D",
+    "rows": 1200,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "embspatial": {
+   "aggregation": "row_mean",
+   "benchmark_id": "embspatial",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/embspatialbench.py::EmbSpatialBench.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py::eval_mcq_score"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/embspatialbench.py": "6ba0a83949e6423fefe9f8ebb3ffd5dc15d7216927f46d8d533cf12b395daca7",
+    "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py": "8de2e5d0d6095f30c8f7bf7087cc5105459ffa7a6cce8abd3fa281b8b60339ae"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "summary['overall'] = mcq_scored['hit'].mean() * 100",
+   "official_alias": "EmbSpatialBench",
+   "official_metric_id": "embspatial:primary",
+   "official_metric_key": "overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 1.4210854715202004e-14,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/embspatialbench.py": "6ba0a83949e6423fefe9f8ebb3ffd5dc15d7216927f46d8d533cf12b395daca7",
+      "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py": "8de2e5d0d6095f30c8f7bf7087cc5105459ffa7a6cce8abd3fa281b8b60339ae"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "embspatial-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Spatial Reasoning",
+    "display": "EmbSpatial",
+    "rows": 3640,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "erqa": {
+   "aggregation": "row_mean",
+   "benchmark_id": "erqa",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/erqabench.py::ERQABench.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py::eval_mcq_score"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/erqabench.py": "5f824aa68b2a9f39cc60f5293c643d29771399e4b7f0ff4407b97bb43e88f14b",
+    "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py": "8de2e5d0d6095f30c8f7bf7087cc5105459ffa7a6cce8abd3fa281b8b60339ae"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "",
+   "official_alias": "ERQA",
+   "official_metric_id": "erqa:primary",
+   "official_metric_key": "overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 0.0,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/erqabench.py": "5f824aa68b2a9f39cc60f5293c643d29771399e4b7f0ff4407b97bb43e88f14b",
+      "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py": "8de2e5d0d6095f30c8f7bf7087cc5105459ffa7a6cce8abd3fa281b8b60339ae"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "erqa-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned ERQABench.evaluate",
+    "category": "Spatial Reasoning",
+    "display": "ERQA",
+    "rows": 400,
+    "score_contract": "pinned EASI ERQABench metric with the duplicate ERQADataset registry entry bypassed"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "evochart": {
+   "aggregation": "row_mean",
+   "benchmark_id": "evochart",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py::_run_evochart_local_score",
+    "external/VLMEvalKit/vlmeval/dataset/evochart.py::EvoChart.evaluate"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/evochart.py": "526cb53ae9988dc7f64a055cf9511a5bbe724a21c2dcded36f92345001a9bc00",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "Overall row: sum(scores) / len(scores) * 100",
+   "official_alias": "EvoChart",
+   "official_metric_id": "evochart:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 0.0,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/evochart.py": "526cb53ae9988dc7f64a055cf9511a5bbe724a21c2dcded36f92345001a9bc00",
+      "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "evochart-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "deterministic final-answer parsing in the TRACE dataset extension",
+    "category": "Charts & Tables",
+    "display": "EvoChart",
+    "rows": 1250,
+    "score_contract": "local deterministic EvoChart extension because the pinned upstream has no evaluator"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "logicvista": {
+   "aggregation": "row_mean",
+   "benchmark_id": "logicvista",
+   "code_refs": [
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py::run_logicvista_local_judge",
+    "external/VLMEvalKit/vlmeval/dataset/utils/logicvista.py::evaluate_logicvista",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py::_normalize_logicvista_option_summary"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+    "external/VLMEvalKit/vlmeval/dataset/utils/logicvista.py": "843ca8dc9069eccecca1795ea4abe9051c2acabe25e40f363d8642d7ba499f83",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "acc['Overall'] = hit.sum() / rows * 100; skill accuracies are reported separately",
+   "official_alias": "LogicVista",
+   "official_metric_id": "logicvista:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 4.4515502395370277e-11,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+      "external/VLMEvalKit/vlmeval/dataset/utils/logicvista.py": "843ca8dc9069eccecca1795ea4abe9051c2acabe25e40f363d8642d7ba499f83",
+      "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "logicvista-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "pinned option-set extraction with a numeric-label-only exception",
+    "category": "Puzzles & Logic",
+    "display": "LogicVista",
+    "rows": 447,
+    "score_contract": "pinned exact normalized option-set comparison"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "mathverse": {
+   "aggregation": "row_mean",
+   "benchmark_id": "mathverse",
+   "code_refs": [
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py::run_mathverse_local_judge",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathverse.py::MathVerse_acc",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py::_normalize_mathverse_binary_judgement_summary"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathverse.py": "76aee88b73a4e3315fa7366b003dadfa524b7cca3f6ef2e6f424ae668793aaa0",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "one problem_version (Vision Only), so 'Overall' = np.mean(score) * 100 over all rows",
+   "official_alias": "MathVerse_MINI_Vision_Only_cot",
+   "official_metric_id": "mathverse:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 3.0460967082035495e-11,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+      "external/VLMEvalKit/vlmeval/dataset/utils/mathverse.py": "76aee88b73a4e3315fa7366b003dadfa524b7cca3f6ef2e6f424ae668793aaa0",
+      "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "mathverse-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "Qwen3-32B answer extraction",
+    "category": "Visual Math",
+    "display": "MathVerse",
+    "rows": 788,
+    "score_contract": "official prefetch, else strict Qwen3-32B binary correctness judge"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "mathvision": {
+   "aggregation": "row_mean",
+   "benchmark_id": "mathvision",
+   "code_refs": [
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py::run_mathv_local_judge",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathv.py::MATH_V_acc",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathv.py::post_check",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathv.py::is_equal"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathv.py": "5a79a543ccea51d6b1c93b58a36ae4ea83171d92c50c4ca382dcdc9c63fed213"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "answer",
+    "choices",
+    "category"
+   ],
+   "notes": "hit = post_check(row, prefetch=False) on the judged table's 'res' (prefetch or archived judge output)",
+   "official_alias": "MathVision",
+   "official_metric_id": "mathvision:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 3.552713678800501e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "9d8bdce8283730b8f22b36cac91e9d23fe375a38032d8d2f8566e6e9e9ace719",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+      "external/VLMEvalKit/vlmeval/dataset/utils/mathv.py": "5a79a543ccea51d6b1c93b58a36ae4ea83171d92c50c4ca382dcdc9c63fed213"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "mathvision-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "official prefetch, else Qwen3-32B answer extraction",
+    "category": "Visual Math",
+    "display": "MathVision",
+    "rows": 3040,
+    "score_contract": "official MathVision normalized answer scorer"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "mathvista": {
+   "aggregation": "row_mean",
+   "benchmark_id": "mathvista",
+   "code_refs": [
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py::run_mathvista_local_judge",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathvista.py::MathVista_acc",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathvista.py::post_check"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+    "external/VLMEvalKit/vlmeval/dataset/utils/mathvista.py": "51561b35694d1bbb7a089aa672e1199288caf152ab67e38233a148243b5a5c43"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "answer",
+    "answer_option",
+    "choices",
+    "question_type",
+    "answer_type",
+    "task"
+   ],
+   "notes": "",
+   "official_alias": "MathVista_MINI",
+   "official_metric_id": "mathvista:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 1.4210854715202004e-14,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "876bc02fce10e4d2a13c1cf4fc02226daf8c039599f85725c05c5ef4996dc455",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/scripts/batched_vlmevalkit_qwen3vl.py": "9aae9f3a347f60c5667ad8ea4e9443f0c2d8a9e708483a1e00929801f18ce11f",
+      "external/VLMEvalKit/vlmeval/dataset/utils/mathvista.py": "51561b35694d1bbb7a089aa672e1199288caf152ab67e38233a148243b5a5c43"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "mathvista-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "official prefetch, else Qwen3-32B answer extraction",
+    "category": "Visual Math",
+    "display": "MathVista",
+    "rows": 1000,
+    "score_contract": "official MathVista normalized answer scorer"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "mme_reasoning": {
+   "aggregation": "row_mean",
+   "benchmark_id": "mme_reasoning",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_mme_reasoning_eval.py"
+   ],
+   "code_sha256": {
+    "rlvr/evaluation/scripts/run_mme_reasoning_eval.py": "ee198256d04e9e13a1b6fbf4ce8f7648ba6661a141dbe78f95b4928f9ecce35b"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "result['Overall'] = data['score'].mean() * 100",
+   "official_alias": "MME-Reasoning",
+   "official_metric_id": "mme_reasoning:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 3.552713678800501e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "rlvr/evaluation/scripts/run_mme_reasoning_eval.py": "ee198256d04e9e13a1b6fbf4ce8f7648ba6661a141dbe78f95b4928f9ecce35b"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "dedicated_score",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "mme_reasoning-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "official task-specific Qwen3-32B extraction prompts",
+    "category": "Puzzles & Logic",
+    "display": "MME-Reasoning",
+    "rows": 1188,
+    "score_contract": "official deterministic functions with Qwen3-32B only for open-answer correctness"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "mmmu_pro_vision": {
+   "aggregation": "row_mean",
+   "benchmark_id": "mmmu_pro_vision",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::MMMUProDataset.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.evaluate_heuristic",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py::report_acc",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.report_primary_metric"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "COT post-processing then report_acc: 'Overall' = np.mean(hit) over split 'none'",
+   "official_alias": "MMMU_Pro_V_COT",
+   "official_metric_id": "mmmu_pro_vision:primary",
+   "official_metric_key": "Overall Acc",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 0.0,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "mmmu_pro_vision-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Science & General",
+    "display": "MMMU-ProVis",
+    "rows": 1730,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "mmstar": {
+   "aggregation": "row_mean",
+   "benchmark_id": "mmstar",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.evaluate_heuristic",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py::report_acc",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.report_primary_metric"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "six categories of 250 rows: report_acc's 'Overall' is the pooled mean, which equals the category macro only on the balanced full split; the pooled mean is what the pinned scorer reports",
+   "official_alias": "MMStar",
+   "official_metric_id": "mmstar:primary",
+   "official_metric_key": "Overall Acc",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 1.4210854715202004e-14,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "mmstar-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Science & General",
+    "display": "MMStar",
+    "rows": 1500,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "phyx_mini_mc": {
+   "aggregation": "row_mean",
+   "benchmark_id": "phyx_mini_mc",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py::_adapt_phyx_option_prediction",
+    "external/VLMEvalKit/vlmeval/dataset/image_vqa.py::PhyX.evaluate"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_vqa.py": "f76692b8bf6f18a4585a4ff41d2fe30bb83fa74c283da355a2c6d720113e55e6",
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "valid_type STR: ret['Overall'] = np.mean(hit)",
+   "official_alias": "PhyX_mini_MC",
+   "official_metric_id": "phyx_mini_mc:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_vqa.py": "f76692b8bf6f18a4585a4ff41d2fe30bb83fa74c283da355a2c6d720113e55e6",
+      "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "phyx_mini_mc-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "deterministic final-option extraction before pinned VLMEvalKit evaluation",
+    "category": "Science & General",
+    "display": "PhyX mini MC",
+    "rows": 1000,
+    "score_contract": "pinned PhyX aggregation after deterministic option normalization"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "puzzlevqa": {
+   "aggregation": "row_mean",
+   "benchmark_id": "puzzlevqa",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::PuzzleVQA.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/puzzlevqa.py::PuzzleVQA_acc",
+    "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py::extract_unambiguous_abcd"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/puzzlevqa.py": "022847f7f584dfb8fd4880e2712f22c7055cc30be1ea9bc6e8f13dc61d03c5e3",
+    "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "options",
+    "answer",
+    "category"
+   ],
+   "notes": "primary value is the pooled 'overall' acc; the pinned function also divides by each of its 20 listed categories and raises ZeroDivisionError on a subset that lacks one",
+   "official_alias": "PuzzleVQA",
+   "official_metric_id": "puzzlevqa:primary",
+   "official_metric_key": "category=overall|acc",
+   "official_strata": [
+    "category"
+   ],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "e9e35b0e6edd6a7b46b08cc7b9c04fefa4a9d01a2150d134727b7dbe4d122985",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/puzzlevqa.py": "022847f7f584dfb8fd4880e2712f22c7055cc30be1ea9bc6e8f13dc61d03c5e3",
+      "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "puzzlevqa-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split); the pinned function also divides by every value of ['category'] and raises on a subset lacking one, which does not change the pooled primary value",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Puzzles & Logic",
+    "display": "PuzzleVQA",
+    "rows": 2000,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "realworldqa": {
+   "aggregation": "row_mean",
+   "benchmark_id": "realworldqa",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py::_adapt_realworldqa_prediction",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.evaluate_heuristic",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py::report_acc",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::ImageMCQDataset.report_primary_metric"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6",
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "",
+   "official_alias": "RealWorldQA",
+   "official_metric_id": "realworldqa:primary",
+   "official_metric_key": "Overall Acc",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 1.4210854715202004e-14,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/multiple_choice.py": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6",
+      "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "realworldqa-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Science & General",
+    "display": "RealWorldQA",
+    "rows": 765,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "spatialvizbench_cot": {
+   "aggregation": "row_mean",
+   "benchmark_id": "spatialvizbench_cot",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/spatialvizbench.py::SpatialVizBench.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py::eval_mcq_score"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/spatialvizbench.py": "3c6953cc12a6583bbf04493e5920bcd741790ebbe1eb368bfc85dba9b6f028bc",
+    "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py": "8de2e5d0d6095f30c8f7bf7087cc5105459ffa7a6cce8abd3fa281b8b60339ae"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "",
+   "official_alias": "SpatialVizBench_CoT",
+   "official_metric_id": "spatialvizbench_cot:primary",
+   "official_metric_key": "overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/spatialvizbench.py": "3c6953cc12a6583bbf04493e5920bcd741790ebbe1eb368bfc85dba9b6f028bc",
+      "external/VLMEvalKit/vlmeval/dataset/utils/spatial_bench/cal_scores.py": "8de2e5d0d6095f30c8f7bf7087cc5105459ffa7a6cce8abd3fa281b8b60339ae"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "spatialvizbench_cot-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Spatial Reasoning",
+    "display": "SpatialVizBench COT",
+    "rows": 1180,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "tablevqabench": {
+   "aggregation": "split_macro",
+   "benchmark_id": "tablevqabench",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py::_run_tablevqabench_local_score",
+    "external/VLMEvalKit/vlmeval/dataset/utils/tablevqabench.py::evaluate_fintabnet",
+    "external/VLMEvalKit/vlmeval/dataset/utils/tablevqabench.py::evaluate_tabfact",
+    "external/VLMEvalKit/vlmeval/dataset/utils/tablevqabench.py::evaluate_wtq",
+    "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py::unwrap_single_answer_block"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/utils/tablevqabench.py": "e49a105b7f2eda3b83241d8a86d320b974bbb5f72d16b8e239ee27db31772887",
+    "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953",
+    "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "answer",
+    "split"
+   ],
+   "notes": "Overall = mean of the five average_scores [fintabnetqa relieved, fintabnetqa exact, vtabfact, vwtq, vwtq_syn], each round((correct + 1e-9) / (rows + 1e-9), 8) * 100; not a pooled row mean",
+   "official_alias": "TableVQABench",
+   "official_metric_id": "tablevqabench:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [
+    "split"
+   ],
+   "reproduction": {
+    "max_abs_error_pp": 1.4210854715202004e-14,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "dd656f51ef8684c502368adf2e670115b1b5b4750f182b1f9751e75b311d6070",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/utils/tablevqabench.py": "e49a105b7f2eda3b83241d8a86d320b974bbb5f72d16b8e239ee27db31772887",
+      "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953",
+      "rlvr/evaluation/scripts/run_external_benchmark_score_queue.py": "df26ee057902917afa6caa63071f92ba3bf15fefec7641099ddb2e8713fe31ba"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "direct_score",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "component_mean",
+    "supported": false
+   },
+   "row_score_type": "component_mean",
+   "scorer_id": "tablevqabench-primary-v1",
+   "strata_columns": [
+    "split"
+   ],
+   "subset_semantics": "mean of the five split scores computed on the subset's rows of each split; undefined (error) when a split is absent, as in the pinned scorer",
+   "suite": {
+    "answer_contract": "pinned parser with only the official leading 'Answer: ' cleanup",
+    "category": "Charts & Tables",
+    "display": "TableVQABench",
+    "rows": 1500,
+    "score_contract": "pinned FinTabNetQA, VTabFact, VWTQ, and VWTQ-Syn scorers"
+   },
+   "unit_stats": [
+    "fintabnetqa_relieved",
+    "fintabnetqa_exact",
+    "fintabnetqa_rows",
+    "vtabfact_correct",
+    "vtabfact_rows",
+    "vwtq_correct",
+    "vwtq_rows",
+    "vwtq_syn_correct",
+    "vwtq_syn_rows"
+   ],
+   "units": "percent"
+  },
+  "treebench": {
+   "aggregation": "row_mean",
+   "benchmark_id": "treebench",
+   "code_refs": [
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py::_adapt_treebench_prediction",
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::TreeBench.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/treebench.py::get_dimension_rating"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/treebench.py": "c471e11628ac2e0a54f0c860b7bbd8d4cc71fdfa2f915ba7a56d551e4b685a69",
+    "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+   },
+   "group_columns": [],
+   "kind": "binary_row",
+   "meta_columns": [],
+   "notes": "results['Overall'] = succ_all / sum_all, pooled over all dimensions (rows with score >= 0, i.e. all)",
+   "official_alias": "TreeBench",
+   "official_metric_id": "treebench:primary",
+   "official_metric_key": "Overall",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 7.105427357601002e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": null,
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/treebench.py": "c471e11628ac2e0a54f0c860b7bbd8d4cc71fdfa2f915ba7a56d551e4b685a69",
+      "rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py": "4cc9791ae1050925177e3c8ff243ebd54d57484d6b9a6e1397163a8cef8ad78a"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived official 0/1 row scores",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "treebench-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split)",
+   "suite": {
+    "answer_contract": "pinned parser after one explicit final boxed-option adapter",
+    "category": "Perception & Counting",
+    "display": "TreeBench",
+    "rows": 405,
+    "score_contract": "pinned TreeBench dimension metric"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "visualpuzzles": {
+   "aggregation": "row_mean",
+   "benchmark_id": "visualpuzzles",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::VisualPuzzles.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/visualpuzzles.py::VisulPuzzles_acc",
+    "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py::extract_unambiguous_abcd"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953",
+    "external/VLMEvalKit/vlmeval/dataset/utils/visualpuzzles.py": "77b221e16fe472d6b39eac5f92fbd334598f9986e37395fba83bcab4ade92155"
+   },
+   "group_columns": [],
+   "kind": "aggregate_only_rederived",
+   "meta_columns": [
+    "answer",
+    "category",
+    "difficulty"
+   ],
+   "notes": "primary value is the pooled 'overall' acc; the pinned function divides by every listed category and difficulty and raises on a subset that lacks one",
+   "official_alias": "VisualPuzzles",
+   "official_metric_id": "visualpuzzles:primary",
+   "official_metric_key": "group=overall|type=category|acc",
+   "official_strata": [
+    "category",
+    "difficulty"
+   ],
+   "reproduction": {
+    "max_abs_error_pp": 3.552713678800501e-15,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "dc6d074ff1c0c8f1d07a600bf85986e22a608c1f7719d9b440d61b9a5748cfe2",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953",
+      "external/VLMEvalKit/vlmeval/dataset/utils/visualpuzzles.py": "77b221e16fe472d6b39eac5f92fbd334598f9986e37395fba83bcab4ade92155"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "re-derived from archived extractions with the pinned scorer",
+    "row_score_type": "binary",
+    "supported": true
+   },
+   "row_score_type": "binary",
+   "scorer_id": "visualpuzzles-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "pooled row mean of the subset's rows (same formula as the full split); the pinned function also divides by every value of ['category', 'difficulty'] and raises on a subset lacking one, which does not change the pooled primary value",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Puzzles & Logic",
+    "display": "VisualPuzzles",
+    "rows": 1168,
+    "score_contract": "benchmark-defined metric from pinned VLMEvalKit dataset.evaluate"
+   },
+   "unit_stats": [
+    "score_sum",
+    "rows"
+   ],
+   "units": "percent"
+  },
+  "wemath": {
+   "aggregation": "wemath_strict_groups",
+   "benchmark_id": "wemath",
+   "code_refs": [
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py::WeMath.evaluate",
+    "external/VLMEvalKit/vlmeval/dataset/utils/wemath.py::wemath_evaluate_models",
+    "external/VLMEvalKit/vlmeval/dataset/utils/wemath.py::evaluate_calculate_metrics",
+    "external/VLMEvalKit/vlmeval/dataset/utils/wemath.py::evaluate_update_main_results_df",
+    "rlvr/evaluation/scripts/run_trace_eval_official_score_campaign.py::_primary_metric_contract"
+   ],
+   "code_sha256": {
+    "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+    "external/VLMEvalKit/vlmeval/dataset/utils/wemath.py": "6127ccc0b266c1b9f49bb2496f064b4cae5260c2da8904375b41bab5549ae115",
+    "rlvr/evaluation/scripts/run_trace_eval_official_score_campaign.py": "de3bc4b12bb468005f673b20482bc390f833dd1c0fd92a443db61be852c3778a"
+   },
+   "group_columns": [
+    "ID",
+    "key"
+   ],
+   "kind": "grouped_row",
+   "meta_columns": [
+    "ID",
+    "key"
+   ],
+   "notes": "per problem group (ID): CM = all steps and the multi-step question correct, IG = all steps correct but multi wrong, RM = some step wrong but multi correct, IK = some step wrong and multi wrong; pinned Score (Strict) = (525 - 0.5 IG - RM - IK) / 525 formatted '{:.2%}' (two decimals)",
+   "official_alias": "WeMath_COT",
+   "official_metric_id": "wemath:primary",
+   "official_metric_key": "Score (Strict)",
+   "official_strata": [],
+   "reproduction": {
+    "max_abs_error_pp": 0.0,
+    "provenance": {
+     "config_sha256": "8ee479e980443934e0d5258b7be9abb0f2011e5093ea0dfc1f001f52454c02a1",
+     "metadata_sha256": "6a858b26641c535056494ef0257a9fd9af1226cce91b5e9ccaf4581f0cbaa9bf",
+     "metric_config_sha256": "84e10d14c112603bfc679959dd0392bb4e6e4fa9f023e4fbf2bc40ab0c209f9a",
+     "metrics_code_sha256": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+     "part_digests_verified": true,
+     "protocol_code_sha256": {
+      "external/VLMEvalKit/vlmeval/dataset/image_mcq.py": "7d8bdf897d3d4f87d9d95e51f4dba60648576a0c072a9834f3938bfb17419a2e",
+      "external/VLMEvalKit/vlmeval/dataset/utils/wemath.py": "6127ccc0b266c1b9f49bb2496f064b4cae5260c2da8904375b41bab5549ae115",
+      "rlvr/evaluation/scripts/run_trace_eval_official_score_campaign.py": "de3bc4b12bb468005f673b20482bc390f833dd1c0fd92a443db61be852c3778a"
+     }
+    },
+    "results_json_max_abs_error_pp": 0.0,
+    "slices": 9,
+    "status": "accepted",
+    "tolerance_pp": 1e-06
+   },
+   "route": "official_vlmevalkit",
+   "row_diagnostics": {
+    "basis": "archived 0/1 question scores; the official unit is the problem group",
+    "row_score_type": "binary_question",
+    "supported": false
+   },
+   "row_score_type": "binary_question",
+   "scorer_id": "wemath-primary-v1",
+   "strata_columns": [],
+   "subset_semantics": "(G - 0.5 IG - RM - IK) / G x 100 over the G complete problem groups present, unrounded unless G = 525 (full split: the pinned value with its two-decimal rounding). Departs from the pinned scorer on subsets, whose fixed denominator 525 scores every absent group as mastered; needs a DESIGN.md amendment. A subset run's own score campaign reports the fixed-525 value (campaign_value / pinned_fixed525_score), which is what its cross-check compares",
+   "suite": {
+    "answer_contract": "benchmark-defined handling inside pinned VLMEvalKit dataset.evaluate",
+    "category": "Visual Math",
+    "display": "WeMath",
+    "rows": 1740,
+    "score_contract": "pinned WeMath dataset.evaluate Score (Strict) percent metric"
+   },
+   "unit_stats": [
+    "groups",
+    "complete_mastery",
+    "inadequate_generalization",
+    "rote_memorization",
+    "insufficient_knowledge"
+   ],
+   "units": "percent"
+  }
+ },
+ "config_sha256": "28ea58b714b8ae951de5ea820b63510711fefbcf2e563c3c639a15f67100f13a",
+ "kinds": {
+  "aggregate_only_rederived": [
+   "chartqapro",
+   "countbenchqa",
+   "mathvision",
+   "mathvista",
+   "puzzlevqa",
+   "tablevqabench",
+   "visualpuzzles"
+  ],
+  "binary_row": [
+   "blink",
+   "charxivreason",
+   "countqa",
+   "cvbench_3d",
+   "embspatial",
+   "erqa",
+   "evochart",
+   "logicvista",
+   "mathverse",
+   "mme_reasoning",
+   "mmmu_pro_vision",
+   "mmstar",
+   "phyx_mini_mc",
+   "realworldqa",
+   "spatialvizbench_cot",
+   "treebench"
+  ],
+  "grouped_row": [
+   "wemath"
+  ],
+  "unsupported": []
+ },
+ "protocol": {
+  "code_revision": "af32fe0e668eb878e909daef7322ac1c4ae20f64",
+  "judge": {
+   "repo_id": "Qwen/Qwen3-32B",
+   "revision": "9216db5781bf21249d130ec9da846c4624c16137"
+  },
+  "vlmevalkit_revision": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+ },
+ "schema_version": "trace_merge_metric_registry_v1",
+ "study_id": "trace_vero_qwen25_v1"
+}

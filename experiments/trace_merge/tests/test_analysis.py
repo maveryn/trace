@@ -375,6 +375,32 @@ def test_capture_tables_runs_on_valid_input(cfg, monkeypatch):
     assert list(cd.columns).count("merge_label") == 1
 
 
+def test_base_reference_scores_the_base_like_a_merge(cfg, monkeypatch):
+    monkeypatch.setattr(an, "binary_benchmarks", lambda c: _binary(c))
+    rows = pd.concat([_rows(cfg, l, 42) for l in ("B", "T", "V@P1")], ignore_index=True)
+    rows = an.with_base_reference(rows)
+    assert (rows["model_label"] == an.BASE_REFERENCE).sum() == (rows["model_label"] == "B").sum()
+    cd = an.capture_tables(cfg, rows, _metrics(cfg), _ga(cfg), merges=[an.BASE_REFERENCE], vero="V@P1", seeds=[42])
+    brows = an.with_binary(rows[rows["benchmark_id"].isin(_binary(cfg))], _metrics(cfg), _binary(cfg))
+    wide = brows[brows["model_label"].isin(["B", "T", "V@P1"])].pivot(index="content_key", columns="model_label",
+                                                                    values="binary_correct")
+    o = cd[(cd["level"] == "overall") & (cd["variant"] == "contemporaneous")].set_index("group")
+    checked = 0
+    for group, mask in (("trace_only", (wide["T"] == 1) & (wide["V@P1"] == 0)),
+                        ("joint_failure", (wide["T"] == 0) & (wide["V@P1"] == 0))):
+        if mask.any():
+            assert o.loc[group, "n_group"] == mask.sum()
+            # capture is P(B = 1 | group); damage-type groups would report P(B = 0 | group)
+            assert o.loc[group, "conditional_rate_pct"] == pytest.approx(100 * wide.loc[mask, "B"].mean())
+            checked += 1
+    assert checked, "the fixture must populate at least one parent-defined group"
+    # restricting the benchmark set is passed through, not re-derived from the registry
+    one = _binary(cfg)[:1]
+    cd1 = an.capture_tables(cfg, rows[rows["benchmark_id"].isin(one)], _metrics(cfg), _ga(cfg),
+                            merges=[an.BASE_REFERENCE], vero="V@P1", seeds=[42], benchmarks=one)
+    assert set(cd1.loc[cd1["level"] == "benchmark", "scope"]) <= set(one)
+
+
 # ---------------------------------------------------------------------------------------------------- lock
 def test_verify_lock_holds_and_records_appended_amendments(cfg, tmp_path):
     design = tmp_path / "DESIGN.md"
@@ -611,6 +637,54 @@ def test_parent_overlap_figure_follows_suite_order(cfg, tmp_path, monkeypatch):
     assert all("rows/seed" in l for l in seen["labels"])
 
 
+def test_bundle_keeps_aggregates_and_leaves_row_level_files_in_the_work_root(cfg):
+    root = cfg.work()
+    keep = ["audit/audit.md", "manifests/model_roles.json", "splits/split_manifest.json", "reports/merge_screen.md",
+            "tables/evaluation_costs.csv", "tables/screen/scores.P1.csv", "figures/screen_model_scores.P1.png",
+            "merges/M050/merge_manifest.json", "tests/test_report.txt"]
+    drop = ["splits/rows.confirmation.json", "splits/group_assignments.parquet", "aligned/predictions.parquet",
+            "aligned/local_runs/M050@P1.confirmation.s42.parquet", "runs/m050-p1/confirmation/scores.seed42.json",
+            "merges/M050/model-00001-of-00005.safetensors", "dispatch/env.sh", "logs/fill_all.log"]
+    for rel in keep + drop:
+        (root / rel).parent.mkdir(parents=True, exist_ok=True)
+        (root / rel).write_text("x", encoding="utf-8")
+    assert set(reports.bundle_files(cfg)) == set(keep)
+
+
+def test_contrast_and_capture_figures_render_with_readable_labels(cfg, tmp_path, monkeypatch):
+    pytest.importorskip("matplotlib")
+    cats = list(cfg.categories())
+    comps = ["M050@P1-T", "M050@P1-V@P1"]
+    diffs = pd.DataFrame([{"comparison": c, "level": lvl, "scope": sc, "estimate": 1.0, "ci_low": 0.0, "ci_high": 2.0,
+                           "p_holm": 0.01}
+                          for c in comps for lvl, sc in [("overall", "24-benchmark macro"),
+                                                         *[("category", k) for k in cats]]])
+    legends = []
+    import matplotlib.axes
+
+    real = matplotlib.axes.Axes.legend
+
+    def record(self, *a, **k):
+        leg = real(self, *a, **k)
+        legends.append([t.get_text() for t in leg.get_texts()])
+        return leg
+
+    monkeypatch.setattr(matplotlib.axes.Axes, "legend", record)
+    reports.fig_category_contrasts(diffs, tmp_path / "c.png", comps, cats, "t", "caption")
+    assert legends[-1] == ["M050 − TRACE (Holm p = 0.01)", "M050 − VERO (backbone template) (Holm p = 0.01)"]
+    # the lock's unresolved family names ("M050-T") match no row: refuse instead of drawing an empty figure
+    with pytest.raises(ValueError, match="no overall or category rows"):
+        reports.fig_category_contrasts(diffs, tmp_path / "e.png", ["M050-T"], cats, "t", "caption")
+    cd = pd.DataFrame([{"level": "overall", "variant": "contemporaneous", "seed_scope": "single_condition",
+                        "aggregation": "pooled_rows", "metric": m, "merge_label": g, "n_group": 10 + i,
+                        "conditional_rate_pct": 50.0, "conditional_rate_pct_ci_low": 40.0,
+                        "conditional_rate_pct_ci_high": 60.0}
+                       for i, (m, _) in enumerate(reports.CAPTURE_EVENTS) for g in reports.MERGES])
+    reports.fig_capture(cd, tmp_path / "d.png", reports.MERGES, "contemporaneous", "t", "caption")
+    assert (tmp_path / "c.png").stat().st_size > 0 and (tmp_path / "d.png").stat().st_size > 0
+    assert legends[-1] == [reports.DISPLAY[m] for m in reports.MERGES]
+
+
 # ---------------------------------------------------------------------------------------------------- real work root
 REAL = bool(os.environ.get("TRACE_MERGE_WORK_ROOT"))
 
@@ -624,3 +698,20 @@ def test_real_lock_and_split_hold_read_only():
     assert rec["amendments_after_lock"][:2] == ["A5", "A6"]
     assert lock["primary_family"] == cfg.raw["statistics"]["primary_family"]
     assert len(an.assignments(cfg)) > 0
+
+
+def test_write_costs_counts_a_shared_run_directory_once(tmp_path, monkeypatch):
+    import types
+
+    rows = [{"view_slug": "m050-p1", "tier": "confirmation", "seed": s, "attempts": 2, "successful_attempts": 1,
+             "wall_hours": 1.0, "gpu_hours": 2.0, "completion_tokens": 10, "run_dir_gib": 1.5} for s in (42, 43, 44)]
+    rows.append({"view_slug": "m050-p1", "tier": "smoke", "seed": 42, "attempts": 1, "successful_attempts": 1,
+                 "wall_hours": 0.1, "gpu_hours": 0.1, "completion_tokens": 1, "run_dir_gib": 0.25})
+    monkeypatch.setattr(reports, "evaluation_costs", lambda cfg: pd.DataFrame(rows))
+    (tmp_path / "tables").mkdir()
+    reports.write_costs(types.SimpleNamespace(work=lambda *p: tmp_path.joinpath(*p)))
+    totals = json.loads((tmp_path / "tables" / "evaluation_costs.totals.json").read_text())
+    # the three seeds of one model and tier share one run directory
+    assert totals["run_dirs_gib"] == pytest.approx(1.75)
+    assert totals["gpu_hours"] == pytest.approx(6.1) and totals["attempts"] == 7
+    assert totals["failed_or_incomplete_attempts"] == 3

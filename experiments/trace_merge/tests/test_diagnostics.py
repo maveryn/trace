@@ -327,3 +327,57 @@ def test_answer_format_sensitivity_reads_latex_letters_leniently():
     # row 0: C -> 'red' == answer (officially 0) ; row 2: A -> '5' == answer (officially 0); row 3 has no letter
     assert out["official_zero_but_final_letter_correct_pct"] == 50.0
     assert dg.final_option_letter("Answer: \\( D \\).") == "D" and dg.final_option_letter("nothing") is None
+
+
+# ---------------------------------------------------------------------------------------------------- judge health
+def test_last_boxed_takes_the_final_unnested_box():
+    assert diagnostics.last_boxed(r"so \boxed{3} ... finally \boxed{ C }") == "C"
+    assert diagnostics.last_boxed("no box here") is None
+    assert diagnostics.last_boxed(None) is None
+
+
+def test_boxed_extract_agreement_flags_outputs_that_do_not_match_their_responses():
+    good = pd.DataFrame({"prediction": [r"\boxed{A}", r"\boxed{130.5}", r"\boxed{55^\circ}", "no box"],
+                         "extract": ["A", "130.5", "55^\\circ", "B"]})
+    res = diagnostics.boxed_extract_agreement(good)
+    assert res["rows"] == 4 and res["rows_with_boxed"] == 3
+    assert res["boxed_equals_extracted_pct"] == pytest.approx(100.0) and not res["below_floor"]
+    # the A8 pattern: outputs from other rows of the batch
+    bad = pd.DataFrame({"prediction": [r"\boxed{A}", r"\boxed{C}", r"\boxed{D}", r"\boxed{B}"],
+                        "extract": ["55.", "130.5", "130.5", "B"]})
+    res = diagnostics.boxed_extract_agreement(bad)
+    assert res["boxed_equals_extracted_pct"] == pytest.approx(25.0) and res["below_floor"]
+    assert diagnostics.boxed_extract_agreement(pd.DataFrame({"prediction": ["x"], "extract": ["y"]}))[
+        "boxed_equals_extracted_pct"] is None
+
+
+def test_boxed_extract_agreement_flags_run_on_extractions():
+    # the A8/A9 fault: the row's own answer followed by text copied from the judge prompt's few-shot examples
+    run_on = pd.DataFrame({"prediction": [r"\boxed{B}", r"\boxed{A}", r"\boxed{C}", r"\boxed{D}"],
+                           "extract": ["B. They give the solutions to the equation $f(t)=g(t)$.",
+                                       "A\n\nExtracted Answer: 22.3", "C", "D. They give the solutions"]})
+    res = diagnostics.boxed_extract_agreement(run_on)
+    assert res["boxed_equals_extracted_pct"] == pytest.approx(25.0) and res["below_floor"]
+
+
+def _judged(path, predictions, extracts):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame({"prediction": predictions, "extract": extracts}).to_excel(path, index=False)
+
+
+def test_write_judge_agreement_on_an_empty_and_a_populated_work_root(tmp_path, monkeypatch):
+    pytest.importorskip("openpyxl")
+    import types
+
+    cfg = types.SimpleNamespace(work=lambda *parts: tmp_path.joinpath(*parts))
+    empty = diagnostics.write_judge_agreement(cfg, log=lambda m: None)
+    assert empty.empty and list(empty.columns) == diagnostics.JUDGE_AGREEMENT_COLUMNS
+    assert list(pd.read_csv(tmp_path / "tables" / "judge_extraction_agreement.csv").columns) == list(empty.columns)
+    rel = "scoring/seed_44/runs/mathverse/m050-p1/judge_run/MathVerse_judged_x.xlsx"
+    _judged(tmp_path / "runs/m050-p1/confirmation" / rel, [r"\boxed{A}", r"\boxed{B}"], ["A", "B"])
+    _judged(tmp_path / "runs/m050-p1/confirmation/quarantine_x" / rel, [r"\boxed{A}", r"\boxed{B}"], ["55.", "130.5"])
+    _judged(tmp_path / "runs/cv050-p1/confirmation" / rel.replace("m050", "cv050").replace("44", "42"),
+            [r"\boxed{A}", r"\boxed{B}"], ["C", "D"])
+    t = diagnostics.write_judge_agreement(cfg, log=lambda m: None).set_index(["view_slug", "seed", "quarantined"])
+    assert t.loc[("m050-p1", 44, False), "boxed_equals_extracted_pct"] == 100.0
+    assert bool(t.loc[("m050-p1", 44, True), "below_floor"]) and bool(t.loc[("cv050-p1", 42, False), "below_floor"])

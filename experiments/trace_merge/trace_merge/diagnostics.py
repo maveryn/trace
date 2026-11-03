@@ -903,13 +903,66 @@ def answer_format_sensitivity(rows: pd.DataFrame, scores: pd.Series, meta: pd.Da
                           "PuzzleVQA letters mapped to option text, VisualPuzzles answers are letters"}
 
 
+# --------------------------------------------------------------------------------------------- judge health
+# DESIGN.md A8: one run's judge returned outputs that did not belong to their prompts. MathVerse is judge-extracted for
+# every model and nearly every response ends in \boxed{}, so the share of rows whose extracted answer equals that boxed
+# answer is a model-independent check that the judge read the response it was given.
+BOXED = re.compile(r"\\boxed\{([^{}]*)\}")
+JUDGE_AGREEMENT_FLOOR_PCT = 30.0
+JUDGED_TABLE = "scoring/seed_*/runs/mathverse/*/*/*_judged_*.xlsx"
+JUDGE_AGREEMENT_COLUMNS = ["view_slug", "subset", "seed", "quarantined", "rows", "rows_with_boxed",
+                           "boxed_equals_extracted_pct", "below_floor"]
+
+
+def last_boxed(text: Any) -> str | None:
+    found = BOXED.findall(str(text or ""))
+    return found[-1].strip() if found else None
+
+
+def boxed_extract_agreement(judged: pd.DataFrame) -> dict[str, Any]:
+    """Rows of one judged MathVerse table whose judge-extracted answer equals the response's last \\boxed{} answer
+    (rows without a boxed answer are left out of the share)."""
+
+    boxed = judged["prediction"].map(last_boxed)
+    has = boxed.notna()
+    equal = boxed[has] == judged.loc[has, "extract"].astype(str).str.strip()
+    pct = 100.0 * float(equal.mean()) if has.any() else None
+    return {"rows": len(judged), "rows_with_boxed": int(has.sum()), "boxed_equals_extracted_pct": pct,
+            "below_floor": pct is not None and pct < JUDGE_AGREEMENT_FLOOR_PCT}
+
+
+def write_judge_agreement(cfg: StudyConfig, *, log: Log = print) -> pd.DataFrame:
+    """tables/judge_extraction_agreement.csv: the check above for every local run's MathVerse score slice, including
+    slices moved to a run's ``quarantine_*`` directory (marked)."""
+
+    runs = cfg.work("runs")
+    found = [(p, False) for p in runs.glob(f"*/*/{JUDGED_TABLE}")]
+    found += [(p, True) for p in runs.glob(f"*/*/quarantine_*/{JUDGED_TABLE}")]
+    out = []
+    for path, quarantined in sorted(found):
+        parts = path.relative_to(runs).parts
+        seed_dir = next(p for p in parts if p.startswith("seed_"))
+        res = boxed_extract_agreement(pd.read_excel(path, usecols=["prediction", "extract"]))
+        out.append({"view_slug": parts[0], "subset": parts[1], "seed": int(seed_dir.split("_", 1)[1]),
+                    "quarantined": quarantined, **res})
+        if res["below_floor"] and not quarantined:
+            log(f"[diagnostics] JUDGE FAULT? {parts[0]} {parts[1]} {seed_dir}: {res['boxed_equals_extracted_pct']:.1f}% "
+                f"of boxed answers extracted as written (floor {JUDGE_AGREEMENT_FLOOR_PCT:.0f}%)")
+    table = pd.DataFrame(out, columns=JUDGE_AGREEMENT_COLUMNS)
+    path = cfg.work("tables", "judge_extraction_agreement.csv")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    table.to_csv(path, index=False)
+    log(f"[diagnostics] judge extraction agreement: {len(table)} MathVerse slices -> {path}")
+    return table
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     import argparse
 
     from .config import ensure_work_tree, load_config
 
     p = argparse.ArgumentParser(prog="trace_merge.diagnostics", description=__doc__.split("\n\n")[0])
-    p.add_argument("command", choices=["protocols", "length-audit", "all"])
+    p.add_argument("command", choices=["protocols", "length-audit", "judge-agreement", "all"])
     p.add_argument("--config", type=Path, default=None)
     p.add_argument("--work-root", type=Path, default=None)
     p.add_argument("--protocol-clone", type=Path, default=None)
@@ -935,6 +988,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command in ("length-audit", "all"):
         path = write_length_format_judge_audit(cfg, local_runs=sorted(_local_reruns(cfg)))
         print(f"wrote {path.relative_to(cfg.require_work_root())}")
+    if args.command in ("judge-agreement", "all"):
+        table = write_judge_agreement(cfg)
+        flagged = table[table["below_floor"].astype(bool) & ~table["quarantined"].astype(bool)]
+        if len(flagged):
+            print(f"FATAL: {len(flagged)} MathVerse score slice(s) below the judge-agreement floor (DESIGN.md A8)")
+            status = 4
     return status
 
 

@@ -247,6 +247,62 @@ def cmd_confirm(cfg, args) -> int:
     return 0
 
 
+@command("capture-reference")
+def cmd_capture_reference(cfg, args) -> int:
+    from .analysis import capture_base_reference
+
+    t = capture_base_reference(cfg, log=_log)
+    o = t[(t["level"] == "overall") & (t["seed_scope"] != "single_condition")]
+    _log(o[["benchmark_set", "variant", "merge_label", "group", "n_group", "conditional_rate_pct",
+            "conditional_rate_pct_ci_low", "conditional_rate_pct_ci_high"]].round(2).to_string(index=False))
+    return 0
+
+
+@command("format-sensitivity")
+def cmd_format_sensitivity(cfg, args) -> int:
+    from .analysis import answer_format_table
+
+    if args.tier not in ("development", "confirmation"):
+        _log("FATAL: format-sensitivity needs --tier development or --tier confirmation")
+        return 2
+    t = answer_format_table(cfg, args.tier, log=_log)
+    cols = ["benchmark_id", "model_label", "seed", "n_rows", "official_accuracy_pct", "latex_letter_ending_pct",
+            "official_zero_but_final_letter_correct_pct"]
+    _log(t[cols].round(2).to_string(index=False))
+    return 0
+
+
+@command("figures")
+def cmd_figures(cfg, args) -> int:
+    from . import reports
+
+    made = reports.stage_b_figures(cfg)
+    if cfg.work("tables", "screen", "summary.json").is_file():
+        made += reports.screen_figures(cfg)
+    if cfg.work("tables", "confirmation", "summary.json").is_file():
+        made += reports.confirmation_figures(cfg)
+    for p in made:
+        _log(f"[figures] {p.name}")
+    return 0
+
+
+@command("costs")
+def cmd_costs(cfg, args) -> int:
+    from .reports import write_costs
+
+    _log(f"[costs] {write_costs(cfg)}")
+    return 0
+
+
+@command("export")
+def cmd_export(cfg, args) -> int:
+    from .reports import bundle_files, export_results
+
+    hashes = export_results(cfg, bundle_files(cfg))
+    _log(f"[export] {len(hashes)} files written to experiments/trace_merge/results")
+    return 0
+
+
 def _passthrough(args) -> list[str]:
     out = []
     for flag, val in (("--config", args.config), ("--work-root", args.work_root), ("--protocol-clone", args.protocol_clone)):
