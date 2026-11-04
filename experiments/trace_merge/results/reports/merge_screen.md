@@ -141,13 +141,13 @@ plays no part in the confirmed comparison.
 | V@P0 | 53.11 [51.19, 55.08] | 57.61 | 49.06 | 56.45 | 59.41 | 54.60 | 41.55 |
 | M050@P2 | 52.34 [50.46, 54.29] | 59.77 | 47.89 | 54.30 | 60.83 | 52.10 | 39.14 |
 | CV050@P2 | 52.98 [51.05, 54.90] | 60.54 | 47.27 | 58.40 | 58.55 | 50.87 | 42.24 |
-| CT050@P2 | 46.80 [44.96, 48.63] | 44.49 | 41.17 | 53.12 | 61.47 | 46.77 | 33.77 |
+| CT050@P2 | 46.80 [44.96, 48.63] | 44.49 | 41.17 | 53.13 | 61.47 | 46.77 | 33.77 |
 
 Paired differences on the P2 macro (pp):
 
 | comparison | estimate [95% CI] | p (unadjusted) |
 |---|---|---|
-| M050@P2 − V@P0 | −0.78 [−2.40, +0.86] | 0.36 |
+| M050@P2 − V@P0 | −0.77 [−2.40, +0.86] | 0.36 |
 | M050@P2 − CV050@P2 | −0.64 [−2.13, +0.87] | 0.43 |
 | M050@P2 − CT050@P2 | +5.54 [+3.61, +7.52] | < 0.001 |
 | M050@P2 − T@P2 | +5.13 [+3.36, +6.93] | < 0.001 |
@@ -190,6 +190,6 @@ CT050 is negative with an interval excluding 0. Category names do not identify s
 by itself show which component holds one.
 
 The dominant effect is an interaction between interface and answer format. On the P2 diagnostic (single seed,
-descriptive), the VERO-containing merges' point estimates are near VERO's own (M050@P2 − V@P0 = −0.78 [−2.40, +0.86])
+descriptive), the VERO-containing merges' point estimates are near VERO's own (M050@P2 − V@P0 = −0.77 [−2.40, +0.86])
 when they are served with VERO's interface. That points to the prompt/format frontend, not to a weight partition, as
 the lever. A weight-partition experiment would not separate the two.

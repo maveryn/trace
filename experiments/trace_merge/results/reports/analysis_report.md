@@ -441,7 +441,7 @@ interval excluding 0. A category pattern would not, by itself, show which compon
 - On the confirmation tier, VERO itself loses 2.94 pp under P1, two-thirds of it in two benchmarks with a documented
   format failure.
 - On the development screen's P2 diagnostic (seed 42), the VERO-containing merges' point estimates are near VERO's own
-  (M050@P2 52.34, CV050@P2 52.98, V@P0 53.11; M050@P2 − V@P0 = −0.78 [−2.40, +0.86]).
+  (M050@P2 52.34, CV050@P2 52.98, V@P0 53.11; M050@P2 − V@P0 = −0.77 [−2.40, +0.86]).
 
 A partition of weights into frozen and merged components would not separate the interface from the weights.
 

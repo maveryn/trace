@@ -13,7 +13,8 @@ tests three training-free 50:50 weight interpolations:
 The run trains nothing and uploads nothing. Every decision fixed before merged-model results existed is in
 [`DESIGN.md`](DESIGN.md), with later changes appended as dated amendments. Analysis tables are written to the local
 work root (`tables/`); [`results/`](results/) holds the sanitized aggregate bundle: reports, tables, figures and
-manifests. Start with [`results/reports/analysis_report.md`](results/reports/analysis_report.md) and
+manifests. Start with [`results/reports/FINDINGS.md`](results/reports/FINDINGS.md) (key findings and every data table
+in one file), then [`results/reports/analysis_report.md`](results/reports/analysis_report.md) and
 [`results/reports/decision_memo.md`](results/reports/decision_memo.md).
 
 The study lives outside `rlvr/` on purpose. The release validator and `rlvr/train.py` reject any file under `rlvr/` that
@@ -74,6 +75,7 @@ python $S confirm           # confirmation tables, only while the selection lock
 python $S capture-reference # post hoc: the base model scored like a merge on the confirmation capture groups
 python $S costs             # tables/evaluation_costs.csv: GPU-hours, generated tokens, attempts, storage
 python $S figures           # Stage B, screen and (once confirmed) confirmation figures
+python scripts/write_findings.py  # (from experiments/trace_merge) reports/FINDINGS.md: key findings + every data table
 python $S export            # copy the sanitized aggregate bundle into results/ (refuses machine paths and tokens)
 ```
 
