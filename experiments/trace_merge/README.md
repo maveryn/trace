@@ -17,6 +17,10 @@ manifests. Start with [`results/reports/FINDINGS.md`](results/reports/FINDINGS.m
 settings, the measurement checks and every data table in one file), then [`results/reports/analysis_report.md`](results/reports/analysis_report.md) and
 [`results/reports/decision_memo.md`](results/reports/decision_memo.md).
 
+The training-free follow-up (component-swap hybrids, scoring audit, decoder block reversion, norm-matched VERO) is in
+[`../trace_module_followup/`](../trace_module_followup/). Both studies' results are summarized together in
+[`../TRACE_VERO_FINDINGS.md`](../TRACE_VERO_FINDINGS.md).
+
 The study lives outside `rlvr/` on purpose. The release validator and `rlvr/train.py` reject any file under `rlvr/` that
 is not in the frozen source map. `python rlvr/evaluation/scripts/validate_release_inputs.py` passes before and after
 this experiment.

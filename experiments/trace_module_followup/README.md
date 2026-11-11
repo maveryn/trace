@@ -8,6 +8,8 @@ need the visual and language components adapted together. Nothing is trained or 
 Start with [`results/reports/followup_findings.md`](results/reports/followup_findings.md). The decisions are in
 [`design/followup_v1.md`](design/followup_v1.md) (amendments A1–A5), [`design/decision_F2.md`](design/decision_F2.md)
 and [`design/decision_F3.md`](design/decision_F3.md).
+The merging study and this follow-up are summarized together in
+[`../TRACE_VERO_FINDINGS.md`](../TRACE_VERO_FINDINGS.md).
 
 ## Layout
 
