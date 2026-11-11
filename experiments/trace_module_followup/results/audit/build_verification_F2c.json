@@ -1,0 +1,20 @@
+{
+ "TR0": {
+  "content_revision": "sha256set:1a3f61e1ddb8749005e6c3fdaa0b200a9bc15267fff315e115c889960ee01304",
+  "donor_equal": true,
+  "hybrid_id": "TR0",
+  "tensors": 729
+ },
+ "TR1": {
+  "content_revision": "sha256set:2c648895c793895ef30cc8e85601f2362d92108df7650af34ea465a7869cbafc",
+  "donor_equal": true,
+  "hybrid_id": "TR1",
+  "tensors": 729
+ },
+ "TR2": {
+  "content_revision": "sha256set:cf905148bc773af06d9bdce9b5e897fbf1f57801422e78724eeb5501fb897078",
+  "donor_equal": true,
+  "hybrid_id": "TR2",
+  "tensors": 729
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "hybrids": {
+  "TF": {
+   "content_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c",
+   "donor_equal": true,
+   "hybrid_id": "TF",
+   "tensors": 729
+  },
+  "TL": {
+   "content_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981",
+   "donor_equal": true,
+   "hybrid_id": "TL",
+   "tensors": 729
+  },
+  "VF": {
+   "content_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd",
+   "donor_equal": true,
+   "hybrid_id": "VF",
+   "tensors": 729
+  },
+  "VL": {
+   "content_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7",
+   "donor_equal": true,
+   "hybrid_id": "VL",
+   "tensors": 729
+  }
+ },
+ "identity": {
+  "B": {
+   "equal": true,
+   "tensors": 729
+  },
+  "T": {
+   "equal": true,
+   "tensors": 729
+  },
+  "V": {
+   "equal": true,
+   "tensors": 729
+  }
+ },
+ "ownership": {
+  "T": {
+   "TF": 327,
+   "TL": 335,
+   "changed_vs_B": 662,
+   "partition": true
+  },
+  "V": {
+   "VF": 331,
+   "VL": 335,
+   "changed_vs_B": 666,
+   "partition": true
+  }
+ }
+}

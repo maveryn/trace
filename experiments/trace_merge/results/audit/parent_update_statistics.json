@@ -1,0 +1,88 @@
+{
+ "base_role": "B",
+ "bitwise_equal_tensor_counts": {
+  "T": 67,
+  "V": 63
+ },
+ "groups": {
+  "language_embeddings": {
+   "T_delta_norm": 0.17282131323539712,
+   "T_relative_update": 0.00048824445668276965,
+   "T_tensors_bitwise_equal_to_B": 0,
+   "V_delta_norm": 1.1918475440676115,
+   "V_relative_update": 0.0033671365279429977,
+   "V_tensors_bitwise_equal_to_B": 0,
+   "base_norm": 353.9647217084238,
+   "cos_T_V_updates": -0.0002749597269627467,
+   "tensors": 1
+  },
+  "language_final_norm": {
+   "T_delta_norm": 0.0,
+   "T_relative_update": 0.0,
+   "T_tensors_bitwise_equal_to_B": 1,
+   "V_delta_norm": 0.0,
+   "V_relative_update": 0.0,
+   "V_tensors_bitwise_equal_to_B": 1,
+   "base_norm": 240.7492710312436,
+   "cos_T_V_updates": null,
+   "tensors": 1
+  },
+  "language_layers": {
+   "T_delta_norm": 1.8807601301427705,
+   "T_relative_update": 0.0009349411814533711,
+   "T_tensors_bitwise_equal_to_B": 3,
+   "V_delta_norm": 8.156450558649489,
+   "V_relative_update": 0.004054638015529859,
+   "V_tensors_bitwise_equal_to_B": 3,
+   "base_norm": 2011.634707564297,
+   "cos_T_V_updates": 0.008210770883127017,
+   "tensors": 336
+  },
+  "language_output_head": {
+   "T_delta_norm": 0.23398541527413808,
+   "T_relative_update": 0.0008001122367731312,
+   "T_tensors_bitwise_equal_to_B": 0,
+   "V_delta_norm": 1.3676240079308457,
+   "V_relative_update": 0.004676585088725096,
+   "V_tensors_bitwise_equal_to_B": 0,
+   "base_norm": 292.4407408363181,
+   "cos_T_V_updates": 0.0029457779635529945,
+   "tensors": 1
+  },
+  "visual_blocks": {
+   "T_delta_norm": 0.5718099018671312,
+   "T_relative_update": 0.0009698923834048323,
+   "T_tensors_bitwise_equal_to_B": 62,
+   "V_delta_norm": 2.668771727136665,
+   "V_relative_update": 0.004526716593651206,
+   "V_tensors_bitwise_equal_to_B": 58,
+   "base_norm": 589.5601529107568,
+   "cos_T_V_updates": 0.00023931447757018212,
+   "tensors": 384
+  },
+  "visual_merger": {
+   "T_delta_norm": 0.15996566974753096,
+   "T_relative_update": 0.001007762374695865,
+   "T_tensors_bitwise_equal_to_B": 1,
+   "V_delta_norm": 0.6944912564923141,
+   "V_relative_update": 0.00437520224778737,
+   "V_tensors_bitwise_equal_to_B": 1,
+   "base_norm": 158.73352068319417,
+   "cos_T_V_updates": 0.007131886415382327,
+   "tensors": 5
+  },
+  "visual_patch_embed": {
+   "T_delta_norm": 0.03104713333598324,
+   "T_relative_update": 0.001752040809735326,
+   "T_tensors_bitwise_equal_to_B": 0,
+   "V_delta_norm": 0.1182314590869874,
+   "V_relative_update": 0.006671995738649225,
+   "V_tensors_bitwise_equal_to_B": 0,
+   "base_norm": 17.720553747074767,
+   "cos_T_V_updates": 0.06449823981811371,
+   "tensors": 1
+  }
+ },
+ "note": "diagnostic only; update norms and cosines do not establish independent skills",
+ "schema": "trace-merge-update-stats-v1"
+}

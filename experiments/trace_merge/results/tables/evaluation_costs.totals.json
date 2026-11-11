@@ -1,0 +1,8 @@
+{
+ "attempts": 41,
+ "completion_tokens": 72868346,
+ "failed_or_incomplete_attempts": 15,
+ "gpu_hours": 57.57,
+ "merged_weights_gib": 46.34,
+ "run_dirs_gib": 5.33
+}

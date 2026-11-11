@@ -1,0 +1,21 @@
+{
+ "B": {
+  "model-00001-of-00005.safetensors": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e",
+  "model-00002-of-00005.safetensors": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024",
+  "model-00003-of-00005.safetensors": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507",
+  "model-00004-of-00005.safetensors": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed",
+  "model-00005-of-00005.safetensors": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67"
+ },
+ "T": {
+  "model-00001-of-00004.safetensors": "7ab31563d6aa33f4e72efc425799b36beafe4eb555b81400ca41fbac75763ec5",
+  "model-00002-of-00004.safetensors": "8926ae3db148002169d7cd4c68d5d087e50a162055a965ca11c6a20eb38f663d",
+  "model-00003-of-00004.safetensors": "eedbd2bb965b4f2c6c28a629cd35736d16b1afc39eaea340a7c1991f5cff16c5",
+  "model-00004-of-00004.safetensors": "d13f7ea286a68ee278613c6834a4720a34a9a9ec04ffd5cc6126a7bb5aa0c4a2"
+ },
+ "V": {
+  "model-00001-of-00004.safetensors": "8f248027d7051509f50ee061b186244d5a8accb1516c120e473319b7a22e534b",
+  "model-00002-of-00004.safetensors": "c5247ae1c1386fb2475ba0109258b1d0ae2aa929f5319ae5181b080403f5580a",
+  "model-00003-of-00004.safetensors": "a5838f76d1804282be88778b8aba4f7a4c48153d5a02fc3a0c2f1c83915ee953",
+  "model-00004-of-00004.safetensors": "ed9136f35ef3eea62a48a0d03fec596929e2a35dc7c569a53a527e8ffd1c2386"
+ }
+}

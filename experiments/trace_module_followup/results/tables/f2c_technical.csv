@@ -1,0 +1,4 @@
+analysis_status,cell,model_label,restored_to_B,smoke_status,smoke_empty_pct,smoke_truncated_pct,screen_status,screen_empty_pct,screen_truncated_pct,build_verified,technical_stop,technical_stop_reasons
+FINAL,TR0,TR0@P1,decoder layers 0-8,available,0.0,0.0,available,0.0,0.03436426116838488,True,False,
+FINAL,TR1,TR1@P1,decoder layers 9-18,available,0.0,0.0,available,0.0,0.0,True,False,
+FINAL,TR2,TR2@P1,decoder layers 19-27,available,0.0,0.0,available,0.0,0.0,True,False,

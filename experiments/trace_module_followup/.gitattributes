@@ -1,0 +1,2 @@
+# Verbatim patches of the private protocol overlay: keep their bytes, skip whitespace checks.
+results/dispatch/protocol_overlay/*.diff -whitespace

@@ -1,0 +1,128 @@
+{
+ "category_regression_margin_pp": null,
+ "config_sha256": "28ea58b714b8ae951de5ea820b63510711fefbcf2e563c3c639a15f67100f13a",
+ "confirmation_row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+ "confirmation_runs": [
+  {
+   "label": "V@P1",
+   "seed": 42,
+   "slug": "vero-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "V@P1",
+   "seed": 43,
+   "slug": "vero-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "V@P1",
+   "seed": 44,
+   "slug": "vero-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "M050@P1",
+   "seed": 42,
+   "slug": "m050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "M050@P1",
+   "seed": 43,
+   "slug": "m050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "M050@P1",
+   "seed": 44,
+   "slug": "m050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "CV050@P1",
+   "seed": 42,
+   "slug": "cv050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "CV050@P1",
+   "seed": 43,
+   "slug": "cv050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "CV050@P1",
+   "seed": 44,
+   "slug": "cv050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "CT050@P1",
+   "seed": 42,
+   "slug": "ct050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "CT050@P1",
+   "seed": 43,
+   "slug": "ct050-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "CT050@P1",
+   "seed": 44,
+   "slug": "ct050-p1",
+   "subset": "confirmation"
+  }
+ ],
+ "confirmation_runs_scored_at_lock": [],
+ "design_sha256": "ee0fe4767a28cd18dd5afdc614b2983482704903d8050e0c52495b823d698252",
+ "locked_at": "2026-11-02T09:04:27+00:00",
+ "merge_content_revisions": {
+  "CT050": "sha256set:c1f8a9933e8fba6f5824b8e8be167411b1a032c0e2589076ccd19459b736fb2e",
+  "CV050": "sha256set:99222450add2a0a78510e58a5b6b26ab10227628382305c97dc0a03793078ef7",
+  "M050": "sha256set:eda4ee59e6964e8bf9e56f38f7f0705c2b347d8252c058ad8e9796f914ba5947"
+ },
+ "merge_recipe_sha256": {
+  "CT050": "82e1fed2e635569f161540fd62bbf7c251fbd2c944769c805aa62329fb169f2f",
+  "CV050": "9f1204920e5769b1399a15966212fe94cc84b148dadb37199dd350d332f1df50",
+  "M050": "215555d7e14867d6cbff5a7465f8796d43aaefbb6ec6a3534438e2911372a239"
+ },
+ "multiplicity": "holm",
+ "primary_family": [
+  "M050-T",
+  "M050-V@P1",
+  "M050-CV050",
+  "M050-CT050"
+ ],
+ "rule": "no_search_all_prespecified_midpoints_confirmed",
+ "schema": "trace-merge-selection-lock-v1",
+ "selected_candidates": [
+  "CT050@P1",
+  "CV050@P1",
+  "M050@P1",
+  "V@P1"
+ ],
+ "split_manifest_sha256": "53179574bbea4accb250352e451bba601a2b09af63ae8109d8d870cffceb0a6c",
+ "study_id": "trace_vero_qwen25_v1",
+ "tie_tolerance_pp": null,
+ "views": {
+  "CT050@P1": {
+   "registered_revision": "sha256set:246feb76e1115d8e2d77c1133c9eca3c0f65d6b3d109a4185bc282843d2de1d1",
+   "view_manifest_sha256": "892c15d425dcd6a258bf13e7b4554b4a47d87bf57587bb4b2053e0cba8d69d60"
+  },
+  "CV050@P1": {
+   "registered_revision": "sha256set:4861d18e2582f68938ebf1fa9d904e2e6ea9f1868520818a75069c8a22d6d3b0",
+   "view_manifest_sha256": "ae00dbd7b5206b2cb67073e162a09080dd6a2592d0a8f39b0f5a8ce92eaccee1"
+  },
+  "M050@P1": {
+   "registered_revision": "sha256set:076c0672be3bbe882dbefed9b56db179f23c943e2988ba097d2d4b70350c4e46",
+   "view_manifest_sha256": "5b99bcad237e0e7ece910d0149f63f2df72574cf5159cf42138e7c445d5b2a6f"
+  },
+  "V@P1": {
+   "registered_revision": "sha256set:1f5903e5db37a1951c8d10fa36806d52bb7bc1b5a5e068d11c82773eb3947f31",
+   "view_manifest_sha256": "4c0aeae4f4b12a82bf60949ae37d6a7b82f0dc95396db7a9e062d118e3b621c8"
+  }
+ }
+}

@@ -1,0 +1,4831 @@
+{
+ "config_sha256": "2c69348309966fa2e823ac085bbe11105a64db48c31f9dbd81d7beef0b1ff0aa",
+ "coverage": {
+  "analysis": [
+   {
+    "label": "B@P1",
+    "seed": 42,
+    "slug": "qwen25vl7b-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "B@P1",
+    "seed": 43,
+    "slug": "qwen25vl7b-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "B@P1",
+    "seed": 44,
+    "slug": "qwen25vl7b-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "T@P1",
+    "seed": 42,
+    "slug": "trace7b-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "T@P1",
+    "seed": 43,
+    "slug": "trace7b-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "T@P1",
+    "seed": 44,
+    "slug": "trace7b-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "V@P1",
+    "seed": 42,
+    "slug": "vero-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "V@P1",
+    "seed": 43,
+    "slug": "vero-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "V@P1",
+    "seed": 44,
+    "slug": "vero-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 42,
+    "slug": "tf-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 43,
+    "slug": "tf-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 44,
+    "slug": "tf-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 42,
+    "slug": "tl-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 43,
+    "slug": "tl-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 44,
+    "slug": "tl-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 42,
+    "slug": "vf-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 43,
+    "slug": "vf-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 44,
+    "slug": "vf-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 42,
+    "slug": "vl-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 43,
+    "slug": "vl-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 44,
+    "slug": "vl-p1",
+    "subset": "confirmation"
+   }
+  ],
+  "analysis[TR0,TR1,TR2]": [
+   {
+    "label": "TR0@P1",
+    "seed": 42,
+    "slug": "tr0-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR0@P1",
+    "seed": 43,
+    "slug": "tr0-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR0@P1",
+    "seed": 44,
+    "slug": "tr0-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR1@P1",
+    "seed": 42,
+    "slug": "tr1-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR1@P1",
+    "seed": 43,
+    "slug": "tr1-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR1@P1",
+    "seed": 44,
+    "slug": "tr1-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR2@P1",
+    "seed": 42,
+    "slug": "tr2-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR2@P1",
+    "seed": 43,
+    "slug": "tr2-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "TR2@P1",
+    "seed": 44,
+    "slug": "tr2-p1",
+    "subset": "confirmation"
+   }
+  ],
+  "analysis[VNM]": [
+   {
+    "label": "VNM@P1",
+    "seed": 42,
+    "slug": "vnm-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VNM@P1",
+    "seed": 43,
+    "slug": "vnm-p1",
+    "subset": "confirmation"
+   },
+   {
+    "label": "VNM@P1",
+    "seed": 44,
+    "slug": "vnm-p1",
+    "subset": "confirmation"
+   }
+  ],
+  "replication": [
+   {
+    "label": "B@P1",
+    "seed": 43,
+    "slug": "qwen25vl7b-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "B@P1",
+    "seed": 44,
+    "slug": "qwen25vl7b-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "B@P2",
+    "seed": 43,
+    "slug": "qwen25vl7b-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "B@P2",
+    "seed": 44,
+    "slug": "qwen25vl7b-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "T@P1",
+    "seed": 43,
+    "slug": "trace7b-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "T@P1",
+    "seed": 44,
+    "slug": "trace7b-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "T@P2",
+    "seed": 43,
+    "slug": "trace7b-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "T@P2",
+    "seed": 44,
+    "slug": "trace7b-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "V@P1",
+    "seed": 43,
+    "slug": "vero-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "V@P1",
+    "seed": 44,
+    "slug": "vero-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "V@P2",
+    "seed": 43,
+    "slug": "vero-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "V@P2",
+    "seed": 44,
+    "slug": "vero-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 43,
+    "slug": "tf-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 44,
+    "slug": "tf-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TF@P2",
+    "seed": 43,
+    "slug": "tf-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TF@P2",
+    "seed": 44,
+    "slug": "tf-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 43,
+    "slug": "tl-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 44,
+    "slug": "tl-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TL@P2",
+    "seed": 43,
+    "slug": "tl-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TL@P2",
+    "seed": 44,
+    "slug": "tl-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 43,
+    "slug": "vf-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 44,
+    "slug": "vf-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VF@P2",
+    "seed": 43,
+    "slug": "vf-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VF@P2",
+    "seed": 44,
+    "slug": "vf-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 43,
+    "slug": "vl-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 44,
+    "slug": "vl-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VL@P2",
+    "seed": 43,
+    "slug": "vl-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VL@P2",
+    "seed": 44,
+    "slug": "vl-p2",
+    "subset": "development_screen"
+   }
+  ],
+  "screen": [
+   {
+    "label": "B@P1",
+    "seed": 42,
+    "slug": "qwen25vl7b-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "T@P1",
+    "seed": 42,
+    "slug": "trace7b-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "V@P1",
+    "seed": 42,
+    "slug": "vero-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 42,
+    "slug": "tf-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 42,
+    "slug": "tl-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 42,
+    "slug": "vf-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 42,
+    "slug": "vl-p1",
+    "subset": "development_screen"
+   }
+  ],
+  "screen[TR0,TR1,TR2]": [
+   {
+    "label": "TR0@P1",
+    "seed": 42,
+    "slug": "tr0-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TR1@P1",
+    "seed": 42,
+    "slug": "tr1-p1",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TR2@P1",
+    "seed": 42,
+    "slug": "tr2-p1",
+    "subset": "development_screen"
+   }
+  ],
+  "screen[VNM]": [
+   {
+    "label": "VNM@P1",
+    "seed": 42,
+    "slug": "vnm-p1",
+    "subset": "development_screen"
+   }
+  ],
+  "smoke": [
+   {
+    "label": "B@P1",
+    "seed": 42,
+    "slug": "qwen25vl7b-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "B@P2",
+    "seed": 42,
+    "slug": "qwen25vl7b-p2",
+    "subset": "smoke"
+   },
+   {
+    "label": "T@P1",
+    "seed": 42,
+    "slug": "trace7b-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "T@P2",
+    "seed": 42,
+    "slug": "trace7b-p2",
+    "subset": "smoke"
+   },
+   {
+    "label": "V@P1",
+    "seed": 42,
+    "slug": "vero-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "V@P2",
+    "seed": 42,
+    "slug": "vero-p2",
+    "subset": "smoke"
+   },
+   {
+    "label": "TF@P1",
+    "seed": 42,
+    "slug": "tf-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "TF@P2",
+    "seed": 42,
+    "slug": "tf-p2",
+    "subset": "smoke"
+   },
+   {
+    "label": "TL@P1",
+    "seed": 42,
+    "slug": "tl-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "TL@P2",
+    "seed": 42,
+    "slug": "tl-p2",
+    "subset": "smoke"
+   },
+   {
+    "label": "VF@P1",
+    "seed": 42,
+    "slug": "vf-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "VF@P2",
+    "seed": 42,
+    "slug": "vf-p2",
+    "subset": "smoke"
+   },
+   {
+    "label": "VL@P1",
+    "seed": 42,
+    "slug": "vl-p1",
+    "subset": "smoke"
+   },
+   {
+    "label": "VL@P2",
+    "seed": 42,
+    "slug": "vl-p2",
+    "subset": "smoke"
+   }
+  ],
+  "template": [
+   {
+    "label": "B@P2",
+    "seed": 42,
+    "slug": "qwen25vl7b-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "T@P2",
+    "seed": 42,
+    "slug": "trace7b-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "V@P2",
+    "seed": 42,
+    "slug": "vero-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TF@P2",
+    "seed": 42,
+    "slug": "tf-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "TL@P2",
+    "seed": 42,
+    "slug": "tl-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VF@P2",
+    "seed": 42,
+    "slug": "vf-p2",
+    "subset": "development_screen"
+   },
+   {
+    "label": "VL@P2",
+    "seed": 42,
+    "slug": "vl-p2",
+    "subset": "development_screen"
+   }
+  ],
+  "template[VNM]": [
+   {
+    "label": "VNM@P2",
+    "seed": 42,
+    "slug": "vnm-p2",
+    "subset": "development_screen"
+   }
+  ]
+ },
+ "pins": {
+  "evaluation_tiers": {
+   "analysis": {
+    "protocols": [
+     "p1"
+    ],
+    "seeds": [
+     42,
+     43,
+     44
+    ],
+    "subset": "confirmation"
+   },
+   "replication": {
+    "protocols": [
+     "p1",
+     "p2"
+    ],
+    "seeds": [
+     43,
+     44
+    ],
+    "subset": "development_screen"
+   },
+   "screen": {
+    "protocols": [
+     "p1"
+    ],
+    "seeds": [
+     42
+    ],
+    "subset": "development_screen"
+   },
+   "smoke": {
+    "protocols": [
+     "p1",
+     "p2"
+    ],
+    "seeds": [
+     42
+    ],
+    "subset": "smoke"
+   },
+   "template": {
+    "protocols": [
+     "p2"
+    ],
+    "seeds": [
+     42
+    ],
+    "subset": "development_screen"
+   }
+  },
+  "interfaces": {
+   "P1_backbone": {
+    "files": [
+     "config.json",
+     "generation_config.json",
+     "preprocessor_config.json",
+     "tokenizer.json",
+     "tokenizer_config.json",
+     "vocab.json",
+     "merges.txt",
+     "chat_template.json"
+    ],
+    "role": "primary",
+    "view": "B"
+   },
+   "P2_vero": {
+    "files": [
+     "config.json",
+     "generation_config.json",
+     "preprocessor_config.json",
+     "tokenizer.json",
+     "tokenizer_config.json",
+     "vocab.json",
+     "merges.txt",
+     "added_tokens.json",
+     "special_tokens_map.json",
+     "chat_template.jinja",
+     "video_preprocessor_config.json"
+    ],
+    "role": "diagnostic_development_only",
+    "view": "V"
+   }
+  },
+  "model_roles": {
+   "B": {
+    "archived_model_id": "qwen2.5-vl-7b-base",
+    "archived_model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+   },
+   "T": {
+    "archived_model_id": "trace-qwen2.5-vl-7b",
+    "archived_model_revision": "sha256set:8396b0be6a760ff7cbbdff02b3017b6b5bc352c87291480aba18fd3e3b6a13b5",
+    "repo_id": "maveryn/trace-qwen2.5-vl-7b",
+    "source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+   },
+   "V": {
+    "archived_model_id": "vero-qwen2.5-vl-7b",
+    "archived_model_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+    "repo_id": "zlab-princeton/Vero-Qwen25-7B",
+    "source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+   }
+  },
+  "protocol": {
+   "clone": null,
+   "code_revision": "af32fe0e668eb878e909daef7322ac1c4ae20f64",
+   "generation": {
+    "max_image_pixels": 12845056,
+    "max_tokens": 4096,
+    "media_transport": "file-url",
+    "min_image_pixels": 3136,
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "temperature": 0.6,
+    "top_k": -1,
+    "top_p": 1.0
+   },
+   "judge": {
+    "repo_id": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137"
+   },
+   "vlmevalkit_revision": "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+  },
+  "protocol_overlay": "two P2 screen rescores (tf-p2, vl-p2) used the private overlay with fix-4/fix-5 (design A1); every other run used the shared clone unchanged",
+  "scorer": "official adapters (reviewed metric registry) + format-normalized-v2 (audit/scoring_spec.format-normalized-v2.json)",
+  "split_manifest_sha256": "53179574bbea4accb250352e451bba601a2b09af63ae8109d8d870cffceb0a6c"
+ },
+ "runs": [
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:1d9d3442faec88b58e36ed41af6624fc0fd29e8bec0189056de8f070a7854cb0",
+   "slug": "qwen25vl7b-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "6ee0359c4741bc8cc360f1e2d4fa48d2d5c182d36a8b44c17c99dd8efab5551b",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:6025e070538b63d59aa05c77c44d3165c06e5d6da41260fe5fab7fa2837d0075",
+   "slug": "qwen25vl7b-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "41c8d0a0cc78d7c929fb8362ae425e25ecfc101b4e4511774929c0701a47bd62",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:6025e070538b63d59aa05c77c44d3165c06e5d6da41260fe5fab7fa2837d0075",
+   "slug": "qwen25vl7b-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "41c8d0a0cc78d7c929fb8362ae425e25ecfc101b4e4511774929c0701a47bd62",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A40 44GiB",
+     "host": "notch472",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:6025e070538b63d59aa05c77c44d3165c06e5d6da41260fe5fab7fa2837d0075",
+   "slug": "qwen25vl7b-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "41c8d0a0cc78d7c929fb8362ae425e25ecfc101b4e4511774929c0701a47bd62",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "B@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:6025e070538b63d59aa05c77c44d3165c06e5d6da41260fe5fab7fa2837d0075",
+   "slug": "qwen25vl7b-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "41c8d0a0cc78d7c929fb8362ae425e25ecfc101b4e4511774929c0701a47bd62",
+   "weight_source": "B",
+   "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 140GiB",
+     "host": "grn031",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:6b484d89f9f59cc5d4b7960a3c08cfc32aab34f758e269187e54120fef5ca0d4",
+   "slug": "tf-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "161319d2221a60d84efc64311797a47e4714099429d66f12d5c00cb8f1ee820c",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1",
+    "code fd8fccd5875d evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "quarantined_outputs": [
+    "quarantine_seed42_scorer_raise"
+   ],
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:aaa897cbbd206eb3b38031ac64c7102251be881a8ece52a5602e815d6e994891",
+   "slug": "tf-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "1ac864e2094a518ff9ce69245c57a2b321d3f2f251ae3f66939a765de2163cf4",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "quarantined_outputs": [
+    "quarantine_seed42_scorer_raise"
+   ],
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:aaa897cbbd206eb3b38031ac64c7102251be881a8ece52a5602e815d6e994891",
+   "slug": "tf-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "1ac864e2094a518ff9ce69245c57a2b321d3f2f251ae3f66939a765de2163cf4",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "quarantined_outputs": [
+    "quarantine_seed42_scorer_raise"
+   ],
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:aaa897cbbd206eb3b38031ac64c7102251be881a8ece52a5602e815d6e994891",
+   "slug": "tf-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "1ac864e2094a518ff9ce69245c57a2b321d3f2f251ae3f66939a765de2163cf4",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:aaa897cbbd206eb3b38031ac64c7102251be881a8ece52a5602e815d6e994891",
+   "slug": "tf-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "1ac864e2094a518ff9ce69245c57a2b321d3f2f251ae3f66939a765de2163cf4",
+   "weight_source": "TF",
+   "weight_source_revision": "sha256set:912ada4e314830148b7b6fae6aaff885061195cb9785d568f5139025801e6d3c"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA A40 44GiB",
+     "host": "notch329",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch456",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA A40 44GiB",
+     "host": "notch329",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:95f272fa9e75992c0ea3e63e29551eb4abd9d3743ef65095037d9bb914859eea",
+   "slug": "tl-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "fc8a7b057352a36641c3b5008e82d2e0c1575fd5794747d4d9421853f8d367a5",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:7ee6b1afaea578dd42be2a76f494fff94153a172f005699a2d61a28d3d8dc65e",
+   "slug": "tl-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "596a072ef1268eb352417345637d701a8426b339b333a6bd5e64bd6b4c15312e",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:7ee6b1afaea578dd42be2a76f494fff94153a172f005699a2d61a28d3d8dc65e",
+   "slug": "tl-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "596a072ef1268eb352417345637d701a8426b339b333a6bd5e64bd6b4c15312e",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:7ee6b1afaea578dd42be2a76f494fff94153a172f005699a2d61a28d3d8dc65e",
+   "slug": "tl-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "596a072ef1268eb352417345637d701a8426b339b333a6bd5e64bd6b4c15312e",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:7ee6b1afaea578dd42be2a76f494fff94153a172f005699a2d61a28d3d8dc65e",
+   "slug": "tl-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "596a072ef1268eb352417345637d701a8426b339b333a6bd5e64bd6b4c15312e",
+   "weight_source": "TL",
+   "weight_source_revision": "sha256set:ab1e6ce1950e2515e4e45b2949502b528aa106cffb20388962e13351bec95981"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR0@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:b4c7713d31a852db9baeb3bc410c6b24d996af3582f7e03ed343e42b5318b36c",
+   "slug": "tr0-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "b6a26aa003051d654c5bc8db0c7910b3886c4945b3136453fca3c7408ee01e45",
+   "weight_source": "TR0",
+   "weight_source_revision": "sha256set:1a3f61e1ddb8749005e6c3fdaa0b200a9bc15267fff315e115c889960ee01304"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR0@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:b4c7713d31a852db9baeb3bc410c6b24d996af3582f7e03ed343e42b5318b36c",
+   "slug": "tr0-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "b6a26aa003051d654c5bc8db0c7910b3886c4945b3136453fca3c7408ee01e45",
+   "weight_source": "TR0",
+   "weight_source_revision": "sha256set:1a3f61e1ddb8749005e6c3fdaa0b200a9bc15267fff315e115c889960ee01304"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR0@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:b4c7713d31a852db9baeb3bc410c6b24d996af3582f7e03ed343e42b5318b36c",
+   "slug": "tr0-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "b6a26aa003051d654c5bc8db0c7910b3886c4945b3136453fca3c7408ee01e45",
+   "weight_source": "TR0",
+   "weight_source_revision": "sha256set:1a3f61e1ddb8749005e6c3fdaa0b200a9bc15267fff315e115c889960ee01304"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR0@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:b4c7713d31a852db9baeb3bc410c6b24d996af3582f7e03ed343e42b5318b36c",
+   "slug": "tr0-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "b6a26aa003051d654c5bc8db0c7910b3886c4945b3136453fca3c7408ee01e45",
+   "weight_source": "TR0",
+   "weight_source_revision": "sha256set:1a3f61e1ddb8749005e6c3fdaa0b200a9bc15267fff315e115c889960ee01304"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR0@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:b4c7713d31a852db9baeb3bc410c6b24d996af3582f7e03ed343e42b5318b36c",
+   "slug": "tr0-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "b6a26aa003051d654c5bc8db0c7910b3886c4945b3136453fca3c7408ee01e45",
+   "weight_source": "TR0",
+   "weight_source_revision": "sha256set:1a3f61e1ddb8749005e6c3fdaa0b200a9bc15267fff315e115c889960ee01304"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR1@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:3c4b9e9db3403d0b9143f681491c7c48a6692fc23fda14ad72747a80eca11fe1",
+   "slug": "tr1-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "f0bf9468ab2589fe2876fe123fa30907c43f9c16af0efe9ac455b9e71734ebdc",
+   "weight_source": "TR1",
+   "weight_source_revision": "sha256set:2c648895c793895ef30cc8e85601f2362d92108df7650af34ea465a7869cbafc"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR1@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:3c4b9e9db3403d0b9143f681491c7c48a6692fc23fda14ad72747a80eca11fe1",
+   "slug": "tr1-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "f0bf9468ab2589fe2876fe123fa30907c43f9c16af0efe9ac455b9e71734ebdc",
+   "weight_source": "TR1",
+   "weight_source_revision": "sha256set:2c648895c793895ef30cc8e85601f2362d92108df7650af34ea465a7869cbafc"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR1@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:3c4b9e9db3403d0b9143f681491c7c48a6692fc23fda14ad72747a80eca11fe1",
+   "slug": "tr1-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "f0bf9468ab2589fe2876fe123fa30907c43f9c16af0efe9ac455b9e71734ebdc",
+   "weight_source": "TR1",
+   "weight_source_revision": "sha256set:2c648895c793895ef30cc8e85601f2362d92108df7650af34ea465a7869cbafc"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR1@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:3c4b9e9db3403d0b9143f681491c7c48a6692fc23fda14ad72747a80eca11fe1",
+   "slug": "tr1-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "f0bf9468ab2589fe2876fe123fa30907c43f9c16af0efe9ac455b9e71734ebdc",
+   "weight_source": "TR1",
+   "weight_source_revision": "sha256set:2c648895c793895ef30cc8e85601f2362d92108df7650af34ea465a7869cbafc"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR1@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:3c4b9e9db3403d0b9143f681491c7c48a6692fc23fda14ad72747a80eca11fe1",
+   "slug": "tr1-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "f0bf9468ab2589fe2876fe123fa30907c43f9c16af0efe9ac455b9e71734ebdc",
+   "weight_source": "TR1",
+   "weight_source_revision": "sha256set:2c648895c793895ef30cc8e85601f2362d92108df7650af34ea465a7869cbafc"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR2@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:225a58f86526b371b1edea15c7ae24d4ad9f5b2298f655cce698014a9d6911bc",
+   "slug": "tr2-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "a45a3ca63ede68525a8f57628ff996b90c718830e3a0a1c84c1a9c371ebf1983",
+   "weight_source": "TR2",
+   "weight_source_revision": "sha256set:cf905148bc773af06d9bdce9b5e897fbf1f57801422e78724eeb5501fb897078"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR2@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:225a58f86526b371b1edea15c7ae24d4ad9f5b2298f655cce698014a9d6911bc",
+   "slug": "tr2-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "a45a3ca63ede68525a8f57628ff996b90c718830e3a0a1c84c1a9c371ebf1983",
+   "weight_source": "TR2",
+   "weight_source_revision": "sha256set:cf905148bc773af06d9bdce9b5e897fbf1f57801422e78724eeb5501fb897078"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR2@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:225a58f86526b371b1edea15c7ae24d4ad9f5b2298f655cce698014a9d6911bc",
+   "slug": "tr2-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "a45a3ca63ede68525a8f57628ff996b90c718830e3a0a1c84c1a9c371ebf1983",
+   "weight_source": "TR2",
+   "weight_source_revision": "sha256set:cf905148bc773af06d9bdce9b5e897fbf1f57801422e78724eeb5501fb897078"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR2@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:225a58f86526b371b1edea15c7ae24d4ad9f5b2298f655cce698014a9d6911bc",
+   "slug": "tr2-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "a45a3ca63ede68525a8f57628ff996b90c718830e3a0a1c84c1a9c371ebf1983",
+   "weight_source": "TR2",
+   "weight_source_revision": "sha256set:cf905148bc773af06d9bdce9b5e897fbf1f57801422e78724eeb5501fb897078"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "TR2@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:225a58f86526b371b1edea15c7ae24d4ad9f5b2298f655cce698014a9d6911bc",
+   "slug": "tr2-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "a45a3ca63ede68525a8f57628ff996b90c718830e3a0a1c84c1a9c371ebf1983",
+   "weight_source": "TR2",
+   "weight_source_revision": "sha256set:cf905148bc773af06d9bdce9b5e897fbf1f57801422e78724eeb5501fb897078"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:6584910503f47b8484cb2a0b6b5d766a7748ecf666c0ea6b8e0aa7b4af4f5247",
+   "slug": "trace7b-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "b383439600cce665c4f65683de78a6de67758fc3ab07290fb271b4aeb9fae8e8",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:ad31d865c769d83d2381a4e385f45c25c4e75d6bf3bb39477177b3233d7bbe97",
+   "slug": "trace7b-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "8fe7e4bc63d144283035b64ed5638277dbadbbcffb7f589235912ae128c0ccbc",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:ad31d865c769d83d2381a4e385f45c25c4e75d6bf3bb39477177b3233d7bbe97",
+   "slug": "trace7b-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "8fe7e4bc63d144283035b64ed5638277dbadbbcffb7f589235912ae128c0ccbc",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:ad31d865c769d83d2381a4e385f45c25c4e75d6bf3bb39477177b3233d7bbe97",
+   "slug": "trace7b-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "8fe7e4bc63d144283035b64ed5638277dbadbbcffb7f589235912ae128c0ccbc",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "T@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:ad31d865c769d83d2381a4e385f45c25c4e75d6bf3bb39477177b3233d7bbe97",
+   "slug": "trace7b-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "8fe7e4bc63d144283035b64ed5638277dbadbbcffb7f589235912ae128c0ccbc",
+   "weight_source": "T",
+   "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "quarantined_outputs": [
+    "quarantine_seed43_archive_raise"
+   ],
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code ccbf4ec281aa evaluator 7bae61e285d1",
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "quarantined_outputs": [
+    "quarantine_seed43_archive_raise"
+   ],
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX A6000 44GiB",
+     "host": "notch405",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX A6000 44GiB",
+     "host": "notch405",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "quarantined_outputs": [
+    "quarantine_seed43_archive_raise"
+   ],
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:ebf2f04d17b6074c3b6daa63052d9858326054126cdec052c941828b35368ffc",
+   "slug": "vero-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "06a3b3f0f233035d349163f225a9b85c8a7eb96f25606c8443c38a7fbe211f58",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:5ab4dde9edd493be2b248ac4022d4a0ff5d62f7a09e33f0186b2974915fe63a7",
+   "slug": "vero-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "53ebbade8f1828ca98636a577fe71ae98e48e5f2b46bd9c8b299f66ca05accc9",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:5ab4dde9edd493be2b248ac4022d4a0ff5d62f7a09e33f0186b2974915fe63a7",
+   "slug": "vero-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "53ebbade8f1828ca98636a577fe71ae98e48e5f2b46bd9c8b299f66ca05accc9",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A40 44GiB",
+     "host": "notch472",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:5ab4dde9edd493be2b248ac4022d4a0ff5d62f7a09e33f0186b2974915fe63a7",
+   "slug": "vero-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "53ebbade8f1828ca98636a577fe71ae98e48e5f2b46bd9c8b299f66ca05accc9",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "V@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:5ab4dde9edd493be2b248ac4022d4a0ff5d62f7a09e33f0186b2974915fe63a7",
+   "slug": "vero-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "53ebbade8f1828ca98636a577fe71ae98e48e5f2b46bd9c8b299f66ca05accc9",
+   "weight_source": "V",
+   "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA H200 140GiB",
+     "host": "grn031",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A40 44GiB",
+     "host": "notch474",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:e4cb6973f1c887e4778b4589696afbda0d2ca608fc60503c98309e381708e62e",
+   "slug": "vf-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "ea7ab86028185ddd35695e63fc794fdf293562a8b20ab6843d96b7259802d6ff",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:601ae66f4ea65429d1c791995a8c7c00a1d0e700a3d88052a13524864188e9d0",
+   "slug": "vf-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "02e4c218a64c955236fb64a9b9b30dd11b50f1bee4fecfe16248c718f712b17d",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch456",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:601ae66f4ea65429d1c791995a8c7c00a1d0e700a3d88052a13524864188e9d0",
+   "slug": "vf-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "02e4c218a64c955236fb64a9b9b30dd11b50f1bee4fecfe16248c718f712b17d",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:601ae66f4ea65429d1c791995a8c7c00a1d0e700a3d88052a13524864188e9d0",
+   "slug": "vf-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "02e4c218a64c955236fb64a9b9b30dd11b50f1bee4fecfe16248c718f712b17d",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VF@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:601ae66f4ea65429d1c791995a8c7c00a1d0e700a3d88052a13524864188e9d0",
+   "slug": "vf-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "02e4c218a64c955236fb64a9b9b30dd11b50f1bee4fecfe16248c718f712b17d",
+   "weight_source": "VF",
+   "weight_source_revision": "sha256set:76d1b02785138a96ecb22c98e36740e833505aa6ae41a81442b91e5048820ffd"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn073",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A40 44GiB",
+     "host": "notch474",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:c20a9088102daa2451bc46798aed3a840379226764a7be4b022c58f178b6a9a7",
+   "slug": "vl-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "1a7f6849ff1957ec63b2f21dd13b53289ce324a9ce76c7c6466c7ba9d2de6e62",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA H200 NVL 140GiB",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA H200 140GiB",
+     "host": "grn031",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA H200 140GiB",
+     "host": "grn031",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn075",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1",
+    "code fd8fccd5875d evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "quarantined_outputs": [
+    "quarantine_seed42_scorer_raise"
+   ],
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:a2d19f1414b679658753ffbf282eb2298e5c0c94fdde0dda3e76d079838f6ee7",
+   "slug": "vl-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "0d5a16404d0df09e58c6413ff405dba113b2c8baea3b1c0686963389695e3333",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "quarantined_outputs": [
+    "quarantine_seed42_scorer_raise"
+   ],
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 43,
+   "served_model_revision": "sha256set:a2d19f1414b679658753ffbf282eb2298e5c0c94fdde0dda3e76d079838f6ee7",
+   "slug": "vl-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "0d5a16404d0df09e58c6413ff405dba113b2c8baea3b1c0686963389695e3333",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch456",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "quarantined_outputs": [
+    "quarantine_seed42_scorer_raise"
+   ],
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 44,
+   "served_model_revision": "sha256set:a2d19f1414b679658753ffbf282eb2298e5c0c94fdde0dda3e76d079838f6ee7",
+   "slug": "vl-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "0d5a16404d0df09e58c6413ff405dba113b2c8baea3b1c0686963389695e3333",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB",
+     "host": "grn074",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn067",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn031",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "",
+     "host": "grn031",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VL@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:a2d19f1414b679658753ffbf282eb2298e5c0c94fdde0dda3e76d079838f6ee7",
+   "slug": "vl-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "0d5a16404d0df09e58c6413ff405dba113b2c8baea3b1c0686963389695e3333",
+   "weight_source": "VL",
+   "weight_source_revision": "sha256set:27ba6c9284a611350cddd50e418449dcc21350525193bc811385447d06a7cdb7"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 42,
+   "served_model_revision": "sha256set:e3ab5c713635b1e42fa2d697b65346242c40589fb06a26bf61e1ff0af4b7137f",
+   "slug": "vnm-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "54010713cc386a9522ddde8705ca6556a863c9bc7681e595e24002765811bf5e",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch366",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 43,
+   "served_model_revision": "sha256set:e3ab5c713635b1e42fa2d697b65346242c40589fb06a26bf61e1ff0af4b7137f",
+   "slug": "vnm-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "54010713cc386a9522ddde8705ca6556a863c9bc7681e595e24002765811bf5e",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 1,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn009",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 3,
+     "serving": {}
+    },
+    {
+     "gpus": "2x NVIDIA L40S 44GiB",
+     "host": "grn010",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "3388e5831313a3619ce99273a8b5199964abac130583a244a57acb3f6c710766",
+   "seed": 44,
+   "served_model_revision": "sha256set:e3ab5c713635b1e42fa2d697b65346242c40589fb06a26bf61e1ff0af4b7137f",
+   "slug": "vnm-p1",
+   "subset": "confirmation",
+   "view_manifest_sha256": "54010713cc386a9522ddde8705ca6556a863c9bc7681e595e24002765811bf5e",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:e3ab5c713635b1e42fa2d697b65346242c40589fb06a26bf61e1ff0af4b7137f",
+   "slug": "vnm-p1",
+   "subset": "development_screen",
+   "view_manifest_sha256": "54010713cc386a9522ddde8705ca6556a863c9bc7681e595e24002765811bf5e",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "2x NVIDIA RTX 6000 Ada Generation 47GiB",
+     "host": "notch447",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P1",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P1_backbone",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:e3ab5c713635b1e42fa2d697b65346242c40589fb06a26bf61e1ff0af4b7137f",
+   "slug": "vnm-p1",
+   "subset": "smoke",
+   "view_manifest_sha256": "54010713cc386a9522ddde8705ca6556a863c9bc7681e595e24002765811bf5e",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "e8b0b588b4bb8589eec610de8c8afe608d9681b41041fd092b5555875e049c65",
+   "seed": 42,
+   "served_model_revision": "sha256set:ee9d81fba8552aa64c3ab8af22f245dd7524fb8652b02e1518d431edd516153f",
+   "slug": "vnm-p2",
+   "subset": "development_screen",
+   "view_manifest_sha256": "66e2f7d2aa078909d2750d4b9ef0b54ffe894c2ef4b206198b393786ea225aba",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  },
+  {
+   "attempts": [
+    {
+     "gpus": "1x NVIDIA A100 80GB PCIe 80GiB",
+     "host": "notch369",
+     "jobs_sha256": {
+      "common.sh": "14bf38e7ecc658b46426af37135c364224d175127c75bc03a5e02405bbd0a7d8",
+      "eval_lib.py": "df4bafc192ed20b8d7a02b54b726381b5396e5531fb8a8ed55b123f2fe54d55e",
+      "eval_subset.sh": "a0f504691f8c7ef57ba1905b69e77191cd74bda52405965022321092c2cb94df",
+      "pandas_guard/sitecustomize.py": "8abc5f239195ce559207e558b0e8fd350bd048ed27858c6a76100544e316e553",
+      "run_tiers.sh": "4acdbec090b46de7fea375f42aede2738dee3e346cb90bdacca1f0390f614e1d"
+     },
+     "rc": 0,
+     "serving": {}
+    }
+   ],
+   "benchmarks_scored": 24,
+   "complete": true,
+   "label": "VNM@P2",
+   "protocol_code_evaluator_hashes": [
+    "code d9319e7db480 evaluator 7bae61e285d1"
+   ],
+   "protocol_id": "P2_vero",
+   "row_list_sha256": "73664b8fd177a29a55955bb6eecaeac17815bc5728a28864f6ec9fcfe150af6f",
+   "seed": 42,
+   "served_model_revision": "sha256set:ee9d81fba8552aa64c3ab8af22f245dd7524fb8652b02e1518d431edd516153f",
+   "slug": "vnm-p2",
+   "subset": "smoke",
+   "view_manifest_sha256": "66e2f7d2aa078909d2750d4b9ef0b54ffe894c2ef4b206198b393786ea225aba",
+   "weight_source": "VNM",
+   "weight_source_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce"
+  }
+ ],
+ "schema": "trace-followup-evaluation-manifest-v1",
+ "study_id": "trace_vero_followup_v1"
+}

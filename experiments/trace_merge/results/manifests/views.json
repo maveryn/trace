@@ -1,0 +1,267 @@
+{
+ "B@P2": {
+  "label": "B@P2",
+  "protocol_id": "P2_vero",
+  "schema": "trace-merge-view-v1",
+  "slug": "qwen25vl7b-p2",
+  "view_files_sha256": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "0ee7c1fba5e3f2c762fc061e37fa1ce0d8119df3914974a57c02348787af0c5c",
+   "config.json": "28716913b9627f6258909fc343f9998c94f46d961a4991764b9b08a201103550",
+   "generation_config.json": "9ef80feb2991359ab25d787cfdc07512d19187730bb1a423c900b41581dccd70",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "V",
+  "view_parent_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+  "weight_source": "B",
+  "weight_source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "weights": {
+   "model-00001-of-00005.safetensors": "d999d3c330c49ea66c37be6d108e20e1ddcf5af848546a6cb8f72b91c4c6798e",
+   "model-00002-of-00005.safetensors": "27ed3a3eb0c1920dfafc6744c6c54b9f755757dbb2de0050483ea64d32780d08",
+   "model-00003-of-00005.safetensors": "17663813c5540124cd1a2dac2476a58bf107c86981ae5c60283c2a563906fb15",
+   "model-00004-of-00005.safetensors": "1dd942a77eccc35d2b21351724e5ce0513ae74bac0f2a6d12ee42d7653c53747",
+   "model-00005-of-00005.safetensors": "f06bb4c09b51382e5142176acc48a807aa5647e70541ab316201a4e55b6b0350",
+   "model.safetensors.index.json": "f0c9e9b8e043f5de0ac99fd8b2ea75515d811e7b"
+  }
+ },
+ "CT050@P1": {
+  "label": "CT050@P1",
+  "protocol_id": "P1_backbone",
+  "schema": "trace-merge-view-v1",
+  "slug": "ct050-p1",
+  "view_files_sha256": {
+   "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+   "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+   "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "B",
+  "view_parent_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "weight_source": "CT050",
+  "weight_source_revision": "sha256set:c1f8a9933e8fba6f5824b8e8be167411b1a032c0e2589076ccd19459b736fb2e",
+  "weights": {
+   "model-00001-of-00005.safetensors": "model-00001-of-00005.safetensors",
+   "model-00002-of-00005.safetensors": "model-00002-of-00005.safetensors",
+   "model-00003-of-00005.safetensors": "model-00003-of-00005.safetensors",
+   "model-00004-of-00005.safetensors": "model-00004-of-00005.safetensors",
+   "model-00005-of-00005.safetensors": "model-00005-of-00005.safetensors",
+   "model.safetensors.index.json": "model.safetensors.index.json"
+  }
+ },
+ "CT050@P2": {
+  "label": "CT050@P2",
+  "protocol_id": "P2_vero",
+  "schema": "trace-merge-view-v1",
+  "slug": "ct050-p2",
+  "view_files_sha256": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "0ee7c1fba5e3f2c762fc061e37fa1ce0d8119df3914974a57c02348787af0c5c",
+   "config.json": "28716913b9627f6258909fc343f9998c94f46d961a4991764b9b08a201103550",
+   "generation_config.json": "9ef80feb2991359ab25d787cfdc07512d19187730bb1a423c900b41581dccd70",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "V",
+  "view_parent_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+  "weight_source": "CT050",
+  "weight_source_revision": "sha256set:c1f8a9933e8fba6f5824b8e8be167411b1a032c0e2589076ccd19459b736fb2e",
+  "weights": {
+   "model-00001-of-00005.safetensors": "model-00001-of-00005.safetensors",
+   "model-00002-of-00005.safetensors": "model-00002-of-00005.safetensors",
+   "model-00003-of-00005.safetensors": "model-00003-of-00005.safetensors",
+   "model-00004-of-00005.safetensors": "model-00004-of-00005.safetensors",
+   "model-00005-of-00005.safetensors": "model-00005-of-00005.safetensors",
+   "model.safetensors.index.json": "model.safetensors.index.json"
+  }
+ },
+ "CV050@P1": {
+  "label": "CV050@P1",
+  "protocol_id": "P1_backbone",
+  "schema": "trace-merge-view-v1",
+  "slug": "cv050-p1",
+  "view_files_sha256": {
+   "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+   "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+   "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "B",
+  "view_parent_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "weight_source": "CV050",
+  "weight_source_revision": "sha256set:99222450add2a0a78510e58a5b6b26ab10227628382305c97dc0a03793078ef7",
+  "weights": {
+   "model-00001-of-00005.safetensors": "model-00001-of-00005.safetensors",
+   "model-00002-of-00005.safetensors": "model-00002-of-00005.safetensors",
+   "model-00003-of-00005.safetensors": "model-00003-of-00005.safetensors",
+   "model-00004-of-00005.safetensors": "model-00004-of-00005.safetensors",
+   "model-00005-of-00005.safetensors": "model-00005-of-00005.safetensors",
+   "model.safetensors.index.json": "model.safetensors.index.json"
+  }
+ },
+ "CV050@P2": {
+  "label": "CV050@P2",
+  "protocol_id": "P2_vero",
+  "schema": "trace-merge-view-v1",
+  "slug": "cv050-p2",
+  "view_files_sha256": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "0ee7c1fba5e3f2c762fc061e37fa1ce0d8119df3914974a57c02348787af0c5c",
+   "config.json": "28716913b9627f6258909fc343f9998c94f46d961a4991764b9b08a201103550",
+   "generation_config.json": "9ef80feb2991359ab25d787cfdc07512d19187730bb1a423c900b41581dccd70",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "V",
+  "view_parent_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+  "weight_source": "CV050",
+  "weight_source_revision": "sha256set:99222450add2a0a78510e58a5b6b26ab10227628382305c97dc0a03793078ef7",
+  "weights": {
+   "model-00001-of-00005.safetensors": "model-00001-of-00005.safetensors",
+   "model-00002-of-00005.safetensors": "model-00002-of-00005.safetensors",
+   "model-00003-of-00005.safetensors": "model-00003-of-00005.safetensors",
+   "model-00004-of-00005.safetensors": "model-00004-of-00005.safetensors",
+   "model-00005-of-00005.safetensors": "model-00005-of-00005.safetensors",
+   "model.safetensors.index.json": "model.safetensors.index.json"
+  }
+ },
+ "M050@P1": {
+  "label": "M050@P1",
+  "protocol_id": "P1_backbone",
+  "schema": "trace-merge-view-v1",
+  "slug": "m050-p1",
+  "view_files_sha256": {
+   "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+   "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+   "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "B",
+  "view_parent_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "weight_source": "M050",
+  "weight_source_revision": "sha256set:eda4ee59e6964e8bf9e56f38f7f0705c2b347d8252c058ad8e9796f914ba5947",
+  "weights": {
+   "model-00001-of-00005.safetensors": "model-00001-of-00005.safetensors",
+   "model-00002-of-00005.safetensors": "model-00002-of-00005.safetensors",
+   "model-00003-of-00005.safetensors": "model-00003-of-00005.safetensors",
+   "model-00004-of-00005.safetensors": "model-00004-of-00005.safetensors",
+   "model-00005-of-00005.safetensors": "model-00005-of-00005.safetensors",
+   "model.safetensors.index.json": "model.safetensors.index.json"
+  }
+ },
+ "M050@P2": {
+  "label": "M050@P2",
+  "protocol_id": "P2_vero",
+  "schema": "trace-merge-view-v1",
+  "slug": "m050-p2",
+  "view_files_sha256": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "0ee7c1fba5e3f2c762fc061e37fa1ce0d8119df3914974a57c02348787af0c5c",
+   "config.json": "28716913b9627f6258909fc343f9998c94f46d961a4991764b9b08a201103550",
+   "generation_config.json": "9ef80feb2991359ab25d787cfdc07512d19187730bb1a423c900b41581dccd70",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "V",
+  "view_parent_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+  "weight_source": "M050",
+  "weight_source_revision": "sha256set:eda4ee59e6964e8bf9e56f38f7f0705c2b347d8252c058ad8e9796f914ba5947",
+  "weights": {
+   "model-00001-of-00005.safetensors": "model-00001-of-00005.safetensors",
+   "model-00002-of-00005.safetensors": "model-00002-of-00005.safetensors",
+   "model-00003-of-00005.safetensors": "model-00003-of-00005.safetensors",
+   "model-00004-of-00005.safetensors": "model-00004-of-00005.safetensors",
+   "model-00005-of-00005.safetensors": "model-00005-of-00005.safetensors",
+   "model.safetensors.index.json": "model.safetensors.index.json"
+  }
+ },
+ "T@P2": {
+  "label": "T@P2",
+  "protocol_id": "P2_vero",
+  "schema": "trace-merge-view-v1",
+  "slug": "trace7b-p2",
+  "view_files_sha256": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "0ee7c1fba5e3f2c762fc061e37fa1ce0d8119df3914974a57c02348787af0c5c",
+   "config.json": "28716913b9627f6258909fc343f9998c94f46d961a4991764b9b08a201103550",
+   "generation_config.json": "9ef80feb2991359ab25d787cfdc07512d19187730bb1a423c900b41581dccd70",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "V",
+  "view_parent_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+  "weight_source": "T",
+  "weight_source_revision": "4d0f1ae8ee25022058090dbdbff61957ece7331d",
+  "weights": {
+   "model-00001-of-00004.safetensors": "1daf631bff90200b9fbcacd8e63c4794271354a0ea9894f81c35cf40e7ecd381",
+   "model-00002-of-00004.safetensors": "16cad685b346765df82f0bc6c3dcb0b15514dc433ba964d99d11a31ce8120d20",
+   "model-00003-of-00004.safetensors": "61a4262cbad751b4be939cb96d4d9268ffa6bda6143b98dfeada164df425c8be",
+   "model-00004-of-00004.safetensors": "10a3bda59eb0666b0bc7454f27796779576a1d3bd9dc751d045c357d03cbcb86",
+   "model.safetensors.index.json": "f4b015d05dd6c44e14221d537b47ce8a9157e627"
+  }
+ },
+ "V@P1": {
+  "label": "V@P1",
+  "protocol_id": "P1_backbone",
+  "schema": "trace-merge-view-v1",
+  "slug": "vero-p1",
+  "view_files_sha256": {
+   "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+   "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+   "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "view_parent": "B",
+  "view_parent_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "weight_source": "V",
+  "weight_source_revision": "180e84be5acb2aa887cf51015b84b6a6e453ee90",
+  "weights": {
+   "model-00001-of-00004.safetensors": "8f248027d7051509f50ee061b186244d5a8accb1516c120e473319b7a22e534b",
+   "model-00002-of-00004.safetensors": "c5247ae1c1386fb2475ba0109258b1d0ae2aa929f5319ae5181b080403f5580a",
+   "model-00003-of-00004.safetensors": "a5838f76d1804282be88778b8aba4f7a4c48153d5a02fc3a0c2f1c83915ee953",
+   "model-00004-of-00004.safetensors": "ed9136f35ef3eea62a48a0d03fec596929e2a35dc7c569a53a527e8ffd1c2386",
+   "model.safetensors.index.json": "a3c6a46c8aacd2369485416019de3410659dd80d"
+  }
+ }
+}

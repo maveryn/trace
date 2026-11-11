@@ -1,0 +1,175 @@
+{
+ "behavior_table_sha256": {
+  "behavior_coverage.csv": "80cc43f554a6076d8d30c30684aab0f35fab0a1f413e6ac572b68c37a72e5242",
+  "corrections_regressions.csv": "edb42586a10fae52ec302bd09188caa113643406c01606a46887f2274fa1b7a9",
+  "joint_outcomes.csv": "502c015032b66196e0a461e9a89817e9c3609abdbdcb4a0ad1b979a19b1ddef6",
+  "parent_overlap.csv": "87e2c3a42d5c408a039715b9ace69bf9c6d2d5ee50478d40f0ec0ed776bbe0d3",
+  "persistence.csv": "dcf9492febe6960fcfc7b113ea9f25bedb6d3682b9c87dd2b853de8a80f948b5"
+ },
+ "benchmarks": [
+  "chartqapro",
+  "charxivreason",
+  "tablevqabench",
+  "evochart",
+  "mathvision",
+  "mathvista",
+  "mathverse",
+  "wemath",
+  "phyx_mini_mc",
+  "mmmu_pro_vision",
+  "realworldqa",
+  "mmstar",
+  "embspatial",
+  "spatialvizbench_cot",
+  "cvbench_3d",
+  "erqa",
+  "blink",
+  "countbenchqa",
+  "countqa",
+  "treebench",
+  "puzzlevqa",
+  "visualpuzzles",
+  "logicvista",
+  "mme_reasoning"
+ ],
+ "binary_benchmarks": [
+  "charxivreason",
+  "evochart",
+  "mathvision",
+  "mathvista",
+  "mathverse",
+  "phyx_mini_mc",
+  "mmmu_pro_vision",
+  "realworldqa",
+  "mmstar",
+  "embspatial",
+  "spatialvizbench_cot",
+  "cvbench_3d",
+  "erqa",
+  "blink",
+  "countbenchqa",
+  "countqa",
+  "treebench",
+  "puzzlevqa",
+  "visualpuzzles",
+  "logicvista",
+  "mme_reasoning"
+ ],
+ "differences_all": {
+  "T-B": [
+   4.057,
+   3.664,
+   4.45,
+   0.00019998000199980003
+  ],
+  "T-V@P0": [
+   -0.238,
+   -0.752,
+   0.281,
+   0.3625637436256374
+  ],
+  "V@P0-B": [
+   4.295,
+   3.781,
+   4.821,
+   0.00019998000199980003
+  ]
+ },
+ "differences_confirmation": {
+  "T-B": [
+   4.024,
+   3.583,
+   4.454,
+   0.00019998000199980003
+  ],
+  "T-V@P0": [
+   -0.106,
+   -0.679,
+   0.467,
+   0.7095290470952905
+  ],
+  "V@P0-B": [
+   4.13,
+   3.553,
+   4.708,
+   0.00019998000199980003
+  ]
+ },
+ "differences_development": {
+  "T-B": [
+   4.192,
+   3.296,
+   5.098,
+   0.00019998000199980003
+  ],
+  "T-V@P0": [
+   -0.767,
+   -1.905,
+   0.378,
+   0.18198180181981802
+  ],
+  "V@P0-B": [
+   4.959,
+   3.809,
+   6.121,
+   0.00019998000199980003
+  ]
+ },
+ "full_split_max_abs_error_vs_archive": 4.4515502395370277e-11,
+ "overall_all": {
+  "B": [
+   47.928,
+   47.413,
+   48.446
+  ],
+  "T": [
+   51.986,
+   51.434,
+   52.522
+  ],
+  "V@P0": [
+   52.224,
+   51.618,
+   52.828
+  ]
+ },
+ "overall_confirmation": {
+  "B": [
+   48.102,
+   47.53,
+   48.676
+  ],
+  "T": [
+   52.126,
+   51.514,
+   52.741
+  ],
+  "V@P0": [
+   52.233,
+   51.562,
+   52.905
+  ]
+ },
+ "overall_development": {
+  "B": [
+   47.228,
+   46.038,
+   48.4
+  ],
+  "T": [
+   51.42,
+   50.196,
+   52.613
+  ],
+  "V@P0": [
+   52.187,
+   50.821,
+   53.547
+  ]
+ },
+ "seeds": [
+  42,
+  43,
+  44
+ ]
+}

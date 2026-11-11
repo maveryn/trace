@@ -1,0 +1,16 @@
+diff --git a/rlvr/evaluation/scripts/trace_eval_hf_archive_lib.py b/rlvr/evaluation/scripts/trace_eval_hf_archive_lib.py
+index 9abe41b..c2e4982 100644
+--- a/rlvr/evaluation/scripts/trace_eval_hf_archive_lib.py
++++ b/rlvr/evaluation/scripts/trace_eval_hf_archive_lib.py
+@@ -79,6 +79,11 @@ OPAQUE_TEXT_RECORD_PATHS = {
+         {
+             ("retries", "events", "*", "prompt"),
+             ("retries", "events", "*", "response"),
++            # trace-vero-followup fix-6: the extracted answer is model answer text like model_response (already
++            # opaque); a value that merely looks like an image file name (seen once: VERO@P1 confirmation seed 43,
++            # VisualPuzzles) made the archive raise and the whole score campaign stop. Only this scalar string is
++            # exempt; media-named fields and nested payloads stay strict.
++            ("normalized_extraction", "value"),
+         }
+     ),
+     "score": frozenset(),

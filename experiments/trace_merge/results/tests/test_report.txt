@@ -1,0 +1,22 @@
+trace_merge test suite
+date: 2026-11-03T08:49:25Z
+code: 0e41e26 + the study changes committed with this report
+python: 3.12.14
+command: python -m pytest -q -rs tests  (with the work root and prepared protocol clone available)
+
+........................................................................ [ 22%]
+........................................................................ [ 44%]
+........................................................................ [ 66%]
+........................................................................ [ 89%]
+...................................                                      [100%]
+=============================== warnings summary ===============================
+experiments/trace_merge/tests/test_metrics.py::test_pinned_scorers_on_fabricated_rows
+  <local>:18: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+experiments/trace_merge/tests/test_metrics.py::test_pinned_scorers_on_fabricated_rows
+  <local>:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+323 passed, 2 warnings in 206.04s (0:03:26)

@@ -1,0 +1,111 @@
+# TRACE-VERO analysis-first merging study (DESIGN.md). Paths are resolved at run time; no machine paths here.
+study_id: trace_vero_qwen25_v1
+phase: analysis_only
+allow_training: false
+allow_uploads: false
+allow_coefficient_expansion: false
+allow_component_experiment: false
+# required: --work-root or TRACE_MERGE_WORK_ROOT (never invented)
+work_root: null
+
+model_roles:
+  B:
+    repo_id: Qwen/Qwen2.5-VL-7B-Instruct
+    source_revision: cc594898137f460bfe9f0759e9844b3ce807cfb5
+    archived_model_id: qwen2.5-vl-7b-base
+    archived_model_revision: cc594898137f460bfe9f0759e9844b3ce807cfb5
+  T:
+    repo_id: maveryn/trace-qwen2.5-vl-7b
+    source_revision: 4d0f1ae8ee25022058090dbdbff61957ece7331d
+    archived_model_id: trace-qwen2.5-vl-7b
+    archived_model_revision: "sha256set:8396b0be6a760ff7cbbdff02b3017b6b5bc352c87291480aba18fd3e3b6a13b5"
+  V:
+    repo_id: zlab-princeton/Vero-Qwen25-7B
+    source_revision: 180e84be5acb2aa887cf51015b84b6a6e453ee90
+    archived_model_id: vero-qwen2.5-vl-7b
+    archived_model_revision: 180e84be5acb2aa887cf51015b84b6a6e453ee90
+
+archive:
+  repository_id: maveryn/trace-eval-runs
+  revision: 4178a839b689babe16f8ac36f0de7b1b2c5ef36c
+  run_id: qwen2.5-vl-7b-comparison-temp06-seeds42-44-v1
+  manifest_sha256: 0334afa738e441631591197e5e16a379bc6c0380d293122b4036dd5621d47b28
+  result_sha256: 578e574d68702af0b83a9c1962bd73c36f8887787cc9ac10a8f7da3d207c10ac
+  seeds: [42, 43, 44]
+  # local snapshot root (relative to work_root unless absolute): <root>/runs/<run_id>/{data,metadata}
+  local_root: ../archives/trace-eval-runs@4178a839
+
+# DESIGN.md amendment A1: archived CountQA rows were hashed by the canonical producer before the public
+# countqa-cached-answer-normalization patch; they take the prepared manifest identity (archive rows only).
+identity:
+  producer_row_hash_aliases: [countqa]
+
+external_suite: rlvr/evaluation/trace_eval/suite.v1.json
+archive_receipts: rlvr/evaluation/trace_eval/release_receipts.v1.json
+results: rlvr/evaluation/trace_eval/results.json
+benchmark_provenance: rlvr/evaluation/trace_eval/benchmark_provenance.v1.json
+
+protocol:
+  code_revision: af32fe0e668eb878e909daef7322ac1c4ae20f64
+  vlmevalkit_revision: a8b12bf1c3737a33fc1de967c202f9c592b22e86
+  judge: {repo_id: Qwen/Qwen3-32B, revision: 9216db5781bf21249d130ec9da846c4624c16137}
+  # prepared clone with .work/{LMUData,models,eval_deps}; --protocol-clone or TRACE_MERGE_PROTOCOL_CLONE
+  clone: null
+  generation: {temperature: 0.6, top_p: 1.0, top_k: -1, presence_penalty: 0.0, repetition_penalty: 1.0,
+               max_tokens: 4096, min_image_pixels: 3136, max_image_pixels: 12845056, media_transport: file-url}
+
+protocols:
+  P0_native: {view: native, role: archived canonical runs}
+  P1_backbone:
+    view: B
+    role: primary
+    files: [config.json, generation_config.json, preprocessor_config.json, tokenizer.json, tokenizer_config.json,
+            vocab.json, merges.txt, chat_template.json]
+  P2_vero:
+    view: V
+    role: diagnostic_development_only
+    files: [config.json, generation_config.json, preprocessor_config.json, tokenizer.json, tokenizer_config.json,
+            vocab.json, merges.txt, added_tokens.json, special_tokens_map.json, chat_template.jinja,
+            video_preprocessor_config.json]
+
+initial_merge_alpha: 0.5
+merges:
+  M050: {coefficients: {V: 0.5, T: 0.5}, role: complementarity_test}
+  CV050: {coefficients: {V: 0.5, B: 0.5}, role: vero_update_shrinkage_control}
+  CT050: {coefficients: {T: 0.5, B: 0.5}, role: trace_update_shrinkage_control}
+merge_build:
+  accumulation_dtype: float32
+  output_dtype: bfloat16
+  max_slice_elements: 33554432
+  shard_layout: B
+
+split:
+  seed: 271828
+  development_fraction: 0.20
+  unit: connected_image_problem_group
+  screen_target_rows_per_benchmark: 128
+  family_columns: {wemath: [ID]}
+  cover_strata: {tablevqabench: [split], puzzlevqa: [category], visualpuzzles: [category, difficulty]}
+
+sampling:
+  development_seeds: [42]
+  confirmation_seeds: [42, 43, 44]
+
+evaluation_matrix:
+  smoke: {seeds: [42], rows_per_benchmark: 4, models: [V@P1, M050@P1, CV050@P1, CT050@P1]}
+  development: {seeds: [42], models: [V@P1, M050@P1, CV050@P1, CT050@P1, B@P2, T@P2, M050@P2, CV050@P2, CT050@P2]}
+  confirmation: {seeds: [42, 43, 44], models: [V@P1, M050@P1, CV050@P1, CT050@P1]}
+
+statistics:
+  bootstrap_replicates: 10000
+  confidence: 0.95
+  seed: 314159
+  exploratory_min_groups_per_slice: 100
+  primary_family: [M050-T, M050-V@P1, M050-CV050, M050-CT050]
+  multiplicity: holm
+
+selection:
+  primary: equal_benchmark_macro_on_frozen_development_suite
+  category_regression_margin_pp: null
+  tie_tolerance_pp: null
+  rule: no_search_all_prespecified_midpoints_confirmed

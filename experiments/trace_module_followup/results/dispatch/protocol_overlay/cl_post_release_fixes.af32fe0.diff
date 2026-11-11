@@ -1,0 +1,364 @@
+diff --git a/rlvr/evaluation/scripts/run_external_benchmark_score_queue.py b/rlvr/evaluation/scripts/run_external_benchmark_score_queue.py
+index 3810e09..4b403a7 100644
+--- a/rlvr/evaluation/scripts/run_external_benchmark_score_queue.py
++++ b/rlvr/evaluation/scripts/run_external_benchmark_score_queue.py
+@@ -82,11 +82,15 @@ DIRECT_JUDGE_CACHE_CONTRACTS = {
+     "mathvision_extract": "trace-eval-v1-mathvision-extract-v2",
+     "mathvista_extract": "trace-eval-v1-mathvista-extract-v2",
+     "mathverse_extract": "trace-eval-v1-mathverse-extract-v2",
+-    "mathverse_score": "trace-eval-v1-mathverse-vlmevalkit-judgement01-v4",
++    # trace-cert post-release fix-3: no 0/1 decision after 5 attempts is scored incorrect
++    "mathverse_score": "trace-eval-v1-mathverse-vlmevalkit-judgement01-v4+trace-cert-fix-3",
+     "logicvista_extract": "trace-eval-v1-logicvista-option-extract-v1",
+     "charxiv_judge": "trace-eval-v1-charxiv-judge-v1",
+     "evochart_judge": "trace-eval-v1-evochart-judge-v1",
+ }
++# trace-cert post-release fix-3: MathVerse rows scored incorrect after 5 score attempts without a 0/1 decision
++# (next to the run's scores.json)
++MATHVERSE_SCORE_UNRESOLVED_FILENAME = "mathverse_score_unresolved.json"
+ 
+ 
+ def _nonempty_judge_output(value: Any) -> bool:
+@@ -2074,6 +2078,32 @@ def _normalize_mathverse_binary_judgement_summary(
+             f"MathVerse judge produced {len(malformed)} malformed score decisions; first indices={malformed[:10]}"
+         )
+ 
++    # trace-cert post-release fix-3: the rows scored incorrect after 5 score attempts without a 0/1 decision (none
++    # when the judge decided every row); each must be in the judged table as 'Judge output: 0'
++    unresolved_indices: list[str] = []
++    unresolved_path = output_dir / MATHVERSE_SCORE_UNRESOLVED_FILENAME
++    if unresolved_path.is_file():
++        unresolved = json.loads(unresolved_path.read_text(encoding="utf-8"))
++        unresolved_indices = [str(index) for index in unresolved.get("indices") or []]
++        log_by_index = {
++            str(row.get("index")): str(row.get("log_score", ""))
++            for _, row in df.iterrows()
++        }
++        mismatched = [
++            index
++            for index in unresolved_indices
++            if log_by_index.get(index) != "Judge output: 0"
++        ]
++        if (
++            unresolved.get("resolution") != "scored_incorrect"
++            or unresolved.get("count") != len(unresolved_indices)
++            or mismatched
++        ):
++            raise RuntimeError(
++                f"MathVerse {unresolved_path.name} does not match the judged table; "
++                f"first indices={mismatched[:10]}"
++            )
++
+     df["score"] = normalized_scores
+     df.to_excel(judged_table, index=False)
+     score_df = MathVerse_acc(str(judged_table))
+@@ -2090,6 +2120,9 @@ def _normalize_mathverse_binary_judgement_summary(
+             "judged_table": str(judged_table),
+             "mathverse_normalized_binary_judgement_rows": changed,
+             "mathverse_validated_judge_rows": int(len(df)),
++            # trace-cert post-release fix-3
++            "mathverse_all_retries_failed_scored_incorrect": len(unresolved_indices),
++            "mathverse_all_retries_failed_scored_incorrect_indices": unresolved_indices,
+         },
+     }
+     write_json(output_dir / "scores.json", normalized_summary)
+@@ -2160,6 +2193,12 @@ def _run_local_math_like(
+         if spec.key == "mathverse" and cache_name == "mathverse_qwen3_32b_score.jsonl":
+             accepted: dict[str, dict[str, Any]] = {}
+             pending = list(prompts)
++            # trace-cert post-release fix-3: the record of rows scored incorrect describes this scoring only
++            unresolved_path = (
++                Path(call_args.output_dir) / MATHVERSE_SCORE_UNRESOLVED_FILENAME
++            )
++            unresolved_path.unlink(missing_ok=True)
++            attempt_outputs: dict[str, list[dict[str, Any]]] = {}
+             if not pending:
+                 return accepted
+             cache_path = Path(cache_name)
+@@ -2187,14 +2226,62 @@ def _run_local_math_like(
+                     if output_validator(item.get("judge_output", "")):
+                         accepted[str(index)] = item
+                     else:
++                        attempt_outputs.setdefault(str(index), []).append(
++                            {
++                                "attempt": attempt + 1,
++                                "cache": attempt_cache,
++                                "request_hash": item.get("request_hash", ""),
++                                "judge_output": str(item.get("judge_output", "")),
++                                "judge_finish_reason": item.get(
++                                    "judge_finish_reason", ""
++                                ),
++                            }
++                        )
+                         unresolved.append((index, prompt))
+                 pending = unresolved
+                 if not pending:
+                     return accepted
++            # trace-cert post-release fix-3 (trace-cert-runs/ext_eval/patches): a row whose score judgement still
++            # has no 0/1 decision after the 5 attempts is scored incorrect instead of failing the benchmark, upstream
++            # VLMEvalKit's semantics (MathVerse_auxeval_score accepts only a bare '0'/'1' and scores the row False
++            # after "All 5 retries failed."). judge_output becomes "0" (the raw output stays in
++            # judge_output_raw), which run_mathverse_local_judge scores False with log_score
++            # 'Judge output: 0'; the rows and the raw output of every attempt are listed in
++            # mathverse_score_unresolved.json and counted in scores.json's artifacts.
+             failed = [str(index) for index, _ in pending]
+-            raise RuntimeError(
+-                f"MathVerse judge produced non-0/1 output after 5 attempts; indices={failed[:10]}"
++            write_json(
++                unresolved_path,
++                {
++                    "fix": "trace-cert post-release fix-3",
++                    "dataset": call_args.dataset,
++                    "contract_version": contract_version,
++                    "resolution": "scored_incorrect",
++                    "count": len(failed),
++                    "indices": failed,
++                    "raw_outputs": {
++                        index: [
++                            row["judge_output"]
++                            for row in attempt_outputs.get(index, [])
++                        ]
++                        for index in failed
++                    },
++                    "attempts": {
++                        index: attempt_outputs.get(index, []) for index in failed
++                    },
++                },
+             )
++            for index in failed:
++                item = dict(judged.get(index, {}))
++                item["judge_output_raw"] = item.get("judge_output", "")
++                item["judge_output"] = "0"
++                item["judge_resolution"] = "all_retries_failed_scored_incorrect"
++                accepted[index] = item
++            print(
++                "[judge:mathverse-score] trace-cert post-release fix-3: "
++                f"{len(failed)} rows without a 0/1 decision after 5 attempts scored incorrect; "
++                f"indices={failed[:10]}"
++            )
++            return accepted
+         return judge.run_cached(
+             output_dir=call_args.output_dir,
+             prompts=prompts,
+diff --git a/rlvr/evaluation/scripts/run_mme_reasoning_eval.py b/rlvr/evaluation/scripts/run_mme_reasoning_eval.py
+index 6b43880..b468d58 100644
+--- a/rlvr/evaluation/scripts/run_mme_reasoning_eval.py
++++ b/rlvr/evaluation/scripts/run_mme_reasoning_eval.py
+@@ -36,7 +36,9 @@ from run_external_benchmark_score_queue import (  # noqa: E402
+ )
+ 
+ MME_REASONING_SPEC = spec_by_key("mme_reasoning")
+-MME_EVALUATION_CONTRACT_VERSION = "trace-eval-v1-mme-evaluation-v5"
++# trace-cert post-release fix-2: official-evaluator exceptions are scored incorrect ("Failed to evaluate")
++# trace-cert post-release fix-3: answer extractions still unparseable after the 5 temperatures are scored incorrect
++MME_EVALUATION_CONTRACT_VERSION = "trace-eval-v1-mme-evaluation-v5+trace-cert-fix-2+trace-cert-fix-3"
+ MME_EXTRACTION_ARCHIVE_CONTRACT_VERSION = "trace-eval-v1-mme-extraction-v4"
+ MME_SCORE_ARCHIVE_CONTRACT_VERSION = "trace-eval-v1-mme-score-v4"
+ MME_EXTRACTION_JUDGE_CONTRACT_VERSION = "trace-eval-v1-mme-extraction-judge-v2"
+@@ -59,6 +61,7 @@ class _PendingMMEScore:
+     scores: dict[str, Any]
+     extraction_rows: dict[str, dict[str, Any]]
+     score_rows: dict[str, dict[str, Any]]
++    evaluator_exceptions: list[dict[str, Any]] | None = None  # trace-cert post-release fix-2
+ 
+ 
+ def _mme_score_artifact_paths(output_dir: Path) -> tuple[Path, ...]:
+@@ -114,6 +117,7 @@ def _write_mme_failure(
+     *,
+     stage: str,
+     failures: list[dict[str, Any]],
++    resolution: str = "fatal",  # trace-cert post-release fix-2: or "scored_incorrect"
+ ) -> Path:
+     path = output_dir / MME_FAILURE_FILENAME
+     write_json(
+@@ -125,6 +129,7 @@ def _write_mme_failure(
+             "model_slug": args.model_slug,
+             "seed": int(args.seed),
+             "stage": stage,
++            "resolution": resolution,
+             "count": len(failures),
+             "failures": failures,
+         },
+@@ -785,6 +790,19 @@ def run_score(args: argparse.Namespace) -> dict[str, Any]:
+ 
+         failure_context["stage"] = "score_manifest"
+         (benchmark_output_dir / MME_FAILURE_FILENAME).unlink(missing_ok=True)
++        if pending_score.evaluator_exceptions:  # trace-cert post-release fix-2: keep the rows on record
++            _write_mme_failure(
++                args,
++                benchmark_output_dir,
++                stage="+".join(  # trace-cert post-release fix-3: answer_extraction and/or deterministic_scoring
++                    dict.fromkeys(
++                        str(row.get("stage") or "deterministic_scoring")
++                        for row in pending_score.evaluator_exceptions
++                    )
++                ),
++                failures=pending_score.evaluator_exceptions,
++                resolution="scored_incorrect",
++            )
+         write_json(benchmark_output_dir / "scores.json", pending_score.scores)
+     except Exception as exc:
+         _discard_archive_descriptor(score_archive_path)
+@@ -900,16 +918,33 @@ def _run_score_impl(
+                 next_pending.append(idx)
+         pending_indices = next_pending
+ 
+-    if pending_indices:
+-        _fail_mme_evaluation(
+-            args,
+-            benchmark_output_dir,
++    # trace-cert post-release fix-3 (trace-cert-runs/ext_eval/patches): a row whose answer extraction is still not
++    # parseable after the 5 official temperatures is scored incorrect with log_score 'Failed to evaluate' instead of
++    # failing the slice, upstream VLMEvalKit's semantics (MMEReasoning_extract returns res='' after "All 5 retries
++    # failed."; MMEReasoning.evaluate scores a missing extraction 'Failed to evaluate' / False). Judge request
++    # failures still fail the slice. The rows stay on record in mme_reasoning_failures.json (scored_incorrect).
++    extraction_failures_scored_incorrect: list[dict[str, Any]] = []
++    for idx in pending_indices:
++        rec = dict(
++            last_invalid_extractions[idx],
+             stage="answer_extraction",
+-            failures=[last_invalid_extractions[idx] for idx in pending_indices],
+-            message=(
+-                "MME-Reasoning judge failed to produce parseable extractions for "
+-                f"{len(pending_indices)} rows"
+-            ),
++            resolution="scored_incorrect",
++            log_score="Failed to evaluate",
++        )
++        extraction_failures_scored_incorrect.append(rec)
++        extraction_rows[idx] = {
++            "log": "All 5 retries failed.",
++            "res": "",
++            "judge_prompt": prompt_by_idx[idx],
++            "judge_response": rec["judge_output"],
++            "request_hash": rec["request_hash"],
++            "retry_count": rec["attempt"],
++        }
++    if extraction_failures_scored_incorrect:
++        print(
++            "[mme-score:extraction] trace-cert post-release fix-3: "
++            f"{len(extraction_failures_scored_incorrect)} rows without a parseable extraction after "
++            f"{len(MME_RETRY_TEMPERATURES)} attempts scored incorrect; indices={pending_indices[:10]}"
+         )
+ 
+     data = data.copy()
+@@ -923,11 +958,22 @@ def _run_score_impl(
+     failure_context.update(stage="extraction_artifact", indices=[])
+     data.to_excel(extract_file, index=False)
+ 
+-    score_rows: dict[str, dict[str, Any]] = {}
++    # trace-cert post-release fix-3: the rows whose extraction failed all 5 attempts are scored incorrect up front
++    # and skipped by the open-answer judge and the official per-row functions below
++    score_rows: dict[str, dict[str, Any]] = {
++        rec["index"]: {
++            "log_score": "Failed to evaluate",
++            "score": False,
++            "evaluation_status": "incorrect",
++        }
++        for rec in extraction_failures_scored_incorrect
++    }
+     open_prompts: list[tuple[str, str]] = []
+     invalid_open_rows: list[dict[str, Any]] = []
+     for _, line in data.iterrows():
+         idx = str(line["index"])
++        if idx in score_rows:  # trace-cert post-release fix-3
++            continue
+         function_id = _clean_optional(line.get("function_id"))
+         is_open = (
+             str(line["question_type"]).lower() == "open" and function_id is None
+@@ -1021,6 +1067,8 @@ def _run_score_impl(
+         )
+ 
+     deterministic_failures: list[dict[str, Any]] = []
++    evaluator_exceptions: list[dict[str, Any]] = []  # trace-cert post-release fix-2
++    evaluator_exceptions.extend(extraction_failures_scored_incorrect)  # trace-cert post-release fix-3
+     failure_context.update(stage="deterministic_scoring", indices=[])
+     for _, line in data.iterrows():
+         idx = str(line["index"])
+@@ -1067,11 +1115,37 @@ def _run_score_impl(
+                 response = str(res)
+                 answer = line.get("answer")
+                 special_info = None
+-            answer_judge = (
+-                function(response, answer)
+-                if special_info is None
+-                else function(response, answer, special_info)
+-            )
++            # trace-cert post-release fix-2 (trace-cert-runs/ext_eval/patches): an exception raised by the official
++            # per-row function on the extracted response scores the row incorrect with log_score 'Failed to
++            # evaluate', upstream VLMEvalKit's MMEReasoning.evaluate (vlmeval/dataset/image_vqa.py) semantics for
++            # unevaluable rows. Every other failure in this loop, and environment errors, still fail the slice.
++            try:
++                answer_judge = (
++                    function(response, answer)
++                    if special_info is None
++                    else function(response, answer, special_info)
++                )
++            except (ImportError, OSError, MemoryError):
++                raise
++            except Exception as judge_exc:
++                evaluator_exceptions.append(
++                    {
++                        "kind": "official_evaluator_exception",
++                        "index": idx,
++                        "function_id": str(function_id),
++                        "exception_type": type(judge_exc).__name__,
++                        "message": str(judge_exc),
++                        "extracted_response": str(res),
++                        "resolution": "scored_incorrect",
++                        "log_score": "Failed to evaluate",
++                    }
++                )
++                score_rows[idx] = {
++                    "log_score": "Failed to evaluate",
++                    "score": False,
++                    "evaluation_status": "incorrect",
++                }
++                continue
+             if type(answer_judge) is not bool:
+                 deterministic_failures.append(
+                     {
+@@ -1126,6 +1200,12 @@ def _run_score_impl(
+     acc_df.to_excel(acc_xlsx, index=False)
+     score_dict = {key: float(value) for key, value in acc_df.iloc[0].to_dict().items()}
+     correct = sum(bool(row["score"]) for row in score_rows.values())
++    # trace-cert post-release fix-3: evaluator_exceptions also holds the extraction failures; count each kind once
++    official_evaluator_exceptions = [
++        row
++        for row in evaluator_exceptions
++        if row.get("kind") == "official_evaluator_exception"
++    ]
+     incorrect = len(score_rows) - correct
+     scores = {
+         "dataset": MME_REASONING_SPEC.alias,
+@@ -1141,6 +1221,13 @@ def _run_score_impl(
+             "correct": correct,
+             "incorrect": incorrect,
+             "evaluator_invalid": 0,
++            "evaluator_exception_scored_incorrect": len(official_evaluator_exceptions),  # trace-cert post-release fix-2
++            "evaluator_exception_scored_incorrect_indices": [row["index"] for row in official_evaluator_exceptions],
++            # trace-cert post-release fix-3: answer extractions still unparseable after the 5 temperatures
++            "extraction_failed_scored_incorrect": len(extraction_failures_scored_incorrect),
++            "extraction_failed_scored_incorrect_indices": [
++                row["index"] for row in extraction_failures_scored_incorrect
++            ],
+         },
+         "artifacts": {
+             "predictions": str(
+@@ -1157,7 +1244,7 @@ def _run_score_impl(
+             "temperature": MME_RETRY_TEMPERATURES[0],
+             "temperature_schedule": list(MME_RETRY_TEMPERATURES),
+             "extraction_retries": len(MME_RETRY_TEMPERATURES),
+-            "unresolved_extractions": 0,
++            "unresolved_extractions": len(extraction_failures_scored_incorrect),  # trace-cert post-release fix-3
+             "unresolved_open_scores": 0,
+             "cache_contract_versions": {
+                 "extraction": extraction_judge_contract,
+@@ -1173,6 +1260,7 @@ def _run_score_impl(
+         scores=scores,
+         extraction_rows=extraction_rows,
+         score_rows=score_rows,
++        evaluator_exceptions=evaluator_exceptions,
+     )
+ 
+ 

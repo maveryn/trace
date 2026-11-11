@@ -1,0 +1,207 @@
+{
+ "accumulation_dtype": "float32",
+ "compatibility_status": "compatible",
+ "component_mask_hash": null,
+ "content_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce",
+ "content_revision_note": "local derived provenance (hash of the output weight files); not a Hugging Face commit",
+ "environment_versions": {
+  "platform": "Linux-4.18.0-553.179.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.12.15",
+  "torch": "2.8.0+cu128"
+ },
+ "implementation_code_sha256": {
+  "trace_merge/compatibility.py": "362449b065119fdc23213b2d0901f6099f3c33e7a070b3078472d7dc30bf76be",
+  "trace_merge/config.py": "cd41077d677256482031a8740ae11763eda4f0f9172f0491a5012152c1c92e2d",
+  "trace_merge/merge.py": "a2f473f295700cf0e61c2c3c8e2b490bd49763a0ddd9c9bf2174f5ba8c6c20f8",
+  "trace_merge/safetensors_io.py": "16f7fe191606cb12f0918374507e2abb8c58c69060ac1ba2f132e51b56ee7212"
+ },
+ "implementation_commit": "ce60def7dff3613618b9b53f3e2b90b1bea11a0d",
+ "implementation_dirty": false,
+ "inference_assets": "weights only; inference views (tokenizer/template/processor/config) are separate directories",
+ "layout_parent": {
+  "index_sha256": "73b333b0b16e5286ddba615d2caebcd495cf7e616f52eb217a81781393d79de9",
+  "role": "B",
+  "source_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+ },
+ "layout_role": "B",
+ "merge_id": "VNM",
+ "model_role_coefficients": {
+  "B": 0.773423303991195,
+  "V": 0.226576696008805
+ },
+ "no_training": true,
+ "nonfloating_buffer_policy": "must be bitwise identical in all parents; copied, never averaged",
+ "output_dtype": "bfloat16",
+ "output_file_hashes": {
+  "model-00001-of-00005.safetensors": "68fc682a8b9c86fc562681a8c3f7191510e0e6bcd795eaa18bc7e6f8b9b9e218",
+  "model-00002-of-00005.safetensors": "c45efdf5a02eda549424b3f4aae2600d281cfd34a153b1c57da208f2f008327a",
+  "model-00003-of-00005.safetensors": "f1561a9320bd3cf64ec22cb230228f017b4e8302f27ae37f528ee16e7b33275c",
+  "model-00004-of-00005.safetensors": "453fd2302fec3a8ff0182910c180525acfc97ce6c9222112291f512a09dd3b65",
+  "model-00005-of-00005.safetensors": "8e9c6a4aa61f46540ef6edc342682f09eba8bf4d49621f9d024deb728ed4a540",
+  "model.safetensors.index.json": "cf3b801e3bb43bc4bfb047d459d1f6aa7b5a5f0525a8afd7728382c57027a103"
+ },
+ "parent_config_tokenizer_processor_hashes": {
+  "B": {
+   "added_tokens.json": null,
+   "chat_template.jinja": null,
+   "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+   "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+   "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+   "special_tokens_map.json": null,
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+   "video_preprocessor_config.json": null,
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "V": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "0ee7c1fba5e3f2c762fc061e37fa1ce0d8119df3914974a57c02348787af0c5c",
+   "chat_template.json": null,
+   "config.json": "28716913b9627f6258909fc343f9998c94f46d961a4991764b9b08a201103550",
+   "generation_config.json": "9ef80feb2991359ab25d787cfdc07512d19187730bb1a423c900b41581dccd70",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  }
+ },
+ "parent_repo_ids": {
+  "B": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "V": "zlab-princeton/Vero-Qwen25-7B"
+ },
+ "parent_weight_file_identities": {
+  "B": {
+   "model-00001-of-00005.safetensors": {
+    "inode": 689342337084,
+    "mtime_ns": 1791133526339352754,
+    "name": "model-00001-of-00005.safetensors",
+    "resolved": "d999d3c330c49ea66c37be6d108e20e1ddcf5af848546a6cb8f72b91c4c6798e",
+    "size": 3900233256
+   },
+   "model-00002-of-00005.safetensors": {
+    "inode": 689342337083,
+    "mtime_ns": 1791133526826354823,
+    "name": "model-00002-of-00005.safetensors",
+    "resolved": "27ed3a3eb0c1920dfafc6744c6c54b9f755757dbb2de0050483ea64d32780d08",
+    "size": 3864726320
+   },
+   "model-00003-of-00005.safetensors": {
+    "inode": 689342339078,
+    "mtime_ns": 1791133526583353791,
+    "name": "model-00003-of-00005.safetensors",
+    "resolved": "17663813c5540124cd1a2dac2476a58bf107c86981ae5c60283c2a563906fb15",
+    "size": 3864726424
+   },
+   "model-00004-of-00005.safetensors": {
+    "inode": 689342339079,
+    "mtime_ns": 1791133528066360091,
+    "name": "model-00004-of-00005.safetensors",
+    "resolved": "1dd942a77eccc35d2b21351724e5ce0513ae74bac0f2a6d12ee42d7653c53747",
+    "size": 3864733680
+   },
+   "model-00005-of-00005.safetensors": {
+    "inode": 689342339080,
+    "mtime_ns": 1791133521766333325,
+    "name": "model-00005-of-00005.safetensors",
+    "resolved": "f06bb4c09b51382e5142176acc48a807aa5647e70541ab316201a4e55b6b0350",
+    "size": 1089994880
+   }
+  },
+  "V": {
+   "model-00001-of-00004.safetensors": {
+    "inode": 592708690681,
+    "mtime_ns": 1793595299906535064,
+    "name": "model-00001-of-00004.safetensors",
+    "resolved": "8f248027d7051509f50ee061b186244d5a8accb1516c120e473319b7a22e534b",
+    "size": 4882507504
+   },
+   "model-00002-of-00004.safetensors": {
+    "inode": 592708690682,
+    "mtime_ns": 1793595300699538694,
+    "name": "model-00002-of-00004.safetensors",
+    "resolved": "c5247ae1c1386fb2475ba0109258b1d0ae2aa929f5319ae5181b080403f5580a",
+    "size": 4999880808
+   },
+   "model-00003-of-00004.safetensors": {
+    "inode": 592708690684,
+    "mtime_ns": 1793595303593551942,
+    "name": "model-00003-of-00004.safetensors",
+    "resolved": "a5838f76d1804282be88778b8aba4f7a4c48153d5a02fc3a0c2f1c83915ee953",
+    "size": 4981926352
+   },
+   "model-00004-of-00004.safetensors": {
+    "inode": 592708690685,
+    "mtime_ns": 1793595293224504478,
+    "name": "model-00004-of-00004.safetensors",
+    "resolved": "ed9136f35ef3eea62a48a0d03fec596929e2a35dc7c569a53a527e8ffd1c2386",
+    "size": 1720099864
+   }
+  }
+ },
+ "parent_weight_file_sha256": {
+  "B": {
+   "model-00001-of-00005.safetensors": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e",
+   "model-00002-of-00005.safetensors": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024",
+   "model-00003-of-00005.safetensors": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507",
+   "model-00004-of-00005.safetensors": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed",
+   "model-00005-of-00005.safetensors": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67"
+  },
+  "V": {
+   "model-00001-of-00004.safetensors": "8f248027d7051509f50ee061b186244d5a8accb1516c120e473319b7a22e534b",
+   "model-00002-of-00004.safetensors": "c5247ae1c1386fb2475ba0109258b1d0ae2aa929f5319ae5181b080403f5580a",
+   "model-00003-of-00004.safetensors": "a5838f76d1804282be88778b8aba4f7a4c48153d5a02fc3a0c2f1c83915ee953",
+   "model-00004-of-00004.safetensors": "ed9136f35ef3eea62a48a0d03fec596929e2a35dc7c569a53a527e8ffd1c2386"
+  }
+ },
+ "parent_weight_file_sha256_rechecked_after_build": true,
+ "recipe": {
+  "accumulation_dtype": "float32",
+  "component_mask": null,
+  "component_mask_hash": null,
+  "layout_role": "B",
+  "max_slice_elements": 33554432,
+  "merge_id": "VNM",
+  "model_role_coefficients": {
+   "B": 0.773423303991195,
+   "V": 0.226576696008805
+  },
+  "no_training": true,
+  "nonfloating_buffer_policy": "must be bitwise identical in all parents; copied, never averaged",
+  "output_dtype": "bfloat16",
+  "parent_source_revisions": {
+   "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+   "V": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+  },
+  "rounding": "torch float32 -> bfloat16 round-to-nearest-even",
+  "tied_weight_policy": "Qwen2.5-VL-7B stores untied embed_tokens and lm_head; both are interpolated as separate tensors"
+ },
+ "recipe_sha256": "e386fdc6dbc7018ab03b63b0794955193014db60c4a85d271fbfbbcb1a843edb",
+ "runtime_revisions": {
+  "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "V": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+ },
+ "schema_version": "trace-merge-manifest-v1",
+ "source_revisions": {
+  "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "V": "180e84be5acb2aa887cf51015b84b6a6e453ee90"
+ },
+ "started": "2026-11-10T05:57:31+00:00",
+ "tensor_count": 729,
+ "tensor_groups": {
+  "language_embeddings": 1,
+  "language_final_norm": 1,
+  "language_layers": 336,
+  "language_output_head": 1,
+  "visual_blocks": 384,
+  "visual_merger": 5,
+  "visual_patch_embed": 1
+ },
+ "tensor_shape_digest": "62023351a0592565bbce202d93f96ce25d91f88fbdc5bf1daeeb2f19ef16afde",
+ "tied_weight_policy": "Qwen2.5-VL-7B stores untied embed_tokens and lm_head; both are interpolated as separate tensors",
+ "timestamp": "2026-11-10T06:03:18+00:00"
+}

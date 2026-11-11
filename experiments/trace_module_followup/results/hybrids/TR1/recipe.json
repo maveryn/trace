@@ -1,0 +1,83 @@
+{
+ "recipe": {
+  "donor_revisions": {
+   "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+   "T": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  "donors": {
+   "kept": "T",
+   "reverted": "B"
+  },
+  "hybrid_id": "TR1",
+  "layout_role": "B",
+  "mask_sha256": "40a21a91ce7fa11655243d3ebe660c05180722a1e9af7e780540245c9fa66119",
+  "no_training": true,
+  "operation": "exact copy of the donor's stored tensor bytes; no averaging, no dtype conversion",
+  "partition": "revert_D1",
+  "partition_groups": {
+   "kept": [
+    "E",
+    "J",
+    "Lemb",
+    "D0",
+    "D2",
+    "Lout"
+   ],
+   "reverted": [
+    "D1"
+   ]
+  },
+  "parts": {
+   "D0": {
+    "groups": [
+     "language_layers"
+    ],
+    "layers": [
+     0,
+     8
+    ]
+   },
+   "D1": {
+    "groups": [
+     "language_layers"
+    ],
+    "layers": [
+     9,
+     18
+    ]
+   },
+   "D2": {
+    "groups": [
+     "language_layers"
+    ],
+    "layers": [
+     19,
+     27
+    ]
+   },
+   "E": {
+    "groups": [
+     "visual_patch_embed",
+     "visual_blocks"
+    ]
+   },
+   "J": {
+    "groups": [
+     "visual_merger"
+    ]
+   },
+   "Lemb": {
+    "groups": [
+     "language_embeddings"
+    ]
+   },
+   "Lout": {
+    "groups": [
+     "language_final_norm",
+     "language_output_head"
+    ]
+   }
+  }
+ },
+ "recipe_sha256": "951d78781f932a02a86f0fb5b9d7734021a77cf5ae359933992de143da005337"
+}

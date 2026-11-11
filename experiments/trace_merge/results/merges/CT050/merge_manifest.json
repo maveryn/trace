@@ -1,0 +1,192 @@
+{
+ "accumulation_dtype": "float32",
+ "compatibility_status": "compatible",
+ "component_mask_hash": null,
+ "content_revision": "sha256set:c1f8a9933e8fba6f5824b8e8be167411b1a032c0e2589076ccd19459b736fb2e",
+ "content_revision_note": "local derived provenance (hash of the output weight files); not a Hugging Face commit",
+ "environment_versions": {
+  "platform": "Linux-4.18.0-553.179.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.12.15",
+  "torch": "2.8.0+cu128"
+ },
+ "implementation_commit": "af32fe0e668eb878e909daef7322ac1c4ae20f64",
+ "implementation_dirty": true,
+ "inference_assets": "weights only; inference views (tokenizer/template/processor/config) are separate directories",
+ "layout_role": "B",
+ "merge_id": "CT050",
+ "model_role_coefficients": {
+  "B": 0.5,
+  "T": 0.5
+ },
+ "no_training": true,
+ "nonfloating_buffer_policy": "must be bitwise identical in all parents; copied, never averaged",
+ "output_dtype": "bfloat16",
+ "output_file_hashes": {
+  "model-00001-of-00005.safetensors": "fd0a306c0a8ad86b6496be6d02c3e4bb0861abd999956a0a1985ae375517e550",
+  "model-00002-of-00005.safetensors": "7b9914c74602d9ea356a95903cb705f57a3b956592b6303261571458a8da957f",
+  "model-00003-of-00005.safetensors": "e8739d2e309e9584a17fadfc8a7b1ab3f26a3f0e7d497175068db8f82f5a2fee",
+  "model-00004-of-00005.safetensors": "7454c66dc9057b19096df64a24475cb5a85a944fe8f6ba8aa73305544d141e05",
+  "model-00005-of-00005.safetensors": "020bd00fa5b807c6395817447663b8b156cd0ebc05d69059c79ead17afdf0a60",
+  "model.safetensors.index.json": "cf3b801e3bb43bc4bfb047d459d1f6aa7b5a5f0525a8afd7728382c57027a103"
+ },
+ "parent_config_tokenizer_processor_hashes": {
+  "B": {
+   "added_tokens.json": null,
+   "chat_template.jinja": null,
+   "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+   "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+   "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+   "special_tokens_map.json": null,
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+   "video_preprocessor_config.json": null,
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "T": {
+   "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "chat_template.jinja": "a0bc6f6fc7a29a80017a433e8f03a1cc1236e838a944a2d034295a60c4f2fddb",
+   "chat_template.json": null,
+   "config.json": "90932c21da40bb151d29c14f73f464a46a897c04d8a9d2bc93f953e12d120141",
+   "generation_config.json": "ade5316c0962ced5772ab4317c0430758648e1993cd5c8386df03c0983d2f376",
+   "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "preprocessor_config.json": "dfc7263fe735989c65c290d394198c4724d5afc58bf15c815d5e2e25b00b51b1",
+   "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "tokenizer_config.json": "f64d944a98d2d9901581be7a5f36b626ff2dc0d5b7d5dedb412412ca39606df0",
+   "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  }
+ },
+ "parent_repo_ids": {
+  "B": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "T": "maveryn/trace-qwen2.5-vl-7b"
+ },
+ "parent_weight_file_identities": {
+  "B": {
+   "model-00001-of-00005.safetensors": {
+    "inode": 689342337084,
+    "mtime_ns": 1791133526339352754,
+    "name": "model-00001-of-00005.safetensors",
+    "resolved": "d999d3c330c49ea66c37be6d108e20e1ddcf5af848546a6cb8f72b91c4c6798e",
+    "size": 3900233256
+   },
+   "model-00002-of-00005.safetensors": {
+    "inode": 689342337083,
+    "mtime_ns": 1791133526826354823,
+    "name": "model-00002-of-00005.safetensors",
+    "resolved": "27ed3a3eb0c1920dfafc6744c6c54b9f755757dbb2de0050483ea64d32780d08",
+    "size": 3864726320
+   },
+   "model-00003-of-00005.safetensors": {
+    "inode": 689342339078,
+    "mtime_ns": 1791133526583353791,
+    "name": "model-00003-of-00005.safetensors",
+    "resolved": "17663813c5540124cd1a2dac2476a58bf107c86981ae5c60283c2a563906fb15",
+    "size": 3864726424
+   },
+   "model-00004-of-00005.safetensors": {
+    "inode": 689342339079,
+    "mtime_ns": 1791133528066360091,
+    "name": "model-00004-of-00005.safetensors",
+    "resolved": "1dd942a77eccc35d2b21351724e5ce0513ae74bac0f2a6d12ee42d7653c53747",
+    "size": 3864733680
+   },
+   "model-00005-of-00005.safetensors": {
+    "inode": 689342339080,
+    "mtime_ns": 1791133521766333325,
+    "name": "model-00005-of-00005.safetensors",
+    "resolved": "f06bb4c09b51382e5142176acc48a807aa5647e70541ab316201a4e55b6b0350",
+    "size": 1089994880
+   }
+  },
+  "T": {
+   "model-00001-of-00004.safetensors": {
+    "inode": 783832849202,
+    "mtime_ns": 1792312129837436601,
+    "name": "model-00001-of-00004.safetensors",
+    "resolved": "1daf631bff90200b9fbcacd8e63c4794271354a0ea9894f81c35cf40e7ecd381",
+    "size": 4907249904
+   },
+   "model-00002-of-00004.safetensors": {
+    "inode": 783832849196,
+    "mtime_ns": 1792312131161442210,
+    "name": "model-00002-of-00004.safetensors",
+    "resolved": "16cad685b346765df82f0bc6c3dcb0b15514dc433ba964d99d11a31ce8120d20",
+    "size": 4923554384
+   },
+   "model-00003-of-00004.safetensors": {
+    "inode": 783832849197,
+    "mtime_ns": 1792312129673435906,
+    "name": "model-00003-of-00004.safetensors",
+    "resolved": "61a4262cbad751b4be939cb96d4d9268ffa6bda6143b98dfeada164df425c8be",
+    "size": 4592854216
+   },
+   "model-00004-of-00004.safetensors": {
+    "inode": 783832849200,
+    "mtime_ns": 1792312131797444904,
+    "name": "model-00004-of-00004.safetensors",
+    "resolved": "10a3bda59eb0666b0bc7454f27796779576a1d3bd9dc751d045c357d03cbcb86",
+    "size": 2160756040
+   }
+  }
+ },
+ "parent_weight_file_sha256": {
+  "B": {
+   "model-00001-of-00005.safetensors": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e",
+   "model-00002-of-00005.safetensors": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024",
+   "model-00003-of-00005.safetensors": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507",
+   "model-00004-of-00005.safetensors": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed",
+   "model-00005-of-00005.safetensors": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67"
+  },
+  "T": {
+   "model-00001-of-00004.safetensors": "7ab31563d6aa33f4e72efc425799b36beafe4eb555b81400ca41fbac75763ec5",
+   "model-00002-of-00004.safetensors": "8926ae3db148002169d7cd4c68d5d087e50a162055a965ca11c6a20eb38f663d",
+   "model-00003-of-00004.safetensors": "eedbd2bb965b4f2c6c28a629cd35736d16b1afc39eaea340a7c1991f5cff16c5",
+   "model-00004-of-00004.safetensors": "d13f7ea286a68ee278613c6834a4720a34a9a9ec04ffd5cc6126a7bb5aa0c4a2"
+  }
+ },
+ "recipe": {
+  "accumulation_dtype": "float32",
+  "component_mask": null,
+  "component_mask_hash": null,
+  "layout_role": "B",
+  "max_slice_elements": 33554432,
+  "merge_id": "CT050",
+  "model_role_coefficients": {
+   "B": 0.5,
+   "T": 0.5
+  },
+  "no_training": true,
+  "nonfloating_buffer_policy": "must be bitwise identical in all parents; copied, never averaged",
+  "output_dtype": "bfloat16",
+  "parent_source_revisions": {
+   "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+   "T": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  "rounding": "torch float32 -> bfloat16 round-to-nearest-even",
+  "tied_weight_policy": "Qwen2.5-VL-7B stores untied embed_tokens and lm_head; both are interpolated as separate tensors"
+ },
+ "recipe_sha256": "82e1fed2e635569f161540fd62bbf7c251fbd2c944769c805aa62329fb169f2f",
+ "runtime_revisions": null,
+ "schema_version": "trace-merge-manifest-v1",
+ "source_revisions": {
+  "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "T": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+ },
+ "started": "2026-11-02T05:25:00+00:00",
+ "tensor_count": 729,
+ "tensor_groups": {
+  "language_embeddings": 1,
+  "language_final_norm": 1,
+  "language_layers": 336,
+  "language_output_head": 1,
+  "visual_blocks": 384,
+  "visual_merger": 5,
+  "visual_patch_embed": 1
+ },
+ "tensor_shape_digest": "62023351a0592565bbce202d93f96ce25d91f88fbdc5bf1daeeb2f19ef16afde",
+ "tied_weight_policy": "Qwen2.5-VL-7B stores untied embed_tokens and lm_head; both are interpolated as separate tensors",
+ "timestamp": "2026-11-02T05:27:01+00:00"
+}

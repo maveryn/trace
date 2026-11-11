@@ -1,0 +1,24 @@
+{
+ "recipe": {
+  "accumulation_dtype": "float32",
+  "component_mask": null,
+  "component_mask_hash": null,
+  "layout_role": "B",
+  "max_slice_elements": 33554432,
+  "merge_id": "CT050",
+  "model_role_coefficients": {
+   "B": 0.5,
+   "T": 0.5
+  },
+  "no_training": true,
+  "nonfloating_buffer_policy": "must be bitwise identical in all parents; copied, never averaged",
+  "output_dtype": "bfloat16",
+  "parent_source_revisions": {
+   "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+   "T": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  "rounding": "torch float32 -> bfloat16 round-to-nearest-even",
+  "tied_weight_policy": "Qwen2.5-VL-7B stores untied embed_tokens and lm_head; both are interpolated as separate tensors"
+ },
+ "recipe_sha256": "82e1fed2e635569f161540fd62bbf7c251fbd2c944769c805aa62329fb169f2f"
+}
