@@ -1,0 +1,586 @@
+{
+ "analysis": [
+  {
+   "label": "B@P1",
+   "seed": 42,
+   "slug": "qwen25vl7b-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "B@P1",
+   "seed": 43,
+   "slug": "qwen25vl7b-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "B@P1",
+   "seed": 44,
+   "slug": "qwen25vl7b-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "T@P1",
+   "seed": 42,
+   "slug": "trace7b-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "T@P1",
+   "seed": 43,
+   "slug": "trace7b-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "T@P1",
+   "seed": 44,
+   "slug": "trace7b-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "V@P1",
+   "seed": 42,
+   "slug": "vero-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "V@P1",
+   "seed": 43,
+   "slug": "vero-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "V@P1",
+   "seed": 44,
+   "slug": "vero-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 42,
+   "slug": "tf-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 43,
+   "slug": "tf-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 44,
+   "slug": "tf-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 42,
+   "slug": "tl-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 43,
+   "slug": "tl-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 44,
+   "slug": "tl-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 42,
+   "slug": "vf-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 43,
+   "slug": "vf-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 44,
+   "slug": "vf-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 42,
+   "slug": "vl-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 43,
+   "slug": "vl-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 44,
+   "slug": "vl-p1",
+   "subset": "confirmation"
+  }
+ ],
+ "analysis[TR0,TR1,TR2]": [
+  {
+   "label": "TR0@P1",
+   "seed": 42,
+   "slug": "tr0-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR0@P1",
+   "seed": 43,
+   "slug": "tr0-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR0@P1",
+   "seed": 44,
+   "slug": "tr0-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR1@P1",
+   "seed": 42,
+   "slug": "tr1-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR1@P1",
+   "seed": 43,
+   "slug": "tr1-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR1@P1",
+   "seed": 44,
+   "slug": "tr1-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR2@P1",
+   "seed": 42,
+   "slug": "tr2-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR2@P1",
+   "seed": 43,
+   "slug": "tr2-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "TR2@P1",
+   "seed": 44,
+   "slug": "tr2-p1",
+   "subset": "confirmation"
+  }
+ ],
+ "analysis[VNM]": [
+  {
+   "label": "VNM@P1",
+   "seed": 42,
+   "slug": "vnm-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VNM@P1",
+   "seed": 43,
+   "slug": "vnm-p1",
+   "subset": "confirmation"
+  },
+  {
+   "label": "VNM@P1",
+   "seed": 44,
+   "slug": "vnm-p1",
+   "subset": "confirmation"
+  }
+ ],
+ "replication": [
+  {
+   "label": "B@P1",
+   "seed": 43,
+   "slug": "qwen25vl7b-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "B@P1",
+   "seed": 44,
+   "slug": "qwen25vl7b-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "B@P2",
+   "seed": 43,
+   "slug": "qwen25vl7b-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "B@P2",
+   "seed": 44,
+   "slug": "qwen25vl7b-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "T@P1",
+   "seed": 43,
+   "slug": "trace7b-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "T@P1",
+   "seed": 44,
+   "slug": "trace7b-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "T@P2",
+   "seed": 43,
+   "slug": "trace7b-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "T@P2",
+   "seed": 44,
+   "slug": "trace7b-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "V@P1",
+   "seed": 43,
+   "slug": "vero-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "V@P1",
+   "seed": 44,
+   "slug": "vero-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "V@P2",
+   "seed": 43,
+   "slug": "vero-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "V@P2",
+   "seed": 44,
+   "slug": "vero-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 43,
+   "slug": "tf-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 44,
+   "slug": "tf-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TF@P2",
+   "seed": 43,
+   "slug": "tf-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TF@P2",
+   "seed": 44,
+   "slug": "tf-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 43,
+   "slug": "tl-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 44,
+   "slug": "tl-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TL@P2",
+   "seed": 43,
+   "slug": "tl-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TL@P2",
+   "seed": 44,
+   "slug": "tl-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 43,
+   "slug": "vf-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 44,
+   "slug": "vf-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VF@P2",
+   "seed": 43,
+   "slug": "vf-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VF@P2",
+   "seed": 44,
+   "slug": "vf-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 43,
+   "slug": "vl-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 44,
+   "slug": "vl-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VL@P2",
+   "seed": 43,
+   "slug": "vl-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VL@P2",
+   "seed": 44,
+   "slug": "vl-p2",
+   "subset": "development_screen"
+  }
+ ],
+ "screen": [
+  {
+   "label": "B@P1",
+   "seed": 42,
+   "slug": "qwen25vl7b-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "T@P1",
+   "seed": 42,
+   "slug": "trace7b-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "V@P1",
+   "seed": 42,
+   "slug": "vero-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 42,
+   "slug": "tf-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 42,
+   "slug": "tl-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 42,
+   "slug": "vf-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 42,
+   "slug": "vl-p1",
+   "subset": "development_screen"
+  }
+ ],
+ "screen[TR0,TR1,TR2]": [
+  {
+   "label": "TR0@P1",
+   "seed": 42,
+   "slug": "tr0-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TR1@P1",
+   "seed": 42,
+   "slug": "tr1-p1",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TR2@P1",
+   "seed": 42,
+   "slug": "tr2-p1",
+   "subset": "development_screen"
+  }
+ ],
+ "screen[VNM]": [
+  {
+   "label": "VNM@P1",
+   "seed": 42,
+   "slug": "vnm-p1",
+   "subset": "development_screen"
+  }
+ ],
+ "smoke": [
+  {
+   "label": "B@P1",
+   "seed": 42,
+   "slug": "qwen25vl7b-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "B@P2",
+   "seed": 42,
+   "slug": "qwen25vl7b-p2",
+   "subset": "smoke"
+  },
+  {
+   "label": "T@P1",
+   "seed": 42,
+   "slug": "trace7b-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "T@P2",
+   "seed": 42,
+   "slug": "trace7b-p2",
+   "subset": "smoke"
+  },
+  {
+   "label": "V@P1",
+   "seed": 42,
+   "slug": "vero-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "V@P2",
+   "seed": 42,
+   "slug": "vero-p2",
+   "subset": "smoke"
+  },
+  {
+   "label": "TF@P1",
+   "seed": 42,
+   "slug": "tf-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "TF@P2",
+   "seed": 42,
+   "slug": "tf-p2",
+   "subset": "smoke"
+  },
+  {
+   "label": "TL@P1",
+   "seed": 42,
+   "slug": "tl-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "TL@P2",
+   "seed": 42,
+   "slug": "tl-p2",
+   "subset": "smoke"
+  },
+  {
+   "label": "VF@P1",
+   "seed": 42,
+   "slug": "vf-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "VF@P2",
+   "seed": 42,
+   "slug": "vf-p2",
+   "subset": "smoke"
+  },
+  {
+   "label": "VL@P1",
+   "seed": 42,
+   "slug": "vl-p1",
+   "subset": "smoke"
+  },
+  {
+   "label": "VL@P2",
+   "seed": 42,
+   "slug": "vl-p2",
+   "subset": "smoke"
+  }
+ ],
+ "template": [
+  {
+   "label": "B@P2",
+   "seed": 42,
+   "slug": "qwen25vl7b-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "T@P2",
+   "seed": 42,
+   "slug": "trace7b-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "V@P2",
+   "seed": 42,
+   "slug": "vero-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TF@P2",
+   "seed": 42,
+   "slug": "tf-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "TL@P2",
+   "seed": 42,
+   "slug": "tl-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VF@P2",
+   "seed": 42,
+   "slug": "vf-p2",
+   "subset": "development_screen"
+  },
+  {
+   "label": "VL@P2",
+   "seed": 42,
+   "slug": "vl-p2",
+   "subset": "development_screen"
+  }
+ ],
+ "template[VNM]": [
+  {
+   "label": "VNM@P2",
+   "seed": 42,
+   "slug": "vnm-p2",
+   "subset": "development_screen"
+  }
+ ]
+}

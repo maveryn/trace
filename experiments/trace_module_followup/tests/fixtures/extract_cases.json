@@ -1,0 +1,392 @@
+{
+ "_note": "Synthetic responses written for these tests (no benchmark prompt, answer, image or model response). expect: status and option of extract_final_option with the given labels.",
+ "wrapped_final_options": [
+  {
+   "id": "bare_letter",
+   "response": "B",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "bare_letter_period",
+   "response": "The shapes grow by one side each step.\n\nB.",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "boxed",
+   "response": "Counting the sides gives five, so the final answer is \\boxed{B}.",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "boxed_text_macro",
+   "response": "Hence \\boxed{\\text{C}}",
+   "labels": "ABCD",
+   "option": "C"
+  },
+  {
+   "id": "inline_math",
+   "response": "Each row adds two dots.\n\nAnswer: \\( B \\)",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "inline_math_tight",
+   "response": "Each row adds two dots.\n\nAnswer: \\(B\\)",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "inline_math_text_macro",
+   "response": "Each row adds two dots.\n\nAnswer: \\( \\text{B} \\)",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "dollar_math",
+   "response": "Each row adds two dots.\n\nAnswer: $B$",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "dollar_unclosed",
+   "response": "Each row adds two dots.\n\nAnswer: $B",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "parenthesised",
+   "response": "The missing piece is the small one.\n\nAnswer: (B)",
+   "labels": "ABC",
+   "option": "B"
+  },
+  {
+   "id": "parenthesised_with_option_text",
+   "response": "The missing piece is the small one.\n\nAnswer: (B) small",
+   "labels": "ABC",
+   "option": "B"
+  },
+  {
+   "id": "bold",
+   "response": "Comparing all four tiles:\n\n**B**",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "bold_answer_line",
+   "response": "Comparing all four tiles.\n\n**Answer: D**",
+   "labels": "ABCD",
+   "option": "D"
+  },
+  {
+   "id": "answer_tag",
+   "response": "<think>\nThe second tile matches.\n</think>\n<answer>B</answer>",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "answer_tag_boxed",
+   "response": "<think>\nThe second tile matches.\n</think>\n<answer>\nThe answer is \\boxed{B}.\n</answer>",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "answer_tag_letter_with_text",
+   "response": "<think>\nIt is twelve.\n</think>\n<answer>\n(B) 12\n</answer>",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "answer_tag_unclosed_boxed",
+   "response": "<think>\nIt is the third.\n</think>\n<answer>\nC. \\boxed{C}",
+   "labels": "ABCD",
+   "option": "C"
+  },
+  {
+   "id": "after_think_line",
+   "response": "<think>\nThe third one fits.\n</think>\nC",
+   "labels": "ABCD",
+   "option": "C"
+  },
+  {
+   "id": "statement_colon_then_newline",
+   "response": "So the matching option would be:\nAnswer: \\( D \\)",
+   "labels": "ABCD",
+   "option": "D"
+  },
+  {
+   "id": "statement_is_colon",
+   "response": "Adding the rows gives ten.\n\nThe answer is: (C) 10",
+   "labels": "ABCD",
+   "option": "C"
+  },
+  {
+   "id": "statement_reversed",
+   "response": "Checking each tile in turn.\n\nOption C is correct.",
+   "labels": "ABCD",
+   "option": "C"
+  },
+  {
+   "id": "single_line_letter_with_text",
+   "response": "B. upper right",
+   "labels": "ABCD",
+   "option": "B"
+  },
+  {
+   "id": "statement_article_A_with_period",
+   "response": "The answer is A.",
+   "labels": "ABCD",
+   "option": "A"
+  },
+  {
+   "id": "trailing_blank_lines",
+   "response": "Rows sum to nine.\n\nAnswer: (A)\n\n\n",
+   "labels": "ABCD",
+   "option": "A"
+  }
+ ],
+ "conflicting_answers": [
+  {
+   "id": "two_boxes",
+   "response": "Maybe \\boxed{A}, or rather \\boxed{B}.",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "statement_and_box_disagree",
+   "response": "Rows sum to nine.\n\nThe answer is C, so \\boxed{D}",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "final_line_and_statement_disagree",
+   "response": "Rows sum to nine.\n\nThe answer is A.\n(B)",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "reasoning_designates_other_letter",
+   "response": "First pass: the answer is A.\n\nOn reflection the rows differ.\n\nAnswer: \\( B \\)",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "think_designates_other_letter",
+   "response": "<think>\nI believe the answer is A.\n</think>\n<answer>B</answer>",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "two_answer_blocks",
+   "response": "<answer>A</answer> then <answer>C</answer>",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "several_letters",
+   "response": "Both pieces are missing.\n\nAnswer: AB",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "letters_with_and",
+   "response": "Both pieces are missing.\n\nThe answer is B and D.",
+   "labels": "ABCD",
+   "status": "not_an_option"
+  },
+  {
+   "id": "letter_and_nonoption_box",
+   "response": "So it is 12.\n\nAnswer: (B)\n\\boxed{12}",
+   "labels": "ABCD",
+   "status": "ambiguous"
+  },
+  {
+   "id": "statement_two_wrapped_options",
+   "response": "Rows alternate.\n\nThe answer is \\( A \\) or \\( C \\).",
+   "labels": "ABCD",
+   "status": "not_an_option"
+  },
+  {
+   "id": "boxed_two_parenthesised_options",
+   "response": "So \\boxed{(A) or (C)}",
+   "labels": "ABCD",
+   "status": "not_an_option"
+  },
+  {
+   "id": "final_line_two_dollar_options",
+   "response": "Rows alternate.\n\n$A$ or $C$",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  }
+ ],
+ "no_single_final_option": [
+  {
+   "id": "boxed_value_not_letter",
+   "response": "The total is \\boxed{12}.",
+   "labels": "ABCD",
+   "status": "not_an_option"
+  },
+  {
+   "id": "boxed_letter_not_allowed",
+   "response": "The hidden face is \\boxed{R}.",
+   "labels": "ABCD",
+   "status": "not_an_option"
+  },
+  {
+   "id": "letter_outside_labels",
+   "response": "Rows sum to nine.\n\nAnswer: (D)",
+   "labels": "ABC",
+   "status": "not_an_option"
+  },
+  {
+   "id": "truncated_reasoning",
+   "response": "Let x be the missing value. Then 3 + x = 9, so",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "unterminated_think",
+   "response": "<think>\nThe answer is B because the rows",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "prose_article",
+   "response": "The answer is A pattern of alternating dots.",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "lowercase_prose",
+   "response": "The answer is a bigger circle.",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "wrapped_letter_inside_sentence",
+   "response": "So we pick \\( B \\) here and move on to check the rest",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "empty",
+   "response": "",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "empty_answer_block",
+   "response": "<think>\nhmm\n</think>\n<answer></answer>",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "answer_block_prose",
+   "response": "<answer>The missing colour is blue.</answer>",
+   "labels": "ABCD",
+   "status": "not_an_option"
+  },
+  {
+   "id": "single_line_option_listing",
+   "response": "(A) 3, (B) 5, (C) 7",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  }
+ ],
+ "reasoning_does_not_leak": [
+  {
+   "id": "options_listed_no_final",
+   "response": "Options: (A) 3, (B) 5, (C) 7, (D) 9. Option (C) 7 looks plausible but needs checking.\n\nThe rows do not follow one rule.",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "correct_letter_only_in_reasoning",
+   "response": "Looking at tile B closely, B has four sides like the others.\n\nI cannot decide between the tiles.",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "final_paragraph_explanation_after_answer",
+   "response": "The answer is \\( B \\).\n\nThis is because the rows alternate.",
+   "labels": "ABCD",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "reasoning_letters_final_other",
+   "response": "Option (C) 7 would need verification; (A) 3 is too small.\n\nAnswer: \\( D \\)",
+   "labels": "ABCD",
+   "status": "resolved",
+   "option": "D"
+  }
+ ],
+ "boxed_free_form": [
+  {
+   "id": "single_box",
+   "response": "There are 7 rows. \\boxed{7}",
+   "status": "resolved",
+   "value": "7"
+  },
+  {
+   "id": "box_with_text_macro",
+   "response": "\\boxed{\\text{Canada}}",
+   "status": "resolved",
+   "value": "Canada"
+  },
+  {
+   "id": "repeated_same_box",
+   "response": "Lisbon\n\\boxed{Lisbon}. Final: \\boxed{Lisbon}",
+   "status": "resolved",
+   "value": "Lisbon"
+  },
+  {
+   "id": "conflicting_boxes",
+   "response": "It is \\boxed{Lisbon} or \\boxed{Porto}",
+   "status": "ambiguous"
+  },
+  {
+   "id": "no_box",
+   "response": "Lisbon",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "box_only_in_reasoning",
+   "response": "<think>\nmaybe \\boxed{Porto}\n</think>\n<answer>Lisbon</answer>",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "box_in_reasoning_disagrees",
+   "response": "<think>\nmaybe \\boxed{Porto}\n</think>\n<answer>\\boxed{Lisbon}</answer>",
+   "status": "ambiguous"
+  },
+  {
+   "id": "unbalanced_box",
+   "response": "\\boxed{Lisbon",
+   "status": "no_final_answer"
+  },
+  {
+   "id": "empty_box",
+   "response": "\\boxed{}",
+   "status": "not_an_option"
+  },
+  {
+   "id": "nested_macro_kept_balanced",
+   "response": "\\boxed{\\text{A} and \\text{B}}",
+   "status": "resolved",
+   "value": "\\text{A} and \\text{B}"
+  },
+  {
+   "id": "latex_percent_escape",
+   "response": "The target is \\boxed{55\\%}.",
+   "status": "resolved",
+   "value": "55%"
+  },
+  {
+   "id": "latex_dollar_escape",
+   "response": "\\boxed{\\$7,066}",
+   "status": "resolved",
+   "value": "$7,066"
+  }
+ ]
+}

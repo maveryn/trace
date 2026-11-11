@@ -1,0 +1,224 @@
+--- a/rlvr/evaluation/scripts/run_external_benchmark_score_queue.py
++++ b/rlvr/evaluation/scripts/run_external_benchmark_score_queue.py
+@@ -83,7 +83,10 @@
+     "mathvista_extract": "trace-eval-v1-mathvista-extract-v2",
+     "mathverse_extract": "trace-eval-v1-mathverse-extract-v2",
+     # trace-cert post-release fix-3: no 0/1 decision after 5 attempts is scored incorrect
+-    "mathverse_score": "trace-eval-v1-mathverse-vlmevalkit-judgement01-v4+trace-cert-fix-3",
++    # trace-vero-followup fix-4: a score output still incomplete after the token-limit retries is one failed attempt
++    "mathverse_score": (
++        "trace-eval-v1-mathverse-vlmevalkit-judgement01-v4+trace-cert-fix-3+trace-vero-followup-fix-4"
++    ),
+     "logicvista_extract": "trace-eval-v1-logicvista-option-extract-v1",
+     "charxiv_judge": "trace-eval-v1-charxiv-judge-v1",
+     "evochart_judge": "trace-eval-v1-evochart-judge-v1",
+@@ -91,6 +94,9 @@
+ # trace-cert post-release fix-3: MathVerse rows scored incorrect after 5 score attempts without a 0/1 decision
+ # (next to the run's scores.json)
+ MATHVERSE_SCORE_UNRESOLVED_FILENAME = "mathverse_score_unresolved.json"
++# trace-vero-followup fix-4: MathVerse rows with at least one score attempt whose judge output was still incomplete
++# (finish reason length/max_tokens, or empty) after the token-limit retries (next to the run's scores.json)
++MATHVERSE_SCORE_INCOMPLETE_FILENAME = "mathverse_score_incomplete_attempts.json"
+ 
+ 
+ def _nonempty_judge_output(value: Any) -> bool:
+@@ -2104,6 +2110,21 @@
+                 f"first indices={mismatched[:10]}"
+             )
+ 
++    # trace-vero-followup fix-4: the rows with at least one score attempt still incomplete after the token-limit retries
++    # (counted as failed attempts; none when every attempt completed); each must be a row of the judged table
++    incomplete_indices: list[str] = []
++    incomplete_path = output_dir / MATHVERSE_SCORE_INCOMPLETE_FILENAME
++    if incomplete_path.is_file():
++        incomplete = json.loads(incomplete_path.read_text(encoding="utf-8"))
++        incomplete_indices = [str(index) for index in incomplete.get("indices") or []]
++        table_indices = {str(row.get("index")) for _, row in df.iterrows()}
++        unknown = [index for index in incomplete_indices if index not in table_indices]
++        if incomplete.get("count") != len(incomplete_indices) or unknown:
++            raise RuntimeError(
++                f"MathVerse {incomplete_path.name} does not match the judged table; "
++                f"first indices={unknown[:10]}"
++            )
++
+     df["score"] = normalized_scores
+     df.to_excel(judged_table, index=False)
+     score_df = MathVerse_acc(str(judged_table))
+@@ -2123,6 +2144,9 @@
+             # trace-cert post-release fix-3
+             "mathverse_all_retries_failed_scored_incorrect": len(unresolved_indices),
+             "mathverse_all_retries_failed_scored_incorrect_indices": unresolved_indices,
++            # trace-vero-followup fix-4
++            "mathverse_incomplete_score_attempt_rows": len(incomplete_indices),
++            "mathverse_incomplete_score_attempt_indices": incomplete_indices,
+         },
+     }
+     write_json(output_dir / "scores.json", normalized_summary)
+@@ -2199,6 +2223,53 @@
+             )
+             unresolved_path.unlink(missing_ok=True)
+             attempt_outputs: dict[str, list[dict[str, Any]]] = {}
++            # trace-vero-followup fix-4: the record of incomplete score attempts describes this scoring only
++            incomplete_path = (
++                Path(call_args.output_dir) / MATHVERSE_SCORE_INCOMPLETE_FILENAME
++            )
++            incomplete_path.unlink(missing_ok=True)
++            incomplete_attempts: dict[str, list[int]] = {}
++
++            def record_incomplete_attempts() -> None:
++                # trace-vero-followup fix-4: rows with an incomplete score attempt, with that attempt's output, on
++                # record next to scores.json (and counted in its artifacts); nothing is written when there is none
++                if not incomplete_attempts:
++                    return
++                indices = list(incomplete_attempts)
++                write_json(
++                    incomplete_path,
++                    {
++                        "fix": "trace-vero-followup fix-4",
++                        "dataset": call_args.dataset,
++                        "contract_version": contract_version,
++                        "count": len(indices),
++                        "indices": indices,
++                        "incomplete_attempts": {
++                            index: incomplete_attempts[index] for index in indices
++                        },
++                        "attempts": {
++                            index: [
++                                row
++                                for row in attempt_outputs.get(index, [])
++                                if row.get("incomplete_after_token_retries")
++                            ]
++                            for index in indices
++                        },
++                        # a 0/1 decision from a later attempt; the others are in fix-3's record
++                        "resolved_in_later_attempt": [
++                            index
++                            for index in indices
++                            if accepted.get(index, {}).get("judge_resolution")
++                            != "all_retries_failed_scored_incorrect"
++                        ],
++                    },
++                )
++                print(
++                    "[judge:mathverse-score] trace-vero-followup fix-4: "
++                    f"{len(indices)} rows had a score attempt still incomplete after the token-limit retries "
++                    f"(counted as failed attempts); indices={indices[:10]}"
++                )
++
+             if not pending:
+                 return accepted
+             cache_path = Path(cache_name)
+@@ -2219,13 +2290,29 @@
+                     desc=f"{call_args.dataset} local judge score attempt {attempt + 1}",
+                     output_validator=_nonempty_judge_output,
+                     contract_version=f"{contract_version}-attempt{attempt + 1}",
++                    # trace-vero-followup fix-4: an output still incomplete after the token-limit retries is returned
++                    # (and cached) instead of raising, as this file's LogicVista schedule and run_mme_reasoning_eval.py
++                    # already do; the loop below counts it as a failed attempt
++                    return_unresolved=True,
+                 )
+                 unresolved = []
+                 for index, prompt in pending:
+                     item = judged.get(str(index), {})
+-                    if output_validator(item.get("judge_output", "")):
++                    # trace-vero-followup fix-4 (trace-vero-runs/trace_vero_followup_v1/dispatch/protocol_overlay): an
++                    # output still incomplete after the token-limit retries (finish reason length/max_tokens, or
++                    # empty; the rows on which af32fe0's run_cached raised and failed the benchmark) is one failed
++                    # attempt without a 0/1 decision, as upstream VLMEvalKit's MathVerse_auxeval_score counts any
++                    # unusable output: the next attempt runs with fix-3's temperature schedule, and a row without a
++                    # 0/1 decision after the 5 attempts is scored incorrect by fix-3 below. A complete output is
++                    # handled exactly as before.
++                    incomplete = _judge_cache_entry_needs_retry(item)
++                    if not incomplete and output_validator(item.get("judge_output", "")):
+                         accepted[str(index)] = item
+                     else:
++                        if incomplete:
++                            incomplete_attempts.setdefault(str(index), []).append(
++                                attempt + 1
++                            )
+                         attempt_outputs.setdefault(str(index), []).append(
+                             {
+                                 "attempt": attempt + 1,
+@@ -2235,11 +2322,14 @@
+                                 "judge_finish_reason": item.get(
+                                     "judge_finish_reason", ""
+                                 ),
++                                # trace-vero-followup fix-4
++                                "incomplete_after_token_retries": incomplete,
+                             }
+                         )
+                         unresolved.append((index, prompt))
+                 pending = unresolved
+                 if not pending:
++                    record_incomplete_attempts()
+                     return accepted
+             # trace-cert post-release fix-3 (trace-cert-runs/ext_eval/patches): a row whose score judgement still
+             # has no 0/1 decision after the 5 attempts is scored incorrect instead of failing the benchmark, upstream
+@@ -2281,6 +2371,7 @@
+                 f"{len(failed)} rows without a 0/1 decision after 5 attempts scored incorrect; "
+                 f"indices={failed[:10]}"
+             )
++            record_incomplete_attempts()  # trace-vero-followup fix-4
+             return accepted
+         return judge.run_cached(
+             output_dir=call_args.output_dir,
+--- a/rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py
++++ b/rlvr/evaluation/scripts/run_official_vlmevalkit_saved_score.py
+@@ -27,7 +27,8 @@
+ DEFAULT_VLMEVAL_ROOT = REPO_ROOT / "external" / "VLMEvalKit"
+ PINNED_VLMEVALKIT_COMMIT = "a8b12bf1c3737a33fc1de967c202f9c592b22e86"
+ CONTRACT = "vlmevalkit-dataset-evaluate-saved-response-v2"
+-CHARTQAPRO_ADAPTER_CONTRACT = "chartqapro-official-final-answer-v2"
++# trace-vero-followup fix-5: nothing after the last final-answer marker is an empty final answer
++CHARTQAPRO_ADAPTER_CONTRACT = "chartqapro-official-final-answer-v2+trace-vero-followup-fix-5"
+ PHYX_OPTION_ADAPTER_CONTRACT = "phyx-deterministic-option-v1"
+ TREEBENCH_OPTION_ADAPTER_CONTRACT = "treebench-explicit-final-boxed-option-v1"
+ REALWORLDQA_OPTION_ADAPTER_CONTRACT = "realworldqa-deterministic-final-option-v1"
+@@ -267,7 +268,15 @@
+     matches = list(_CHARTQAPRO_FINAL_MARKER.finditer(text))
+     if not matches:
+         return None
+-    answer = text[matches[-1].end() :].splitlines()[0].strip()
++    remainder = text[matches[-1].end() :]
++    # trace-vero-followup fix-5 (trace-vero-runs/trace_vero_followup_v1/dispatch/protocol_overlay): a text that ends
++    # with its last final-answer marker (nothing, not even a line break, after "the answer is[:]") states an empty
++    # final answer "", which the pinned ChartQAPro scorer then scores as usual, instead of the IndexError of
++    # "".splitlines()[0] that failed the whole benchmark. Only such texts reach this branch; every other text is
++    # handled exactly as before.
++    if not remainder:
++        return ""
++    answer = remainder.splitlines()[0].strip()
+     if not answer:
+         return None
+     previous = None
+@@ -335,13 +344,19 @@
+     data["raw_prediction"] = original
+     changed = 0
+     unresolved = 0
++    empty_final_answer: list[str] = []  # trace-vero-followup fix-5
+     adapted: list[Any] = []
+-    for raw in original:
++    for position, raw in enumerate(original):
+         extracted = _chartqapro_final_answer(raw)
+         if extracted is None:
+             unresolved += 1
+             adapted.append(raw)
+         else:
++            # trace-vero-followup fix-5: "" comes only from a text ending with its final-answer marker
++            if extracted == "":
++                empty_final_answer.append(
++                    str(data["index"].iloc[position]) if "index" in data else str(position)
++                )
+             changed += int(str(extracted) != str(raw))
+             adapted.append(extracted)
+     data["prediction"] = adapted
+@@ -350,6 +365,9 @@
+         "contract": CHARTQAPRO_ADAPTER_CONTRACT,
+         "changed_rows": changed,
+         "unresolved_rows": unresolved,
++        # trace-vero-followup fix-5: rows given the empty final answer (they count in changed_rows)
++        "empty_final_answer_rows": len(empty_final_answer),
++        "empty_final_answer_indices": empty_final_answer,
+         "rows": int(len(data)),
+         "adapted_prediction_sha256": _sha256(prediction),
+     }

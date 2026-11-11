@@ -1,0 +1,43 @@
+{
+ "recipe": {
+  "donor_revisions": {
+   "B": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+   "T": "4d0f1ae8ee25022058090dbdbff61957ece7331d"
+  },
+  "donors": {
+   "frontend": "T",
+   "language": "B"
+  },
+  "hybrid_id": "TF",
+  "layout_role": "B",
+  "mask_sha256": "a368cf3c324200442bef95f921e3faa4fb07968cd91636a9e1af3bf965c22cee",
+  "no_training": true,
+  "operation": "exact copy of the donor's stored tensor bytes; no averaging, no dtype conversion",
+  "partition": "component",
+  "partition_groups": {
+   "frontend": [
+    "E",
+    "J"
+   ],
+   "language": [
+    "L"
+   ]
+  },
+  "parts": {
+   "E": [
+    "visual_patch_embed",
+    "visual_blocks"
+   ],
+   "J": [
+    "visual_merger"
+   ],
+   "L": [
+    "language_embeddings",
+    "language_layers",
+    "language_final_norm",
+    "language_output_head"
+   ]
+  }
+ },
+ "recipe_sha256": "aee263c57d90019bc8479e743ece0aef15cd466db3c563d4cbf31d504e9dd54a"
+}

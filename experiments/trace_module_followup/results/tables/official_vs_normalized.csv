@@ -1,0 +1,714 @@
+partition,subset,model_label,seeds,level,scope,value_official,value_normalized,delta
+development,development_partition,B,42+43+44,benchmark,blink,54.73684210526316,54.73684210526316,0.0
+development,development_partition,B,42+43+44,benchmark,chartqapro,46.25887106532813,46.25887106532813,0.0
+development,development_partition,B,42+43+44,benchmark,charxivreason,40.66666666666666,40.66666666666666,0.0
+development,development_partition,B,42+43+44,benchmark,countbenchqa,75.94501718213058,75.94501718213058,0.0
+development,development_partition,B,42+43+44,benchmark,countqa,16.829533116178066,16.829533116178066,0.0
+development,development_partition,B,42+43+44,benchmark,cvbench_3d,75.0,75.0,0.0
+development,development_partition,B,42+43+44,benchmark,embspatial,70.51282051282051,70.51282051282051,0.0
+development,development_partition,B,42+43+44,benchmark,erqa,39.02439024390244,39.02439024390244,0.0
+development,development_partition,B,42+43+44,benchmark,evochart,57.76892430278884,57.76892430278884,0.0
+development,development_partition,B,42+43+44,benchmark,logicvista,38.95131086142322,38.95131086142322,0.0
+development,development_partition,B,42+43+44,benchmark,mathverse,45.9915611814346,45.9915611814346,0.0
+development,development_partition,B,42+43+44,benchmark,mathvision,27.13815789473684,27.13815789473684,0.0
+development,development_partition,B,42+43+44,benchmark,mathvista,66.0,66.0,0.0
+development,development_partition,B,42+43+44,benchmark,mme_reasoning,22.222222222222225,22.222222222222225,0.0
+development,development_partition,B,42+43+44,benchmark,mmmu_pro_vision,34.971098265895954,34.971098265895954,0.0
+development,development_partition,B,42+43+44,benchmark,mmstar,58.333333333333336,58.333333333333336,0.0
+development,development_partition,B,42+43+44,benchmark,phyx_mini_mc,43.16666666666666,43.16666666666666,0.0
+development,development_partition,B,42+43+44,benchmark,puzzlevqa,47.16049382716049,49.95884773662552,2.798353909465036
+development,development_partition,B,42+43+44,benchmark,realworldqa,62.74509803921569,62.74509803921569,0.0
+development,development_partition,B,42+43+44,benchmark,spatialvizbench_cot,35.451977401129945,35.451977401129945,0.0
+development,development_partition,B,42+43+44,benchmark,tablevqabench,75.86579,75.86579,0.0
+development,development_partition,B,42+43+44,benchmark,treebench,37.03703703703704,37.03703703703704,0.0
+development,development_partition,B,42+43+44,benchmark,visualpuzzles,26.95035460992908,27.517730496453904,0.5673758865248253
+development,development_partition,B,42+43+44,benchmark,wemath,34.73520249221184,34.73520249221184,0.0
+development,development_partition,B,42+43+44,category,Charts & Tables,55.140063008695904,55.140063008695904,0.0
+development,development_partition,B,42+43+44,category,Visual Math,43.46623039209582,43.46623039209582,0.0
+development,development_partition,B,42+43+44,category,Science & General,49.80404907627791,49.80404907627791,0.0
+development,development_partition,B,42+43+44,category,Spatial Reasoning,54.99729703946323,54.99729703946323,0.0
+development,development_partition,B,42+43+44,category,Perception & Counting,46.13710736015221,46.13710736015221,0.0
+development,development_partition,B,42+43+44,category,Puzzles & Logic,33.82109538018376,34.662527829181215,0.841432448997459
+development,development_partition,B,42+43+44,overall,24-benchmark macro,47.2276403761448,47.36787911764438,0.14023874149958
+development,development_partition,T,42+43+44,benchmark,blink,57.280701754385966,57.280701754385966,0.0
+development,development_partition,T,42+43+44,benchmark,chartqapro,47.160797821808366,47.160797821808366,0.0
+development,development_partition,T,42+43+44,benchmark,charxivreason,50.333333333333336,50.333333333333336,0.0
+development,development_partition,T,42+43+44,benchmark,countbenchqa,78.35051546391753,78.35051546391753,0.0
+development,development_partition,T,42+43+44,benchmark,countqa,19.97828447339848,19.97828447339848,0.0
+development,development_partition,T,42+43+44,benchmark,cvbench_3d,81.1111111111111,81.1111111111111,0.0
+development,development_partition,T,42+43+44,benchmark,embspatial,72.29853479853479,72.29853479853479,0.0
+development,development_partition,T,42+43+44,benchmark,erqa,43.08943089430894,43.08943089430894,0.0
+development,development_partition,T,42+43+44,benchmark,evochart,66.26826029216467,66.26826029216467,0.0
+development,development_partition,T,42+43+44,benchmark,logicvista,44.943820224719104,44.943820224719104,0.0
+development,development_partition,T,42+43+44,benchmark,mathverse,49.78902953586498,49.78902953586498,0.0
+development,development_partition,T,42+43+44,benchmark,mathvision,30.42763157894737,30.42763157894737,0.0
+development,development_partition,T,42+43+44,benchmark,mathvista,68.83333333333333,68.83333333333333,0.0
+development,development_partition,T,42+43+44,benchmark,mme_reasoning,23.04526748971193,23.04526748971193,0.0
+development,development_partition,T,42+43+44,benchmark,mmmu_pro_vision,39.59537572254335,39.59537572254335,0.0
+development,development_partition,T,42+43+44,benchmark,mmstar,63.55555555555557,63.55555555555557,0.0
+development,development_partition,T,42+43+44,benchmark,phyx_mini_mc,48.66666666666666,48.66666666666666,0.0
+development,development_partition,T,42+43+44,benchmark,puzzlevqa,51.11111111111112,52.26337448559671,1.1522633744855924
+development,development_partition,T,42+43+44,benchmark,realworldqa,66.66666666666667,66.66666666666667,0.0
+development,development_partition,T,42+43+44,benchmark,spatialvizbench_cot,37.14689265536723,37.14689265536723,0.0
+development,development_partition,T,42+43+44,benchmark,tablevqabench,77.9436242,77.9436242,0.0
+development,development_partition,T,42+43+44,benchmark,treebench,39.50617283950617,39.50617283950617,0.0
+development,development_partition,T,42+43+44,benchmark,visualpuzzles,31.489361702127663,32.05673758865248,0.5673758865248182
+development,development_partition,T,42+43+44,benchmark,wemath,45.48286604361371,45.48286604361371,0.0
+development,development_partition,T,42+43+44,category,Charts & Tables,60.426503911826586,60.426503911826586,0.0
+development,development_partition,T,42+43+44,category,Visual Math,48.63321512293985,48.63321512293985,0.0
+development,development_partition,T,42+43+44,category,Science & General,54.62106615285807,54.62106615285807,0.0
+development,development_partition,T,42+43+44,category,Spatial Reasoning,58.41149236483052,58.41149236483052,0.0
+development,development_partition,T,42+43+44,category,Perception & Counting,48.77891863280204,48.77891863280204,0.0
+development,development_partition,T,42+43+44,category,Puzzles & Logic,37.647390131917454,38.07729994717005,0.4299098152525999
+development,development_partition,T,42+43+44,overall,24-benchmark macro,51.41976438619575,51.49141602207118,0.0716516358754333
+development,development_partition,V@P0,42+43+44,benchmark,blink,60.0,60.0,0.0
+development,development_partition,V@P0,42+43+44,benchmark,chartqapro,40.71357157311154,40.71357157311154,0.0
+development,development_partition,V@P0,42+43+44,benchmark,charxivreason,45.833333333333336,45.833333333333336,0.0
+development,development_partition,V@P0,42+43+44,benchmark,countbenchqa,80.41237113402062,80.41237113402062,0.0
+development,development_partition,V@P0,42+43+44,benchmark,countqa,20.195439739413683,20.195439739413683,0.0
+development,development_partition,V@P0,42+43+44,benchmark,cvbench_3d,82.08333333333333,82.08333333333333,0.0
+development,development_partition,V@P0,42+43+44,benchmark,embspatial,71.33699633699634,71.33699633699634,0.0
+development,development_partition,V@P0,42+43+44,benchmark,erqa,44.3089430894309,44.3089430894309,0.0
+development,development_partition,V@P0,42+43+44,benchmark,evochart,61.62018592297477,61.62018592297477,0.0
+development,development_partition,V@P0,42+43+44,benchmark,logicvista,52.43445692883895,52.43445692883895,0.0
+development,development_partition,V@P0,42+43+44,benchmark,mathverse,56.32911392405063,56.32911392405063,0.0
+development,development_partition,V@P0,42+43+44,benchmark,mathvision,30.098684210526315,30.098684210526315,0.0
+development,development_partition,V@P0,42+43+44,benchmark,mathvista,72.16666666666667,72.16666666666667,0.0
+development,development_partition,V@P0,42+43+44,benchmark,mme_reasoning,28.806584362139915,28.806584362139915,0.0
+development,development_partition,V@P0,42+43+44,benchmark,mmmu_pro_vision,39.40269749518304,39.40269749518304,0.0
+development,development_partition,V@P0,42+43+44,benchmark,mmstar,61.333333333333336,61.333333333333336,0.0
+development,development_partition,V@P0,42+43+44,benchmark,phyx_mini_mc,49.333333333333336,49.333333333333336,0.0
+development,development_partition,V@P0,42+43+44,benchmark,puzzlevqa,51.028806584362144,51.028806584362144,0.0
+development,development_partition,V@P0,42+43+44,benchmark,realworldqa,68.40958605664487,68.40958605664487,0.0
+development,development_partition,V@P0,42+43+44,benchmark,spatialvizbench_cot,32.6271186440678,32.6271186440678,0.0
+development,development_partition,V@P0,42+43+44,benchmark,tablevqabench,77.594355,77.594355,0.0
+development,development_partition,V@P0,42+43+44,benchmark,treebench,43.62139917695473,43.62139917695473,0.0
+development,development_partition,V@P0,42+43+44,benchmark,visualpuzzles,34.04255319148936,34.184397163120565,0.1418439716312036
+development,development_partition,V@P0,42+43+44,benchmark,wemath,48.75389408099688,48.75389408099688,0.0
+development,development_partition,V@P0,42+43+44,category,Charts & Tables,56.44036145735491,56.44036145735491,0.0
+development,development_partition,V@P0,42+43+44,category,Visual Math,51.83708972056012,51.83708972056012,0.0
+development,development_partition,V@P0,42+43+44,category,Science & General,54.61973755462365,54.61973755462365,0.0
+development,development_partition,V@P0,42+43+44,category,Spatial Reasoning,57.58909785095709,57.58909785095709,0.0
+development,development_partition,V@P0,42+43+44,category,Perception & Counting,51.05730251259725,51.05730251259725,0.0
+development,development_partition,V@P0,42+43+44,category,Puzzles & Logic,41.5781002667076,41.6135612596154,0.0354609929078009
+development,development_partition,V@P0,42+43+44,overall,24-benchmark macro,52.18694822713343,52.192858392618064,0.0059101654846358
+development,development_screen,B,42,benchmark,blink,60.9375,60.9375,0.0
+development,development_screen,B,42,benchmark,chartqapro,44.36837034493284,44.36837034493284,0.0
+development,development_screen,B,42,benchmark,charxivreason,35.9375,35.9375,0.0
+development,development_screen,B,42,benchmark,countbenchqa,74.22680412371135,74.22680412371135,0.0
+development,development_screen,B,42,benchmark,countqa,19.53125,19.53125,0.0
+development,development_screen,B,42,benchmark,cvbench_3d,78.90625,78.90625,0.0
+development,development_screen,B,42,benchmark,embspatial,76.5625,76.5625,0.0
+development,development_screen,B,42,benchmark,erqa,45.1219512195122,45.1219512195122,0.0
+development,development_screen,B,42,benchmark,evochart,62.5,62.5,0.0
+development,development_screen,B,42,benchmark,logicvista,39.325842696629216,39.325842696629216,0.0
+development,development_screen,B,42,benchmark,mathverse,46.875,46.875,0.0
+development,development_screen,B,42,benchmark,mathvision,18.75,18.75,0.0
+development,development_screen,B,42,benchmark,mathvista,63.28125,63.28125,0.0
+development,development_screen,B,42,benchmark,mme_reasoning,29.6875,29.6875,0.0
+development,development_screen,B,42,benchmark,mmmu_pro_vision,26.5625,26.5625,0.0
+development,development_screen,B,42,benchmark,mmstar,63.28125,63.28125,0.0
+development,development_screen,B,42,benchmark,phyx_mini_mc,43.75,43.75,0.0
+development,development_screen,B,42,benchmark,puzzlevqa,43.75,47.65625,3.90625
+development,development_screen,B,42,benchmark,realworldqa,64.84375,64.84375,0.0
+development,development_screen,B,42,benchmark,spatialvizbench_cot,40.625,40.625,0.0
+development,development_screen,B,42,benchmark,tablevqabench,69.727251,69.727251,0.0
+development,development_screen,B,42,benchmark,treebench,35.80246913580247,35.80246913580247,0.0
+development,development_screen,B,42,benchmark,visualpuzzles,25.78125,26.5625,0.78125
+development,development_screen,B,42,benchmark,wemath,41.25,41.25,0.0
+development,development_screen,B,42,category,Charts & Tables,53.13328033623321,53.13328033623321,0.0
+development,development_screen,B,42,category,Visual Math,42.5390625,42.5390625,0.0
+development,development_screen,B,42,category,Science & General,49.609375,49.609375,0.0
+development,development_screen,B,42,category,Spatial Reasoning,60.30392530487805,60.30392530487805,0.0
+development,development_screen,B,42,category,Perception & Counting,47.62450581487846,47.62450581487846,0.0
+development,development_screen,B,42,category,Puzzles & Logic,34.636148174157306,35.808023174157306,1.171875
+development,development_screen,B,42,overall,24-benchmark macro,47.97438285502451,48.16969535502451,0.1953125
+development,development_screen,CT050@P1,42,benchmark,blink,59.375,59.375,0.0
+development,development_screen,CT050@P1,42,benchmark,chartqapro,44.53268736471862,44.53268736471862,0.0
+development,development_screen,CT050@P1,42,benchmark,charxivreason,46.09375,46.09375,0.0
+development,development_screen,CT050@P1,42,benchmark,countbenchqa,75.25773195876289,75.25773195876289,0.0
+development,development_screen,CT050@P1,42,benchmark,countqa,14.84375,14.84375,0.0
+development,development_screen,CT050@P1,42,benchmark,cvbench_3d,76.5625,76.5625,0.0
+development,development_screen,CT050@P1,42,benchmark,embspatial,75.78125,75.78125,0.0
+development,development_screen,CT050@P1,42,benchmark,erqa,45.1219512195122,45.1219512195122,0.0
+development,development_screen,CT050@P1,42,benchmark,evochart,67.96875,67.96875,0.0
+development,development_screen,CT050@P1,42,benchmark,logicvista,38.20224719101124,38.20224719101124,0.0
+development,development_screen,CT050@P1,42,benchmark,mathverse,45.3125,45.3125,0.0
+development,development_screen,CT050@P1,42,benchmark,mathvision,28.125,28.125,0.0
+development,development_screen,CT050@P1,42,benchmark,mathvista,57.03125,57.03125,0.0
+development,development_screen,CT050@P1,42,benchmark,mme_reasoning,21.875,21.875,0.0
+development,development_screen,CT050@P1,42,benchmark,mmmu_pro_vision,34.375,34.375,0.0
+development,development_screen,CT050@P1,42,benchmark,mmstar,64.0625,64.0625,0.0
+development,development_screen,CT050@P1,42,benchmark,phyx_mini_mc,46.09375,46.09375,0.0
+development,development_screen,CT050@P1,42,benchmark,puzzlevqa,50.78125,51.5625,0.78125
+development,development_screen,CT050@P1,42,benchmark,realworldqa,67.1875,67.1875,0.0
+development,development_screen,CT050@P1,42,benchmark,spatialvizbench_cot,37.5,37.5,0.0
+development,development_screen,CT050@P1,42,benchmark,tablevqabench,68.23818,68.23818,0.0
+development,development_screen,CT050@P1,42,benchmark,treebench,37.03703703703704,37.03703703703704,0.0
+development,development_screen,CT050@P1,42,benchmark,visualpuzzles,24.21875,25.78125,1.5625
+development,development_screen,CT050@P1,42,benchmark,wemath,38.75,38.75,0.0
+development,development_screen,CT050@P1,42,category,Charts & Tables,56.70834184117965,56.70834184117965,0.0
+development,development_screen,CT050@P1,42,category,Visual Math,42.3046875,42.3046875,0.0
+development,development_screen,CT050@P1,42,category,Science & General,52.9296875,52.9296875,0.0
+development,development_screen,CT050@P1,42,category,Spatial Reasoning,58.74142530487805,58.74142530487805,0.0
+development,development_screen,CT050@P1,42,category,Perception & Counting,46.62837974894998,46.62837974894998,0.0
+development,development_screen,CT050@P1,42,category,Puzzles & Logic,33.769311797752806,34.355249297752806,0.5859375
+development,development_screen,CT050@P1,42,overall,24-benchmark macro,48.51363894879341,48.61129519879341,0.09765625
+development,development_screen,CV050@P1,42,benchmark,blink,62.5,62.5,0.0
+development,development_screen,CV050@P1,42,benchmark,chartqapro,46.01089015151515,46.01089015151515,0.0
+development,development_screen,CV050@P1,42,benchmark,charxivreason,40.625,40.625,0.0
+development,development_screen,CV050@P1,42,benchmark,countbenchqa,77.31958762886597,77.31958762886597,0.0
+development,development_screen,CV050@P1,42,benchmark,countqa,17.1875,17.1875,0.0
+development,development_screen,CV050@P1,42,benchmark,cvbench_3d,75.0,75.0,0.0
+development,development_screen,CV050@P1,42,benchmark,embspatial,79.6875,79.6875,0.0
+development,development_screen,CV050@P1,42,benchmark,erqa,42.68292682926829,42.68292682926829,0.0
+development,development_screen,CV050@P1,42,benchmark,evochart,64.84375,64.84375,0.0
+development,development_screen,CV050@P1,42,benchmark,logicvista,46.06741573033708,46.06741573033708,0.0
+development,development_screen,CV050@P1,42,benchmark,mathverse,48.4375,48.4375,0.0
+development,development_screen,CV050@P1,42,benchmark,mathvision,25.0,25.0,0.0
+development,development_screen,CV050@P1,42,benchmark,mathvista,66.40625,66.40625,0.0
+development,development_screen,CV050@P1,42,benchmark,mme_reasoning,25.78125,25.78125,0.0
+development,development_screen,CV050@P1,42,benchmark,mmmu_pro_vision,36.71875,36.71875,0.0
+development,development_screen,CV050@P1,42,benchmark,mmstar,62.5,62.5,0.0
+development,development_screen,CV050@P1,42,benchmark,phyx_mini_mc,49.21875,49.21875,0.0
+development,development_screen,CV050@P1,42,benchmark,puzzlevqa,50.78125,53.125,2.34375
+development,development_screen,CV050@P1,42,benchmark,realworldqa,67.96875,67.96875,0.0
+development,development_screen,CV050@P1,42,benchmark,spatialvizbench_cot,36.71875,36.71875,0.0
+development,development_screen,CV050@P1,42,benchmark,tablevqabench,62.042884400000005,63.2040866,1.1612021999999982
+development,development_screen,CV050@P1,42,benchmark,treebench,37.03703703703704,37.03703703703704,0.0
+development,development_screen,CV050@P1,42,benchmark,visualpuzzles,28.125,29.6875,1.5625
+development,development_screen,CV050@P1,42,benchmark,wemath,40.0,40.0,0.0
+development,development_screen,CV050@P1,42,category,Charts & Tables,53.3806311378788,53.67093168787879,0.2903005499999977
+development,development_screen,CV050@P1,42,category,Visual Math,44.9609375,44.9609375,0.0
+development,development_screen,CV050@P1,42,category,Science & General,54.1015625,54.1015625,0.0
+development,development_screen,CV050@P1,42,category,Spatial Reasoning,58.522294207317074,58.522294207317074,0.0
+development,development_screen,CV050@P1,42,category,Perception & Counting,48.51103116647575,48.51103116647575,0.0
+development,development_screen,CV050@P1,42,category,Puzzles & Logic,37.68872893258427,38.66529143258427,0.9765625
+development,development_screen,CV050@P1,42,overall,24-benchmark macro,49.52753090737598,49.73867474904264,0.2111438416666615
+development,development_screen,M050@P1,42,benchmark,blink,62.5,62.5,0.0
+development,development_screen,M050@P1,42,benchmark,chartqapro,48.53008319805195,48.53008319805195,0.0
+development,development_screen,M050@P1,42,benchmark,charxivreason,43.75,43.75,0.0
+development,development_screen,M050@P1,42,benchmark,countbenchqa,76.28865979381443,76.28865979381443,0.0
+development,development_screen,M050@P1,42,benchmark,countqa,19.53125,19.53125,0.0
+development,development_screen,M050@P1,42,benchmark,cvbench_3d,75.0,75.0,0.0
+development,development_screen,M050@P1,42,benchmark,embspatial,79.6875,79.6875,0.0
+development,development_screen,M050@P1,42,benchmark,erqa,43.90243902439025,43.90243902439025,0.0
+development,development_screen,M050@P1,42,benchmark,evochart,70.3125,70.3125,0.0
+development,development_screen,M050@P1,42,benchmark,logicvista,48.31460674157304,48.31460674157304,0.0
+development,development_screen,M050@P1,42,benchmark,mathverse,53.90625,53.90625,0.0
+development,development_screen,M050@P1,42,benchmark,mathvision,26.5625,26.5625,0.0
+development,development_screen,M050@P1,42,benchmark,mathvista,67.1875,67.1875,0.0
+development,development_screen,M050@P1,42,benchmark,mme_reasoning,26.5625,26.5625,0.0
+development,development_screen,M050@P1,42,benchmark,mmmu_pro_vision,32.8125,32.8125,0.0
+development,development_screen,M050@P1,42,benchmark,mmstar,63.28125,63.28125,0.0
+development,development_screen,M050@P1,42,benchmark,phyx_mini_mc,50.0,50.0,0.0
+development,development_screen,M050@P1,42,benchmark,puzzlevqa,46.875,53.90625,7.03125
+development,development_screen,M050@P1,42,benchmark,realworldqa,68.75,68.75,0.0
+development,development_screen,M050@P1,42,benchmark,spatialvizbench_cot,34.375,34.375,0.0
+development,development_screen,M050@P1,42,benchmark,tablevqabench,65.943217,67.432288,1.4890709999999956
+development,development_screen,M050@P1,42,benchmark,treebench,38.27160493827161,38.27160493827161,0.0
+development,development_screen,M050@P1,42,benchmark,visualpuzzles,24.21875,28.125,3.90625
+development,development_screen,M050@P1,42,benchmark,wemath,42.5,42.5,0.0
+development,development_screen,M050@P1,42,category,Charts & Tables,57.13395004951299,57.50621779951299,0.3722677499999989
+development,development_screen,M050@P1,42,category,Visual Math,47.5390625,47.5390625,0.0
+development,development_screen,M050@P1,42,category,Science & General,53.7109375,53.7109375,0.0
+development,development_screen,M050@P1,42,category,Spatial Reasoning,58.24123475609756,58.24123475609756,0.0
+development,development_screen,M050@P1,42,category,Perception & Counting,49.1478786830215,49.1478786830215,0.0
+development,development_screen,M050@P1,42,category,Puzzles & Logic,36.49271418539326,39.22708918539326,2.734375
+development,development_screen,M050@P1,42,overall,24-benchmark macro,50.37762961233756,50.89540340400422,0.5177737916666629
+development,development_screen,T,42,benchmark,blink,59.375,59.375,0.0
+development,development_screen,T,42,benchmark,chartqapro,49.422257430069926,49.422257430069926,0.0
+development,development_screen,T,42,benchmark,charxivreason,49.21875,49.21875,0.0
+development,development_screen,T,42,benchmark,countbenchqa,78.35051546391753,78.35051546391753,0.0
+development,development_screen,T,42,benchmark,countqa,17.96875,17.96875,0.0
+development,development_screen,T,42,benchmark,cvbench_3d,79.6875,79.6875,0.0
+development,development_screen,T,42,benchmark,embspatial,75.78125,75.78125,0.0
+development,development_screen,T,42,benchmark,erqa,42.68292682926829,42.68292682926829,0.0
+development,development_screen,T,42,benchmark,evochart,70.3125,70.3125,0.0
+development,development_screen,T,42,benchmark,logicvista,47.19101123595506,47.19101123595506,0.0
+development,development_screen,T,42,benchmark,mathverse,46.875,46.875,0.0
+development,development_screen,T,42,benchmark,mathvision,27.34375,27.34375,0.0
+development,development_screen,T,42,benchmark,mathvista,65.625,65.625,0.0
+development,development_screen,T,42,benchmark,mme_reasoning,21.09375,21.09375,0.0
+development,development_screen,T,42,benchmark,mmmu_pro_vision,36.71875,36.71875,0.0
+development,development_screen,T,42,benchmark,mmstar,63.28125,63.28125,0.0
+development,development_screen,T,42,benchmark,phyx_mini_mc,50.0,50.0,0.0
+development,development_screen,T,42,benchmark,puzzlevqa,54.6875,57.8125,3.125
+development,development_screen,T,42,benchmark,realworldqa,69.53125,69.53125,0.0
+development,development_screen,T,42,benchmark,spatialvizbench_cot,43.75,43.75,0.0
+development,development_screen,T,42,benchmark,tablevqabench,71.3885722,71.3885722,0.0
+development,development_screen,T,42,benchmark,treebench,40.74074074074074,40.74074074074074,0.0
+development,development_screen,T,42,benchmark,visualpuzzles,28.90625,29.6875,0.78125
+development,development_screen,T,42,benchmark,wemath,43.75,43.75,0.0
+development,development_screen,T,42,category,Charts & Tables,60.08551990751748,60.08551990751748,0.0
+development,development_screen,T,42,category,Visual Math,45.8984375,45.8984375,0.0
+development,development_screen,T,42,category,Science & General,54.8828125,54.8828125,0.0
+development,development_screen,T,42,category,Spatial Reasoning,60.475419207317074,60.475419207317074,0.0
+development,development_screen,T,42,category,Perception & Counting,49.108751551164566,49.108751551164566,0.0
+development,development_screen,T,42,category,Puzzles & Logic,37.96962780898876,38.94619030898876,0.9765625
+development,development_screen,T,42,overall,24-benchmark macro,51.40342807916465,51.56618849583131,0.1627604166666643
+development,development_screen,V@P0,42,benchmark,blink,71.875,71.875,0.0
+development,development_screen,V@P0,42,benchmark,chartqapro,42.46319002178377,42.46319002178377,0.0
+development,development_screen,V@P0,42,benchmark,charxivreason,50.78125,50.78125,0.0
+development,development_screen,V@P0,42,benchmark,countbenchqa,81.44329896907216,81.44329896907216,0.0
+development,development_screen,V@P0,42,benchmark,countqa,21.875,21.875,0.0
+development,development_screen,V@P0,42,benchmark,cvbench_3d,78.125,78.125,0.0
+development,development_screen,V@P0,42,benchmark,embspatial,79.6875,79.6875,0.0
+development,development_screen,V@P0,42,benchmark,erqa,43.90243902439025,43.90243902439025,0.0
+development,development_screen,V@P0,42,benchmark,evochart,63.28125,63.28125,0.0
+development,development_screen,V@P0,42,benchmark,logicvista,50.561797752808985,50.561797752808985,0.0
+development,development_screen,V@P0,42,benchmark,mathverse,52.34375,52.34375,0.0
+development,development_screen,V@P0,42,benchmark,mathvision,21.875,21.875,0.0
+development,development_screen,V@P0,42,benchmark,mathvista,69.53125,69.53125,0.0
+development,development_screen,V@P0,42,benchmark,mme_reasoning,29.6875,29.6875,0.0
+development,development_screen,V@P0,42,benchmark,mmmu_pro_vision,35.9375,35.9375,0.0
+development,development_screen,V@P0,42,benchmark,mmstar,64.0625,64.0625,0.0
+development,development_screen,V@P0,42,benchmark,phyx_mini_mc,52.34375,52.34375,0.0
+development,development_screen,V@P0,42,benchmark,puzzlevqa,52.34375,52.34375,0.0
+development,development_screen,V@P0,42,benchmark,realworldqa,73.4375,73.4375,0.0
+development,development_screen,V@P0,42,benchmark,spatialvizbench_cot,35.9375,35.9375,0.0
+development,development_screen,V@P0,42,benchmark,tablevqabench,73.9138752,73.9138752,0.0
+development,development_screen,V@P0,42,benchmark,treebench,43.20987654320987,43.20987654320987,0.0
+development,development_screen,V@P0,42,benchmark,visualpuzzles,33.59375,33.59375,0.0
+development,development_screen,V@P0,42,benchmark,wemath,52.5,52.5,0.0
+development,development_screen,V@P0,42,category,Charts & Tables,57.60989130544594,57.60989130544594,0.0
+development,development_screen,V@P0,42,category,Visual Math,49.0625,49.0625,0.0
+development,development_screen,V@P0,42,category,Science & General,56.4453125,56.4453125,0.0
+development,development_screen,V@P0,42,category,Spatial Reasoning,59.41310975609756,59.41310975609756,0.0
+development,development_screen,V@P0,42,category,Perception & Counting,54.600793878070505,54.600793878070505,0.0
+development,development_screen,V@P0,42,category,Puzzles & Logic,41.546699438202246,41.546699438202246,0.0
+development,development_screen,V@P0,42,overall,24-benchmark macro,53.11305114630272,53.11305114630272,0.0
+development,development_screen,V@P1,42,benchmark,blink,60.9375,60.9375,0.0
+development,development_screen,V@P1,42,benchmark,chartqapro,40.84857200091575,40.84857200091575,0.0
+development,development_screen,V@P1,42,benchmark,charxivreason,41.40625,41.40625,0.0
+development,development_screen,V@P1,42,benchmark,countbenchqa,78.35051546391753,78.35051546391753,0.0
+development,development_screen,V@P1,42,benchmark,countqa,26.5625,26.5625,0.0
+development,development_screen,V@P1,42,benchmark,cvbench_3d,77.34375,77.34375,0.0
+development,development_screen,V@P1,42,benchmark,embspatial,79.6875,79.6875,0.0
+development,development_screen,V@P1,42,benchmark,erqa,40.24390243902439,40.24390243902439,0.0
+development,development_screen,V@P1,42,benchmark,evochart,66.40625,66.40625,0.0
+development,development_screen,V@P1,42,benchmark,logicvista,47.19101123595506,47.19101123595506,0.0
+development,development_screen,V@P1,42,benchmark,mathverse,53.125,53.125,0.0
+development,development_screen,V@P1,42,benchmark,mathvision,27.34375,27.34375,0.0
+development,development_screen,V@P1,42,benchmark,mathvista,69.53125,69.53125,0.0
+development,development_screen,V@P1,42,benchmark,mme_reasoning,27.34375,27.34375,0.0
+development,development_screen,V@P1,42,benchmark,mmmu_pro_vision,38.28125,38.28125,0.0
+development,development_screen,V@P1,42,benchmark,mmstar,65.625,65.625,0.0
+development,development_screen,V@P1,42,benchmark,phyx_mini_mc,45.3125,45.3125,0.0
+development,development_screen,V@P1,42,benchmark,puzzlevqa,15.625,54.6875,39.0625
+development,development_screen,V@P1,42,benchmark,realworldqa,69.53125,69.53125,0.0
+development,development_screen,V@P1,42,benchmark,spatialvizbench_cot,35.9375,35.9375,0.0
+development,development_screen,V@P1,42,benchmark,tablevqabench,59.003326400000006,61.148135,2.144808599999997
+development,development_screen,V@P1,42,benchmark,treebench,38.27160493827161,38.27160493827161,0.0
+development,development_screen,V@P1,42,benchmark,visualpuzzles,18.75,28.125,9.375
+development,development_screen,V@P1,42,benchmark,wemath,40.0,40.0,0.0
+development,development_screen,V@P1,42,category,Charts & Tables,51.91609960022894,52.45230175022894,0.5362021500000012
+development,development_screen,V@P1,42,category,Visual Math,47.5,47.5,0.0
+development,development_screen,V@P1,42,category,Science & General,54.6875,54.6875,0.0
+development,development_screen,V@P1,42,category,Spatial Reasoning,58.3031631097561,58.3031631097561,0.0
+development,development_screen,V@P1,42,category,Perception & Counting,51.03053010054728,51.03053010054728,0.0
+development,development_screen,V@P1,42,category,Puzzles & Logic,27.227440308988765,39.33681530898876,12.109374999999996
+development,development_screen,V@P1,42,overall,24-benchmark macro,48.444122186586846,50.55171837825352,2.107596191666673
+development,development_screen_P2,B@P2,42,benchmark,blink,58.59375,58.59375,0.0
+development,development_screen_P2,B@P2,42,benchmark,chartqapro,43.87175324675325,43.87175324675325,0.0
+development,development_screen_P2,B@P2,42,benchmark,charxivreason,32.03125,32.03125,0.0
+development,development_screen_P2,B@P2,42,benchmark,countbenchqa,76.28865979381443,76.28865979381443,0.0
+development,development_screen_P2,B@P2,42,benchmark,countqa,14.84375,14.84375,0.0
+development,development_screen_P2,B@P2,42,benchmark,cvbench_3d,74.21875,74.21875,0.0
+development,development_screen_P2,B@P2,42,benchmark,embspatial,53.90625,53.90625,0.0
+development,development_screen_P2,B@P2,42,benchmark,erqa,73.17073170731707,73.17073170731707,0.0
+development,development_screen_P2,B@P2,42,benchmark,evochart,64.84375,64.84375,0.0
+development,development_screen_P2,B@P2,42,benchmark,logicvista,46.06741573033708,46.06741573033708,0.0
+development,development_screen_P2,B@P2,42,benchmark,mathverse,30.46875,30.46875,0.0
+development,development_screen_P2,B@P2,42,benchmark,mathvision,17.1875,17.1875,0.0
+development,development_screen_P2,B@P2,42,benchmark,mathvista,59.375,59.375,0.0
+development,development_screen_P2,B@P2,42,benchmark,mme_reasoning,17.1875,17.1875,0.0
+development,development_screen_P2,B@P2,42,benchmark,mmmu_pro_vision,30.46875,30.46875,0.0
+development,development_screen_P2,B@P2,42,benchmark,mmstar,59.375,59.375,0.0
+development,development_screen_P2,B@P2,42,benchmark,phyx_mini_mc,34.375,34.375,0.0
+development,development_screen_P2,B@P2,42,benchmark,puzzlevqa,46.875,46.875,0.0
+development,development_screen_P2,B@P2,42,benchmark,realworldqa,60.15625,60.15625,0.0
+development,development_screen_P2,B@P2,42,benchmark,spatialvizbench_cot,28.90625,28.90625,0.0
+development,development_screen_P2,B@P2,42,benchmark,tablevqabench,17.8332146,60.35780480000001,42.524590200000006
+development,development_screen_P2,B@P2,42,benchmark,treebench,41.97530864197531,41.97530864197531,0.0
+development,development_screen_P2,B@P2,42,benchmark,visualpuzzles,17.96875,17.96875,0.0
+development,development_screen_P2,B@P2,42,benchmark,wemath,25.0,25.0,0.0
+development,development_screen_P2,B@P2,42,category,Charts & Tables,39.64499196168831,50.27613951168832,10.63114755
+development,development_screen_P2,B@P2,42,category,Visual Math,33.0078125,33.0078125,0.0
+development,development_screen_P2,B@P2,42,category,Science & General,46.09375,46.09375,0.0
+development,development_screen_P2,B@P2,42,category,Spatial Reasoning,57.55049542682927,57.55049542682927,0.0
+development,development_screen_P2,B@P2,42,category,Perception & Counting,47.92536710894744,47.92536710894744,0.0
+development,development_screen_P2,B@P2,42,category,Puzzles & Logic,32.02466643258427,32.02466643258427,0.0
+development,development_screen_P2,B@P2,42,overall,24-benchmark macro,42.70784723834155,44.47970516334155,1.771857924999999
+development,development_screen_P2,CT050@P2,42,benchmark,blink,57.03125,57.03125,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,chartqapro,49.00695008116883,49.00695008116883,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,charxivreason,48.4375,48.4375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,countbenchqa,76.28865979381443,76.28865979381443,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,countqa,17.96875,17.96875,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,cvbench_3d,77.34375,77.34375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,embspatial,73.4375,73.4375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,erqa,64.63414634146342,64.63414634146342,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,evochart,60.9375,60.9375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,logicvista,38.20224719101124,38.20224719101124,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,mathverse,43.75,43.75,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,mathvision,23.4375,23.4375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,mathvista,56.25,56.25,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,mme_reasoning,22.65625,22.65625,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,mmmu_pro_vision,34.375,34.375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,mmstar,64.84375,64.84375,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,phyx_mini_mc,44.53125,44.53125,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,puzzlevqa,47.65625,47.65625,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,realworldqa,68.75,68.75,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,spatialvizbench_cot,30.46875,30.46875,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,tablevqabench,19.572345,66.73081479999999,47.15846979999999
+development,development_screen_P2,CT050@P2,42,benchmark,treebench,35.80246913580247,35.80246913580247,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,visualpuzzles,26.5625,26.5625,0.0
+development,development_screen_P2,CT050@P2,42,benchmark,wemath,41.25,41.25,0.0
+development,development_screen_P2,CT050@P2,42,category,Charts & Tables,44.488573770292206,56.27819122029221,11.78961745
+development,development_screen_P2,CT050@P2,42,category,Visual Math,41.171875,41.171875,0.0
+development,development_screen_P2,CT050@P2,42,category,Science & General,53.125,53.125,0.0
+development,development_screen_P2,CT050@P2,42,category,Spatial Reasoning,61.47103658536585,61.47103658536585,0.0
+development,development_screen_P2,CT050@P2,42,category,Perception & Counting,46.77278223240423,46.77278223240423,0.0
+development,development_screen_P2,CT050@P2,42,category,Puzzles & Logic,33.769311797752806,33.769311797752806,0.0
+development,development_screen_P2,CT050@P2,42,overall,24-benchmark macro,46.79976323096918,48.76469947263585,1.9649362416666705
+development,development_screen_P2,CV050@P2,42,benchmark,blink,60.9375,60.9375,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,chartqapro,52.63206845238096,52.63206845238096,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,charxivreason,45.3125,45.3125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,countbenchqa,77.31958762886597,77.31958762886597,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,countqa,19.53125,19.53125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,cvbench_3d,76.5625,76.5625,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,embspatial,76.5625,76.5625,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,erqa,45.1219512195122,45.1219512195122,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,evochart,70.3125,70.3125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,logicvista,49.438202247191015,49.438202247191015,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,mathverse,53.125,53.125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,mathvision,27.34375,27.34375,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,mathvista,64.84375,64.84375,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,mme_reasoning,28.90625,28.90625,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,mmmu_pro_vision,38.28125,38.28125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,mmstar,62.5,62.5,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,phyx_mini_mc,57.03125,57.03125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,puzzlevqa,57.03125,57.03125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,realworldqa,75.78125,75.78125,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,spatialvizbench_cot,35.9375,35.9375,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,tablevqabench,73.8974816,75.05868380000001,1.1612022000000053
+development,development_screen_P2,CV050@P2,42,benchmark,treebench,45.67901234567901,45.67901234567901,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,visualpuzzles,33.59375,33.59375,0.0
+development,development_screen_P2,CV050@P2,42,benchmark,wemath,43.75,43.75,0.0
+development,development_screen_P2,CV050@P2,42,category,Charts & Tables,60.53863751309524,60.82893806309525,0.2903005500000049
+development,development_screen_P2,CV050@P2,42,category,Visual Math,47.265625,47.265625,0.0
+development,development_screen_P2,CV050@P2,42,category,Science & General,58.3984375,58.3984375,0.0
+development,development_screen_P2,CV050@P2,42,category,Spatial Reasoning,58.54611280487805,58.54611280487805,0.0
+development,development_screen_P2,CV050@P2,42,category,Perception & Counting,50.86683749363625,50.86683749363625,0.0
+development,development_screen_P2,CV050@P2,42,category,Puzzles & Logic,42.24236306179776,42.24236306179776,0.0
+development,development_screen_P2,CV050@P2,42,overall,24-benchmark macro,52.97633556223455,53.02471898723454,0.0483834249999972
+development,development_screen_P2,M050@P2,42,benchmark,blink,64.0625,64.0625,0.0
+development,development_screen_P2,M050@P2,42,benchmark,chartqapro,48.15445188492063,48.15445188492063,0.0
+development,development_screen_P2,M050@P2,42,benchmark,charxivreason,50.0,50.0,0.0
+development,development_screen_P2,M050@P2,42,benchmark,countbenchqa,79.38144329896907,79.38144329896907,0.0
+development,development_screen_P2,M050@P2,42,benchmark,countqa,24.21875,24.21875,0.0
+development,development_screen_P2,M050@P2,42,benchmark,cvbench_3d,81.25,81.25,0.0
+development,development_screen_P2,M050@P2,42,benchmark,embspatial,79.6875,79.6875,0.0
+development,development_screen_P2,M050@P2,42,benchmark,erqa,48.78048780487805,48.78048780487805,0.0
+development,development_screen_P2,M050@P2,42,benchmark,evochart,72.65625,72.65625,0.0
+development,development_screen_P2,M050@P2,42,benchmark,logicvista,47.19101123595506,47.19101123595506,0.0
+development,development_screen_P2,M050@P2,42,benchmark,mathverse,46.09375,46.09375,0.0
+development,development_screen_P2,M050@P2,42,benchmark,mathvision,26.5625,26.5625,0.0
+development,development_screen_P2,M050@P2,42,benchmark,mathvista,66.40625,66.40625,0.0
+development,development_screen_P2,M050@P2,42,benchmark,mme_reasoning,25.0,25.0,0.0
+development,development_screen_P2,M050@P2,42,benchmark,mmmu_pro_vision,36.71875,36.71875,0.0
+development,development_screen_P2,M050@P2,42,benchmark,mmstar,61.71875,61.71875,0.0
+development,development_screen_P2,M050@P2,42,benchmark,phyx_mini_mc,43.75,43.75,0.0
+development,development_screen_P2,M050@P2,42,benchmark,puzzlevqa,59.375,60.15625,0.78125
+development,development_screen_P2,M050@P2,42,benchmark,realworldqa,75.0,75.0,0.0
+development,development_screen_P2,M050@P2,42,benchmark,spatialvizbench_cot,33.59375,33.59375,0.0
+development,development_screen_P2,M050@P2,42,benchmark,tablevqabench,68.27797580000001,75.0949158,6.816939999999988
+development,development_screen_P2,M050@P2,42,benchmark,treebench,40.74074074074074,40.74074074074074,0.0
+development,development_screen_P2,M050@P2,42,benchmark,visualpuzzles,25.0,25.0,0.0
+development,development_screen_P2,M050@P2,42,benchmark,wemath,52.5,52.5,0.0
+development,development_screen_P2,M050@P2,42,category,Charts & Tables,59.77216942123016,61.47640442123016,1.704234999999997
+development,development_screen_P2,M050@P2,42,category,Visual Math,47.890625,47.890625,0.0
+development,development_screen_P2,M050@P2,42,category,Science & General,54.296875,54.296875,0.0
+development,development_screen_P2,M050@P2,42,category,Spatial Reasoning,60.82793445121951,60.82793445121951,0.0
+development,development_screen_P2,M050@P2,42,category,Perception & Counting,52.100858509927455,52.100858509927455,0.0
+development,development_screen_P2,M050@P2,42,category,Puzzles & Logic,39.14150280898876,39.33681530898876,0.1953125
+development,development_screen_P2,M050@P2,42,overall,24-benchmark macro,52.33832753189432,52.65491878189431,0.3165912499999876
+development,development_screen_P2,T@P2,42,benchmark,blink,60.15625,60.15625,0.0
+development,development_screen_P2,T@P2,42,benchmark,chartqapro,44.77769422162804,44.77769422162804,0.0
+development,development_screen_P2,T@P2,42,benchmark,charxivreason,45.3125,45.3125,0.0
+development,development_screen_P2,T@P2,42,benchmark,countbenchqa,76.28865979381443,76.28865979381443,0.0
+development,development_screen_P2,T@P2,42,benchmark,countqa,18.75,18.75,0.0
+development,development_screen_P2,T@P2,42,benchmark,cvbench_3d,77.34375,77.34375,0.0
+development,development_screen_P2,T@P2,42,benchmark,embspatial,72.65625,72.65625,0.0
+development,development_screen_P2,T@P2,42,benchmark,erqa,56.09756097560975,56.09756097560975,0.0
+development,development_screen_P2,T@P2,42,benchmark,evochart,65.625,65.625,0.0
+development,development_screen_P2,T@P2,42,benchmark,logicvista,47.19101123595506,47.19101123595506,0.0
+development,development_screen_P2,T@P2,42,benchmark,mathverse,41.40625,41.40625,0.0
+development,development_screen_P2,T@P2,42,benchmark,mathvision,17.1875,17.1875,0.0
+development,development_screen_P2,T@P2,42,benchmark,mathvista,61.71875,61.71875,0.0
+development,development_screen_P2,T@P2,42,benchmark,mme_reasoning,28.125,28.125,0.0
+development,development_screen_P2,T@P2,42,benchmark,mmmu_pro_vision,33.59375,33.59375,0.0
+development,development_screen_P2,T@P2,42,benchmark,mmstar,60.15625,60.15625,0.0
+development,development_screen_P2,T@P2,42,benchmark,phyx_mini_mc,46.09375,46.09375,0.0
+development,development_screen_P2,T@P2,42,benchmark,puzzlevqa,52.34375,52.34375,0.0
+development,development_screen_P2,T@P2,42,benchmark,realworldqa,71.875,71.875,0.0
+development,development_screen_P2,T@P2,42,benchmark,spatialvizbench_cot,31.25,31.25,0.0
+development,development_screen_P2,T@P2,42,benchmark,tablevqabench,19.385839800000003,63.7109766,44.3251368
+development,development_screen_P2,T@P2,42,benchmark,treebench,41.97530864197531,41.97530864197531,0.0
+development,development_screen_P2,T@P2,42,benchmark,visualpuzzles,25.0,25.0,0.0
+development,development_screen_P2,T@P2,42,benchmark,wemath,38.75,38.75,0.0
+development,development_screen_P2,T@P2,42,category,Charts & Tables,43.77525850540701,54.85654270540701,11.0812842
+development,development_screen_P2,T@P2,42,category,Visual Math,39.765625,39.765625,0.0
+development,development_screen_P2,T@P2,42,category,Science & General,52.9296875,52.9296875,0.0
+development,development_screen_P2,T@P2,42,category,Spatial Reasoning,59.33689024390244,59.33689024390244,0.0
+development,development_screen_P2,T@P2,42,category,Perception & Counting,49.29255460894744,49.29255460894744,0.0
+development,development_screen_P2,T@P2,42,category,Puzzles & Logic,38.16494030898876,38.16494030898876,0.0
+development,development_screen_P2,T@P2,42,overall,24-benchmark macro,47.21082602787428,49.05770672787427,1.8468806999999927
+development,development_screen_P2,V@P0,42,benchmark,blink,71.875,71.875,0.0
+development,development_screen_P2,V@P0,42,benchmark,chartqapro,42.46319002178377,42.46319002178377,0.0
+development,development_screen_P2,V@P0,42,benchmark,charxivreason,50.78125,50.78125,0.0
+development,development_screen_P2,V@P0,42,benchmark,countbenchqa,81.44329896907216,81.44329896907216,0.0
+development,development_screen_P2,V@P0,42,benchmark,countqa,21.875,21.875,0.0
+development,development_screen_P2,V@P0,42,benchmark,cvbench_3d,78.125,78.125,0.0
+development,development_screen_P2,V@P0,42,benchmark,embspatial,79.6875,79.6875,0.0
+development,development_screen_P2,V@P0,42,benchmark,erqa,43.90243902439025,43.90243902439025,0.0
+development,development_screen_P2,V@P0,42,benchmark,evochart,63.28125,63.28125,0.0
+development,development_screen_P2,V@P0,42,benchmark,logicvista,50.561797752808985,50.561797752808985,0.0
+development,development_screen_P2,V@P0,42,benchmark,mathverse,52.34375,52.34375,0.0
+development,development_screen_P2,V@P0,42,benchmark,mathvision,21.875,21.875,0.0
+development,development_screen_P2,V@P0,42,benchmark,mathvista,69.53125,69.53125,0.0
+development,development_screen_P2,V@P0,42,benchmark,mme_reasoning,29.6875,29.6875,0.0
+development,development_screen_P2,V@P0,42,benchmark,mmmu_pro_vision,35.9375,35.9375,0.0
+development,development_screen_P2,V@P0,42,benchmark,mmstar,64.0625,64.0625,0.0
+development,development_screen_P2,V@P0,42,benchmark,phyx_mini_mc,52.34375,52.34375,0.0
+development,development_screen_P2,V@P0,42,benchmark,puzzlevqa,52.34375,52.34375,0.0
+development,development_screen_P2,V@P0,42,benchmark,realworldqa,73.4375,73.4375,0.0
+development,development_screen_P2,V@P0,42,benchmark,spatialvizbench_cot,35.9375,35.9375,0.0
+development,development_screen_P2,V@P0,42,benchmark,tablevqabench,73.9138752,73.9138752,0.0
+development,development_screen_P2,V@P0,42,benchmark,treebench,43.20987654320987,43.20987654320987,0.0
+development,development_screen_P2,V@P0,42,benchmark,visualpuzzles,33.59375,33.59375,0.0
+development,development_screen_P2,V@P0,42,benchmark,wemath,52.5,52.5,0.0
+development,development_screen_P2,V@P0,42,category,Charts & Tables,57.60989130544594,57.60989130544594,0.0
+development,development_screen_P2,V@P0,42,category,Visual Math,49.0625,49.0625,0.0
+development,development_screen_P2,V@P0,42,category,Science & General,56.4453125,56.4453125,0.0
+development,development_screen_P2,V@P0,42,category,Spatial Reasoning,59.41310975609756,59.41310975609756,0.0
+development,development_screen_P2,V@P0,42,category,Perception & Counting,54.600793878070505,54.600793878070505,0.0
+development,development_screen_P2,V@P0,42,category,Puzzles & Logic,41.546699438202246,41.546699438202246,0.0
+development,development_screen_P2,V@P0,42,overall,24-benchmark macro,53.11305114630272,53.11305114630272,0.0
+confirmation,confirmation,B,42+43+44,benchmark,blink,52.947622178391406,52.947622178391406,0.0
+confirmation,confirmation,B,42+43+44,benchmark,chartqapro,45.701399283931,45.701399283931,0.0
+confirmation,confirmation,B,42+43+44,benchmark,charxivreason,39.5,39.5,0.0
+confirmation,confirmation,B,42+43+44,benchmark,countbenchqa,83.67521367521368,83.67521367521368,0.0
+confirmation,confirmation,B,42+43+44,benchmark,countqa,20.283920283920285,20.283920283920285,0.0
+confirmation,confirmation,B,42+43+44,benchmark,cvbench_3d,76.5625,76.5625,0.0
+confirmation,confirmation,B,42+43+44,benchmark,embspatial,69.15064102564104,69.15064102564104,0.0
+confirmation,confirmation,B,42+43+44,benchmark,erqa,38.9937106918239,38.9937106918239,0.0
+confirmation,confirmation,B,42+43+44,benchmark,evochart,56.89022355689023,56.89022355689023,0.0
+confirmation,confirmation,B,42+43+44,benchmark,logicvista,43.57541899441341,43.57541899441341,0.0
+confirmation,confirmation,B,42+43+44,benchmark,mathverse,42.80423280423281,42.80423280423281,0.0
+confirmation,confirmation,B,42+43+44,benchmark,mathvision,24.23245614035088,24.23245614035088,0.0
+confirmation,confirmation,B,42+43+44,benchmark,mathvista,69.33333333333333,69.33333333333333,0.0
+confirmation,confirmation,B,42+43+44,benchmark,mme_reasoning,25.925925925925924,25.925925925925924,0.0
+confirmation,confirmation,B,42+43+44,benchmark,mmmu_pro_vision,35.88631984585742,35.88631984585742,0.0
+confirmation,confirmation,B,42+43+44,benchmark,mmstar,62.77777777777778,62.77777777777778,0.0
+confirmation,confirmation,B,42+43+44,benchmark,phyx_mini_mc,40.41666666666666,40.41666666666666,0.0
+confirmation,confirmation,B,42+43+44,benchmark,puzzlevqa,43.90804597701149,46.75026123301985,2.842215256008359
+confirmation,confirmation,B,42+43+44,benchmark,realworldqa,66.12200435729847,66.12200435729847,0.0
+confirmation,confirmation,B,42+43+44,benchmark,spatialvizbench_cot,35.0635593220339,35.0635593220339,0.0
+confirmation,confirmation,B,42+43+44,benchmark,tablevqabench,74.99163979999999,75.0690974,0.0774576000000166
+confirmation,confirmation,B,42+43+44,benchmark,treebench,38.2716049382716,38.2716049382716,0.0
+confirmation,confirmation,B,42+43+44,benchmark,visualpuzzles,32.118613790639515,33.547695605573416,1.4290818149339015
+confirmation,confirmation,B,42+43+44,benchmark,wemath,35.32695374800638,35.32695374800638,0.0
+confirmation,confirmation,B,42+43+44,category,Charts & Tables,54.27081566020531,54.29018006020531,0.0193644000000006
+confirmation,confirmation,B,42+43+44,category,Visual Math,42.924244006480855,42.924244006480855,0.0
+confirmation,confirmation,B,42+43+44,category,Science & General,51.30069216190008,51.30069216190008,0.0
+confirmation,confirmation,B,42+43+44,category,Spatial Reasoning,54.94260275987471,54.94260275987471,0.0
+confirmation,confirmation,B,42+43+44,category,Perception & Counting,48.79459026894924,48.79459026894924,0.0
+confirmation,confirmation,B,42+43+44,category,Puzzles & Logic,36.38200117199759,37.44982543973315,1.0678242677355598
+confirmation,confirmation,B,42+43+44,overall,24-benchmark macro,48.10249100490129,48.283689116190565,0.1811981112892766
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,blink,54.7008547008547,54.7008547008547,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,chartqapro,48.15328520047202,48.15328520047202,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,charxivreason,43.75,43.75,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,countbenchqa,85.47008547008546,85.47008547008546,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,countqa,22.93202293202293,22.93202293202293,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,cvbench_3d,77.9513888888889,77.9513888888889,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,embspatial,69.97481684981685,69.97481684981685,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,erqa,39.93710691823899,39.93710691823899,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,evochart,61.62829496162829,61.62829496162829,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,logicvista,47.57914338919926,47.57914338919926,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,mathverse,42.010582010582006,42.010582010582006,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,mathvision,26.57620614035088,26.57620614035088,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,mathvista,71.54166666666667,71.54166666666667,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,mme_reasoning,27.336860670194003,27.336860670194003,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,mmmu_pro_vision,37.98169556840077,37.98169556840077,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,mmstar,65.66666666666667,65.66666666666667,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,phyx_mini_mc,47.875,47.875,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,puzzlevqa,47.460815047021946,49.195402298850574,1.7345872518286285
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,realworldqa,67.48366013071895,67.48366013071895,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,spatialvizbench_cot,36.15819209039548,36.15819209039548,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,tablevqabench,75.75177066666667,75.77366453333333,0.0218938666666588
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,treebench,39.40329218106996,39.40329218106996,0.0
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,visualpuzzles,32.90460878885316,33.440514469453376,0.5359056806002158
+confirmation,confirmation,CT050@P1,42+43+44,benchmark,wemath,41.26794258373206,41.26794258373206,0.0
+confirmation,confirmation,CT050@P1,42+43+44,category,Charts & Tables,57.32083770719174,57.326311173858414,0.0054734666666718
+confirmation,confirmation,CT050@P1,42+43+44,category,Visual Math,45.34909935033291,45.34909935033291,0.0
+confirmation,confirmation,CT050@P1,42+43+44,category,Science & General,54.7517555914466,54.7517555914466,0.0
+confirmation,confirmation,CT050@P1,42+43+44,category,Spatial Reasoning,56.00537618683506,56.00537618683506,0.0
+confirmation,confirmation,CT050@P1,42+43+44,category,Perception & Counting,50.62656382100826,50.62656382100826,0.0
+confirmation,confirmation,CT050@P1,42+43+44,category,Puzzles & Logic,38.82035697381709,39.387980206924304,0.5676232331072129
+confirmation,confirmation,CT050@P1,42+43+44,overall,24-benchmark macro,50.478998271771935,50.57451438840093,0.0955161166289926
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,blink,55.64321718167872,55.64321718167872,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,chartqapro,47.4347958266934,47.4347958266934,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,charxivreason,45.0,45.0,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,countbenchqa,87.52136752136751,87.52136752136751,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,countqa,24.07862407862408,24.07862407862408,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,cvbench_3d,80.7638888888889,80.7638888888889,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,embspatial,71.35989010989012,71.35989010989012,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,erqa,40.25157232704402,40.25157232704402,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,evochart,63.8304971638305,63.8304971638305,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,logicvista,49.72067039106145,49.72067039106145,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,mathverse,43.12169312169312,43.12169312169312,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,mathvision,27.70010964912281,27.70010964912281,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,mathvista,75.58333333333333,75.58333333333333,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,mme_reasoning,29.241622574955908,29.241622574955908,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,mmmu_pro_vision,39.08959537572255,39.08959537572255,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,mmstar,66.38888888888889,66.38888888888889,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,phyx_mini_mc,44.958333333333336,44.958333333333336,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,puzzlevqa,45.85161964472309,51.55694879832811,5.705329153605014
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,realworldqa,67.97385620915033,67.97385620915033,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,spatialvizbench_cot,34.74576271186441,34.74576271186441,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,tablevqabench,71.28826226666666,72.39788066666667,1.1096184000000022
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,treebench,38.2716049382716,38.2716049382716,0.0
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,visualpuzzles,31.86852447302608,36.04858878170776,4.180064308681676
+confirmation,confirmation,CV050@P1,42+43+44,benchmark,wemath,43.7799043062201,43.7799043062201,0.0
+confirmation,confirmation,CV050@P1,42+43+44,category,Charts & Tables,56.88838881429764,57.16579341429764,0.277404599999997
+confirmation,confirmation,CV050@P1,42+43+44,category,Visual Math,47.546260102592335,47.546260102592335,0.0
+confirmation,confirmation,CV050@P1,42+43+44,category,Science & General,54.60266845177377,54.60266845177377,0.0
+confirmation,confirmation,CV050@P1,42+43+44,category,Spatial Reasoning,56.78027850942186,56.78027850942186,0.0
+confirmation,confirmation,CV050@P1,42+43+44,category,Perception & Counting,51.37870342998547,51.37870342998547,0.0
+confirmation,confirmation,CV050@P1,42+43+44,category,Puzzles & Logic,39.17060927094163,41.6419576365133,2.4713483655716715
+confirmation,confirmation,CV050@P1,42+43+44,overall,24-benchmark macro,51.061151429835455,51.5192769240974,0.4581254942619424
+confirmation,confirmation,M050@P1,42+43+44,benchmark,blink,58.01008108700416,58.01008108700416,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,chartqapro,49.98819222897612,49.98819222897612,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,charxivreason,47.54166666666666,47.54166666666666,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,countbenchqa,87.35042735042735,87.35042735042735,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,countqa,24.18782418782419,24.18782418782419,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,cvbench_3d,82.29166666666667,82.29166666666667,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,embspatial,71.84065934065934,71.84065934065934,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,erqa,40.46121593291405,40.46121593291405,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,evochart,65.6322989656323,65.6322989656323,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,logicvista,50.65176908752327,50.65176908752327,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,mathverse,44.44444444444445,44.44444444444445,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,mathvision,28.16611842105263,28.16611842105263,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,mathvista,77.45833333333333,77.45833333333333,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,mme_reasoning,29.77072310405644,29.77072310405644,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,mmmu_pro_vision,41.04046242774567,41.04046242774567,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,mmstar,68.11111111111111,68.11111111111111,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,phyx_mini_mc,48.5,48.5,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,puzzlevqa,45.1201671891327,50.90909090909091,5.7889237199582055
+confirmation,confirmation,M050@P1,42+43+44,benchmark,realworldqa,70.09803921568628,70.09803921568628,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,spatialvizbench_cot,37.5,37.5,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,tablevqabench,70.73513559999999,73.11343419999999,2.3782985999999937
+confirmation,confirmation,M050@P1,42+43+44,benchmark,treebench,38.1687242798354,38.1687242798354,0.0
+confirmation,confirmation,M050@P1,42+43+44,benchmark,visualpuzzles,33.22615219721329,36.906037870668094,3.679885673454805
+confirmation,confirmation,M050@P1,42+43+44,benchmark,wemath,46.25199362041467,46.25199362041467,0.0
+confirmation,confirmation,M050@P1,42+43+44,category,Charts & Tables,58.47432336531877,59.068898015318766,0.5945746499999984
+confirmation,confirmation,M050@P1,42+43+44,category,Visual Math,49.08022245481127,49.08022245481127,0.0
+confirmation,confirmation,M050@P1,42+43+44,category,Science & General,56.93740318863576,56.93740318863576,0.0
+confirmation,confirmation,M050@P1,42+43+44,category,Spatial Reasoning,58.02338548506002,58.02338548506002,0.0
+confirmation,confirmation,M050@P1,42+43+44,category,Perception & Counting,51.92926422627278,51.92926422627278,0.0
+confirmation,confirmation,M050@P1,42+43+44,category,Puzzles & Logic,39.69220289448142,42.05940524283467,2.3672023483532527
+confirmation,confirmation,M050@P1,42+43+44,overall,24-benchmark macro,52.35613360243,52.84976310215554,0.493629499725543
+confirmation,confirmation,T,42+43+44,benchmark,blink,56.38834100372562,56.38834100372562,0.0
+confirmation,confirmation,T,42+43+44,benchmark,chartqapro,48.27445368091649,48.27445368091649,0.0
+confirmation,confirmation,T,42+43+44,benchmark,charxivreason,46.333333333333336,46.333333333333336,0.0
+confirmation,confirmation,T,42+43+44,benchmark,countbenchqa,86.41025641025641,86.41025641025641,0.0
+confirmation,confirmation,T,42+43+44,benchmark,countqa,23.15042315042315,23.15042315042315,0.0
+confirmation,confirmation,T,42+43+44,benchmark,cvbench_3d,80.97222222222223,80.97222222222223,0.0
+confirmation,confirmation,T,42+43+44,benchmark,embspatial,70.6158424908425,70.6158424908425,0.0
+confirmation,confirmation,T,42+43+44,benchmark,erqa,40.67085953878407,40.67085953878407,0.0
+confirmation,confirmation,T,42+43+44,benchmark,evochart,64.56456456456458,64.56456456456458,0.0
+confirmation,confirmation,T,42+43+44,benchmark,logicvista,47.951582867783976,47.951582867783976,0.0
+confirmation,confirmation,T,42+43+44,benchmark,mathverse,47.24867724867725,47.24867724867725,0.0
+confirmation,confirmation,T,42+43+44,benchmark,mathvision,26.672149122807017,26.672149122807017,0.0
+confirmation,confirmation,T,42+43+44,benchmark,mathvista,74.5,74.5,0.0
+confirmation,confirmation,T,42+43+44,benchmark,mme_reasoning,29.312169312169317,29.312169312169317,0.0
+confirmation,confirmation,T,42+43+44,benchmark,mmmu_pro_vision,39.30635838150289,39.30635838150289,0.0
+confirmation,confirmation,T,42+43+44,benchmark,mmstar,66.16666666666667,66.16666666666667,0.0
+confirmation,confirmation,T,42+43+44,benchmark,phyx_mini_mc,48.708333333333336,48.708333333333336,0.0
+confirmation,confirmation,T,42+43+44,benchmark,puzzlevqa,49.73876698014629,51.619644723093,1.8808777429467085
+confirmation,confirmation,T,42+43+44,benchmark,realworldqa,68.95424836601306,68.95424836601306,0.0
+confirmation,confirmation,T,42+43+44,benchmark,spatialvizbench_cot,35.31073446327684,35.31073446327684,0.0
+confirmation,confirmation,T,42+43+44,benchmark,tablevqabench,78.36625153333333,78.3990922,0.0328406666666722
+confirmation,confirmation,T,42+43+44,benchmark,treebench,40.4320987654321,40.4320987654321,0.0
+confirmation,confirmation,T,42+43+44,benchmark,visualpuzzles,34.6552340121472,35.15541264737406,0.5001786352268596
+confirmation,confirmation,T,42+43+44,benchmark,wemath,46.3317384370016,46.3317384370016,0.0
+confirmation,confirmation,T,42+43+44,category,Charts & Tables,59.38465077803693,59.3928609447036,0.0082101666666716
+confirmation,confirmation,T,42+43+44,category,Visual Math,48.68814120212146,48.68814120212146,0.0
+confirmation,confirmation,T,42+43+44,category,Science & General,55.78390168687899,55.78390168687899,0.0
+confirmation,confirmation,T,42+43+44,category,Spatial Reasoning,56.89241467878141,56.89241467878141,0.0
+confirmation,confirmation,T,42+43+44,category,Perception & Counting,51.595279832459326,51.595279832459326,0.0
+confirmation,confirmation,T,42+43+44,category,Puzzles & Logic,40.41443829306169,41.00970238760509,0.5952640945433956
+confirmation,confirmation,T,42+43+44,overall,24-benchmark macro,52.12647107855664,52.22705012209165,0.1005790435350064
+confirmation,confirmation,V@P0,42+43+44,benchmark,blink,56.89239535393381,56.89239535393381,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,chartqapro,40.91312568398743,40.91312568398743,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,charxivreason,45.833333333333336,45.833333333333336,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,countbenchqa,83.58974358974359,83.58974358974359,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,countqa,23.91482391482392,23.91482391482392,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,cvbench_3d,83.36805555555556,83.36805555555556,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,embspatial,70.42124542124542,70.42124542124542,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,erqa,44.65408805031446,44.65408805031446,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,evochart,64.0306973640307,64.0306973640307,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,logicvista,46.46182495344507,46.46182495344507,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,mathverse,49.576719576719576,49.576719576719576,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,mathvision,27.65899122807017,27.65899122807017,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,mathvista,77.95833333333333,77.95833333333333,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,mme_reasoning,31.075837742504408,31.075837742504408,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,mmmu_pro_vision,39.73988439306358,39.73988439306358,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,mmstar,66.88888888888889,66.88888888888889,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,phyx_mini_mc,45.958333333333336,45.958333333333336,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,puzzlevqa,48.75653082549635,48.75653082549635,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,realworldqa,70.2069716775599,70.2069716775599,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,spatialvizbench_cot,31.92090395480226,31.92090395480226,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,tablevqabench,78.671427,78.671427,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,treebench,40.946502057613166,40.946502057613166,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,visualpuzzles,37.69203286888174,37.69203286888174,0.0
+confirmation,confirmation,V@P0,42+43+44,benchmark,wemath,46.45135566188198,46.45135566188198,0.0
+confirmation,confirmation,V@P0,42+43+44,category,Charts & Tables,57.36214584533786,57.36214584533786,0.0
+confirmation,confirmation,V@P0,42+43+44,category,Visual Math,50.41134995000127,50.41134995000127,0.0
+confirmation,confirmation,V@P0,42+43+44,category,Science & General,55.69851957321143,55.69851957321143,0.0
+confirmation,confirmation,V@P0,42+43+44,category,Spatial Reasoning,57.59107324547943,57.59107324547943,0.0
+confirmation,confirmation,V@P0,42+43+44,category,Perception & Counting,51.33586622902863,51.33586622902863,0.0
+confirmation,confirmation,V@P0,42+43+44,category,Puzzles & Logic,40.99655659758189,40.99655659758189,0.0
+confirmation,confirmation,V@P0,42+43+44,overall,24-benchmark macro,52.23258524010675,52.23258524010675,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,blink,56.30067937760246,56.30067937760246,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,chartqapro,41.34435392934298,41.34435392934298,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,charxivreason,45.79166666666666,45.79166666666666,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,countbenchqa,83.93162393162393,83.93162393162393,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,countqa,24.105924105924107,24.105924105924107,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,cvbench_3d,84.47916666666667,84.47916666666667,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,embspatial,71.14239926739927,71.14239926739927,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,erqa,41.090146750524106,41.090146750524106,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,evochart,64.06406406406406,64.06406406406406,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,logicvista,48.97579143389199,48.97579143389199,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,mathverse,47.35449735449735,47.35449735449735,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,mathvision,26.64473684210526,26.64473684210526,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,mathvista,76.20833333333333,76.20833333333333,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,mme_reasoning,30.15873015873016,30.15873015873016,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,mmmu_pro_vision,40.58285163776493,40.58285163776493,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,mmstar,66.97222222222221,66.97222222222221,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,phyx_mini_mc,45.75,45.75,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,puzzlevqa,15.653082549634272,49.195402298850574,33.542319749216304
+confirmation,confirmation,V@P1,42+43+44,benchmark,realworldqa,70.26143790849673,70.26143790849673,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,spatialvizbench_cot,33.05084745762712,33.05084745762712,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,tablevqabench,62.702592733333326,67.25716966666667,4.554576933333344
+confirmation,confirmation,V@P1,42+43+44,benchmark,treebench,37.65432098765432,37.65432098765432,0.0
+confirmation,confirmation,V@P1,42+43+44,benchmark,visualpuzzles,24.401571989996427,37.04894605216148,12.647374062165056
+confirmation,confirmation,V@P1,42+43+44,benchmark,wemath,44.33811802232855,44.33811802232855,0.0
+confirmation,confirmation,V@P1,42+43+44,category,Charts & Tables,53.47566934835176,54.614313581685096,1.1386442333333378
+confirmation,confirmation,V@P1,42+43+44,category,Visual Math,48.636421388066125,48.636421388066125,0.0
+confirmation,confirmation,V@P1,42+43+44,category,Science & General,55.89162794212098,55.89162794212098,0.0
+confirmation,confirmation,V@P1,42+43+44,category,Spatial Reasoning,57.44064003555429,57.44064003555429,0.0
+confirmation,confirmation,V@P1,42+43+44,category,Perception & Counting,50.49813710070121,50.49813710070121,0.0
+confirmation,confirmation,V@P1,42+43+44,category,Puzzles & Logic,29.797294033063213,41.34471748590856,11.54742345284534
+confirmation,confirmation,V@P1,42+43+44,overall,24-benchmark macro,49.28996497464292,51.40430958900604,2.1143446143631195

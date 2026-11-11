@@ -1,0 +1,343 @@
+{
+ "blocks": {
+  "TR0": "decoder layers 0-8",
+  "TR1": "decoder layers 9-18",
+  "TR2": "decoder layers 19-27"
+ },
+ "design": "design/decision_F2.md",
+ "family_descriptive_holm": [
+  "R_TR0",
+  "R_TR1",
+  "R_TR2"
+ ],
+ "main": {
+  "draws": {
+   "basis": "statistics.iter_weight_blocks(n_units, replicates, seed) over the same sorted unit ids",
+   "identical_draws_official_and_normalized": true,
+   "n_replicates": 10000,
+   "n_units": 20957,
+   "rng_block": 250,
+   "seed": 314159,
+   "unit_ids_sha256": "151ac29f8d44fd55ab6fab29a35aa30968e0889cc8d1dbfe77292ade6df073b7"
+  },
+  "effects": {
+   "R_TR0/format-normalized-v2": [
+    0.5433,
+    0.2176,
+    0.8618,
+    0.0004,
+    0.0008
+   ],
+   "R_TR0/official": [
+    0.5783,
+    0.2516,
+    0.8944,
+    0.0003,
+    0.0006
+   ],
+   "R_TR1/format-normalized-v2": [
+    1.8078,
+    1.4194,
+    2.1922,
+    0.0001,
+    0.0003
+   ],
+   "R_TR1/official": [
+    1.8102,
+    1.4205,
+    2.1939,
+    0.0001,
+    0.0003
+   ],
+   "R_TR2/format-normalized-v2": [
+    0.1578,
+    -0.1607,
+    0.4736,
+    0.32897,
+    0.32897
+   ],
+   "R_TR2/official": [
+    0.2088,
+    -0.1108,
+    0.5269,
+    0.19778,
+    0.19778
+   ],
+   "TR0_minus_B/format-normalized-v2": [
+    3.3266,
+    2.9089,
+    3.7408,
+    0.0001,
+    null
+   ],
+   "TR0_minus_B/official": [
+    3.3716,
+    2.9541,
+    3.7875,
+    0.0001,
+    null
+   ],
+   "TR1_minus_B/format-normalized-v2": [
+    2.0621,
+    1.6937,
+    2.4342,
+    0.0001,
+    null
+   ],
+   "TR1_minus_B/official": [
+    2.1397,
+    1.7687,
+    2.5084,
+    0.0001,
+    null
+   ],
+   "TR2_minus_B/format-normalized-v2": [
+    3.7121,
+    3.2952,
+    4.1258,
+    0.0001,
+    null
+   ],
+   "TR2_minus_B/official": [
+    3.7412,
+    3.326,
+    4.1557,
+    0.0001,
+    null
+   ],
+   "full_T/format-normalized-v2": [
+    3.8699,
+    3.434,
+    4.3111,
+    0.0001,
+    null
+   ],
+   "full_T/official": [
+    3.9499,
+    3.5156,
+    4.3912,
+    0.0001,
+    null
+   ]
+  },
+  "excluded_benchmarks": {},
+  "macro": {
+   "B@P1": {
+    "normalized": 48.2215,
+    "official": 48.0447
+   },
+   "T@P1": {
+    "normalized": 52.0915,
+    "official": 51.9946
+   },
+   "TR0@P1": {
+    "normalized": 51.5481,
+    "official": 51.4164
+   },
+   "TR1@P1": {
+    "normalized": 50.2836,
+    "official": 50.1844
+   },
+   "TR2@P1": {
+    "normalized": 51.9337,
+    "official": 51.7859
+   }
+  },
+  "macro_name": "24-benchmark macro",
+  "missing_runs": [],
+  "seeds": [
+   42,
+   43,
+   44
+  ]
+ },
+ "runs_not_usable": {
+  "B@P1.development_screen.s43": "complete but not ingested (run ingest-runs)",
+  "B@P1.development_screen.s44": "complete but not ingested (run ingest-runs)",
+  "B@P2.development_screen.s43": "complete but not ingested (run ingest-runs)",
+  "B@P2.development_screen.s44": "complete but not ingested (run ingest-runs)",
+  "T@P1.development_screen.s43": "complete but not ingested (run ingest-runs)",
+  "T@P1.development_screen.s44": "complete but not ingested (run ingest-runs)",
+  "T@P2.development_screen.s43": "complete but not ingested (run ingest-runs)",
+  "T@P2.development_screen.s44": "complete but not ingested (run ingest-runs)",
+  "TR0@P1.development_screen.s43": "run not complete",
+  "TR0@P1.development_screen.s44": "run not complete",
+  "TR0@P2.development_screen.s42": "run not complete",
+  "TR0@P2.development_screen.s43": "run not complete",
+  "TR0@P2.development_screen.s44": "run not complete",
+  "TR0@P2.smoke.s42": "run not complete",
+  "TR1@P1.development_screen.s43": "run not complete",
+  "TR1@P1.development_screen.s44": "run not complete",
+  "TR1@P2.development_screen.s42": "run not complete",
+  "TR1@P2.development_screen.s43": "run not complete",
+  "TR1@P2.development_screen.s44": "run not complete",
+  "TR1@P2.smoke.s42": "run not complete",
+  "TR2@P1.development_screen.s43": "run not complete",
+  "TR2@P1.development_screen.s44": "run not complete",
+  "TR2@P2.development_screen.s42": "run not complete",
+  "TR2@P2.development_screen.s43": "run not complete",
+  "TR2@P2.development_screen.s44": "run not complete",
+  "TR2@P2.smoke.s42": "run not complete"
+ },
+ "scales": {
+  "primary": "official",
+  "sensitivity": "format-normalized-v2"
+ },
+ "screen": {
+  "draws": {
+   "basis": "statistics.iter_weight_blocks(n_units, replicates, seed) over the same sorted unit ids",
+   "identical_draws_official_and_normalized": true,
+   "n_replicates": 10000,
+   "n_units": 2421,
+   "rng_block": 250,
+   "seed": 314159,
+   "unit_ids_sha256": "881e14faa068d1d6d9fac0e1c77b156c3ea85abc6274961f05548c9814465e1d"
+  },
+  "effects": {
+   "R_TR0/format-normalized-v2": [
+    0.4367,
+    -1.0161,
+    1.8677,
+    0.55134,
+    1.0
+   ],
+   "R_TR0/official": [
+    0.3716,
+    -1.0874,
+    1.8095,
+    0.62024,
+    1.0
+   ],
+   "R_TR1/format-normalized-v2": [
+    2.5978,
+    1.0046,
+    4.1442,
+    0.0011,
+    0.0033
+   ],
+   "R_TR1/official": [
+    2.5978,
+    1.0277,
+    4.1555,
+    0.0009,
+    0.0027
+   ],
+   "R_TR2/format-normalized-v2": [
+    -0.0622,
+    -1.5897,
+    1.3978,
+    0.93311,
+    1.0
+   ],
+   "R_TR2/official": [
+    -0.1273,
+    -1.6519,
+    1.3464,
+    0.86561,
+    1.0
+   ],
+   "TR0_minus_B/format-normalized-v2": [
+    2.9336,
+    1.2872,
+    4.5921,
+    0.0008,
+    null
+   ],
+   "TR0_minus_B/official": [
+    3.0312,
+    1.3851,
+    4.694,
+    0.0004,
+    null
+   ],
+   "TR1_minus_B/format-normalized-v2": [
+    0.7725,
+    -0.8064,
+    2.3886,
+    0.34117,
+    null
+   ],
+   "TR1_minus_B/official": [
+    0.8051,
+    -0.7697,
+    2.4115,
+    0.31877,
+    null
+   ],
+   "TR2_minus_B/format-normalized-v2": [
+    3.4325,
+    1.7707,
+    5.1461,
+    0.0001,
+    null
+   ],
+   "TR2_minus_B/official": [
+    3.5302,
+    1.8691,
+    5.2452,
+    0.0001,
+    null
+   ],
+   "full_T/format-normalized-v2": [
+    3.3703,
+    1.708,
+    5.0589,
+    0.0002,
+    null
+   ],
+   "full_T/official": [
+    3.4028,
+    1.7431,
+    5.0878,
+    0.0002,
+    null
+   ]
+  },
+  "excluded_benchmarks": {},
+  "macro": {
+   "B@P1": {
+    "normalized": 48.266,
+    "official": 48.1032
+   },
+   "T@P1": {
+    "normalized": 51.6363,
+    "official": 51.5061
+   },
+   "TR0@P1": {
+    "normalized": 51.1996,
+    "official": 51.1345
+   },
+   "TR1@P1": {
+    "normalized": 49.0385,
+    "official": 48.9083
+   },
+   "TR2@P1": {
+    "normalized": 51.6985,
+    "official": 51.6334
+   }
+  },
+  "macro_name": "24-benchmark macro",
+  "missing_runs": [],
+  "seeds": [
+   42
+  ]
+ },
+ "status": "FINAL",
+ "technical_stop": [
+  {
+   "cell": "TR0",
+   "technical_stop": false,
+   "technical_stop_reasons": ""
+  },
+  {
+   "cell": "TR1",
+   "technical_stop": false,
+   "technical_stop_reasons": ""
+  },
+  {
+   "cell": "TR2",
+   "technical_stop": false,
+   "technical_stop_reasons": ""
+  }
+ ]
+}

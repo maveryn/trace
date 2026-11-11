@@ -1,0 +1,45 @@
+{
+ "VNM": {
+  "content_revision": "sha256set:6bce0c12404071f3dbb3add8b7813b062be5ba9a979a95afc03d4a7e182115ce",
+  "fraction_values_bitwise_equal_to_B": 0.766837659660274,
+  "groups": {
+   "language_embeddings": {
+    "delta_norm": 0.18671932541555825,
+    "fraction_equal_to_B": 0.8881111695480897
+   },
+   "language_final_norm": {
+    "delta_norm": 0.0,
+    "fraction_equal_to_B": 1.0
+   },
+   "language_layers": {
+    "delta_norm": 1.4041211450219497,
+    "fraction_equal_to_B": 0.755582042960155
+   },
+   "language_output_head": {
+    "delta_norm": 0.25192792723890184,
+    "fraction_equal_to_B": 0.8097290196861425
+   },
+   "visual_blocks": {
+    "delta_norm": 0.47113276752319555,
+    "fraction_equal_to_B": 0.7392773364142076
+   },
+   "visual_merger": {
+    "delta_norm": 0.10878737443433052,
+    "fraction_equal_to_B": 0.8004590251494668
+   },
+   "visual_patch_embed": {
+    "delta_norm": 0.02283505468393639,
+    "fraction_equal_to_B": 0.6717800010629251
+   }
+  },
+  "lambda": 0.226576696008805,
+  "nonfinite_values": 0,
+  "realized_norm": 1.5179625140618858,
+  "realized_over_trace_norm": 0.7613264665133617,
+  "relative_residual": -0.2386735334866383,
+  "residual": -0.4758766348825634,
+  "target_norm": 1.9938391489444491,
+  "trace_norm": 1.9938391489444491,
+  "verified": true
+ }
+}

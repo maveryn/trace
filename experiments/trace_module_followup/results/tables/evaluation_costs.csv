@@ -1,0 +1,50 @@
+analysis_status,tier,label,cell,interface,slug,subset,seed,complete,attempts,successful_attempts,wall_hours,gpu_hours,gpu_types,judge_tp,generated_tokens,generated_tokens_from_summary,quarantined_dirs,run_dir_gib_shared_by_seeds
+FINAL,smoke,B@P1,B,P1,qwen25vl7b-p1,smoke,42,True,1,1,0.1647,0.1647,NVIDIA H200 NVL 140GiB,1,25988,25988.0,0,0.003
+FINAL,smoke,B@P2,B,P2,qwen25vl7b-p2,smoke,42,True,1,1,0.1911,0.1911,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,62272,62272.0,0,0.003
+FINAL,smoke,T@P1,T,P1,trace7b-p1,smoke,42,True,1,1,0.2058,0.2058,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,27918,27918.0,0,0.003
+FINAL,smoke,T@P2,T,P2,trace7b-p2,smoke,42,True,1,1,0.1364,0.1364,NVIDIA H200 NVL 140GiB,1,34766,34766.0,0,0.003
+FINAL,smoke,V@P1,V,P1,vero-p1,smoke,42,True,1,1,0.1892,0.1892,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,26648,26648.0,0,0.003
+FINAL,smoke,V@P2,V,P2,vero-p2,smoke,42,True,1,1,0.1856,0.1856,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,50144,50144.0,0,0.004
+FINAL,smoke,TF@P1,TF,P1,tf-p1,smoke,42,True,1,1,0.2147,0.2147,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,24936,24936.0,0,0.003
+FINAL,smoke,TF@P2,TF,P2,tf-p2,smoke,42,True,1,1,0.1967,0.1967,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,40016,40016.0,0,0.003
+FINAL,smoke,TL@P1,TL,P1,tl-p1,smoke,42,True,1,1,0.3589,0.7178,NVIDIA A40 44GiB,2,27642,27642.0,0,0.003
+FINAL,smoke,TL@P2,TL,P2,tl-p2,smoke,42,True,1,1,0.1364,0.1364,NVIDIA H200 NVL 140GiB,1,35477,35477.0,0,0.003
+FINAL,smoke,VF@P1,VF,P1,vf-p1,smoke,42,True,1,1,0.4525,0.4525,NVIDIA A100 80GB PCIe 80GiB,1,25568,25568.0,0,0.003
+FINAL,smoke,VF@P2,VF,P2,vf-p2,smoke,42,True,1,1,0.1364,0.1364,NVIDIA H200 NVL 140GiB,1,32211,32211.0,0,0.003
+FINAL,smoke,VL@P1,VL,P1,vl-p1,smoke,42,True,1,1,0.5044,0.5044,NVIDIA A100 80GB PCIe 80GiB,1,26590,26590.0,0,0.003
+FINAL,smoke,VL@P2,VL,P2,vl-p2,smoke,42,True,1,1,0.1869,0.1869,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,50683,50683.0,0,0.004
+FINAL,screen,B@P1,B,P1,qwen25vl7b-p1,development_screen,42,True,1,1,0.2647,0.2647,NVIDIA H200 NVL 140GiB,1,521079,521079.0,0,0.044
+FINAL,screen,T@P1,T,P1,trace7b-p1,development_screen,42,True,1,1,0.4517,0.4517,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,667070,667070.0,0,0.048
+FINAL,screen,V@P1,V,P1,vero-p1,development_screen,42,True,1,1,0.4192,0.4192,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,602561,602561.0,0,0.046
+FINAL,screen,TF@P1,TF,P1,tf-p1,development_screen,42,True,1,1,0.4261,0.4261,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,515833,515833.0,0,0.044
+FINAL,screen,TL@P1,TL,P1,tl-p1,development_screen,42,True,1,1,0.6522,1.3044,NVIDIA A40 44GiB,2,660351,660351.0,0,0.047
+FINAL,screen,VF@P1,VF,P1,vf-p1,development_screen,42,True,1,1,0.5317,0.5317,NVIDIA A100 80GB PCIe 80GiB,1,525253,525253.0,0,0.044
+FINAL,screen,VL@P1,VL,P1,vl-p1,development_screen,42,True,1,1,0.5239,0.5239,NVIDIA A100 80GB PCIe 80GiB,1,597568,597568.0,0,0.046
+FINAL,analysis,B@P1,B,P1,qwen25vl7b-p1,confirmation,42,True,1,1,1.1264,1.1264,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,4676721,4676721.0,0,1.118
+FINAL,analysis,B@P1,B,P1,qwen25vl7b-p1,confirmation,43,True,2,1,2.4553,2.4553,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,4768648,4768648.0,0,
+FINAL,analysis,B@P1,B,P1,qwen25vl7b-p1,confirmation,44,True,1,1,1.1008,1.1008,NVIDIA H200 NVL 140GiB,1,4728844,4728844.0,0,
+FINAL,analysis,T@P1,T,P1,trace7b-p1,confirmation,42,True,1,1,0.6342,0.6342,NVIDIA H200 NVL 140GiB,1,5982242,5982242.0,0,1.206
+FINAL,analysis,T@P1,T,P1,trace7b-p1,confirmation,43,True,1,1,2.3897,2.3897,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,6021886,6021886.0,0,
+FINAL,analysis,T@P1,T,P1,trace7b-p1,confirmation,44,True,1,1,2.3742,2.3742,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,5905733,5905733.0,0,
+FINAL,analysis,V@P1,V,P1,vero-p1,confirmation,42,True,2,1,2.0222,2.0222,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,5374498,5374498.0,1,1.252
+FINAL,analysis,V@P1,V,P1,vero-p1,confirmation,43,True,5,1,2.5547,4.7994,NVIDIA RTX 6000 Ada Generation 47GiB; NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,"1,2",5424226,5424226.0,1,
+FINAL,analysis,V@P1,V,P1,vero-p1,confirmation,44,True,2,1,3.0911,6.1822,NVIDIA RTX A6000 44GiB,2,5333624,5333624.0,1,
+FINAL,analysis,TF@P1,TF,P1,tf-p1,confirmation,42,True,1,1,0.5667,0.5667,NVIDIA H200 NVL 140GiB,1,4796611,4796611.0,0,1.12
+FINAL,analysis,TF@P1,TF,P1,tf-p1,confirmation,43,True,2,1,1.9394,1.9394,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,4783071,4783071.0,0,
+FINAL,analysis,TF@P1,TF,P1,tf-p1,confirmation,44,True,1,1,2.1761,2.1761,NVIDIA H200 140GiB,1,4801842,4801842.0,0,
+FINAL,analysis,TL@P1,TL,P1,tl-p1,confirmation,42,True,1,1,1.0836,1.0836,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,5953631,5953631.0,0,1.206
+FINAL,analysis,TL@P1,TL,P1,tl-p1,confirmation,43,True,1,1,2.0044,2.0044,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,6015845,6015845.0,0,
+FINAL,analysis,TL@P1,TL,P1,tl-p1,confirmation,44,True,1,1,1.1122,1.1122,NVIDIA H200 NVL 140GiB,1,5937959,5937959.0,0,
+FINAL,analysis,VF@P1,VF,P1,vf-p1,confirmation,42,True,1,1,1.1317,1.1317,NVIDIA H200 NVL 140GiB,1,5019924,5019924.0,0,1.123
+FINAL,analysis,VF@P1,VF,P1,vf-p1,confirmation,43,True,2,1,2.0964,2.0964,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,4855409,4855409.0,0,
+FINAL,analysis,VF@P1,VF,P1,vf-p1,confirmation,44,True,2,1,2.3686,2.3686,NVIDIA H200 140GiB; NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,4619659,4619659.0,0,
+FINAL,analysis,VL@P1,VL,P1,vl-p1,confirmation,42,True,2,1,2.4925,2.4925,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,5375394,5375394.0,0,1.184
+FINAL,analysis,VL@P1,VL,P1,vl-p1,confirmation,43,True,1,1,0.9122,0.9122,NVIDIA H200 NVL 140GiB,1,5415431,5415431.0,0,
+FINAL,analysis,VL@P1,VL,P1,vl-p1,confirmation,44,True,2,1,2.3656,2.3656,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,5321473,5321473.0,0,
+FINAL,template,B@P2,B,P2,qwen25vl7b-p2,development_screen,42,True,1,1,0.4522,0.4522,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,711954,711954.0,0,0.05
+FINAL,template,T@P2,T,P2,trace7b-p2,development_screen,42,True,1,1,0.2458,0.2458,NVIDIA H200 NVL 140GiB,1,811610,811610.0,0,0.052
+FINAL,template,V@P2,V,P2,vero-p2,development_screen,42,True,1,1,0.46,0.46,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,873331,873331.0,0,0.054
+FINAL,template,TF@P2,TF,P2,tf-p2,development_screen,42,True,5,1,0.8461,0.8461,NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,1,707513,707513.0,1,0.064
+FINAL,template,TL@P2,TL,P2,tl-p2,development_screen,42,True,1,1,0.2481,0.2481,NVIDIA H200 NVL 140GiB,1,811827,811827.0,0,0.052
+FINAL,template,VF@P2,VF,P2,vf-p2,development_screen,42,True,1,1,0.2758,0.2758,NVIDIA H200 NVL 140GiB,1,710924,710924.0,0,0.05
+FINAL,template,VL@P2,VL,P2,vl-p2,development_screen,42,True,5,1,0.9053,1.1128,NVIDIA H200 140GiB; NVIDIA H200 NVL 140GiB; NVIDIA RTX 6000 Ada Generation 47GiB; NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition 95GiB,"1,2",869033,869033.0,1,0.073

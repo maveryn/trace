@@ -1,0 +1,71 @@
+# TRACE-VERO follow-up (design/followup_v1.md): component-swap hybrids and evaluation reliability. No machine paths here.
+study_id: trace_vero_followup_v1
+# roles, pinned revisions, protocol code, generation settings and interface file lists come from the reviewed study
+base_config: ../../trace_merge/configs/trace_merge_qwen25_v1.yaml
+# required: --work-root or TRACE_FOLLOWUP_ROOT (never invented)
+work_root: null
+source_anchor:
+  repository: farhanishmam/trace
+  reviewed_head: ce60def7dff3613618b9b53f3e2b90b1bea11a0d
+  base: af32fe0e668eb878e909daef7322ac1c4ae20f64
+
+policy: {training: false, uploads: false, merge_search: false, averaging: false}
+
+# stored-tensor ownership (trace_merge.compatibility.tensor_group -> part); no fallback ownership
+parts:
+  E: [visual_patch_embed, visual_blocks]
+  J: [visual_merger]
+  L: [language_embeddings, language_layers, language_final_norm, language_output_head]
+partitions:
+  component: {frontend: [E, J], language: [L]}         # F1: F = (E, J)
+  encoder_merger: {encoder: [E], merger: [J], language: [L]}   # F2a, only if the decision record selects it
+expected_counts: {E: 385, J: 5, L: 339, frontend: 390, language: 339, total: 729}
+
+hybrids:
+  TF: {partition: component, donors: {frontend: T, language: B}}
+  TL: {partition: component, donors: {frontend: B, language: T}}
+  VF: {partition: component, donors: {frontend: V, language: B}}
+  VL: {partition: component, donors: {frontend: B, language: V}}
+  TR0: {partition: revert_D0, donors: {reverted: B, kept: T}}
+  TR1: {partition: revert_D1, donors: {reverted: B, kept: T}}
+  TR2: {partition: revert_D2, donors: {reverted: B, kept: T}}
+
+# F2c (design/decision_F2.md, amendment A2): coarse decoder block-group reversion of TRACE. Decoder blocks are split by
+# layer index (attention, MLP and in-block norms together); embeddings, final norm and output head stay with the parent.
+fine_parts:
+  E: {groups: [visual_patch_embed, visual_blocks]}
+  J: {groups: [visual_merger]}
+  Lemb: {groups: [language_embeddings]}
+  D0: {groups: [language_layers], layers: [0, 8]}
+  D1: {groups: [language_layers], layers: [9, 18]}
+  D2: {groups: [language_layers], layers: [19, 27]}
+  Lout: {groups: [language_final_norm, language_output_head]}
+fine_partitions:
+  revert_D0: {reverted: [D0], kept: [E, J, Lemb, D1, D2, Lout]}
+  revert_D1: {reverted: [D1], kept: [E, J, Lemb, D0, D2, Lout]}
+  revert_D2: {reverted: [D2], kept: [E, J, Lemb, D0, D1, Lout]}
+
+# cell -> served-slug stem; views are <stem>-p1 (B's interface files) and <stem>-p2 (V's interface files)
+cells: {B: qwen25vl7b, T: trace7b, V: vero, TF: tf, TL: tl, VF: vf, VL: vl}
+# F2c checkpoints (P1 only, design/decision_F2.md) and the F3 checkpoint
+extension_cells: {TR0: tr0, TR1: tr1, TR2: tr2, VNM: vnm}
+# F3 (design/decision_F3.md): one norm-matched VERO checkpoint, built by trace_followup.normmatch into scaled/
+scaled: {VNM: {base: B, parent: V, lambda: "||dT||_F / ||dV||_F (audit/f3_update_norms.json)"}}
+protocols: {p1: P1_backbone, p2: P2_vero}
+
+evaluation:
+  smoke: {subset: smoke, seeds: [42], protocols: [p1, p2]}
+  screen: {subset: development_screen, seeds: [42], protocols: [p1]}
+  analysis: {subset: confirmation, seeds: [42, 43, 44], protocols: [p1]}
+  template: {subset: development_screen, seeds: [42], protocols: [p2]}
+  # A5: replication of the one-seed interface diagnostic on the same rows (both interfaces, all seven cells)
+  replication: {subset: development_screen, seeds: [43, 44], protocols: [p1, p2]}
+
+statistics:
+  bootstrap_replicates: 10000
+  seed: 314159
+  confidence: 0.95
+  multiplicity: holm
+  primary_metric: official_macro
+  sensitivity_metric: format-normalized-v2   # v1 was frozen, then superseded on development evidence (design §5)
+  primary_family: [gF_T, gL_T, I_T, gF_V, gL_V, I_V]

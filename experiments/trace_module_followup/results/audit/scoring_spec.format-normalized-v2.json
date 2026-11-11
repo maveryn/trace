@@ -1,0 +1,150 @@
+{
+ "metric": "format-normalized-v2",
+ "frozen": true,
+ "supersedes": {
+  "spec": "audit/scoring_spec.format-normalized-v1.json (kept, read-only)",
+  "why": "the blinded development check of TableVQABench found two v1 defects: (1) T1 applied on vtabfact, where the pinned scorer already reads a True/False label anywhere and scores a prediction holding both labels as unparsed, so a box could only override that rule and credit self-contradictory responses that the same response without a box would not get; (2) LaTeX escapes inside a box (55\\%) were not removed. The audit-only TableVQABench failure taxonomy was also reordered.",
+  "changes": [
+   "T1 restricted to fintabnetqa, vwtq, vwtq_syn",
+   "extract_final_boxed removes the escapes \\% \\$ \\& \\# \\_",
+   "taxonomy classifies the rewritten answer of touched rows; accounting negatives and partial (phrase) answers separated",
+   "MC rule and extract_final_option unchanged"
+  ],
+  "development_effect": "23 TableVQABench development rows change status and 4 change score (3 P2-interface rows gain through the un-escape; 1 self-contradictory vtabfact row loses its v1 repair); no P1 model or archived parent changes score",
+  "timing": "v1 development outputs moved to audit/superseded_v1/; the v1 confirmation run was stopped before it wrote any output, so no confirmation number was read under v1 or before this freeze"
+ },
+ "frozen_at_utc": "2026-11-06T07:17:15+00:00",
+ "role": "diagnostic beside the official score; never replaces it. Primary metric stays the official macro.",
+ "version_policy": "extract.py and rescore.py are frozen at the sha256 below; any later edit to either file defines format-normalized-v3, recorded as a new spec file.",
+ "code_sha256": {
+  "trace_module_followup/trace_followup/extract.py": "6c3fb4578e9511fe781052b726b04420e21d5fdbab6d3f090976107b3a9f3e0c",
+  "trace_module_followup/trace_followup/rescore.py": "f203850862c7268a3f463ed1c79b217168d65c36c52b2800c9a71d966e7ba923",
+  "trace_module_followup/tests/test_extract.py": "b6549027b72736749398d0b729b834dce95a9dec0451f679d71cd74e4fe7e03f",
+  "trace_module_followup/tests/test_rescore.py": "ef6587b7f848c328ef5e81467be827cef967974ba32aea0369785bd1ee6e406e",
+  "trace_module_followup/tests/fixtures/extract_cases.json": "ac5815f9ff5943e38874cabea37f47f7a0bb7e6732f75ce711abb7b6f6dfd7d9"
+ },
+ "reused_reviewed_code_sha256": {
+  "trace_merge/trace_merge/metrics.py": "1546e8180a965f0e6c6f3b98dd8d0fd343ef7a9cade063dbfc2d528689cc2839",
+  "trace_merge/trace_merge/statistics.py": "6f30ab6d643f876310d7f6f511057360ed4eefc9a54c0032abc25c2c8a35b74a",
+  "trace_merge/trace_merge/analysis.py": "d2523fe4fc01cdf9e0259f5915f948d0ed5d96cd85b81d637b3548e0ed3da077"
+ },
+ "pinned_scorer_code_sha256": {
+  "external/VLMEvalKit/vlmeval/dataset/utils/trace_eval_answer_parsing.py": "3f5ac48507939f311b16c9f92c642a0c671f6441c508e1885d02c8ba06b20953",
+  "external/VLMEvalKit/vlmeval/dataset/utils/puzzlevqa.py": "022847f7f584dfb8fd4880e2712f22c7055cc30be1ea9bc6e8f13dc61d03c5e3",
+  "external/VLMEvalKit/vlmeval/dataset/utils/visualpuzzles.py": "77b221e16fe472d6b39eac5f92fbd334598f9986e37395fba83bcab4ade92155",
+  "external/VLMEvalKit/vlmeval/dataset/utils/tablevqabench.py": "e49a105b7f2eda3b83241d8a86d320b974bbb5f72d16b8e239ee27db31772887"
+ },
+ "pinned_scorer_root": "prepared protocol clone (TRACE_MERGE_PROTOCOL_CLONE), rlvr af32fe0 + VLMEvalKit a8b12bf1",
+ "inputs": {
+  "row_schema": "aligned/predictions.parquet of the reviewed study (one row per model_label x seed x content row)",
+  "required_columns": [
+   "model_label",
+   "seed",
+   "benchmark_id",
+   "content_key",
+   "source_ordinal",
+   "source_index",
+   "source_row_sha256",
+   "source_record_sha256",
+   "archived_row_score",
+   "official_excluded",
+   "extraction_status",
+   "extraction_value_json",
+   "judge_output"
+  ],
+  "optional_columns": [
+   "official_row_score (recomputed with trace_merge.metrics adapters when absent)"
+  ],
+  "extractor_reads": "the prediction cell the pinned scorer read (MC: official_route_view = extraction_value_json; TableVQABench: scored_prediction_view, after the pinned single <answer> unwrap and '^Answer: ' removal), plus the row's allowed option labels",
+  "extractor_never_reads": [
+   "gold answer",
+   "official score",
+   "question text",
+   "option texts",
+   "model identity"
+  ]
+ },
+ "scope": {
+  "puzzlevqa": {
+   "rule": "mc_final_option",
+   "labels": "A.. over the licensed options list (3 or 4)",
+   "gold": "pinned puzzlevqa.to_choice_letter(options, answer)",
+   "official_parse": "pinned puzzlevqa.extract_answer = extract_unambiguous_abcd"
+  },
+  "visualpuzzles": {
+   "rule": "mc_final_option",
+   "labels": "ABCD",
+   "gold": "licensed answer letter",
+   "official_parse": "pinned visualpuzzles.extract_answer = extract_unambiguous_abcd"
+  },
+  "tablevqabench": {
+   "rule": "tvqa_final_answer",
+   "rewrites": [
+    "T1_boxed (fintabnetqa, vwtq, vwtq_syn; not vtabfact): a single designated \\boxed{} answer (extract_final_boxed; LaTeX escapes removed) replaces the prediction",
+    "T2_empty_items: vwtq/vwtq_syn only, empty items of a ||-separated list are dropped if a non-empty item remains"
+   ],
+   "rescoring": "pinned evaluate_fintabnet / evaluate_tabfact / evaluate_wtq on the rewritten prediction, same tolerances; components = max(official, rewritten)"
+  }
+ },
+ "out_of_scope": {
+  "mmstar": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "blink": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "mmmu_pro_vision": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "cvbench_3d": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "wemath": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "spatialvizbench_cot": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "erqa": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "logicvista": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "mme_reasoning": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "mathvista": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "mathvision": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "mathverse": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "charxivreason": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "evochart": "the official scorer reads whole responses with an LLM judge or matcher (VLMEvalKit MCQ/judge route); a 0 there with a correct final option is a judgment of an inconsistent response, not an unreadable wrapper",
+  "phyx_mini_mc": "the pinned option parser falls back to the last standalone letter anywhere, so it almost never fails to read; its disagreements with the final option are misreads (e.g. a unit 'C'), and v1 never overrides an official read",
+  "treebench": "the pinned parser reads the first capital A-E of the answer text, so it almost never fails to read; its errors are misreads of prose, which v1 does not override",
+  "realworldqa": "explicit-MCQ adapter plus VLMEvalKit matching; no development row where the final option is unread",
+  "embspatial": "spatial-bench option matcher with tail/phrase fallbacks; no development row where the final option is unread",
+  "chartqapro": "free-form relaxed-accuracy scorer with its own final-answer adapter; not an option task",
+  "countbenchqa": "substring match of the count anywhere in the prediction; no reading failure to normalize",
+  "countqa": "numeric scorer of the prediction; not an option task"
+ },
+ "row_rule": {
+  "out_of_scope": "normalized = official",
+  "mc_final_option": "if the pinned parse yields an option: untouched (official_read). Else (parse 'Z', official 0): extract_final_option(cell, labels); resolved -> 1 if option == gold else 0 (repaired / resolved_still_wrong); unresolved -> official 0 (unresolved).",
+  "tvqa_final_answer": "full official credit: untouched (official_full_credit). Else apply T1 then T2 to the scored prediction; none applies -> official (no_rule_applies); boxed answers disagree -> official (unresolved); else re-score with the pinned split scorer, component-wise max with official (repaired / resolved_still_wrong).",
+  "invariants": [
+   "normalized >= official on every row",
+   "every row stays in its benchmark denominator",
+   "gold is used only to score an extraction made without it",
+   "identical rule for every model, interface, seed and partition"
+  ]
+ },
+ "extractor_precedence_grammar": "1. Final region R (reasoning outside R is never a source of the answer).\n   a. ``answer_tag``: the response has complete ``<answer>...</answer>`` blocks (any case): R = their contents.\n   b. ``answer_tag_open``: no complete block, but a lower-case ``<answer>`` opener: R = text after the last opener.\n   c. ``after_think``: otherwise, if ``</think>`` occurs: R = text after the last ``</think>``.\n   d. ``unterminated_think``: otherwise, if ``<think>`` occurs (reasoning never ended): no R -> ``no_final_answer``.\n   e. ``final_paragraph``: otherwise R = the last paragraph (text after the last blank line; the whole response when\n      it has no blank line).\n2. Designators inside R, all collected in text order:\n   * ``boxed``: every ``\\boxed{...}`` with balanced braces; value = the option token of its content (rule 4);\n   * ``answer_statement``: head (``final answer``, ``correct/best answer|option|choice``, ``answer``, ``option``,\n     ``choice``) + copula (``is``, ``:``, ``=``, ``would/should/will be``, optionally followed by ``:``) + an option\n     token, possibly wrapped; or ``option/choice X is (the) correct/right/best``;\n   * ``answer_block``: in a tag region with no other designator, the block content itself when it is one option token;\n   * ``final_line``: the last non-empty line of R when it is one option token on its own (``B``, ``(B)``, ``**B**``,\n     ``\\( B \\)``, ``$B$``, ``Option B``, ``B.``); when R is a single line, ``B. text`` / ``(B) text`` also count.\n3. Decision.\n   * No designator in R -> ``no_final_answer``.\n   * Every designator in R names the same allowed label X, and no explicit designator (``boxed`` or\n     ``answer_statement``) *outside* R names a different allowed label -> ``resolved`` X.\n   * Two different labels inside R, or a different label outside R -> ``ambiguous``. Text outside R can therefore\n     block a resolution but never supply one.\n   * Designators exist but none names a single allowed label (``\\boxed{12}``, ``answer is E`` with labels A-D,\n     ``answer is B, D``) -> ``not_an_option``; a mix of one label and non-option designators -> ``ambiguous``.\n   There is no \"take the last one\" rule.\n4. Option token: one capital letter, alone after removing harmless wrappers (whitespace, ``\\( \\)``, ``\\[ \\]``,\n   ``$ $``, ``$$ $$``, ``\\text{}``-style macros, ``( )``, ``[ ]``, ``{ }``, ``** **``, ``* *``, ``__ __``, quotes,\n   an ``Option``/``Choice``/``Answer:`` prefix, a trailing period). Inside ``\\boxed{}`` and answer blocks a lower-case\n   letter is accepted too, and so is a letter followed by a separator and option text (``\\boxed{B. 12}``,\n   ``(B) 12``) unless that text names another option label (``(A) 3, (B) 5`` is a listing). A letter\n   followed by ``and``/``or``/``,``/``/``/``&`` and another letter names several options (not a single option). In an\n   answer statement only capitals count, and an unwrapped ``A`` or ``I`` (English words) counts only when followed by\n   punctuation, a line end or the end of the text.",
+ "aggregation": "benchmark values with each benchmark's native official aggregation through the reviewed trace_merge.metrics adapters (TableVQABench mean of five split scores; WeMath problem-group strict score over complete groups present, DESIGN.md A2; pooled means elsewhere); macro = unweighted mean of the 24 benchmarks; paired cluster bootstrap with the reviewed trace_merge.statistics (bootstrap units of DESIGN.md A7, 10,000 replicates, seed 314159)",
+ "tests": {
+  "command": "python -m pytest -q tests/test_extract.py tests/test_rescore.py (experiments/trace_module_followup, with study_env.sh so the pinned-scorer tests run)",
+  "result": "85 passed in 18.45s",
+  "collected": 85,
+  "covers": [
+   "harmless final wrappers normalize",
+   "contradictory answers remain unresolved",
+   "explicit wrong answers remain wrong",
+   "reasoning does not leak into extraction",
+   "gold is never an input (signature, AST and gold-permutation tests)",
+   "pinned PuzzleVQA parser and TableVQABench split scorers on synthetic rows"
+  ]
+ },
+ "development": {
+  "data": "reviewed study work root, development partition only: archived B/T/V@P0 seeds 42-44 and the development-screen local runs (seed 42); confirmation outputs were not read before this freeze; the follow-up work root's runs/ was never read",
+  "v1_rows_examined_by_the_rule": 1898,
+  "v1_rows_changed": 337,
+  "v1_changed_by_benchmark": {
+   "puzzlevqa": 112,
+   "tablevqabench": 195,
+   "visualpuzzles": 30
+  },
+  "v2_ledger": "audit/scoring_changes.csv (partition = development)",
+  "blinded_manual_check": "audit/f0_manual_check.development.csv (80 rows: 60 stratified over changed and unchanged rule outcomes + 20 officially credited baseline rows; model identity, status and extracted value hidden while judging) and audit/f0_tablevqa_blind_check.development.csv (73 failed TableVQABench rows, up to 3 per split x failure type, model hidden)"
+ }
+}
